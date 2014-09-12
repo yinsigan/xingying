@@ -23,5 +23,11 @@ module Yingxing
     config.time_zone = 'Beijing'
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
     config.i18n.available_locales = ["zh-CN", :en]
+
+    config.generators do |g|
+        g.assets false
+        g.helper false
+        g.test_framework false
+    end
   end
 end
