@@ -20,7 +20,7 @@
           <!-- Button -->
 
           <div class="col-sm-12 controls">
-            <%= f.submit "发送新的密码到邮箱", id: "btn-login", class: "btn btn-primary" %>
+            <%= f.submit "发送新的密码到邮箱", id: "btn-login", class: "btn btn-primary", "data-disable-with" => "正在发送..."   %>
           </div>
         </div>
       <% end %>
