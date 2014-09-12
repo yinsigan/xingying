@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title Yingxing
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %p.notice= notice
+    %p.alert= alert
+    = yield
+    - if current_user
+      = link_to('登出', destroy_user_session_path, :method => :delete)
+      |
+      \#{link_to('修改密碼', edit_registration_path(:user))}
+    - else
+      = link_to('註冊', new_registration_path(:user))
+      |
+      \#{link_to('登入', new_session_path(:user))}
