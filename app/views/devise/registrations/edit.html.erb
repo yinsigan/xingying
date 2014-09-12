@@ -1,29 +1,37 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-3 col-md-offset-4 col-sm-8 col-sm-offset-2">
+  <div class="panel panel-info" >
+    <div class="panel-heading">
+      <div class="panel-title">修改密码</div>
+    </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+    <div style="padding-top:30px" class="panel-body" >
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+      <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "loginform", class: "form-horizontal", role: "form" }) do |f| %>
+        <%= devise_error_messages! %>
+        <div style="margin-bottom: 25px" class="input-group">
+          <span class="input-group-addon">原密码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "请输入原密码" %>
+        </div>
+        <div style="margin-bottom: 25px" class="input-group">
+          <span class="input-group-addon">新密码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "请输入新密码" %>
+        </div>
+        <div style="margin-bottom: 25px" class="input-group">
+          <span class="input-group-addon">确认新密码:</span>
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "请输入确认新密码" %>
+        </div>
+        <div style="margin-top:10px" class="form-group">
+          <!-- Button -->
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+          <div class="col-sm-12 controls">
+            <%= f.submit "更新", class: "btn btn-primary", "data-disable-with" => "正在更新..." %>
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+          </div>
+        </div>
+      <% end %>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %></div>
-
-  <div><%= f.submit "Update" %></div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+    </div>
+  </div>
+</div>
