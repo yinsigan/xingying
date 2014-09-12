@@ -16,7 +16,9 @@
                       记住我
                     </label>
                   <% end -%>
-                  <a href="#" class="pull-right need-help">忘记密码? </a><span class="clearfix"></span>
+                  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                    <%= link_to "忘记密码?", new_password_path(resource_name), class: "pull-right need-help" %><span class="clearfix"></span>
+                  <% end -%>
                 <% end %>
             </div>
         </div>
