@@ -45,3 +45,5 @@ gem 'autoprefixer-rails'
 gem "haml-rails"
 gem 'devise'
 gem 'rails-i18n'
+
+gem 'quiet_assets', group: [:development]

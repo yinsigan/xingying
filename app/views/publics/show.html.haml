@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @public.name
+%p
+  %b Password:
+  = @public.password
+%p
+  %b Type:
+  = @public.type
+
+= link_to 'Edit', edit_public_path(@public)
+\|
+= link_to 'Back', publics_path

@@ -1,0 +1,25 @@
+%h1 Listing publics
+
+%table
+  %tr
+    %th Name
+    %th Password
+    %th Type
+    %th
+    %th
+    %th
+
+  - @publics.each do |public|
+    %tr
+      %td= public.name
+      %td= public.password
+      %td= public.type
+      %td= link_to 'Show', public
+      %td= link_to 'Edit', edit_public_path(public)
+      %td= link_to 'Destroy', public, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Public', new_public_path
+
+

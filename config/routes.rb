@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+
+  resources :publics
   devise_for :users
-  get 'home/index'
-  root 'home#index'
+  root 'users#show'
+
+  resources :users do
+    resources :publics
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
