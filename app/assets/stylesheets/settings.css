@@ -1,7 +1,7 @@
 /*!
  * Yamm!3 - Yet another megamenu for Bootstrap 3
  * http://geedmo.github.com/yamm3
- * 
+ *
  * @geedmo - Licensed under the MIT license
  */
 .yamm .nav,
@@ -56,19 +56,15 @@ footer {
     background:#fff;
 }
 .nav-user .dropdown {
-    background:#fff;
-    border:1px solid #ccc;
     border-radius:4px;
-    width:300px;    
+    width:200px;
 }
-.nav-user .dropdown-menu>li>a {
-    color:#428bca;
-}
+
 .nav-user .dropdown ul.dropdown-menu {
     border-radius:4px;
     box-shadow:none;
     margin-top:20px;
-    width:300px;
+    width:250px;
 }
 .nav-user .dropdown ul.dropdown-menu:before {
     content: "";
