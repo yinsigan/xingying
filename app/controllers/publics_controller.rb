@@ -1,6 +1,5 @@
 class PublicsController < SettingsController
   before_action :set_public, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
 
   # GET /publics
   # GET /publics.json
