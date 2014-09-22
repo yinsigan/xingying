@@ -1,0 +1,15 @@
+- if flash.any?
+  #flash-messages
+    .container
+      - if flash[:info]
+        .alert.alert-info.alert-autocloseable-info
+          = flash[:info]
+      - if flash[:success]
+        .alert.alert-success.alert-autocloseable-success
+          = flash[:success]
+      - if flash[:warning]
+        .alert.alert-warning.alert-autocloseable-warning
+          = flash[:warning]
+      - if flash[:danger]
+        .alert.alert-danger.alert-autocloseable-danger
+          = flash[:danger]

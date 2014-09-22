@@ -86,3 +86,7 @@ footer {
     right: 14px;
     z-index: 9;
 }
+
+#flash-messages {
+  margin-top: 60px;
+}
