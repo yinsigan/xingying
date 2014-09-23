@@ -1,0 +1,10 @@
+- if object.errors.any?
+  .alert.alert-danger
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"}
+      ×
+    %span.glyphicon.glyphicon-hand-right
+      %strong
+        = I18n.t("errors.messages.not_saved", count: object.errors.count, resource: object.class.model_name.human.downcase)
+    %hr.message-inner-separator
+      %p
+        = object.errors.full_messages.map { |msg| content_tag(:li, msg) }.join.html_safe
