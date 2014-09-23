@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :publics
   devise_for :users
-  root 'users#show'
+  root 'publics#index'
 
   resources :users do
     resources :publics

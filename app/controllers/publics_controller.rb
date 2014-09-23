@@ -4,7 +4,7 @@ class PublicsController < SettingsController
   # GET /publics
   # GET /publics.json
   def index
-    @publics = Public.all
+    @publics = current_user.publics
   end
 
   # GET /publics/1
@@ -14,7 +14,7 @@ class PublicsController < SettingsController
 
   # GET /publics/new
   def new
-    @public = Public.new
+    @public = current_user.publics.build
   end
 
   # GET /publics/1/edit
@@ -24,7 +24,7 @@ class PublicsController < SettingsController
   # POST /publics
   # POST /publics.json
   def create
-    @public = Public.new(public_params)
+    @public = current_user.publics.build(public_params)
 
     respond_to do |format|
       if @public.save
@@ -64,7 +64,7 @@ class PublicsController < SettingsController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_public
-      @public = Public.find(params[:id])
+      @public = current_user.publics.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
