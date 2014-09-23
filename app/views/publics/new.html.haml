@@ -3,3 +3,39 @@
 = render 'form'
 
 = link_to 'Back', publics_path
+
+.col-sm-12
+  %legend 公众账号绑定
+/ panel preview
+.col-sm-12
+  .alert.alert-info{role: "alert"}
+    请输入微信公众平台的账户密码，账户信息只作为平台连接使用。
+  .panel.panel-default
+    .panel-body.form-horizontal.payment-form
+      .form-group
+        %label.col-sm-3.control-label{:for => "concept"} Concept
+        .col-sm-9
+          %input#concept.form-control{:name => "concept", :type => "text"}
+      .form-group
+        %label.col-sm-3.control-label{:for => "description"} Description
+        .col-sm-9
+          %input#description.form-control{:name => "description", :type => "text"}
+      .form-group
+        %label.col-sm-3.control-label{:for => "amount"} Amount
+        .col-sm-9
+          %input#amount.form-control{:name => "amount", :type => "number"}
+      .form-group
+        %label.col-sm-3.control-label{:for => "status"} Status
+        .col-sm-9
+          %select#status.form-control{:name => "status"}
+            %option Paid
+            %option Unpaid
+      .form-group
+        %label.col-sm-3.control-label{:for => "date"} Date
+        .col-sm-9
+          %input#date.form-control{:name => "date", :type => "date"}
+      .form-group
+        .col-sm-12.text-right
+          %button.btn.btn-default.preview-add-button{:type => "button"}
+            %span.glyphicon.glyphicon-plus
+            Add

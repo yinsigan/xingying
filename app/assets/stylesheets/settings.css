@@ -92,6 +92,10 @@ footer {
   margin-top: 60px;
 }
 
+#center_content {
+  padding-left: 30px;
+}
+
 /*导航菜单*/
 
 .sidebar {
@@ -128,4 +132,3 @@ footer {
   color: #fff;
   background-color: #428bca;
 }
-
