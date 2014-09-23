@@ -14,7 +14,7 @@ class PublicsController < SettingsController
 
   # GET /publics/new
   def new
-    add_breadcrumb "公众账号绑定", :new_public_path
+    add_breadcrumb I18n.t("breadcrumbs.public.new"), :new_public_path
     @public = current_user.publics.build
   end
 

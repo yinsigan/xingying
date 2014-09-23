@@ -14,6 +14,9 @@ zh-CN:
       user: "用户"
       public: "公众号"
 
+  breadcrumbs:
+    public:
+      new: "公众账号绑定"
   publics:
     new:
       notice: "请输入微信公众平台的账户密码，账户信息只作为平台连接使用。"
