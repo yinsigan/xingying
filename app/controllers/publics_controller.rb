@@ -69,6 +69,6 @@ class PublicsController < SettingsController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def public_params
-      params.require(:public).permit(:name, :password, :type)
+      params.require(:public).permit(:name, :password, :tp)
     end
 end
