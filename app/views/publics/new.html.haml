@@ -1,41 +1,28 @@
-%h1 New public
-
-= render 'form'
-
-= link_to 'Back', publics_path
-
-.col-sm-12
-  %legend 公众账号绑定
+%legend 公众账号绑定
 / panel preview
-.col-sm-12
-  .alert.alert-info{role: "alert"}
-    = t('create_public_message')
-  .panel.panel-default
-    .panel-body.form-horizontal.payment-form
+.alert.alert-info{role: "alert"}
+  = t('.notice')
+.panel.panel-default
+  .panel-body.form-horizontal.payment-form
+    = form_for @public do |f|
+      - if @public.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@public.errors.count, "error")} prohibited this public from being saved:"
+          %ul
+            - @public.errors.full_messages.each do |msg|
+              %li= msg
       .form-group
-        %label.col-sm-3.control-label{:for => "concept"} Concept
+        = f.label :name, class: "col-sm-3 control-label"
         .col-sm-9
-          %input#concept.form-control{:name => "concept", :type => "text"}
+          = f.text_field :name, class: "form-control"
       .form-group
-        %label.col-sm-3.control-label{:for => "description"} Description
+        = f.label :password, class: "col-sm-3 control-label"
         .col-sm-9
-          %input#description.form-control{:name => "description", :type => "text"}
+          = f.password_field :password, class: "form-control"
       .form-group
-        %label.col-sm-3.control-label{:for => "amount"} Amount
+        = f.label :tp, class: "col-sm-3 control-label"
         .col-sm-9
-          %input#amount.form-control{:name => "amount", :type => "number"}
+          = f.number_field :tp, class: "form-control"
       .form-group
-        %label.col-sm-3.control-label{:for => "status"} Status
-        .col-sm-9
-          %select#status.form-control{:name => "status"}
-            %option Paid
-            %option Unpaid
-      .form-group
-        %label.col-sm-3.control-label{:for => "date"} Date
-        .col-sm-9
-          %input#date.form-control{:name => "date", :type => "date"}
-      .form-group
-        .col-sm-12.text-right
-          %button.btn.btn-default.preview-add-button{:type => "button"}
-            %span.glyphicon.glyphicon-plus
-            Add
+        .col-sm-offset-3.col-sm-9
+          = f.submit "#{t('.submit')}", class: "btn btn-success"

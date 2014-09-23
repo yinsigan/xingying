@@ -1,5 +1,4 @@
 zh-CN:
-  create_public_message: "请输入微信公众平台的账户密码，账户信息只作为平台连接使用。"
   activerecord:
     attributes:
       user:
@@ -10,6 +9,12 @@ zh-CN:
       public:
         name: "微信公众平台用户名"
         password: "微信公众平台密码"
+        tp: "公众号类型"
     models:
       user: "用户"
       public: "公众号"
+
+  publics:
+    new:
+      notice: "请输入微信公众平台的账户密码，账户信息只作为平台连接使用。"
+      submit: "立即绑定升级"
