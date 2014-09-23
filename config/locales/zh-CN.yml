@@ -6,5 +6,9 @@ zh-CN:
         password: "密码"
         password_confirmation: "确认密码"
         current_password: "原密码"
+      public:
+        name: "微信公众平台用户名"
+        password: "微信公众平台密码"
     models:
       user: "用户"
+      public: "公众号"
