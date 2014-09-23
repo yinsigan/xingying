@@ -47,3 +47,4 @@ gem 'devise'
 gem 'rails-i18n'
 
 gem 'quiet_assets', group: [:development]
+gem "breadcrumbs_on_rails"

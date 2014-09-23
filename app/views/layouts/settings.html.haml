@@ -14,11 +14,6 @@
         .row
           = render 'layouts/sidebar_left'
           .col-md-10#center_content
-            %ol.breadcrumb
-              %li
-                %a{:href => "#"} Home
-              %li
-                %a{:href => "#"} Library
-              %li.active Data
+            = render_breadcrumbs
             = yield
     = render 'layouts/footer'
