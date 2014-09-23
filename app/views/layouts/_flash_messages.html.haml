@@ -1,9 +1,9 @@
 - if flash.any?
   #flash-messages
     .container
-      - if flash[:info]
+      - if flash[:notice]
         .alert.alert-info.alert-autocloseable-info
-          = flash[:info]
+          = flash[:notice]
       - if flash[:success]
         .alert.alert-success.alert-autocloseable-success
           = flash[:success]
