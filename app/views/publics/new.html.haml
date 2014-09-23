@@ -6,11 +6,15 @@
   .panel-body.form-horizontal.payment-form
     = form_for @public do |f|
       - if @public.errors.any?
-        #error_explanation
-          %h2= "#{pluralize(@public.errors.count, "error")} prohibited this public from being saved:"
-          %ul
-            - @public.errors.full_messages.each do |msg|
-              %li= msg
+        .alert.alert-danger
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"}
+            ×
+          %span.glyphicon.glyphicon-hand-right
+            %strong
+              = I18n.t("errors.messages.not_saved", count: @public.errors.count, resource: @public.class.model_name.human.downcase)
+          %hr.message-inner-separator
+            %p
+              = @public.errors.full_messages.map { |msg| content_tag(:li, msg) }.join.html_safe
       .form-group
         = f.label :name, class: "col-sm-3 control-label"
         .col-sm-9
