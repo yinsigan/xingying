@@ -197,3 +197,13 @@ footer {
   font-size: 26px;
   margin: -3px 0 0 12px;
 }
+
+/*图片预览*/
+.imagePreview{margin-top:10px;}
+.imagePreview img {margin:10px;}
+
+div.styled .imagePreview img {
+  padding:15px;
+  border:2px dashed #ccc;
+  border-radius:10px;
+}
