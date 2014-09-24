@@ -4,6 +4,7 @@
     %title 公众平台后台网站
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     = csrf_meta_tags
   %body
     = render 'layouts/topbar'
@@ -13,7 +14,7 @@
           = render 'layouts/flash_messages'
         .row
           = render 'layouts/sidebar_left'
-          .col-md-10#center_content
+          #center_content.col-md-10.col-xs-12.col-sm-9
             = render_breadcrumbs
             = yield
     = render 'layouts/footer'
