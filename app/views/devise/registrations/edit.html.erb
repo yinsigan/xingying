@@ -10,19 +10,28 @@
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "loginform", class: "form-horizontal", role: "form" }) do |f| %>
         <%= devise_error_messages! %>
-        <div style="margin-bottom: 25px" class="input-group">
-          <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "请输入原密码" %>
+        <div class="form-group">
+          <%= f.label :current_password, class: "control-label col-sm-3" %>
+          <div class="col-sm-6">
+            <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "请输入原密码", required: true %>
+          </div>
         </div>
-        <div style="margin-bottom: 25px" class="input-group">
-          <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "请输入新密码", required: true %>
+        <div class="form-group">
+          <%= f.label :password, class: "control-label col-sm-3" %>
+          <div class="col-sm-6">
+            <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "请输入新密码", required: true %>
+          </div>
         </div>
-        <div style="margin-bottom: 25px" class="input-group">
-          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "请输入确认新密码", required: true %>
+        <div class="form-group">
+          <%= f.label :password_confirmation, class: "control-label col-sm-3" %>
+          <div class="col-sm-6">
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "请输入确认新密码", required: true %>
+          </div>
         </div>
-        <div style="margin-top:10px" class="form-group">
+        <div class="form-group">
           <!-- Button -->
 
-          <div class="col-sm-12 controls">
+          <div class="col-sm-offset-3 col-sm-6">
             <%= f.submit "更新", class: "btn btn-primary", "data-disable-with" => "正在更新..." %>
 
           </div>
