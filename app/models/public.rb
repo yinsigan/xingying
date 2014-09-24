@@ -4,4 +4,5 @@ class Public < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   validates :password, presence: true
   TP={1 => "订阅号", 2 => "服务号"}
+  mount_uploader :image, AvatarUploader
 end

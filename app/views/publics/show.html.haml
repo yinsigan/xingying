@@ -7,6 +7,9 @@
 %p
   %b Type:
   = @public.tp
+%p
+  %b
+  = image_tag @public.image_url.to_s
 
 = link_to 'Edit', edit_public_path(@public)
 \|

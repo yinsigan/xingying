@@ -13,39 +13,8 @@
       %ul.nav.navbar-nav
         / Thumbnails demo
         %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-            公众平台
-            %b.caret
-          %ul.dropdown-menu
-            %li
-              .yamm-content
-                .row
-                  .col-sm-4
-                    .thumbnail
-                      %img{:alt => "260x130", :src => "http://placekitten.com/260/130/"}
-                        .caption
-                          %h3 Thumb Label
-                          %p Mazagran doppio half and half aftertaste organic, rich doppio
-                          %p
-                            %a.btn.btn-primary{:href => "#"} Action
-                            %a.btn.btn-default{:href => "#"} Action
-                  .col-sm-4
-                    .thumbnail
-                      %img{:alt => "260x130", :src => "http://placekitten.com/260/130/"}
-                        .caption
-                          %h3 Thumb Label
-                          %p Black latte cinnamon, cultivar trifecta crema cappuccino
-                          %p
-                            %a.btn.btn-primary{:href => "#"} Action
-                            %a.btn.btn-default{:href => "#"} Action
-                  .col-sm-4
-                    .thumbnail
-                      %img{:alt => "260x130", :src => "http://placekitten.com/260/130/"}
-                        .caption
-                          %h3 Thumb Label
-                          %p Bar roast et, as latte café au lait, mocha aromatic robusta
-                          %p
-                            %a.btn.btn-primary{:href => "#"} Action
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#{publics_path}"}
+            公众号管理
       %ul.nav.navbar-nav.navbar-right.nav-user
         %li.dropdown
           %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}

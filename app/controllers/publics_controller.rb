@@ -4,16 +4,20 @@ class PublicsController < SettingsController
   # GET /publics
   # GET /publics.json
   def index
+    add_breadcrumb I18n.t("breadcrumbs.public.index"), :publics_path
     @publics = current_user.publics
   end
 
   # GET /publics/1
   # GET /publics/1.json
   def show
+    add_breadcrumb I18n.t("breadcrumbs.public.index"), :publics_path
+    add_breadcrumb I18n.t("breadcrumbs.public.show"), :public_path
   end
 
   # GET /publics/new
   def new
+    add_breadcrumb I18n.t("breadcrumbs.public.index"), :publics_path
     add_breadcrumb I18n.t("breadcrumbs.public.new"), :new_public_path
     @public = current_user.publics.build
   end
@@ -70,6 +74,6 @@ class PublicsController < SettingsController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def public_params
-      params.require(:public).permit(:name, :password, :tp)
+      params.require(:public).permit(:name, :password, :tp, :image)
     end
 end
