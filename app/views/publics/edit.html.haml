@@ -1,7 +1,20 @@
-%h1 Editing public
-
-= render 'form'
-
-= link_to 'Show', @public
-\|
-= link_to 'Back', publics_path
+.page-header
+  %h3 修改公众号信息
+/ panel preview
+.panel.panel-default
+  .panel-body.form-horizontal.payment-form
+    = form_for @public do |f|
+      = render partial: "shared/form_error_messages", locals: {object: @public}
+      .form-group
+        = f.label :tp, class: "col-sm-3 col-xs-3 control-label"
+        .col-sm-9.col-xs-9
+          = f.select :tp, options_for_select(Public::TP.invert), {include_blank: "请选择公众号类型"}, {:class => "form-control"}
+      .form-group
+        = f.label :image, class: "col-sm-3 col-xs-3 control-label"
+        .col-sm-9.col-xs-9.styled
+          .imagePreview
+          = f.file_field :image, class: "form-control", onchange: "previewImage(this, [256], 4);"
+          = f.hidden_field :image_cache
+      .form-group
+        .col-sm-offset-3.col-sm-9
+          = f.submit "#{t('.submit')}", class: "btn btn-primary", "data-disable-with" => "正在保存..."

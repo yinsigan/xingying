@@ -24,3 +24,5 @@ zh-CN:
     new:
       notice: "请输入微信公众平台的账户密码，账户信息只作为平台连接使用。"
       submit: "立即绑定升级"
+    edit:
+      submit: "保存"
