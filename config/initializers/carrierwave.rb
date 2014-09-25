@@ -1,8 +1,10 @@
 CarrierWave.configure do |config|
-  config.fog_credentials = {
-    :provider               => 'AWS',
-    :aws_access_key_id      => ENV['s3_access_key_id'],
-    :aws_secret_access_key  => ENV['s3_secret_access_key']
-  }
-  config.fog_directory  = "xingying"
+  config.storage             = :qiniu
+  config.qiniu_access_key    = ENV["qiniu_access_key"]
+  config.qiniu_secret_key    = ENV["qiniu_secret_key"]
+  config.qiniu_bucket        = "xingying"
+  config.qiniu_bucket_domain = "xingying.qiniudn.com"
+  config.qiniu_bucket_private= false #default is false
+  config.qiniu_block_size    = 4*1024*1024
+  config.qiniu_protocol      = "http"
 end
