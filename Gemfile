@@ -50,3 +50,4 @@ gem 'quiet_assets', group: [:development]
 gem "breadcrumbs_on_rails"
 gem 'carrierwave'
 gem 'carrierwave-qiniu'
+gem 'mini_magick'

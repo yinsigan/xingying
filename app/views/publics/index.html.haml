@@ -13,7 +13,7 @@
 
     - @publics.each do |public|
       %tr
-        %td= image_tag public.image_url.to_s
+        %td= image_tag public.image_url(:thumb).to_s
         %td= public.created_at.to_date
         %td= Public::TP[public.tp]
         %td
