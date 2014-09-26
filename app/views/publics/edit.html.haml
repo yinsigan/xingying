@@ -8,7 +8,7 @@
       .form-group
         = f.label :tp, class: "col-sm-3 col-xs-3 control-label"
         .col-sm-9.col-xs-9
-          = f.select :tp, options_for_select(Public::TP.invert), {include_blank: "请选择公众号类型"}, {:class => "form-control"}
+          = f.select :tp, options_for_select(Public::TP.invert, @public.tp), {include_blank: "请选择公众号类型"}, {:class => "form-control"}
       .form-group
         = f.label :image, class: "col-sm-3 col-xs-3 control-label"
         .col-sm-9.col-xs-9.styled
