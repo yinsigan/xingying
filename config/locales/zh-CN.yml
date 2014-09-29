@@ -1,4 +1,7 @@
 zh-CN:
+  errors:
+    messages:
+      mini_magick_processing_error: "有可能是提交的图片格式不对，支持的图片格式为jpg，jpeg，gif，png"
   activerecord:
     attributes:
       user:
