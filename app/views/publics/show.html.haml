@@ -1,16 +1,46 @@
-%p
-  %b Name:
-  = @public.name
-%p
-  %b Password:
-  = @public.password
-%p
-  %b Type:
-  = @public.tp
-%p
-  %b
-  = image_tag @public.image_url(:thumb).to_s
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title
+      基本信息
+  .panel-body
+    .row
+      .col-md-12.col-lg-12
+        %table.table.table-user-information
+          %tbody
+            %tr
+              %td 公众账号名:
+              %td= @public.name
+            %tr
+              %td 创建时间:
+              %td= @public.created_at
+            %tr
+              %td 公众账号类型:
+              %td= Public::TP[@public.tp]
+  .panel-footer.clearfix
+    %span.pull-right
+      %a.btn.btn-sm.btn-info{"title" => "编辑", "data-toggle" => "tooltip", :href => "#{edit_public_path(@public)}", :type => "button", "data-placement" => "top", "data-tooltip" => true}
+        %i.glyphicon.glyphicon-edit
+      %a.btn.btn-sm.btn-danger{"title" => "删除", "data-toggle" => "tooltip", :type => "button", "data-confirm" => "你真确定删除此公众账号吗?", :href => "#{public_path(@public)}", "data-method" => "delete", "data-placement" => "top", "data-tooltip" => true}
+        %i.glyphicon.glyphicon-remove
 
-= link_to 'Edit', edit_public_path(@public)
-\|
-= link_to 'Back', publics_path
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title
+      开发者中心
+
+  .panel-body
+    .row
+      .col-md-12.col-lg-12
+        .bs-callout.bs-callout-info
+          %h4= t('.weixin_dev_title')
+          %p= t('.weixin_dev_des')
+          %p
+            %button{:class => "btn btn-info btn-sm", :id => "display-dev-info"}
+              = t('.weixin_dev_btn')
+          .alert.alert-info{:style => "display: none;"}
+            %p
+              %strong URL:
+              = weixin_server_url(@public.weixin_secret_key)
+            %p
+              %strong Token:
+              = @public.weixin_token

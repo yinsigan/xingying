@@ -1,30 +1,41 @@
-.panel.panel-default
-  .panel-heading 公众号列表
-  .panel-body
-    %a{href: "#{new_public_path}", class: "btn btn-success"}
-      %span.glyphicon.glyphicon-plus
-      添加公众账号
-  %table.table.table-bordered
-    %tr
-      %th 公众号名称
-      %th 创建时间
-      %th 公众号类型
-      %th{colspan: 3} 操作
+- if @publics.empty?
 
-    - @publics.each do |public|
+  %a{href: "#{new_public_path}", class: "btn btn-success"}
+    %span.glyphicon.glyphicon-plus
+    添加公众账号
+  .bs-callout.bs-callout-info
+    %h4 暂无公众账号
+- else
+  .panel.panel-default
+    .panel-heading 公众账号列表
+    .panel-body
+      %a{href: "#{new_public_path}", class: "btn btn-success"}
+        %span.glyphicon.glyphicon-plus
+        添加公众账号
+    %table.table.table-bordered#publics
       %tr
-        %td
-          %a{href: "#{public_path(public)}"}
-            = image_tag public.image_url(:thumb).to_s
-        %td= public.created_at.to_date
-        %td= Public::TP[public.tp]
-        %td
-          %a{href: "#{edit_public_path(public)}", class: "btn btn-info btn-xs"}
-            %span.glyphicon.glyphicon-edit
-            编辑
-          %a{href: "#{public_path(public)}", "data-method" => "delete", data: { :confirm => "Are you sure?"}, class: "btn btn-danger btn-xs" }
-            %span.glyphicon.glyphicon-remove
-            删除
-          %a{href: "#{public_path(public)}", class: "btn btn-default btn-xs"}
-            %span.glyphicon.glyphicon-cog
-            管理
+        %th 公众账号名称
+        %th 创建时间
+        %th 公众号类型
+        %th{colspan: 3} 操作
+
+      - @publics.each do |public|
+        %tr
+          %td
+            .thumbnail
+              %a{href: "#{public_path(public)}"}
+                = image_tag public.image_url(:thumb).to_s
+            .text-center.text-info
+              = public.name
+          %td= public.created_at.to_date
+          %td= Public::TP[public.tp]
+          %td
+            %a{href: "#{edit_public_path(public)}", class: "btn btn-info btn-xs"}
+              %span.glyphicon.glyphicon-edit
+              编辑
+            %a{href: "#{public_path(public)}", "data-method" => "delete", data: { :confirm => "您确定要删除此公众账号吗?"}, class: "btn btn-danger btn-xs" }
+              %span.glyphicon.glyphicon-remove
+              删除
+            %a{href: "#{public_path(public)}", class: "btn btn-default btn-xs"}
+              %span.glyphicon.glyphicon-cog
+              管理

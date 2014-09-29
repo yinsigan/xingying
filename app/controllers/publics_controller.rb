@@ -24,6 +24,7 @@ class PublicsController < SettingsController
 
   # GET /publics/1/edit
   def edit
+    add_breadcrumb I18n.t("breadcrumbs.public.index"), :publics_path
   end
 
   # POST /publics

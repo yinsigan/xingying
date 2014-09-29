@@ -7,9 +7,8 @@ zh-CN:
         password_confirmation: "确认密码"
         current_password: "原密码"
       public:
-        name: "微信公众平台用户名"
-        password: "微信公众平台密码"
-        tp: "公众号类型"
+        name: "微信公众账号名称"
+        tp: "公众账号类型"
         image: "微信公众二维码"
     models:
       user: "用户"
@@ -17,12 +16,16 @@ zh-CN:
 
   breadcrumbs:
     public:
-      new: "公众账号绑定"
-      index: "公众号管理"
+      new: "添加公众账号"
+      index: "公众账号管理"
       show: "控制面板"
   publics:
     new:
       notice: "请输入微信公众平台的账户密码，账户信息只作为平台连接使用。"
-      submit: "立即绑定升级"
+      submit: "提交"
     edit:
       submit: "保存"
+    show:
+      weixin_dev_title: "微信接口"
+      weixin_dev_des: "URL和Token信息用于与微信公众平台接口相连，您可以复制此处的URL和Token信息到微信公众号中，就可以让微信公众账号使用开发者功能。URL和Token信息关系到您的账号资料安全，请您保管好您的URL和Token信息。"
+      weixin_dev_btn: "查看URL和Token信息"

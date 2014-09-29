@@ -11,19 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924034020) do
+ActiveRecord::Schema.define(version: 20140929022338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "publics", force: true do |t|
     t.string   "name"
-    t.string   "password"
     t.integer  "tp"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "image"
+    t.string   "weixin_secret_key"
+    t.string   "weixin_token"
   end
 
   add_index "publics", ["user_id"], name: "index_publics_on_user_id", using: :btree

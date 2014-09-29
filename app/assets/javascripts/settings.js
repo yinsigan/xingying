@@ -3,7 +3,7 @@ $(document).on('click', '.yamm .dropdown-menu', function(e) {
   e.stopPropagation()
 })
 
-$(document).ready(function() {
+$(document).on("page:change", function() {
 
   //让flash在5秒内自动消失
   var flash = ['info', 'success', 'danger', 'warning'];
@@ -20,6 +20,10 @@ $(document).ready(function() {
     title: '必填项'
   });
 
+  //弹出冒泡型警告框
+  $("button[data-popover], a[data-popover]").popover('hide');
+
+  //弹出黑色提示框
+  $('button[data-tooltip], a[data-tooltip]').tooltip();
+
 });
-
-
