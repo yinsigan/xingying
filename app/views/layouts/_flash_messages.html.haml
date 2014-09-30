@@ -1,6 +1,6 @@
 - if flash.any?
-  #flash-messages
-    .container
+  .row
+    #flash-messages
       - if flash[:notice]
         .alert.alert-info.alert-autocloseable-info
           = flash[:notice]

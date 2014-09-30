@@ -10,12 +10,11 @@
     = render 'layouts/topbar'
     #content
       .container
-        .row
-          = render 'layouts/flash_messages'
+        = render 'layouts/flash_messages'
         .row
           = render 'layouts/sidebar_left'
           .clearfix.visible-xs-block
-          #center_content.col-md-10.col-xs-12.col-sm-9
+          #center_content.col-md-10
             = render_breadcrumbs
             = yield
     = render 'layouts/footer'
