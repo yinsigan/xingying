@@ -26,4 +26,10 @@ $(document).on("page:change", function() {
   //弹出黑色提示框
   $('button[data-tooltip], a[data-tooltip]').tooltip();
 
+  NProgress.configure({ showSpinner: false });
+
 });
+
+$(document).on('page:fetch',   function() { NProgress.start(); });
+$(document).on('page:change',  function() { NProgress.done(); });
+$(document).on('page:restore', function() { NProgress.remove(); });
