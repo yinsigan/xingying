@@ -1,7 +1,7 @@
 <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2">
   <div class="panel panel-info" >
     <div class="panel-heading">
-      <div class="panel-title">修改密码</div>
+      <div class="panel-title"><%= t('change_password') %></div>
     </div>
 
     <div style="padding-top:30px" class="panel-body" >
@@ -32,7 +32,7 @@
           <!-- Button -->
 
           <div class="col-sm-offset-3 col-sm-6">
-            <%= f.submit "更新", class: "btn btn-primary", "data-disable-with" => "正在更新..." %>
+            <%= f.submit "#{t('save')}", class: "btn btn-primary", "data-disable-with" => "#{t('disable-with-save')}" %>
 
           </div>
         </div>

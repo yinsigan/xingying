@@ -18,9 +18,9 @@
               %td= Public::TP[@public.tp]
   .panel-footer.clearfix
     %span.pull-right
-      %a.btn.btn-sm.btn-info{"title" => "编辑", "data-toggle" => "tooltip", :href => "#{edit_public_path(@public)}", :type => "button", "data-placement" => "top", "data-tooltip" => true}
+      %a.btn.btn-sm.btn-info{"title" => "#{t('edit')}", "data-toggle" => "tooltip", :href => "#{edit_public_path(@public)}", :type => "button", "data-placement" => "top", "data-tooltip" => true}
         %i.glyphicon.glyphicon-edit
-      %a.btn.btn-sm.btn-danger{"title" => "删除", "data-toggle" => "tooltip", :type => "button", "data-confirm" => "你真确定删除此公众账号吗?", :href => "#{public_path(@public)}", "data-method" => "delete", "data-placement" => "top", "data-tooltip" => true}
+      %a.btn.btn-sm.btn-danger{"title" => "#{t('delete')}", "data-toggle" => "tooltip", :type => "button", "data-confirm" => "你真确定删除此公众账号吗?", :href => "#{public_path(@public)}", "data-method" => "delete", "data-placement" => "top", "data-tooltip" => true}
         %i.glyphicon.glyphicon-remove
 
 .panel.panel-default
