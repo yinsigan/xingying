@@ -1,3 +1,19 @@
-.col-sm-4
-  .thumbnail
-    = image_tag public.image_url.to_s
+%tr
+  %td
+    .thumbnail
+      %a{href: "#{public_path(public)}"}
+        = image_tag public.image_url(:thumb).to_s
+    .text-center.text-info
+      = public.name
+  %td= public.created_at.to_date
+  %td= Public::TP[public.tp]
+  %td
+    %a{href: "#{edit_public_path(public)}", class: "btn btn-info btn-xs"}
+      %span.glyphicon.glyphicon-edit
+      = t('edit')
+    %a{href: "#{public_path(public)}", "data-method" => "delete", data: { :confirm => "您确定要删除此公众账号吗?"}, class: "btn btn-danger btn-xs" }
+      %span.glyphicon.glyphicon-remove
+      = t('delete')
+    %a{href: "#{public_path(public)}", class: "btn btn-default btn-xs"}
+      %span.glyphicon.glyphicon-cog
+      = t('manage')

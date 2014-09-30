@@ -1,17 +1,17 @@
 - if @publics.empty?
 
-  %a{href: "#{new_public_path}", class: "btn btn-success"}
+  %a{href: "#{new_public_path}", class: "btn btn-success pull-right"}
     %span.glyphicon.glyphicon-plus
-    添加公众账号
+    = t('.add_public')
   .bs-callout.bs-callout-info
     %h4 暂无公众账号
 - else
   .panel.panel-default
-    .panel-heading 公众账号列表
+    .panel-heading= t('.list')
     .panel-body
-      %a{href: "#{new_public_path}", class: "btn btn-success"}
+      %a{href: "#{new_public_path}", class: "btn btn-success pull-right"}
         %span.glyphicon.glyphicon-plus
-        添加公众账号
+        = t('.add_public')
     %table.table.table-bordered#publics
       %tr
         %th 公众账号名称
@@ -19,23 +19,4 @@
         %th 公众号类型
         %th{colspan: 3} 操作
 
-      - @publics.each do |public|
-        %tr
-          %td
-            .thumbnail
-              %a{href: "#{public_path(public)}"}
-                = image_tag public.image_url(:thumb).to_s
-            .text-center.text-info
-              = public.name
-          %td= public.created_at.to_date
-          %td= Public::TP[public.tp]
-          %td
-            %a{href: "#{edit_public_path(public)}", class: "btn btn-info btn-xs"}
-              %span.glyphicon.glyphicon-edit
-              = t('edit')
-            %a{href: "#{public_path(public)}", "data-method" => "delete", data: { :confirm => "您确定要删除此公众账号吗?"}, class: "btn btn-danger btn-xs" }
-              %span.glyphicon.glyphicon-remove
-              = t('delete')
-            %a{href: "#{public_path(public)}", class: "btn btn-default btn-xs"}
-              %span.glyphicon.glyphicon-cog
-              = t('manage')
+      = render @publics
