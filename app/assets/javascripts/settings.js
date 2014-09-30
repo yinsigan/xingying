@@ -20,6 +20,12 @@ $(document).on("page:change", function() {
     title: '必填项'
   });
 
+  $('#sidebar').affix({
+    offset: {
+      top: 125
+    }
+  })
+
   //弹出冒泡型警告框
   $("button[data-popover], a[data-popover]").popover('hide');
 
