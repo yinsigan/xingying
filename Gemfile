@@ -51,3 +51,4 @@ gem "breadcrumbs_on_rails"
 gem 'carrierwave'
 gem 'carrierwave-qiniu'
 gem 'mini_magick'
+gem 'font-awesome-sass', '~> 4.1.0'
