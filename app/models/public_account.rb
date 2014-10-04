@@ -1,15 +1,15 @@
 # encoding: utf-8
 # https://github.com/rubysl/rubysl-securerandom/blob/2.0/lib/rubysl/securerandom/securerandom.rb
-class Public < ActiveRecord::Base
+class PublicAccount < ActiveRecord::Base
   belongs_to :user
   validates :name, :tp, :image, presence: true
   TP={1 => "订阅号", 2 => "服务号"}
   mount_uploader :image, AvatarUploader
 
-  before_create :generate_weixin_key
+  before_create :generate_key
 
   private
-    def generate_weixin_key
+    def generate_key
       self.weixin_secret_key = SecureRandom.urlsafe_base64(32).downcase
       self.weixin_token = SecureRandom.hex(12)
     end

@@ -1,23 +1,23 @@
-- if @publics.empty?
+- if @public_accounts.empty?
 
   %div.clearfix
-    %a{href: "#{new_public_path}", class: "btn btn-success pull-right"}
+    %a{href: "#{new_public_account_path}", class: "btn btn-success pull-right"}
       %span.glyphicon.glyphicon-plus
-      = t('.add_public')
+      = t('.add')
   .bs-callout.bs-callout-info
     %h4 暂无公众账号
 - else
   .panel.panel-default
     .panel-heading= t('.list')
     .panel-body
-      %a{href: "#{new_public_path}", class: "btn btn-success pull-right"}
+      %a{href: "#{new_public_account_path}", class: "btn btn-success pull-right"}
         %span.glyphicon.glyphicon-plus
-        = t('.add_public')
-    %table.table.table-bordered#publics
+        = t('.add')
+    %table.table.table-bordered#public_accounts
       %tr
         %th.text-center 公众账号名称
         %th 创建时间
         %th 公众号类型
         %th{colspan: 3} 操作
 
-      = render @publics
+      = render @public_accounts

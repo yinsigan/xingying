@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140929022338) do
+ActiveRecord::Schema.define(version: 20140929013323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "publics", force: true do |t|
+  create_table "public_accounts", force: true do |t|
     t.string   "name"
     t.integer  "tp"
     t.datetime "created_at"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140929022338) do
     t.string   "weixin_token"
   end
 
-  add_index "publics", ["user_id"], name: "index_publics_on_user_id", using: :btree
+  add_index "public_accounts", ["user_id"], name: "index_public_accounts_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

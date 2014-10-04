@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :publics
+  resources :public_accounts
   devise_for :users
-  root 'publics#index'
+  root 'public_accounts#index'
 
   resources :users do
-    resources :publics
+    resources :public_accounts
   end
 
   get  'weixin/:weixin_secret_key', to: 'weixin#index', as: :weixin_server

@@ -1,0 +1,19 @@
+%tr
+  %td
+    .thumbnail
+      %a{href: "#{public_account_path(public_account)}"}
+        = image_tag public_account.image_url(:thumb).to_s, size: "150"
+    .text-center.text-info
+      = public_account.name
+  %td= public_account.created_at.to_date
+  %td= PublicAccount::TP[public_account.tp]
+  %td
+    %a{href: "#{public_account_path(public_account)}", class: "btn btn-default btn-xs"}
+      %span.glyphicon.glyphicon-cog
+      = t('manage')
+    %a{href: "#{edit_public_account_path(public_account)}", class: "btn btn-info btn-xs"}
+      %span.glyphicon.glyphicon-edit
+      = t('edit')
+    %a{href: "#{public_account_path(public_account)}", "data-method" => "delete", data: { :confirm => "您确定要删除此公众账号吗?"}, class: "btn btn-danger btn-xs" }
+      %span.glyphicon.glyphicon-remove
+      = t('delete')

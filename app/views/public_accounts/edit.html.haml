@@ -3,8 +3,8 @@
     %h3.panel-title
       = t('.title')
   .panel-body.form-horizontal.payment-form
-    = form_for @public do |f|
-      = render partial: "shared/form_error_messages", locals: {object: @public}
+    = form_for @public_account do |f|
+      = render partial: "shared/form_error_messages", locals: {object: @public_account}
       .form-group
         = f.label :name, class: "col-sm-3 col-xs-3 control-label"
         .col-sm-9.col-xs-9
@@ -12,7 +12,7 @@
       .form-group
         = f.label :tp, class: "col-sm-3 col-xs-3 control-label"
         .col-sm-9.col-xs-9
-          = f.select :tp, options_for_select(Public::TP.invert, @public.tp), {include_blank: "#{t('please_select')}"}, {:class => "form-control"}
+          = f.select :tp, options_for_select(PublicAccount::TP.invert, @public_account.tp), {include_blank: "#{t('please_select')}"}, {:class => "form-control"}
       .form-group
         = f.label :image, class: "col-sm-3 col-xs-3 control-label"
         .col-sm-9.col-xs-9.styled

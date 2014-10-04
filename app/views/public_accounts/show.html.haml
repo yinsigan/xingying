@@ -6,24 +6,24 @@
     .row
       .col-md-3.col-lg-3
         %a.thumbnail
-          = image_tag @public.image_url(:thumb).to_s
+          = image_tag @public_account.image_url(:thumb).to_s
       .col-md-9.col-lg-9
         %table.table.table-user-information
           %tbody
             %tr
               %td 公众账号名:
-              %td= @public.name
+              %td= @public_account.name
             %tr
               %td 创建时间:
-              %td= @public.created_at
+              %td= @public_account.created_at
             %tr
               %td 公众账号类型:
-              %td= Public::TP[@public.tp]
+              %td= PublicAccount::TP[@public_account.tp]
   .panel-footer.clearfix
     %span.pull-right
-      %a.btn.btn-sm.btn-info{"title" => "#{t('edit')}", "data-toggle" => "tooltip", :href => "#{edit_public_path(@public)}", :type => "button", "data-placement" => "top", "data-tooltip" => true}
+      %a.btn.btn-sm.btn-info{"title" => "#{t('edit')}", "data-toggle" => "tooltip", :href => "#{edit_public_account_path(@public_account)}", :type => "button", "data-placement" => "top", "data-tooltip" => true}
         %i.glyphicon.glyphicon-edit
-      %a.btn.btn-sm.btn-danger{"title" => "#{t('delete')}", "data-toggle" => "tooltip", :type => "button", "data-confirm" => "你真确定删除此公众账号吗?", :href => "#{public_path(@public)}", "data-method" => "delete", "data-placement" => "top", "data-tooltip" => true}
+      %a.btn.btn-sm.btn-danger{"title" => "#{t('delete')}", "data-toggle" => "tooltip", :type => "button", "data-confirm" => "你真确定删除此公众账号吗?", :href => "#{public_account_path(@public_account)}", "data-method" => "delete", "data-placement" => "top", "data-tooltip" => true}
         %i.glyphicon.glyphicon-remove
 
 .panel.panel-default
@@ -43,7 +43,7 @@
           .alert.alert-info{:style => "display: none;"}
             %p
               %strong URL:
-              = weixin_server_url(@public.weixin_secret_key)
+              = weixin_server_url(@public_account.weixin_secret_key)
             %p
               %strong Token:
-              = @public.weixin_token
+              = @public_account.weixin_token

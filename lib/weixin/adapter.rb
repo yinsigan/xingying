@@ -25,7 +25,7 @@ module Weixin
     end
 
     def current_weixin_public_account
-      Public.where(:weixin_secret_key => @weixin_secret_key).first
+      PublicAccount.where(:weixin_secret_key => @weixin_secret_key).first
     end
 
     def current_weixin_token
