@@ -2,7 +2,7 @@
   %td
     .thumbnail
       %a{href: "#{public_path(public)}"}
-        = image_tag public.image_url(:thumb).to_s
+        = image_tag public.image_url(:thumb).to_s, size: "150"
     .text-center.text-info
       = public.name
   %td= public.created_at.to_date

@@ -52,3 +52,7 @@ gem 'carrierwave', '~> 0.6.2'
 gem 'carrierwave-qiniu', '~> 0.1.3'
 gem 'mini_magick', '~> 3.4'
 gem 'font-awesome-sass', '~> 4.1.0'
+
+gem 'multi_xml', '~> 0.5.5'
+gem 'roxml', '~> 3.3.1'
+gem 'nokogiri', '~> 1.6.3.1'
