@@ -1,6 +1,6 @@
-class WeixinAdapter
+class Weixin::Adapter
   attr_accessor :signature, :timestamp, :nonce, :echostr
-  attr_accessor :weixin_secret_key  
+  attr_accessor :weixin_secret_key
 
   def initialize(params)
     @weixin_secret_key = params[:weixin_secret_key]

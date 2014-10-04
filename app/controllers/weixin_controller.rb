@@ -11,7 +11,7 @@ class WeixinController < ApplicationController
   protected
 
     def initialize_adapter
-      @weixin_adapter ||= WeixinAdapter.new(params)
+      @weixin_adapter ||= Weixin::Adapter.new(params)
     end
 
     def check_weixin_legality
