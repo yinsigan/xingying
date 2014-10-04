@@ -7,7 +7,7 @@ require 'ostruct'
 
 MultiXml.parser = :nokogiri
 
-class Weixin::Message
+class Message
   def initialize(hash)
     @source = OpenStruct.new(hash)
   end
