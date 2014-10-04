@@ -1,8 +1,9 @@
 - if @publics.empty?
 
-  %a{href: "#{new_public_path}", class: "btn btn-success pull-right"}
-    %span.glyphicon.glyphicon-plus
-    = t('.add_public')
+  %div.clearfix
+    %a{href: "#{new_public_path}", class: "btn btn-success pull-right"}
+      %span.glyphicon.glyphicon-plus
+      = t('.add_public')
   .bs-callout.bs-callout-info
     %h4 暂无公众账号
 - else
