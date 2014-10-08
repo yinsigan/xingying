@@ -2,6 +2,7 @@
   %h3= t('autoreply.title')
 .alert.alert-info{role: "alert"}
   = t('autoreply.notice')
+%p.bg-success
 %ul.nav.nav-tabs{role: "tablist"}
   %li{class: action_name == "added" ? "active" : nil}
     %a{href: "#{added_public_account_path}"}
