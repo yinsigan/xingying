@@ -34,9 +34,22 @@ class WeixinController < ApplicationController
                  @weixin_message.Recognition
     end
 
+    def response_event_message(options={})
+      event_type = @weixin_message.Event
+      send("handle_#{event_type.downcase}_event")
+    end
+
   private
 
     def response_text_message(options={})
       reply_text_message("Your Message: #{@keyword}")
     end
+
+    def handle_subscribe_event
+      if @keyword.present?
+        return reply_text_message("扫描带参数二维码事件: 1. 用户未关注时，进行关注后的事件推送, keyword: #{@keyword}")
+      end
+      reply_text_message("关注公众账号")
+    end
+
 end
