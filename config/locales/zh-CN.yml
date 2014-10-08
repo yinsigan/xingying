@@ -15,6 +15,10 @@ zh-CN:
   edit: "编辑"
   delete: "删除"
   manage: "管理"
+  success_delete: "删除成功"
+  success_submit: "提交成功"
+  success_save: "保存成功"
+  base_info: "基本信息"
   errors:
     messages:
       mini_magick_processing_error: "有可能是提交的图片格式不对，支持的图片格式为jpg，jpeg，gif，png"
@@ -48,6 +52,10 @@ zh-CN:
       weixin_dev_title: "微信接口"
       weixin_dev_des: "URL和Token信息用于与微信公众平台接口相连，您可以复制此处的URL和Token信息到微信公众号中，就可以让微信公众账号使用开发者功能。URL和Token信息关系到您的账号资料安全，请您保管好您的URL和Token信息。"
       weixin_dev_btn: "查看URL和Token信息"
+      develop_center: "开发者中心"
+      delete_tip: "你真确定删除此公众账号吗?"
     index:
       add: "添加公众账号"
       list: "公众账号列表"
+      no_public_account: "暂无公众账号"
+      delete_tip: "你真确定删除此公众账号吗?"

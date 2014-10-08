@@ -1,7 +1,6 @@
 .panel.panel-default
   .panel-heading
-    %h3.panel-title
-      基本信息
+    %h3.panel-title= t('base_info')
   .panel-body
     .row
       .col-md-3.col-lg-3
@@ -23,13 +22,12 @@
     %span.pull-right
       %a.btn.btn-sm.btn-info{"title" => "#{t('edit')}", "data-toggle" => "tooltip", :href => "#{edit_public_account_path(@public_account)}", :type => "button", "data-placement" => "top", "data-tooltip" => true}
         %i.glyphicon.glyphicon-edit
-      %a.btn.btn-sm.btn-danger{"title" => "#{t('delete')}", "data-toggle" => "tooltip", :type => "button", "data-confirm" => "你真确定删除此公众账号吗?", :href => "#{public_account_path(@public_account)}", "data-method" => "delete", "data-placement" => "top", "data-tooltip" => true}
+      %a.btn.btn-sm.btn-danger{"title" => "#{t('delete')}", "data-toggle" => "tooltip", :type => "button", "data-confirm" => t('.delete_tip') , :href => "#{public_account_path(@public_account)}", "data-method" => "delete", "data-placement" => "top", "data-tooltip" => true}
         %i.glyphicon.glyphicon-remove
 
 .panel.panel-default
   .panel-heading
-    %h3.panel-title
-      开发者中心
+    %h3.panel-title= t('.develop_center')
 
   .panel-body
     .row

@@ -31,7 +31,7 @@ class PublicAccountsController < SettingsController
 
     respond_to do |format|
       if @public_account.save
-        format.html { redirect_to @public_account, flash: {success: "提交成功"} }
+        format.html { redirect_to @public_account, flash: {success: I18n.t('success_submit')} }
         format.json { render :show, status: :created, location: @public_account }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class PublicAccountsController < SettingsController
   def update
     respond_to do |format|
       if @public_account.update(public_account_params)
-        format.html { redirect_to @public_account, flash: {success: "保存成功"}}
+        format.html { redirect_to @public_account, flash: {success: I18n.t('success_save')}}
         format.json { render :show, status: :ok, location: @public_account }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class PublicAccountsController < SettingsController
   def destroy
     @public_account.destroy
     respond_to do |format|
-      format.html { redirect_to public_accounts_url, flash: {success: "删除成功"} }
+      format.html { redirect_to public_accounts_url, flash: {success: I18n.t('success_delete')} }
       format.json { head :no_content }
     end
   end

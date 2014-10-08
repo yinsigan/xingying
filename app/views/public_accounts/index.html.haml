@@ -1,11 +1,11 @@
 - if @public_accounts.empty?
 
   %div.clearfix
-    %a{href: "#{new_public_account_path}", class: "btn btn-success pull-right"}
+    %a{href: "#{new_public_account_path}", class: "btn btn-info pull-right"}
       %span.glyphicon.glyphicon-plus
       = t('.add')
   .bs-callout.bs-callout-info
-    %h4 暂无公众账号
+    %h4= t('.no_public_account')
 - else
   .panel.panel-default
     .panel-heading= t('.list')
