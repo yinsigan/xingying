@@ -1,10 +1,10 @@
 .col-md-3
   .list-group
-    %a.list-group-item{:href => "#", :class => (controller_name == "public_accounts" && action_name == "show" ? "active" : nil)}
+    %a.list-group-item{:href => "#{public_account_path}", :class => (controller_name == "public_accounts" && action_name == "show" ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
       控制面板
-    %a.list-group-item{:href => "#"}
+    %a.list-group-item{:href => "#{autoreply_added_path}", :class => (controller_name == "autoreply" ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
       自动回复

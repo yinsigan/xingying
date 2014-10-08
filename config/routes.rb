@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get  'weixin/:weixin_secret_key', to: 'weixin#index', as: :weixin_server
   post 'weixin/:weixin_secret_key', to: 'weixin#reply', as: :weixin_reply
 
+  get 'autoreply/added', to: 'autoreply#added'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
