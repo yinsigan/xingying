@@ -2,7 +2,7 @@ class WeixinController < ApplicationController
   include Weixin::ReplyMessageHelper
   skip_before_action :verify_authenticity_token
   before_action :initialize_adapter, :check_weixin_legality, only: [:index, :reply]
-  before_action :set_weixin_message, :set_keyword, only: :reply
+  before_action :set_weixin_public_account, :set_weixin_message, :set_keyword, only: :reply
 
   def index
   end
@@ -22,6 +22,10 @@ class WeixinController < ApplicationController
       valid = check_result.delete(:valid)
       render check_result if action_name == "index"
       return valid
+    end
+
+    def set_weixin_public_account
+      @weixin_public_account ||= @weixin_adapter.current_weixin_public_account
     end
 
     def set_weixin_message
@@ -49,7 +53,7 @@ class WeixinController < ApplicationController
       if @keyword.present?
         return reply_text_message("扫描带参数二维码事件: 1. 用户未关注时，进行关注后的事件推送, keyword: #{@keyword}")
       end
-      reply_text_message("关注公众账号")
+      reply_text_message("#{@weixin_public_account.default_reply.presence}")
     end
 
 end

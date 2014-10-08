@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :public_accounts do
     member do
       get :added, to: 'autoreply#added'
+      patch :set_default_reply, to: 'autoreply#set_default_reply'
       get :default, to: 'autoreply#default'
       get :keyword, to: 'autoreply#keyword'
     end

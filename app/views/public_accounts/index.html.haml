@@ -1,7 +1,7 @@
 - if @public_accounts.empty?
 
   %div.clearfix
-    %a{href: "#{new_public_account_path}", class: "btn btn-info pull-right"}
+    %a{href: "#{new_public_account_path}", class: "btn btn-primary pull-right"}
       %span.glyphicon.glyphicon-plus
       = t('.add')
   .bs-callout.bs-callout-info
@@ -11,7 +11,7 @@
     %h3= t('.list')
   .panel.panel-default
     .panel-body
-      %a{href: "#{new_public_account_path}", class: "btn btn-info pull-right"}
+      %a{href: "#{new_public_account_path}", class: "btn btn-primary pull-right"}
         %span.glyphicon.glyphicon-plus
         = t('.add')
     %table.table.table-bordered#public_accounts
