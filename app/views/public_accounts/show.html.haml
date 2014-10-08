@@ -10,13 +10,13 @@
         %table.table.table-user-information
           %tbody
             %tr
-              %td 公众账号名:
+              %td= PublicAccount.human_attribute_name('name')
               %td= @public_account.name
             %tr
-              %td 创建时间:
+              %td= t('created_at')
               %td= @public_account.created_at
             %tr
-              %td 公众账号类型:
+              %td= PublicAccount.human_attribute_name('tp')
               %td= PublicAccount::TP[@public_account.tp]
   .panel-footer.clearfix
     %span.pull-right

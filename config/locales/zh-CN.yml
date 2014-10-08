@@ -19,6 +19,8 @@ zh-CN:
   success_submit: "提交成功"
   success_save: "保存成功"
   base_info: "基本信息"
+  created_at: "创建时间"
+  operation: "操作"
   errors:
     messages:
       mini_magick_processing_error: "有可能是提交的图片格式不对，支持的图片格式为jpg，jpeg，gif，png"
@@ -58,5 +60,11 @@ zh-CN:
     index:
       add: "添加公众账号"
       list: "公众账号列表"
-      no_public_account: "暂无公众账号"
+      no_content: "暂无公众账号"
       delete_tip: "你真确定删除此公众账号吗?"
+  autoreply:
+    title: "自动回复"
+    notice: "通过编辑内容或关键词规则，快速进行自动回复设置。"
+    added_title: "被添加自动回复"
+    default_title: "消息自动回复"
+    keyword_title: "关键词自动回复"

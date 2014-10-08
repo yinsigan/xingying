@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   resources :public_accounts do
     member do
-      get :added, to: 'autoreply#added', controller: :autoreply
+      get :added, to: 'autoreply#added'
+      get :default, to: 'autoreply#default'
+      get :keyword, to: 'autoreply#keyword'
     end
   end
   devise_for :users
