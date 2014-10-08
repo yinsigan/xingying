@@ -23,13 +23,13 @@ class PublicAccountsController < SettingsController
 
   # GET /publics/1/edit
   def edit
-    add_breadcrumb I18n.t("breadcrumbs.public_account.edit"), :new_public_account_path
+    add_breadcrumb I18n.t("breadcrumbs.public_account.edit"), :edit_public_account_path
   end
 
   # POST /publics
   # POST /publics.json
   def create
-    add_breadcrumb I18n.t("breadcrumbs.public_account.edit"), :new_public_account_path
+    add_breadcrumb I18n.t("breadcrumbs.public_account.edit"), :edit_public_account_path
     @public_account = current_user.public_accounts.build(public_account_params)
 
     respond_to do |format|
