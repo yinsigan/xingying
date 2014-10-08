@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :public_accounts
+  resources :public_accounts do
+    member do
+      get :added, to: 'autoreply#added', controller: :autoreply
+    end
+  end
   devise_for :users
   root 'public_accounts#index'
 
   get  'weixin/:weixin_secret_key', to: 'weixin#index', as: :weixin_server
   post 'weixin/:weixin_secret_key', to: 'weixin#reply', as: :weixin_reply
-
-  get 'autoreply/added', to: 'autoreply#added'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

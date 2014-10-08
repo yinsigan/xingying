@@ -1,4 +1,4 @@
-class AutoreplyController < ApplicationController
+class AutoreplyController < SettingsController
   def added
   end
 end
