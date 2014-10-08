@@ -1,6 +1,6 @@
 .col-md-3
   .list-group
-    %a.list-group-item.active{:href => "#"}
+    %a.list-group-item{:href => "#", :class => (controller_name == "public_accounts" && action_name == "show" ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
       控制面板
