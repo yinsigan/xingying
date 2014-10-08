@@ -4,10 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
   root 'public_accounts#index'
 
-  resources :users do
-    resources :public_accounts
-  end
-
   get  'weixin/:weixin_secret_key', to: 'weixin#index', as: :weixin_server
   post 'weixin/:weixin_secret_key', to: 'weixin#reply', as: :weixin_reply
 

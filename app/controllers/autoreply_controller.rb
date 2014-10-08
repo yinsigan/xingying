@@ -1,0 +1,2 @@
+class AutoreplyController < ApplicationController
+end
