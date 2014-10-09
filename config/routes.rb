@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'home/index'
+
   resources :public_accounts do
     member do
       get :added, to: 'autoreply#added'
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
     end
   end
   devise_for :users
-  root 'public_accounts#index'
+  root 'home#index'
 
   get  'weixin/:weixin_secret_key', to: 'weixin#index', as: :weixin_server
   post 'weixin/:weixin_secret_key', to: 'weixin#reply', as: :weixin_reply
