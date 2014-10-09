@@ -1,0 +1,19 @@
+default: &default
+  title: WebSite
+
+development:
+  <<: *default
+  admin_emails:
+    - 903279182@qq.com
+
+test:
+  <<: *default
+  admin_emails:
+    - 903279182@qq.com
+
+production:
+  <<: *default
+
+  admin_emails:
+    - 903279182@qq.com
+

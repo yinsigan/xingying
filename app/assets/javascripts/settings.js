@@ -1,8 +1,3 @@
-// yamm菜单项点击不自动冒泡
-$(document).on('click', '.yamm .dropdown-menu', function(e) {
-  e.stopPropagation()
-})
-
 $(document).on("page:change", function() {
 
   //让flash在5秒内自动消失
