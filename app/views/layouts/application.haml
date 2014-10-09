@@ -1,9 +1,16 @@
 !!!
 %html
   %head
-    %title Yingxing
+    %title 公众平台后台网站
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     = csrf_meta_tags
   %body
-    = yield
+    = render 'layouts/topbar'
+    #content
+      .container
+        = render 'layouts/flash_messages'
+        .row
+          = yield
+    = render 'layouts/footer'
