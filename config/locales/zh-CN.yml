@@ -22,6 +22,8 @@ zh-CN:
   created_at: "创建时间"
   operation: "操作"
   logout: "退出"
+  password_new_tip: '请输入您的账户注册邮箱，我们会发送密码重置邮件到您的邮箱'
+  reset_password: "重置密码"
   errors:
     messages:
       mini_magick_processing_error: "有可能是提交的图片格式不对，支持的图片格式为jpg，jpeg，gif，png"
