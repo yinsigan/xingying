@@ -10,7 +10,11 @@
     = render 'layouts/topbar'
     #content
       .container
-        = render 'layouts/flash_messages'
         .row
+          - if notice.present? || alert.present?
+            .alert.alert-warning.text-center
+              %a.close{"data-dismiss" => "alert"} x
+              = notice
+              = alert
           = yield
     = render 'layouts/footer'
