@@ -7,6 +7,7 @@ zh-CN:
   save: "保存"
   welcome_login: "欢迎登录"
   login: "登录"
+  signup: "注册"
   remember_me: "记住我"
   forget_password: "忘记密码?"
   password: "密码"
@@ -24,6 +25,10 @@ zh-CN:
   logout: "退出"
   password_new_tip: '请输入您的账户注册邮箱，我们会发送密码重置邮件到您的邮箱'
   reset_password: "重置密码"
+  hit_email: "请输入邮箱名"
+  hit_password: "请输入密码"
+  hit_password_confirmation: "请输入确认密码"
+  minimum_password_length: "最少要有%{char}个字符"
   errors:
     messages:
       mini_magick_processing_error: "有可能是提交的图片格式不对，支持的图片格式为jpg，jpeg，gif，png"

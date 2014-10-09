@@ -13,12 +13,12 @@
         <%= f.hidden_field :reset_password_token %>
         <div style="margin-bottom: 25px" class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-          <%= f.password_field :password, autofocus: true, autocomplete: "off", id: "login-username", class: "form-control", placeholder: "新密码" %>
+          <%= f.password_field :password, autofocus: true, autocomplete: "off", id: "login-username", class: "form-control", placeholder: "#{t('hit_password')}" %>
         </div>
 
         <div style="margin-bottom: 25px" class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-          <%= f.password_field :password_confirmation, autocomplete: "off", id: "login-password", class: "form-control", placeholder: "再输入一次新密码" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", id: "login-password", class: "form-control", placeholder: "#{t('hit_password_confirmation')}" %>
         </div>
 
         <div style="margin-top:10px" class="form-group">
