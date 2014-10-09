@@ -12,7 +12,7 @@ class PublicAccountsController < SettingsController
   # GET /publics/1
   # GET /publics/1.json
   def show
-    add_breadcrumb I18n.t("breadcrumbs.public_account.show"), :public_account_path
+    add_breadcrumb @public_account.name, :public_account_path
   end
 
   # GET /publics/new

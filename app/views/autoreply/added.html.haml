@@ -9,14 +9,14 @@
         = render partial: "shared/form_error_messages", locals: {object: @public_account}
         .form-group
           = f.label :default_reply, class: "col-sm-3 control-label"
-          .col-sm-6
+          .col-sm-9
             = f.text_area :default_reply, class: "form-control", rows: 12, id: "text"
             %p.text-muted.pull-right
               还可以输入
               %span#chars
                 600
         .form-group
-          .col-sm-6.col-sm-push-3
+          .col-sm-9.col-sm-push-3
             = f.submit "#{t('save')}", class: "btn btn-primary", "data-disable-with" => "#{t('disable-with-submit')}"
 
 :javascript

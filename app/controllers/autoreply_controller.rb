@@ -1,12 +1,10 @@
 class AutoreplyController < SettingsController
-  before_action :add_show_breadcrumb
+  before_action :set_public_account, :add_show_breadcrumb
   def added
     add_breadcrumb I18n.t("breadcrumbs.autoreply.added"), added_public_account_path
-    @public_account = current_user.public_accounts.find(params[:id])
   end
 
   def set_default_reply
-    @public_account = current_user.public_accounts.find(params[:id])
     if  @public_account.update(public_account_params)
       flash.now[:success] = I18n.t('success_save')
     end
@@ -20,8 +18,12 @@ class AutoreplyController < SettingsController
   end
 
   private
+    def set_public_account
+      @public_account = current_user.public_accounts.find(params[:id])
+    end
+
     def add_show_breadcrumb
-      add_breadcrumb I18n.t("breadcrumbs.public_account.show"), :public_account_path
+      add_breadcrumb @public_account.name, :public_account_path
     end
 
     def public_account_params
