@@ -14,7 +14,7 @@
               %td= @public_account.name
             %tr
               %td= t('created_at')
-              %td= @public_account.created_at
+              %td= @public_account.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
             %tr
               %td= PublicAccount.human_attribute_name('tp')
               %td= PublicAccount::TP[@public_account.tp]
