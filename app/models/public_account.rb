@@ -2,7 +2,7 @@
 # https://github.com/rubysl/rubysl-securerandom/blob/2.0/lib/rubysl/securerandom/securerandom.rb
 class PublicAccount < ActiveRecord::Base
   belongs_to :user
-  validates :name, :tp, :image, presence: true
+  validates :name, :tp, :image, :user, presence: true
   TP={1 => "订阅号", 2 => "服务号"}
   mount_uploader :image, AvatarUploader
 
