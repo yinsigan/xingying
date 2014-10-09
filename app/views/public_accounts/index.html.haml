@@ -7,8 +7,9 @@
   .bs-callout.bs-callout-info
     %h4= t('.no_content')
 - else
-  .page-header
-    %h3= t('.list')
+  %h3.title-divider
+    %span
+      = t('.list')
   .panel.panel-default
     .panel-body
       %a{href: "#{new_public_account_path}", class: "btn btn-primary pull-right"}

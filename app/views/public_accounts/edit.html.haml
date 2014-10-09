@@ -1,5 +1,6 @@
-.page-header
-  %h3= t('.title')
+%h3.title-divider
+  %span
+    = t('.title')
 .panel.panel-default
   .panel-body
     = form_for @public_account, html: {class: "form-horizontal"} do |f|
