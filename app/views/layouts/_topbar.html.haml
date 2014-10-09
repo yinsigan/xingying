@@ -2,42 +2,41 @@
 .navbar.yamm.navbar-default.navbar-fixed-top
   .container
     .navbar-header
-      %button.navbar-toggle{"data-target" => "#navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+      %button.navbar-toggle{"data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
       %a.navbar-brand{:href => "#{root_path}"}
         %span.glyphicon.glyphicon-home
         后台网站
-    #navbar-collapse-1.navbar-collapse.collapse
+    %ul.nav.navbar-nav.navbar-right.nav-user
+      %li
+        %a
+          %i.fa.fa-bell-o
+          .badge 99
+      %li.dropdown
+        %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          - if user_signed_in?
+            = current_user.email
+          %span.glyphicon.glyphicon-user.pull-right
+        %ul.dropdown-menu
+          %li
+            %a{:href => "#{edit_user_registration_path}"}
+              账号信息
+              %span.glyphicon.glyphicon-cog.pull-right
+          %li.divider
+          %li
+            %a{:href => "#"}
+              Favourites Snippets
+              %span.glyphicon.glyphicon-heart.pull-right
+          %li.divider
+          %li
+            %a{:href => "#{destroy_user_session_path}", "data-method" => :delete, rel: "nofollow"}
+              = t('logout')
+              %span.glyphicon.glyphicon-log-out.pull-right
+    #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav
         / Thumbnails demo
         %li{:class => (controller_name == 'public_accounts' ? 'active' : nil)}
           %a{:href => "#{public_accounts_path}"}
             公众账号管理
-      %ul.nav.navbar-nav.navbar-right.nav-user
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-            - if user_signed_in?
-              = current_user.email
-            %span.glyphicon.glyphicon-user.pull-right
-          %ul.dropdown-menu
-            %li
-              %a{:href => "#{edit_user_registration_path}"}
-                账号信息
-                %span.glyphicon.glyphicon-cog.pull-right
-            %li.divider
-            %li
-              %a{:href => "#"}
-                Messages
-                %span.badge.pull-right 42
-            %li.divider
-            %li
-              %a{:href => "#"}
-                Favourites Snippets
-                %span.glyphicon.glyphicon-heart.pull-right
-            %li.divider
-            %li
-              %a{:href => "#{destroy_user_session_path}", "data-method" => :delete, rel: "nofollow"}
-                注销
-                %span.glyphicon.glyphicon-log-out.pull-right
