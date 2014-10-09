@@ -27,7 +27,7 @@ $(document).on("page:change", function() {
   $('button[data-tooltip], a[data-tooltip]').tooltip();
 
   // 把圆形loading去掉
-  NProgress.configure({ showSpinner: false });
+  // NProgress.configure({ showSpinner: false });
 
 });
 
