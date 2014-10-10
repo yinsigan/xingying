@@ -41,10 +41,17 @@
   border-top: 0;
 }
 
+/*bootstrap的有色text*/
 .bg-p {
   padding: 15px;
 }
 
+/*首页用到*/
 .tag-title {
   padding: 50px 0;
+}
+
+/*不要浮动，修改bootstrap的center-block*/
+.no-float {
+  float: none;
 }
