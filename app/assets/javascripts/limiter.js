@@ -1,3 +1,4 @@
+//当输入文字显示还有多少字可以输
 (function($) {
   $.fn.extend( {
     limiter: function(limit, elem) {
