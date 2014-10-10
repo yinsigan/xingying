@@ -196,7 +196,7 @@ div.styled .imagePreview img {
 /*标题加上分隔线*/
 .title-divider {
   margin-bottom: 20px;
-  background: transparent url(/assets/title_divider.png) repeat-x 0 0;
+  background: transparent image-url("title_divider.png") repeat-x 0 0;
 }
 
 .title-divider span {

@@ -9,12 +9,7 @@
       %a.navbar-brand{:href => "#{root_path}"}
         %span.glyphicon.glyphicon-home
         = CONFIG['title']
-    - if user_signed_in?
-      %ul.nav.navbar-nav
-        / Thumbnails demo
-        %li{:class => (controller_name == 'public_accounts' ? 'active' : nil)}
-          %a{:href => "#{public_accounts_path}"}
-            公众账号管理
+    
     #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav.navbar-right.nav-user
         - if user_signed_in?
@@ -41,3 +36,9 @@
             = link_to(t('signup'), new_user_registration_path)
           %li
             = link_to(t('login'), new_session_path(:user))
+      - if user_signed_in?
+        %ul.nav.navbar-nav
+          / Thumbnails demo
+          %li{:class => (controller_name == 'public_accounts' ? 'active' : nil)}
+            %a{:href => "#{public_accounts_path}"}
+              公众账号管理
