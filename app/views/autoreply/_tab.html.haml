@@ -6,11 +6,8 @@
 %p.bg-success
 %ul.nav.nav-tabs{role: "tablist"}
   %li{class: action_name == "added" ? "active" : nil}
-    %a{href: "#{added_public_account_path}"}
-      = t('autoreply.added_title')
+    = link_to t('autoreply.added_title'), added_public_account_path
   %li{class: action_name == "default" ? "active" : nil}
-    %a{href: "#{default_public_account_path}"}
-      = t('autoreply.default_title')
+    = link_to t('autoreply.default_title'), default_public_account_path
   %li{class: action_name == "keyword" ? "active" : nil}
-    %a{href: "#{keyword_public_account_path}"}
-      = t('autoreply.keyword_title')
+    = link_to t('autoreply.keyword_title'), keyword_public_account_path

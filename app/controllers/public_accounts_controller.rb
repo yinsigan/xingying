@@ -3,31 +3,23 @@ class PublicAccountsController < SettingsController
   before_action :add_index_breadcrumb
   layout "not_show_pa", except: :show
 
-  # GET /publics
-  # GET /publics.json
   def index
     @public_accounts = current_user.public_accounts
   end
 
-  # GET /publics/1
-  # GET /publics/1.json
   def show
     add_breadcrumb @public_account.name, :public_account_path
   end
 
-  # GET /publics/new
   def new
     add_breadcrumb I18n.t("breadcrumbs.public_account.new"), :new_public_account_path
     @public_account = current_user.public_accounts.build
   end
 
-  # GET /publics/1/edit
   def edit
     add_breadcrumb I18n.t("breadcrumbs.public_account.edit"), :edit_public_account_path
   end
 
-  # POST /publics
-  # POST /publics.json
   def create
     add_breadcrumb I18n.t("breadcrumbs.public_account.new"), :new_public_account_path
     @public_account = current_user.public_accounts.build(public_account_params)
@@ -43,8 +35,6 @@ class PublicAccountsController < SettingsController
     end
   end
 
-  # PATCH/PUT /publics/1
-  # PATCH/PUT /publics/1.json
   def update
     respond_to do |format|
       if @public_account.update(public_account_params)
@@ -57,8 +47,6 @@ class PublicAccountsController < SettingsController
     end
   end
 
-  # DELETE /publics/1
-  # DELETE /publics/1.json
   def destroy
     @public_account.destroy
     respond_to do |format|
@@ -68,12 +56,10 @@ class PublicAccountsController < SettingsController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_public_account
       @public_account = current_user.public_accounts.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def public_account_params
       params.require(:public_account).permit(:name, :tp, :image)
     end
