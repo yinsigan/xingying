@@ -2,6 +2,7 @@ class PublicAccountsController < SettingsController
   before_action :set_public_account, only: [:show, :edit, :update, :destroy]
   before_action :add_index_breadcrumb
   layout "not_show_pa", except: :show
+  respond_to :html
 
   def index
     @public_accounts = current_user.public_accounts
@@ -24,35 +25,24 @@ class PublicAccountsController < SettingsController
     add_breadcrumb I18n.t("breadcrumbs.public_account.new"), :new_public_account_path
     @public_account = current_user.public_accounts.build(public_account_params)
 
-    respond_to do |format|
-      if @public_account.save
-        format.html { redirect_to @public_account, flash: {success: I18n.t('success_submit')} }
-        format.json { render :show, status: :created, location: @public_account }
-      else
-        format.html { render :new }
-        format.json { render json: @public_account.errors, status: :unprocessable_entity }
-      end
+    if @public_account.save
+      redirect_to @public_account, flash: {success: I18n.t('success_submit')}
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @public_account.update(public_account_params)
-        format.html { redirect_to @public_account, flash: {success: I18n.t('success_save')}}
-        format.json { render :show, status: :ok, location: @public_account }
-      else
-        format.html { render :edit }
-        format.json { render json: @public_account.errors, status: :unprocessable_entity }
-      end
+    if @public_account.update(public_account_params)
+      redirect_to @public_account, flash: {success: I18n.t('success_save')}
+    else
+      render :edit
     end
   end
 
   def destroy
     @public_account.destroy
-    respond_to do |format|
-      format.html { redirect_to public_accounts_url, flash: {success: I18n.t('success_delete')} }
-      format.json { head :no_content }
-    end
+    redirect_to public_accounts_url, flash: {success: I18n.t('success_delete')}
   end
 
   private
