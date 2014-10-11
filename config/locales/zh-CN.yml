@@ -1,64 +1,8 @@
 zh-CN:
-  disable-with-login: "正在登录..."
-  disable-with-submit: "正在提交..."
-  disable-with-save: "正在保存..."
-  change_password: "修改密码"
-  sumbit: "提交"
-  save: "保存"
-  welcome_login: "欢迎登录"
-  login: "登录"
-  signup: "注册"
-  remember_me: "记住我"
-  forget_password: "忘记密码?"
-  password: "密码"
-  email: "电子邮箱"
-  please_select: "请选择"
-  edit: "编辑"
-  delete: "删除"
-  manage: "管理"
-  success_delete: "删除成功"
-  success_submit: "提交成功"
-  success_save: "保存成功"
-  base_info: "基本信息"
-  created_at: "创建时间"
-  operation: "操作"
-  logout: "退出"
-  password_new_tip: '请输入您的账户注册邮箱，我们会发送密码重置邮件到您的邮箱'
-  reset_password: "重置密码"
-  hit_email: "请输入邮箱名"
-  hit_password: "请输入密码"
-  hit_password_confirmation: "请输入确认密码"
-  minimum_password_length: "最少要有%{char}个字符"
-
   errors:
     messages:
       mini_magick_processing_error: "有可能是提交的图片格式不对，支持的图片格式为jpg，jpeg，gif，png"
-  activerecord:
-    attributes:
-      user:
-        email: "邮箱"
-        password: "密码"
-        password_confirmation: "确认密码"
-        current_password: "原密码"
-      public_account:
-        name: "微信公众账号名称"
-        tp: "公众账号类型"
-        image: "微信公众二维码"
-        default_reply: "关注时回复内容"
-        weixin_token: "Token:"
-        weixin_secret_key: "URL:"
-    models:
-      user: "用户"
-      public_account: "公众号"
 
-  breadcrumbs:
-    public_account:
-      new: "添加公众账号"
-      index: "公众账号管理"
-      show: "控制面板"
-      edit: "修改公众账号"
-    autoreply:
-      added: "被添加自动回复"
   public_accounts:
     new:
       notice: "请填写公众账号的基本信息，创建公众账号完成后，系统提供URL和Token为连接微信公众平台使用"

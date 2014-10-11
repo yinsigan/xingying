@@ -1,0 +1,18 @@
+zh-CN:
+  activerecord:
+    attributes:
+      user:
+        email: "邮箱"
+        password: "密码"
+        password_confirmation: "确认密码"
+        current_password: "原密码"
+      public_account:
+        name: "微信公众账号名称"
+        tp: "公众账号类型"
+        image: "微信公众二维码"
+        default_reply: "关注时回复内容"
+        weixin_token: "Token:"
+        weixin_secret_key: "URL:"
+    models:
+      user: "用户"
+      public_account: "公众号"

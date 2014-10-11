@@ -16,3 +16,5 @@
 //= require_tree .
 //= require bootstrap-sprockets
 //= require nprogress
+//= require html5.image.preview
+//= require limiter
