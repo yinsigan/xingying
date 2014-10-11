@@ -1,0 +1,165 @@
+body {
+  padding-bottom: 40px;
+  color: #666;
+}
+
+pre {
+  margin: 0;
+  padding: 10px 20px !important;
+}
+
+footer {
+  margin-top: 200px;
+}
+
+.container, .jumbotron .container {
+  width: auto;
+  max-width: 1170px;
+}
+
+/* menu styes */
+
+.list-unstyled {
+  min-width: 120px;
+  ul {
+    min-width: 120px;
+  }
+}
+
+@media (min-width: 767px) {
+  .panel-group {
+    width: 400px;
+  }
+  .thumbnail {
+    margin: 0;
+  }
+}
+
+.nav-h {
+  left: 50%;
+  margin-left: -150px;
+  top: 50px;
+  position: absolute;
+  > li > a {
+    &:hover, &:focus {
+      background: #fff;
+    }
+  }
+  .open > a {
+    background: #fff;
+    &:hover, &:focus {
+      background: #fff;
+    }
+  }
+}
+
+.nav-user .dropdown {
+  border-radius: 4px;
+  width: 200px;
+  ul.dropdown-menu {
+    border-radius: 4px;
+    box-shadow: none;
+    margin-top: 20px;
+    width: 250px;
+    &:before {
+      content: "";
+      border-bottom: 10px solid #fff;
+      border-right: 10px solid transparent;
+      border-left: 10px solid transparent;
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      z-index: 10;
+    }
+    &:after {
+      content: "";
+      border-bottom: 12px solid #ccc;
+      border-right: 12px solid transparent;
+      border-left: 12px solid transparent;
+      position: absolute;
+      top: -12px;
+      right: 14px;
+      z-index: 9;
+    }
+  }
+}
+
+/*布局*/
+
+#content {
+  margin-top: 60px;
+}
+
+/*图片预览*/
+
+.imagePreview {
+  margin-top: 10px;
+  img {
+    margin: 10px;
+  }
+}
+
+div.styled .imagePreview img {
+  padding: 15px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+}
+
+/*callout部分*/
+
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+
+.bs-callout-danger {
+  border-left-color: #d9534f;
+}
+
+.bs-callout-warning {
+  border-left-color: #f0ad4e;
+}
+
+.bs-callout-info {
+  border-left-color: #5bc0de;
+}
+
+.bs-callout-danger h4 {
+  color: #d9534f;
+}
+
+.bs-callout-warning h4 {
+  color: #f0ad4e;
+}
+
+.bs-callout-info h4 {
+  color: #5bc0de;
+}
+
+.bs-callout {
+  h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  *:last-child, p:last-child {
+    margin-bottom: 0;
+  }
+  > p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+}
+
+/*标题加上分隔线*/
+
+.title-divider {
+  margin-bottom: 20px;
+  background: transparent url(/assets/title_divider.png) repeat-x 0 0;
+  span {
+    padding-right: 20px;
+    background: white;
+  }
+}
