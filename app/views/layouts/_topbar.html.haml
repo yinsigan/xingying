@@ -6,10 +6,9 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => "#{root_path}"}
+      = link_to root_path, class: "navbar-brand" do
         %span.glyphicon.glyphicon-home
         = CONFIG['title']
-
     #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav.navbar-right.nav-user
         - if user_signed_in?
