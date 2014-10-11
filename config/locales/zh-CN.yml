@@ -29,6 +29,7 @@ zh-CN:
   hit_password: "请输入密码"
   hit_password_confirmation: "请输入确认密码"
   minimum_password_length: "最少要有%{char}个字符"
+
   errors:
     messages:
       mini_magick_processing_error: "有可能是提交的图片格式不对，支持的图片格式为jpg，jpeg，gif，png"
@@ -44,6 +45,8 @@ zh-CN:
         tp: "公众账号类型"
         image: "微信公众二维码"
         default_reply: "关注时回复内容"
+        weixin_token: "Token:"
+        weixin_secret_key: "URL:"
     models:
       user: "用户"
       public_account: "公众号"

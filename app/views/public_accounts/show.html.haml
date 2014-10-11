@@ -40,8 +40,8 @@
               = t('.weixin_dev_btn')
           .alert.alert-info{:style => "display: none;"}
             %p
-              %strong URL:
+              %strong= PublicAccount.human_attribute_name('weixin_secret_key')
               = weixin_server_url(@public_account.weixin_secret_key)
             %p
-              %strong Token:
+              %strong= PublicAccount.human_attribute_name('weixin_token')
               = @public_account.weixin_token
