@@ -2,7 +2,7 @@ module SettingsHelper
 
   # 重写面包屑
   def render_breadcrumbs(options = {}, &block)
-    content_tag "div", class: "breadcrumb" do
+    content_tag "ol", class: "breadcrumb" do
       breadcrumbs.collect do |element|
         render_element(element)
       end.join.html_safe
