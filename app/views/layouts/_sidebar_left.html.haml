@@ -4,7 +4,7 @@
       .pull-right
         %i.fa.fa-chevron-right
       = t('.dashboard')
-    %a.list-group-item{:href => "#"}
+    %a.list-group-item{:href => "#{pic_text_public_account_path}", :class => (controller_name == "material" ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
       = t('.material')

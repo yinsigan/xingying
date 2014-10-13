@@ -1,17 +1,27 @@
 Rails.application.routes.draw do
 
+  # 微信公众账号
   resources :public_accounts do
     member do
+      # 自动回复
       get :added, to: 'autoreply#added'
       patch :set_default_reply, to: 'autoreply#set_default_reply'
       get :default, to: 'autoreply#default'
       get :keyword, to: 'autoreply#keyword'
+      # 素材管理
+      get :pic_text, to: "material#pic_text"
+      get :sin_pic_text, to: "material#sin_pic_text"
+      get :multi_pic_text, to: "material#multi_pic_text"
+      get :picture, to: "material#picture"
+      get :audio, to: "material#audio"
+      get :video, to: "material#video"
     end
   end
+
   devise_for :users
-  get 'home/index'
   root 'home#index'
 
+  # 微信公众账号接口
   get  'weixin/:weixin_secret_key', to: 'weixin#index', as: :weixin_server
   post 'weixin/:weixin_secret_key', to: 'weixin#reply', as: :weixin_reply
 

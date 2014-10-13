@@ -10,6 +10,8 @@ zh-CN:
       autoreply: "自动回复"
       custom_menu: "自定义菜单"
       website_manage: "官网管理"
+    topbar:
+      public_account_manage: "公众账号管理"
 
   public_accounts:
     new:
@@ -29,10 +31,19 @@ zh-CN:
       no_content: "暂无公众账号"
       delete_tip: "你真确定删除此公众账号吗?"
   autoreply:
-    title: "自动回复"
-    notice: "通过编辑内容或关键词规则，快速进行自动回复设置。"
-    added_title: "被添加自动回复"
-    default_title: "消息自动回复"
-    keyword_title: "关键词自动回复"
+    tab:
+      title: "自动回复"
+      notice: "通过编辑内容或关键词规则，快速进行自动回复设置。"
+      added_title: "被添加自动回复"
+      default_title: "消息自动回复"
+      keyword_title: "关键词自动回复"
     added:
       notice: "被添加自动回复就是默认回复，也就是公众账号被关注时弹出的消息，被添加自动可以是文字也可以是图文消息。"
+  material:
+    tab:
+      title: "素材管理"
+      note: "用户可以在这里添加素材，保存之后可以用于关键字回复，自定义菜单"
+      pic_text: "图文管理"
+      picture: "图片"
+      audio: "语音"
+      video: "视频"
