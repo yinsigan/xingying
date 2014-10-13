@@ -5,4 +5,9 @@
       图文消息列表(共...)
   .panel-body
     .col-md-6
-      dddd
+      = link_to sin_pic_text_public_account_path, class: "btn btn-default btn-lg" do
+        %i.fa.fa-plus-square-o
+        = t('.add_sin_pic_text')
+      = link_to multi_pic_text_public_account_path, class: "btn btn-default btn-lg" do
+        %i.fa.fa-plus-square
+        = t('.add_multi_pic_text')

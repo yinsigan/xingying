@@ -5,11 +5,11 @@
     .col-sm-6
       = f.text_field :name, class: "form-control"
   .form-group
-    = f.label :tp, class: "col-sm-3 control-label"
+    = f.label :tp, class: "col-sm-3 control-label required"
     .col-sm-6
       = f.select :tp, options_for_select(PublicAccount::TP.invert, @public_account.tp.presence), {include_blank: "#{t('please_select')}"}, {:class => "form-control"}
   .form-group
-    = f.label :image, class: "col-sm-3 control-label"
+    = f.label :image, class: "col-sm-3 control-label required"
     .col-sm-6.styled
       .imagePreview
       = f.file_field :image, class: "form-control", onchange: "previewImage(this, [256], 4);"

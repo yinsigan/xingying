@@ -47,3 +47,9 @@ zh-CN:
       picture: "图片"
       audio: "语音"
       video: "视频"
+    pic_text:
+      add_sin_pic_text: "添加单图文"
+      add_multi_pic_text: "添加多图文"
+    sin_pic_text:
+      title: "添加单图文"
+      thumb: "缩略图"

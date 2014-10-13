@@ -42,3 +42,67 @@ div.styled .imagePreview img {
   content: "*";
   color: #a94442;
 }
+
+.edit_sin_box {
+  overflow: hidden;
+  border: 1px solid #e7e7eb;
+  background-color: #fff;
+  color: #8d8d8d;
+  padding: 14px;
+
+  .thumb .default {
+    display: block;
+    color: #c0c0c0;
+    text-align: center;
+    line-height: 160px;
+    height: 160px;
+    font-weight: 400;
+    font-style: normal;
+    background-color: whitesmoke;
+    font-size: 16px;
+  }
+  .desc {
+    padding: 5px 0 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+}
+
+.edit_sin_pic_text {
+  padding-left: 12px;
+  position: relative;
+
+  .inner {
+    padding: 20px;
+    border: 1px solid #e7e7eb;
+    min-height: 600px;
+  }
+  .arrow_out {
+    display: inline-block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 12px;
+    border-style: dashed;
+    border-color: transparent;
+    border-left-width: 0;
+    border-right-color: #e7e7eb;
+    border-right-style: solid;
+    top: 44px;
+    left: 3px;
+  }
+  .arrow_in {
+    display: inline-block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 12px;
+    border-style: dashed;
+    border-color: transparent;
+    border-left-width: 0;
+    border-right-color: #f4f5f9;
+    border-right-style: solid;
+    top: 44px;
+    left: 4px;
+  }
+}
