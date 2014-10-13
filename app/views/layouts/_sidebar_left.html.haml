@@ -3,16 +3,20 @@
     %a.list-group-item{:href => "#{public_account_path}", :class => (controller_name == "public_accounts" && action_name == "show" ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
-      控制面板
+      = t('.dashboard')
+    %a.list-group-item{:href => "#"}
+      .pull-right
+        %i.fa.fa-chevron-right
+      = t('.material')
     %a.list-group-item{:href => "#{added_public_account_path}", :class => (controller_name == "autoreply" ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
-      自动回复
+      = t('.autoreply')
     %a.list-group-item{:href => "#"}
       .pull-right
         %i.fa.fa-chevron-right
-      自定义菜单
+      = t('.custom_menu')
     %a.list-group-item{:href => "#"}
       .pull-right
         %i.fa.fa-chevron-right
-      官网管理
+      = t('.website_manage')
