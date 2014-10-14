@@ -6,4 +6,6 @@
   = t('.notice')
 .panel.panel-default
   .panel-body
+    .alert.alert-warning{role: "alert"}
+      = t('required_note').html_safe
     = render 'form'
