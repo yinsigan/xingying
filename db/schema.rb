@@ -11,10 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008093519) do
+ActiveRecord::Schema.define(version: 20141014062957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "kwords", force: true do |t|
+    t.string   "content"
+    t.boolean  "matched",           default: false
+    t.integer  "public_account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "material_id_id"
+    t.integer  "subjectable_id"
+    t.string   "subjectable_type"
+  end
+
+  add_index "kwords", ["material_id_id"], name: "index_kwords_on_material_id_id", using: :btree
+  add_index "kwords", ["public_account_id"], name: "index_kwords_on_public_account_id", using: :btree
+  add_index "kwords", ["subjectable_id", "subjectable_type"], name: "index_kwords_on_subjectable_id_and_subjectable_type", using: :btree
+
+  create_table "materials", force: true do |t|
+    t.string   "type"
+    t.integer  "public_account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "sin_pic_texts_count", default: 0
+  end
+
+  add_index "materials", ["public_account_id"], name: "index_materials_on_public_account_id", using: :btree
 
   create_table "public_accounts", force: true do |t|
     t.string   "name"
@@ -29,6 +54,36 @@ ActiveRecord::Schema.define(version: 20141008093519) do
   end
 
   add_index "public_accounts", ["user_id"], name: "index_public_accounts_on_user_id", using: :btree
+
+  create_table "sin_pic_texts", force: true do |t|
+    t.text     "body"
+    t.integer  "thumb_id"
+    t.string   "title"
+    t.text     "desc"
+    t.integer  "sin_material_id"
+    t.integer  "multi_material_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sin_pic_texts", ["multi_material_id"], name: "index_sin_pic_texts_on_multi_material_id", using: :btree
+  add_index "sin_pic_texts", ["sin_material_id"], name: "index_sin_pic_texts_on_sin_material_id", using: :btree
+  add_index "sin_pic_texts", ["thumb_id"], name: "index_sin_pic_texts_on_thumb_id", using: :btree
+
+  create_table "text_replies", force: true do |t|
+    t.text     "body"
+    t.integer  "text_material_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "text_replies", ["text_material_id"], name: "index_text_replies_on_text_material_id", using: :btree
+
+  create_table "thumbs", force: true do |t|
+    t.string   "avatar"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

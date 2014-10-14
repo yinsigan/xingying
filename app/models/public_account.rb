@@ -4,6 +4,7 @@ class PublicAccount < ActiveRecord::Base
   belongs_to :user
   validates :name, :tp, :image, :user, presence: true
   validates :default_reply, allow_nil: true, length: { in: 1..600 }
+  validates :name, length: { maximum: 30 }
   TP={1 => "订阅号", 2 => "服务号"}
   mount_uploader :image, AvatarUploader
 
