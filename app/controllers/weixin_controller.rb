@@ -53,7 +53,7 @@ class WeixinController < ApplicationController
       if @keyword.present?
         return reply_text_message("扫描带参数二维码事件: 1. 用户未关注时，进行关注后的事件推送, keyword: #{@keyword}")
       end
-      reply_text_message("#{@weixin_public_account.default_reply.presence}")
+      reply_text_message("#{@weixin_public_account.default_reply.presence}".html_safe)
     end
 
 end
