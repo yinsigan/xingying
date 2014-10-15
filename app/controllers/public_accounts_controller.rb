@@ -9,7 +9,7 @@ class PublicAccountsController < SettingsController
   end
 
   def show
-    add_breadcrumb @public_account.name, :public_account_path
+    add_breadcrumb @public_account.name, public_account_path(@public_account)
   end
 
   def new
@@ -18,7 +18,7 @@ class PublicAccountsController < SettingsController
   end
 
   def edit
-    add_breadcrumb I18n.t("breadcrumbs.public_account.edit"), :edit_public_account_path
+    add_breadcrumb I18n.t("breadcrumbs.public_account.edit"), edit_public_account_path(@public_account)
   end
 
   def create

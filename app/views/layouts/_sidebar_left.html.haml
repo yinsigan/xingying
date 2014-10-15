@@ -1,14 +1,14 @@
 .col-md-3
   .list-group
-    %a.list-group-item{:href => "#{public_account_path}", :class => (controller_name == "public_accounts" && action_name == "show" ? "active" : nil)}
+    %a.list-group-item{:href => "#{public_account_path(@public_account)}", :class => (controller_name == "public_accounts" && action_name == "show" ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
       = t('.dashboard')
-    %a.list-group-item{:href => "#{pic_text_public_account_path}", :class => (controller_name == "material" ? "active" : nil)}
+    %a.list-group-item{:href => "#{pic_text_public_account_path(@public_account)}", :class => (controller_name == "material" ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
       = t('.material')
-    %a.list-group-item{:href => "#{added_public_account_path}", :class => (controller_name == "autoreply" ? "active" : nil)}
+    %a.list-group-item{:href => "#{added_public_account_path(@public_account)}", :class => (controller_name == "autoreply" ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
       = t('.autoreply')

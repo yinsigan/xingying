@@ -1,4 +1,4 @@
-= render 'tab'
+= render partial: "material/tab"
 .panel.panel-default{style: "margin-top: 30px"}
   .panel-heading
     %h3.panel-title
@@ -15,6 +15,7 @@
     #edit_sin.col-md-8.edit_sin_pic_text
       .inner.well
         = form_for [@public_account, @sin_material], html: { role: "form" } do |f|
+          = render partial: "shared/form_error_messages", locals: {object: @sin_material}
           = fields_for "sin_material[sin_pic_text_attributes]", @sin_pic_text do |sin_pic_text|
             .form-group.padding-content
               = sin_pic_text.label :title, class: "col-sm-12 control-label required font-normal"

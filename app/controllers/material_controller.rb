@@ -6,25 +6,25 @@ class MaterialController < SettingsController
   end
 
   def sin_pic_text
-    add_breadcrumb I18n.t('breadcrumbs.material.sin_pic_text'), sin_pic_text_public_account_path
+    add_breadcrumb I18n.t('breadcrumbs.material.sin_pic_text'), sin_pic_text_public_account_path(@public_account)
     @sin_material = @public_account.sin_materials.build
     @sin_pic_text = @sin_material.build_sin_pic_text
   end
 
   def multi_pic_text
-    add_breadcrumb I18n.t('breadcrumbs.material.multi_pic_text'), multi_pic_text_public_account_path
+    add_breadcrumb I18n.t('breadcrumbs.material.multi_pic_text'), multi_pic_text_public_account_path(@public_account)
   end
 
   def picture
-    add_breadcrumb I18n.t('breadcrumbs.material.picture'), picture_public_account_path
+    add_breadcrumb I18n.t('breadcrumbs.material.picture'), picture_public_account_path(@public_account)
   end
 
   def audio
-    add_breadcrumb I18n.t('breadcrumbs.material.audio'), audio_public_account_path
+    add_breadcrumb I18n.t('breadcrumbs.material.audio'), audio_public_account_path(@public_account)
   end
 
   def video
-    add_breadcrumb I18n.t('breadcrumbs.material.video'), video_public_account_path
+    add_breadcrumb I18n.t('breadcrumbs.material.video'), video_public_account_path(@public_account)
   end
 
   private

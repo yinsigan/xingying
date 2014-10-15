@@ -5,11 +5,11 @@
   = t('.note')
 %p.bg-success
 %ul.nav.nav-tabs{role: "tablist"}
-  %li{class: ["pic_text", "sin_pic_text", "multi_pic_text"].include?(action_name) ? "active" : nil}
-    = link_to t('.pic_text'), pic_text_public_account_path
+  %li{class: pic_text_tab?(controller_name, action_name) ? "active" : nil}
+    = link_to t('.pic_text'), pic_text_public_account_path(@public_account)
   %li{class: "picture" == action_name ? "active" : nil}
-    = link_to t('.picture'), picture_public_account_path
+    = link_to t('.picture'), picture_public_account_path(@public_account)
   %li{class: "audio" == action_name ? "active" : nil}
-    = link_to t('.audio'), audio_public_account_path
+    = link_to t('.audio'), audio_public_account_path(@public_account)
   %li{class: "video" == action_name ? "active" : nil}
-    = link_to t('.video'), video_public_account_path
+    = link_to t('.video'), video_public_account_path(@public_account)

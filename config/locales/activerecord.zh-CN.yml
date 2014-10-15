@@ -21,3 +21,11 @@ zh-CN:
       user: "用户"
       public_account: "公众号"
       sin_pic_text: "单图文"
+      sin_material: "单图文"
+
+  helpers:
+    label:
+      sin_material[sin_pic_text_attributes]:
+        title: "标题"
+        desc: "摘要"
+        body: "正文"
