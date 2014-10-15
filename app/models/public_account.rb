@@ -3,12 +3,16 @@
 class PublicAccount < ActiveRecord::Base
   belongs_to :user
   has_many :sin_materials
+  has_many :multi_materials
   validates :name, :tp, :image, :user, presence: true
   validates :default_reply, allow_nil: true, length: { in: 1..600 }
   validates :name, length: { maximum: 30 }
   TP={1 => "订阅号", 2 => "服务号"}
   mount_uploader :image, AvatarUploader
 
+  def pic_text_count
+    sin_materials.count + multi_materials.count
+  end
   before_create :generate_key
 
   private

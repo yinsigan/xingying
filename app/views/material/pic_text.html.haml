@@ -2,7 +2,9 @@
 .panel.panel-default{style: "margin-top: 30px"}
   .panel-heading
     %h3.panel-title
-      图文消息列表(共...)
+      图文消息列表(共
+      = @public_account.pic_text_count
+      个)
   .panel-body
     .col-md-6
       = link_to sin_pic_text_public_account_path, class: "btn btn-default btn-lg" do

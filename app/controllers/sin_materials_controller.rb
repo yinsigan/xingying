@@ -3,8 +3,10 @@ class SinMaterialsController < SettingsController
   before_action :set_public_account
   def create
     @sin_material = @public_account.sin_materials.build(sin_material_params)
-    @sin_material.save
-    redirect_to root_path
+    if @sin_material.save
+      redirect_to pic_text_public_account_path(@public_account), flash: {success: I18n.t('success_submit')}
+    else
+    end
   end
 
   private
