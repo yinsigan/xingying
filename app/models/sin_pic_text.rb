@@ -4,4 +4,5 @@ class SinPicText < ActiveRecord::Base
   belongs_to :multi_material, class_name: MultiMaterial
 
   validates :title, :body, presence: true
+
 end

@@ -17,6 +17,7 @@ zh-CN:
         title: "标题"
         desc: "摘要"
         body: "正文"
+        thumb: "封面"
     models:
       user: "用户"
       public_account: "公众号"

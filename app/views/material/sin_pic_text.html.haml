@@ -22,9 +22,13 @@
               .col-sm-12
                 = sin_pic_text.text_field :title, class: "form-control"
             .form-group.padding-content
-              = sin_pic_text.label :desc, class: "col-sm-12 control-label required font-normal"
+              = label_tag "thumb_image", t(@sin_pic_text.class.human_attribute_name('thumb')), class: "col-sm-12 control-label font-normal"
               .col-sm-12
-                = sin_pic_text.text_area :desc, class: "form-control"
+                = file_field_tag "thumb[image]"
+            .form-group.padding-content
+              = sin_pic_text.label :desc, class: "col-sm-12 control-label font-normal"
+              .col-sm-12
+                = sin_pic_text.text_area :desc, class: "form-control", rows: 5
             .form-group.padding-content
               = sin_pic_text.label :body, class: "col-sm-12 control-label required font-normal"
               .col-sm-12
