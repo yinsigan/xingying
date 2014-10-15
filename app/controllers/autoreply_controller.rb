@@ -1,7 +1,7 @@
 class AutoreplyController < SettingsController
   before_action :set_public_account, :add_show_breadcrumb
   def added
-    add_breadcrumb I18n.t("breadcrumbs.autoreply.added"), added_public_account_path
+    add_breadcrumb I18n.t("breadcrumbs.autoreply.added"), added_public_account_path(@public_account)
   end
 
   def set_default_reply
@@ -23,7 +23,7 @@ class AutoreplyController < SettingsController
     end
 
     def add_show_breadcrumb
-      add_breadcrumb @public_account.name, :public_account_path
+      add_breadcrumb @public_account.name, public_account_path(@public_account)
     end
 
     def public_account_params

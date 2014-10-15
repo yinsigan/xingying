@@ -6,8 +6,8 @@
 %p.bg-success
 %ul.nav.nav-tabs{role: "tablist"}
   %li{class: action_name == "added" ? "active" : nil}
-    = link_to t('.added_title'), added_public_account_path
+    = link_to t('.added_title'), added_public_account_path(@public_account)
   %li{class: action_name == "default" ? "active" : nil}
-    = link_to t('.default_title'), default_public_account_path
+    = link_to t('.default_title'), default_public_account_path(@public_account)
   %li{class: action_name == "keyword" ? "active" : nil}
-    = link_to t('.keyword_title'), keyword_public_account_path
+    = link_to t('.keyword_title'), keyword_public_account_path(@public_account)

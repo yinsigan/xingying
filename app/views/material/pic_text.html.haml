@@ -5,9 +5,9 @@
       = t('.pic_text_count', count: @public_account.pic_text_count)
   .panel-body
     .col-md-6
-      = link_to sin_pic_text_public_account_path, class: "btn btn-default btn-lg" do
+      = link_to sin_pic_text_public_account_path(@public_account), class: "btn btn-default btn-lg" do
         %i.fa.fa-plus-square-o
         = t('.add_sin_pic_text')
-      = link_to multi_pic_text_public_account_path, class: "btn btn-default btn-lg" do
+      = link_to multi_pic_text_public_account_path(@public_account), class: "btn btn-default btn-lg" do
         %i.fa.fa-plus-square
         = t('.add_multi_pic_text')
