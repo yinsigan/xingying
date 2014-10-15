@@ -17,15 +17,15 @@
         = form_for [@public_account, @sin_material], html: { role: "form" } do |f|
           = fields_for "sin_material[sin_pic_text_attributes]", @sin_pic_text do |sin_pic_text|
             .form-group.padding-content
-              = sin_pic_text.label :title, class: "col-sm-12 control-label required"
+              = sin_pic_text.label :title, class: "col-sm-12 control-label required font-normal"
               .col-sm-12
                 = sin_pic_text.text_field :title, class: "form-control"
             .form-group.padding-content
-              = sin_pic_text.label :desc, class: "col-sm-12 control-label required"
+              = sin_pic_text.label :desc, class: "col-sm-12 control-label required font-normal"
               .col-sm-12
                 = sin_pic_text.text_area :desc, class: "form-control"
             .form-group.padding-content
-              = sin_pic_text.label :body, class: "col-sm-12 control-label required"
+              = sin_pic_text.label :body, class: "col-sm-12 control-label required font-normal"
               .col-sm-12
                 = sin_pic_text.text_area :body, class: "form-control"
             .col-sm-12
