@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       get :video, to: "material#video"
     end
     resources :sin_materials, only: [:create]
+    resources :thumbs, only: [:create]
   end
 
   devise_for :users

@@ -39,6 +39,8 @@ zh-CN:
       keyword_title: "关键词自动回复"
     added:
       notice: "被添加自动回复就是默认回复，也就是公众账号被关注时弹出的消息，被添加自动可以是文字也可以是图文消息。"
+      char_tip: "还可以输入"
+      char_number: 600
   material:
     tab:
       title: "素材管理"
