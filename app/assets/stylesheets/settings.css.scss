@@ -38,11 +38,13 @@ div.styled .imagePreview img {
   }
 }
 
+/*required note*/
 .required:after {
   content: "*";
   color: #a94442;
 }
 
+/*单图文编辑框*/
 .edit_sin_box {
   overflow: hidden;
   border: 1px solid #e7e7eb;
@@ -105,4 +107,12 @@ div.styled .imagePreview img {
     top: 44px;
     left: 4px;
   }
+}
+
+/*垂直表单的格式*/
+.padding-content:after {
+  content: "\200B";
+  display: block;
+  height: 0;
+  clear: both;
 }

@@ -2,6 +2,7 @@
 # https://github.com/rubysl/rubysl-securerandom/blob/2.0/lib/rubysl/securerandom/securerandom.rb
 class PublicAccount < ActiveRecord::Base
   belongs_to :user
+  has_many :sin_materials
   validates :name, :tp, :image, :user, presence: true
   validates :default_reply, allow_nil: true, length: { in: 1..600 }
   validates :name, length: { maximum: 30 }

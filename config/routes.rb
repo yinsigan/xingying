@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get :audio, to: "material#audio"
       get :video, to: "material#video"
     end
+    resources :sin_materials, only: [:create]
   end
 
   devise_for :users
