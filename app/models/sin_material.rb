@@ -6,4 +6,13 @@ class SinMaterial < Material
   validates :public_account, presence: true
 
   accepts_nested_attributes_for :sin_pic_text
+
+  after_save :incre_sin_material_count
+
+  private
+
+  def incre_sin_material_count
+    self.public_account.incre_sin_material_count
+  end
+
 end

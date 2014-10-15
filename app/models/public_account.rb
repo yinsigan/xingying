@@ -10,9 +10,10 @@ class PublicAccount < ActiveRecord::Base
   TP={1 => "订阅号", 2 => "服务号"}
   mount_uploader :image, AvatarUploader
 
-  def pic_text_count
-    sin_materials.count + multi_materials.count
+  def incre_sin_material_count
+    increment! :pic_text_count
   end
+
   before_create :generate_key
 
   private

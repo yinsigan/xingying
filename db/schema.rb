@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014062957) do
+ActiveRecord::Schema.define(version: 20141015021244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20141014062957) do
     t.string   "weixin_secret_key"
     t.string   "weixin_token"
     t.text     "default_reply"
+    t.integer  "pic_text_count",    default: 0
   end
 
   add_index "public_accounts", ["user_id"], name: "index_public_accounts_on_user_id", using: :btree

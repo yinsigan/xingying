@@ -50,6 +50,7 @@ zh-CN:
     pic_text:
       add_sin_pic_text: "添加单图文"
       add_multi_pic_text: "添加多图文"
+      pic_text_count: 图文消息列表(共%{count}个)
     sin_pic_text:
       title: "添加单图文"
       thumb: "缩略图"
