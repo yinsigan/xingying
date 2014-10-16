@@ -10,7 +10,7 @@
         .form-group.padding-content
           = label_tag "thumb_image", t('activerecord.attributes.sin_pic_text.thumb'), class: "col-sm-12 control-label font-normal"
           .col-sm-12
-            = file_field_tag "image", "data-url" => "/public_accounts/#{@public_account.id}/thumbs", "data-progress" => "progress_div"
+            = file_field_tag "image", "data-url" => "/public_accounts/#{@public_account.id}/thumbs", "data-progress" => "progress_div", :class => "filestyle", "data-buttonText" => "#{t('choose_pictrue')}", "data-buttonBefore" => true
             #progress_div.progress.min-progress{style: "display: none;"}
               .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "1", :role => "progressbar", :style => "width: 0%;"}
         .form-group.padding-content

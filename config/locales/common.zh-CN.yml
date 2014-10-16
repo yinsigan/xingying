@@ -30,3 +30,4 @@ zh-CN:
   hit_password_confirmation: "请输入确认密码"
   minimum_password_length: "最少要有%{char}个字符"
   required_note: "标志为<span class='text-danger'>*</span>的必须填写哦"
+  choose_pictrue: "选择图片"

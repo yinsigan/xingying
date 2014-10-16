@@ -20,3 +20,4 @@
 //= require limiter
 //= require jasny-bootstrap
 //= require ajax_upload
+//= require bootstrap-filestyle
