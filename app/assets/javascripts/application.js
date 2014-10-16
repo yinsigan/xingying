@@ -19,4 +19,4 @@
 //= require html5.image.preview
 //= require limiter
 //= require jasny-bootstrap
-//= require ajax-upload
+//= require ajax_upload
