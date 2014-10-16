@@ -69,6 +69,7 @@
         if (readyState == 4 && status == '200' && evt.target.responseText) {
           // evt.target.responseText
           progress_div.delay(1000).fadeOut();
+          eval(evt.target.responseText);
         }
       }
 

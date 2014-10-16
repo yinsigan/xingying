@@ -1,6 +1,6 @@
 $(document).on "page:change", ->
 
-  #让flash在5秒内自动消失
+  #让flash在2秒内自动消失
   flash = [
     "info"
     "success"
@@ -9,7 +9,7 @@ $(document).on "page:change", ->
   ]
   for key of flash
     select = ".alert-autocloseable-" + flash[key]
-    $(select).delay(5000).fadeOut()  if $(select).length > 0
+    $(select).delay(2000).fadeOut()  if $(select).length > 0
 
   # 弹出冒泡型警告框
   $("button[data-popover], a[data-popover]").popover 'hide'
