@@ -59,6 +59,9 @@ function previewImage(el,widths,limit){
 
       if (allowedTypes.indexOf(format)>=0 && e.total<(limit*1024*1024)){
         for (var size in widths){
+          if (output.childNodes[0] && output.childNodes[0].tagName == "image") {
+            output.innerHTML = '';
+          }
           var image = document.createElement('img');
           var src = e.target.result;
 

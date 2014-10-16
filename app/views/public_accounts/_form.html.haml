@@ -12,7 +12,9 @@
     = f.label :image, class: "col-sm-3 control-label required"
     .col-sm-6.styled
       .imagePreview
-      = f.file_field :image, class: "form-control", onchange: "previewImage(this, [256], 4);"
+        - unless @public_account.new_record?
+          = image_tag @public_account.image_url(:thumb).to_s
+      = f.file_field :image, class: "form-control", onchange: "previewImage(this, [256], 4);", :class => "filestyle", "data-buttonText" => "#{t('choose_pictrue')}", "data-buttonBefore" => true
       = f.hidden_field :image_cache
   .form-group
     .col-sm-6.col-sm-push-3
