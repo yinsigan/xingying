@@ -1,0 +1,6 @@
+(function() {
+  console.log("ssss");
+})();
+<% if !@flash.blank? %>
+  $(".alert-fixed-top").html("<%= j @flash %>").show().fadeOut(2000);
+<% end %>

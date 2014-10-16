@@ -2,7 +2,6 @@ class PublicAccountsController < SettingsController
   before_action :set_public_account, only: [:show, :edit, :update, :destroy]
   before_action :add_index_breadcrumb
   layout "not_show_pa", except: :show
-  respond_to :html
 
   def index
     @public_accounts = current_user.public_accounts
