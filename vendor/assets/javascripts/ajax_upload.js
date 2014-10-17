@@ -43,6 +43,7 @@
 
       //文件上传，等待应答
       function onloadHandler(evt) {
+        $("body").spin();
       }
 
       //上传进度
@@ -72,6 +73,7 @@
             progress_content.width('1%');
           }, 2000);
           eval(evt.target.responseText);
+          $("body").spin(false);
         }
       }
 

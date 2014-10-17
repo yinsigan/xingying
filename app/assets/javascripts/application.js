@@ -18,5 +18,7 @@
 //= require nprogress
 //= require html5.image.preview
 //= require limiter
-//= require ajax_upload
 //= require bootstrap-filestyle
+//= require spin
+//= require jquery.spin
+//= require ajax_upload
