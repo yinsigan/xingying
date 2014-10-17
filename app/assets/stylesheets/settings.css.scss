@@ -49,6 +49,11 @@ footer {
   color: #8d8d8d;
   padding: 14px;
 
+  .thumb {
+    height: 160px;
+    overflow: hidden;
+  }
+
   .thumb .default {
     display: block;
     color: #c0c0c0;

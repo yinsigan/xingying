@@ -39,6 +39,9 @@ class WthumbUploader < CarrierWave::Uploader::Base
   # version :thumb do
   #   process :scale => [50, 50]
   # end
+  version :preview do
+    process :resize_to_limit => [240, 240]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
