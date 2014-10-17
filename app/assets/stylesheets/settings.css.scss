@@ -48,6 +48,12 @@ footer {
   background-color: #fff;
   color: #8d8d8d;
 
+  .appmsg_desc {
+    padding: 5px 0 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+
   h4.appmsg_title {
     font-weight: 400;
     font-style: normal;

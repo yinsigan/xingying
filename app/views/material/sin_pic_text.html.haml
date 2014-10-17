@@ -13,8 +13,7 @@
       .thumb
         %i.default
           = t('.thumb')
-      .desc
-        sss
+      %p.appmsg_desc
     = render 'material/sin_form'
 
 :javascript
@@ -22,5 +21,8 @@
     $("#image").ajax_upload();
     $("#sin_material_sin_pic_text_attributes_title").on("keyup", function() {
       $("#edit_sin_preview .appmsg_title a").text($(this).val());
+    });
+    $("#sin_material_sin_pic_text_attributes_desc").on("keyup", function() {
+      $("#edit_sin_preview .appmsg_desc").text($(this).val());
     });
   })
