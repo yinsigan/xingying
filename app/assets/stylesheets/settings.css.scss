@@ -41,13 +41,28 @@ footer {
   color: #a94442;
 }
 
-/*单图文编辑框*/
+/*单图文编辑框预览部分*/
 .edit_sin_box {
   overflow: hidden;
   border: 1px solid #e7e7eb;
   background-color: #fff;
   color: #8d8d8d;
-  padding: 14px;
+
+  h4.appmsg_title {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 28px;
+    max-height: 56px;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+
+    a {
+      color: #8d8d8d;
+      display: block;
+    }
+  }
 
   .thumb {
     height: 160px;
@@ -72,6 +87,7 @@ footer {
   }
 }
 
+//单图文编辑框部分
 .edit_sin_pic_text {
   padding-left: 12px;
   position: relative;

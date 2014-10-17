@@ -7,8 +7,9 @@
     .alert.alert-warning{role: "alert"}
       = t('required_note').html_safe
     #edit_sin_preview.col-md-4.edit_sin_box
-      %h4
-        Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      %h4.appmsg_title
+        %a{onclick: "return false;", href: "javascript:void(0);", target: "_blank"}
+          = t('.preview_title')
       .thumb
         %i.default
           = t('.thumb')
@@ -18,5 +19,8 @@
 
 :javascript
   $(document).on("page:change", function() {
-      $("#image").ajax_upload();
+    $("#image").ajax_upload();
+    $("#sin_material_sin_pic_text_attributes_title").on("keyup", function() {
+      $("#edit_sin_preview .appmsg_title a").text($(this).val());
+    });
   })
