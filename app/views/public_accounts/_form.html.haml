@@ -10,7 +10,7 @@
       = f.select :tp, options_for_select(PublicAccount::TP.invert, @public_account.tp.presence), {include_blank: "#{t('please_select')}"}, {:class => "form-control"}
   .form-group
     = f.label :image, class: "col-sm-3 control-label required"
-    .col-sm-6.styled
+    .col-sm-6
       .imagePreview
         - unless @public_account.new_record?
           = image_tag @public_account.image_url(:thumb).to_s

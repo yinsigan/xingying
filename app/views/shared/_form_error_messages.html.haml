@@ -6,5 +6,5 @@
       %strong
         = I18n.t("errors.messages.not_saved", count: object.errors.count, resource: object.class.model_name.human.downcase)
     %hr.message-inner-separator
-      %p
+      %ul
         = object.errors.full_messages.map { |msg| content_tag(:li, msg) }.join.html_safe
