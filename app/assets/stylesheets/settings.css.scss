@@ -122,7 +122,16 @@ div.styled .imagePreview img {
   font-weight: normal;
 }
 
+/*让进度条更细*/
 .progress.min-progress {
   height: 2px;
   margin-top: 5px;
+}
+
+.popover.custom-popover {
+  position: relative;
+  z-index: 1;
+}
+.popover.bottom.custom-popover > .arrow {
+  left: 70px;
 }
