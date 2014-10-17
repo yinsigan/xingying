@@ -18,6 +18,5 @@
 //= require nprogress
 //= require html5.image.preview
 //= require limiter
-//= require jasny-bootstrap
 //= require ajax_upload
 //= require bootstrap-filestyle
