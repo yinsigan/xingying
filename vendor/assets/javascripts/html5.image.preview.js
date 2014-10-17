@@ -29,7 +29,7 @@ function previewImage(el,widths,limit){
     if (!file.type.match(imageType)) {
       var description = document.createElement('p');
       output.innerHTML='';
-      description.innerHTML='This is not valid Image file';
+      description.innerHTML='这是无效的图片,请选择正确的图片格式';
       output.appendChild(description);
       return false;
     }
