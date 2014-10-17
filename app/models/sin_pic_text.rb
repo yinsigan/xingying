@@ -3,6 +3,6 @@ class SinPicText < ActiveRecord::Base
   belongs_to :sin_material, class_name: SinMaterial
   belongs_to :multi_material, class_name: MultiMaterial
 
-  validates :title, :body, presence: true
+  validates :title, :body, :thumb, presence: true
 
 end

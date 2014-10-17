@@ -8,4 +8,5 @@
     $("#edit_sin_preview .thumb").children("img").remove();
   }
   $("#edit_sin_preview .thumb").prepend("<%= j(image_tag @thumb.image_url(:preview).to_s) %>");
+  $("#sin_material_sin_pic_text_attributes_thumb_id").val("<%= @thumb.id %>");
 <% end %>

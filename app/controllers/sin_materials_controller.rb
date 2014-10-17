@@ -18,6 +18,6 @@ class SinMaterialsController < SettingsController
     end
 
     def sin_material_params
-      params.require(:sin_material).permit(:public_account_id, sin_pic_text_attributes: [:title, :desc, :body])
+      params.require(:sin_material).permit(:public_account_id, sin_pic_text_attributes: [:title, :desc, :body, :thumb_id])
     end
 end
