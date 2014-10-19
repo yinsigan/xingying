@@ -12,3 +12,5 @@
         = link_to multi_pic_text_public_account_path(@public_account), class: "btn btn-default" do
           %i.fa.fa-plus-square
           = t('.add_multi_pic_text')
+    #pic_text_content.col-md-12
+      = render partial: "sin_material", collection: @sin_materials, :as => :sin_material

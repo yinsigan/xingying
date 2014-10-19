@@ -3,6 +3,7 @@ class MaterialController < SettingsController
   before_action :set_public_account
 
   def pic_text
+    @sin_materials = @public_account.sin_materials
   end
 
   def sin_pic_text

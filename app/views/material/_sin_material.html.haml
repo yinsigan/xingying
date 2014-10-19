@@ -1,0 +1,20 @@
+.col-md-4.sin_box
+  .sin_box_content
+    %h4.appmsg_title
+      %a{onclick: "return false;", href: "javascript:void(0);", target: "_blank"}
+        = sin_material.sin_pic_text.title
+    %h4.appmsg_time
+      = sin_material.sin_pic_text.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+    .thumb
+      %i.default
+        = image_tag sin_material.sin_pic_text.thumb.image_url(:preview).to_s
+    %p.appmsg_desc
+      = sin_material.sin_pic_text.desc
+  .appmsg_opr
+    %ul
+      %li
+        %a.add_right_border{href: "#{edit_public_account_sin_material_path(@public_account, sin_material)}"}
+          %span.glyphicon.glyphicon-pencil
+      %li
+        %a
+          %span.glyphicon.glyphicon-trash

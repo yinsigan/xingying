@@ -1,5 +1,5 @@
 class SinMaterialsController < SettingsController
-  before_action :sin_material_params
+  before_action :sin_material_params, only: [:create]
   before_action :set_public_account
   def create
     add_breadcrumb I18n.t('breadcrumbs.material.sin_pic_text'), sin_pic_text_public_account_path(@public_account)
@@ -9,6 +9,9 @@ class SinMaterialsController < SettingsController
     else
       render "material/sin_pic_text"
     end
+  end
+
+  def edit
   end
 
   private

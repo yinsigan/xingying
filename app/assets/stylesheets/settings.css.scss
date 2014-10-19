@@ -40,19 +40,14 @@ footer {
   content: "*";
   color: #a94442;
 }
-
-/*单图文编辑框预览部分*/
-.edit_sin_box {
-  overflow: hidden;
-  border: 1px solid #e7e7eb;
-  background-color: #fff;
-  color: #8d8d8d;
-
+@mixin appmsg {
   .appmsg_desc {
     padding: 5px 0 10px;
     word-wrap: break-word;
     word-break: break-all;
   }
+
+
 
   h4.appmsg_title {
     font-weight: 400;
@@ -68,6 +63,10 @@ footer {
       color: #8d8d8d;
       display: block;
     }
+  }
+  h4.appmsg_time {
+    @extend .appmsg_title;
+    font-size: 14px;
   }
 
   .thumb {
@@ -91,6 +90,59 @@ footer {
     word-wrap: break-word;
     word-break: break-all;
   }
+}
+
+
+.col-md-4.sin_box {
+  border: 1px solid #e7e7eb;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 10px;
+  border-right: none;
+  .appmsg_opr {
+    background-color: #f4f4f4;
+    border-top: 1px solid #e7e7eb;
+    ul {
+      margin-bottom: 0;
+      overflow: hidden;
+      padding-left: 0;
+      list-style-type: none;
+      li {
+        float: left;
+        line-height: 44px;
+        height: 44px;
+        width: 50%;
+        a {
+          display: block;
+          text-align: center;
+          text-decoration: none;
+          color: #b2b2b2;
+        }
+        a.add_right_border {
+          border-right: 1px solid #e7e7eb;
+        }
+      }
+    }
+  }
+  .sin_box_content {
+    overflow: hidden;
+    background-color: #fff;
+    color: #8d8d8d;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include appmsg;
+  }
+}
+
+/*单图文编辑框预览部分*/
+.edit_sin_box {
+  overflow: hidden;
+  border: 1px solid #e7e7eb;
+  background-color: #fff;
+  color: #8d8d8d;
+
+  @include appmsg;
 }
 
 //单图文编辑框部分
@@ -132,6 +184,10 @@ footer {
     left: 4px;
   }
 }
+
+/*图文列表显示*/
+
+
 
 /*垂直表单的格式*/
 .padding-content:after {
