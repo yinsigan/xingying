@@ -16,7 +16,7 @@
               .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "1", :role => "progressbar", :style => "width: 0%;"}
             #image_preview.imagePreview
         .form-group.padding-content
-          = sin_pic_text.label :desc, class: "col-sm-12 control-label font-normal"
+          = sin_pic_text.label :desc, class: "col-sm-12 control-label font-normal required"
           .col-sm-12
             = sin_pic_text.text_area :desc, class: "form-control", rows: 5
         .form-group.padding-content

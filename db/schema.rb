@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141017082244) do
+ActiveRecord::Schema.define(version: 20141019064253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20141017082244) do
     t.integer  "multi_material_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "pic_url"
   end
 
   add_index "sin_pic_texts", ["multi_material_id"], name: "index_sin_pic_texts_on_multi_material_id", using: :btree
