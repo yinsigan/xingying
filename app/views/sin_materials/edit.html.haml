@@ -10,11 +10,12 @@
     #edit_sin_preview.col-md-4.edit_sin_box
       %h4.appmsg_title
         %a{onclick: "return false;", href: "javascript:void(0);", target: "_blank"}
-          = t('.preview_title')
+          = @sin_pic_text.title
       .thumb
         %i.default
-          = t('.thumb')
+          = image_tag @sin_pic_text.thumb.image_url.to_s, size: "100x100"
       %p.appmsg_desc
+        = @sin_pic_text.desc
     = render 'form'
 
 :javascript
