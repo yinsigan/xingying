@@ -38,7 +38,7 @@
           %p
             %button{:class => "btn btn-info", :id => "display-dev-info"}
               = t('.weixin_dev_btn')
-          .popover.bottom.custom-popover{style: "display: none;"}
+          .popover.bottom.custom-popover{style: "display: none;", role: "tooltip"}
             .arrow
             %h3.popover-title= t('.weixin_dev_title')
             .popover-content
