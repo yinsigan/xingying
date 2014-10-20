@@ -1,5 +1,5 @@
 #edit_sin.col-md-8.edit_sin_pic_text
-  .inner.well
+  .inner.well.clearfix
     = form_for [@public_account, @sin_material], html: { role: "form" } do |f|
       = render partial: "shared/form_error_messages", locals: {object: @sin_material}
       = fields_for "sin_material[sin_pic_text_attributes]", @sin_pic_text do |sin_pic_text|
