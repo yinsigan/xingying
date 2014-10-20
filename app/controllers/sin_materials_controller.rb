@@ -28,6 +28,10 @@ class SinMaterialsController < SettingsController
   def update
   end
 
+  def delete
+    render "delete.js.erb", layout: false
+  end
+
   private
 
     def set_public_account

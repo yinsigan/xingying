@@ -15,7 +15,11 @@ Rails.application.routes.draw do
       get :audio, to: "material#audio"
       get :video, to: "material#video"
     end
-    resources :sin_materials, only: [:create, :edit, :new, :update]
+    resources :sin_materials, only: [:create, :edit, :new, :update] do
+      member do
+        get :delete
+      end
+    end
     resources :thumbs, only: [:create]
   end
 
