@@ -8,8 +8,10 @@ zh-CN:
     autoreply:
       added: "被添加自动回复"
     material:
+      title: "素材管理"
       pic_text: "图文管理"
       sin_pic_text: "单图文管理"
+      edit_sin_pic_text: "编辑多图文"
       multi_pic_text: "多图文管理"
       picture: "图片"
       audio: "语音"

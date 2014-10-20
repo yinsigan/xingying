@@ -10,13 +10,12 @@ Rails.application.routes.draw do
       get :keyword, to: 'autoreply#keyword'
       # 素材管理
       get :pic_text, to: "material#pic_text"
-      get :sin_pic_text, to: "material#sin_pic_text"
       get :multi_pic_text, to: "material#multi_pic_text"
       get :picture, to: "material#picture"
       get :audio, to: "material#audio"
       get :video, to: "material#video"
     end
-    resources :sin_materials, only: [:create, :edit, :new]
+    resources :sin_materials, only: [:create, :edit, :new, :update]
     resources :thumbs, only: [:create]
   end
 

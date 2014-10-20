@@ -2,7 +2,7 @@ module SettingsHelper
 
   # 图文的tab
   def pic_text_tab?(controller_method)
-    ["sin_materials"].include?(controller_method) ? true : false
+    ["sin_materials", "material"].include?(controller_method) ? true : false
   end
 
   # 重写面包屑

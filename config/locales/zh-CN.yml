@@ -59,3 +59,8 @@ zh-CN:
       title: "添加单图文"
       thumb: "缩略图"
       preview_title: "标题"
+    edit:
+      title: "编辑单图文"
+      thumb: "缩略图"
+      preview_title: "标题"
+

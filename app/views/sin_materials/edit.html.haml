@@ -1,0 +1,29 @@
+= render partial: "material/tab"
+.panel.panel-default{style: "margin-top: 30px"}
+  .panel-heading
+    %h3.panel-title
+      %span.glyphicon.glyphicon-edit
+      = t('.title')
+  .panel-body
+    .alert.alert-warning{role: "alert"}
+      = t('required_note').html_safe
+    #edit_sin_preview.col-md-4.edit_sin_box
+      %h4.appmsg_title
+        %a{onclick: "return false;", href: "javascript:void(0);", target: "_blank"}
+          = t('.preview_title')
+      .thumb
+        %i.default
+          = t('.thumb')
+      %p.appmsg_desc
+    = render 'sin_materials/sin_form'
+
+:javascript
+  $(document).on("page:change", function() {
+    $("#image").ajax_upload();
+    $("#sin_material_sin_pic_text_attributes_title").on("keyup", function() {
+      $("#edit_sin_preview .appmsg_title a").text($(this).val());
+    });
+    $("#sin_material_sin_pic_text_attributes_desc").on("keyup", function() {
+      $("#edit_sin_preview .appmsg_desc").text($(this).val());
+    });
+  })
