@@ -50,8 +50,6 @@
                 = @public_account.weixin_token
 
 :javascript
-  $(document).on("page:change", function() {
-    $("#display-dev-info").on('click', function() {
-      $(this).parent().next(".popover").toggle('fast');
-    })
-  });
+  $("#display-dev-info").on('click', function() {
+    $(this).parent().next(".popover").toggle('fast');
+  })
