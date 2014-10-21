@@ -5,8 +5,8 @@
   = t('.note')
 %p.bg-success
 %ul.nav.nav-tabs{role: "tablist"}
-  %li{class: pic_text_tab?(controller_name) ? "active" : nil}
-    = link_to t('.pic_text'), pic_text_public_account_path(@public_account)
+  %li{class: controller_name == "sin_materials" ? "active" : nil}
+    = link_to t('.pic_text'), public_account_sin_materials_path(@public_account)
   %li{class: "picture" == action_name ? "active" : nil}
     = link_to t('.picture'), picture_public_account_path(@public_account)
   %li{class: "audio" == action_name ? "active" : nil}

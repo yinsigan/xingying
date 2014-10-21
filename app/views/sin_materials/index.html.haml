@@ -18,7 +18,7 @@
           - if controller_name == "material" && action_name == "pic_text"
             %button{class: "btn btn-default btn-clicked"}= t('.sin_pic_text')
           - else
-            %a{class: "btn btn-default", href: "#{pic_text_public_account_path(@public_account)}"}= t('.sin_pic_text')
+            %a{class: "btn btn-default", href: "#{public_account_sin_materials_path(@public_account)}"}= t('.sin_pic_text')
           %a{class: "btn btn-default", type: "button"}= t('.multi_pic_text')
     #pic_text_content.col-md-12
       = render partial: "sin_material", collection: @sin_materials, :as => :sin_material

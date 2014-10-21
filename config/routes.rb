@@ -9,16 +9,13 @@ Rails.application.routes.draw do
       get :default, to: 'autoreply#default'
       get :keyword, to: 'autoreply#keyword'
       # 素材管理
-      get :pic_text, to: "material#pic_text"
       get :multi_pic_text, to: "material#multi_pic_text"
       get :picture, to: "material#picture"
       get :audio, to: "material#audio"
       get :video, to: "material#video"
     end
-    resources :sin_materials, only: [:create, :edit, :new, :update, :destroy] do
-      member do
-        get :delete
-      end
+    resources :sin_materials, except: [:show] do
+      get :delete, on: :member
     end
     resources :thumbs, only: [:create]
   end

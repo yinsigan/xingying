@@ -3,11 +3,16 @@ class SinMaterialsController < SettingsController
   before_action :set_public_account
   before_action :add_material_breadcrumb
   before_action :find_sin_material, only: [:edit, :update, :destroy]
+
+  def index
+    @sin_materials = @public_account.sin_materials.includes(sin_pic_text: [:thumb])
+  end
+
   def create
     add_breadcrumb I18n.t('breadcrumbs.material.sin_pic_text'), new_public_account_sin_material_path(@public_account)
     @sin_material = @public_account.sin_materials.build(sin_material_params)
     if @sin_material.save
-      redirect_to pic_text_public_account_path(@public_account), flash: {success: I18n.t('success_submit')}
+      redirect_to public_account_sin_materials_path(@public_account), flash: {success: I18n.t('success_submit')}
     else
       render "new"
     end
@@ -27,7 +32,7 @@ class SinMaterialsController < SettingsController
 
   def update
     @sin_material.update_attributes(sin_material_params)
-    redirect_to pic_text_public_account_path(@public_account), flash: {success: I18n.t('success_save')}
+    redirect_to public_account_sin_materials_path(@public_account), flash: {success: I18n.t('success_save')}
   end
 
   def delete
@@ -36,7 +41,7 @@ class SinMaterialsController < SettingsController
 
   def destroy
     @sin_material.destroy
-    redirect_to pic_text_public_account_path(@public_account), flash: {success: I18n.t('success_delete')}
+    redirect_to public_account_sin_materials_path(@public_account), flash: {success: I18n.t('success_delete')}
   end
 
   private
@@ -54,6 +59,6 @@ class SinMaterialsController < SettingsController
     end
 
     def add_material_breadcrumb
-      add_breadcrumb I18n.t('breadcrumbs.material.title'), pic_text_public_account_path(@public_account)
+      add_breadcrumb I18n.t('breadcrumbs.material.title'), public_account_sin_materials_path(@public_account)
     end
 end

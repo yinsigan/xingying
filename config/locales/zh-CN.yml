@@ -50,12 +50,6 @@ zh-CN:
       picture: "图片"
       audio: "语音"
       video: "视频"
-    pic_text:
-      sin_pic_text: "单图文"
-      multi_pic_text: "多图文"
-      add_sin_pic_text: "添加单图文"
-      add_multi_pic_text: "添加多图文"
-      pic_text_count: "图文消息列表(共%{count}个)"
   sin_materials:
     new:
       title: "添加单图文"
@@ -67,4 +61,9 @@ zh-CN:
       preview_title: "标题"
     delete:
       confirm: "确定删除此素材吗？"
-
+    index:
+      sin_pic_text: "单图文"
+      multi_pic_text: "多图文"
+      add_sin_pic_text: "添加单图文"
+      add_multi_pic_text: "添加多图文"
+      pic_text_count: "图文消息列表(共%{count}个)"

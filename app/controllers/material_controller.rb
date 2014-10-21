@@ -28,6 +28,6 @@ class MaterialController < SettingsController
     end
 
     def pic_text_breadcrumb
-      add_breadcrumb I18n.t('breadcrumbs.material.pic_text'), pic_text_public_account_path
+      add_breadcrumb I18n.t('breadcrumbs.material.pic_text'), public_account_sin_materials_path
     end
 end
