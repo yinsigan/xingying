@@ -19,14 +19,14 @@ class SinMaterialsController < SettingsController
   end
 
   def new
-    add_breadcrumb I18n.t('breadcrumbs.material.new_sin_pic_text'), new_public_account_sin_material_path(@public_account)
+    add_breadcrumb I18n.t('breadcrumbs.sin_material.new'), new_public_account_sin_material_path(@public_account)
     @sin_material = @public_account.sin_materials.build
     @sin_pic_text = @sin_material.build_sin_pic_text
   end
 
   def edit
     @sin_pic_text = @sin_material.sin_pic_text
-    add_breadcrumb I18n.t('breadcrumbs.material.edit_sin_pic_text'), edit_public_account_sin_material_path(@public_account, @sin_material)
+    add_breadcrumb I18n.t('breadcrumbs.sin_material.edit'), edit_public_account_sin_material_path(@public_account, @sin_material)
     render "edit"
   end
 
