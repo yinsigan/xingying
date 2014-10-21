@@ -14,7 +14,7 @@ class ThumbsController < SettingsController
   end
 
   def delete
-    render "delete.js.erb", layout: false
+    render "shared/delete.js.erb", layout: false
   end
 
   def destroy

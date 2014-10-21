@@ -13,7 +13,7 @@
           = @sin_pic_text.title
       .thumb
         %i.default
-          = image_tag @sin_pic_text.thumb.image_url.to_s, size: "100x100"
+          = image_tag @sin_pic_text.thumb.image_url.to_s, size: "100x100" if @sin_pic_text.thumb.present?
       %p.appmsg_desc
         = @sin_pic_text.desc
     = render 'form'
