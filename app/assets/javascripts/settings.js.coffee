@@ -19,6 +19,11 @@ $(document).on "page:change", ->
   # 把圆形loading去掉
   # NProgress.configure { showSpinner: false }
 
+  $("a.btn.btn-danger").on "ajax:send", ->
+    $("body").spin()
+  $("a.btn.btn-danger").on "ajax:complete", ->
+    $("body").spin(false)
+
   $(".filestyle").each ->
     $this = $(this)
     options =

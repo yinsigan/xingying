@@ -2,7 +2,7 @@
   %button.close{"data-dismiss" => "modal", :type => "button"}
     %span{"aria-hidden" => "true"} &times;
     %span.sr-only Close
-  %h4.modal-title= t('delete_confirm')
+  %h4#mymodal.modal-title= t('delete_confirm')
 .modal-body
   %p
     = confirm
