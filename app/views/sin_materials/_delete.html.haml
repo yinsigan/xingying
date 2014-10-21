@@ -2,9 +2,11 @@
   %button.close{"data-dismiss" => "modal", :type => "button"}
     %span{"aria-hidden" => "true"} &times;
     %span.sr-only Close
-  %h4.modal-title 确定删除此素材吗?
+  %h4.modal-title= t('delete_confirm')
 .modal-body
   %p
-    ssss
+    = t('.confirm')
 .modal-footer
-  ssss
+  = link_to t('delete'), public_account_sin_material_path, "data-method" => :delete, class: "btn btn-danger"
+  %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
+    = t('close')

@@ -1,2 +1,5 @@
-$("#modal").modal("show");
+$("#modal").modal({
+  keyboard: true,
+  backdrop: false
+});
 $("#modal-content").html("<%= j render 'delete' %>")

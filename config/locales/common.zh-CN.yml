@@ -33,3 +33,5 @@ zh-CN:
   choose_picture: "选择图片"
   upload_success: "上传成功"
   upload_failure: "上传失败"
+  close: "关闭"
+  delete_confirm: "确认删除？"

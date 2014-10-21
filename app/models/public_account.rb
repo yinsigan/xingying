@@ -15,6 +15,10 @@ class PublicAccount < ActiveRecord::Base
     increment! :pic_text_count
   end
 
+  def decre_sin_material_count
+    decrement! :pic_text_count
+  end
+
   before_create :generate_key
 
   private

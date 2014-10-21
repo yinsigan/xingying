@@ -32,6 +32,12 @@ class SinMaterialsController < SettingsController
     render "delete.js.erb", layout: false
   end
 
+  def destroy
+    @sin_material = @public_account.sin_materials.find(params[:id])
+    @sin_material.destroy
+    redirect_to pic_text_public_account_path(@public_account), flash: {success: I18n.t('success_delete')}
+  end
+
   private
 
     def set_public_account
