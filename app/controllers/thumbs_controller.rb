@@ -1,6 +1,6 @@
 class ThumbsController < SettingsController
   skip_before_action :verify_authenticity_token
-  before_action :set_public_account, only: [:index, :create]
+  before_action :set_public_account
   before_action :add_index_breadcrumb, only: [:index]
   def create
     @thumb = @public_account.thumbs.new
@@ -11,6 +11,16 @@ class ThumbsController < SettingsController
 
   def index
     @thumbs = @public_account.thumbs
+  end
+
+  def delete
+    render "delete.js.erb", layout: false
+  end
+
+  def destroy
+    @thumb = @public_account.thumbs.find(params[:id])
+    @thumb.destroy
+    redirect_to public_account_thumbs_path(@public_account), flash: {success: I18n.t('success_delete')} 
   end
 
   private
