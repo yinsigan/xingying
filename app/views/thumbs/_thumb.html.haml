@@ -1,0 +1,20 @@
+.col-md-3.sin_box
+  .sin_box_content
+    .pic_card
+      %a{class: "media_img"}
+        = image_tag thumb.image_url.to_s
+    %h4.pic_name
+      ssss
+    %p
+      sssss
+  .msg_card_ft
+    %ul.msg_card_opr_list
+      %li.msg_card_opr_item
+        %a{href: "#", "data-toggle" => "tooltip", "data-placement" => "top", "data-tooltip" => true, "title" => t('download')}
+          %span.glyphicon.glyphicon-download-alt
+      %li.msg_card_opr_item
+        %a{href: "#", "data-toggle" => "tooltip", "data-placement" => "top", "data-tooltip" => true, "title" => t('edit')}
+          %span.glyphicon.glyphicon-pencil
+      %li.msg_card_opr_item
+        %a{href: "#", "data-toggle" => "tooltip", "data-placement" => "top", "data-tooltip" => true, "title" => t('delete')}
+          %span.glyphicon.glyphicon-trash

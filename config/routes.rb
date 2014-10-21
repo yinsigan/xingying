@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :sin_materials, except: [:show] do
       get :delete, on: :member
     end
-    resources :thumbs, only: [:create]
+    resources :thumbs, only: [:create, :index]
   end
 
   devise_for :users

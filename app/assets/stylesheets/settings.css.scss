@@ -40,14 +40,14 @@ footer {
   content: "*";
   color: #a94442;
 }
+
+/*单图文预览部分*/
 @mixin appmsg {
   .appmsg_desc {
     padding: 5px 0 10px;
     word-wrap: break-word;
     word-break: break-all;
   }
-
-
 
   h4.appmsg_title {
     font-weight: 400;
@@ -92,8 +92,8 @@ footer {
   }
 }
 
-
-.col-md-4.sin_box {
+/*图文列表*/
+@mixin pic_text_list {
   border: 1px solid #e7e7eb;
   padding-left: 0;
   padding-right: 0;
@@ -132,6 +132,74 @@ footer {
     padding-right: 15px;
 
     @include appmsg;
+  }
+}
+
+/*显示单图文列表*/
+.col-md-4.sin_box {
+  @include pic_text_list;
+}
+.col-md-3.sin_box {
+  border: 1px solid #e7e7eb;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 10px;
+  border-right: none;
+
+  .msg_card_ft {
+    background-color: #f4f5f9;
+    border-top: 1px solid #e7e7eb;
+    height: 30px;
+
+    .msg_card_opr_list {
+      list-style-type: none;
+      height: 30px;
+      line-height: 30px;
+      padding-left: 0;
+      .msg_card_opr_item {
+        text-align: center;
+        width: 33.33%;
+        float: left;
+        a {
+          color: #b2b2b2;
+        }
+      }
+    }
+  }
+
+  .sin_box_content {
+    overflow: hidden;
+    background-color: #fff;
+    color: #8d8d8d;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .pic_card {
+      margin: 10px 0;
+    }
+
+    .media_img {
+      display: block;
+      height: 148px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        display: block;
+      }
+    }
+
+    .pic_name {
+      width: auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-wrap: normal;
+      font-weight: 400;
+      font-style: normal;
+      color: #222;
+    }
   }
 }
 
@@ -220,5 +288,5 @@ footer {
 .btn.btn-default.btn-clicked {
   color: #333;
   background-color: #e6e6e6;
-  border-color: #adadad; 
+  border-color: #adadad;
 }
