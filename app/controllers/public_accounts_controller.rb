@@ -2,7 +2,6 @@ class PublicAccountsController < SettingsController
   before_action :set_public_account, only: [:show, :edit, :update, :destroy]
   before_action :add_index_breadcrumb
   layout "not_show_pa", except: :show
-  respond_to :html
 
   def index
     @public_accounts = current_user.public_accounts
@@ -38,6 +37,10 @@ class PublicAccountsController < SettingsController
     else
       render :edit
     end
+  end
+
+  def delete
+    render "shared/delete.js.erb", layout: false, locals: {delete_url: public_account_path, confirm: I18n.t("public_accounts.delete.confirm")}
   end
 
   def destroy

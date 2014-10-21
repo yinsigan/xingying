@@ -20,9 +20,9 @@
               %td= PublicAccount::TP[@public_account.tp]
   .panel-footer.clearfix
     %span.pull-right
-      %a.btn.btn-sm.btn-info{"title" => t('edit'), "data-toggle" => "tooltip", :href => "#{edit_public_account_path(@public_account)}", :type => "button", "data-placement" => "top", "data-tooltip" => true}
+      %a.btn.btn-sm.btn-info{"title" => t('edit'), "data-toggle" => "tooltip", :href => "#{edit_public_account_path(@public_account)}", "data-placement" => "top", "data-tooltip" => true}
         %i.glyphicon.glyphicon-edit
-      %a.btn.btn-sm.btn-danger{"title" => t('delete'), "data-toggle" => "tooltip", :type => "button", "data-confirm" => t('.delete_tip') , :href => "#{public_account_path(@public_account)}", "data-method" => "delete", "data-placement" => "top", "data-tooltip" => true}
+      = link_to delete_public_account_path(@public_account), "title" => t('delete'), "data-toggle" => "tooltip", "data-placement" => "top", "data-tooltip" => true, class: "btn btn-danger btn-sm", remote: true do
         %i.glyphicon.glyphicon-remove
 
 .panel.panel-default

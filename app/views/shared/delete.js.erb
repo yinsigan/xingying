@@ -2,4 +2,4 @@ $("#modal").modal({
   keyboard: true,
   backdrop: false
 });
-$("#modal-content").html("<%= j render 'delete' %>")
+$("#modal-content").html("<%= j(render partial: 'shared/delete', locals: {delete_url: delete_url, confirm: confirm}) %>")

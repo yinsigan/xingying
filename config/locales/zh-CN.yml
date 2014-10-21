@@ -25,12 +25,13 @@ zh-CN:
       weixin_dev_des: "URL和Token信息用于与微信公众平台接口相连，您可以复制此处的URL和Token信息到微信公众号中，就可以让微信公众账号使用开发者功能。URL和Token信息关系到您的账号资料安全，请您保管好您的URL和Token信息。"
       weixin_dev_btn: "查看URL和Token信息"
       develop_center: "开发者中心"
-      delete_tip: "你真确定删除此公众账号吗?"
     index:
       add: "添加公众账号"
       list: "公众账号列表"
       no_content: "暂无公众账号"
       delete_tip: "你真确定删除此公众账号吗?"
+    delete:
+      confirm: "确定删除此公众账号吗？"
   autoreply:
     tab:
       title: "自动回复"
@@ -60,7 +61,7 @@ zh-CN:
       thumb: "缩略图"
       preview_title: "标题"
     delete:
-      confirm: "确定删除此素材吗？"
+      confirm: "确定删除此单图文素材吗？"
     index:
       sin_pic_text: "单图文"
       multi_pic_text: "多图文"
@@ -69,6 +70,6 @@ zh-CN:
       pic_text_count: "图文消息列表(共%{count}个)"
   thumbs:
     index:
-      thumb_count: "图文列表(共%{count}个)"
+      thumb_count: "图片列表(共%{count}个)"
     delete:
       confirm: "确定删除此图片吗？"

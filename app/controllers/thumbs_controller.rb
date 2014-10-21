@@ -14,7 +14,7 @@ class ThumbsController < SettingsController
   end
 
   def delete
-    render "shared/delete.js.erb", layout: false
+    render "shared/delete.js.erb", layout: false, locals: {delete_url: public_account_thumb_path, confirm: I18n.t('thumbs.delete.confirm')}
   end
 
   def destroy
