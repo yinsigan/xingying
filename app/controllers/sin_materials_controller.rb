@@ -19,7 +19,7 @@ class SinMaterialsController < SettingsController
   end
 
   def new
-    add_breadcrumb I18n.t('breadcrumbs.material.sin_pic_text'), new_public_account_sin_material_path(@public_account)
+    add_breadcrumb I18n.t('breadcrumbs.material.new_sin_pic_text'), new_public_account_sin_material_path(@public_account)
     @sin_material = @public_account.sin_materials.build
     @sin_pic_text = @sin_material.build_sin_pic_text
   end
@@ -59,6 +59,6 @@ class SinMaterialsController < SettingsController
     end
 
     def add_material_breadcrumb
-      add_breadcrumb I18n.t('breadcrumbs.material.title'), public_account_sin_materials_path(@public_account)
+      add_breadcrumb I18n.t('breadcrumbs.material.pic_text'), public_account_sin_materials_path(@public_account)
     end
 end

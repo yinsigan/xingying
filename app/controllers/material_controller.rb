@@ -2,10 +2,6 @@ class MaterialController < SettingsController
   before_action :pic_text_breadcrumb, only: [:pic_text, :sin_pic_text, :multi_pic_text]
   before_action :set_public_account
 
-  def pic_text
-    @sin_materials = @public_account.sin_materials.includes(sin_pic_text: [:thumb])
-  end
-
   def multi_pic_text
     add_breadcrumb I18n.t('breadcrumbs.material.multi_pic_text'), multi_pic_text_public_account_path(@public_account)
   end
