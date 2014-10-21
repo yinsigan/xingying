@@ -1,7 +1,8 @@
 class SinMaterialsController < SettingsController
-  before_action :sin_material_params, only: [:create]
+  before_action :sin_material_params, only: [:create, :update]
   before_action :set_public_account
   before_action :add_material_breadcrumb
+  before_action :find_sin_material, only: [:edit, :update, :destroy]
   def create
     add_breadcrumb I18n.t('breadcrumbs.material.sin_pic_text'), new_public_account_sin_material_path(@public_account)
     @sin_material = @public_account.sin_materials.build(sin_material_params)
@@ -19,13 +20,14 @@ class SinMaterialsController < SettingsController
   end
 
   def edit
-    @sin_material = @public_account.sin_materials.find(params[:id])
     @sin_pic_text = @sin_material.sin_pic_text
     add_breadcrumb I18n.t('breadcrumbs.material.edit_sin_pic_text'), edit_public_account_sin_material_path(@public_account, @sin_material)
     render "edit"
   end
 
   def update
+    @sin_material.update_attributes(sin_material_params)
+    redirect_to pic_text_public_account_path(@public_account), flash: {success: I18n.t('success_save')}
   end
 
   def delete
@@ -33,7 +35,6 @@ class SinMaterialsController < SettingsController
   end
 
   def destroy
-    @sin_material = @public_account.sin_materials.find(params[:id])
     @sin_material.destroy
     redirect_to pic_text_public_account_path(@public_account), flash: {success: I18n.t('success_delete')}
   end
@@ -42,6 +43,10 @@ class SinMaterialsController < SettingsController
 
     def set_public_account
       @public_account = current_user.public_accounts.find(params[:public_account_id])
+    end
+
+    def find_sin_material
+      @sin_material = @public_account.sin_materials.find(params[:id])
     end
 
     def sin_material_params
