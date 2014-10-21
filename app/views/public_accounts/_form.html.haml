@@ -3,18 +3,18 @@
   .form-group
     = f.label :name, class: "col-sm-3 control-label required"
     .col-sm-6
-      = f.text_field :name, class: "form-control"
+      = f.text_field :name, class: "form-control", required: true, autofocus: true
   .form-group
     = f.label :tp, class: "col-sm-3 control-label required"
     .col-sm-6
-      = f.select :tp, options_for_select(PublicAccount::TP.invert, @public_account.tp.presence), {include_blank: "#{t('please_select')}"}, {:class => "form-control"}
+      = f.select :tp, options_for_select(PublicAccount::TP.invert, @public_account.tp.presence), {include_blank: "#{t('please_select')}"}, {:class => "form-control", required: true}
   .form-group
     = f.label :image, class: "col-sm-3 control-label required"
     .col-sm-6
       .imagePreview
         - unless @public_account.new_record?
           = image_tag @public_account.image_url(:thumb).to_s
-      = f.file_field :image, class: "form-control", onchange: "previewImage(this, [256], 4);", :class => "filestyle", "data-buttonText" => "#{t('choose_picture')}", "data-buttonBefore" => true
+      = f.file_field :image, class: "form-control", onchange: "previewImage(this, [256], 4);", :class => "filestyle", "data-buttonText" => "#{t('choose_picture')}", "data-buttonBefore" => true, required: true
       = f.hidden_field :image_cache
   .form-group
     .col-sm-6.col-sm-push-3
