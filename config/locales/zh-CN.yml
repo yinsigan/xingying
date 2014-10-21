@@ -69,4 +69,4 @@ zh-CN:
       pic_text_count: "图文消息列表(共%{count}个)"
   thumbs:
     index:
-      title: "图片列表"
+      thumb_count: "图文列表(共%{count}个)"
