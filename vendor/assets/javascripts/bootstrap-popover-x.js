@@ -98,7 +98,7 @@
         keyboard: true
     });
 
-    $(document).on('ready', function () {
+    $(document).on('page:change', function () {
         $("[data-toggle='popover-x']").on('click', function (e) {
             var $this = $(this), href = $this.attr('href'),
                 $dialog = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))), //strip for ie7
