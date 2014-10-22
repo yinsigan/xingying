@@ -39,16 +39,7 @@
 
 .clearfix
 
-%label
-  .icheckbox.disabled
-    %input{:disabled => "", :name => "quux[1]", :type => "checkbox"}
-  Foo
-%label{:for => "baz[1]"} Bar
-.iradio.checked
-  %input{:checked => "", :id => "baz[1]", :name => "quux[2]", :type => "radio"}
-%label{:for => "baz[2]"} Bar
-.iradio
-  %input{:id => "baz[2]", :name => "quux[2]", :type => "radio"}
+%input.icheck-me{"data-color" => "blue", "data-skin" => "square", :type => "checkbox"}/
 %h3.text-center.tag-title
   为什么选择?
 / Large modal

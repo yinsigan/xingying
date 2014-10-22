@@ -12,11 +12,16 @@
           .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "1", :role => "progressbar", :style => "width: 0%;"}
     .row.operate
       .col-md-12
-        %h3
-          全选
+        .page-header
+          %input.icheck-me#all_check{"data-color" => "blue", "data-skin" => "square", :type => "checkbox"}/
+          %label{for: "all_check", style: "font-weight: normal"}
+            全选
+          %a{class: "btn btn-default"} 移动分组
+          %a{class: "btn btn-danger"} 删除
     .row
-      #pic_content.col-md-12
-        = render @thumbs
+      = form_tag do
+        #pic_content.col-md-12
+          = render @thumbs
     .row
       .col-md-12
         = paginate @thumbs

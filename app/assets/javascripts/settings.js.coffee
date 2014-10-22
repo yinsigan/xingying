@@ -19,9 +19,23 @@ $(document).on "page:change", ->
   # 把圆形loading去掉
   # NProgress.configure { showSpinner: false }
 
-  $('input').iCheck();
+  # 复选框样式
+  icheck = ->
+    if $(".icheck-me").length > 0
+      $(".icheck-me").each ->
+        $el = $(this)
+        skin = (if ($el.attr("data-skin") isnt `undefined`) then "_" + $el.attr("data-skin") else "")
+        color = (if ($el.attr("data-color") isnt `undefined`) then "-" + $el.attr("data-color") else "")
+        opt =
+          checkboxClass: "icheckbox" + skin + color
+          radioClass: "iradio" + skin + color
 
+        $el.iCheck opt
 
+  $ ->
+    icheck()
+
+  # 图片上传样式
   $(".filestyle").each ->
     $this = $(this)
     options =

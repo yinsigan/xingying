@@ -20,7 +20,7 @@
 @import "nprogress";
 @import "alerts-fixed";
 @import "bootstrap-popover-x";
-
+@import 'icheck/square/blue';
 
 .field_with_errors {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
