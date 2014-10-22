@@ -31,8 +31,12 @@ class SinMaterialsController < SettingsController
   end
 
   def update
-    @sin_material.update_attributes(sin_material_params)
-    redirect_to public_account_sin_materials_path(@public_account), flash: {success: I18n.t('success_save')}
+    if @sin_material.update(sin_material_params)
+      redirect_to public_account_sin_materials_path(@public_account), flash: {success: I18n.t('success_save')}
+    else
+      @sin_pic_text = @sin_material.sin_pic_text
+      render "edit"
+    end
   end
 
   def delete

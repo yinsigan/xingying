@@ -4,6 +4,8 @@ class SinPicText < ActiveRecord::Base
   belongs_to :multi_material, class_name: MultiMaterial
 
   validates :title, :body, :thumb, :desc, presence: true
+  validates :desc, :length => { maximum: 120 }
+  validates :title, :length => { maximum: 64 }
 
   before_save :add_pic_url
 

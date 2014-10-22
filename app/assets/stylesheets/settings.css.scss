@@ -44,6 +44,8 @@ footer {
 /*单图文预览部分*/
 @mixin appmsg {
   .appmsg_desc {
+    height: 65px;
+    overflow: hidden;
     padding: 5px 0 10px;
     word-wrap: break-word;
     word-break: break-all;
@@ -54,7 +56,7 @@ footer {
     font-style: normal;
     font-size: 16px;
     line-height: 28px;
-    max-height: 56px;
+    height: 56px;
     overflow: hidden;
     word-wrap: break-word;
     word-break: break-all;
@@ -67,6 +69,7 @@ footer {
   h4.appmsg_time {
     @extend .appmsg_title;
     font-size: 14px;
+    height: 28px;
   }
 
   .thumb {
