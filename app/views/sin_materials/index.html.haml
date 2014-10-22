@@ -18,7 +18,7 @@
         .col-md-12.clearfix
           .btn-group.btn-group-sm.pull-right
             - if controller_name == "sin_materials"
-              %button{class: "btn btn-default btn-clicked"}= t('.sin_pic_text')
+              %button{class: "btn btn-default active"}= t('.sin_pic_text')
             - else
               %a{class: "btn btn-default", href: "#{public_account_sin_materials_path(@public_account)}"}= t('.sin_pic_text')
             %a{class: "btn btn-default", type: "button"}= t('.multi_pic_text')
