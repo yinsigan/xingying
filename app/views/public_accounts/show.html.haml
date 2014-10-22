@@ -36,11 +36,14 @@
           %h4= t('.weixin_dev_title')
           %p.text-muted= t('.weixin_dev_des')
           %p
-            %button{:class => "btn btn-info", :id => "display-dev-info"}
+            %button{:class => "btn btn-info", "data-placement" => "bottom", "data-target" => "#token_info", "data-toggle" => "popover-x"}
               = t('.weixin_dev_btn')
-          .popover.bottom.custom-popover{style: "display: none;", role: "tooltip"}
+
+          #token_info.popover.popover-default
             .arrow
-            %h3.popover-title= t('.weixin_dev_title')
+            %h3.popover-title
+              %span.close{"data-dismiss" => "popover-x"}> &times;
+              = t('.weixin_dev_title')
             .popover-content
               %p
                 %strong= PublicAccount.human_attribute_name('weixin_secret_key')
@@ -48,8 +51,3 @@
               %p
                 %strong= PublicAccount.human_attribute_name('weixin_token')
                 = @public_account.weixin_token
-
-:javascript
-  $("#display-dev-info").on('click', function() {
-    $(this).parent().next(".popover").toggle('fast');
-  })

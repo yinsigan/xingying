@@ -19,6 +19,7 @@
 @import "bootstrap";
 @import "nprogress";
 @import "alerts-fixed";
+@import "bootstrap-popover-x";
 
 .field_with_errors {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);

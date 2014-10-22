@@ -22,3 +22,4 @@
 //= require spin
 //= require jquery.spin
 //= require ajax_upload
+//= require bootstrap-popover-x
