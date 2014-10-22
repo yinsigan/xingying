@@ -13,7 +13,7 @@
           %i.fa.fa-plus-square
           = t('.add_multi_pic_text')
     - if @public_account.pic_text_count > 0
-      .col-md-12
+      .col-md-12.clearfix
         .btn-group.btn-group-sm.pull-right
           - if controller_name == "sin_materials"
             %button{class: "btn btn-default btn-clicked"}= t('.sin_pic_text')
