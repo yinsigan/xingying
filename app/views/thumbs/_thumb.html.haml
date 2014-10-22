@@ -4,9 +4,9 @@
       %a{class: "media_img"}
         = image_tag thumb.image_url.to_s
     %h4.pic_name
-      ssss
+      = thumb.file_name
     %p
-      sssss
+      = thumb.file_size.to_i.to_s(:human_size) if thumb.file_size
   .msg_card_ft
     %ul.msg_card_opr_list
       %li.msg_card_opr_item
