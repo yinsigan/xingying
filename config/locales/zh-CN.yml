@@ -4,6 +4,10 @@ zh-CN:
       mini_magick_processing_error: "有可能是提交的图片格式不对，支持的图片格式为jpg，jpeg，gif，png"
       extension_white_list_error: "有可能是提交的图片格式不对，支持的图片格式为jpg，jpeg，gif，png"
 
+      wrong_size: "错误的图片大小 (应该是: %{file_size})"
+      size_too_small: "图片太小 (最小为: %{file_size})"
+      size_too_big: "图片太大(最大为: %{file_size})"
+
   layouts:
     sidebar_left:
       dashboard: "控制面板"
@@ -68,6 +72,9 @@ zh-CN:
       add_sin_pic_text: "添加单图文"
       add_multi_pic_text: "添加多图文"
       pic_text_count: "图文消息列表(共%{count}个)"
+    sin_material:
+      thumb: "缩略图"
+
   thumbs:
     index:
       thumb_count: "图片列表(共%{count}个)"

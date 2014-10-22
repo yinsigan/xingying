@@ -5,7 +5,7 @@ class SinMaterialsController < SettingsController
   before_action :find_sin_material, only: [:edit, :update, :destroy]
 
   def index
-    @sin_materials = @public_account.sin_materials.includes(sin_pic_text: [:thumb])
+    @sin_materials = @public_account.sin_materials.includes(sin_pic_text: [:thumb]).page params[:page]
   end
 
   def create

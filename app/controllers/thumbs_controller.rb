@@ -10,7 +10,7 @@ class ThumbsController < SettingsController
   end
 
   def index
-    @thumbs = @public_account.thumbs
+    @thumbs = @public_account.thumbs.page(params[:page])
   end
 
   def delete
@@ -21,6 +21,13 @@ class ThumbsController < SettingsController
     @thumb = @public_account.thumbs.find(params[:id])
     @thumb.destroy
     redirect_to public_account_thumbs_path(@public_account), flash: {success: I18n.t('success_delete')} 
+  end
+
+  def upload
+    @thumb = @public_account.thumbs.new
+    @thumb.image = params[:image]
+    @thumb.save
+    render "upload.js.erb", layout: false
   end
 
   private

@@ -7,7 +7,10 @@
       = sin_material.sin_pic_text.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
     .thumb
       %i.default
-        = image_tag sin_material.sin_pic_text.thumb.image_url(:preview).to_s if sin_material.sin_pic_text.thumb.present?
+        - if sin_material.sin_pic_text.thumb.present?
+          = image_tag sin_material.sin_pic_text.thumb.image_url(:preview).to_s
+        - else
+          = t('.thumb')
     %p.appmsg_desc
       = sin_material.sin_pic_text.desc
   .appmsg_opr

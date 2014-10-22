@@ -19,6 +19,9 @@ $(document).on "page:change", ->
   # 把圆形loading去掉
   # NProgress.configure { showSpinner: false }
 
+  $('input').iCheck();
+
+
   $(".filestyle").each ->
     $this = $(this)
     options =

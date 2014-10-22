@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     end
     resources :thumbs, only: [:create, :index, :destroy] do
       get :delete, on: :member
+      post :upload, on: :collection
     end
   end
 

@@ -4,6 +4,22 @@
     %h3.panel-title
       = t('.thumb_count', count: @public_account.thumbs_count)
   .panel-body
-    #pic_content.col-md-12
-      = render @thumbs
 
+    .row.clearfix
+      .col-md-2.pull-right
+        = file_field_tag "image", "data-url" => "/public_accounts/#{@public_account.id}/thumbs/upload", "data-progress" => "progress_div", :class => "filestyle", "data-buttonText" => "#{t('upload')}", "data-input" => false, "data-badge" => false, "data-buttonBefore" => false, "data-buttonName" => "btn-success"
+        #progress_div.progress.min-progress{style: "display: none;"}
+          .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "1", :role => "progressbar", :style => "width: 0%;"}
+    .row.operate
+      .col-md-12
+        %h3
+          全选
+    .row
+      #pic_content.col-md-12
+        = render @thumbs
+    .row
+      .col-md-12
+        = paginate @thumbs
+
+:javascript
+  $("#image").ajax_upload();

@@ -1,10 +1,14 @@
+require 'file_size_validator'
 class Thumb < ActiveRecord::Base
   mount_uploader :image, WthumbUploader
   has_one :sin_pic_text
   belongs_to :public_account, counter_cache: true
 
-  validates :image, presence: true
-
+  validates :image,
+    :presence => true,
+    :file_size => {
+      :maximum => 5.megabytes.to_i
+    }
   before_save :update_image_attributes
 
   private

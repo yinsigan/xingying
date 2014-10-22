@@ -4,21 +4,27 @@
     %h3.panel-title
       = t('.pic_text_count', count: @public_account.pic_text_count)
   .panel-body
-    .col-md-12
-      .btn-group.btn-group-lg
-        = link_to new_public_account_sin_material_path(@public_account), class: "btn btn-default" do
-          %i.fa.fa-plus-square-o
-          = t('.add_sin_pic_text')
-        = link_to multi_pic_text_public_account_path(@public_account), class: "btn btn-default" do
-          %i.fa.fa-plus-square
-          = t('.add_multi_pic_text')
+    .row
+      .col-md-12
+        .btn-group.btn-group-lg
+          = link_to new_public_account_sin_material_path(@public_account), class: "btn btn-default" do
+            %i.fa.fa-plus-square-o
+            = t('.add_sin_pic_text')
+          = link_to multi_pic_text_public_account_path(@public_account), class: "btn btn-default" do
+            %i.fa.fa-plus-square
+            = t('.add_multi_pic_text')
     - if @public_account.pic_text_count > 0
-      .col-md-12.clearfix
-        .btn-group.btn-group-sm.pull-right
-          - if controller_name == "sin_materials"
-            %button{class: "btn btn-default btn-clicked"}= t('.sin_pic_text')
-          - else
-            %a{class: "btn btn-default", href: "#{public_account_sin_materials_path(@public_account)}"}= t('.sin_pic_text')
-          %a{class: "btn btn-default", type: "button"}= t('.multi_pic_text')
-    #pic_text_content.col-md-12
-      = render @sin_materials
+      .row
+        .col-md-12.clearfix
+          .btn-group.btn-group-sm.pull-right
+            - if controller_name == "sin_materials"
+              %button{class: "btn btn-default btn-clicked"}= t('.sin_pic_text')
+            - else
+              %a{class: "btn btn-default", href: "#{public_account_sin_materials_path(@public_account)}"}= t('.sin_pic_text')
+            %a{class: "btn btn-default", type: "button"}= t('.multi_pic_text')
+    .row
+      #pic_text_content.col-md-12
+        = render @sin_materials
+    .row
+      .col-md-12
+        = paginate @sin_materials

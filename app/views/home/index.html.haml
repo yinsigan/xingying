@@ -39,23 +39,19 @@
 
 .clearfix
 
+%label
+  .icheckbox.disabled
+    %input{:disabled => "", :name => "quux[1]", :type => "checkbox"}
+  Foo
+%label{:for => "baz[1]"} Bar
+.iradio.checked
+  %input{:checked => "", :id => "baz[1]", :name => "quux[2]", :type => "radio"}
+%label{:for => "baz[2]"} Bar
+.iradio
+  %input{:id => "baz[2]", :name => "quux[2]", :type => "radio"}
 %h3.text-center.tag-title
   为什么选择?
 / Large modal
 / Button trigger modal
-%button.btn.btn-primary.btn-lg{"data-target" => "#myModal", "data-toggle" => "modal"}
-  Launch demo modal
-/ Modal
-#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"data-dismiss" => "modal", :type => "button"}
-          %span{"aria-hidden" => "true"} &times;
-          %span.sr-only Close
-        %h4#myModalLabel.modal-title Modal title
-      .modal-body
-        \...
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
-        %button.btn.btn-primary{:type => "button"} Save changes
+
+
