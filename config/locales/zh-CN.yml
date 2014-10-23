@@ -79,6 +79,7 @@ zh-CN:
     index:
       thumb_count: "图片列表(共%{count}个)"
       no_content: "暂时没有图片"
+      move_to_group: "移动分组"
     delete:
       confirm: "确定删除此图片吗？"
     delete_all:

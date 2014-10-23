@@ -25,3 +25,5 @@
 //= require bootstrap-popover-x
 //= require icheck
 //= require jquery.fileupload
+//= require jquery.blueimp-gallery.min
+//= require bootstrap-image-gallery

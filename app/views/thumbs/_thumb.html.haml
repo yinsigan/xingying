@@ -1,7 +1,7 @@
 .col-md-3.sin_box
   .sin_box_content
     .pic_card
-      %a{class: "media_img"}
+      %a{class: "media_img", "data-gallery" => true, href: thumb.image_url.to_s}
         = image_tag thumb.image_url.to_s
     %h4.pic_name
       %input.icheck-me{"data-color" => "blue", "data-skin" => "square", :type => "checkbox", value: thumb.id, name: "ids[]"}

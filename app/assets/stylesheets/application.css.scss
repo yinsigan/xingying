@@ -21,6 +21,8 @@
 @import "alerts-fixed";
 @import "bootstrap-popover-x";
 @import 'icheck/square/blue';
+@import "blueimp-gallery.min";
+@import "bootstrap-image-gallery";
 
 .field_with_errors {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);

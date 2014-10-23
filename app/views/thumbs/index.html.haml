@@ -19,15 +19,38 @@
           #operate-button.page-header
             %input.icheck-me#check_all{"data-color" => "blue", "data-skin" => "square", :type => "checkbox"}/
             %label{for: "check_all", style: "font-weight: normal"}
-              全选
-            = link_to "移动分组", nil, class: "btn btn-default disabled"
-            = link_to "删除", delete_all_public_account_thumbs_path(@public_account), class: "btn btn-danger disabled", remote: true
+              = t('select_all')
+            = link_to t('.move_to_group'), nil, class: "btn btn-default disabled"
+            = link_to t('delete'), delete_all_public_account_thumbs_path(@public_account), class: "btn btn-danger disabled", remote: true
       .row
         #pic_content.col-md-12
           = render @thumbs
       .row
         #checkbox_select.col-md-12
           = paginate @thumbs
+
+#blueimp-gallery.blueimp-gallery
+  .slides
+  %h3.title
+  %a.prev ‹
+  %a.next ›
+  %a.close ×
+  %a.play-pause
+  %ol.indicator
+  .modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-hidden" => "true", :type => "button"} &times;
+          %h4.modal-title
+        .modal-body.next
+        .modal-footer
+          %button.btn.btn-default.pull-left.prev{:type => "button"}
+            %i.glyphicon.glyphicon-chevron-left
+            = t('previous_picture')
+          %button.btn.btn-primary.next{:type => "button"}
+            = t('next_picture')
+            %i.glyphicon.glyphicon-chevron-right
 
 :javascript
 
