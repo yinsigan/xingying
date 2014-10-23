@@ -4,7 +4,7 @@
       %a{class: "media_img"}
         = image_tag thumb.image_url.to_s
     %h4.pic_name
-      %input.icheck-me{"data-color" => "blue", "data-skin" => "square", :type => "checkbox", value: thumb.id, name: "thumb[ids][]"}
+      %input.icheck-me{"data-color" => "blue", "data-skin" => "square", :type => "checkbox", value: thumb.id, name: "id[]"}
       = thumb.file_name
     %p
       = thumb.file_size.to_i.to_s(:human_size) if thumb.file_size

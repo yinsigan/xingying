@@ -80,3 +80,5 @@ zh-CN:
       thumb_count: "图片列表(共%{count}个)"
     delete:
       confirm: "确定删除此图片吗？"
+    delete_all:
+      confirm: "确定删除选中的图片吗？"

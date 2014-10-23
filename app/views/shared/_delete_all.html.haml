@@ -1,0 +1,18 @@
+.modal-header
+  %button.close{"data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} &times;
+    %span.sr-only Close
+  %h4#mymodal.modal-title= t('delete_confirm')
+.modal-body
+  %p
+    = confirm
+.modal-footer
+  = link_to t('delete'), delete_url, "data-method" => :delete, class: "btn btn-danger", remote: true, id: "delete_all"
+  %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
+    = t('close')
+
+:javascript
+  $("#delete_all").on("ajax:before", function() {
+    var el = $(this);
+    el.attr('data-params', $(":checkbox").serialize());
+  })

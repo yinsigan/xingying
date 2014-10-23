@@ -12,18 +12,17 @@
           .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "1", :role => "progressbar", :style => "width: 0%;"}
     .row.operate
       .col-md-12
-        .page-header
+        #operate-button.page-header
           %input.icheck-me#check_all{"data-color" => "blue", "data-skin" => "square", :type => "checkbox"}/
           %label{for: "check_all", style: "font-weight: normal"}
             全选
-          %a{class: "btn btn-default"} 移动分组
-          %a{class: "btn btn-danger"} 删除
+          = link_to "移动分组", nil, class: "btn btn-default disabled"
+          = link_to "删除", delete_all_public_account_thumbs_path(@public_account), class: "btn btn-danger disabled", remote: true
     .row
-      = form_tag do
-        #pic_content.col-md-12
-          = render @thumbs
+      #pic_content.col-md-12
+        = render @thumbs
     .row
-      .col-md-12
+      #checkbox_select.col-md-12
         = paginate @thumbs
 
 :javascript
@@ -32,8 +31,15 @@
     $("#image").ajax_upload();
     $("#check_all").on('ifChecked', function() {
       $(".icheck-me").iCheck("check");
-    })
+    });
     $("#check_all").on('ifUnchecked', function() {
       $(".icheck-me").iCheck("uncheck")
-    })
+    });
+    $(".icheck-me").on("ifChanged", function() {
+      if( $(".icheck-me").is(":checked") ) {
+        $("#operate-button a").removeClass("disabled");
+      } else {
+        $("#operate-button a").addClass("disabled");
+      }
+    });
   });

@@ -20,7 +20,16 @@ class ThumbsController < SettingsController
   def destroy
     @thumb = @public_account.thumbs.find(params[:id])
     @thumb.destroy
-    redirect_to public_account_thumbs_path(@public_account), flash: {success: I18n.t('success_delete')} 
+    redirect_to public_account_thumbs_path(@public_account), flash: {success: I18n.t('success_delete')}
+  end
+
+  def delete_all
+    render "shared/delete_all.js.erb", layout: false, locals: {delete_url: destroy_all_public_account_thumbs_path(@public_account), confirm: I18n.t('thumbs.delete_all.confirm')}
+  end
+
+  def destroy_all
+    render :text => "sss"
+    puts params
   end
 
   def upload
