@@ -5,7 +5,7 @@
       var id = $(this).attr("id");
       var progress = _this.data("progress");
       var progress_div = $("#" + progress);
-      var progress_content = progress_div.children(".progress-bar");
+      var progress_content = progress_div.find(".progress-bar");
 
       // 执行
       initFileOnlyAjaxUpload(_this, id);

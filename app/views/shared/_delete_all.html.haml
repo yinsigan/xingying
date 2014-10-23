@@ -12,7 +12,15 @@
     = t('close')
 
 :javascript
-  $("#delete_all").on("ajax:before", function() {
+  $("#delete_all").on("ajax:before", function(event) {
     var el = $(this);
     el.attr('data-params', $(":checkbox").serialize());
+    $("body").spin();
   })
+  $("#delete_all").on("ajax:complete", function(event, xhr, status) {
+    var el = $(this);
+    el.removeAttr('data-params');
+  })
+  $("#delete_all").on('click', function() {
+     $('#modal').delay(2000).modal('hide')
+  });

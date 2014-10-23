@@ -4,8 +4,8 @@
   $(".alert-success.alert-fixed-top").html("<%= j(I18n.t("upload_success")) %>").fadeIn().delay(2000).fadeOut();
   $("#image_preview").html("<%= j(image_tag @thumb.image_url.to_s, size: "100x100") %>");
   $("#edit_sin_preview .thumb .default").hide();
-  if ($("#edit_sin_preview .thumb").children("img").size() > 0) {
-    $("#edit_sin_preview .thumb").children("img").remove();
+  if ($("#edit_sin_preview .thumb").find("img").size() > 0) {
+    $("#edit_sin_preview .thumb").find("img").remove();
   }
   $("#edit_sin_preview .thumb").prepend("<%= j(image_tag @thumb.image_url(:preview).to_s) %>");
   $("#sin_material_sin_pic_text_attributes_thumb_id").val("<%= @thumb.id %>");

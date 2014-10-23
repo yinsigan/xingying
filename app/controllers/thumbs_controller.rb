@@ -28,8 +28,8 @@ class ThumbsController < SettingsController
   end
 
   def destroy_all
-    render :text => "sss"
-    puts params
+    @public_account.thumbs.where(id: params[:ids]).destroy_all
+    redirect_via_turbolinks_to public_account_thumbs_path(@public_account), flash: {success: I18n.t('success_delete')}
   end
 
   def upload
