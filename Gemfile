@@ -59,3 +59,10 @@ gem 'roxml', '~> 3.3.1'
 gem 'nokogiri', '~> 1.6.3.1'
 gem 'kaminari', '~> 0.15.1'
 gem 'icheck-rails', '~> 1.0.2.1'
+group :development do
+  gem 'pry'
+  gem 'pry-debugger'
+  gem 'pry-nav'
+  gem 'guard'
+  gem 'guard-livereload', require: false
+end
