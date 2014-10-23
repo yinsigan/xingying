@@ -4,7 +4,7 @@ class PublicAccount < ActiveRecord::Base
   belongs_to :user
   has_many :sin_materials
   has_many :multi_materials
-  has_many :thumbs, -> { order "created_at DESC" } 
+  has_many :thumbs, -> { order "created_at DESC" }
   validates :name, :tp, :image, :user, presence: true
   validates :default_reply, allow_nil: true, length: { in: 1..600 }
   validates :name, length: { maximum: 30 }

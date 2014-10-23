@@ -6,39 +6,64 @@
   .panel-body
     .row
       .col-md-12
-        = file_field_tag "image", "data-url" => "/public_accounts/#{@public_account.id}/thumbs/upload", "data-progress" => "progress_div", :class => "filestyle", "data-buttonText" => "#{t('upload')}", "data-input" => false, "data-badge" => false, "data-buttonBefore" => false, "data-buttonName" => "btn-success"
+        = form_tag "/public_accounts/#{@public_account.id}/thumbs/upload", method: "post", id: "picture_upload" do
+          %div= file_field_tag "image", :class => "filestyle", "data-buttonText" => "#{t('upload')}", "data-input" => false, "data-badge" => false, "data-buttonBefore" => false, "data-buttonName" => "btn-success", "data-redirect" => public_account_thumbs_url(@public_account), id: "upload"
         #progress_div.progress.min-progress{style: "display: none;"}
           .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "1", :role => "progressbar", :style => "width: 0%;"}
-    .row.operate
-      .col-md-12
-        #operate-button.page-header
-          %input.icheck-me#check_all{"data-color" => "blue", "data-skin" => "square", :type => "checkbox"}/
-          %label{for: "check_all", style: "font-weight: normal"}
-            全选
-          = link_to "移动分组", nil, class: "btn btn-default disabled"
-          = link_to "删除", delete_all_public_account_thumbs_path(@public_account), class: "btn btn-danger disabled", remote: true
-    .row
-      #pic_content.col-md-12
-        = render @thumbs
-    .row
-      #checkbox_select.col-md-12
-        = paginate @thumbs
+    - if @thumbs.empty?
+      .bs-callout.bs-callout-info
+        %h4= t('.no_content')
+    - else
+      .row.operate
+        .col-md-12
+          #operate-button.page-header
+            %input.icheck-me#check_all{"data-color" => "blue", "data-skin" => "square", :type => "checkbox"}/
+            %label{for: "check_all", style: "font-weight: normal"}
+              全选
+            = link_to "移动分组", nil, class: "btn btn-default disabled"
+            = link_to "删除", delete_all_public_account_thumbs_path(@public_account), class: "btn btn-danger disabled", remote: true
+      .row
+        #pic_content.col-md-12
+          = render @thumbs
+      .row
+        #checkbox_select.col-md-12
+          = paginate @thumbs
 
 :javascript
 
   $(document).on("page:change", function() {
-    $("#image").ajax_upload();
     $("#check_all").on('ifChecked', function() {
       $(".icheck-me").iCheck("check");
     });
     $("#check_all").on('ifUnchecked', function() {
       $(".icheck-me").iCheck("uncheck")
     });
+    var operate = $("#operate-button");
     $(".icheck-me").on("ifChanged", function() {
       if( $(".icheck-me").is(":checked") ) {
-        $("#operate-button").find("a").removeClass("disabled");
+        operate.find("a").removeClass("disabled");
       } else {
-        $("#operate-button").find("a").addClass("disabled");
+        operate.find("a").addClass("disabled");
       }
     });
+    var redirect = $("#upload").data("redirect");
+    $('#picture_upload').fileupload({
+      done: function(e, data) {
+        $("#progress_div").hide();
+        $("body").spin(false);
+        Turbolinks.visit(redirect);
+      },
+      add: function(e, data) {
+        $("body").spin();
+        data.submit();
+      },
+      progressall: function (e, data) {
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        $("#progress_div").show();
+        $('#progress_div .progress-bar').css(
+          'width',
+          progress + '%'
+        );
+      }
+    })
   });
