@@ -1,5 +1,18 @@
-.arrow
-  %h3.popover-title
-    %span.close{"data-dismiss" => "popover-x"}> &times;
-    sss
-  .popover-content
+.modal-header
+  %button.close{"data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} &times;
+    %span.sr-only Close
+  %h4#mymodal.modal-title= t('.create_group')
+= form_for [@public_account, @thumb_group], html: {class: "form-horizontal"}, remote: true do |f|
+  .modal-body
+    = render partial: "shared/form_error_messages", locals: {object: @thumb_group}
+    .form-group
+      = f.label :name, class: "col-sm-3 control-label required"
+      .col-sm-9
+        = f.text_field :name, class: "form-control", required: true, autofocus: true
+        %p.help-block
+          = t('.name_maximum')
+  .modal-footer
+    = f.submit t('save'), class: "btn btn-info", "data-disable-with" => t('disable-with-save')
+    %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
+      = t('close')
