@@ -8,12 +8,12 @@
       = form_tag "/public_accounts/#{@public_account.id}/thumbs/upload", method: "post", id: "picture_upload" do
         = file_field_tag "image", :class => "filestyle", "data-buttonText" => "#{t('upload')}", "data-input" => false, "data-badge" => false, "data-buttonBefore" => false, "data-buttonName" => "btn-success", "data-redirect" => public_account_thumbs_url(@public_account), id: "upload"
       = render "shared/progress"
-.row
+.row.margintop20
   .col-md-12
     .btn-group
       %button.btn.btn-default.active{:type => "button"} 未分组
-      %button.btn.btn-default{:type => "button"} second
-      = link_to t('.create_group'), new_public_account_thumb_group_path(@public_account), class: "btn btn-info", remote: true
+      = render partial: "thumb_groups/thumb_group", collection: @thumb_groups unless @thumb_groups.empty?
+      = link_to t('.create_group'), new_public_account_thumb_group_path(@public_account), class: "btn btn-info", remote: true, id: "create_group"
 .panel.panel-default.margintop30
   .panel-heading
     %h3.panel-title

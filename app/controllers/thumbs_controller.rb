@@ -12,6 +12,7 @@ class ThumbsController < SettingsController
   def index
     @thumbs = @public_account.thumbs.page(params[:page]).per(12)
     @thumb_group = @public_account.thumb_groups.build
+    @thumb_groups = @public_account.thumb_groups
   end
 
   def delete
