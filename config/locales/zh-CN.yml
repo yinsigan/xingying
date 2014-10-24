@@ -92,6 +92,8 @@ zh-CN:
       confirm: "确定删除选中的图片吗？"
     thumb:
       move: "移动分组"
+    move:
+      move: "移动分组"
   thumb_groups:
     new:
       create_group: "创建分组"

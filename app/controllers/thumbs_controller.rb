@@ -41,6 +41,14 @@ class ThumbsController < SettingsController
     render "upload.js.erb", layout: false
   end
 
+  def move
+    @thumb_groups = @public_account.thumb_groups
+    render "move.js.erb", layout: false
+  end
+
+  def move_group
+  end
+
   private
     def set_public_account
       @public_account = current_user.public_accounts.find(params[:public_account_id])
