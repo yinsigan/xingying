@@ -1,5 +1,5 @@
 = render partial: "material/tab"
-.panel.panel-default{style: "margin-top: 30px"}
+.panel.panel-default.margintop30
   .panel-heading
     %h3.panel-title
       = t('.pic_text_count', count: @public_account.pic_text_count)
@@ -15,8 +15,8 @@
             = t('.add_multi_pic_text')
     - if @public_account.pic_text_count > 0
       .row
-        .col-md-12.clearfix
-          .btn-group.btn-group-sm.pull-right
+        .col-md-12.text-right
+          .btn-group.btn-group-sm
             - if controller_name == "sin_materials"
               %button{class: "btn btn-default active"}= t('.sin_pic_text')
             - else

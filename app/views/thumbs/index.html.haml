@@ -1,5 +1,5 @@
 = render partial: "material/tab"
-.panel.panel-default{style: "margin-top: 30px"}
+.panel.panel-default.margintop30
   .panel-heading
     %h3.panel-title
       = t('.thumb_count', count: @public_account.thumbs_count)
@@ -26,31 +26,10 @@
         #pic_content.col-md-12
           = render @thumbs
       .row
-        #checkbox_select.col-md-12
+        .col-md-12.text-right
           = paginate @thumbs
 
-#blueimp-gallery.blueimp-gallery
-  .slides
-  %h3.title
-  %a.prev ‹
-  %a.next ›
-  %a.close ×
-  %a.play-pause
-  %ol.indicator
-  .modal.fade
-    .modal-dialog
-      .modal-content
-        .modal-header
-          %button.close{"aria-hidden" => "true", :type => "button"} &times;
-          %h4.modal-title
-        .modal-body.next
-        .modal-footer
-          %button.btn.btn-default.pull-left.prev{:type => "button"}
-            %i.glyphicon.glyphicon-chevron-left
-            = t('previous_picture')
-          %button.btn.btn-primary.next{:type => "button"}
-            = t('next_picture')
-            %i.glyphicon.glyphicon-chevron-right
+= render "shared/blueimp_gallery"
 
 :javascript
 
