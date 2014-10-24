@@ -1,14 +1,40 @@
 = render partial: "material/tab"
+%h3.title-divider
+  %span
+    = t('.list')
+.row
+  .col-md-12.clearfix
+    .pull-right
+      = form_tag "/public_accounts/#{@public_account.id}/thumbs/upload", method: "post", id: "picture_upload" do
+        = file_field_tag "image", :class => "filestyle", "data-buttonText" => "#{t('upload')}", "data-input" => false, "data-badge" => false, "data-buttonBefore" => false, "data-buttonName" => "btn-success", "data-redirect" => public_account_thumbs_url(@public_account), id: "upload"
+      = render "shared/progress"
 .panel.panel-default.margintop30
   .panel-heading
     %h3.panel-title
       = t('.thumb_count', count: @public_account.thumbs_count)
   .panel-body
     .row
-      .col-md-12
-        = form_tag "/public_accounts/#{@public_account.id}/thumbs/upload", method: "post", id: "picture_upload" do
-          %div= file_field_tag "image", :class => "filestyle", "data-buttonText" => "#{t('upload')}", "data-input" => false, "data-badge" => false, "data-buttonBefore" => false, "data-buttonName" => "btn-success", "data-redirect" => public_account_thumbs_url(@public_account), id: "upload"
-        = render "shared/progress"
+      #normal-header.col-md-12
+        .page-header
+          .btn-group
+            %button.btn.btn-default.active{:type => "button"} 未分组
+            %button.btn.btn-default{:type => "button"} second
+            %button.btn.btn-default{:type => "button","data-placement" => "right", "data-target" => "#popover_x", "data-toggle" => "popover-x", class: "btn btn-info"} 创建分组
+            #popover_x.popover.popover-default.col-sm-12
+              .arrow
+              %h3.popover-title
+                %span.close{"data-dismiss" => "popover-x"}> &times;
+                创建分组
+              .popover-content
+                = form_for [@public_account, @thumb_group], html: {class: "form-horizontal"} do |f|
+                  = render partial: "shared/form_error_messages", locals: {object: @thumb_group}
+                  .form-group
+                    = f.label :name, class: "col-sm-4 control-label required"
+                    .col-sm-8
+                      = f.text_field :name, class: "form-control", required: true, autofocus: true
+                  .form-group
+                    .col-sm-8.col-sm-push-4
+                      = f.submit t('save'), class: "btn btn-info", "data-disable-with" => t('disable-with-save')
     - if @thumbs.empty?
       .bs-callout.bs-callout-info
         %h4= t('.no_content')

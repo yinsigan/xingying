@@ -67,6 +67,7 @@ zh-CN:
     delete:
       confirm: "确定删除此单图文素材吗？"
     index:
+      list: "单图文列表"
       sin_pic_text: "单图文"
       multi_pic_text: "多图文"
       add_sin_pic_text: "添加单图文"
@@ -80,6 +81,7 @@ zh-CN:
       thumb_count: "图片列表(共%{count}个)"
       no_content: "暂时没有图片"
       move_to_group: "移动分组"
+      list: "图片列表"
     delete:
       confirm: "确定删除此图片吗？"
     delete_all:

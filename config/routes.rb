@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       get :delete_all, on: :collection
       delete :destroy_all, on: :collection
     end
+    resources :thumb_groups, only: [:new, :create]
   end
 
   %w(404 422 500).each do |code|
