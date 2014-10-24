@@ -27,7 +27,7 @@ zh-CN:
     show:
       weixin_dev_title: "微信接口"
       weixin_dev_des: "URL和Token信息用于与微信公众平台接口相连，您可以复制此处的URL和Token信息到微信公众号中，就可以让微信公众账号使用开发者功能。URL和Token信息关系到您的账号资料安全，请您保管好您的URL和Token信息。"
-      weixin_dev_btn: "查看URL和Token信息"
+      weixin_dev_btn: "查看"
       develop_center: "开发者中心"
     show_token:
       weixin_dev_title: "微信接口"
@@ -75,6 +75,7 @@ zh-CN:
       add_sin_pic_text: "添加单图文"
       add_multi_pic_text: "添加多图文"
       pic_text_count: "图文消息列表(共%{count}个)"
+      no_content: "暂时没有单图文"
     sin_material:
       thumb: "缩略图"
 
@@ -89,6 +90,8 @@ zh-CN:
       confirm: "确定删除此图片吗？"
     delete_all:
       confirm: "确定删除选中的图片吗？"
+    thumb:
+      move: "移动分组"
   thumb_groups:
     new:
       create_group: "创建分组"

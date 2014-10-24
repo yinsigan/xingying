@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20141024014847) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "pic_url"
+    t.string   "article_url"
   end
 
   add_index "sin_pic_texts", ["multi_material_id"], name: "index_sin_pic_texts_on_multi_material_id", using: :btree

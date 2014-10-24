@@ -11,23 +11,27 @@
       = link_to multi_pic_text_public_account_path(@public_account), class: "btn btn-default" do
         %i.fa.fa-plus-square
         = t('.add_multi_pic_text')
-.panel.panel-default.margintop30
-  .panel-heading
-    %h3.panel-title
-      = t('.pic_text_count', count: @public_account.pic_text_count)
-  .panel-body
-    - if @public_account.pic_text_count > 0
+- if @sin_materials.empty?
+  .bs-callout.bs-callout-info
+    %h4= t('.no_content')
+- else
+  .panel.panel-default.margintop30
+    .panel-heading
+      %h3.panel-title
+        = t('.pic_text_count', count: @public_account.pic_text_count)
+    .panel-body
+      - if @public_account.pic_text_count > 0
+        .row
+          .col-md-12.text-right
+            .btn-group.btn-group-sm
+              - if controller_name == "sin_materials"
+                %button{class: "btn btn-default active"}= t('.sin_pic_text')
+              - else
+                %a{class: "btn btn-default", href: "#{public_account_sin_materials_path(@public_account)}"}= t('.sin_pic_text')
+              %a{class: "btn btn-default", type: "button"}= t('.multi_pic_text')
+      .row
+        #pic_text_content.col-md-12
+          = render @sin_materials
       .row
         .col-md-12.text-right
-          .btn-group.btn-group-sm
-            - if controller_name == "sin_materials"
-              %button{class: "btn btn-default active"}= t('.sin_pic_text')
-            - else
-              %a{class: "btn btn-default", href: "#{public_account_sin_materials_path(@public_account)}"}= t('.sin_pic_text')
-            %a{class: "btn btn-default", type: "button"}= t('.multi_pic_text')
-    .row
-      #pic_text_content.col-md-12
-        = render @sin_materials
-    .row
-      .col-md-12.text-right
-        = paginate @sin_materials
+          = paginate @sin_materials

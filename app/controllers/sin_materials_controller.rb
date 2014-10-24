@@ -9,7 +9,6 @@ class SinMaterialsController < SettingsController
   end
 
   def create
-    add_breadcrumb I18n.t('breadcrumbs.material.sin_pic_text'), new_public_account_sin_material_path(@public_account)
     @sin_material = @public_account.sin_materials.build(sin_material_params)
     if @sin_material.save
       redirect_to public_account_sin_materials_path(@public_account), flash: {success: I18n.t('success_submit')}

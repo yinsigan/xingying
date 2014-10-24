@@ -14,15 +14,15 @@
       %button.btn.btn-default.active{:type => "button"} 未分组
       = render partial: "thumb_groups/thumb_group", collection: @thumb_groups unless @thumb_groups.empty?
       = link_to t('.create_group'), new_public_account_thumb_group_path(@public_account), class: "btn btn-info", remote: true, id: "create_group"
-.panel.panel-default.margintop30
-  .panel-heading
-    %h3.panel-title
-      = t('.thumb_count', count: @public_account.thumbs_count)
-  .panel-body
-    - if @thumbs.empty?
-      .bs-callout.bs-callout-info
-        %h4= t('.no_content')
-    - else
+- if @thumbs.empty?
+  .bs-callout.bs-callout-info
+    %h4= t('.no_content')
+- else
+  .panel.panel-default.margintop30
+    .panel-heading
+      %h3.panel-title
+        = t('.thumb_count', count: @public_account.thumbs_count)
+    .panel-body
       .row.operate
         .col-md-12
           #operate-button.normal-header.page-header
