@@ -247,7 +247,7 @@ DEPENDENCIES
   icheck-rails (~> 1.0.2.1)
   jbuilder (~> 2.0)
   jquery-rails (~> 3.1.2)
-  jquery.fileupload-rails
+  jquery.fileupload-rails (~> 1.10.1)
   kaminari (~> 0.15.1)
   meta_request
   mini_magick (~> 3.4)
