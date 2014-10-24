@@ -5,7 +5,7 @@
 .row
   .col-md-12.clearfix
     .pull-right
-      = form_tag "/public_accounts/#{@public_account.id}/thumbs/upload", method: "post", id: "picture_upload" do
+      = form_tag upload_public_account_thumbs_path(@public_account), method: "post", id: "picture_upload" do
         = file_field_tag "image", :class => "filestyle", "data-buttonText" => "#{t('upload')}", "data-input" => false, "data-badge" => false, "data-buttonBefore" => false, "data-buttonName" => "btn-primary", "data-redirect" => public_account_thumbs_url(@public_account), id: "upload"
       = render "shared/progress"
 .row.margintop20

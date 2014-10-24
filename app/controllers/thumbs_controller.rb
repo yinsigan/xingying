@@ -47,6 +47,7 @@ class ThumbsController < SettingsController
   end
 
   def move_group
+    render :text => "ssss"
   end
 
   private
