@@ -50,6 +50,35 @@ $(document).on "page:change", ->
       badge: (if $this.attr("data-badge") is "false" then false else true)
 
     $this.filestyle options
+  # 全选
+  if $("#check_all").length > 0
+    $("#check_all").on "ifChecked", ->
+      $(".icheck-me").iCheck "check"
+    $("#check_all").on "ifUnchecked", ->
+      $(".icheck-me").iCheck "uncheck"
+    operate = $("#operate-button")
+    $(".icheck-me").on "ifChanged", ->
+      if $(".icheck-me").is(":checked")
+        operate.find("a").removeClass "disabled"
+      else
+        operate.find("a").addClass "disabled"
+
+  if $("#upload").length > 0
+    redirect = $("#upload").data("redirect")
+    $("#picture_upload").fileupload
+      done: (e, data) ->
+        $("#progress_div").hide()
+        $("body").spin false
+        Turbolinks.visit redirect
+
+      add: (e, data) ->
+        $("body").spin()
+        data.submit()
+
+      progressall: (e, data) ->
+        progress = parseInt(data.loaded / data.total * 100, 10)
+        $("#progress_div").show()
+        $("#progress_div .progress-bar").css "width", progress + "%"
 
 $(document).on 'page:fetch', ->
   NProgress.start()

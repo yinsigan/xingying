@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022030819) do
+ActiveRecord::Schema.define(version: 20141024014847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,15 @@ ActiveRecord::Schema.define(version: 20141022030819) do
 
   add_index "text_replies", ["text_material_id"], name: "index_text_replies_on_text_material_id", using: :btree
 
+  create_table "thumb_groups", force: true do |t|
+    t.string   "name"
+    t.integer  "public_account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "thumb_groups", ["public_account_id"], name: "index_thumb_groups_on_public_account_id", using: :btree
+
   create_table "thumbs", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -90,9 +99,11 @@ ActiveRecord::Schema.define(version: 20141022030819) do
     t.string   "content_type"
     t.string   "file_size"
     t.string   "file_name"
+    t.integer  "thumb_group_id"
   end
 
   add_index "thumbs", ["public_account_id"], name: "index_thumbs_on_public_account_id", using: :btree
+  add_index "thumbs", ["thumb_group_id"], name: "index_thumbs_on_thumb_group_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

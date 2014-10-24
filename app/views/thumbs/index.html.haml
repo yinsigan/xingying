@@ -27,44 +27,4 @@
       .row
         .col-md-12.text-right
           = paginate @thumbs
-
 = render "shared/blueimp_gallery"
-
-:javascript
-
-  $(document).on("page:change", function() {
-    $("#check_all").on('ifChecked', function() {
-      $(".icheck-me").iCheck("check");
-    });
-    $("#check_all").on('ifUnchecked', function() {
-      $(".icheck-me").iCheck("uncheck")
-    });
-    var operate = $("#operate-button");
-    $(".icheck-me").on("ifChanged", function() {
-      if( $(".icheck-me").is(":checked") ) {
-        operate.find("a").removeClass("disabled");
-      } else {
-        operate.find("a").addClass("disabled");
-      }
-    });
-    var redirect = $("#upload").data("redirect");
-    $('#picture_upload').fileupload({
-      done: function(e, data) {
-        $("#progress_div").hide();
-        $("body").spin(false);
-        Turbolinks.visit(redirect);
-      },
-      add: function(e, data) {
-        $("body").spin();
-        data.submit();
-      },
-      progressall: function (e, data) {
-        var progress = parseInt(data.loaded / data.total * 100, 10);
-        $("#progress_div").show();
-        $('#progress_div .progress-bar').css(
-          'width',
-          progress + '%'
-        );
-      }
-    })
-  });

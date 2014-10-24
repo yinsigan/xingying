@@ -5,6 +5,7 @@ class PublicAccount < ActiveRecord::Base
   has_many :sin_materials
   has_many :multi_materials
   has_many :thumbs, -> { order "created_at DESC" }
+  has_many :thumb_groups
   validates :name, :tp, :image, :user, presence: true
   validates :default_reply, allow_nil: true, length: { in: 1..600 }
   validates :name, length: { maximum: 30 }
