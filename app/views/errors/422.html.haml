@@ -1,10 +1,8 @@
 .col-md-12
   .error-template
     %h1
-      = t('oops')
-    %h2
-      = t('no_found')
+      = t('change_reject')
     .error-details
-      = t('desc')
+      = t('error_details')
     .error-actions
       = link_to t('back_to_home'), root_path, class: "btn btn-primary"
