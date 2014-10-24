@@ -36,18 +36,4 @@
           %h4= t('.weixin_dev_title')
           %p.text-muted= t('.weixin_dev_des')
           %p
-            %button{:class => "btn btn-info", "data-placement" => "right", "data-target" => "#token_info", "data-toggle" => "popover-x"}
-              = t('.weixin_dev_btn')
-
-          #token_info.popover.popover-default
-            .arrow
-            %h3.popover-title
-              %span.close{"data-dismiss" => "popover-x"}> &times;
-              = t('.weixin_dev_title')
-            .popover-content
-              %p
-                %strong= PublicAccount.human_attribute_name('weixin_secret_key')
-                = weixin_server_url(@public_account.weixin_secret_key)
-              %p
-                %strong= PublicAccount.human_attribute_name('weixin_token')
-                = @public_account.weixin_token
+            = link_to t('.weixin_dev_btn'), show_token_public_account_path(@public_account), class: "btn btn-info", remote: true

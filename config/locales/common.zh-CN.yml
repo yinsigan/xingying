@@ -55,3 +55,4 @@ zh-CN:
   error_title: "非常抱歉，出错了"
   error_details: "如果您是这个服务器的拥有者，请检查日志"
   change_reject: "您想要的改变被拒绝"
+  weixin_dev_title: "微信接口信息"

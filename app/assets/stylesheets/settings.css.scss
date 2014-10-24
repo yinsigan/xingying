@@ -278,8 +278,6 @@ footer {
   margin-top: 5px;
 }
 
-#normal-header {
-  .page-header {
-    margin: 15px 0 0;
-  }
+.normal-header.page-header {
+  margin: 15px 0 0;
 }

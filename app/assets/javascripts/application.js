@@ -22,7 +22,6 @@
 //= require spin
 //= require jquery.spin
 //= require ajax_upload
-//= require bootstrap-popover-x
 //= require icheck
 //= require jquery.fileupload
 //= require jquery.blueimp-gallery.min

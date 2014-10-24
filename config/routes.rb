@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get :audio, to: "material#audio"
       get :video, to: "material#video"
       get :delete
+      get :show_token
     end
     resources :sin_materials, except: [:show] do
       get :delete, on: :member

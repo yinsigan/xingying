@@ -1,5 +1,5 @@
 class PublicAccountsController < SettingsController
-  before_action :set_public_account, only: [:show, :edit, :update, :destroy]
+  before_action :set_public_account, only: [:show, :edit, :update, :destroy, :show_token]
   before_action :add_index_breadcrumb
   layout "not_show_pa", except: :show
 
@@ -46,6 +46,10 @@ class PublicAccountsController < SettingsController
   def destroy
     @public_account.destroy
     redirect_to public_accounts_url, flash: {success: I18n.t('success_delete')}
+  end
+
+  def show_token
+    render "show_token.js.erb", layout: false
   end
 
   private
