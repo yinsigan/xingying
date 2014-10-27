@@ -14,19 +14,18 @@
         %input.me{"data-color" => "blue", "data-skin" => "square", :type => "radio", value: thumb_group.id, name: "thumb_group_id"}
         = thumb_group.name
 .modal-footer
-  = link_to t('sure'), move_group_public_account_thumbs_path(@public_account), "data-method" => :post, class: "btn btn-primary", remote: true, id: "move_group"
+  = link_to t('sure'), move_group_public_account_thumbs_path(@public_account, ids: @ids), "data-method" => :post, class: "btn btn-primary", remote: true, id: "move_group"
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
 
 :javascript
   $("#move_group").on("ajax:before", function(event) {
     var el = $(this);
-    el.attr('data-params', $(":checkbox").serialize() + "&" + $(":radio").serialize());
+    el.attr('data-params', $(":radio").serialize());
     $("body").spin();
   })
   $("#move_group").on("ajax:complete", function(event, xhr, status) {
     var el = $(this);
-    el.removeAttr('data-params');
     var modal = $("#modal");
     $("body").spin(false);
   })

@@ -1,0 +1,6 @@
+var modal = $("#modal");
+modal.modal({
+  keyboard: true,
+  backdrop: false
+});
+$("#modal-content").html("<%= j(render "move_single") %>");

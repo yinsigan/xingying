@@ -14,7 +14,7 @@
         = link_to thumb.image_url.to_s, "data-toggle" => "tooltip", "data-placement" => "top", "data-tooltip" => true, "title" => t('download'), "target" => "_blank" do
           %span.glyphicon.glyphicon-download-alt
       %li.msg_card_opr_item
-        %a{href: "#", "data-toggle" => "tooltip", "data-placement" => "top", "data-tooltip" => true, "title" => t('.move')}
+        = link_to move_single_public_account_thumbs_path(@public_account, ids: thumb.id), data: {toggle: "tooltip", placement: "top", tooltip: true}, title: t('.move'), remote: true do
           %i.fa.fa-exchange
       %li.msg_card_opr_item
         = link_to delete_public_account_thumb_path(@public_account, thumb), remote: true, "data-toggle" => "tooltip", "data-placement" => "top", "data-tooltip" => true, "title" => t('delete') do

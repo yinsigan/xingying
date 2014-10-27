@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :thumbs, only: [:create, :index, :destroy] do
       get :delete, on: :member
       post :upload, on: :collection
-      get :delete_all, :move, on: :collection
+      get :delete_all, :move, :move_single, on: :collection
       delete :destroy_all, on: :collection
       post :move_group, on: :collection
     end

@@ -46,13 +46,24 @@ class ThumbsController < SettingsController
     render "move.js.erb", layout: false
   end
 
+  def move_single
+    @thumb_groups = @public_account.thumb_groups
+    @ids = params[:ids]
+    render "move_single.js.erb", layout: false
+  end
+
   def move_group
-    render :text => "ssss"
+    @public_account.thumbs.where(id: params[:ids]).update_all(move_group_params)
+    render "move_group.js.erb", layout: false
   end
 
   private
     def set_public_account
       @public_account = current_user.public_accounts.find(params[:public_account_id])
+    end
+
+    def move_group_params
+      params.permit(:thumb_group_id)
     end
 
     def add_index_breadcrumb
