@@ -1,5 +1,5 @@
 class ThumbsController < SettingsController
-  skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token, only: [:create]
   before_action :set_public_account
   before_action :add_index_breadcrumb, only: [:index]
   def create
@@ -18,7 +18,7 @@ class ThumbsController < SettingsController
     end
     @no_group_count = @public_account.thumbs.where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").count
     @thumb_group = @public_account.thumb_groups.build
-    @thumb_groups = @public_account.thumb_groups.includes(:thumbs).order("created_at asc")
+    @thumb_groups = @public_account.thumb_groups.order("created_at asc")
   end
 
   def delete
@@ -41,8 +41,7 @@ class ThumbsController < SettingsController
   end
 
   def upload
-    @thumb = @public_account.thumbs.new
-    @thumb.image = params[:image]
+    @thumb = @public_account.thumbs.build(upload_group_params)
     @thumb.save
     render "upload.js.erb", layout: false
   end
@@ -70,6 +69,10 @@ class ThumbsController < SettingsController
 
     def move_group_params
       params.permit(:thumb_group_id)
+    end
+
+    def upload_group_params
+      params.permit(:thumb_group_id, :image)
     end
 
     def add_index_breadcrumb

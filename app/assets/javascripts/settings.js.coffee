@@ -64,12 +64,12 @@ $(document).on "page:change", ->
         operate.find("a").addClass "disabled"
 
   if $("#upload").length > 0
-    redirect = $("#upload").data("redirect")
+    request = $("#request").data("request")
     $("#picture_upload").fileupload
       done: (e, data) ->
         $("#progress_div").hide()
         $("body").spin false
-        Turbolinks.visit redirect
+        Turbolinks.visit request
 
       add: (e, data) ->
         $("body").spin()

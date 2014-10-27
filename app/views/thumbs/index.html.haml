@@ -5,7 +5,7 @@
 .row
   .col-md-12.clearfix
     .pull-right
-      = form_tag upload_public_account_thumbs_path(@public_account), method: "post", id: "picture_upload" do
+      = form_tag upload_public_account_thumbs_path(@public_account, {thumb_group_id: @find_thumb_group ? @find_thumb_group.id : nil}), method: "post", id: "picture_upload" do
         = file_field_tag "image", :class => "filestyle", "data-buttonText" => "#{t('upload')}", "data-input" => false, "data-badge" => false, "data-buttonBefore" => false, "data-buttonName" => "btn-primary", "data-redirect" => public_account_thumbs_url(@public_account), id: "upload"
       = render "shared/progress"
 .row.margintop20
@@ -17,7 +17,7 @@
             = link_to public_account_thumbs_path(@public_account), type: "button" do
               = t('.no_group')
               %em.num
-                = @no_group_count
+                (#{@no_group_count})
           = render partial: "thumb_groups/thumb_group", collection: @thumb_groups unless @thumb_groups.empty?
 
     .btn-group.btn-group-sm.margintop20.pull-right

@@ -10,9 +10,6 @@ Rails.application.routes.draw do
       get :keyword, to: 'autoreply#keyword'
       # 素材管理
       get :multi_pic_text, to: "material#multi_pic_text"
-      get :picture, to: "material#picture"
-      get :audio, to: "material#audio"
-      get :video, to: "material#video"
       get :delete
       get :show_token
     end
