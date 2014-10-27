@@ -86,6 +86,7 @@ zh-CN:
       move_to_group: "移动分组"
       list: "图片列表"
       create_group: "创建分组"
+      no_group: "未分组"
     delete:
       confirm: "确定删除此图片吗？"
     delete_all:
@@ -94,6 +95,11 @@ zh-CN:
       move: "移动分组"
     move:
       move: "移动分组"
+      no_group: "未分组"
+    move_single:
+      move: "移动分组"
+      no_group: "未分组"
+
   thumb_groups:
     new:
       create_group: "创建分组"

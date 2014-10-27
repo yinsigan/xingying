@@ -40,7 +40,7 @@ class PublicAccountsController < SettingsController
   end
 
   def delete
-    render "shared/delete.js.erb", layout: false, locals: {delete_url: public_account_path, confirm: I18n.t("public_accounts.delete.confirm")}
+    render "shared/delete.js.erb", layout: false, locals: {delete_url: public_account_path, confirm: I18n.t("public_accounts.delete.confirm"), remote: false}
   end
 
   def destroy

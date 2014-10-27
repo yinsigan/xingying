@@ -1,2 +1,5 @@
 - if !thumb_group.name.blank?
-  %button.btn.btn-default{:type => "button"}= thumb_group.name
+  = link_to group_public_account_thumbs_path(@public_account, thumb_group.id), type: "button", class: "btn btn-default #{current_page?(group_public_account_thumbs_path(@public_account, thumb_group.id)) ? 'active' : nil}" do
+    = thumb_group.name
+    %em.num
+      (#{thumb_group.thumbs.count})

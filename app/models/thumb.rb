@@ -3,6 +3,7 @@ class Thumb < ActiveRecord::Base
   mount_uploader :image, WthumbUploader
   has_one :sin_pic_text
   belongs_to :public_account, counter_cache: true
+  belongs_to :thumb_group
 
   validates :image,
     :presence => true,

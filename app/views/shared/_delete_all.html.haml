@@ -7,7 +7,7 @@
   %p
     = confirm
 .modal-footer
-  = link_to t('delete'), delete_url, "data-method" => :delete, class: "btn btn-danger", remote: true, id: "delete_all"
+  = link_to t('delete'), delete_url, "data-method" => :delete, class: "btn btn-danger", remote: true, id: "delete_all", remote: remote
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
 

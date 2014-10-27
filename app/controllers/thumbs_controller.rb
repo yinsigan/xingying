@@ -10,28 +10,33 @@ class ThumbsController < SettingsController
   end
 
   def index
-    @thumbs = @public_account.thumbs.page(params[:page]).per(12)
+    if params[:thumb_group_id]
+      @thumbs = @public_account.thumbs.where(:thumb_group_id => params[:thumb_group_id]).page(params[:page]).per(12)
+    else
+      @thumbs = @public_account.thumbs.where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").page(params[:page]).per(12)
+    end
+    @no_group_count = @public_account.thumbs.where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").count
     @thumb_group = @public_account.thumb_groups.build
-    @thumb_groups = @public_account.thumb_groups
+    @thumb_groups = @public_account.thumb_groups.includes(:thumbs).order("created_at asc")
   end
 
   def delete
-    render "shared/delete.js.erb", layout: false, locals: {delete_url: public_account_thumb_path, confirm: I18n.t('thumbs.delete.confirm')}
+    render "shared/delete.js.erb", layout: false, locals: {delete_url: public_account_thumb_path, confirm: I18n.t('thumbs.delete.confirm'), remote: true}
   end
 
   def destroy
     @thumb = @public_account.thumbs.find(params[:id])
     @thumb.destroy
-    redirect_to public_account_thumbs_path(@public_account), flash: {success: I18n.t('success_delete')}
+    render "destroy.js.erb", layout: false
   end
 
   def delete_all
-    render "shared/delete_all.js.erb", layout: false, locals: {delete_url: destroy_all_public_account_thumbs_path(@public_account), confirm: I18n.t('thumbs.delete_all.confirm')}
+    render "shared/delete_all.js.erb", layout: false, locals: {delete_url: destroy_all_public_account_thumbs_path(@public_account), confirm: I18n.t('thumbs.delete_all.confirm'), remote: true}
   end
 
   def destroy_all
     @public_account.thumbs.where(id: params[:ids]).destroy_all
-    redirect_via_turbolinks_to public_account_thumbs_path(@public_account), flash: {success: I18n.t('success_delete')}
+    render "destroy_all.js.erb", layout: false
   end
 
   def upload

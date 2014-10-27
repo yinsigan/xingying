@@ -7,7 +7,7 @@
   .radio
     %label
       %input.me{"data-color" => "blue", "data-skin" => "square", :type => "radio", value: 0, name: "thumb_group_id"}
-      未分组
+      = t('.no_group')
   - @thumb_groups.each do |thumb_group|
     .radio
       %label
@@ -23,13 +23,16 @@
     var el = $(this);
     el.attr('data-params', $(":checkbox").serialize() + "&" + $(":radio").serialize());
     $("body").spin();
-  })
-  $("#move_group").on("ajax:complete", function(event, xhr, status) {
+  });
+  $("#move_group").on("ajax:complete", function() {
     var el = $(this);
     el.removeAttr('data-params');
     var modal = $("#modal");
     $("body").spin(false);
-  })
+  });
+  $("#move_group").on("ajax:success", function() {
+    Turbolinks.visit($("#request").data("request"));
+  });
   $("#move_group").on('click', function() {
     var modal = $("#modal");
     modal.delay(2000).modal('hide');
