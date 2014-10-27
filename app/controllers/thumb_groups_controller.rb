@@ -7,6 +7,27 @@ class ThumbGroupsController < SettingsController
     render "new.js.erb", layout: false
   end
 
+  def delete
+    render "shared/delete.js.erb", layout: false, locals: {delete_url: public_account_thumb_group_path, confirm: I18n.t("thumb_groups.delete.confirm"), remote: true}
+  end
+
+  def destroy
+    @thumb_group = @public_account.thumb_groups.find(params[:id])
+    @thumb_group.destroy
+    redirect_via_turbolinks_to public_account_thumbs_path(@public_account), flash: {success: I18n.t('success_delete')}
+  end
+
+  def edit
+    @thumb_group = @public_account.thumb_groups.find(params[:id])
+    render "edit.js.erb", layout: false
+  end
+
+  def update
+    @thumb_group = @public_account.thumb_groups.find(params[:id])
+    @thumb_group.update(thumb_group_params)
+    render "update.js.erb", layout: false
+  end
+
   def create
     @thumb_group = @public_account.thumb_groups.build(thumb_group_params)
     @thumb_group.save

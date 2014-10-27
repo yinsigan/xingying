@@ -104,3 +104,5 @@ zh-CN:
     new:
       create_group: "创建分组"
       name_maximum: "最多只能填写6个字符"
+    delete:
+      confirm: "仅删除分组，不删除图片，组内图片将自动归入未分组"

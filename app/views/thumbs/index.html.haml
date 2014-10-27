@@ -10,23 +10,25 @@
       = render "shared/progress"
 .row.margintop20
   .col-md-12
-    .btn-group
+    .btn-group#group_button
       = link_to public_account_thumbs_path(@public_account), type: "button", class: "btn btn-default #{current_page?(public_account_thumbs_path(@public_account)) ? 'active' : nil}" do
         = t('.no_group')
         %em.num
           = @no_group_count
       = render partial: "thumb_groups/thumb_group", collection: @thumb_groups unless @thumb_groups.empty?
       = link_to t('.create_group'), new_public_account_thumb_group_path(@public_account), class: "btn btn-primary", remote: true, id: "create_group"
+  .col-md-12
+    - if @find_thumb_group.present?
+      = link_to "删除分组", delete_public_account_thumb_group_path(@public_account, @find_thumb_group), class: "btn btn-link", remote: true
+      = link_to "重命名分组", edit_public_account_thumb_group_path(@public_account, @find_thumb_group), class: "btn btn-link", remote: true
 - if @thumbs.empty?
   .bs-callout.bs-callout-info
     %h4= t('.no_content')
 - else
   .panel.panel-default.margintop30
     .panel-heading
-      %h3.panel-title.custom-panel-link.clearfix
+      %h3.panel-title
         = t('.thumb_count', count: @public_account.thumbs_count)
-        %a{class: "btn btn-link"} 删除分组
-        %a{class: "btn btn-link"} 重命名分组
     .panel-body
       .row.operate
         .col-md-12

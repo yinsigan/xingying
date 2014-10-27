@@ -1,0 +1,7 @@
+<% if @thumb_group.errors.any? %>
+  $(".alert-warning.alert-fixed-top").html("<%= j(render partial: 'shared/ajax_error_messages', locals: {object: @thumb_group}) %>").fadeIn().delay(5000).fadeOut();
+<% else %>
+  $(".alert-success.alert-fixed-top").html("<%= j(I18n.t("success_save")) %>").fadeIn().delay(2000).fadeOut();
+  $('#modal').delay(2000).modal('hide');
+  $("#group_button").find(".active").html("<%= @thumb_group.name %>");
+<% end %>

@@ -11,7 +11,8 @@ class ThumbsController < SettingsController
 
   def index
     if params[:thumb_group_id]
-      @thumbs = @public_account.thumbs.where(:thumb_group_id => params[:thumb_group_id]).page(params[:page]).per(12)
+      @find_thumb_group = @public_account.thumb_groups.find(params[:thumb_group_id])
+      @thumbs = @public_account.thumbs.where(:thumb_group => @find_thumb_group).page(params[:page]).per(12)
     else
       @thumbs = @public_account.thumbs.where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").page(params[:page]).per(12)
     end

@@ -27,7 +27,9 @@ Rails.application.routes.draw do
       post :move_group, on: :collection
       get "/:thumb_group_id", to: "thumbs#index", on: :collection, as: :group
     end
-    resources :thumb_groups, only: [:new, :create]
+    resources :thumb_groups, only: [:new, :create, :destroy, :edit, :update] do
+      get :delete, on: :member
+    end
   end
 
   %w(404 422 500).each do |code|
