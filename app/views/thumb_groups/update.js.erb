@@ -3,5 +3,5 @@
 <% else %>
   $(".alert-success.alert-fixed-top").html("<%= j(I18n.t("success_save")) %>").fadeIn().delay(2000).fadeOut();
   $('#modal').delay(2000).modal('hide');
-  $("#group_button").find(".active").html("<%= @thumb_group.name %>");
+  $("#group").find(".active").find("span.group_name").html("<%= @thumb_group.name %>");
 <% end %>

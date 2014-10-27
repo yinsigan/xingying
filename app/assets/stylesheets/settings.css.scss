@@ -290,3 +290,99 @@ footer {
   color: #8d8d8d;
 }
 
+
+
+/* Tabs panel */
+
+.tabbable-panel {
+  padding: 10px;
+  padding-left: 0;
+}
+
+/* Default mode */
+
+.tabbable-line > {
+  .nav-tabs {
+    border: none;
+    margin: 0px;
+    > li {
+      margin-right: 2px;
+      > a {
+        border: 0;
+        margin-right: 0;
+        color: #737373;
+        > i {
+          color: #a6a6a6;
+        }
+      }
+      &.active > a {
+        border: none;
+        &:hover {
+          border: none;
+        }
+      }
+      &.open, &:hover {
+        border-bottom: 4px solid #fbcdcf;
+      }
+      &.open > a, &:hover > a {
+        border: 0;
+        background: none !important;
+        color: #333333;
+      }
+      &.open > a > i, &:hover > a > i {
+        color: #a6a6a6;
+      }
+      &.open .dropdown-menu, &:hover .dropdown-menu {
+        margin-top: 0px;
+      }
+      &.active {
+        border-bottom: 4px solid #f3565d;
+        position: relative;
+        > a {
+          border: 0;
+          color: #333333;
+          > i {
+            color: #404040;
+          }
+        }
+      }
+    }
+  }
+  .tab-content {
+    margin-top: -3px;
+    background-color: #fff;
+    border: 0;
+    border-top: 1px solid #eee;
+    padding: 15px 0;
+  }
+}
+
+.portlet .tabbable-line > .tab-content {
+  padding-bottom: 0;
+}
+
+/* Below tabs mode */
+
+.tabbable-line.tabs-below > {
+  .nav-tabs > li {
+    border-top: 4px solid transparent;
+    > a {
+      margin-top: 0;
+    }
+    &:hover {
+      border-bottom: 0;
+      border-top: 4px solid #fbcdcf;
+    }
+    &.active {
+      margin-bottom: -2px;
+      border-bottom: 0;
+      border-top: 4px solid #f3565d;
+    }
+  }
+  .tab-content {
+    margin-top: -10px;
+    border-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+  }
+}

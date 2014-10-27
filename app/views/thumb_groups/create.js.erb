@@ -3,5 +3,5 @@
 <% else %>
   $(".alert-success.alert-fixed-top").html("<%= j(I18n.t("success_submit")) %>").fadeIn().delay(2000).fadeOut();
   $('#modal').delay(2000).modal('hide');
-  $("#create_group").before("<%= j render partial: "thumb_groups/thumb_group", locals: {thumb_group: @thumb_group} %>")
+  $("#group").append("<%= j render partial: "thumb_groups/thumb_group", locals: {thumb_group: @thumb_group} %>")
 <% end %>
