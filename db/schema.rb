@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024014847) do
+ActiveRecord::Schema.define(version: 20141028082416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,12 +22,10 @@ ActiveRecord::Schema.define(version: 20141024014847) do
     t.integer  "public_account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "material_id_id"
     t.integer  "subjectable_id"
     t.string   "subjectable_type"
   end
 
-  add_index "kwords", ["material_id_id"], name: "index_kwords_on_material_id_id", using: :btree
   add_index "kwords", ["public_account_id"], name: "index_kwords_on_public_account_id", using: :btree
   add_index "kwords", ["subjectable_id", "subjectable_type"], name: "index_kwords_on_subjectable_id_and_subjectable_type", using: :btree
 
@@ -51,10 +49,13 @@ ActiveRecord::Schema.define(version: 20141024014847) do
     t.string   "weixin_secret_key"
     t.string   "weixin_token"
     t.text     "default_reply"
-    t.integer  "pic_text_count",    default: 0
-    t.integer  "thumbs_count",      default: 0
+    t.integer  "pic_text_count",      default: 0
+    t.integer  "thumbs_count",        default: 0
+    t.integer  "reply_type",          default: 1
+    t.integer  "default_material_id"
   end
 
+  add_index "public_accounts", ["default_material_id"], name: "index_public_accounts_on_default_material_id", using: :btree
   add_index "public_accounts", ["user_id"], name: "index_public_accounts_on_user_id", using: :btree
 
   create_table "sin_pic_texts", force: true do |t|

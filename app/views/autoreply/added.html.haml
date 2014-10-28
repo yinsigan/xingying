@@ -7,22 +7,16 @@
     .panel-body
       = form_for @public_account, url: set_default_reply_public_account_path(@public_account), method: :patch, html: {class: "form-horizontal"} do |f|
         = render partial: "shared/form_error_messages", locals: {object: @public_account}
-        .form-group
-          = f.label :default_reply, class: "col-sm-3 control-label"
+        .form-group#reply_type
+          = label_tag t('.reply_type'), nil, class: "col-sm-3 control-label"
           .col-sm-9
-            = f.text_area :default_reply, class: "form-control", rows: 12, id: "text"
-            %p.text-muted.pull-right
-              = t('.char_tip')
-              %span#chars
-                = t('.char_number')
+            = f.select :reply_type, options_for_select(PublicAccount::ReplyType.invert, @public_account.reply_type.presence), {include_blank: false}, {:class => "form-control", data: {remote: true, url: reply_content_public_account_path(@public_account)} }
+        #reply_content
         .form-group
           .col-sm-9.col-sm-push-3
             = f.submit "#{t('save')}", class: "btn btn-primary", "data-disable-with" => "#{t('disable-with-submit')}"
 
 :javascript
-    $(document).on("page:change", function() {
-      var elem = $("#chars");
-      if($("#text").length > 0) {
-        $("#text").limiter(600, elem);
-      }
-    });
+  $(document).on("page:change", function() {
+    $("#public_account_reply_type").trigger('change');
+  });

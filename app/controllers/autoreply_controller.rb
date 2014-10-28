@@ -1,14 +1,23 @@
 class AutoreplyController < SettingsController
   before_action :set_public_account, :add_show_breadcrumb
+
+  def reply_content
+    if params[:public_account] && params[:public_account][:reply_type]
+      render PublicAccount::ReplyTypeNode[params[:public_account][:reply_type].to_i] + ".js.erb", layout: false
+    end
+  end
+
   def added
     add_breadcrumb I18n.t("breadcrumbs.autoreply.added"), added_public_account_path(@public_account)
   end
 
   def set_default_reply
     if  @public_account.update(public_account_params)
-      flash.now[:success] = I18n.t('success_save')
+      flash[:success] = I18n.t('success_save')
+      redirect_to added_public_account_path(@public_account)
+    else
+      render :added
     end
-    render :added
   end
 
   def default
@@ -27,6 +36,6 @@ class AutoreplyController < SettingsController
     end
 
     def public_account_params
-      params.require(:public_account).permit(:default_reply)
+      params.require(:public_account).permit(:default_reply, :reply_type)
     end
 end

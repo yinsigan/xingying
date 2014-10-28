@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     member do
       # 自动回复
       get :added, to: 'autoreply#added'
+      get :reply_content, to: 'autoreply#reply_content'
       patch :set_default_reply, to: 'autoreply#set_default_reply'
       get :default, to: 'autoreply#default'
       get :keyword, to: 'autoreply#keyword'

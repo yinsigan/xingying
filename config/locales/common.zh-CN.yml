@@ -57,3 +57,4 @@ zh-CN:
   change_reject: "您想要的改变被拒绝"
   weixin_dev_title: "微信接口信息"
   sure: "确定"
+  picture_upload_tip: "上传大小: 不超过5M, 格式: png, jpeg, jpg, gif"

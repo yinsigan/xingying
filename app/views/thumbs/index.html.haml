@@ -6,7 +6,7 @@
         = file_field_tag "image", :class => "filestyle", "data-buttonText" => "#{t('upload')}", "data-input" => false, "data-badge" => false, "data-buttonBefore" => false, "data-buttonName" => "btn-primary", "data-redirect" => public_account_thumbs_url(@public_account), id: "upload"
     .pull-right.marginright20
       %p.help-block
-        上传大小: 不超过5M,    格式: png, jpeg, jpg, gif
+        = t('picture_upload_tip')
       = render "shared/progress"
 .row.margintop20
   .col-md-12.clearfix

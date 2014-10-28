@@ -1,0 +1,17 @@
+.form-group
+  = label_tag "public_account[default_reply]", t('.default_reply'), class: "col-sm-3 control-label"
+  .col-sm-9
+    = text_area_tag "public_account[default_reply]", @public_account.try(:default_reply), class: "form-control", rows: 12, id: "text"
+    %p.text-muted.pull-right
+      = t('.char_tip')
+      %span#chars
+        = t('.char_number')
+
+
+:javascript
+  $(document).ready(function() {
+    var elem = $("#chars");
+    if($("#text").length > 0) {
+      $("#text").limiter(600, elem);
+    }
+  });
