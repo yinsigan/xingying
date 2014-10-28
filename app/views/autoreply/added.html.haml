@@ -19,4 +19,10 @@
 :javascript
   $(document).on("page:change", function() {
     $("#public_account_reply_type").trigger('change');
+    $("#public_account_reply_type").on("ajax:before", function() {
+      NProgress.start()
+    });
+    $("#public_account_reply_type").on("ajax:complete", function() {
+      NProgress.done()
+    });
   });
