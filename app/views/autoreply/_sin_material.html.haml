@@ -1,25 +1,11 @@
 .form-group
-  = label_tag "public_account[default_reply]", "单图文", class: "col-sm-3 control-label"
-  - if @public_account.default_sin_material.present?
-    .col-sm-9#pic_text_content
-      .col-sm-6.sin_box
-        .sin_box_content
-          %h4.appmsg_title
-            %a{onclick: "return false;", href: "javascript:void(0);", target: "_blank"}
-              = @public_account.default_sin_material.sin_pic_text.title
-          %h4.appmsg_time
-            = @public_account.default_sin_material.sin_pic_text.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
-          .thumb
-            %i.default
-              - if @public_account.default_sin_material.sin_pic_text.thumb.present?
-                = image_tag @public_account.default_sin_material.sin_pic_text.thumb.image_url(:preview).to_s
-              - else
-                = t('.thumb')
-          %p.appmsg_desc
-            = @public_account.default_sin_material.sin_pic_text.desc
-  - else
-    .col-sm-9
-      = text_field_tag "", "还未选择", disabled: true, class: "form-control"
+  = label_tag "public_account[default_reply]", t('.name'), class: "col-sm-3 control-label"
+  .col-sm-9#pic_text_content
+    - if @public_account.default_sin_material.present?
+      = render partial: "autoreply/sin_preview", locals: {default_sin_material: @public_account.default_sin_material}
+    - else
+      = text_field_tag "", t('no_select'), disabled: true, class: "form-control"
+  = hidden_field "public_account", "default_material_id", value: @public_account.default_material_id.present? ? @public_account.default_material_id : nil
 .form-group
   .col-sm-9.col-sm-push-3
-    = link_to "选择单图文", select_sin_material_public_account_path(@public_account), class: "btn btn-default", remote: true
+    = link_to t('.select_sin'), select_sin_material_public_account_path(@public_account), class: "btn btn-default", remote: true

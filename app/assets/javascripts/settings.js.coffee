@@ -80,6 +80,9 @@ $(document).on "page:change", ->
         $("#progress_div").show()
         $("#progress_div .progress-bar").css "width", progress + "%"
 
+  $(document).ajaxError (e, xhr, settings) ->
+    Turbolinks.visit "/users/sign_in" if xhr.status is 401
+
 $(document).on 'page:fetch', ->
   NProgress.start()
 $(document).on 'page:change', ->

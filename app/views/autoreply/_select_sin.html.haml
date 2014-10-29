@@ -2,11 +2,11 @@
   %button.close{"data-dismiss" => "modal", :type => "button"}
     %span{"aria-hidden" => "true"} &times;
     %span.sr-only Close
-  %h4#mymodal.modal-title 选择单图文
+  %h4#mymodal.modal-title= t('.select_sin')
 .modal-body
   .row
     .col-md-12.clearfix
-      = link_to "创建单图文", new_public_account_sin_material_path(@public_account), class: "btn btn-primary pull-right"
+      = link_to t('.add_sin'), new_public_account_sin_material_path(@public_account), class: "btn btn-primary pull-right"
   .row
     #pic_text_content.col-md-12
       = render partial: "sin_materials/sin_material", collection: @sin_materials
@@ -35,3 +35,8 @@
   $("#page a").on("ajax:before", function() {
     NProgress.done();
   })
+  $("#select_btn").on('click', function() {
+    $("#public_account_default_material_id").val($(".offer-success").attr("id"));
+    $("#modal").modal('hide');
+    $("#pic_text_content").html($('.offer-success').removeClass("offer-success"));
+  });
