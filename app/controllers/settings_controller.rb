@@ -7,6 +7,6 @@ class SettingsController < ApplicationController
   private
 
     def home_breadcrumb
-      add_breadcrumb "首页", :root_path
+      add_breadcrumb I18n.t('home'), :root_path
     end
 end
