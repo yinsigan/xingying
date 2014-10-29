@@ -9,6 +9,7 @@ class AutoreplyController < SettingsController
 
   def added
     add_breadcrumb I18n.t("breadcrumbs.autoreply.added"), added_public_account_path(@public_account)
+    store_location
   end
 
   def set_default_reply
@@ -41,6 +42,6 @@ class AutoreplyController < SettingsController
     end
 
     def public_account_params
-      params.require(:public_account).permit(:default_reply, :reply_type)
+      params.require(:public_account).permit(:default_reply, :reply_type, :default_material_id)
     end
 end

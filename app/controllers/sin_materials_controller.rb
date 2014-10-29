@@ -6,12 +6,14 @@ class SinMaterialsController < SettingsController
 
   def index
     @sin_materials = @public_account.sin_materials.includes(sin_pic_text: [:thumb]).page params[:page]
+    store_location
   end
 
   def create
     @sin_material = @public_account.sin_materials.build(sin_material_params)
     if @sin_material.save
-      redirect_to public_account_sin_materials_path(@public_account), flash: {success: I18n.t('success_submit')}
+      flash[:success] = I18n.t('success_save');
+      redirect_back_or public_account_sin_materials_path(@public_account)
     else
       render "new"
     end
@@ -31,7 +33,8 @@ class SinMaterialsController < SettingsController
 
   def update
     if @sin_material.update(sin_material_params)
-      redirect_to public_account_sin_materials_path(@public_account), flash: {success: I18n.t('success_save')}
+      flash[:success] = I18n.t('success_save');
+      redirect_back_or public_account_sin_materials_path(@public_account)
     else
       @sin_pic_text = @sin_material.sin_pic_text
       render "edit"
