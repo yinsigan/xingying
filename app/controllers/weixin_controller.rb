@@ -56,6 +56,13 @@ class WeixinController < ApplicationController
       case @weixin_public_account.reply_type
       when 1
         reply_text_message("#{@weixin_public_account.default_reply.presence}")
+      when 2
+        if @weixin_public_account.default_sin_material.present?
+          articles = []
+          article = generate_article(@weixin_public_account.default_sin_material.title, @weixin_public_account.default_sin_material.desc, @weixin_public_account.default_sin_material.pic_url, @weixin_public_account.default_sin_material.article_url.presence)
+          articles << article
+          reply_news_message(articles)
+        end
       end
     end
 
