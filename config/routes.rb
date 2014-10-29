@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       patch :set_default_reply, to: 'autoreply#set_default_reply'
       get :default, to: 'autoreply#default'
       get :keyword, to: 'autoreply#keyword'
+      get :select_sin_material, to: "autoreply#select_sin_material"
       # 素材管理
       get :multi_pic_text, to: "material#multi_pic_text"
       get :delete

@@ -1,0 +1,28 @@
+.modal-header
+  %button.close{"data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} &times;
+    %span.sr-only Close
+  %h4#mymodal.modal-title 选择单图文
+.modal-body
+  .row
+    .col-md-12.clearfix
+      = link_to "创建单图文", new_public_account_sin_material_path(@public_account), class: "btn btn-primary pull-right"
+  .row
+    #pic_text_content.col-md-12
+      = render partial: "sin_materials/sin_material", collection: @sin_materials
+.modal-footer
+  %button{type: "button", class: "btn btn-primary disabled", id: "select_btn"}= t('sure')
+  %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
+    = t('close')
+
+:javascript
+  $(".sin_box").on('click', function() {
+    //$(this).addClass("offer-success");
+    $(this).toggleClass("offer-success");
+    $(this).siblings().removeClass("offer-success");
+    if($(this).hasClass("offer-success")) {
+      $("#select_btn").removeClass("disabled");
+    } else {
+      $("#select_btn").addClass("disabled");
+    }
+  })
