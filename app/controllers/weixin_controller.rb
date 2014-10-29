@@ -55,7 +55,7 @@ class WeixinController < ApplicationController
       end
       case @weixin_public_account.reply_type
       when 1
-        reply_text_message("#{@weixin_public_account.default_reply.presence}") + reply_text_message("#{@weixin_public_account.default_reply.presence}")
+        reply_text_message("#{@weixin_public_account.default_reply.presence}")
       when 2
         if @weixin_public_account.default_sin_material.present? && sin_pic_text = @weixin_public_account.default_sin_material.sin_pic_text
           articles = []
