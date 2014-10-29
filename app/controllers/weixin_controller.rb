@@ -57,9 +57,9 @@ class WeixinController < ApplicationController
       when 1
         reply_text_message("#{@weixin_public_account.default_reply.presence}")
       when 2
-        if @weixin_public_account.default_sin_material.present?
+        if @weixin_public_account.default_sin_material.present? && sin_pic_text = @weixin_public_account.default_sin_material.sin_pic_text
           articles = []
-          article = generate_article(@weixin_public_account.default_sin_material.title, @weixin_public_account.default_sin_material.desc, @weixin_public_account.default_sin_material.pic_url, @weixin_public_account.default_sin_material.article_url.presence)
+          article = generate_article(sin_pic_text.title, sin_pic_text.desc, sin_pic_text.pic_url, sin_pic_text.article_url.presence)
           articles << article
           reply_news_message(articles)
         end
