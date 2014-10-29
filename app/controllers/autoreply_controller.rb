@@ -21,7 +21,7 @@ class AutoreplyController < SettingsController
   end
 
   def select_sin_material
-    @sin_materials = @public_account.sin_materials.includes(sin_pic_text: [:thumb]).page params[:page]
+    @sin_materials = @public_account.sin_materials.includes(sin_pic_text: [:thumb]).page(params[:page]).per(6)
     render "select_sin_material.js.erb", layout: false
   end
 
