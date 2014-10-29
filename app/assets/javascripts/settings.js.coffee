@@ -64,12 +64,11 @@ $(document).on "page:change", ->
         operate.find("a").addClass "disabled"
 
   if $("#upload").length > 0
-    request = $("#request").data("request")
     $("#picture_upload").fileupload
       done: (e, data) ->
         $("#progress_div").hide()
         $("body").spin false
-        Turbolinks.visit request
+        Turbolinks.visit()
 
       add: (e, data) ->
         $("body").spin()

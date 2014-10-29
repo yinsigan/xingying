@@ -28,7 +28,7 @@ class ThumbsController < SettingsController
   def destroy
     @thumb = @public_account.thumbs.find(params[:id])
     @thumb.destroy
-    render "destroy.js.erb", layout: false
+    render "shared/success_destroy.js.erb", layout: false
   end
 
   def delete_all
@@ -37,7 +37,7 @@ class ThumbsController < SettingsController
 
   def destroy_all
     @public_account.thumbs.where(id: params[:ids]).destroy_all
-    render "destroy_all.js.erb", layout: false
+    render "shared/success_destroy.js.erb", layout: false
   end
 
   def upload

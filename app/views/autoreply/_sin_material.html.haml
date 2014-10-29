@@ -2,7 +2,7 @@
   = label_tag "public_account[default_reply]", t('.name'), class: "col-sm-3 control-label"
   .col-sm-9#pic_text_content
     - if @public_account.default_sin_material.present?
-      = render partial: "autoreply/sin_preview", locals: {default_sin_material: @public_account.default_sin_material}
+      = render partial: "sin_materials/sin_material", locals: {sin_material: @public_account.default_sin_material, sin_col: "col-sm-6"}
     - else
       = text_field_tag "", t('no_select'), disabled: true, class: "form-control"
   = hidden_field "public_account", "default_material_id", value: @public_account.default_material_id.present? ? @public_account.default_material_id : nil

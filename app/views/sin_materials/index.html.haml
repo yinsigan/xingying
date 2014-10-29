@@ -28,7 +28,7 @@
               %a{class: "btn btn-default", type: "button"}= t('.multi_pic_text')
       .row
         #pic_text_content.col-md-12.margintop20
-          = render @sin_materials
+          = render partial: "sin_material", collection: @sin_materials, locals: {sin_col: "col-md-4"}
       .row
         .col-md-12.text-right
           = paginate @sin_materials

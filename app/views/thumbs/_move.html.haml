@@ -31,7 +31,7 @@
     $("body").spin(false);
   });
   $("#move_group").on("ajax:success", function() {
-    Turbolinks.visit($("#request").data("request"));
+    Turbolinks.visit();
   });
   $("#move_group").on('click', function() {
     var modal = $("#modal");

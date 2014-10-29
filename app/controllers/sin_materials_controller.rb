@@ -39,12 +39,12 @@ class SinMaterialsController < SettingsController
   end
 
   def delete
-    render "shared/delete.js.erb", layout: false, locals: {delete_url: public_account_sin_material_path, confirm: I18n.t("sin_materials.delete.confirm"), remote: false}
+    render "shared/delete.js.erb", layout: false, locals: {delete_url: public_account_sin_material_path, confirm: I18n.t("sin_materials.delete.confirm"), remote: true}
   end
 
   def destroy
     @sin_material.destroy
-    redirect_to public_account_sin_materials_path(@public_account), flash: {success: I18n.t('success_delete')}
+    render "destroy.js.erb", layout: false
   end
 
   private
