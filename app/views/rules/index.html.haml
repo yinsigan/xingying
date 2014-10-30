@@ -14,6 +14,7 @@
       .panel.panel-default
         .panel-heading
           %h3.panel-title.clearfix
+            %span.glyphicon.glyphicon-edit
             %strong
               = t('.new_rule')
             %i.fa.fa-sort-asc.pull-right
@@ -31,12 +32,12 @@
                   = kword.label :content, class: "col-sm-2 control-label required"
                   .col-sm-8
                     = kword.text_field :content, class: "form-control required"
-                  .col-sm-2
-                    = link_to t('.new_kword'), nil, class: "btn btn-link"
+                  .col-sm-2.text-right
+                    = link_to t('.new_kword'), nil, class: "btn btn-link", style: "padding: 6px 0;"
                 .form-group
                   .col-sm-2.control-label
                   .col-sm-8
-                  .col-sm-2
+                  .col-sm-2.text-right
                     = link_to "ss", class: "gray_link" do
                       %span.glyphicon.glyphicon-pencil
                     = link_to "ss", class: "gray_link" do
@@ -50,7 +51,7 @@
                   .col-sm-2
                   .col-sm-8
                     回复内容
-                  .col-sm-2
+                  .col-sm-2.text-right
                     = link_to "ss", class: "gray_link" do
                       %span.glyphicon.glyphicon-pencil
                     = link_to "ss", class: "gray_link" do
