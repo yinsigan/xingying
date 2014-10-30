@@ -20,9 +20,16 @@ zh-CN:
         thumb: "封面"
       thumb_group:
         name: "名称"
+      rule:
+        name: "规则名"
+      kword:
+        content: "关键字"
+        subjectable_id: "回复"
     models:
       user: "用户"
       public_account: "公众号"
       sin_pic_text: "单图文"
       sin_material: "单图文"
       thumb_group: "分组"
+      rule: "规则"
+      kword: "关键词"

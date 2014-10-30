@@ -17,42 +17,51 @@
             %strong
               = t('.new_rule')
             %i.fa.fa-sort-asc.pull-right
-        .panel-body
-          = form_for [@public_account, @rule], html: {class: "form-horizontal"} do |public_account|
-            .form-group
-              = public_account.label :name, class: "col-sm-2 control-label required"
-              .col-sm-7
-                = public_account.text_field :name, class: "form-control", required: true, autoreply: true
-                %p.help-block sssss
-              .col-sm-3
-                = link_to "添加关键字", "ss", class: "btn btn-link"
-                = link_to "ss", class: "gray_link" do
-                  %span.glyphicon.glyphicon-pencil
-                = link_to "ss", class: "gray_link" do
-                  %span.glyphicon.glyphicon-trash
-            = public_account.fields_for :kwords do |kword|
+        = form_for [@public_account, @rule], html: {class: "form-horizontal"} do |public_account|
+          .panel-body
+            .page-header
               .form-group
-                = kword.label :content, class: "col-sm-2 control-label required"
-                .col-sm-7
-                  = kword.text_field :content, class: "form-control", required: true, autoreply: true
-                  %p.help-block sssss
-                .col-sm-3
-                  = kword.text_field :subjectable_id, class: "form-control", required: true, autoreply: true
-              .form-group
-                = kword.label "回复", class: "col-sm-2 control-label required"
-                .col-sm-7
-                  = kword.text_field :subjectable_id, class: "form-control", required: true, autoreply: true
-                  %p.help-block sssss
-                .col-sm-3
-                  = kword.text_field :subjectable_id, class: "form-control", required: true, autoreply: true
+                = public_account.label :name, class: "col-sm-2 control-label required"
+                .col-sm-10
+                  = public_account.text_field :name, class: "form-control", required: true, autoreply: true
+                  %p.help-block= t('.name_limit')
+            = public_account.fields_for :kwords, :child_index => "" do |kword|
+              #kword_content
+                .form-group
+                  = kword.label :content, class: "col-sm-2 control-label required"
+                  .col-sm-8
+                    = kword.text_field :content, class: "form-control required"
+                  .col-sm-2
+                    = link_to t('.new_kword'), nil, class: "btn btn-link"
+                .form-group
+                  .col-sm-2.control-label
+                  .col-sm-8
+                  .col-sm-2
+                    = link_to "ss", class: "gray_link" do
+                      %span.glyphicon.glyphicon-pencil
+                    = link_to "ss", class: "gray_link" do
+                      %span.glyphicon.glyphicon-trash
 
-        .panel-footer.clearfix
-          %span.pull-right
-            = link_to nil, class: "btn btn-success" do
-              = t('save')
+                .form-group
+                  = kword.label :subjectable_id, class: "col-sm-2 control-label required"
+                  .col-sm-8
+                  .col-sm-2
+                .form-group
+                  .col-sm-2
+                  .col-sm-8
+                    回复内容
+                  .col-sm-2
+                    = link_to "ss", class: "gray_link" do
+                      %span.glyphicon.glyphicon-pencil
+                    = link_to "ss", class: "gray_link" do
+                      %span.glyphicon.glyphicon-trash
+              = kword.hidden_field :public_account_id, value: @public_account.id
+          .panel-footer.clearfix
+            %span.pull-right
+              = public_account.submit t('save'), class: "btn btn-success"
   .row.margintop20
     .col-md-12
-      = render @rules
+      = render partial: "rules/rule", collection: @rules
 
 :javascript
   $("#new_btn").on('click', function() {

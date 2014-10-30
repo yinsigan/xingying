@@ -6,14 +6,17 @@
       = rule.name
       %i.fa.fa-sort-desc.pull-right
   .panel-body
-    %table.table.table-user-information
-      %tbody
-        %tr
-          %td= t('.kword')
-          %td= rule.kwords.map { |kword| content_tag(:em, kword.content, class: "keywords_name") }.join.html_safe
-        %tr
-          %td= t('.reply')
-          %td ssss
+    .form-group
+      .col-sm-2
+        = t('.kword')
+      .col-sm-10
+        = rule.kwords.map { |kword| content_tag(:em, kword.content, class: "keywords_name") }.join.html_safe
+    .form-group
+      .col-sm-2
+        = t('.reply')
+      .col-sm-10
+        ssssssss
+
   .panel-footer.clearfix
     %span.pull-right
       = link_to nil, class: "btn btn-info btn-sm" do

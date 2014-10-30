@@ -5,10 +5,16 @@ class RulesController < SettingsController
     @rules = @public_account.rules.includes(:kwords)
     @rules_count = @rules.count
     @rule = @public_account.rules.build
-    @new_rules = 3.times { [].tap {|a| a << @rule.kwords.build } }
+    [].tap { |k| 1.times { k << @rule.kwords.build } }
   end
 
   def create
+    @rule = @public_account.rules.build(rule_params)
+    if @rule.save
+      redirect_to public_account_rules_path(@public_account), flash: {success: I18n.t('success_save')}
+    else
+      redirect_to public_account_rules_path(@public_account), flash: {success: @rule.errors.messages}
+    end
   end
 
   def update
@@ -26,5 +32,9 @@ class RulesController < SettingsController
     end
     def add_show_breadcrumb
       add_breadcrumb @public_account.name, public_account_path(@public_account)
+    end
+
+    def rule_params
+      params.require(:rule).permit(:public_account_id, :name, kwords_attributes: [:content, :subjectable_id, :public_account_id])
     end
 end
