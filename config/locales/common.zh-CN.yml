@@ -36,7 +36,6 @@ zh-CN:
   hit_email: "请输入邮箱名"
   hit_password: "请输入密码"
   hit_password_confirmation: "请输入确认密码"
-  minimum_password_length: "最少要有%{char}个字符"
   required_note: "标志为<span class='text-danger'>*</span>的必须填写哦"
   choose_picture: "选择图片"
   upload_success: "上传成功"
