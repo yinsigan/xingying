@@ -21,10 +21,16 @@
           = render partial: "thumb_groups/thumb_group", collection: @thumb_groups unless @thumb_groups.empty?
 
     .btn-group.btn-group-sm.margintop20.pull-right
-      = link_to t('.create_group'), new_public_account_thumb_group_path(@public_account), class: "btn btn-default", remote: true
+      = link_to new_public_account_thumb_group_path(@public_account), class: "btn btn-default", remote: true do
+        %span.glyphicon.glyphicon-plus
+        = t('.create_group')
       - if @find_thumb_group.present?
-        = link_to t('.delete_group'), delete_public_account_thumb_group_path(@public_account, @find_thumb_group), class: "btn btn-default", remote: true
-        = link_to t('.rename_group'), edit_public_account_thumb_group_path(@public_account, @find_thumb_group), class: "btn btn-default", remote: true
+        = link_to delete_public_account_thumb_group_path(@public_account, @find_thumb_group), class: "btn btn-default", remote: true do
+          %span.glyphicon.glyphicon-trash
+          = t('.delete_group')
+        = link_to edit_public_account_thumb_group_path(@public_account, @find_thumb_group), class: "btn btn-default", remote: true do
+          %span.glyphicon.glyphicon-pencil
+          = t('.rename_group')
 - if @thumbs.empty?
   .bs-callout.bs-callout-info
     %h4= t('.no_content')

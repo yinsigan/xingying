@@ -27,3 +27,4 @@
 //= require jquery.blueimp-gallery.min
 //= require bootstrap-image-gallery
 //= require bootstrapValidator.min
+//= require language/zh_CN

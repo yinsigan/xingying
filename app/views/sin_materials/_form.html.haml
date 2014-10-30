@@ -10,7 +10,7 @@
         .form-group.padding-content
           = label_tag "thumb_image", t('activerecord.attributes.sin_pic_text.thumb'), class: "col-sm-12 control-label font-normal"
           .col-sm-12
-            = file_field_tag "image", "data-url" => public_account_thumbs_path(@public_account), "data-progress" => "progress_div", :class => "filestyle", "data-buttonText" => "#{t('choose_picture')}", "data-buttonBefore" => true
+            = file_field_tag "image", "data-url" => public_account_thumbs_path(@public_account), "data-progress" => "progress_div", :class => "filestyle", "data-buttonText" => "#{t('choose_picture')}", "data-buttonBefore" => true, "data-input" => false, required: (sin_pic_text.object.new_record? ? true : false)
             = sin_pic_text.hidden_field :thumb_id
             = render "shared/progress"
             #image_preview.imagePreview
