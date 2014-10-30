@@ -6,7 +6,14 @@
       = rule.name
       %i.fa.fa-sort-desc.pull-right
   .panel-body
-    关键字:
+    %table.table.table-user-information
+      %tbody
+        %tr
+          %td= t('.kword')
+          %td= rule.kwords.map { |kword| content_tag(:em, kword.content, class: "keywords_name") }.join.html_safe
+        %tr
+          %td= t('.reply')
+          %td ssss
   .panel-footer.clearfix
     %span.pull-right
       = link_to nil, class: "btn btn-info btn-sm" do

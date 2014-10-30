@@ -1,7 +1,7 @@
 class RulesController < SettingsController
   before_action :set_public_account, :add_show_breadcrumb
   def index
-    @rules = @public_account.rules
+    @rules = @public_account.rules.includes(:kwords)
     @rules_count = @rules.count
     add_breadcrumb I18n.t('breadcrumbs.rule.index'), public_account_rules_path(@public_account)
   end
