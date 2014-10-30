@@ -16,3 +16,5 @@ zh-CN:
       edit: "编辑多图文"
     thumb:
       index: "图片管理"
+    rule:
+      index: "关键字回复"

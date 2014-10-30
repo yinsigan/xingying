@@ -1,1 +1,36 @@
 = render 'autoreply/tab'
+.tab-content
+  .bs-callout.bs-callout-info
+    %p.text-info
+      = t('.notice')
+  .row
+    .col-md-12.clearfix
+      %span.pull-right
+        %button{type: "button", class: "btn btn-primary", id: "new_btn"}
+          %span.glyphicon.glyphicon-plus
+          = t('.new')
+  .row
+    .col-md-12.margintop20#new_rule{style: "display: none;"}
+      .panel.panel-default
+        .panel-heading
+          %h3.panel-title.clearfix
+            %strong
+              = t('.new_rule')
+            %i.fa.fa-sort-asc.pull-right
+        .panel-body
+          关键字:
+        .panel-footer.clearfix
+          %span.pull-right
+            = link_to nil, class: "btn btn-success" do
+              = t('save')
+  .row.margintop20
+    .col-md-12
+      = render @rules
+
+
+
+
+:javascript
+  $("#new_btn").on('click', function() {
+    $("#new_rule").toggle();
+  })

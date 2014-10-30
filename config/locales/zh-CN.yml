@@ -117,3 +117,10 @@ zh-CN:
       name_maximum: "最多只能填写6个字符"
     delete:
       confirm: "仅删除分组，不删除图片，组内图片将自动归入未分组"
+  rules:
+    index:
+      notice: "关键字回复就是用户在聊天界面输入关键词，后台可以设置回复的消息。"
+      new: "添加规则"
+      new_rule: "新规则"
+    rule:
+      title: "规则%{counter}:"

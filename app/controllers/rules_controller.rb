@@ -1,9 +1,9 @@
 class RulesController < SettingsController
   before_action :set_public_account, :add_show_breadcrumb
   def index
-  end
-
-  def new
+    @rules = @public_account.rules
+    @rules_count = @rules.count
+    add_breadcrumb I18n.t('breadcrumbs.rule.index'), public_account_rules_path(@public_account)
   end
 
   def create
