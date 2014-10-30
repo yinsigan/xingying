@@ -26,3 +26,4 @@
 //= require jquery.fileupload
 //= require jquery.blueimp-gallery.min
 //= require bootstrap-image-gallery
+//= require bootstrapValidator.min

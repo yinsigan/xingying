@@ -33,6 +33,9 @@ GEM
     bcrypt (3.1.7)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
+    bootstrap-validator-rails (0.5.2)
+      jquery-rails (>= 3.0)
+      railties (>= 3.0)
     breadcrumbs_on_rails (2.3.0)
     builder (3.2.2)
     callsite (0.0.11)
@@ -235,6 +238,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails (~> 3.0.1.20140826)
   bootstrap-sass (~> 3.2.0)
+  bootstrap-validator-rails (~> 0.5.2)
   breadcrumbs_on_rails (~> 2.3.0)
   carrierwave (~> 0.6.2)
   carrierwave-qiniu (~> 0.1.3)

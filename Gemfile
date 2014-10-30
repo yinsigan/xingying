@@ -60,6 +60,7 @@ gem 'nokogiri', '~> 1.6.3.1'
 gem 'kaminari', '~> 0.15.1'
 gem 'icheck-rails', '~> 1.0.2.1'
 gem 'jquery.fileupload-rails', '~> 1.10.1'
+gem 'bootstrap-validator-rails', '~> 0.5.2'
 group :development do
   gem 'pry'
   gem 'pry-debugger'

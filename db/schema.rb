@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028082416) do
+ActiveRecord::Schema.define(version: 20141030010918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,9 +24,11 @@ ActiveRecord::Schema.define(version: 20141028082416) do
     t.datetime "updated_at"
     t.integer  "subjectable_id"
     t.string   "subjectable_type"
+    t.integer  "rule_id"
   end
 
   add_index "kwords", ["public_account_id"], name: "index_kwords_on_public_account_id", using: :btree
+  add_index "kwords", ["rule_id"], name: "index_kwords_on_rule_id", using: :btree
   add_index "kwords", ["subjectable_id", "subjectable_type"], name: "index_kwords_on_subjectable_id_and_subjectable_type", using: :btree
 
   create_table "materials", force: true do |t|
@@ -57,6 +59,15 @@ ActiveRecord::Schema.define(version: 20141028082416) do
 
   add_index "public_accounts", ["default_material_id"], name: "index_public_accounts_on_default_material_id", using: :btree
   add_index "public_accounts", ["user_id"], name: "index_public_accounts_on_user_id", using: :btree
+
+  create_table "rules", force: true do |t|
+    t.string   "name"
+    t.integer  "public_account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rules", ["public_account_id"], name: "index_rules_on_public_account_id", using: :btree
 
   create_table "sin_pic_texts", force: true do |t|
     t.text     "body"

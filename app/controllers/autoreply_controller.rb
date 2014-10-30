@@ -29,9 +29,6 @@ class AutoreplyController < SettingsController
   def default
   end
 
-  def keyword
-  end
-
   private
     def set_public_account
       @public_account = current_user.public_accounts.find(params[:id])

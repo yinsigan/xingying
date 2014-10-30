@@ -4,6 +4,7 @@ class PublicAccount < ActiveRecord::Base
   belongs_to :user
   has_many :sin_materials
   has_many :multi_materials
+  has_many :rules
   has_many :thumbs, -> { order "created_at DESC" }
   has_many :thumb_groups
   validates :name, :tp, :image, :user, presence: true
