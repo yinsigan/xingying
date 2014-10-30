@@ -1,9 +1,11 @@
 class RulesController < SettingsController
   before_action :set_public_account, :add_show_breadcrumb
   def index
+    add_breadcrumb I18n.t('breadcrumbs.rule.index'), public_account_rules_path(@public_account)
     @rules = @public_account.rules.includes(:kwords)
     @rules_count = @rules.count
-    add_breadcrumb I18n.t('breadcrumbs.rule.index'), public_account_rules_path(@public_account)
+    @rule = @public_account.rules.build
+    @new_rules = 3.times { [].tap {|a| a << @rule.kwords.build } }
   end
 
   def create
