@@ -8,4 +8,4 @@
   = hidden_field "public_account", "default_material_id", value: @public_account.default_material_id.present? ? @public_account.default_material_id : nil
 .form-group
   .col-sm-9.col-sm-push-3
-    = link_to t('.select_sin'), select_thumb_material_public_account_path(@public_account), class: "btn btn-default", remote: true
+    = link_to t('.select_btn'), select_thumb_material_public_account_path(@public_account), class: "btn btn-default", remote: true

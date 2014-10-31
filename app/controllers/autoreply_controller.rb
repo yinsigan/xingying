@@ -27,6 +27,12 @@ class AutoreplyController < SettingsController
   end
 
   def select_thumb_material
+    if params[:thumb_group_id]
+      @find_thumb_group = @public_account.thumb_groups.find(params[:thumb_group_id])
+      @thumbs = @public_account.thumbs.where(:thumb_group => @find_thumb_group).page(params[:page]).per(8)
+    else
+      @thumbs = @public_account.thumbs.where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").page(params[:page]).per(8)
+    end
     render "select_thumb_material.js.erb", layout: false
   end
 

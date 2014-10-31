@@ -53,14 +53,16 @@ zh-CN:
       notice: "被添加自动回复就是默认回复，也就是公众账号被关注时弹出的消息，被添加自动可以是文字也可以是图文消息。"
       reply_type: "回复类型"
     sin_material:
-      select_sin: "选择单图文"
+      select_btn: "选择单图文"
       name: "单图文"
     select_sin:
-      select_sin: "选择单图文"
-      add_sin: "添加单图文"
+      select_btn: "选择单图文"
+      add_btn: "添加单图文"
     thumb_material:
       name: "图片"
-      select_sin: "选择图片"
+      select_btn: "选择图片"
+    select_thumb:
+      select_btn: "选择图片"
   material:
     tab:
       title: "素材管理"
