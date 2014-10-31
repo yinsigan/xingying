@@ -12,9 +12,9 @@ class ThumbsController < SettingsController
   def index
     if params[:thumb_group_id]
       @find_thumb_group = @public_account.thumb_groups.find(params[:thumb_group_id])
-      @thumbs = @public_account.thumbs.where(:thumb_group => @find_thumb_group).page(params[:page]).per(12)
+      @thumbs = @public_account.thumbs.includes(:thumb_material).where(:thumb_group => @find_thumb_group).page(params[:page]).per(12)
     else
-      @thumbs = @public_account.thumbs.where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").page(params[:page]).per(12)
+      @thumbs = @public_account.thumbs.includes(:thumb_material).where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").page(params[:page]).per(12)
     end
     @no_group_count = @public_account.thumbs.where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").count
     @thumb_group = @public_account.thumb_groups.build

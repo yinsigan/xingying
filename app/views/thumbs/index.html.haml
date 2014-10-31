@@ -14,7 +14,7 @@
       .tabbable-line.tabs-below
         %ul.nav.nav-tabs#group{role: "tablist"}
           %li{class: current_page?(public_account_thumbs_path(@public_account)) ? "active" : nil}
-            = link_to public_account_thumbs_path(@public_account), type: "button" do
+            = link_to public_account_thumbs_path(@public_account) do
               = t('.no_group')
               %em.num
                 (#{@no_group_count})
@@ -49,7 +49,7 @@
             = link_to t('.move_to_group'), move_public_account_thumbs_path(@public_account), class: "btn btn-default disabled", remote: true
             = link_to t('delete'), delete_all_public_account_thumbs_path(@public_account), class: "btn btn-danger disabled", remote: true
       .row
-        #pic_content.col-md-12
+        #pic_content.col-md-12.margintop20
           = render partial: "thumbs/thumb", collection: @thumbs, locals: {thumb_col: "col-md-3"}
       .row
         .col-md-12.text-right

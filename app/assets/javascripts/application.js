@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require my
+//= require settings
 //= require bootstrap-sprockets
 //= require nprogress
 //= require html5.image.preview

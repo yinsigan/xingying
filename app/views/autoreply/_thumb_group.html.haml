@@ -1,0 +1,7 @@
+- if !thumb_group.name.blank?
+  %li{class: current_page?(group_public_account_path(@public_account, thumb_group)) ? "active" : nil}
+    = link_to group_public_account_path(@public_account, thumb_group), remote: true do
+      %span.group_name
+        = thumb_group.name
+      %em.num
+        (#{thumb_group.thumbs.count})

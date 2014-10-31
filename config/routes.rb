@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       get :multi_pic_text, to: "material#multi_pic_text"
       get :delete
       get :show_token
+      get "/thumb_group/:thumb_group_id", to: "autoreply#thumb_group", as: :group
+      get "/thumb_group", to: "autoreply#thumb_group"
     end
     resources :sin_materials, except: [:show] do
       get :delete, on: :member

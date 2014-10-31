@@ -20,23 +20,16 @@
 
 :javascript
   $(".sin_box").on('click', function() {
-    //$(this).addClass("offer-success");
-    $(this).toggleClass("offer-success");
-    $(this).siblings().removeClass("offer-success");
-    if($(this).hasClass("offer-success")) {
+    $(this).toggleClass("selected");
+    $(this).siblings().removeClass("selected");
+    if($(this).hasClass("selected")) {
       $("#select_btn").removeClass("disabled");
     } else {
       $("#select_btn").addClass("disabled");
     }
   })
-  $("#page a").on("ajax:before", function() {
-    NProgress.start();
-  })
-  $("#page a").on("ajax:before", function() {
-    NProgress.done();
-  })
   $("#select_btn").on('click', function() {
-    $("#public_account_default_material_id").val($(".offer-success").attr("id"));
+    $("#public_account_default_material_id").val($(".selected").attr("id"));
     $("#modal").modal('hide');
-    $("#pic_text_content").html($('.offer-success').removeClass("offer-success col-md-4").addClass("col-sm-6"));
+    $("#pic_text_content").html($('.selected').removeClass("selected col-md-4").addClass("col-sm-6"));
   });

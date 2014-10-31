@@ -138,13 +138,46 @@ footer {
     @include appmsg;
   }
 }
-
+@mixin selected {
+  &.selected {
+    position: relative;
+    .selected_mask {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0; 
+      .selected_mask_inner {
+        width: 100%;
+        height: 100%;
+        -moz-opacity: .6;
+        -khtml-opacity: .6;
+        opacity: .6;
+        background-color: #000;
+        filter: alpha(opacity=60); 
+      }
+      .selected_mask_icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: transparent url(/assets/select_right.png) no-repeat 0 0;
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+        display: inline-block;
+        background-position: 50% 50%; 
+      }
+    }
+  }
+}
 /*显示单图文列表*/
 .col-md-4.sin_box {
   @include pic_text_list;
+  @include selected;
 }
 .col-sm-6.sin_box {
   @include pic_text_list;
+  @include selected;
 }
 
 /*图片样式*/
@@ -214,9 +247,11 @@ footer {
 
 .col-md-3.sin_box {
   @include thumb;
+  @include selected;
 }
 .col-sm-4.sin_box {
   @include thumb;
+  @include selected;
 }
 /*单图文编辑框预览部分*/
 .edit_sin_box {

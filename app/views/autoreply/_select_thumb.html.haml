@@ -13,94 +13,35 @@
         %p.help-block
           = t('picture_upload_tip')
         = render "shared/progress"
+  #thumb_content
+    = render partial: "autoreply/thumb_content"
 
-      .row
-        #pic_content.col-md-12
-          = render partial: "thumbs/thumb", collection: @thumbs, locals: {thumb_col: "col-md-3"}
-      .row
-        .col-md-12.text-right#page
-          = paginate @thumbs, remote: true
 .modal-footer
   %button{type: "button", class: "btn btn-primary disabled", id: "select_btn"}= t('sure')
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
 
 :javascript
-  $(".sin_box").on('click', function() {
-    //$(this).addClass("offer-success");
-    $(this).toggleClass("offer-success");
-    $(this).siblings().removeClass("offer-success");
-    if($(this).hasClass("offer-success")) {
-      $("#select_btn").removeClass("disabled");
-    } else {
-      $("#select_btn").addClass("disabled");
-    }
-  })
-  $("#page a").on("ajax:before", function() {
-    NProgress.start();
-  })
-  $("#page a").on("ajax:before", function() {
-    NProgress.done();
-  })
-  $("#select_btn").on('click', function() {
-    $("#public_account_default_material_id").val($(".offer-success").attr("id"));
-    $("#modal").modal('hide');
-    $("#pic_text_content").html($('.offer-success').removeClass("offer-success col-md-4").addClass("col-sm-6"));
-  });
-
-  $('.filestyle').each(function() {
-    var $this = $(this), options = {
-
-      'input' : $this.attr('data-input') === 'false' ? false : true,
-      'icon' : $this.attr('data-icon') === 'false' ? false : true,
-      'buttonBefore' : $this.attr('data-buttonBefore') === 'true' ? true : false,
-      'disabled' : $this.attr('data-disabled') === 'true' ? true : false,
-      'size' : $this.attr('data-size'),
-      'buttonText' : $this.attr('data-buttonText'),
-      'buttonName' : $this.attr('data-buttonName'),
-      'iconName' : $this.attr('data-iconName'),
-      'badge' : $this.attr('data-badge') === 'false' ? false : true
-    };
-
-    $this.filestyle(options);
-  });
-
-  if ($("#upload").length > 0) {
-    $("#picture_upload").fileupload({
-      done: function(e, data) {
-        $("#progress_div").hide();
-        $("body").spin(false);
-        Turbolinks.visit();
-      },
-      add: function(e, data) {
-        $("body").spin();
-        data.submit();
-      },
-      progressall: function(e, data) {
-        var progress;
-        progress = parseInt(data.loaded / data.total * 100, 10);
-        $("#progress_div").show();
-        $("#progress_div .progress-bar").css("width", progress + "%");
+  $(document).ready(function() {
+    $("#thumb_content").on('click', ".sin_box", function() {
+      $(this).toggleClass("selected");
+      $(this).siblings().removeClass("selected");
+      if($(this).hasClass("selected")) {
+        $("#select_btn").removeClass("disabled");
+      } else {
+        $("#select_btn").addClass("disabled");
       }
-    });
-  }
-
-  function icheck(){
-    if($(".icheck-me").length > 0){
-      $(".icheck-me").each(function(){
-        var $el = $(this);
-        var skin = ($el.attr('data-skin') !== undefined) ? "_" + $el.attr('data-skin') : "",
-        color = ($el.attr('data-color') !== undefined) ? "-" + $el.attr('data-color') : "";
-        var opt = {
-          checkboxClass: 'icheckbox' + skin + color,
-          radioClass: 'iradio' + skin + color,
-        }
-        $el.iCheck(opt);
-      });
-    }
-  }
-
-  $(function(){
-    icheck();
+    })
   })
 
+  $("#select_btn").on('click', function() {
+    $("#public_account_default_material_id").val($(".selected").attr("id"));
+    $("#modal").modal('hide');
+    $("#pic_content").html($('.selected').removeClass("selected col-md-3").addClass("col-sm-4"));
+  });
+
+  filestyle();
+
+  picture_upload();
+
+  my_icheck('.icheck-me');

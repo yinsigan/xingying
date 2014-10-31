@@ -1,4 +1,4 @@
-.sin_box{class: thumb_col}
+.sin_box{class: thumb_col, id: thumb.thumb_material.id}
   .sin_box_content
     .pic_card
       %a{class: "media_img", "data-gallery" => true, href: thumb.image_url.to_s}
@@ -19,3 +19,6 @@
       %li.msg_card_opr_item
         = link_to delete_public_account_thumb_path(@public_account, thumb), remote: true, "data-toggle" => "tooltip", "data-placement" => "top", "data-tooltip" => true, "title" => t('delete') do
           %span.glyphicon.glyphicon-trash
+  .selected_mask
+    .selected_mask_inner
+    .selected_mask_icon

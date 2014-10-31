@@ -63,6 +63,9 @@ zh-CN:
       select_btn: "选择图片"
     select_thumb:
       select_btn: "选择图片"
+    thumb_content:
+      no_group: "未分组"
+      no_content: "暂时没有图片"
   material:
     tab:
       title: "素材管理"
