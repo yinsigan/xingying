@@ -26,6 +26,10 @@ class AutoreplyController < SettingsController
     render "select_sin_material.js.erb", layout: false
   end
 
+  def select_thumb_material
+    render "select_thumb_material.js.erb", layout: false
+  end
+
   def default
   end
 

@@ -146,7 +146,9 @@ footer {
 .col-sm-6.sin_box {
   @include pic_text_list;
 }
-.col-md-3.sin_box {
+
+/*图片样式*/
+@mixin thumb {
   border: 1px solid #e7e7eb;
   padding-left: 0;
   padding-right: 0;
@@ -210,6 +212,12 @@ footer {
   }
 }
 
+.col-md-3.sin_box {
+  @include thumb;
+}
+.col-sm-4.sin_box {
+  @include thumb;
+}
 /*单图文编辑框预览部分*/
 .edit_sin_box {
   overflow: hidden;

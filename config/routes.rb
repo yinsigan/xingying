@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get :default, to: 'autoreply#default'
       get :keyword, to: 'autoreply#keyword'
       get :select_sin_material, to: "autoreply#select_sin_material"
+      get :select_thumb_material, to: "autoreply#select_thumb_material"
       # 素材管理
       get :multi_pic_text, to: "material#multi_pic_text"
       get :delete

@@ -58,6 +58,9 @@ zh-CN:
     select_sin:
       select_sin: "选择单图文"
       add_sin: "添加单图文"
+    thumb_material:
+      name: "图片"
+      select_sin: "选择图片"
   material:
     tab:
       title: "素材管理"
