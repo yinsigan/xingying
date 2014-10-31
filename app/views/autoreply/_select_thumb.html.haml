@@ -34,11 +34,25 @@
     })
   })
 
+  /*
   $("#select_btn").on('click', function() {
     $("#public_account_default_material_id").val($(".selected").attr("id"));
     $("#modal").modal('hide');
     $("#pic_content").html($('.selected').removeClass("selected col-md-3").addClass("col-sm-4"));
   });
+  */
+
+  $("#select_btn").on('click', function() {
+    var img = $('.selected').find('img');
+    $("#edit_sin_preview .thumb .default").hide();
+    if ($("#edit_sin_preview .thumb").find("img").size() > 0) {
+      $("#edit_sin_preview .thumb").find("img").remove();
+    }
+    $("#edit_sin_preview .thumb").prepend(img.height("240px").width("240px"));
+    $("#sin_material_sin_pic_text_attributes_thumb_id").val($(".selected").attr("id"));
+    $("#modal").modal('hide');
+  });
+
 
   filestyle();
 

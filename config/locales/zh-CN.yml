@@ -95,6 +95,8 @@ zh-CN:
       no_content: "暂时没有单图文"
     sin_material:
       thumb: "缩略图"
+    form:
+      select_btn: "从图片库选择"
 
   thumbs:
     index:
