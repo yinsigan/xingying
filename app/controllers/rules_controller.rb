@@ -26,6 +26,10 @@ class RulesController < SettingsController
   def destroy
   end
 
+  def new_kword
+    render "new_kword.js.erb", layout: false
+  end
+
   private
     def set_public_account
       @public_account = current_user.public_accounts.find(params[:public_account_id])

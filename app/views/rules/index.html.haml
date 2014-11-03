@@ -31,26 +31,18 @@
                 .form-group
                   = kword.label :content, class: "col-sm-2 control-label required"
                   .col-sm-8
-                    = kword.text_field :content, class: "form-control required"
                   .col-sm-2.text-right
-                    = link_to t('.new_kword'), nil, class: "btn btn-link", style: "padding: 6px 0;"
-                .form-group
-                  .col-sm-2.control-label
-                  .col-sm-8
-                  .col-sm-2.text-right
-                    = link_to "ss", class: "gray_link" do
-                      %span.glyphicon.glyphicon-pencil
-                    = link_to "ss", class: "gray_link" do
-                      %span.glyphicon.glyphicon-trash
+                    = link_to t('.new_kword'), new_kword_public_account_rules_path(@public_account), class: "btn btn-link", style: "padding: 6px 0;", remote: true
+                #kword_texts
 
                 .form-group
                   = kword.label :subjectable_id, class: "col-sm-2 control-label required"
                   .col-sm-8
-                  .col-sm-2
+                  .col-sm-2.text-right
+                    = link_to t('.new_kword'), nil, class: "btn btn-link", style: "padding: 6px 0;"
                 .form-group
                   .col-sm-2
                   .col-sm-8
-                    回复内容
                   .col-sm-2.text-right
                     = link_to "ss", class: "gray_link" do
                       %span.glyphicon.glyphicon-pencil

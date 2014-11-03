@@ -3,7 +3,7 @@
   .col-sm-9
     = text_area_tag "public_account[default_reply]", @public_account.try(:default_reply), class: "form-control", rows: 12, id: "text"
     %p.text-muted.pull-right
-      = t('.char_tip')
+      = t('char_tip')
       %span#chars
         = t('.char_number')
 

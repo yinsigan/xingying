@@ -46,7 +46,6 @@ zh-CN:
       default_title: "消息自动回复"
       keyword_title: "关键词自动回复"
     text_material:
-      char_tip: "还可以输入"
       char_number: 600
       default_reply: "被关注时回复内容"
     added:
@@ -134,7 +133,11 @@ zh-CN:
       new_rule: "新规则"
       new_kword: "添加关键字"
       name_limit: "规则名最多60个字"
+      new_reply: "添加回复"
     rule:
       title: "规则%{counter}:"
       kword: "关键词"
       reply: "回复"
+    new_kword:
+      title: "添加关键字"
+      char_number: 30

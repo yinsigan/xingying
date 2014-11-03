@@ -1,0 +1,50 @@
+.modal-header
+  %button.close{"data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} &times;
+    %span.sr-only Close
+  %h4#mymodal.modal-title= t('.title')
+.modal-body.clearfix
+  .form-group
+    .col-sm-12#text-group
+      = text_area_tag "public_account[default_reply]", @public_account.try(:default_reply), class: "form-control", rows: 12, id: "text"
+      %p.text-muted.pull-right
+        = t('char_tip')
+        %span#chars
+          = t('.char_number')
+      %input{name: "rule[kwords_attributes][][content]", type: "hidden", value: "2", class: "hidden_input"}
+.modal-footer
+  %button{type: "button", class: "btn btn-primary", id: "sure"}= t('sure')
+  %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
+    = t('close')
+
+#kword_template
+  .form-group.kword{style: "display: none;"}
+    .col-sm-2.control-label
+    .col-sm-8
+      .desc
+        sss
+    .col-sm-2.text-right
+      = link_to "ss", class: "gray_link" do
+        %span.glyphicon.glyphicon-pencil
+      = link_to "ss", class: "gray_link" do
+        %span.glyphicon.glyphicon-trash
+
+
+:javascript
+  $(document).ready(function() {
+    var elem = $("#chars");
+    if($("#text").length > 0) {
+      $("#text").limiter(30, elem);
+    }
+    $("#sure").on('click', function() {
+      // 设置hidden tag的内容
+      $("#text-group .hidden_input").val($("#text").val());
+      $("#kword_content").append($("#text-group .hidden_input"));
+
+      // 显示关键字的内容
+      var kword_group = $("#kword_template .kword").clone();
+      var kword_text = kword_group.find(".desc").html($("#text").val());
+      $("#kword_texts").append(kword_group.show());
+      $("#modal").delay(2000).modal("hide");
+    })
+  });

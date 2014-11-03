@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get :multi_pic_text, to: "material#multi_pic_text"
       get :delete
       get :show_token
+      # 选择图片分组
       get "/thumb_group/:thumb_group_id", to: "autoreply#thumb_group", as: :group
       get "/thumb_group", to: "autoreply#thumb_group"
     end
@@ -32,7 +33,9 @@ Rails.application.routes.draw do
     resources :thumb_groups, only: [:new, :create, :destroy, :edit, :update] do
       get :delete, on: :member
     end
-    resources :rules, only: [:index, :create]
+    resources :rules, only: [:index, :create] do
+      get :new_kword, on: :collection
+    end
   end
 
   %w(404 422 500).each do |code|
