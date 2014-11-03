@@ -27,7 +27,15 @@ class RulesController < SettingsController
   end
 
   def new_kword
+    if params[:kword_hidden]
+      @kword_hidden = params[:kword_hidden].to_i
+    end
     render "new_kword.js.erb", layout: false
+  end
+
+  def edit_kword
+    @kword_content = params[:kword_content]
+    render "edit_kword.js.erb", layout: false
   end
 
   private

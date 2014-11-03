@@ -7,27 +7,16 @@
   .form-group
     .col-sm-12#text-group
       %textarea{id: "text", rows: 12, class: "form-control"}
+        = @kword_content
       %p.text-muted.pull-right
         = t('char_tip')
         %span#chars
           = t('.char_number')
+      %input{name: "rule[kwords_attributes][][content]", type: "hidden", value: "2", class: "hidden_input"}
 .modal-footer
   %button{type: "button", class: "btn btn-primary", id: "sure"}= t('sure')
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
-
-#kword_template
-  .form-group.kword{style: "display: none;", id: "kword_#{@kword_hidden}"}
-    %input{name: "rule[kwords_attributes][#{@kword_hidden}][content]", type: "hidden", class: "hidden_input"}
-    .col-sm-2.control-label
-    .col-sm-8
-      .desc{id: "k_content_#{@kword_hidden}"}
-    .col-sm-2.text-right
-      = link_to edit_kword_public_account_rules_path(@public_account), class: "gray_link edit_kword", id: "edit_kword_#{@kword_hidden}", remote: true do
-        %span.glyphicon.glyphicon-pencil
-      = link_to "ss", class: "gray_link" do
-        %span.glyphicon.glyphicon-trash
-
 
 :javascript
   $(document).ready(function() {
@@ -36,12 +25,14 @@
       $("#text").limiter(30, elem);
     }
     $("#sure").on('click', function() {
+      // 设置hidden tag的内容
+      $("#text-group .hidden_input").val($("#text").val());
+      $("#kword_content").append($("#text-group .hidden_input"));
 
       // 显示关键字的内容
       var kword_group = $("#kword_template .kword").clone();
       var kword_text = kword_group.find(".desc").html($("#text").val());
       $("#kword_texts").append(kword_group.show());
-      $("#kword_hidden").val("#{@kword_hidden + 1}")
       $("#modal").delay(2000).modal("hide");
     })
   });

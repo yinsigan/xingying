@@ -141,3 +141,5 @@ zh-CN:
     new_kword:
       title: "添加关键字"
       char_number: 30
+    edit_kword:
+      title: "编辑关键字"

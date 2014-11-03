@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     end
     resources :rules, only: [:index, :create] do
       get :new_kword, on: :collection
+      get :edit_kword, on: :collection
     end
   end
 
