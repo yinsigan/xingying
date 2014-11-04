@@ -33,10 +33,7 @@ Rails.application.routes.draw do
     resources :thumb_groups, only: [:new, :create, :destroy, :edit, :update] do
       get :delete, on: :member
     end
-    resources :rules, only: [:index, :create] do
-      get :new_kword, on: :collection
-      get :edit_kword, on: :collection
-    end
+    resources :rules, only: [:index, :create]
   end
 
   %w(404 422 500).each do |code|

@@ -5,7 +5,8 @@ class RulesController < SettingsController
     @rules = @public_account.rules.includes(:kwords)
     @rules_count = @rules.count
     @rule = @public_account.rules.build
-    [].tap { |k| 1.times { k << @rule.kwords.build } }
+    session[:kword_hidden] = 0
+    [].tap { |k| 4.times { k << @rule.kwords.build } }
   end
 
   def create
@@ -26,18 +27,6 @@ class RulesController < SettingsController
   def destroy
   end
 
-  def new_kword
-    if params[:kword_hidden]
-      @kword_hidden = params[:kword_hidden].to_i
-    end
-    render "new_kword.js.erb", layout: false
-  end
-
-  def edit_kword
-    @kword_content = params[:kword_content]
-    render "edit_kword.js.erb", layout: false
-  end
-
   private
     def set_public_account
       @public_account = current_user.public_accounts.find(params[:public_account_id])
@@ -49,4 +38,5 @@ class RulesController < SettingsController
     def rule_params
       params.require(:rule).permit(:public_account_id, :name, kwords_attributes: [:content, :subjectable_id, :public_account_id])
     end
+
 end
