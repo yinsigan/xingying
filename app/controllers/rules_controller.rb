@@ -14,7 +14,7 @@ class RulesController < SettingsController
     if @rule.save
       redirect_to public_account_rules_path(@public_account), flash: {success: I18n.t('success_save')}
     else
-      redirect_to public_account_rules_path(@public_account), flash: {success: @rule.errors.messages}
+      redirect_to public_account_rules_path(@public_account), flash: {danger: @rule.errors.messages}
     end
   end
 
@@ -25,6 +25,12 @@ class RulesController < SettingsController
   end
 
   def destroy
+  end
+
+  def reply_content
+    if params[:rule] && params[:rule][:kwords_attributes].values[0][:subjectable_type]
+      render Kword::ReplyTypeNode[params[:rule][:kwords_attributes].values[0][:subjectable_type].to_s] + ".js.erb", layout: false
+    end
   end
 
   private

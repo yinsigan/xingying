@@ -33,7 +33,9 @@ Rails.application.routes.draw do
     resources :thumb_groups, only: [:new, :create, :destroy, :edit, :update] do
       get :delete, on: :member
     end
-    resources :rules, only: [:index, :create]
+    resources :rules, only: [:index, :create] do
+      get :reply_content, on: :collection
+    end
   end
 
   %w(404 422 500).each do |code|

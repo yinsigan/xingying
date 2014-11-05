@@ -36,9 +36,12 @@
                     = link_to "ss", class: "gray_link" do
                       %span.glyphicon.glyphicon-trash
                 #kword_texts
-
+                .form-group#reply_type
+                  = kword.label :subjectable_type, class: "col-sm-2 control-label"
+                  .col-sm-8
+                    = kword.select :subjectable_type, options_for_select(Kword::ReplyType.invert), {include_blank: false}, {:class => "form-control", data: {remote: true, url: reply_content_public_account_rules_path(@public_account)} }
                 .form-group
-                  = kword.label :subjectable_id, class: "col-sm-2 control-label required"
+                  .col-sm-2
                   .col-sm-8
                   .col-sm-2
                 .form-group
