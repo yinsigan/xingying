@@ -6,7 +6,7 @@ class RulesController < SettingsController
     @rules_count = @rules.count
     @rule = @public_account.rules.build
     session[:kword_hidden] = 0
-    [].tap { |k| 4.times { k << @rule.kwords.build } }
+    [].tap { |k| 5.times { k << @rule.kwords.build } }
   end
 
   def create
@@ -28,6 +28,7 @@ class RulesController < SettingsController
   end
 
   def reply_content
+    @kword_index = params[:kword_index]
     if params[:rule] && params[:rule][:kwords_attributes].values[0][:subjectable_type]
       render Kword::ReplyTypeNode[params[:rule][:kwords_attributes].values[0][:subjectable_type].to_s] + ".js.erb", layout: false
     end

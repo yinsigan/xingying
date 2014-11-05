@@ -31,6 +31,9 @@ $(document).on "page:change", ->
   # 图片上传
   picture_upload()
 
+  $(document).on 'ajax:error', ->
+    $(".alert-warning.alert-fixed-top").html("数据加载失败").fadeIn().delay(5000).fadeOut() if $(".alert-warning.alert-fixed-top").css("display") == "none"
+
   $(document).ajaxError (e, xhr, settings) ->
     Turbolinks.visit "/users/sign_in" if xhr.status is 401
 

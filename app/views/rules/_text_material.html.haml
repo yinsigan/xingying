@@ -1,0 +1,21 @@
+.form-group
+  = label_tag "rule_kwords_attributes_#{kword_index}_subjectable_type", t('.default_reply'), class: "col-sm-2 control-label"
+  .col-sm-9
+    = text_area_tag "public_account[default_reply]", @public_account.try(:default_reply), class: "form-control", rows: 12, id: "text"
+    %p.text-muted.pull-right
+      = t('char_tip')
+      %span#chars
+        = t('.char_number')
+
+
+:javascript
+  $(document).ready(function() {
+    var elem = $("#chars");
+    if($("#text").length > 0) {
+      $("#text").limiter(600, elem);
+    }
+  });
+.form-group
+  .col-sm-2
+  .col-sm-8
+  .col-sm-2
