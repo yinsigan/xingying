@@ -15,16 +15,13 @@ class RulesController < SettingsController
     if @rule.save
       redirect_via_turbolinks_to public_account_rules_path(@public_account), flash: {success: I18n.t('success_submit')}
     else
-      render partial: "shared/ajax_error.js.erb", layout: false, locals: {object: @rule}
+      render partial: "shared/ajax_prompt.js.erb", layout: false, locals: {object: @rule}
     end
   end
 
   def update
-    if @rule.update(rule_params)
-      redirect_via_turbolinks_to public_account_rules_path(@public_account), flash: {success: I18n.t('success_save')}
-    else
-      render partial: "shared/ajax_error.js.erb", layout: false, locals: {object: @rule}
-    end
+    @rule.update(rule_params)
+    render partial: "shared/ajax_prompt.js.erb", layout: false, locals: {object: @rule, flash_success: I18n.t('success_save')}
   end
 
   def edit
