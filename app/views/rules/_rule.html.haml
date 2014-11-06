@@ -1,27 +1,33 @@
 .panel.panel-default
+  -# 头部规则次序
   .panel-heading
     %h3.panel-title.clearfix
       %strong
-        = t('.title', counter: @rules_count - rule_counter)
+        - if params[:page].present? && params[:page] != 0
+          = t('.title', counter: (@rules_count - (params[:page].to_i - 1) * 9 - rule_counter))
+        - else
+          = t('.title', counter: @rules_count - rule_counter)
       = rule.name
-      %i.fa.fa-sort-desc.pull-right
-  .panel-body
-    .form-group
-      .col-sm-2
-        = t('.kword')
-      .col-sm-10
-        = rule.kwords.map { |kword| content_tag(:em, kword.content, class: "keywords_name") }.join.html_safe
-    .form-group
-      .col-sm-2
-        = t('.reply')
-      .col-sm-10
-        ssssssss
+  -# 显示规则的实际内容
+  %div{id: "edit_form_#{rule.id}"}
+    .panel-body
+      .form-group
+        .col-sm-2
+          = t('.kword')
+        .col-sm-10
+          = rule.kwords.map { |kword| content_tag(:em, kword.content, class: "keywords_name") }.join.html_safe
+      .form-group
+        .col-sm-2
+          = t('.reply')
+        .col-sm-10
+          待写
 
-  .panel-footer.clearfix
-    %span.pull-right
-      = link_to nil, class: "btn btn-info btn-sm" do
-        %i.glyphicon.glyphicon-edit
-        = t('edit')
-      = link_to nil, class: "btn btn-danger btn-sm" do
-        %i.glyphicon.glyphicon-remove
-        = t('delete')
+    -# 规则操作按钮
+    .panel-footer.clearfix
+      %span.pull-right
+        = link_to edit_public_account_rule_path(@public_account, rule), class: "btn btn-info btn-sm", remote: true do
+          %i.glyphicon.glyphicon-edit
+          = t('edit')
+        = link_to delete_public_account_rule_path(@public_account, rule), class: "btn btn-danger btn-sm", remote: true do
+          %i.glyphicon.glyphicon-remove
+          = t('delete')

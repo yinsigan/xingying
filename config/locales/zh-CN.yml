@@ -131,15 +131,16 @@ zh-CN:
       notice: "关键字回复就是用户在聊天界面输入关键词，后台可以设置回复的消息。"
       new: "添加规则"
       new_rule: "新规则"
-      new_kword: "添加关键字"
-      name_limit: "规则名最多60个字"
-      new_reply: "添加回复"
     rule:
       title: "规则%{counter}:"
       kword: "关键词"
       reply: "回复"
-    new_kword:
-      title: "添加关键字"
-      char_number: 30
-    edit_kword:
-      title: "编辑关键字"
+    new:
+      name_limit: "规则名最多60个字"
+      new_kword: "添加关键字"
+    delete:
+      confirm: "你确定删除此规则吗？"
+    edit:
+      name_limit: "规则名最多60个字"
+      new_kword: "添加关键字"
+

@@ -1,0 +1,26 @@
+= form_for [@public_account, @rule], html: { class: "form-horizontal", role: "form" } do |rule|
+  .panel-body
+    = render partial: "shared/form_error_messages", locals: {object: @rule}
+    .alert.alert-warning{role: "alert"}
+      = t('required_note').html_safe
+    .page-header
+      .form-group
+        = rule.label :name, class: "col-sm-2 control-label required"
+        .col-sm-10
+          = rule.text_field :name, class: "form-control", required: true, autofocus: true
+          %p.help-block= t('.name_limit')
+      -# 添加或编辑时添加新规则的按钮
+      .form-group
+        .col-sm-10
+        .col-sm-2.text-right
+          = link_to new_kword_public_account_rules_path(@public_account), class: "btn btn-primary btn-sm", remote: true do
+            %span.glyphicon.glyphicon-plus
+            = t('.new_kword')
+    -# 每个规则的实际内容
+    = rule.fields_for :kwords do |kword|
+      #kword_form_wrapper
+        = render "kword_field_form", kword: kword, edit: ""
+
+  .panel-footer.clearfix
+    %span.pull-right
+      = rule.submit t('save'), class: "btn btn-success"

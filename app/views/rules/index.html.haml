@@ -3,12 +3,14 @@
   .bs-callout.bs-callout-info
     %p.text-info
       = t('.notice')
+  -# 创建新规则的按钮
   .row
     .col-md-12.clearfix
       %span.pull-right
         %button{type: "button", class: "btn btn-primary", id: "new_btn"}
           %span.glyphicon.glyphicon-plus
           = t('.new')
+  -# 新规则的内容
   .row
     .col-md-12.margintop20#new_rule{style: "display: none;"}
       .panel.panel-default
@@ -17,54 +19,21 @@
             %span.glyphicon.glyphicon-edit
             %strong
               = t('.new_rule')
-            %i.fa.fa-sort-asc.pull-right
-        = form_for [@public_account, @rule], html: {class: "form-horizontal"} do |public_account|
-          .panel-body
-            .page-header
-              .form-group
-                = public_account.label :name, class: "col-sm-2 control-label required"
-                .col-sm-10
-                  = public_account.text_field :name, class: "form-control", required: true, autoreply: true
-                  %p.help-block= t('.name_limit')
-            = public_account.fields_for :kwords do |kword|
-              #kword_content
-                .form-group
-                  = kword.label :content, class: "col-sm-2 control-label"
-                  .col-sm-8
-                    = kword.text_field :content, class: "form-control"
-                  .col-sm-2
-                    = link_to "ss", class: "gray_link" do
-                      %span.glyphicon.glyphicon-trash
-                .form-group#reply_type
-                  = kword.label :subjectable_type, class: "col-sm-2 control-label"
-                  .col-sm-8
-                    = kword.select :subjectable_type, options_for_select(Kword::ReplyType.invert), {include_blank: false}, {:class => "form-control select_reply_type", data: {remote: true, url: reply_content_public_account_rules_path(@public_account, kword_index: kword.index)} }
-                .reply_content
 
-                .form-group
-                  .col-sm-2
-                  .col-sm-8
-                  .col-sm-2
-              = kword.hidden_field :public_account_id, value: @public_account.id
-          .panel-footer.clearfix
-            %span.pull-right
-              = public_account.submit t('save'), class: "btn btn-success"
+        -# 新规则的表单内容
+        = render "new"
+  -# 显示每个规则
   .row.margintop20
     .col-md-12
       = render partial: "rules/rule", collection: @rules
+  -# 分页
+  .row
+    .col-md-12
+      = paginate @rules
 
 :javascript
   $(document).ready(function() {
     $("#new_btn").on('click', function() {
       $("#new_rule").toggle();
     })
-
-    $(".select_reply_type").trigger('change');
-    // 编辑关键字
-    $(document).on('ajax:before', 'a.edit_kword', function() {
-      var el = $(this);
-      var desc = el.parent().parent().find(".desc");
-      el.attr("data-params", "kword_content=" + desc.text());
-      desc.attr("id", "kword");
-    });
   })

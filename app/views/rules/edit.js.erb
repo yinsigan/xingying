@@ -1,0 +1,2 @@
+var edit_form = "#edit_form_" + <%= @rule.id %>
+$(edit_form).html("<%= j render 'edit', kwords: @kwords %>")

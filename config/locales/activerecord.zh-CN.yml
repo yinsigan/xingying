@@ -26,6 +26,10 @@ zh-CN:
         content: "关键字"
         subjectable_id: "回复"
         subjectable_type: "回复类型"
+        reply: "回复文字的内容"
+      kwords:
+        reply: "回复文字的内容"
+
     models:
       user: "用户"
       public_account: "公众号"

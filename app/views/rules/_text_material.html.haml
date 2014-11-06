@@ -1,21 +1,16 @@
 .form-group
-  = label_tag "rule_kwords_attributes_#{kword_index}_subjectable_type", t('.default_reply'), class: "col-sm-2 control-label"
-  .col-sm-9
-    = text_area_tag "public_account[default_reply]", @public_account.try(:default_reply), class: "form-control", rows: 12, id: "text"
+  = label_tag "rule_kwords_attributes_#{kword_index}_reply", t('activerecord.attributes.kword.reply'), class: "col-sm-2 control-label required"
+  .col-sm-8
+    = text_area_tag "rule[kwords_attributes][#{kword_index}][reply]", kword_object.try(:reply), class: "form-control", rows: 9, id: "text_#{kword_index}", required: true
     %p.text-muted.pull-right
       = t('char_tip')
-      %span#chars
-        = t('.char_number')
+      %span{id: "chars_#{kword_index}"}
 
 
 :javascript
   $(document).ready(function() {
-    var elem = $("#chars");
-    if($("#text").length > 0) {
-      $("#text").limiter(600, elem);
+    var elem = $("#chars_#{kword_index}");
+    if($("#text_#{kword_index}").length > 0) {
+      $("#text_#{kword_index}").limiter(300, elem);
     }
   });
-.form-group
-  .col-sm-2
-  .col-sm-8
-  .col-sm-2

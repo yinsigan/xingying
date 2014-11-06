@@ -1,0 +1,26 @@
+= form_for [@public_account, @rule], html: { class: "form-horizontal", role: "form" } do |rule|
+  .panel-body
+    = render partial: "shared/form_error_messages", locals: {object: @rule}
+    .alert.alert-warning{role: "alert"}
+      = t('required_note').html_safe
+    .page-header
+      .form-group
+        = rule.label :name, class: "col-sm-2 control-label required"
+        .col-sm-10
+          = rule.text_field :name, class: "form-control", required: true, autofocus: true
+          %p.help-block= t('.name_limit')
+      .form-group
+        .col-sm-10
+        .col-sm-2.text-right
+          = link_to new_kword_public_account_rules_path(@public_account), class: "btn btn-primary btn-sm", remote: true do
+            %span.glyphicon.glyphicon-plus
+            = t('.new_kword')
+    - @rule.kwords.each do |kword|
+      = rule.fields_for :kwords, kword do |kw|
+        = render "kword_field_form", kword: kw, edit: @rule.id
+
+  .panel-footer.clearfix
+    %span.pull-right
+      = rule.submit t('save'), class: "btn btn-success btn-sm"
+      = link_to delete_public_account_rule_path(@public_account, @rule), class: "btn btn-danger btn-sm", remote: true do
+        = t('delete')

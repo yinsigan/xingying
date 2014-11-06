@@ -33,8 +33,10 @@ Rails.application.routes.draw do
     resources :thumb_groups, only: [:new, :create, :destroy, :edit, :update] do
       get :delete, on: :member
     end
-    resources :rules, only: [:index, :create] do
+    resources :rules, only: [:index, :create, :destroy, :edit, :update] do
       get :reply_content, on: :collection
+      get :new_kword, on: :collection
+      get :delete, on: :member
     end
   end
 

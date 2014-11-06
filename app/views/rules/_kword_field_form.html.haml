@@ -1,0 +1,35 @@
+%div{id: "kword_form_#{kword.index}"}
+
+  .form-group
+    .col-sm-10
+    .col-sm-2.text-right
+      %a{class: "gray_link delete_kword_form", data: {delete: "kword_form_#{kword.index}", title: t('delete'), toggle: "tooltip", placement: "top", tooltip: true}}
+        %span.glyphicon.glyphicon-trash
+
+  -# 填写规则名
+  .form-group
+    = kword.label :content, class: "col-sm-2 control-label required"
+    .col-sm-8
+      = kword.text_field :content, class: "form-control", required: true
+  -# 选择类型
+  .form-group
+    = kword.label :subjectable_type, class: "col-sm-2 control-label"
+    .col-sm-8
+      = kword.select :subjectable_type, options_for_select(Kword::ReplyType.invert), {include_blank: false}, {:class => "form-control select_reply_type select_type", data: {remote: true, url: reply_content_public_account_rules_path(@public_account, kword_index: kword.index, edit: edit, kword_object: kword.object)} }
+
+  -# 不同的id来识别
+  - if edit.present?
+    %div{id: "reply_content_#{edit}_#{kword.index}"}
+  - else
+    %div{id: "reply_content_#{kword.index}"}
+
+
+  = kword.hidden_field :public_account_id, value: @public_account.id
+
+:javascript
+  $(document).on('click', '.delete_kword_form', function() {
+    var delete_form = "#" + $(this).data("delete");
+    console.log(delete_form);
+    $(delete_form).remove();
+  });
+  $(".select_reply_type").trigger('change');
