@@ -1,10 +1,10 @@
-%div{id: "kword_form_#{kword.index}"}
+%div{id: "kword_form_#{kword.index}_#{rule_id}"}
 
   -# 删除表单按钮
   .form-group
     .col-sm-10
     .col-sm-2.text-right
-      %a{class: "gray_link delete_kword_form", data: {delete: "kword_form_#{kword.index}", title: t('delete'), toggle: "tooltip", placement: "top", tooltip: true}}
+      %a{class: "gray_link delete_kword_form", data: {delete: "kword_form_#{kword.index}_#{rule_id}", title: t('delete'), toggle: "tooltip", placement: "top", tooltip: true}}
         %span.glyphicon.glyphicon-trash
 
   -# 填写规则名
@@ -24,9 +24,10 @@
 
 :javascript
   // 删除表单操作
-  $(document).on('click', '.delete_kword_form', function() {
+  $('.delete_kword_form').on('click', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
     var delete_form = "#" + $(this).data("delete");
-    console.log(delete_form);
     $(delete_form).remove();
   });
   // 自动触发类型选择

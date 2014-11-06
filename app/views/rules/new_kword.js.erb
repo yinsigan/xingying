@@ -1,2 +1,2 @@
 var wrapper = "#kword_form_wrapper_" + "<%= @rule_id %>"
-$(wrapper).prepend("<%= j(render partial: 'rules/kword_field_form_other', locals: {kword_index: @kword_index}) %>");
+$(wrapper).prepend("<%= j(render partial: 'rules/kword_field_form_other', locals: {kword_index: @kword_index, rule_id: @rule_id}) %>");
