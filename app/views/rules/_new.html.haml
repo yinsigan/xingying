@@ -1,4 +1,4 @@
-= form_for [@public_account, @rule], html: { class: "form-horizontal", role: "form" } do |rule|
+= form_for [@public_account, @rule], html: { class: "form-horizontal", role: "form" }, remote: true do |rule|
   .panel-body
     = render partial: "shared/form_error_messages", locals: {object: @rule}
     .alert.alert-warning{role: "alert"}

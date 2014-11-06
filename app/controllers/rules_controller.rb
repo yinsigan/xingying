@@ -13,23 +13,17 @@ class RulesController < SettingsController
   def create
     @rule = @public_account.rules.build(rule_params)
     if @rule.save
-      redirect_to public_account_rules_path(@public_account), flash: {success: I18n.t('success_save')}
+      redirect_via_turbolinks_to public_account_rules_path(@public_account), flash: {success: I18n.t('success_submit')}
     else
-      add_breadcrumb I18n.t('breadcrumbs.rule.index'), public_account_rules_path(@public_account)
-      @rules = @public_account.rules.includes(:kwords)
-      @rules_count = @rules.count
-      render :index
+      render partial: "shared/ajax_error.js.erb", layout: false, locals: {object: @rule}
     end
   end
 
   def update
     if @rule.update(rule_params)
-      redirect_to public_account_rules_path(@public_account), flash: {success: I18n.t('success_save')}
+      redirect_via_turbolinks_to public_account_rules_path(@public_account), flash: {success: I18n.t('success_save')}
     else
-      add_breadcrumb I18n.t('breadcrumbs.rule.index'), public_account_rules_path(@public_account)
-      @rules = @public_account.rules.includes(:kwords)
-      @rules_count = @rules.count
-      render :index
+      render partial: "shared/ajax_error.js.erb", layout: false, locals: {object: @rule}
     end
   end
 
@@ -39,12 +33,12 @@ class RulesController < SettingsController
   end
 
   def delete
-    render "shared/delete.js.erb", layout: false, locals: {delete_url: public_account_rule_path, confirm: I18n.t("rules.delete.confirm"), remote: false}
+    render "shared/delete.js.erb", layout: false, locals: {delete_url: public_account_rule_path, confirm: I18n.t("rules.delete.confirm"), remote: true}
   end
 
   def destroy
     @rule.destroy
-    redirect_to public_account_rules_path, flash: {success: I18n.t('success_delete')}
+    render "shared/success_destroy.js.erb", layout: false
   end
 
   def new_kword

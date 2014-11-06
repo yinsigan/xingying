@@ -29,6 +29,9 @@ zh-CN:
         reply: "回复文字的内容"
       kwords:
         reply: "回复文字的内容"
+        content: "关键字"
+        subjectable_id: "回复"
+        subjectable_type: "回复类型"
 
     models:
       user: "用户"
