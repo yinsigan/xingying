@@ -12,12 +12,13 @@
       .form-group
         .col-sm-10
         .col-sm-2.text-right
-          = link_to new_kword_public_account_rules_path(@public_account), class: "btn btn-primary btn-sm", remote: true do
+          = link_to new_kword_public_account_rules_path(@public_account, rule_id: @rule.id), class: "btn btn-primary btn-sm", remote: true do
             %span.glyphicon.glyphicon-plus
             = t('.new_kword')
     - @rule.kwords.each do |kword|
       = rule.fields_for :kwords, kword do |kw|
-        = render "kword_field_form", kword: kw, edit: @rule.id
+        %div{id: "kword_form_wrapper_#{@rule.id}"}
+          = render "kword_field_form", kword: kw, rule_id: @rule.id
 
   .panel-footer.clearfix
     %span.pull-right

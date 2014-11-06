@@ -1,6 +1,2 @@
-<% if @edit.present? %>
-  var reply_content_id = "#reply_content_" + "<%= @edit %>" + "_" + "<%= @kword_index %>";
-<% else %>
-  var reply_content_id = "#reply_content_" + "<%= @kword_index %>";
-<% end %>
-$(reply_content_id).html("<%= j(render partial: "rules/text_material", locals: {kword_index: @kword_index, kword_object: @kword_object}) %>");
+var reply_content_id = "#reply_content_"  + "<%= @kword_index %>"  + "_" + "<%= @rule_id %>";
+$(reply_content_id).html("<%= j(render partial: "rules/text_material", locals: {kword_index: @kword_index, kword_object: @kword_object, rule_id: @rule_id}) %>");

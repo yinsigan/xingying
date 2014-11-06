@@ -48,6 +48,7 @@ class RulesController < SettingsController
   end
 
   def new_kword
+    @rule_id = params[:rule_id] if params[:rule_id].present?
     @kword_index = session[:kword_index] = session[:kword_index] + 1
     render "new_kword.js.erb", layout: false
   end
@@ -55,7 +56,7 @@ class RulesController < SettingsController
   # 选择回复类型
   def reply_content
     # 标志id
-    @edit = params[:edit] if params[:edit].present?
+    @rule_id = params[:rule_id] if params[:rule_id].present?
     @kword_object = @public_account.kwords.find(params[:kword_object]) if params[:kword_object].present?
     @kword_index = params[:kword_index]
     if params[:rule] && params[:rule][:kwords_attributes].values[0][:subjectable_type]

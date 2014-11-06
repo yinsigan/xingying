@@ -18,8 +18,8 @@
             = t('.new_kword')
     -# 每个规则的实际内容
     = rule.fields_for :kwords do |kword|
-      #kword_form_wrapper
-        = render "kword_field_form", kword: kword, edit: ""
+      #kword_form_wrapper_
+        = render "kword_field_form", kword: kword, rule_id: ""
 
   .panel-footer.clearfix
     %span.pull-right

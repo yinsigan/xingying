@@ -1,16 +1,15 @@
 .form-group
   = label_tag "rule_kwords_attributes_#{kword_index}_reply", t('activerecord.attributes.kword.reply'), class: "col-sm-2 control-label required"
   .col-sm-8
-    = text_area_tag "rule[kwords_attributes][#{kword_index}][reply]", kword_object.try(:reply), class: "form-control", rows: 9, id: "text_#{kword_index}", required: true
+    = text_area_tag "rule[kwords_attributes][#{kword_index}][reply]", kword_object.try(:reply), class: "form-control", rows: 9, id: "text_#{kword_index}_#{rule_id}", required: true
     %p.text-muted.pull-right
       = t('char_tip')
-      %span{id: "chars_#{kword_index}"}
-
+      %span{id: "chars_#{kword_index}_#{rule_id}"}
 
 :javascript
   $(document).ready(function() {
-    var elem = $("#chars_#{kword_index}");
-    if($("#text_#{kword_index}").length > 0) {
-      $("#text_#{kword_index}").limiter(300, elem);
+    var elem = $("#chars_#{kword_index}_#{rule_id}");
+    if($("#text_#{kword_index}_#{rule_id}").length > 0) {
+      $("#text_#{kword_index}_#{rule_id}").limiter(300, elem);
     }
   });
