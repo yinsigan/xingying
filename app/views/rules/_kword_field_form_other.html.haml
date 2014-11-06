@@ -14,7 +14,7 @@
   .form-group
     = label_tag "rule_kwords_attributes_#{kword_index}_subjectable_type", t('activerecord.attributes.kword.subjectable_type'), class: "col-sm-2 control-label"
     .col-sm-8
-      = select_tag "rule[kwords_attributes][#{kword_index}][subjectable_type]", options_for_select(Kword::ReplyType.invert), { include_blank: false, :class => "form-control select_type", data: {remote: true, url: reply_content_public_account_rules_path(@public_account, kword_index: kword_index)} }
+      = select_tag "rule[kwords_attributes][#{kword_index}][subjectable_type]", options_for_select(Kword::ReplyType.invert), { include_blank: false, :class => "form-control ajax_load", data: {remote: true, url: reply_content_public_account_rules_path(@public_account, kword_index: kword_index)} }
 
   %div{id: "reply_content_#{kword_index}"}
     .form-group

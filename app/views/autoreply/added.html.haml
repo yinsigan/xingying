@@ -10,7 +10,7 @@
         .form-group#reply_type
           = label_tag t('.reply_type'), nil, class: "col-sm-3 control-label"
           .col-sm-9
-            = f.select :reply_type, options_for_select(PublicAccount::ReplyType.invert, @public_account.reply_type.presence), {include_blank: false}, {:class => "form-control select_type", data: {remote: true, url: reply_content_public_account_path(@public_account)} }
+            = f.select :reply_type, options_for_select(PublicAccount::ReplyType.invert, @public_account.reply_type.presence), {include_blank: false}, {:class => "form-control ajax_load", data: {remote: true, url: reply_content_public_account_path(@public_account)} }
         #reply_content
         .form-group
           .col-sm-9.col-sm-push-3

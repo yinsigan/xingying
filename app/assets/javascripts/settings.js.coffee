@@ -37,9 +37,9 @@ $(document).on "page:change", ->
   $(document).ajaxError (e, xhr, settings) ->
     Turbolinks.visit "/users/sign_in" if xhr.status is 401
 
-  $(document).on "ajax:before", '.select_type', ->
+  $(document).on "ajax:before", '.ajax_load', ->
     NProgress.start()
-  $(document).on "ajax:complete", '.select_type', ->
+  $(document).on "ajax:complete", '.ajax_load', ->
     NProgress.done()
 
 $(document).on 'page:fetch', ->

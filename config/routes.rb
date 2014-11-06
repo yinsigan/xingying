@@ -30,10 +30,10 @@ Rails.application.routes.draw do
       post :move_group, on: :collection
       get "/:thumb_group_id", to: "thumbs#index", on: :collection, as: :group
     end
-    resources :thumb_groups, only: [:new, :create, :destroy, :edit, :update] do
+    resources :thumb_groups, except: [:show, :index] do
       get :delete, on: :member
     end
-    resources :rules, only: [:index, :create, :destroy, :edit, :update] do
+    resources :rules, except: [:show, :new] do
       get :reply_content, on: :collection
       get :new_kword, on: :collection
       get :delete, on: :member
