@@ -1,10 +1,10 @@
 -# 创建新规则表单的内容
-%div{id: "kword_form_#{kword_index}"}
+%div{id: "kword_form_#{kword_index}_#{rule_id}"}
 
   .form-group
     .col-sm-10
     .col-sm-2.text-right
-      %a{class: "gray_link delete_kword_form", data: {delete: "kword_form_#{kword_index}", title: t('delete'), toggle: "tooltip", placement: "top", tooltip: true}}
+      %a{class: "gray_link delete_kword_form", data: {delete: "kword_form_#{kword_index}_#{rule_id}", title: t('delete'), toggle: "tooltip", placement: "top", tooltip: true}}
         %span.glyphicon.glyphicon-trash
 
   .form-group
@@ -32,4 +32,10 @@
   if($("#text_#{kword_index}").length > 0) {
     $("#text_#{kword_index}").limiter(300, elem);
   }
-
+  $('.delete_kword_form').on('click', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    var delete_form = "#" + $(this).data("delete");
+    console.log(delete_form);
+    $(delete_form).remove();
+  });
