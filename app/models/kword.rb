@@ -6,7 +6,7 @@ class Kword < ActiveRecord::Base
   validates :content, length: { maximum: 30 }, presence: true
   validates :public_account, presence: true
   validates :reply, presence: true, length: { maximum: 300 }, if: "subjectable_type == 'TextMaterial'"
-  validates :subjectable_id, presence: true, if: "subjectable_id == 'SinMaterial'"
+  validates :subjectable_id, presence: true, if: "subjectable_type == 'SinMaterial'"
 
   ReplyType = {"TextMaterial" => "文字", "SinMaterial" => "单图文"}
   ReplyTypeNode = {"TextMaterial" => "text_material", "SinMaterial" => "sin_material"}

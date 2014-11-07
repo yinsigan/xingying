@@ -37,10 +37,14 @@
     var delete_form = "#" + $(this).data("delete");
     $(delete_form).remove();
   });
+
   // 自动触发类型选择
   var select_reply_type = "#" + "select_reply_type_#{kword.index}_#{rule_id}"
   $(select_reply_type).trigger('change');
+
+  // 按钮提示
   $('button[data-tooltip], a[data-tooltip]').tooltip()
+
   // 编辑规则时删除关键词表单
   // 设_destroy为1后隐藏表单
   $(".edit_delete_kword_form").on('click', function(event) {
