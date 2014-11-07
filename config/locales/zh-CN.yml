@@ -133,6 +133,7 @@ zh-CN:
       new_rule: "新规则"
     rule:
       title: "规则%{counter}:"
+    rule_content:
       kword: "关键词"
       reply: "回复"
     new:

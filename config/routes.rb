@@ -36,7 +36,9 @@ Rails.application.routes.draw do
     resources :rules, except: [:show, :new] do
       get :reply_content, on: :collection
       get :new_kword, on: :collection
+      get :edit_new_kword, on: :collection
       get :delete, on: :member
+      get :cancel, on: :member
     end
   end
 

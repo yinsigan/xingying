@@ -1,6 +1,6 @@
 class RulesController < SettingsController
   before_action :set_public_account, :add_show_breadcrumb
-  before_action :find_rule, only: [:edit, :destroy, :update]
+  before_action :find_rule, only: [:edit, :destroy, :update, :cancel]
   def index
     add_breadcrumb I18n.t('breadcrumbs.rule.index'), public_account_rules_path(@public_account)
     @rules = @public_account.rules.includes(:kwords).order("created_at DESC").page(params[:page])
@@ -26,6 +26,7 @@ class RulesController < SettingsController
 
   def edit
     @kwords = @rule.kwords.order("created_at DESC")
+    session[:edit_kword_index] = @kwords.count - 1
     render "edit.js.erb", layout: false
   end
 
@@ -38,10 +39,22 @@ class RulesController < SettingsController
     render "shared/success_destroy.js.erb", layout: false
   end
 
+  # 添加规则时添加新关键字
   def new_kword
     @rule_id = params[:rule_id] if params[:rule_id].present?
     @kword_index = session[:kword_index] = session[:kword_index] + 1
     render "new_kword.js.erb", layout: false
+  end
+
+  # 编辑规则时添加新关键字
+  def edit_new_kword
+    @rule_id = params[:rule_id] if params[:rule_id].present?
+    @kword_index = session[:edit_kword_index] = session[:edit_kword_index] + 1
+    render "new_kword.js.erb", layout: false
+  end
+
+  def cancel
+    render "cancel.js.erb", layout: false
   end
 
   # 选择回复类型

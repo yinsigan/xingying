@@ -1,0 +1,21 @@
+.panel-body
+  .form-group
+    .col-sm-2
+      = t('.kword')
+    .col-sm-10
+      = rule.kwords.map { |kword| content_tag(:em, kword.content, class: "keywords_name") }.join.html_safe
+  .form-group
+    .col-sm-2
+      = t('.reply')
+    .col-sm-10
+      待写
+
+-# 规则操作按钮
+.panel-footer.clearfix
+  %span.pull-right
+    = link_to edit_public_account_rule_path(@public_account, rule), class: "btn btn-info btn-sm", remote: true do
+      %i.glyphicon.glyphicon-edit
+      = t('edit')
+    = link_to delete_public_account_rule_path(@public_account, rule), class: "btn btn-danger btn-sm", remote: true do
+      %i.glyphicon.glyphicon-remove
+      = t('delete')
