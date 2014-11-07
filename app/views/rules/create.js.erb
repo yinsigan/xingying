@@ -1,3 +1,0 @@
-<% if @rule.errors.any? %>
-  $(".alert-warning.alert-fixed-top").html("<%= j(render partial: 'shared/ajax_error_messages', locals: {object: @rule}) %>").fadeIn().delay(5000).fadeOut();
-<% end %>
