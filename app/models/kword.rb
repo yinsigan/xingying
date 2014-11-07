@@ -15,9 +15,9 @@ class Kword < ActiveRecord::Base
   def reply_content
     case subjectable_type
     when "TextMaterial"
-      "一条文字"
+      "1条文字"
     when "SinMaterial"
-      "一条单图文"
+      "1条单图文"
     end
   end
 end

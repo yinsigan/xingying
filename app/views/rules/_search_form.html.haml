@@ -1,0 +1,15 @@
+.row
+  .col-md-12
+    = search_form_for @q, url: public_account_rules_path(@public_account), html: {class: "form-inline", role: "form"}, remote: true do |f|
+
+      .form-group
+        = f.label :name_cont, class: "sr-only"
+        = f.search_field :name_cont, class: "form-control", placeholder: t('.rule_name')
+
+      .form-group
+        = f.label :kwords_content_cont, class: "sr-only"
+        = f.search_field :kwords_content_cont, class: "form-control", placeholder: t('.kword_content')
+
+      = button_tag type: "submit", class: "btn btn-primary" do
+        %span.glyphicon.glyphicon-search
+        = t('search')

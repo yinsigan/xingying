@@ -132,6 +132,9 @@ zh-CN:
       new: "添加规则"
       new_rule: "新规则"
       no_content: "暂时没有规则"
+    search_form:
+      rule_name: "规则名"
+      kword_content: "关键字"
     rule:
       title: "规则%{counter}:"
     rule_content:

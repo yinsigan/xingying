@@ -1,12 +1,14 @@
 .panel.panel-default
   -# 头部规则次序
   .panel-heading
-    %h3.panel-title.clearfix
+    %h3.panel-title
+      <!--
       %strong
         - if params[:page].present? && params[:page] != 0
           = t('.title', counter: (@rules_count - (params[:page].to_i - 1) * 9 - rule_counter))
         - else
           = t('.title', counter: @rules_count - rule_counter)
+      !-->
       = rule.name
   -# 显示规则的实际内容
   %div{id: "edit_form_#{rule.id}"}

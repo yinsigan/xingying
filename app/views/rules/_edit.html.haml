@@ -23,7 +23,12 @@
 
   .panel-footer.clearfix
     %span.pull-right
-      = rule.submit t('save'), class: "btn btn-success btn-sm"
+      = button_tag type: "submit", class: "btn btn-success btn-sm" do
+        %i.fa.fa-save
+        = t('save')
       = link_to delete_public_account_rule_path(@public_account, @rule), class: "btn btn-danger btn-sm", remote: true do
+        %span.glyphicon.glyphicon-remove
         = t('delete')
-      = link_to t('cancel'), cancel_public_account_rule_path(@public_account, @rule), class: "btn btn-default btn-sm", remote: true
+      = link_to cancel_public_account_rule_path(@public_account, @rule), class: "btn btn-default btn-sm", remote: true do
+        %i.fa.fa-undo
+        = t('cancel')
