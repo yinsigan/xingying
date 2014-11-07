@@ -49,7 +49,7 @@
             = link_to t('.move_to_group'), move_public_account_thumbs_path(@public_account), class: "btn btn-default disabled", remote: true
             = link_to t('delete'), delete_all_public_account_thumbs_path(@public_account), class: "btn btn-danger disabled", remote: true
       .row
-        #pic_content.col-md-12.margintop20
+        .pic_content.col-md-12.margintop20
           = render partial: "thumbs/thumb", collection: @thumbs, locals: {thumb_col: "col-md-3"}
       .row
         .col-md-12.text-right

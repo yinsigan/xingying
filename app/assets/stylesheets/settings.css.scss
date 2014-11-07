@@ -458,3 +458,23 @@ footer {
   height: 34px;
   line-height: 34px;
 }
+
+/*单图文边框*/
+.pic_text_content {
+  &>div:nth-child(3n) {
+    border-right: 1px solid #e7e7eb;
+  }
+  &>div:last-child {
+    border-right: 1px solid #e7e7eb;
+  }
+}
+/*图片边框*/
+.pic_content {
+  &>div:nth-child(4n) {
+    border-right: 1px solid #e7e7eb;
+  }
+  &>div:last-child {
+    border-right: 1px solid #e7e7eb;
+  }
+}
+

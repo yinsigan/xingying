@@ -27,6 +27,8 @@ class AutoreplyController < SettingsController
 
   # 选择单图文
   def select_sin_material
+    @hidden_tag = params[:hidden_tag].presence
+    @preview_wrapper = params[:preview_wrapper].presence
     @sin_materials = @public_account.sin_materials.includes(sin_pic_text: [:thumb]).page(params[:page]).per(6)
     render "select_sin_material.js.erb", layout: false
   end

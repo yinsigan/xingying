@@ -23,7 +23,7 @@
   .form-group
     = kword.label :subjectable_type, class: "col-sm-2 control-label"
     .col-sm-8
-      = kword.select :subjectable_type, options_for_select(Kword::ReplyType.invert), {include_blank: false}, {:class => "form-control select_reply_type ajax_load", data: {remote: true, url: reply_content_public_account_rules_path(@public_account, kword_index: kword.index, rule_id: rule_id, kword_object: kword.object)} }
+      = kword.select :subjectable_type, options_for_select(Kword::ReplyType.invert, kword.object.subjectable_type.presence), {include_blank: false}, {:class => "form-control select_reply_type ajax_load", data: {remote: true, url: reply_content_public_account_rules_path(@public_account, kword_index: kword.index, rule_id: rule_id, kword_object: kword.object)} }
 
   %div{id: "reply_content_#{kword.index}_#{rule_id}"}
 

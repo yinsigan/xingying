@@ -27,6 +27,7 @@ zh-CN:
         subjectable_id: "回复"
         subjectable_type: "回复类型"
         reply: "回复文字的内容"
+        sin_material: "单图文"
       kwords:
         reply: "回复文字的内容"
         content: "关键字"

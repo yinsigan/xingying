@@ -1,6 +1,6 @@
 .form-group
   = label_tag "public_account[default_reply]", t('.name'), class: "col-sm-3 control-label"
-  .col-sm-9#pic_content
+  .col-sm-9.pic_content
     - if @public_account.default_thumb_material && @public_account.default_thumb_material.try(:thumb)
       = render partial: "thumbs/thumb", locals: {thumb: @public_account.default_thumb_material.thumb, thumb_col: "col-sm-4"}
     - else

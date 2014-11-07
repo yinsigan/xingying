@@ -145,4 +145,5 @@ zh-CN:
     edit:
       name_limit: "规则名最多60个字"
       new_kword: "添加关键字"
-
+    sin_material:
+      select_btn: "选择单图文"

@@ -3,22 +3,6 @@
 #content {
   margin-top: 60px;
 }
-#pic_text_content {
-  &>div:nth-child(3n) {
-    border-right: 1px solid #e7e7eb;
-  }
-  &>div:last-child {
-    border-right: 1px solid #e7e7eb;
-  }
-}
-#pic_content {
-  &>div:nth-child(4n) {
-    border-right: 1px solid #e7e7eb;
-  }
-  &>div:last-child {
-    border-right: 1px solid #e7e7eb;
-  }
-}
 .nav-h {
   left: 50%;
   margin-left: -150px;

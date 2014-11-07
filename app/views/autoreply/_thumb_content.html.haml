@@ -14,7 +14,7 @@
     %h4= t('.no_content')
 - else
   .row
-    #pic_content.col-md-12.margintop20
+    .pic_content.col-md-12.margintop20
       = render partial: "thumbs/thumb", collection: @thumbs, locals: {thumb_col: "col-md-3"}
   .row
     .col-md-12.text-right#page
