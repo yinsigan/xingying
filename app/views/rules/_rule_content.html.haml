@@ -8,7 +8,7 @@
     .col-sm-2
       = t('.reply')
     .col-sm-10
-      待写
+      = rule.kwords.map { |kword| content_tag(:em, kword.try(:reply_content), class: "keywords_name") }.join.html_safe
 
 -# 规则操作按钮
 .panel-footer.clearfix

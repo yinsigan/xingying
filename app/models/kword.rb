@@ -10,4 +10,13 @@ class Kword < ActiveRecord::Base
 
   ReplyType = {"TextMaterial" => "文字", "SinMaterial" => "单图文"}
   ReplyTypeNode = {"TextMaterial" => "text_material", "SinMaterial" => "sin_material"}
+
+  def reply_content
+    case subjectable_type
+    when "TextMaterial"
+      "一条文字"
+    when "SinMaterial"
+      "一条单图文"
+    end
+  end
 end

@@ -1,16 +1,19 @@
 -# 创建新规则表单的内容
 %div{id: "kword_form_#{kword_index}_#{rule_id}"}
 
+  -# 删除新表单
   .form-group
     .col-sm-10
     .col-sm-2.text-right
       %a{class: "gray_link delete_kword_form", data: {delete: "kword_form_#{kword_index}_#{rule_id}", title: t('delete'), toggle: "tooltip", placement: "top", tooltip: true}}
         %span.glyphicon.glyphicon-trash
 
+  -# 新表单关键字内容
   .form-group
     = label_tag "rule_kwords_attributes_#{kword_index}_content", t('activerecord.attributes.kword.content'), class: "col-sm-2 control-label required"
     .col-sm-8
       = text_field_tag "rule[kwords_attributes][#{kword_index}][content]", nil, class: "form-control", required: true
+  -# 新表单选择类型
   .form-group
     = label_tag "rule_kwords_attributes_#{kword_index}_subjectable_type", t('activerecord.attributes.kword.subjectable_type'), class: "col-sm-2 control-label"
     .col-sm-8
@@ -36,6 +39,5 @@
     event.preventDefault();
     event.stopPropagation();
     var delete_form = "#" + $(this).data("delete");
-    console.log(delete_form);
     $(delete_form).remove();
   });

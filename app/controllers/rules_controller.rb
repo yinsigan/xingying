@@ -9,6 +9,7 @@ class RulesController < SettingsController
     @rule = @public_account.rules.build
     session[:kword_index] = 0
     @rule.kwords.build if @rule.new_record?
+    store_location
   end
 
   def create
