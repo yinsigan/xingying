@@ -16,10 +16,10 @@
           = link_to edit_new_kword_public_account_rules_path(@public_account, rule_id: @rule.id), class: "btn btn-primary btn-sm", remote: true do
             %span.glyphicon.glyphicon-plus
             = t('.new_kword')
+    %div{id: "kword_form_wrapper_#{@rule.id}"}
     - @rule.kwords.each do |kword|
       = rule.fields_for :kwords, kword do |kw|
-        %div{id: "kword_form_wrapper_#{@rule.id}"}
-          = render "kword_field_form", kword: kw, rule_id: @rule.id
+        = render "kword_field_form", kword: kw, rule_id: @rule.id
 
   .panel-footer.clearfix
     %span.pull-right

@@ -26,7 +26,7 @@ class RulesController < SettingsController
 
   def edit
     @kwords = @rule.kwords.order("created_at DESC")
-    session[:edit_kword_index] = @kwords.count - 1
+    session[:edit_kword_index] = @kwords.count
     render "edit.js.erb", layout: false
   end
 
@@ -77,7 +77,7 @@ class RulesController < SettingsController
     end
 
     def rule_params
-      params.require(:rule).permit(:public_account_id, :name, kwords_attributes: [:content, :subjectable_id, :public_account_id, :subjectable_type, :reply, :id])
+      params.require(:rule).permit(:public_account_id, :name, kwords_attributes: [:content, :subjectable_id, :public_account_id, :subjectable_type, :reply, :id, :_destroy])
     end
 
     def find_rule

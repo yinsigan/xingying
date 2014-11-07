@@ -4,10 +4,17 @@
   .form-group
     .col-sm-10
     .col-sm-2.text-right
-      %a{class: "gray_link delete_kword_form", data: {delete: "kword_form_#{kword.index}_#{rule_id}", title: t('delete'), toggle: "tooltip", placement: "top", tooltip: true}}
-        %span.glyphicon.glyphicon-trash
+      - if rule_id.present?
+        %a{class: "gray_link edit_delete_kword_form", data: {delete: "rule_kwords_attributes_#{kword.index}_#{rule_id}_destroy", hide: "kword_form_#{kword.index}_#{rule_id}", title: t('delete'), toggle: "tooltip", placement: "top", tooltip: true}}
+          %span.glyphicon.glyphicon-trash
+      - else
+        %a{class: "gray_link delete_kword_form", data: {delete: "kword_form_#{kword.index}_#{rule_id}", title: t('delete'), toggle: "tooltip", placement: "top", tooltip: true}}
+          %span.glyphicon.glyphicon-trash
 
-  -# 填写规则名
+  -# 编辑规则时删除关键字
+  - unless kword.object.new_record?
+    = kword.hidden_field :_destroy, value: 0, id: "rule_kwords_attributes_#{kword.index}_#{rule_id}_destroy"
+  -# 填写关键字
   .form-group
     = kword.label :content, class: "col-sm-2 control-label required"
     .col-sm-8
@@ -33,3 +40,13 @@
   // 自动触发类型选择
   $(".select_reply_type").trigger('change');
   $('button[data-tooltip], a[data-tooltip]').tooltip()
+  // 编辑规则时删除关键词表单
+  // 设_destroy为1后隐藏表单
+  $(".edit_delete_kword_form").on('click', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    var set_destroy = "#" + $(this).data("delete");
+    var hide_form = "#" + $(this).data("hide");
+    $(set_destroy).val(1);
+    $(hide_form).hide();
+  });
