@@ -1,6 +1,6 @@
 .form-group
   = label_tag "public_account[default_reply]", t('.name'), class: "col-sm-3 control-label"
-  .col-sm-9.pic_text_content
+  .col-sm-9.pic_text_content#pic_text_content
     - if @public_account.default_sin_material.present?
       = render partial: "sin_materials/sin_material", locals: {sin_material: @public_account.default_sin_material, sin_col: "col-sm-6"}
     - else
