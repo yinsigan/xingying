@@ -23,7 +23,7 @@
   .form-group
     = kword.label :subjectable_type, class: "col-sm-2 control-label"
     .col-sm-8
-      = kword.select :subjectable_type, options_for_select(Kword::ReplyType.invert, kword.object.subjectable_type.presence), {include_blank: false}, {:class => "form-control select_reply_type ajax_load", data: {remote: true, url: reply_content_public_account_rules_path(@public_account, kword_index: kword.index, rule_id: rule_id, kword_object: kword.object)} }
+      = kword.select :subjectable_type, options_for_select(Kword::ReplyType.invert, kword.object.subjectable_type.presence), {include_blank: false}, {:class => "form-control ajax_load", id: "select_reply_type_#{kword.index}_#{rule_id}", data: {remote: true, url: reply_content_public_account_rules_path(@public_account, kword_index: kword.index, rule_id: rule_id, kword_object: kword.object)} }
 
   %div{id: "reply_content_#{kword.index}_#{rule_id}"}
 
@@ -38,7 +38,8 @@
     $(delete_form).remove();
   });
   // 自动触发类型选择
-  $(".select_reply_type").trigger('change');
+  var select_reply_type = "#" + "select_reply_type_#{kword.index}_#{rule_id}"
+  $(select_reply_type).trigger('change');
   $('button[data-tooltip], a[data-tooltip]').tooltip()
   // 编辑规则时删除关键词表单
   // 设_destroy为1后隐藏表单

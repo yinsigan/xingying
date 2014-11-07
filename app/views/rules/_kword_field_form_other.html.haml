@@ -17,16 +17,10 @@
   .form-group
     = label_tag "rule_kwords_attributes_#{kword_index}_subjectable_type", t('activerecord.attributes.kword.subjectable_type'), class: "col-sm-2 control-label"
     .col-sm-8
-      = select_tag "rule[kwords_attributes][#{kword_index}][subjectable_type]", options_for_select(Kword::ReplyType.invert), { include_blank: false, :class => "form-control ajax_load", data: {remote: true, url: reply_content_public_account_rules_path(@public_account, kword_index: kword_index)} }
+      = select_tag "rule[kwords_attributes][#{kword_index}][subjectable_type]", options_for_select(Kword::ReplyType.invert, "TextMaterial"), { include_blank: false, :class => "form-control select_reply_type ajax_load", id: "select_reply_type_#{kword_index}_#{rule_id}", data: {remote: true, url: reply_content_public_account_rules_path(@public_account, kword_index: kword_index, rule_id: rule_id)} }
 
-  %div{id: "reply_content_#{kword_index}"}
-    .form-group
-      = label_tag "rule_kwords_attributes_#{kword_index}_reply", t('activerecord.attributes.kword.reply'), class: "col-sm-2 control-label required"
-      .col-sm-8
-        = text_area_tag "rule[kwords_attributes][#{kword_index}][reply]", "", class: "form-control", rows: 9, id: "text_#{kword_index}", required: true
-        %p.text-muted.pull-right
-          = t('char_tip')
-          %span{id: "chars_#{kword_index}"}
+  %div{id: "reply_content_#{kword_index}_#{rule_id}"}
+
   = hidden_field_tag "rule[kwords_attributes][#{kword_index}][public_account_id]", @public_account.id
 
 :javascript
@@ -35,6 +29,10 @@
   if($("#text_#{kword_index}").length > 0) {
     $("#text_#{kword_index}").limiter(300, elem);
   }
+  // 自动触发类型选择
+  var select_reply_type = "#" + "select_reply_type_#{kword_index}_#{rule_id}"
+  $(select_reply_type).trigger('change');
+
   $('.delete_kword_form').on('click', function(event) {
     event.preventDefault();
     event.stopPropagation();
