@@ -13,7 +13,7 @@
       .form-group
         .col-sm-10
         .col-sm-2.text-right
-          = link_to new_kword_public_account_rules_path(@public_account), class: "btn btn-primary btn-sm", remote: true do
+          = link_to new_kword_public_account_rules_path(@public_account), class: "btn btn-primary btn-sm ajax_load", remote: true do
             %span.glyphicon.glyphicon-plus
             = t('.new_kword')
     -# 每个规则的实际内容

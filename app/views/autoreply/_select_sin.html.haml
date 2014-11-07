@@ -19,6 +19,7 @@
     = t('close')
 
 :javascript
+  // 添加选中时效果
   $(".sin_box").on('click', function() {
     $(this).toggleClass("selected");
     $(this).siblings().removeClass("selected");
@@ -31,5 +32,5 @@
   $("#select_btn").on('click', function() {
     $("#public_account_default_material_id").val($(".selected").attr("id"));
     $("#modal").modal('hide');
-    $("#pic_text_content").html($('.selected').removeClass("selected col-md-4").addClass("col-sm-6"));
+    $("#pic_text_content").html($('.selected').removeClass("selected col-md-4").addClass("col-sm-6").off('click'));
   });
