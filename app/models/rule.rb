@@ -4,4 +4,5 @@ class Rule < ActiveRecord::Base
   validates :name, length: { maximum: 60 }, presence: true
 
   accepts_nested_attributes_for :kwords, allow_destroy: true
+
 end
