@@ -1,11 +1,17 @@
 .row
   .col-md-12
-    = search_form_for @q, url: public_account_rules_path(@public_account), html: {class: "form-inline", role: "form"} do |f|
+    = search_form_for @q, url: public_account_rules_path(@public_account), html: {class: "form-inline ajax_load", role: "form"}, remote: true do |f|
 
       .form-group
         = f.label :name_or_kwords_content_cont, t('.keyword'), class: "sr-only"
         = f.search_field :name_or_kwords_content_cont, class: "form-control", placeholder: t('.keyword')
 
-      = button_tag type: "submit", class: "btn btn-primary" do
+      = button_tag type: "submit", class: "btn btn-primary", id: "rule_search_button" do
         %span.glyphicon.glyphicon-search
         = t('search')
+
+:javascript
+  $("#rule_search_button").on('click', function() {
+    var params = "?" + $("#rule_search").serialize();
+    History.pushState(null, "公众平台后台网站", params);
+  })

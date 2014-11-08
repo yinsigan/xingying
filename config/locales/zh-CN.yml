@@ -131,6 +131,7 @@ zh-CN:
       notice: "关键字回复就是用户在聊天界面输入关键词，后台可以设置回复的消息。"
       new: "添加规则"
       new_rule: "新规则"
+    search_index:
       no_content: "暂时没有规则"
     search_form:
       keyword: "搜索规则名或关键字"

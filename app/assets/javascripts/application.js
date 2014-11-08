@@ -29,3 +29,4 @@
 //= require bootstrap-image-gallery
 //= require bootstrapValidator.min
 //= require language/zh_CN
+//= require jquery.history
