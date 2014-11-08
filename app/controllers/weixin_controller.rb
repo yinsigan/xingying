@@ -54,7 +54,7 @@ class WeixinController < ApplicationController
       if @find_kword = @weixin_public_account.kwords.where(:content => @keyword).last
         case @find_kword.subjectable_type
         when "TextMaterial"
-          reply_text_message(@find_kword.reply)
+          reply_text_message(@find_kword.reply.presence)
         when "SinMaterial"
           if sin_pic_text = @find_kword.sin_material.try(:sin_pic_text)
             articles = []
@@ -66,8 +66,22 @@ class WeixinController < ApplicationController
             reply_news_message(articles)
           end
         end
+      # 回复文字无匹配时
       else
-        reply_text_message("default message")
+        case @weixin_public_account.autoreply_type
+        when 1
+          reply_text_message(@weixin_public_account.autoreply.presence)
+        when 2
+          if sin_pic_text = @weixin_public_account.autoreply_sin_material.try(:sin_pic_text)
+            articles = []
+            article = generate_article(sin_pic_text.title,
+                                       sin_pic_text.desc,
+                                       sin_pic_text.pic_url,
+                                       sin_pic_text.article_url.presence)
+            articles << article
+            reply_news_message(articles)
+          end
+        end
       end
     end
 
@@ -78,7 +92,7 @@ class WeixinController < ApplicationController
       end
       case @weixin_public_account.reply_type
       when 1
-        reply_text_message("#{@weixin_public_account.default_reply.presence}")
+        reply_text_message(@weixin_public_account.default_reply.presence)
       when 2
         if sin_pic_text = @weixin_public_account.default_sin_material.try(:sin_pic_text)
           articles = []
