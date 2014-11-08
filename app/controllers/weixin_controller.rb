@@ -65,7 +65,7 @@ class WeixinController < ApplicationController
         case @weixin_public_account.autoreply_type
         when 1
           if @weixin_public_account.autoreply.present?
-            reply_text_message(@weixin_public_account.autoreply)
+            reply_text_message(@weixin_public_account.autoreply.presence)
           else
             reply_text_message("")
           end

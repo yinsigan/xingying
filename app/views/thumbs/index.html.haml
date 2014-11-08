@@ -20,6 +20,7 @@
                 (#{@no_group_count})
           = render partial: "thumb_groups/thumb_group", collection: @thumb_groups unless @thumb_groups.empty?
 
+    -# 分组操作
     .btn-group.btn-group-sm.margintop20.pull-right
       = link_to new_public_account_thumb_group_path(@public_account), class: "btn btn-default", remote: true do
         %span.glyphicon.glyphicon-plus
@@ -31,6 +32,8 @@
         = link_to edit_public_account_thumb_group_path(@public_account, @find_thumb_group), class: "btn btn-default", remote: true do
           %span.glyphicon.glyphicon-pencil
           = t('.rename_group')
+
+-# 图片内容
 - if @thumbs.empty?
   .bs-callout.bs-callout-info
     %h4= t('.no_content')
