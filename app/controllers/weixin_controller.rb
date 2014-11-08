@@ -57,29 +57,17 @@ class WeixinController < ApplicationController
           reply_text_message(@find_kword.reply.presence)
         when "SinMaterial"
           if sin_pic_text = @find_kword.sin_material.try(:sin_pic_text)
-            articles = []
-            article = generate_article(sin_pic_text.title,
-                                       sin_pic_text.desc,
-                                       sin_pic_text.pic_url,
-                                       sin_pic_text.article_url.presence)
-            articles << article
-            reply_news_message(articles)
+            reply_news_message(custom_generate_article(sin_pic_text))
           end
         end
       # 回复文字无匹配时
       else
         case @weixin_public_account.autoreply_type
         when 1
-          reply_text_message("")
+          reply_text_message(@weixin_public_account.autoreply.presence)
         when 2
           if sin_pic_text = @weixin_public_account.autoreply_sin_material.try(:sin_pic_text)
-            articles = []
-            article = generate_article(sin_pic_text.title,
-                                       sin_pic_text.desc,
-                                       sin_pic_text.pic_url,
-                                       sin_pic_text.article_url.presence)
-            articles << article
-            reply_news_message(articles)
+            reply_news_message(custom_generate_article(sin_pic_text))
           end
         end
       end
@@ -95,15 +83,18 @@ class WeixinController < ApplicationController
         reply_text_message(@weixin_public_account.default_reply.presence)
       when 2
         if sin_pic_text = @weixin_public_account.default_sin_material.try(:sin_pic_text)
-          articles = []
-          article = generate_article(sin_pic_text.title,
-                                     sin_pic_text.desc,
-                                     sin_pic_text.pic_url,
-                                     sin_pic_text.article_url.presence)
-          articles << article
-          reply_news_message(articles)
+          reply_news_message(custom_generate_article(sin_pic_text))
         end
       end
+    end
+
+    def custom_generate_article(sin_pic_text)
+      articles = []
+      article = generate_article(sin_pic_text.title,
+                                 sin_pic_text.desc,
+                                 sin_pic_text.pic_url,
+                                 sin_pic_text.article_url.presence)
+      articles << article
     end
 
 end
