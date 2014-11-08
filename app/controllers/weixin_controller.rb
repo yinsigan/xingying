@@ -64,7 +64,11 @@ class WeixinController < ApplicationController
       else
         case @weixin_public_account.autoreply_type
         when 1
-          reply_text_message(@weixin_public_account.autoreply.presence)
+          if @weixin_public_account.autoreply.present?
+            reply_text_message(@weixin_public_account.autoreply)
+          else
+            reply_text_message("")
+          end
         when 2
           if sin_pic_text = @weixin_public_account.autoreply_sin_material.try(:sin_pic_text)
             reply_news_message(custom_generate_article(sin_pic_text))
