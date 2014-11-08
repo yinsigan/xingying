@@ -50,6 +50,7 @@ gem 'icheck-rails', '~> 1.0.2.1'
 gem 'jquery.fileupload-rails', '~> 1.10.1'
 gem 'bootstrap-validator-rails', '~> 0.5.2'
 gem 'ransack', '~> 1.5.1'
+gem 'seo_helper', '~> 1.0'
 # gem "angularjs-rails", '~> 1.3.0'
 group :development do
   gem 'pry'

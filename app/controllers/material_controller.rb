@@ -10,6 +10,7 @@ class MaterialController < SettingsController
   private
     def set_public_account
       @public_account = current_user.public_accounts.find(params[:id])
+      set_page_title @public_account.name
     end
 
     def pic_text_breadcrumb

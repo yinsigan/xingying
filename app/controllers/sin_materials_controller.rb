@@ -58,6 +58,7 @@ class SinMaterialsController < SettingsController
 
     def set_public_account
       @public_account = current_user.public_accounts.find(params[:public_account_id])
+      set_page_title @public_account.name
     end
 
     def find_sin_material

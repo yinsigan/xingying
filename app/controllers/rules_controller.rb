@@ -6,7 +6,7 @@ class RulesController < SettingsController
     add_breadcrumb I18n.t('breadcrumbs.rule.index'), public_account_rules_path(@public_account)
     @q = @public_account.rules.search(params[:q])
     @rules = @q.result.includes(:kwords).order("created_at DESC").page(params[:page]).uniq
-    @rules_count = @rules.total_count
+    # @rules_count = @rules.total_count
 
     # 创建新规则
     @rule = @public_account.rules.build
@@ -81,6 +81,7 @@ class RulesController < SettingsController
   private
     def set_public_account
       @public_account = current_user.public_accounts.find(params[:public_account_id])
+      set_page_title @public_account.name
     end
     def add_show_breadcrumb
       add_breadcrumb @public_account.name, public_account_path(@public_account)
