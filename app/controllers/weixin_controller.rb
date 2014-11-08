@@ -54,7 +54,7 @@ class WeixinController < ApplicationController
       if @find_kword = @weixin_public_account.kwords.where(:content => @keyword).last
         case @find_kword.subjectable_type
         when "TextMaterial"
-          reply_text_message("Your Message: #{@find_kword.reply}")
+          reply_text_message(@find_kword.reply)
         when "SinMaterial"
           if sin_pic_text = @find_kword.sin_material.try(:sin_pic_text)
             articles = []
