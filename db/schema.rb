@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103013041) do
+ActiveRecord::Schema.define(version: 20141108071600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,12 +52,16 @@ ActiveRecord::Schema.define(version: 20141103013041) do
     t.string   "weixin_secret_key"
     t.string   "weixin_token"
     t.text     "default_reply"
-    t.integer  "pic_text_count",      default: 0
-    t.integer  "thumbs_count",        default: 0
-    t.integer  "reply_type",          default: 1
+    t.integer  "pic_text_count",        default: 0
+    t.integer  "thumbs_count",          default: 0
+    t.integer  "reply_type",            default: 1
     t.integer  "default_material_id"
+    t.integer  "autoreply_type",        default: 1
+    t.text     "autoreply"
+    t.integer  "autoreply_material_id"
   end
 
+  add_index "public_accounts", ["autoreply_material_id"], name: "index_public_accounts_on_autoreply_material_id", using: :btree
   add_index "public_accounts", ["default_material_id"], name: "index_public_accounts_on_default_material_id", using: :btree
   add_index "public_accounts", ["user_id"], name: "index_public_accounts_on_user_id", using: :btree
 

@@ -1,1 +1,21 @@
 = render 'tab'
+.tab-content
+  .bs-callout.bs-callout-info
+    %p.text-info
+      = t('.notice')
+  .panel.panel-default
+    .panel-body
+      = form_for @public_account, url: set_auto_reply_public_account_path(@public_account), method: :patch, html: {class: "form-horizontal"} do |f|
+        = render partial: "shared/form_error_messages", locals: {object: @public_account}
+        .form-group#reply_type
+          = label_tag t('.reply_type'), nil, class: "col-sm-3 control-label", for: "public_account_autoreply_type"
+          .col-sm-9
+            = f.select :autoreply_type, options_for_select(PublicAccount::AutoReplyType.invert, @public_account.autoreply_type.presence), {include_blank: false}, {:class => "form-control ajax_load", data: {remote: true, url: autoreply_content_public_account_path(@public_account)} }
+        #autoreply_content
+        .form-group
+          .col-sm-9.col-sm-push-3
+            = f.submit "#{t('save')}", class: "btn btn-primary", "data-disable-with" => "#{t('disable-with-submit')}"
+
+:javascript
+  $("#public_account_autoreply_type").trigger('change');
+

@@ -46,12 +46,19 @@ zh-CN:
       default_title: "消息自动回复"
       keyword_title: "关键词自动回复"
     text_material:
-      char_number: 600
       default_reply: "被关注时回复内容"
+    auto_text_material:
+      autoreply: "关键字无匹配时回复内容"
     added:
       notice: "被添加自动回复就是默认回复，也就是公众账号被关注时弹出的消息，被添加自动可以是文字也可以是图文消息。"
       reply_type: "回复类型"
+    default:
+      notice: "消息自动回复就是当在公众号里输入的关键字不匹配时自动回复的消息。"
+      reply_type: "回复类型"
     sin_material:
+      select_btn: "选择单图文"
+      name: "单图文"
+    auto_sin_material:
       select_btn: "选择单图文"
       name: "单图文"
     select_sin:

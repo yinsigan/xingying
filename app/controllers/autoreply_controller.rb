@@ -9,6 +9,12 @@ class AutoreplyController < SettingsController
     end
   end
 
+  def autoreply_content
+    if params[:public_account] && params[:public_account][:autoreply_type]
+      render "auto_" + PublicAccount::ReplyTypeNode[params[:public_account][:autoreply_type].to_i] + ".js.erb", layout: false
+    end
+  end
+
   # 被添加自动回复
   def added
     add_breadcrumb I18n.t("breadcrumbs.autoreply.added"),
@@ -23,6 +29,16 @@ class AutoreplyController < SettingsController
       redirect_to added_public_account_path(@public_account)
     else
       render :added
+    end
+  end
+
+  # 消息自动回复的动作
+  def set_auto_reply
+    if  @public_account.update(public_account_params)
+      flash[:success] = I18n.t('success_save')
+      redirect_to default_public_account_path(@public_account)
+    else
+      render :default
     end
   end
 
@@ -46,6 +62,9 @@ class AutoreplyController < SettingsController
   end
 
   def default
+    add_breadcrumb I18n.t("breadcrumbs.autoreply.default"),
+      added_public_account_path(@public_account)
+    store_location
   end
 
   private
@@ -62,7 +81,10 @@ class AutoreplyController < SettingsController
       params.require(:public_account).permit(
         :default_reply,
         :reply_type,
-        :default_material_id
+        :default_material_id,
+        :autoreply,
+        :autoreply_type,
+        :autoreply_material_id
       )
     end
 

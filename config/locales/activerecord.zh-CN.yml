@@ -13,6 +13,9 @@ zh-CN:
         default_reply: "关注时回复内容"
         weixin_token: "Token:"
         weixin_secret_key: "URL:"
+        default_sin_material: "单图文"
+        autoreply: "关键字无匹配时回复内容"
+        autoreply_sin_material: "单图文"
       sin_pic_text:
         title: "标题"
         desc: "摘要"

@@ -7,6 +7,7 @@ zh-CN:
       edit: "修改公众账号"
     autoreply:
       added: "被添加自动回复"
+      default: "消息自动回复"
     material:
       pic_text: "图文管理"
       sin_pic_text: "单图文管理"
