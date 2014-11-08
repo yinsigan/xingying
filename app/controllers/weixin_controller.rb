@@ -13,10 +13,12 @@ class WeixinController < ApplicationController
 
   protected
 
+    # 参数初始化，查找公众账号
     def initialize_adapter
       @weixin_adapter ||= Weixin::Adapter.new(params)
     end
 
+    # 验证
     def check_weixin_legality
       check_result = @weixin_adapter.check_weixin_legality
       valid = check_result.delete(:valid)
@@ -24,10 +26,12 @@ class WeixinController < ApplicationController
       return valid
     end
 
+    # 当前公众账号
     def set_weixin_public_account
       @weixin_public_account ||= @weixin_adapter.current_weixin_public_account
     end
 
+    # 设置接收微信消息
     def set_weixin_message
       @weixin_message ||= Weixin::Message.factory(request.body.read)
     end
@@ -45,10 +49,29 @@ class WeixinController < ApplicationController
 
   private
 
+    # 关键字回复
     def response_text_message(options={})
-      reply_text_message("Your Message: #{@keyword}")
+      if @find_kword = @weixin_public_account.kwords.where(:content => @keyword).last
+        case @find_kword.subjectable_type
+        when "TextMaterial"
+          reply_text_message("Your Message: #{@find_kword.reply}")
+        when "SinMaterial"
+          if sin_pic_text = @find_kword.sin_material.try(:sin_pic_text)
+            articles = []
+            article = generate_article(sin_pic_text.title,
+                                       sin_pic_text.desc,
+                                       sin_pic_text.pic_url,
+                                       sin_pic_text.article_url.presence)
+            articles << article
+            reply_news_message(articles)
+          end
+        end
+      else
+        reply_text_message("default message")
+      end
     end
 
+    # 首次关注
     def handle_subscribe_event
       if @keyword.present?
         return reply_text_message("扫描带参数二维码事件: 1. 用户未关注时，进行关注后的事件推送, keyword: #{@keyword}")
@@ -57,7 +80,7 @@ class WeixinController < ApplicationController
       when 1
         reply_text_message("#{@weixin_public_account.default_reply.presence}")
       when 2
-        if @weixin_public_account.default_sin_material.present? && sin_pic_text = @weixin_public_account.default_sin_material.sin_pic_text
+        if sin_pic_text = @weixin_public_account.default_sin_material.try(:sin_pic_text)
           articles = []
           article = generate_article(sin_pic_text.title,
                                      sin_pic_text.desc,
