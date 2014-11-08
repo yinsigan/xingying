@@ -11,7 +11,8 @@ class AutoreplyController < SettingsController
 
   # 被添加自动回复
   def added
-    add_breadcrumb I18n.t("breadcrumbs.autoreply.added"), added_public_account_path(@public_account)
+    add_breadcrumb I18n.t("breadcrumbs.autoreply.added"),
+      added_public_account_path(@public_account)
     store_location
   end
 
@@ -29,7 +30,8 @@ class AutoreplyController < SettingsController
   def select_sin_material
     @hidden_tag = params[:hidden_tag].presence
     @preview_wrapper = params[:preview_wrapper].presence
-    @sin_materials = @public_account.sin_materials.includes(sin_pic_text: [:thumb]).page(params[:page]).per(6)
+    @sin_materials = @public_account.sin_materials
+      .includes(sin_pic_text: [:thumb]).page(params[:page]).per(6)
     render "select_sin_material.js.erb", layout: false
   end
 
@@ -56,17 +58,26 @@ class AutoreplyController < SettingsController
     end
 
     def public_account_params
-      params.require(:public_account).permit(:default_reply, :reply_type, :default_material_id)
+      params.require(:public_account).permit(
+        :default_reply,
+        :reply_type,
+        :default_material_id
+      )
     end
 
     def select_thumb_group
       if params[:thumb_group_id]
         @find_thumb_group = @public_account.thumb_groups.find(params[:thumb_group_id])
-        @thumbs = @public_account.thumbs.includes(:thumb_material).where(:thumb_group => @find_thumb_group).page(params[:page]).per(8)
+        @thumbs = @public_account.thumbs.includes(:thumb_material)
+          .where(:thumb_group => @find_thumb_group)
+          .page(params[:page]).per(8)
       else
-        @thumbs = @public_account.thumbs.includes(:thumb_material).where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").page(params[:page]).per(8)
+        @thumbs = @public_account.thumbs.includes(:thumb_material)
+          .where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0")
+          .page(params[:page]).per(8)
       end
-      @no_group_count = @public_account.thumbs.where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").count
+      @no_group_count = @public_account.thumbs
+        .where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").count
       @thumb_groups = @public_account.thumb_groups.order("created_at asc")
     end
 end

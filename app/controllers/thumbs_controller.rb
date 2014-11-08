@@ -12,17 +12,25 @@ class ThumbsController < SettingsController
   def index
     if params[:thumb_group_id]
       @find_thumb_group = @public_account.thumb_groups.find(params[:thumb_group_id])
-      @thumbs = @public_account.thumbs.includes(:thumb_material).where(:thumb_group => @find_thumb_group).page(params[:page]).per(12)
+      @thumbs = @public_account.thumbs.includes(:thumb_material)
+        .where(:thumb_group => @find_thumb_group)
+        .page(params[:page]).per(12)
     else
-      @thumbs = @public_account.thumbs.includes(:thumb_material).where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").page(params[:page]).per(12)
+      @thumbs = @public_account.thumbs.includes(:thumb_material)
+        .where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0")
+        .page(params[:page]).per(12)
     end
-    @no_group_count = @public_account.thumbs.where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").count
+    @no_group_count = @public_account.thumbs
+      .where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").count
     @thumb_group = @public_account.thumb_groups.build
     @thumb_groups = @public_account.thumb_groups.order("created_at asc")
   end
 
   def delete
-    render "shared/delete.js.erb", layout: false, locals: {delete_url: public_account_thumb_path, confirm: I18n.t('thumbs.delete.confirm'), remote: true}
+    render "shared/delete.js.erb", layout: false, locals: {
+      delete_url: public_account_thumb_path,
+      confirm: I18n.t('thumbs.delete.confirm'),
+      remote: true}
   end
 
   def destroy
@@ -32,7 +40,10 @@ class ThumbsController < SettingsController
   end
 
   def delete_all
-    render "shared/delete_all.js.erb", layout: false, locals: {delete_url: destroy_all_public_account_thumbs_path(@public_account), confirm: I18n.t('thumbs.delete_all.confirm'), remote: true}
+    render "shared/delete_all.js.erb", layout: false,
+      locals: {delete_url: destroy_all_public_account_thumbs_path(@public_account),
+               confirm: I18n.t('thumbs.delete_all.confirm'),
+               remote: true}
   end
 
   def destroy_all
@@ -76,6 +87,7 @@ class ThumbsController < SettingsController
     end
 
     def add_index_breadcrumb
-      add_breadcrumb I18n.t("breadcrumbs.thumb.index"), public_account_thumbs_path(@public_account)
+      add_breadcrumb I18n.t("breadcrumbs.thumb.index"),
+        public_account_thumbs_path(@public_account)
     end
 end

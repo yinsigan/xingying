@@ -17,7 +17,8 @@ class PublicAccountsController < SettingsController
   end
 
   def edit
-    add_breadcrumb I18n.t("breadcrumbs.public_account.edit"), edit_public_account_path(@public_account)
+    add_breadcrumb I18n.t("breadcrumbs.public_account.edit"),
+      edit_public_account_path(@public_account)
   end
 
   def create
@@ -40,7 +41,9 @@ class PublicAccountsController < SettingsController
   end
 
   def delete
-    render "shared/delete.js.erb", layout: false, locals: {delete_url: public_account_path, confirm: I18n.t("public_accounts.delete.confirm"), remote: false}
+    render "shared/delete.js.erb", layout: false,
+      locals: {delete_url: public_account_path,
+      confirm: I18n.t("public_accounts.delete.confirm"), remote: false}
   end
 
   def destroy

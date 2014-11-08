@@ -3,7 +3,8 @@ class MaterialController < SettingsController
   before_action :set_public_account
 
   def multi_pic_text
-    add_breadcrumb I18n.t('breadcrumbs.material.multi_pic_text'), multi_pic_text_public_account_path(@public_account)
+    add_breadcrumb I18n.t('breadcrumbs.material.multi_pic_text'),
+      multi_pic_text_public_account_path(@public_account)
   end
 
   private
@@ -12,6 +13,7 @@ class MaterialController < SettingsController
     end
 
     def pic_text_breadcrumb
-      add_breadcrumb I18n.t('breadcrumbs.material.pic_text'), public_account_sin_materials_path
+      add_breadcrumb I18n.t('breadcrumbs.material.pic_text'),
+        public_account_sin_materials_path
     end
 end

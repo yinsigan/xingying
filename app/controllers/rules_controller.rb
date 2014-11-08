@@ -23,7 +23,8 @@ class RulesController < SettingsController
   def create
     @rule = @public_account.rules.build(rule_params)
     if @rule.save
-      redirect_via_turbolinks_to public_account_rules_path(@public_account), flash: {success: I18n.t('success_submit')}
+      redirect_via_turbolinks_to public_account_rules_path(@public_account),
+        flash: {success: I18n.t('success_submit')}
     else
       render partial: "shared/ajax_prompt.js.erb", layout: false, locals: {object: @rule}
     end
@@ -31,7 +32,8 @@ class RulesController < SettingsController
 
   def update
     @rule.update(rule_params)
-    render partial: "shared/ajax_prompt.js.erb", layout: false, locals: {object: @rule, flash_success: I18n.t('success_save')}
+    render partial: "shared/ajax_prompt.js.erb", layout: false,
+      locals: {object: @rule, flash_success: I18n.t('success_save')}
   end
 
   def edit
@@ -41,7 +43,9 @@ class RulesController < SettingsController
   end
 
   def delete
-    render "shared/delete.js.erb", layout: false, locals: {delete_url: public_account_rule_path, confirm: I18n.t("rules.delete.confirm"), remote: true}
+    render "shared/delete.js.erb", layout: false, 
+      locals: {delete_url: public_account_rule_path,
+      confirm: I18n.t("rules.delete.confirm"), remote: true}
   end
 
   def destroy
@@ -83,7 +87,16 @@ class RulesController < SettingsController
     end
 
     def rule_params
-      params.require(:rule).permit(:public_account_id, :name, kwords_attributes: [:content, :subjectable_id, :public_account_id, :subjectable_type, :reply, :id, :_destroy])
+      params.require(:rule).permit(
+        :public_account_id,
+        :name,
+        kwords_attributes:[:content,
+                           :subjectable_id,
+                           :public_account_id,
+                           :subjectable_type,
+                           :reply,
+                           :id,
+                           :_destroy])
     end
 
     def find_rule

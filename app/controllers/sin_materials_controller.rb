@@ -20,14 +20,16 @@ class SinMaterialsController < SettingsController
   end
 
   def new
-    add_breadcrumb I18n.t('breadcrumbs.sin_material.new'), new_public_account_sin_material_path(@public_account)
+    add_breadcrumb I18n.t('breadcrumbs.sin_material.new'),
+      new_public_account_sin_material_path(@public_account)
     @sin_material = @public_account.sin_materials.build
     @sin_pic_text = @sin_material.build_sin_pic_text
   end
 
   def edit
     @sin_pic_text = @sin_material.sin_pic_text
-    add_breadcrumb I18n.t('breadcrumbs.sin_material.edit'), edit_public_account_sin_material_path(@public_account, @sin_material)
+    add_breadcrumb I18n.t('breadcrumbs.sin_material.edit'),
+      edit_public_account_sin_material_path(@public_account, @sin_material)
     render "edit"
   end
 
@@ -42,7 +44,9 @@ class SinMaterialsController < SettingsController
   end
 
   def delete
-    render "shared/delete.js.erb", layout: false, locals: {delete_url: public_account_sin_material_path, confirm: I18n.t("sin_materials.delete.confirm"), remote: true}
+    render "shared/delete.js.erb", layout: false,
+      locals: {delete_url: public_account_sin_material_path,
+      confirm: I18n.t("sin_materials.delete.confirm"), remote: true}
   end
 
   def destroy
@@ -61,10 +65,16 @@ class SinMaterialsController < SettingsController
     end
 
     def sin_material_params
-      params.require(:sin_material).permit(:public_account_id, sin_pic_text_attributes: [:title, :desc, :body, :thumb_id])
+      params.require(:sin_material).permit(
+        :public_account_id,
+        sin_pic_text_attributes: [:title,
+                                  :desc,
+                                  :body,
+                                  :thumb_id])
     end
 
     def add_material_breadcrumb
-      add_breadcrumb I18n.t('breadcrumbs.material.pic_text'), public_account_sin_materials_path(@public_account)
+      add_breadcrumb I18n.t('breadcrumbs.material.pic_text'),
+        public_account_sin_materials_path(@public_account)
     end
 end
