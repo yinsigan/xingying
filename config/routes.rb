@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       # 选择图片分组
       get "/thumb_group/:thumb_group_id", to: "autoreply#thumb_group", as: :group
       get "/thumb_group", to: "autoreply#thumb_group"
+      post :upload, to: "autoreply#upload"
     end
     resources :sin_materials, except: [:show] do
       get :delete, on: :member
