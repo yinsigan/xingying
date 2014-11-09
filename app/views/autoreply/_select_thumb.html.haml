@@ -8,7 +8,7 @@
     .col-md-12.clearfix
       .pull-right
         = form_tag upload_public_account_thumbs_path(@public_account, {thumb_group_id: @find_thumb_group ? @find_thumb_group.id : nil}), method: "post", id: "picture_upload" do
-          = file_field_tag "image", :class => "filestyle", "data-buttonText" => "#{t('upload')}", "data-input" => false, "data-badge" => false, "data-buttonBefore" => false, "data-buttonName" => "btn-primary", "data-redirect" => public_account_thumbs_url(@public_account), id: "upload"
+          = file_field_tag "image", :class => "filestyle", "data-buttonText" => "#{t('upload')}", "data-input" => false, "data-badge" => false, "data-buttonBefore" => false, "data-buttonName" => "btn-primary", id: "upload"
       .pull-right.marginright20
         %p.help-block
           = t('picture_upload_tip')
@@ -34,14 +34,7 @@
     })
   })
 
-  /*
-  $("#select_btn").on('click', function() {
-    $("#public_account_default_material_id").val($(".selected").attr("id"));
-    $("#modal").modal('hide');
-    $("#pic_content").html($('.selected').removeClass("selected col-md-3").addClass("col-sm-4"));
-  });
-  */
-
+  // 更新预览图
   $("#select_btn").on('click', function() {
     var img = $('.selected').find('img');
     $("#edit_sin_preview .thumb .default").hide();

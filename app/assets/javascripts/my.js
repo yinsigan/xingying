@@ -4,7 +4,6 @@ var picture_upload = function() {
       done: function(e, data) {
         $("#progress_div").hide();
         $("body").spin(false);
-        Turbolinks.visit();
       },
       add: function(e, data) {
         $("body").spin();

@@ -2,4 +2,5 @@
   $(".alert-warning.alert-fixed-top").html("<%= j(render partial: 'shared/ajax_error_messages', locals: {object: @thumb}) %>").fadeIn().delay(5000).fadeOut();
 <% else %>
   $(".alert-success.alert-fixed-top").html("<%= j(I18n.t("upload_success")) %>").fadeIn().delay(2000).fadeOut();
+  Turbolinks.visit();
 <% end %>
