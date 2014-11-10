@@ -2,5 +2,9 @@
   $(".alert-warning.alert-fixed-top").html("<%= j(render partial: 'shared/ajax_error_messages', locals: {object: @thumb}) %>").fadeIn().delay(5000).fadeOut();
 <% else %>
   $(".alert-success.alert-fixed-top").html("<%= j(I18n.t("upload_success")) %>").fadeIn().delay(2000).fadeOut();
-  $("#thumb_content").html("<%= j render 'autoreply/thumb_content' %>")
+  <% if @thumb_group_id %>
+    $.getScript("<%= j group_public_account_path(@public_account, @thumb_group_id) %>");
+  <% else %>
+    $.getScript("<%= j thumb_group_public_account_path(@public_account) %>");
+  <% end %>
 <% end %>

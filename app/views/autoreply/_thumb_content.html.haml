@@ -3,7 +3,7 @@
     .tabbable-panel
       .tabbable-line
         %ul.nav.nav-tabs#group{role: "tablist"}
-          %li{class: current_page?(thumb_group_public_account_path(@public_account)) || action_name == "select_thumb_material" ? "active" : nil}
+          %li{class: current_page?(thumb_group_public_account_path(@public_account)) || ["select_thumb_material"].include?(action_name) ? "active" : nil}
             = link_to thumb_group_public_account_path(@public_account), remote: true do
               = t('.no_group')
               %em.num

@@ -4,15 +4,8 @@
     %span.sr-only Close
   %h4#mymodal.modal-title= t('.select_btn')
 .modal-body
-  .row
-    .col-md-12.clearfix
-      .pull-right
-        = form_tag upload_public_account_path(@public_account, {thumb_group_id: @find_thumb_group ? @find_thumb_group.id : nil}), method: "post", id: "picture_upload" do
-          = file_field_tag "image", :class => "filestyle", "data-buttonText" => t('upload'), "data-input" => false, "data-badge" => false, "data-buttonBefore" => false, "data-buttonName" => "btn-primary", id: "upload"
-      .pull-right.marginright20
-        %p.help-block
-          = t('picture_upload_tip')
-        = render "shared/progress"
+  #thumb_upload_form
+    = render partial: "autoreply/thumb_upload_form", locals: {thumb_group_id: nil}
   #thumb_content
     = render partial: "autoreply/thumb_content"
 

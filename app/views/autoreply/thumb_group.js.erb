@@ -1,1 +1,2 @@
 $("#thumb_content").html("<%= j(render partial: 'autoreply/thumb_content') %>")
+$("#thumb_upload_form").html("<%= j(render partial: 'autoreply/thumb_upload_form', locals: {thumb_group_id: @find_thumb_group.try(:id)}) %>")

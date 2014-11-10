@@ -1,6 +1,6 @@
 class AutoreplyController < SettingsController
   before_action :set_public_account, :add_show_breadcrumb
-  before_action :select_thumb_group, only: [:select_thumb_material, :thumb_group, :upload]
+  before_action :select_thumb_group, only: [:select_thumb_material, :thumb_group]
 
   # 被添加自动回复，根据类型选择对应的素材
   def reply_content
@@ -70,6 +70,7 @@ class AutoreplyController < SettingsController
   def upload
     @thumb = @public_account.thumbs.build(upload_group_params)
     @thumb.save
+    @thumb_group_id =  params[:thumb_group_id].presence
     render "upload.js.erb", layout: false
   end
 
