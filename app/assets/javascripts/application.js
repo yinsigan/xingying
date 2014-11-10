@@ -30,3 +30,5 @@
 //= require bootstrapValidator.min
 //= require language/zh_CN
 //= require jquery.history
+//= require ueditor/ueditor.config
+//= require ueditor/ueditor.all

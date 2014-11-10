@@ -26,7 +26,10 @@
         .form-group.padding-content
           = sin_pic_text.label :body, class: "col-sm-12 control-label required font-normal"
           .col-sm-12
-            = sin_pic_text.text_area :body, class: "form-control", required: true
+            %script#sin_material_sin_pic_text_attributes_body{:name => "sin_material[sin_pic_text_attributes][body]", :type => "text/plain", required: true}
+              这里写你的初始化内容
+            :javascript
+              var ue = UE.getEditor('sin_material_sin_pic_text_attributes_body');
         .col-sm-12
           = f.submit "#{t('save')}", class: "btn btn-primary", "data-disable-with" => "#{t('disable-with-save')}"
     %i.arrow_out
