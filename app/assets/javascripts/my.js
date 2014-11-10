@@ -7,6 +7,9 @@ var picture_upload = function() {
       },
       add: function(e, data) {
         $("body").spin();
+        // var file_size = parseFloat(data.files[0].size / 1024);
+        // console.log(file_size.toFixed(2) + "KB");
+        // console.log(data.files[0].name);
         data.submit();
       },
       progressall: function(e, data) {
