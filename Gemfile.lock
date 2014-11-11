@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/yinsigan/my-ueditor-rails.git
+  revision: 753ac6f65d1ffb91199fd1d24acb199391c844da
+  specs:
+    ueditor-rails (0.0.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -280,4 +286,5 @@ DEPENDENCIES
   seo_helper (~> 1.0)
   spring (~> 1.1.3)
   turbolinks (~> 2.3.0)
+  ueditor-rails!
   uglifier (>= 1.3.0)

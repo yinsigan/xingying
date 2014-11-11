@@ -52,7 +52,7 @@ gem 'bootstrap-validator-rails', '~> 0.5.2'
 gem 'ransack', '~> 1.5.1'
 gem 'seo_helper', '~> 1.0'
 # gem "angularjs-rails", '~> 1.3.0'
-# gem 'ueditor-rails', git: "https://github.com/yinsigan/my-ueditor-rails.git"
+gem 'ueditor-rails', git: "https://github.com/yinsigan/my-ueditor-rails.git"
 group :development do
   gem 'pry'
   gem 'pry-debugger'
