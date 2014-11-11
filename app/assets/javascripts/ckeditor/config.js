@@ -15,3 +15,5 @@ CKEDITOR.config.font_names = '宋体;黑体;楷体_GB2312;Arial;Comic Sans MS;Co
 // icy_orange office2013
 CKEDITOR.config.skin = 'office2013'
 CKEDITOR.config.image_previewText = ' '
+CKEDITOR.config.filebrowserImageBrowseUrl = "/ckeditor/pictures";
+CKEDITOR.config.filebrowserImageUploadUrl = "/ckeditor/pictures";
