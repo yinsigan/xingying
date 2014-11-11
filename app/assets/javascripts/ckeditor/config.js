@@ -13,5 +13,5 @@ CKEDITOR.config.language = 'zh-cn'
 CKEDITOR.config.height = 400
 CKEDITOR.config.font_names = '宋体;黑体;楷体_GB2312;Arial;Comic Sans MS;Courier New;Tahoma;Times New Roman;Verdana';
 // icy_orange office2013
-CKEDITOR.config.skin = 'bootstrapck'
+CKEDITOR.config.skin = 'office2013'
 CKEDITOR.config.image_previewText = ' '
