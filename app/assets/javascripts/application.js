@@ -30,8 +30,4 @@
 //= require bootstrapValidator.min
 //= require language/zh_CN
 //= require jquery.history
-//= require ueditor/ueditor.config
-//= require ueditor/ueditor.all
-//= require ueditor/lang/zh-cn/zh-cn
-//= require ueditor/third-party/codemirror/codemirror
-//= require ueditor/third-party/zeroclipboard/ZeroClipboard
+//= require ckeditor/init

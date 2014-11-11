@@ -35,7 +35,7 @@ gem "haml-rails", '~> 0.5.3'
 gem 'devise', '~> 3.3.0'
 gem 'rails-i18n'
 
-# gem 'quiet_assets', '~> 1.0.3', group: [:development]
+gem 'quiet_assets', '~> 1.0.3', group: [:development]
 gem "breadcrumbs_on_rails", '~> 2.3.0'
 gem 'carrierwave', '~> 0.6.2'
 gem 'carrierwave-qiniu', '~> 0.1.3'
@@ -52,7 +52,7 @@ gem 'bootstrap-validator-rails', '~> 0.5.2'
 gem 'ransack', '~> 1.5.1'
 gem 'seo_helper', '~> 1.0'
 # gem "angularjs-rails", '~> 1.3.0'
-gem 'ueditor-rails', git: "https://github.com/yinsigan/my-ueditor-rails.git"
+gem 'ckeditor', github: "yinsigan/ckeditor"
 group :development do
   gem 'pry'
   gem 'pry-debugger'
