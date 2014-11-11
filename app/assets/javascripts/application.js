@@ -31,3 +31,4 @@
 //= require language/zh_CN
 //= require jquery.history
 //= require ckeditor/init
+//= require ckeditor/config
