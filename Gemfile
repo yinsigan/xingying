@@ -35,7 +35,7 @@ gem "haml-rails", '~> 0.5.3'
 gem 'devise', '~> 3.3.0'
 gem 'rails-i18n'
 
-gem 'quiet_assets', '~> 1.0.3', group: [:development]
+# gem 'quiet_assets', '~> 1.0.3', group: [:development]
 gem "breadcrumbs_on_rails", '~> 2.3.0'
 gem 'carrierwave', '~> 0.6.2'
 gem 'carrierwave-qiniu', '~> 0.1.3'

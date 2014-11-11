@@ -24,7 +24,9 @@
 @import 'icheck/square/blue';
 @import "blueimp-gallery.min";
 @import "bootstrap-image-gallery";
-
+@import "ueditor/themes/default/css/ueditor";
+@import "ueditor/themes/iframe.css";
+@import "ueditor/third-party/codemirror/codemirror";
 .field_with_errors {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
 }
