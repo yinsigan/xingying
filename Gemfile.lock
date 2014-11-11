@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/yinsigan/ckeditor.git
-  revision: 27378ccd63a9b26b3c09b40e7dc8760bfa801ae7
+  revision: fd2979430a676034ab1b0175f08dcf2c50888c1e
   specs:
     ckeditor (4.1.0)
       mime-types
