@@ -2,7 +2,7 @@
 .row
   .col-md-12.text-right
     .btn-group
-      = link_to new_public_account_sin_material_path(@public_account), class: "btn btn-default" do
+      = link_to new_public_account_sin_material_path(@public_account), class: "btn btn-default", "data-no-turbolink" => true do
         %i.fa.fa-plus-square-o
         = t('.add_sin_pic_text')
       = link_to multi_pic_text_public_account_path(@public_account), class: "btn btn-default" do

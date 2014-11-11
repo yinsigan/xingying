@@ -28,25 +28,23 @@
           .col-sm-12
             %script#sin_material_sin_pic_text_attributes_body{:name => "sin_material[sin_pic_text_attributes][body]", :type => "text/plain", required: true}
             :javascript
-              $(document).on("page:change", function() {
-                var ue = UE.getEditor('sin_material_sin_pic_text_attributes_body', {
-                  initialFrameHeight: 400,
-                  saveInterval: 100000,
-                  wordCount: false,
-                  elementPathEnabled: false,
-                  serverUrl: "",
-                  toolbars: [
-                      ['fullscreen', 'source', 'bold', 'italic', 'underline', 'formatmatch', 'blockquote',
-                      'removeformat', 'fontfamily', 'fontsize', 'insertimage', 'edittable',
-                      'link', 'emotion', 'map', 'insertvideo', 'justifyleft', 'justifyright', 'justifycenter',
-                      'justifyjustify', 'forecolor', 'insertorderedlist', 'insertunorderedlist',
-                      'wordimage', 'background', 'template', 'inserttable', 'horizontal', 'music',
-                      'rowspacingtop', 'rowspacingbottom', 'lineheight', 'autotypeset']
-                  ]
-                });
-                ue.ready(function() {
-                  ue.setContent("#{@sin_pic_text.try(:body)}")
-                })
+              var ue = UE.getEditor('sin_material_sin_pic_text_attributes_body', {
+                initialFrameHeight: 400,
+                saveInterval: 100000,
+                wordCount: false,
+                elementPathEnabled: false,
+                serverUrl: "",
+                toolbars: [
+                    ['fullscreen', 'source', 'bold', 'italic', 'underline', 'formatmatch', 'blockquote',
+                    'removeformat', 'fontfamily', 'fontsize', 'insertimage', 'edittable',
+                    'link', 'emotion', 'map', 'insertvideo', 'justifyleft', 'justifyright', 'justifycenter',
+                    'justifyjustify', 'forecolor', 'insertorderedlist', 'insertunorderedlist',
+                    'wordimage', 'background', 'template', 'inserttable', 'horizontal', 'music',
+                    'rowspacingtop', 'rowspacingbottom', 'lineheight', 'autotypeset']
+                ]
+              });
+              ue.ready(function() {
+                ue.setContent("#{@sin_pic_text.try(:body)}")
               })
         .col-sm-12
           = f.submit "#{t('save')}", class: "btn btn-primary", "data-disable-with" => "#{t('disable-with-save')}"
