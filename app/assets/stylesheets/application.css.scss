@@ -24,6 +24,7 @@
 @import 'icheck/square/blue';
 @import "blueimp-gallery.min";
 @import "bootstrap-image-gallery";
+@import "ckeditor/config";
 
 .field_with_errors {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
