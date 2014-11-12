@@ -5,9 +5,9 @@
   = t('.notice')
 %p.bg-success
 %ul.nav.nav-tabs{role: "tablist"}
-  %li{class: action_name == "added" || (controller_name == "autoreply" && action_name == "set_default_reply") ? "active" : nil}
+  %li{class: action_name == "added" || action_name == "set_default_reply" ? "active" : nil}
     = link_to t('.added_title'), added_public_account_path(@public_account)
-  %li{class: action_name == "default" ? "active" : nil}
+  %li{class: action_name == "default" || action_name == "set_auto_reply" ? "active" : nil}
     = link_to t('.default_title'), default_public_account_path(@public_account)
   %li{class: controller_name == "rules" ? "active" : nil}
     = link_to t('.keyword_title'), public_account_rules_path(@public_account)
