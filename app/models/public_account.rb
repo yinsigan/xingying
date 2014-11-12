@@ -6,7 +6,6 @@ class PublicAccount < ActiveRecord::Base
   ReplyTypeNode = {1 => "text_material", 2 => "sin_material"}
   AutoReplyTypeNode = {1 => "text_material", 2 => "sin_material"}
   AutoReplyType = {1 => "文字", 2 => "单图文"}
-  ClickResponse = {1 => "正文", 2 => "链接"}
 
   has_many :sin_materials
   has_many :multi_materials
@@ -14,6 +13,7 @@ class PublicAccount < ActiveRecord::Base
   has_many :thumbs, -> { order "created_at DESC" }
   has_many :thumb_groups
   has_many :kwords
+  has_many :sin_pic_texts, through: :sin_materials
 
   belongs_to :user
   belongs_to :default_sin_material, foreign_key: "default_material_id", class_name: SinMaterial

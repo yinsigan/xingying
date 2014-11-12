@@ -1,0 +1,4 @@
+.form-group.padding-content
+  = label_tag "sin_material[sin_pic_text_attributes][body]", t('.body'), class: "col-sm-12 control-label required font-normal"
+  .col-sm-12
+    = cktext_area "sin_material[sin_pic_text_attributes]", "body", :class => 'form-control', id: "sin_material_sin_pic_text_attributes_body", name: "sin_material[sin_pic_text_attributes][body]", value: sin_pic_text.try(:body)

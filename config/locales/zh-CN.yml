@@ -101,6 +101,10 @@ zh-CN:
       no_content: "暂时没有单图文"
     sin_material:
       thumb: "缩略图"
+    body:
+      body: "正文"
+    link:
+      link: "链接"
     form:
       select_btn: "从图片库选择"
 

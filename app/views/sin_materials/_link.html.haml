@@ -1,0 +1,9 @@
+.form-group.padding-content
+  = label_tag "sin_material[sin_pic_text_attributes][article_url]", t('.link'), class: "col-sm-12 control-label required font-normal"
+  .col-sm-12
+    #body_or_link_input
+      = url_field_tag "sin_material[sin_pic_text_attributes][article_url]", nil, class: "form-control", required: true, placeholder: "http://", "data-bv-url" => "true", "data-bv-url-message" => "222", value: sin_pic_text.try(:article_url)
+
+:javascript
+  var link_input = $("#body_or_link_input").find("input");
+  $("#new_sin_material").bootstrapValidator('addField', link_input);

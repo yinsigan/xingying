@@ -2,7 +2,7 @@
   .inner.well.clearfix
     = form_for [@public_account, @sin_material], html: { role: "form", "data-bv-feedbackicons-valid" => "glyphicon glyphicon-ok", "data-bv-feedbackicons-invalid" => "glyphicon glyphicon-remove", "data-bv-feedbackicons-validating" => "glyphicon glyphicon-refresh" } do |f|
       = render partial: "shared/form_error_messages", locals: {object: @sin_material}
-      = f.fields_for :sin_pic_text, @sin_pic_text do |sin_pic_text|
+      = f.fields_for :sin_pic_text do |sin_pic_text|
         -# 标题
         .form-group.padding-content
           = sin_pic_text.label :title, class: "col-sm-12 control-label required font-normal"
@@ -26,12 +26,22 @@
           = sin_pic_text.label :desc, class: "col-sm-12 control-label font-normal required"
           .col-sm-12
             = sin_pic_text.text_area :desc, class: "form-control", rows: 3, required: true, "data-bv-stringlength" => "true", "data-bv-stringlength-max" => 120
-        -# 正文
+
+        -# 点击后响应
         .form-group.padding-content
-          = sin_pic_text.label :body, class: "col-sm-12 control-label required font-normal"
+          = sin_pic_text.label :click_response, class: "col-sm-12 control-label font-normal required }"
           .col-sm-12
-            = sin_pic_text.cktext_area :body, :class => 'form-control', id: "sin_material_sin_pic_text_attributes_body", name: "sin_material[sin_pic_text_attributes][body]"
+            = sin_pic_text.select :click_response, options_for_select(SinPicText::ClickResponse.invert, 1), {include_blank: false}, {:class => "form-control ajax_load", data: {remote: true, url: click_response_public_account_sin_materials_path(@public_account, sin_pic_text_id: sin_pic_text.object)} }
+
+        -# 正文或链接
+        #sin_pic_text_body_or_link
+        -# 提交按钮
         .col-sm-12
           = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-save')
+
     %i.arrow_out
     %i.arrow_in
+
+:javascript
+
+  $("#sin_material_sin_pic_text_attributes_click_response").trigger('change');

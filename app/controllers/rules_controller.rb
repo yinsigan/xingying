@@ -2,6 +2,7 @@ class RulesController < SettingsController
   before_action :set_public_account, :add_show_breadcrumb
   before_action :find_rule, only: [:edit, :destroy, :update, :cancel]
   before_action :find_rule_id, only: [:new_kword, :edit_new_kword, :reply_content]
+
   def index
     add_breadcrumb I18n.t('breadcrumbs.rule.index'), public_account_rules_path(@public_account)
     @q = @public_account.rules.search(params[:q])
@@ -43,7 +44,7 @@ class RulesController < SettingsController
   end
 
   def delete
-    render "shared/delete.js.erb", layout: false, 
+    render "shared/delete.js.erb", layout: false,
       locals: {delete_url: public_account_rule_path,
       confirm: I18n.t("rules.delete.confirm"), remote: true}
   end

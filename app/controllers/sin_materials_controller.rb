@@ -49,6 +49,15 @@ class SinMaterialsController < SettingsController
       confirm: I18n.t("sin_materials.delete.confirm"), remote: true}
   end
 
+  def click_response
+    if params[:sin_pic_text_id].present?
+      @sin_pic_text = @public_account.sin_pic_texts.find(params[:sin_pic_text_id])
+    end
+    if params[:sin_material] && params[:sin_material][:sin_pic_text_attributes]
+      render SinPicText::ClickResponseNode[params[:sin_material][:sin_pic_text_attributes][:click_response].to_i] + ".js.erb", layout: false
+    end
+  end
+
   def destroy
     @sin_material.destroy
     render "destroy.js.erb", layout: false
@@ -71,7 +80,10 @@ class SinMaterialsController < SettingsController
         sin_pic_text_attributes: [:title,
                                   :desc,
                                   :body,
-                                  :thumb_id])
+                                  :thumb_id,
+                                  :click_response,
+                                  :id,
+                                  :article_url])
     end
 
     def add_material_breadcrumb

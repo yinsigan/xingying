@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     end
     resources :sin_materials, except: [:show] do
       get :delete, on: :member
+      get :click_response, on: :collection
     end
     resources :thumbs, only: [:create, :index, :destroy] do
       get :delete, on: :member
