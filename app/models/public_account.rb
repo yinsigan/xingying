@@ -28,7 +28,6 @@ class PublicAccount < ActiveRecord::Base
   validates :default_sin_material, presence: true, if: "reply_type == 2"
   # validates :autoreply_sin_material, presence: true, if: "autoreply_type == 2"
   validates :name, length: { maximum: 30 }
-  validates :reply_type, inclusion: { in: %w(1 2) }
 
   mount_uploader :image, AvatarUploader
 
