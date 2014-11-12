@@ -21,6 +21,8 @@ zh-CN:
         desc: "摘要"
         body: "正文"
         thumb: "封面"
+        click_response: "点击后响应"
+        article_url: "链接"
       thumb_group:
         name: "名称"
       rule:
