@@ -1,6 +1,6 @@
 #edit_sin.col-md-8.edit_sin_pic_text
   .inner.well.clearfix
-    = form_for [@public_account, @sin_material], html: { role: "form", "data-bv-feedbackicons-valid" => "glyphicon glyphicon-ok", "data-bv-feedbackicons-invalid" => "glyphicon glyphicon-remove", "data-bv-feedbackicons-validating" => "glyphicon glyphicon-refresh" } do |f|
+    = form_for [@public_account, @sin_material], html: { role: "form", "data-bv-feedbackicons-valid" => "glyphicon glyphicon-ok", "data-bv-feedbackicons-invalid" => "glyphicon glyphicon-remove", "data-bv-feedbackicons-validating" => "glyphicon glyphicon-refresh" }, remote: true do |f|
       = render partial: "shared/form_error_messages", locals: {object: @sin_material}
       = f.fields_for :sin_pic_text do |sin_pic_text|
         -# 标题
@@ -37,7 +37,7 @@
         #sin_pic_text_body_or_link
         -# 提交按钮
         .col-sm-12
-          = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-save')
+          = f.submit t('save'), class: "btn btn-primary"
 
     %i.arrow_out
     %i.arrow_in

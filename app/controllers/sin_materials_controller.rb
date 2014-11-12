@@ -12,10 +12,10 @@ class SinMaterialsController < SettingsController
   def create
     @sin_material = @public_account.sin_materials.build(sin_material_params)
     if @sin_material.save
-      flash[:success] = I18n.t('success_save');
-      redirect_back_or public_account_sin_materials_path(@public_account)
+      redirect_via_turbolinks_to public_account_sin_materials_path(@public_account),
+        flash: {success: I18n.t('success_submit')}
     else
-      render "new"
+      render partial: "shared/ajax_prompt.js.erb", layout: false, locals: {object: @sin_material}
     end
   end
 
@@ -35,11 +35,10 @@ class SinMaterialsController < SettingsController
 
   def update
     if @sin_material.update(sin_material_params)
-      flash[:success] = I18n.t('success_save');
-      redirect_back_or public_account_sin_materials_path(@public_account)
+      redirect_via_turbolinks_to public_account_sin_materials_path(@public_account),
+        flash: {success: I18n.t('success_save')}
     else
-      @sin_pic_text = @sin_material.sin_pic_text
-      render "edit"
+      render partial: "shared/ajax_prompt.js.erb", layout: false, locals: {object: @sin_material}
     end
   end
 
