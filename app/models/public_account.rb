@@ -16,9 +16,11 @@ class PublicAccount < ActiveRecord::Base
   has_many :sin_pic_texts, through: :sin_materials
 
   belongs_to :user
+  # 关注时回复
   belongs_to :default_sin_material, foreign_key: "default_material_id", class_name: SinMaterial
   # todo
   # belongs_to :default_thumb_material, foreign_key: "default_material_id", class_name: "ThumbMaterial"
+  # 无匹配时回复
   belongs_to :autoreply_sin_material, foreign_key: "autoreply_material_id", class: SinMaterial
 
   validates :name, :tp, :image, :user, presence: true
@@ -26,6 +28,7 @@ class PublicAccount < ActiveRecord::Base
   validates :default_sin_material, presence: true, if: "reply_type == 2"
   # validates :autoreply_sin_material, presence: true, if: "autoreply_type == 2"
   validates :name, length: { maximum: 30 }
+  validates :reply_type, inclusion: { in: %w(1 2) }
 
   mount_uploader :image, AvatarUploader
 
