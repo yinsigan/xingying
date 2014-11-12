@@ -3,10 +3,12 @@
     = form_for [@public_account, @sin_material], html: { role: "form", "data-bv-feedbackicons-valid" => "glyphicon glyphicon-ok", "data-bv-feedbackicons-invalid" => "glyphicon glyphicon-remove", "data-bv-feedbackicons-validating" => "glyphicon glyphicon-refresh" } do |f|
       = render partial: "shared/form_error_messages", locals: {object: @sin_material}
       = f.fields_for :sin_pic_text, @sin_pic_text do |sin_pic_text|
+        -# 标题
         .form-group.padding-content
           = sin_pic_text.label :title, class: "col-sm-12 control-label required font-normal"
           .col-sm-12
             = sin_pic_text.text_field :title, class: "form-control", required: true, "data-bv-stringlength" => "true", "data-bv-stringlength-max" => 64
+        -# 封面图片
         .form-group.padding-content
           = label_tag "thumb_image", t('activerecord.attributes.sin_pic_text.thumb'), class: "col-sm-12 control-label font-normal required"
           .col-sm-12.clearfix
@@ -19,15 +21,17 @@
             = render "shared/progress"
 
             #image_preview.imagePreview
+        -# 摘要
         .form-group.padding-content
           = sin_pic_text.label :desc, class: "col-sm-12 control-label font-normal required"
           .col-sm-12
-            = sin_pic_text.text_area :desc, class: "form-control", rows: 5, required: true, "data-bv-stringlength" => "true", "data-bv-stringlength-max" => 120
+            = sin_pic_text.text_area :desc, class: "form-control", rows: 3, required: true, "data-bv-stringlength" => "true", "data-bv-stringlength-max" => 120
+        -# 正文
         .form-group.padding-content
           = sin_pic_text.label :body, class: "col-sm-12 control-label required font-normal"
           .col-sm-12
             = sin_pic_text.cktext_area :body, :class => 'form-control', id: "sin_material_sin_pic_text_attributes_body", name: "sin_material[sin_pic_text_attributes][body]"
         .col-sm-12
-          = f.submit "#{t('save')}", class: "btn btn-primary", "data-disable-with" => "#{t('disable-with-save')}"
+          = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-save')
     %i.arrow_out
     %i.arrow_in
