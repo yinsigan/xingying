@@ -4,7 +4,7 @@
       var _this = $(this);
       var id = $(this).attr("id");
       var progress = _this.data("progress");
-      var progress_div = $("#" + progress);
+      var progress_div = $("#" + progress + " .progress");
       var progress_content = progress_div.find(".progress-bar");
 
       // 执行

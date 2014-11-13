@@ -4,7 +4,7 @@ class Thumb < ActiveRecord::Base
   has_one :sin_pic_text
   belongs_to :public_account, counter_cache: true
   belongs_to :thumb_group
-  belongs_to :thumb_material, class_name: ThumbMaterial, dependent: :destroy, touch: true
+  belongs_to :thumb_material, class_name: ThumbMaterial, dependent: :destroy
 
   validates :image,
     :presence => true,

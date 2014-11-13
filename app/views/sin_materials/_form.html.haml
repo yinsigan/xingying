@@ -18,7 +18,8 @@
               = link_to t('.select_btn'), select_thumb_material_public_account_path(@public_account), class: "btn btn-default", remote: true
             .clearfix
             = sin_pic_text.hidden_field :thumb_id
-            = render "shared/progress"
+            #progress_div
+              = render "shared/progress"
 
             #image_preview.imagePreview
         -# 摘要
