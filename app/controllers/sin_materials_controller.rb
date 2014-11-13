@@ -12,7 +12,7 @@ class SinMaterialsController < SettingsController
   def create
     @sin_material = @public_account.sin_materials.build(sin_material_params)
     if @sin_material.save
-      @sin_material.save_article_address(article_url(@sin_material.sin_pic_text.id))
+      save_article_address(@sin_material)
       redirect_via_turbolinks_to public_account_sin_materials_path(@public_account),
         flash: {success: I18n.t('success_submit')}
     else
@@ -36,6 +36,7 @@ class SinMaterialsController < SettingsController
 
   def update
     if @sin_material.update(sin_material_params)
+      save_article_address(@sin_material)
       redirect_via_turbolinks_to public_account_sin_materials_path(@public_account),
         flash: {success: I18n.t('success_save')}
     else
@@ -83,11 +84,17 @@ class SinMaterialsController < SettingsController
                                   :thumb_id,
                                   :click_response,
                                   :id,
-                                  :article_url])
+                                  :article_address])
     end
 
     def add_material_breadcrumb
       add_breadcrumb I18n.t('breadcrumbs.material.pic_text'),
         public_account_sin_materials_path(@public_account)
+    end
+
+    def save_article_address(sin_material)
+      if sin_material.sin_pic_text.click_response == 1 && sin_material.sin_pic_text.body.present?
+        sin_material.save_article_address(article_url(sin_material.sin_pic_text.id))
+      end
     end
 end

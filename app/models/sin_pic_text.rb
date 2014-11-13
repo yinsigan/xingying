@@ -11,7 +11,7 @@ class SinPicText < ActiveRecord::Base
   validates :desc, :length => { maximum: 120 }
   validates :title, :length => { maximum: 64 }
   validates :body, presence: true, if: "click_response == 1"
-  validates :article_url, presence: true, if: "click_response == 2"
+  validates :article_address, presence: true, if: "click_response == 2"
 
   before_save :add_pic_url
 

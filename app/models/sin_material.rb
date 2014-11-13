@@ -10,8 +10,8 @@ class SinMaterial < Material
   after_create :incre_sin_material_count
   after_destroy :decre_sin_material_count
 
-  def save_article_address(article_url)
-    self.sin_pic_text.article_address = article_url
+  def save_article_address(article_address)
+    self.sin_pic_text.article_address = article_address
     self.save
   end
 

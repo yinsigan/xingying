@@ -97,7 +97,7 @@ class WeixinController < ApplicationController
       article = generate_article(sin_pic_text.title,
                                  sin_pic_text.desc,
                                  sin_pic_text.pic_url,
-                                 sin_pic_text.article_url.presence)
+                                 sin_pic_text.article_address.presence)
       articles << article
     end
 
