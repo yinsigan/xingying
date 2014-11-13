@@ -29,7 +29,7 @@ $(document).on "page:change", ->
   check_all()
 
   # 图片上传
-  picture_upload()
+  picture_upload("#upload_form")
 
   # ajax error
   $(document).on 'ajax:error', ->
