@@ -1,7 +1,7 @@
 var picture_upload = function(picture_upload_form) {
   var picture_upload_wrapper = $(picture_upload_form);
 
-  if (picture_upload_wrapper.find(".upload").length > 0) {
+  if (picture_upload_wrapper.find("#upload").length > 0) {
     picture_upload_wrapper.find(".picture_upload").fileupload({
       done: function(e, data) {
         picture_upload_wrapper.find(".progress").hide();
