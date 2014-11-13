@@ -3,7 +3,6 @@
     = t('.title')
 .alert.alert-info{role: "alert"}
   = t('.notice')
-%p.bg-success
 %ul.nav.nav-tabs{role: "tablist"}
   %li{class: action_name == "added" || action_name == "set_default_reply" ? "active" : nil}
     = link_to t('.added_title'), added_public_account_path(@public_account)
