@@ -1,16 +1,20 @@
 .sin_box{id: sin_material.id, class: sin_col}
   .sin_box_content
+    -# 标题
     %h4.appmsg_title
-      %a{onclick: "return false;", href: "javascript:void(0);", target: "_blank"}
+      %a{href: sin_material.sin_pic_text.article_address, target: "_blank"}
         = sin_material.sin_pic_text.title
+    -# 时间
     %h4.appmsg_time
       = sin_material.sin_pic_text.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+    -# 缩略图
     .thumb
       %i.default
         - if sin_material.sin_pic_text.thumb.present?
           = image_tag sin_material.sin_pic_text.thumb.image_url(:preview).to_s
         - else
           = t('.thumb')
+    -# 摘要
     %p.appmsg_desc
       = sin_material.sin_pic_text.desc
   .appmsg_opr
