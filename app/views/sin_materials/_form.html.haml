@@ -1,6 +1,6 @@
 #edit_sin.col-md-8.edit_sin_pic_text
   .inner.well.clearfix
-    = form_for [@public_account, @sin_material], html: { role: "form" }, remote: true do |f|
+    = form_for [@public_account, @sin_material], html: { role: "form" }, remote: true, authenticity_token: true do |f|
       = render partial: "shared/form_error_messages", locals: {object: @sin_material}
       = f.fields_for :sin_pic_text do |sin_pic_text|
         -# 标题
@@ -36,8 +36,6 @@
 
         -# 正文或链接
         #sin_pic_text_body_or_link
-
-        = hidden_field_tag :authenticity_token, form_authenticity_token
         -# 提交按钮
         .col-sm-12
           = f.submit t('save'), class: "btn btn-primary"
