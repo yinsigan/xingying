@@ -1,8 +1,10 @@
-var picture_upload = function() {
-  if ($("#upload").length > 0) {
-    $("#picture_upload").fileupload({
+var picture_upload = function(picture_upload_form) {
+  var picture_upload_wrapper = $(picture_upload_form);
+
+  if (picture_upload_wrapper.find(".upload").length > 0) {
+    picture_upload_wrapper.find(".picture_upload").fileupload({
       done: function(e, data) {
-        $("#progress_div").hide();
+        picture_upload_wrapper.find(".progress").hide();
         $("body").spin(false);
       },
       add: function(e, data) {
@@ -13,10 +15,9 @@ var picture_upload = function() {
         data.submit();
       },
       progressall: function(e, data) {
-        var progress;
-        progress = parseInt(data.loaded / data.total * 100, 10);
-        $("#progress_div").show();
-        $("#progress_div .progress-bar").css("width", progress + "%");
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        picture_upload_wrapper.find(".progress").show();
+        picture_upload_wrapper.find(".progress .progress-bar").css("width", progress + "%");
       }
     });
   }
