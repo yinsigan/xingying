@@ -7,7 +7,7 @@ class PublicAccount < ActiveRecord::Base
   AutoReplyTypeNode = {1 => "text_material", 2 => "sin_material"}
   AutoReplyType = {1 => "文字", 2 => "单图文"}
 
-  has_many :sin_materials
+  has_many :sin_materials, -> { order "created_at DESC" }
   has_many :multi_materials
   has_many :rules
   has_many :thumbs, -> { order "created_at DESC" }

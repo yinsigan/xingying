@@ -53,7 +53,7 @@ gem 'ransack', '~> 1.5.1'
 gem 'seo_helper', '~> 1.0'
 # gem "angularjs-rails", '~> 1.3.0'
 gem 'ckeditor', github: "yinsigan/ckeditor"
-gem 'weixin_authorize'
+gem 'weixin_authorize', "~> 1.6.0"
 group :development do
   gem 'pry'
   gem 'pry-debugger'
