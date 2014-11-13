@@ -1,4 +1,5 @@
 class SinPicText < ActiveRecord::Base
+
   ClickResponse = {1 => "正文", 2 => "链接"}
   ClickResponseNode = {1 => "body", 2 => "link"}
 

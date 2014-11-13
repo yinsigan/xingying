@@ -12,6 +12,7 @@ class SinMaterialsController < SettingsController
   def create
     @sin_material = @public_account.sin_materials.build(sin_material_params)
     if @sin_material.save
+      @sin_material.save_article_address(article_url(@sin_material.sin_pic_text.id))
       redirect_via_turbolinks_to public_account_sin_materials_path(@public_account),
         flash: {success: I18n.t('success_submit')}
     else

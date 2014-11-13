@@ -7,8 +7,13 @@ class SinMaterial < Material
 
   accepts_nested_attributes_for :sin_pic_text
 
-  after_save :incre_sin_material_count
+  after_create :incre_sin_material_count
   after_destroy :decre_sin_material_count
+
+  def save_article_address(article_url)
+    self.sin_pic_text.article_address = article_url
+    self.save
+  end
 
   private
 
