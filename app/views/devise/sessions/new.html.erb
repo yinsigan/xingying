@@ -1,19 +1,30 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-4 center-block no-float">
-      <h1 class="text-center login-title"><%= t('welcome_login') %></h1>
-      <div class="account-wall">
-        <%= image_tag("users/photo.png", class: "profile-img") %>
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f| %>
-          <%= f.email_field :email, autofocus: true, required: true, class: "form-control", placeholder: "#{t('email')}" %>
-          <%= f.password_field :password, autocomplete: "off", placeholder: "#{t('password')}", required: true, class: "form-control" %>
-          <button class="btn btn-lg btn-primary btn-block" type="submit" data-disable-with="<%= t('disable-with-login') %>" >
-            <%= t('login') %></button>
-          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-              <%= link_to "#{t('forget_password')}", new_password_path(resource_name), class: "pull-right need-help" %><span class="clearfix"></span>
-          <% end -%>
-        <% end %>
+<div aria-hidden='true' class='modal show' id='loginModal' role='dialog' tabindex='-1'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h1 class='text-center'><%= t('welcome_login') %></h1>
       </div>
+
+        <div class='modal-body clearfix'>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form col-md-12 center-block"}) do |f| %>
+            <div class='form-group'>
+              <%= f.email_field :email, autofocus: true, required: true, class: "form-control input-lg", placeholder: t('email') %>
+            </div>
+            <div class='form-group'>
+              <%= f.password_field :password, autocomplete: "off", placeholder: t('password'), required: true, class: "form-control input-lg" %>
+            </div>
+            <div class='form-group'>
+              <button class="btn btn-lg btn-primary btn-block" type="submit" data-disable-with="<%= t('disable-with-login') %>" >
+              <%= t('login') %></button>
+            </div>
+          <% end %>
+        </div>
+        <div class='modal-footer'>
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to t('forget_password'), new_password_path(resource_name), class: "pull-right", style: "margin-right: 10px;" %>
+          <% end -%>
+        </div>
+
     </div>
   </div>
 </div>
