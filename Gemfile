@@ -25,9 +25,6 @@ gem 'meta_request', group: :development
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
 gem 'bootstrap-sass', '~> 3.2.0'
 
 gem 'autoprefixer-rails', '~> 3.0.1.20140826'

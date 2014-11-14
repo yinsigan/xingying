@@ -26,7 +26,7 @@
                   %span.glyphicon.glyphicon-cog.pull-right
               %li.divider
               %li
-                %a{:href => "#{destroy_user_session_path}", "data-method" => :delete, rel: "nofollow"}
+                %a{:href => destroy_user_session_path, "data-method" => :delete, rel: "nofollow"}
                   = t('logout')
                   %span.glyphicon.glyphicon-log-out.pull-right
         - else
@@ -38,7 +38,7 @@
         %ul.nav.navbar-nav
           / Thumbnails demo
           %li{:class => (controller_name == 'public_accounts' ? 'active' : nil)}
-            %a{:href => "#{public_accounts_path}"}
+            %a{:href => public_accounts_path}
               = t('.public_account_manage')
           %li
             %a{:href => "#"}

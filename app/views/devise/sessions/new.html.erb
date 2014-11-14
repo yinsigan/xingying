@@ -19,10 +19,18 @@
             </div>
           <% end %>
         </div>
-        <div class='modal-footer'>
-          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-            <%= link_to t('forget_password'), new_password_path(resource_name), class: "pull-right", style: "margin-right: 10px;" %>
-          <% end -%>
+        <div class='modal-footer clearfix' >
+          <div class="col-md-8 text-center center-block no-float">
+            <p>
+              <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                <%= link_to t('forget_password'), new_password_path(resource_name) %>
+              <% end -%>
+            </p>
+            <p>
+              <%= link_to t('signup'), new_user_registration_path, class: "marginright20" %>
+              <%= link_to t('back_to_home'), root_path %>
+            </p>
+          </div>
         </div>
 
     </div>
