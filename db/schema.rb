@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113013000) do
+ActiveRecord::Schema.define(version: 20141114011513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20141113013000) do
     t.text     "reply"
   end
 
+  add_index "kwords", ["content"], name: "index_kwords_on_content", using: :btree
   add_index "kwords", ["public_account_id"], name: "index_kwords_on_public_account_id", using: :btree
   add_index "kwords", ["rule_id"], name: "index_kwords_on_rule_id", using: :btree
   add_index "kwords", ["subjectable_id", "subjectable_type"], name: "index_kwords_on_subjectable_id_and_subjectable_type", using: :btree
