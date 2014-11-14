@@ -36,7 +36,8 @@ class PublicAccountsController < SettingsController
 
   def update
     if @public_account.update(public_account_params)
-      redirect_to @public_account, flash: {success: I18n.t('success_save')}
+      flash[:success] = I18n.t('success_save')
+      redirect_back_or @public_account
     else
       render :edit
     end

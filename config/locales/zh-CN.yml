@@ -80,6 +80,8 @@ zh-CN:
       title: "自定义菜单"
       note1: "1. 使用本模块，必须在微信公众平台申请自定义菜单使用的<strong class='text-danger'>AppId</strong>和<strong class='text-danger'>AppSecret</strong>"
       note2: "2. 最多创建<strong class='text-danger'>3</strong>个一级菜单，每个一级菜单下最多可以创建 <strong class='text-danger'>5</strong>个二级菜单，菜单最多支持<strong class='text-danger'>两层</strong>"
+      enter_tip: "需要填写完整微信开发者中心提供的appid和appsecret才能进入此模块"
+      no_content: "抱歉，无法获取菜单数据，请稍候刷新页面重试或者<a href=%{edit_public_account_path}>点击此处</a>检查您的appid和appsecret是否输入正确"
   material:
     tab:
       title: "素材管理"
