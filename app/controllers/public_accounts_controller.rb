@@ -14,6 +14,7 @@ class PublicAccountsController < SettingsController
 
   def new
     add_breadcrumb I18n.t("breadcrumbs.public_account.new"), :new_public_account_path
+    set_page_title I18n.t('seo.public_account.new')
     @public_account = current_user.public_accounts.build
   end
 
@@ -63,7 +64,7 @@ class PublicAccountsController < SettingsController
     end
 
     def public_account_params
-      params.require(:public_account).permit(:name, :tp, :image)
+      params.require(:public_account).permit(:name, :tp, :image, :appid, :appsecret)
     end
 
     def add_index_breadcrumb

@@ -9,6 +9,14 @@
     .col-sm-6
       = f.select :tp, options_for_select(PublicAccount::TP.invert, @public_account.tp.presence), {include_blank: t('please_select')}, {:class => "form-control", required: true}
   .form-group
+    = f.label :appid, class: "col-sm-3 control-label"
+    .col-sm-6
+      = f.text_field :appid, class: "form-control", required: true, autofocus: true, placeholder: t('.appid_tip')
+  .form-group
+    = f.label :appsecret, class: "col-sm-3 control-label"
+    .col-sm-6
+      = f.text_field :appsecret, class: "form-control", required: true, autofocus: true, placeholder: t('.appsecret_tip')
+  .form-group
     = f.label :image, class: "col-sm-3 control-label required"
     .col-sm-6
       .imagePreview

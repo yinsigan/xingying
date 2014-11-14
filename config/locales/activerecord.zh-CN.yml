@@ -18,6 +18,8 @@ zh-CN:
         autoreply_sin_material: "单图文"
         reply_type: "回复类型"
         autoreply_type: "回复类型"
+        appid: "AppID:"
+        appsecret: "AppSecret:"
       sin_pic_text:
         title: "标题"
         desc: "摘要"

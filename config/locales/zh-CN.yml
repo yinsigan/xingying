@@ -38,6 +38,9 @@ zh-CN:
       delete_tip: "你真确定删除此公众账号吗?"
     delete:
       confirm: "确定删除此公众账号吗？"
+    form:
+      appid_tip: "请输入微信提供的appid"
+      appsecret_tip: "请输入微信提供的appsecret"
   autoreply:
     tab:
       title: "自动回复"

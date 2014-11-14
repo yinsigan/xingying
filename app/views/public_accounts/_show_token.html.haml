@@ -10,6 +10,14 @@
   %p
     %strong= t('activerecord.attributes.public_account.weixin_token')
     = @public_account.weixin_token
+  - if @public_account.appid.present?
+    %p
+      %strong= t('activerecord.attributes.public_account.appid')
+      = @public_account.appid
+  - if @public_account.appsecret.present?
+    %p
+      %strong= t('activerecord.attributes.public_account.appsecret')
+      = @public_account.appsecret
 .modal-footer
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
