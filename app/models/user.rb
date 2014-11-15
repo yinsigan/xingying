@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :public_accounts
 
   def admin?
-    CONFIG['admin_emails'] && CONFIG['admin_emails'].include?(email)
+    Settings.admin_emails && Settings.admin_emails.include?(email)
   end
 
   def timeout_in
