@@ -29,16 +29,16 @@
   background-position: -140px 0;
 }
 .icon-minus-sign {
-  background-position: 0px -20;
+  background-position: 0px -20px;
 }
 .icon-one-case-repore {
-  background-position: -20px -20;
+  background-position: -20px -20px;
 }
 .icon-two-bar {
-  background-position: -40px -20;
+  background-position: -40px -20px;
 }
 .icon-three-bar {
-  background-position: -60px -20;
+  background-position: -60px -20px;
 }
 .icon-fully-charged {
   background-position: -80px -20;
@@ -89,7 +89,7 @@
   background-position: -60px -60;
 }
 .icon-sun {
-  background-position: -80px -60;
+  background-position: -80px -60px;
 }
 .icon-fighter-up {
   background-position: -100px -60;
