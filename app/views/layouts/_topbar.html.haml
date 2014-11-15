@@ -7,7 +7,7 @@
         %span.icon-bar
       = link_to root_path, class: "navbar-brand" do
         %span.glyphicon.glyphicon-home
-        = CONFIG['title']
+        = Settings.title
     #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav.navbar-right.nav-user
         - if user_signed_in?
