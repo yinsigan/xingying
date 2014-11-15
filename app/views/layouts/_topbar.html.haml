@@ -9,7 +9,7 @@
         %span.glyphicon.glyphicon-home
         = Settings.title
     #navbar.navbar-collapse.collapse
-      %ul.nav.navbar-nav.navbar-right.nav-user
+      %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           %li
             %a
@@ -17,7 +17,6 @@
               .badge 99
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-              = current_user.email
               %span.glyphicon.glyphicon-user.pull-right
             %ul.dropdown-menu
               %li
@@ -36,7 +35,6 @@
             = link_to(t('login'), new_session_path(:user))
       - if user_signed_in?
         %ul.nav.navbar-nav
-          / Thumbnails demo
           %li{:class => (controller_name == 'public_accounts' ? 'active' : nil)}
             %a{:href => public_accounts_path}
               %i.fa.fa-users
