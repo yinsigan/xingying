@@ -1,20 +1,25 @@
-class CustomMenuController < SettingsController
+class MenusController < SettingsController
   before_action :set_public_account
   before_action :appid_present, :add_show_breadcrumb
 
-  def show_menu
+  def index
     @client ||= WeixinAuthorize::Client.new(@public_account.try(:appid), @public_account.try(:appsecret))
     if @client.is_valid?
-      # 取数据库
+      @menu = @public_account.menus
     else
       store_location
     end
   end
 
+  def new
+    @menu = @public_account.menus.build
+    render "new.js.erb", layout: false
+  end
+
   private
 
   def set_public_account
-    @public_account = current_user.public_accounts.find(params[:id])
+    @public_account = current_user.public_accounts.find(params[:public_account_id])
     set_page_title @public_account.name
   end
 

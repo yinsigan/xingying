@@ -2,7 +2,7 @@
 .row.margintop20
   .col-md-12
     - if @rules.empty?
-      .bs-callout.bs-callout-info
+      .bs-callout.bs-callout-default
         %h4= t('.no_content')
     - else
       = render partial: "rules/rule", collection: @rules

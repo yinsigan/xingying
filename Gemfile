@@ -53,7 +53,8 @@ gem 'seo_helper', '~> 1.0'
 # gem "angularjs-rails", '~> 1.3.0'
 gem 'ckeditor', github: "yinsigan/ckeditor"
 gem 'weixin_authorize', "~> 1.6.0"
-gem 'settingslogic'
+gem 'settingslogic', "~> 2.0.9"
+gem 'awesome_nested_set'
 group :development do
   gem 'pry'
   gem 'pry-debugger'

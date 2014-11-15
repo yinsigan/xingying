@@ -10,7 +10,7 @@
                 (#{@no_group_count})
           = render partial: "autoreply/thumb_group", collection: @thumb_groups unless @thumb_groups.empty?
 - if @thumbs.empty?
-  .bs-callout.bs-callout-info
+  .bs-callout.bs-callout-default
     %h4= t('.no_content')
 - else
   .row
