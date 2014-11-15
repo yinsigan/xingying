@@ -1,7 +1,7 @@
-.commom {
-  background: url(/assets/my-icon.jpg);
-  width: 20px;
-  height: 20px;
+.common {
+  background: url(/assets/my_icon.png);
+  width: 15px;
+  height: 16px;
   display: inline-block;
 }
 .icon-blank-document {
