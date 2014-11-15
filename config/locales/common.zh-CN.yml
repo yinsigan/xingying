@@ -11,6 +11,7 @@ zh-CN:
   disable-with-submit: "正在提交..."
   disable-with-save: "正在保存..."
   change_password: "修改密码"
+  username: "帐号"
   sumbit: "提交"
   save: "保存"
   welcome_login: "欢迎登录"
