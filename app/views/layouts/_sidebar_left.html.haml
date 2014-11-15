@@ -3,20 +3,30 @@
     %a.list-group-item{:href => public_account_path(@public_account), :class => (controller_name == "public_accounts" && action_name == "show" ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
-      = t('.dashboard')
+      %i.fa.fa-gear
+      %span
+        = t('.dashboard')
     %a.list-group-item{:href => public_account_sin_materials_path(@public_account), :class => (["material", "sin_materials", "thumbs"].include?(controller_name) ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
-      = t('.material')
+      %i.fa.fa-file-image-o
+      %span
+        = t('.material')
     %a.list-group-item{:href => added_public_account_path(@public_account), :class => (controller_name == "autoreply" || controller_name == "rules" ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
-      = t('.autoreply')
+      %i.fa.fa-reply-all
+      %span
+        = t('.autoreply')
     %a.list-group-item{:href => show_menu_public_account_path(@public_account), :class => (controller_name == "custom_menu" ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
-      = t('.custom_menu')
+      %i.fa.fa-gears
+      %span
+        = t('.custom_menu')
     %a.list-group-item{:href => "#"}
       .pull-right
         %i.fa.fa-chevron-right
-      = t('.website_manage')
+      %i.fa.fa-info
+      %span
+        = t('.website_manage')

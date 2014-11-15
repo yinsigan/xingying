@@ -39,12 +39,16 @@
           / Thumbnails demo
           %li{:class => (controller_name == 'public_accounts' ? 'active' : nil)}
             %a{:href => public_accounts_path}
+              %i.fa.fa-users
+              %span
               = t('.public_account_manage')
           %li
             %a{:href => "#"}
-              %i.fa.fa-check-square-o
+              %i.fa.fa-male
               %span
                 联系客服
           %li
             %a{:href => "#"}
+              %i.fa.fa-graduation-cap
+              %span
               帮助中心
