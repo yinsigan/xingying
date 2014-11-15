@@ -42,6 +42,8 @@ zh-CN:
         content: "关键字"
         subjectable_id: "回复"
         subjectable_type: "回复类型"
+      menu:
+        name: "名称"
 
     models:
       user: "用户"

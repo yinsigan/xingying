@@ -83,6 +83,9 @@ zh-CN:
       enter_tip: "需要填写完整微信开发者中心提供的appid和appsecret才能进入此模块"
       no_valid: "抱歉，无法获取菜单数据，请稍候刷新页面重试或者<a href=%{edit_public_account_path}>点击此处</a>检查您的appid和appsecret是否输入正确"
       no_content: "暂时没有菜单"
+    new:
+      title: "添加一级菜单"
+      name_maximum: "一级菜单名称最多4个汉字"
   material:
     tab:
       title: "素材管理"
