@@ -14,6 +14,7 @@ class PublicAccount < ActiveRecord::Base
   has_many :thumb_groups
   has_many :kwords
   has_many :sin_pic_texts, through: :sin_materials
+  has_many :menus
 
   belongs_to :user
   # 关注时回复

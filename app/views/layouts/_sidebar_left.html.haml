@@ -15,7 +15,7 @@
         %i.fa.fa-chevron-right
       %i.fa.fa-reply-all
       = t('.autoreply')
-    %a.list-group-item{:href => show_menu_public_account_path(@public_account), :class => (controller_name == "custom_menu" ? "active" : nil)}
+    %a.list-group-item{:href => public_account_menus_path(@public_account), :class => (controller_name == "menus" ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
       %i.fa.fa-gears

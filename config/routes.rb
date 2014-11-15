@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'custom_menu/index'
-
   mount Ckeditor::Engine => '/ckeditor'
   # 微信公众账号
   resources :public_accounts do
@@ -28,8 +26,9 @@ Rails.application.routes.draw do
       get "/thumb_group/:thumb_group_id", to: "autoreply#thumb_group", as: :group
       get "/thumb_group", to: "autoreply#thumb_group"
       post :upload, to: "autoreply#upload"
-      get :show_menu, to: "custom_menu#show_menu"
+
     end
+    resources :menus
     resources :sin_materials, except: [:show] do
       get :delete, on: :member
       get :click_response, on: :collection
