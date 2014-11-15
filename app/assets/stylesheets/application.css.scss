@@ -16,14 +16,15 @@
  *= require bootstrapValidator.min
  */
 
-@import"bootstrap-sprockets";
-@import"bootstrap";
-@import"nprogress";
-@import"alerts-fixed";
-@import'icheck/square/blue';
-@import"blueimp-gallery";
-@import"bootstrap-image-gallery";
-@import"ckeditor/config";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "nprogress";
+@import "alerts-fixed";
+@import 'icheck/square/blue';
+@import "blueimp-gallery";
+@import "bootstrap-image-gallery";
+@import "ckeditor/config";
+@import "my_icon.css";
 .field_with_errors {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
 }
