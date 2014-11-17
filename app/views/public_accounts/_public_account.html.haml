@@ -10,10 +10,10 @@
   %td= PublicAccount::TP[public_account.tp]
   %td
     .btn-group.btn-group-xs
-      %a{href: "#{public_account_path(public_account)}", class: "btn btn-default"}
+      %a{href: public_account_path(public_account), class: "btn btn-default"}
         %span.fa.fa-cog.fa-spin
         = t('manage')
-      %a{href: "#{edit_public_account_path(public_account)}", class: "btn btn-info"}
+      %a{href: edit_public_account_path(public_account), class: "btn btn-info"}
         %span.glyphicon.glyphicon-edit
         = t('edit')
       = link_to delete_public_account_path(public_account), class: "btn btn-danger", remote: true do

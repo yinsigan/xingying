@@ -3,4 +3,4 @@ modal.modal({
   keyboard: true,
   backdrop: false
 });
-$("#modal-content").html("<%= j(render 'new', parent_menu: @parent_menu) %>");
+$("#modal-content").html("<%= j(render 'form', parent_menu: @parent_menu, title: @new_title, name_maximum: @name_maximum) %>");

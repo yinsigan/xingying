@@ -1,0 +1,4 @@
+zh-CN:
+  public_accounts:
+    delete:
+      confirm: "确定删除此公众账号吗？"
