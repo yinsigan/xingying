@@ -5,15 +5,16 @@ class MenusController < SettingsController
   def index
     @client ||= WeixinAuthorize::Client.new(@public_account.try(:appid), @public_account.try(:appsecret))
     if @client.is_valid?
-      @menus = @public_account.menus
+      @menus = @public_account.menus.where(:parent => nil)
     else
       store_location
     end
   end
 
   def new
+    @parent_menu = params[:parent_menu].presence
     @menu = @public_account.menus.build
-    render "new.js.erb", layout: false
+    render "new.js.erb", layout: false, parent_menu: @parent_menu
   end
 
   def create
@@ -42,6 +43,6 @@ class MenusController < SettingsController
   end
 
   def menu_params
-    params.require(:menu).permit(:name)
+    params.require(:menu).permit(:name, :parent_id)
   end
 end

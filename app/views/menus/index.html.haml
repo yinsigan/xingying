@@ -12,7 +12,7 @@
 
   .col-md-7
     - if @client.is_valid?
-      = link_to "添加一级菜单", new_public_account_menu_path(@public_account), class: "btn btn-primary", remote: true
+      = link_to "添加一级菜单", new_public_account_menu_path(@public_account), class: "btn btn-primary #{!@menus.empty? && @menus.count >= 3 ? 'disabled' : nil}", remote: true
       - if @menus.empty?
         .bs-callout.bs-callout-default
           %h4= t('.no_content')

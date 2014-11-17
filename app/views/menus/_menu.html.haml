@@ -1,4 +1,5 @@
 #menu.panel-group.menu{"aria-multiselectable" => "true", :role => "tablist"}
+  -# 一级菜单内容
   .panel.panel-default
     .panel-heading.area.clearfix{:role => "tab", id: "menuHeading_#{menu_counter}"}
       %h4.panel-title
@@ -9,7 +10,7 @@
           %i.fa.fa-pencil
         %ul.dropdown-menu{"aria-labelledby" => "menu_dropdown_#{menu_counter}", :role => "menu"}
           %li
-            %a
+            = link_to new_public_account_menu_path(@public_account, parent_menu: menu), remote: true do
               %i.fa.fa-plus
               = t('.add')
           %li
@@ -25,37 +26,35 @@
             %a
               %i.fa.fa-trash-o
               = t('delete')
+    -# 二级菜单内容
+    
     .menu_content.panel-collapse.collapse.in{"aria-labelledby" => "menuHeading_#{menu_counter}", :role => "tabpanel", id: "menu_#{menu_counter}"}
       .panel-body
         #menu.panel-group.menu
           .panel.panel-default
-            .panel-heading.area
-              %h4.panel-title
-                %a
-                  二级菜单一
-              .dropdown.edit
-                %a{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :role => "button", id: "menu_dropdown_11"}
-                  %i.fa.fa-pencil
-                %ul.dropdown-menu{"aria-labelledby" => "menu_dropdown_11", :role => "menu"}
-                  %li
-                    %a
-                      %i.fa.fa-plus
-                      = t('.add')
-                  %li
-                    %a
-                      %i.fa.fa-bars
-                      = t('.set_action')
-                  %li.divider{:role => "presentation"}
-                  %li
-                    %a
-                      %i.fa.fa-edit
-                      = t('edit')
-                  %li
-                    %a
-                      %i.fa.fa-trash-o
-                      = t('delete')
-            .panel-heading.area
-              %h4.panel-title
-                %a
-                  二级菜单二
-              %i{class: "fa fa-pencil edit"}
+            - menu.children.each do |sub_menu|
+              .panel-heading.area
+                %h4.panel-title
+                  %a
+                    = sub_menu.name
+                .dropdown.edit
+                  %a{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :role => "button", id: "menu_dropdown_11"}
+                    %i.fa.fa-pencil
+                  %ul.dropdown-menu{"aria-labelledby" => "menu_dropdown_11", :role => "menu"}
+                    %li
+                      %a
+                        %i.fa.fa-plus
+                        = t('.add')
+                    %li
+                      %a
+                        %i.fa.fa-bars
+                        = t('.set_action')
+                    %li.divider{:role => "presentation"}
+                    %li
+                      %a
+                        %i.fa.fa-edit
+                        = t('edit')
+                    %li
+                      %a
+                        %i.fa.fa-trash-o
+                        = t('delete')

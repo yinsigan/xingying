@@ -3,4 +3,4 @@ modal.modal({
   keyboard: true,
   backdrop: false
 });
-$("#modal-content").html("<%= j(render 'new') %>");
+$("#modal-content").html("<%= j(render 'new', parent_menu: @parent_menu) %>");
