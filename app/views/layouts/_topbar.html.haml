@@ -19,6 +19,7 @@
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
               %i.fa.fa-user
               = t('username')
+              %span.caret
             %ul.dropdown-menu
               %li
                 %a{:href => edit_user_registration_path}
@@ -38,7 +39,7 @@
         %ul.nav.navbar-nav
           %li{:class => (controller_name == 'public_accounts' ? 'active' : nil)}
             %a{:href => public_accounts_path}
-              %i.fa.fa-users
+              %i.fa.fa-weixin
               %span
               = t('.public_account_manage')
           %li
