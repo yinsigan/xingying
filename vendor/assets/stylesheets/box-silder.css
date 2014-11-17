@@ -1,0 +1,11 @@
+.page { max-width: auto; width: 100%; }
+.viewport { margin: auto; }
+.slide { display: none; width: 100%; }
+.slide img { margin: auto ; width: 100%; display: block;  }
+.slide.jbs-current { display: block;margin: auto; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline;}
+.controls { margin: 10px 0 20px; float: right; overflow: hidden }
+.controls li { display: inline }
+.increment-control { line-height: 1; display: inline-block; padding: 10px 5px }
+.increment-control:hover { text-decoration: none }
+.goto-slide { margin-left: 10px; width: 14px; height: 14px; display: block; float: left; border: solid 1px #000; background-color: #efefef; border-radius: 8px; -webkit-box-shadow: inset 0px 0px 8px #aaa; -moz-box-shadow: inset 0px 0px 8px #aaa; box-shadow: inset 0px 0px 8px #aaa }
+.goto-slide.current { background-color: #6610c6 }

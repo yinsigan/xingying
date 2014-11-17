@@ -26,6 +26,7 @@
 @import "ckeditor/config";
 @import "my_icon.css";
 @import "rotating-card";
+@import "box-silder";
 .field_with_errors {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
 }
