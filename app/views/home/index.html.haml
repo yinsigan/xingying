@@ -1,47 +1,38 @@
-.jumbotron
-  %h1 正在构思中。。。
-  %p ...
-  %p
-    %a.btn.btn-primary.btn-lg{:role => "button"} Learn more
 
 
-.page
-  %section
-    .viewport
-      .box
-        .slide.jbs-current
-          = image_tag("box-silder/the-battle.jpg")
-        .slide
-          = image_tag("box-silder/hiding-the-map.jpg")
-        .slide
-          = image_tag("box-silder/theres-the-buoy.jpg")
-        .slide
-          = image_tag("box-silder/finding-the-key.jpg")
-        .slide
-          = image_tag("box-silder/lets-get-out-of-here.jpg")
-    .footer
-      %nav.slider-controls
-        %a.increment-control.prev{:href => "#", :title => "go to the next slide"}
-          = raw t('views.pagination.previous')
-        %a.increment-control.next{:href => "#", :title => "go to the next slide"}
-          = raw t('views.pagination.next')
-        %ul.controls
-          %li
-            %a.goto-slide.current{"data-slideindex" => "0", :href => "#"}
-          %li
-            %a.goto-slide{"data-slideindex" => "1", :href => "#"}
-          %li
-            %a.goto-slide{"data-slideindex" => "2", :href => "#"}
-          %li
-            %a.goto-slide{"data-slideindex" => "3", :href => "#"}
-          %li
-            %a.goto-slide{"data-slideindex" => "4", :href => "#"}
+%div.clearfix
+  .page
+    %section
+      .viewport
+        .box
+          .slide.jbs-current
+            = image_tag("box-silder/the-battle.jpg")
+          .slide
+            = image_tag("box-silder/hiding-the-map.jpg")
+          .slide
+            = image_tag("box-silder/theres-the-buoy.jpg")
+          .slide
+            = image_tag("box-silder/finding-the-key.jpg")
+          .slide
+            = image_tag("box-silder/lets-get-out-of-here.jpg")
+      .footer
+        %nav.slider-controls
+          %ul.controls
+            %li
+              %a.goto-slide.current{"data-slideindex" => "0", :href => "#"}
+            %li
+              %a.goto-slide{"data-slideindex" => "1", :href => "#"}
+            %li
+              %a.goto-slide{"data-slideindex" => "2", :href => "#"}
+            %li
+              %a.goto-slide{"data-slideindex" => "3", :href => "#"}
+            %li
+              %a.goto-slide{"data-slideindex" => "4", :href => "#"}
+
+
 
 .alert.alert-info{role: "alert"}
   %i.fa.fa-bullhorn 请注意
-
-%h3.text-center.tag-title
-  为什么选择?
 
 -# Card One
 .media.col-md-4
@@ -138,7 +129,6 @@
   为什么选择?
 / Large modal
 / Button trigger modal
-
 %script{:src => "/assets/box-slider-scroll-3d.jquery.min.js?body=1"}
 :javascript
   $(document).ready(
@@ -151,12 +141,10 @@
         $indicators = $('.goto-slide'),
         slideInterval = 5000,
         defaultOptions = {
-          speed: 1200,
-          autoScroll: true,
-          timeout: slideInterval,
           onbefore: switchIndicator,
-          next: '.next',
-          prev: '.prev'
+          timeout: slideInterval,
+          autoScroll: true,
+          speed: 1200
         };
 
       $box.boxSlider(defaultOptions);
