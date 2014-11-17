@@ -29,9 +29,7 @@
 .field_with_errors {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
 }
-.popover {
-  max-width: 100%;
-}
+
 /*显示表格*/
 
 .table-user-information > tbody > tr {
@@ -48,11 +46,7 @@
 .bg-p {
   padding: 15px;
 }
-/*首页用到*/
 
-.tag-title {
-  padding: 50px 0;
-}
 /*不要浮动，修改bootstrap的center-block*/
 
 .no-float {

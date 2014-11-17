@@ -18,8 +18,9 @@
           %h4= t('.no_content')
       - else
         .page-header
-          = link_to "启用并发布菜单", nil, class: "btn btn-primary"
-          = link_to "停用菜单", nil, class: "btn btn-default"
+          .btn-group
+            = link_to "启用并发布菜单", nil, class: "btn btn-primary"
+            = link_to "停用菜单", nil, class: "btn btn-default"
         = render @menus
     - else
       .bs-callout.bs-callout-default

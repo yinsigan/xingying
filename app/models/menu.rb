@@ -10,7 +10,7 @@ class Menu < ActiveRecord::Base
   private
   def menu_count_within_limit
     if self.parent_id == nil && self.public_account.menus(:reload).count >= 3
-      errors.add(:base, "最多只能创建三个一级菜单")
+      errors.add(:base, "最多只能创建3个一级菜单")
     end
   end
 end

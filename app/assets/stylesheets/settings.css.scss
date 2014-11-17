@@ -504,6 +504,9 @@ footer {
     a {
       color: #333;
     }
+    a:hover {
+      cursor: pointer;
+    }
   }
   .panel-title a:hover {
     text-decoration: none;
