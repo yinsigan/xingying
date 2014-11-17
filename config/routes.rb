@@ -28,7 +28,7 @@ Rails.application.routes.draw do
       post :upload, to: "autoreply#upload"
 
     end
-    resources :menus
+    resources :menus, only: [:index, :new, :create]
     resources :sin_materials, except: [:show] do
       get :delete, on: :member
       get :click_response, on: :collection

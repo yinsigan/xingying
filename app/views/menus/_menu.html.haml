@@ -1,0 +1,21 @@
+#menu.panel-group.menu{"aria-multiselectable" => "true", :role => "tablist"}
+  .panel.panel-default
+    #menuHeadingOne.panel-heading.area{:role => "tab"}
+      %h4.panel-title
+        %a{"aria-controls" => "menuOne", "aria-expanded" => "true", "data-parent" => "#menu", "data-toggle" => "collapse", :href => "#menuOne"}
+          菜单一
+      %i{class: "fa fa-pencil edit"}
+    #menuOne.menu_content.panel-collapse.collapse.in{"aria-labelledby" => "menuHeadingOne", :role => "tabpanel"}
+      .panel-body
+        #menu.panel-group.menu
+          .panel.panel-default
+            .panel-heading.area
+              %h4.panel-title
+                %a
+                  二级菜单一
+              %i{class: "fa fa-pencil edit"}
+            .panel-heading.area
+              %h4.panel-title
+                %a
+                  二级菜单二
+              %i{class: "fa fa-pencil edit"}
