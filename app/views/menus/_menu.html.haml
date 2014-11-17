@@ -1,0 +1,61 @@
+#menu.panel-group.menu{"aria-multiselectable" => "true", :role => "tablist"}
+  .panel.panel-default
+    .panel-heading.area.clearfix{:role => "tab", id: "menuHeading_#{menu_counter}"}
+      %h4.panel-title
+        %a{"aria-controls" => "menu_#{menu_counter}", "aria-expanded" => "true", "data-parent" => "#menu", "data-toggle" => "collapse", :href => "#menu_#{menu_counter}"}
+          = menu.name
+      .dropdown.edit
+        %a{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :role => "button", id: "menu_dropdown_#{menu_counter}"}
+          %i.fa.fa-pencil
+        %ul.dropdown-menu{"aria-labelledby" => "menu_dropdown_#{menu_counter}", :role => "menu"}
+          %li
+            %a
+              %i.fa.fa-plus
+              = t('.add')
+          %li
+            %a
+              %i.fa.fa-bars
+              = t('.set_action')
+          %li.divider{:role => "presentation"}
+          %li
+            %a
+              %i.fa.fa-edit
+              = t('edit')
+          %li
+            %a
+              %i.fa.fa-trash-o
+              = t('delete')
+    .menu_content.panel-collapse.collapse.in{"aria-labelledby" => "menuHeading_#{menu_counter}", :role => "tabpanel", id: "menu_#{menu_counter}"}
+      .panel-body
+        #menu.panel-group.menu
+          .panel.panel-default
+            .panel-heading.area
+              %h4.panel-title
+                %a
+                  二级菜单一
+              .dropdown.edit
+                %a{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :role => "button", id: "menu_dropdown_11"}
+                  %i.fa.fa-pencil
+                %ul.dropdown-menu{"aria-labelledby" => "menu_dropdown_11", :role => "menu"}
+                  %li
+                    %a
+                      %i.fa.fa-plus
+                      = t('.add')
+                  %li
+                    %a
+                      %i.fa.fa-bars
+                      = t('.set_action')
+                  %li.divider{:role => "presentation"}
+                  %li
+                    %a
+                      %i.fa.fa-edit
+                      = t('edit')
+                  %li
+                    %a
+                      %i.fa.fa-trash-o
+                      = t('delete')
+            .panel-heading.area
+              %h4.panel-title
+                %a
+                  二级菜单二
+              %i{class: "fa fa-pencil edit"}

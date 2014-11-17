@@ -5,7 +5,7 @@ class MenusController < SettingsController
   def index
     @client ||= WeixinAuthorize::Client.new(@public_account.try(:appid), @public_account.try(:appsecret))
     if @client.is_valid?
-      @menu = @public_account.menus
+      @menus = @public_account.menus
     else
       store_location
     end
@@ -14,6 +14,12 @@ class MenusController < SettingsController
   def new
     @menu = @public_account.menus.build
     render "new.js.erb", layout: false
+  end
+
+  def create
+    @menu = @public_account.menus.build(menu_params)
+    @menu.save
+    render partial: "shared/ajax_prompt.js.erb", layout: false, locals: {object: @menu, flash_success: I18n.t("success_submit")}
   end
 
   private
@@ -33,5 +39,9 @@ class MenusController < SettingsController
         flash: {danger: I18n.t("menus.index.enter_tip")}
       store_location
     end
+  end
+
+  def menu_params
+    params.require(:menu).permit(:name)
   end
 end
