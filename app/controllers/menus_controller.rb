@@ -30,7 +30,7 @@ class MenusController < SettingsController
   def appid_present
     if !(@public_account.appid.present? && @public_account.appsecret.present?)
       redirect_to edit_public_account_path(@public_account),
-        flash: {danger: I18n.t("custom_menu.show_menu.enter_tip")}
+        flash: {danger: I18n.t("menus.index.enter_tip")}
       store_location
     end
   end
