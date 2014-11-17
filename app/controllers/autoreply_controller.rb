@@ -112,6 +112,6 @@ class AutoreplyController < SettingsController
       end
       @no_group_count = @public_account.thumbs
         .where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").count
-      @thumb_groups = @public_account.thumb_groups.order("created_at asc")
+      @thumb_groups = @public_account.thumb_groups.order("created_at ASC")
     end
 end

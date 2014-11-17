@@ -2,6 +2,7 @@ class ThumbsController < SettingsController
   skip_before_action :verify_authenticity_token, only: [:create]
   before_action :set_public_account
   before_action :add_index_breadcrumb, only: [:index]
+
   def create
     @thumb = @public_account.thumbs.build
     @thumb.image = params[:image]
@@ -23,7 +24,7 @@ class ThumbsController < SettingsController
     @no_group_count = @public_account.thumbs
       .where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").count
     @thumb_group = @public_account.thumb_groups.build
-    @thumb_groups = @public_account.thumb_groups.order("created_at asc")
+    @thumb_groups = @public_account.thumb_groups.order("created_at ASC")
   end
 
   def delete
