@@ -13,7 +13,6 @@ class Kword < ActiveRecord::Base
   validates :subjectable_id, presence: true, if: "subjectable_type == 'SinMaterial'"
   validates :subjectable_type, inclusion: { in: %w(SinMaterial TextMaterial) }
 
-
   def reply_content
     case subjectable_type
     when "TextMaterial"

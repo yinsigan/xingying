@@ -86,6 +86,9 @@ zh-CN:
     new:
       title: "添加一级菜单"
       name_maximum: "一级菜单名称最多4个汉字"
+    menu:
+      add: "添加子菜单"
+      set_action: "设置动作"
   material:
     tab:
       title: "素材管理"
