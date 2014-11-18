@@ -17,6 +17,8 @@ zh-CN:
       website_manage: "官网管理"
     topbar:
       public_account_manage: "公众账号管理"
+      help: "帮助中心"
+      contact_us: "联系客服"
 
   public_accounts:
     new:

@@ -13,7 +13,7 @@
     %a.list-group-item{:href => added_public_account_path(@public_account), :class => (controller_name == "autoreply" || controller_name == "rules" ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
-      %i.fa.fa-reply-all
+      %i.fa.fa-reply
       = t('.autoreply')
     %a.list-group-item{:href => public_account_menus_path(@public_account), :class => (controller_name == "menus" ? "active" : nil)}
       .pull-right
