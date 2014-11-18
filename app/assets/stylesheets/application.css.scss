@@ -19,19 +19,22 @@
 /*重写bootstrap样式-变量*/
 
 /*导航条*/
-$navbar-default-bg:                        #2fa4e7;
-$navbar-default-link-color:                #fff;
-$navbar-default-link-hover-color:          #fff;
-$navbar-default-link-hover-bg:             darken($navbar-default-bg, 10%);
-$navbar-default-link-active-color:         #fff;
-$navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%);
-$navbar-default-color:                     #fff;
+$navbar-default-bg:                                        #2fa4e7;
+$navbar-default-link-color:                          #fff;
+$navbar-default-link-hover-color:             #fff;
+$navbar-default-link-hover-bg:                  darken($navbar-default-bg, 10%);
+$navbar-default-link-active-color:             #fff;
+$navbar-default-link-active-bg:                  darken($navbar-default-bg, 6.5%);
+$navbar-default-color:                                  #fff;
 
 /*logo*/
-$navbar-default-brand-color:               $navbar-default-link-color;
-$navbar-default-brand-hover-color:         $navbar-default-link-color;
+$navbar-default-brand-color:                    $navbar-default-link-color;
+$navbar-default-brand-hover-color:       $navbar-default-link-color;
 $navbar-default-brand-hover-bg:            transparent;
 
+$btn-primary-bg:                                            #2FA4E7;
+$btn-success-bg:                                            #73A839;
+$btn-danger-bg:                                             #C71C22;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -87,4 +90,18 @@ $navbar-default-brand-hover-bg:            transparent;
   line-height: 34px;
   text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
