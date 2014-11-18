@@ -54,7 +54,9 @@ gem 'seo_helper', '~> 1.0'
 gem 'ckeditor', github: "yinsigan/ckeditor"
 gem 'weixin_authorize', "~> 1.6.0"
 gem 'settingslogic', "~> 2.0.9"
-gem 'awesome_nested_set'
+gem 'awesome_nested_set', "~> 3.0.1"
+gem 'rails_admin', "~> 0.6.5"
+gem 'rails_admin-i18n', "~> 0.0.9"
 group :development do
   gem 'pry'
   gem 'pry-debugger'

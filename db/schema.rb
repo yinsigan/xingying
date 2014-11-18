@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115083009) do
+ActiveRecord::Schema.define(version: 20141118081713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,15 +126,6 @@ ActiveRecord::Schema.define(version: 20141115083009) do
   add_index "sin_pic_texts", ["multi_material_id"], name: "index_sin_pic_texts_on_multi_material_id", using: :btree
   add_index "sin_pic_texts", ["sin_material_id"], name: "index_sin_pic_texts_on_sin_material_id", using: :btree
   add_index "sin_pic_texts", ["thumb_id"], name: "index_sin_pic_texts_on_thumb_id", using: :btree
-
-  create_table "text_replies", force: true do |t|
-    t.text     "body"
-    t.integer  "text_material_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "text_replies", ["text_material_id"], name: "index_text_replies_on_text_material_id", using: :btree
 
   create_table "thumb_groups", force: true do |t|
     t.string   "name"

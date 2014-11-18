@@ -44,6 +44,9 @@ zh-CN:
         subjectable_type: "回复类型"
       menu:
         name: "名称"
+      sin_material:
+        type: "类型"
+
 
     models:
       user: "用户"
@@ -53,3 +56,11 @@ zh-CN:
       thumb_group: "分组"
       rule: "规则"
       kword: "关键词"
+      menu: "自定义菜单"
+      thumb: "图片"
+      thumb_material: "图片"
+      material: "素材"
+      multi_material: "多图文"
+      asset: "ckeditor素材"
+      attachment_file: "ckeditor附件"
+      picture: "ckeditor图片"
