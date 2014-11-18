@@ -2,18 +2,18 @@ zh-CN:
   public_account:
     form:
       name:
-        step: "0"
+        step: 0
         title: "名称"
         content: "微信公众帐号的名称"
       appid:
-        step: "1"
+        step: 1
         title: "AppID"
         content: "微信公众号的appid"
       appsecret:
-        step: "2"
+        step: 2
         title: "AppSecret"
         content: "微信公众号的AppSecret"
       save:
-        step: "3"
+        step: 3
         title: "保存"
         content: "点击保存提交微信公众帐号信息"
