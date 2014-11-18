@@ -3,7 +3,7 @@
     %a.list-group-item{:href => public_account_path(@public_account), :class => (controller_name == "public_accounts" && action_name == "show" ? "active" : nil)}
       .pull-right
         %i.fa.fa-chevron-right
-      %i.fa.fa-gear
+      %i.fa.fa-tachometer
       = t('.dashboard')
     %a.list-group-item{:href => public_account_sin_materials_path(@public_account), :class => (["material", "sin_materials", "thumbs"].include?(controller_name) ? "active" : nil)}
       .pull-right
