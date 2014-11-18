@@ -1,20 +1,21 @@
 = render 'tab'
-.tab-content
-  .bs-callout.bs-callout-default
-    %p.text-muted
-      = t('.notice')
-  .panel.panel-default
-    .panel-body
-      = form_for @public_account, url: set_default_reply_public_account_path(@public_account), method: :patch, html: {class: "form-horizontal"} do |f|
-        = render partial: "shared/form_error_messages", locals: {object: @public_account}
-        .form-group#reply_type
-          = label_tag t('.reply_type'), nil, class: "col-sm-3 control-label", for: "public_account_reply_type"
-          .col-sm-9
-            = f.select :reply_type, options_for_select(PublicAccount::ReplyType.invert, @public_account.reply_type.presence), {include_blank: false}, {:class => "form-control ajax_load", data: {remote: true, url: reply_content_public_account_path(@public_account)} }
-        #reply_content
-        .form-group
-          .col-sm-9.col-sm-push-3
-            = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-submit')
+
+.marginbottom20.bubble
+  %p.bg-muted.bg-awesome
+    = t('.notice')
+
+.panel.panel-default
+  .panel-body
+    = form_for @public_account, url: set_default_reply_public_account_path(@public_account), method: :patch, html: {class: "form-horizontal"} do |f|
+      = render partial: "shared/form_error_messages", locals: {object: @public_account}
+      .form-group#reply_type
+        = label_tag t('.reply_type'), nil, class: "col-sm-3 control-label", for: "public_account_reply_type"
+        .col-sm-9
+          = f.select :reply_type, options_for_select(PublicAccount::ReplyType.invert, @public_account.reply_type.presence), {include_blank: false}, {:class => "form-control ajax_load", data: {remote: true, url: reply_content_public_account_path(@public_account)} }
+      #reply_content
+      .form-group
+        .col-sm-9.col-sm-push-3
+          = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-submit')
 
 :javascript
   $("#public_account_reply_type").trigger('change');
