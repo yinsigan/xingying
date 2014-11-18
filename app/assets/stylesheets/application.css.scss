@@ -52,6 +52,10 @@
 .error-actions .btn {
   margin-right: 10px;
 }
+/*不要浮动，修改bootstrap的center-block*/
+.no-float {
+  float: none;
+}
 
 .form-control-feedback {
   position: absolute;
