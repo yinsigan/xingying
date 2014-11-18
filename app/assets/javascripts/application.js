@@ -36,3 +36,4 @@
 //= require cute-slider/cute.slider
 //= require cute-slider/cute.transitions.all
 //= require bootstro
+//= require jquery.webui-popover

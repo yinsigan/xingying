@@ -92,7 +92,7 @@ class RulesController < SettingsController
       params.require(:rule).permit(
         :public_account_id,
         :name,
-        kwords_attributes:[:content,
+        kwords_attributes:[:name,
                            :subjectable_id,
                            :public_account_id,
                            :subjectable_type,

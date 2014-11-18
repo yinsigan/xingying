@@ -43,7 +43,6 @@ $badge-color:                      $brand-primary;
 $badge-bg:                         #FFF;
 
 
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "nprogress";
@@ -52,11 +51,10 @@ $badge-bg:                         #FFF;
 @import "blueimp-gallery";
 @import "bootstrap-image-gallery";
 @import "ckeditor/config";
-@import "my_icon.css";
 @import "rotating-card";
 @import "slider-style.css";
 @import "bootstro";
-
+@import "jquery.webui-popover";
 
 .field_with_errors {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);

@@ -30,10 +30,6 @@
     %h3.panel-title= t('.develop_center')
 
   .panel-body
-    .row
-      .col-md-12
-        .bs-callout.bs-callout-default
-          %h4= t('.weixin_dev_title')
-          %p.text-muted= t('.weixin_dev_des')
-          %p
-            = link_to t('.weixin_dev_btn'), show_token_public_account_path(@public_account), class: "btn btn-default", remote: true
+    %p.text-muted= t('.weixin_dev_des')
+    %p
+      = link_to t('.weixin_dev_btn'), show_token_public_account_path(@public_account), class: "btn btn-primary", remote: true

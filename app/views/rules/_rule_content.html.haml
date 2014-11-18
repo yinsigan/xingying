@@ -3,7 +3,7 @@
     .col-sm-2
       = t('.kword')
     .col-sm-10
-      = rule.kwords.map { |kword| content_tag(:em, kword.content, class: "keywords_name") }.join.html_safe
+      = rule.kwords.map { |kword| content_tag(:em, kword.name, class: "keywords_name") }.join.html_safe
   .form-group
     .col-sm-2
       = t('.reply')

@@ -40,15 +40,12 @@
           %li{:class => (controller_name == 'public_accounts' ? 'active' : nil)}
             %a{:href => public_accounts_path}
               %i.fa.fa-weixin
-              %span
-              = t('.public_account_manage')
+                = t('.public_account_manage')
           %li
             %a{:href => "#"}
-              %i.fa.fa-male
-              %span
-                联系客服
+              %i.fa.fa-users
+                = t('.contact_us')
           %li
             %a{:href => "#"}
-              %i.fa.fa-graduation-cap
-              %span
-              帮助中心
+              %i.fa.fa-question
+                = t('.help')
