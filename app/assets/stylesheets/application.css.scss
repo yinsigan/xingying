@@ -32,7 +32,6 @@
 }
 
 /*显示表格*/
-
 .table-user-information > tbody > tr {
   border-top: 1px solid rgb(221, 221, 221);
 }
@@ -42,17 +41,7 @@
 .table-user-information > tbody > tr > td {
   border-top: 0;
 }
-/*bootstrap的有色text*/
 
-.bg-p {
-  padding: 15px;
-}
-
-/*不要浮动，修改bootstrap的center-block*/
-
-.no-float {
-  float: none;
-}
 .error-template {
   padding: 40px 15px;
   text-align: center;
@@ -64,27 +53,7 @@
 .error-actions .btn {
   margin-right: 10px;
 }
-.margintop30 {
-  margin-top: 30px;
-}
-.margintop20 {
-  margin-top: 20px;
-}
-.marginleft20 {
-  margin-left: 20px;
-}
-.marginright20 {
-  margin-right: 20px;
-}
-.marginright10 {
-  margin-right: 10px;
-}
-.marginbottom20 {
-  margin-bottom: 20px;
-}
-.marginbottom10 {
-  margin-bottom: 10px;
-}
+
 .form-control-feedback {
   position: absolute;
   top: 0;
