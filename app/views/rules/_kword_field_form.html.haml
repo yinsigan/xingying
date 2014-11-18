@@ -16,9 +16,9 @@
     = kword.hidden_field :_destroy, value: 0, id: "rule_kwords_attributes_#{kword.index}_#{rule_id}_destroy"
   -# 填写关键字
   .form-group
-    = kword.label :content, class: "col-sm-2 control-label required"
+    = kword.label :name, class: "col-sm-2 control-label required"
     .col-sm-8
-      = kword.text_field :content, class: "form-control", required: true
+      = kword.text_field :name, class: "form-control", required: true
   -# 选择类型
   .form-group
     = kword.label :subjectable_type, class: "col-sm-2 control-label"

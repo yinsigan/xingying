@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118083434) do
+ActiveRecord::Schema.define(version: 20141118084323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20141118083434) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "kwords", force: true do |t|
-    t.string   "content"
+    t.string   "name"
     t.boolean  "matched",           default: false
     t.integer  "public_account_id"
     t.datetime "created_at"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20141118083434) do
     t.text     "reply"
   end
 
-  add_index "kwords", ["content"], name: "index_kwords_on_content", using: :btree
+  add_index "kwords", ["name"], name: "index_kwords_on_name", using: :btree
   add_index "kwords", ["public_account_id"], name: "index_kwords_on_public_account_id", using: :btree
   add_index "kwords", ["rule_id"], name: "index_kwords_on_rule_id", using: :btree
   add_index "kwords", ["subjectable_id", "subjectable_type"], name: "index_kwords_on_subjectable_id_and_subjectable_type", using: :btree

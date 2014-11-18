@@ -10,9 +10,9 @@
 
   -# 新表单关键字内容
   .form-group
-    = label_tag "rule_kwords_attributes_#{kword_index}_content", t('activerecord.attributes.kword.content'), class: "col-sm-2 control-label required"
+    = label_tag "rule_kwords_attributes_#{kword_index}_name", t('activerecord.attributes.kword.name'), class: "col-sm-2 control-label required"
     .col-sm-8
-      = text_field_tag "rule[kwords_attributes][#{kword_index}][content]", nil, class: "form-control", required: true
+      = text_field_tag "rule[kwords_attributes][#{kword_index}][name]", nil, class: "form-control", required: true
   -# 新表单选择类型
   .form-group
     = label_tag "rule_kwords_attributes_#{kword_index}_subjectable_type", t('activerecord.attributes.kword.subjectable_type'), class: "col-sm-2 control-label"
