@@ -32,3 +32,6 @@
 //= require jquery.history
 //= require ckeditor/init
 //= require ckeditor/config
+//= require cute-slider/modernizr
+//= require cute-slider/cute.slider
+//= require cute-slider/cute.transitions.all
