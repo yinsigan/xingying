@@ -1,4 +1,24 @@
 zh-CN:
   public_accounts:
+    index:
+      delete_tip: "你真确定删除此公众账号吗?"
     delete:
       confirm: "确定删除此公众账号吗？"
+  menus:
+    delete:
+      top_menu: "确定删除此一级菜单吗？若删除此一级菜单会连同子菜单也一并删除哦!"
+      sub_menu: "确定删除此菜单吗？"
+  material:
+    delete:
+      confirm: "确定删除此单图文素材吗？"
+  thumbs:
+    delete:
+      confirm: "确定删除此图片吗？"
+    delete_all:
+      confirm: "确定删除选中的图片吗？"
+  thumb_groups:
+    delete:
+      confirm: "仅删除分组，不删除图片，组内图片将自动归入未分组"
+  rules:
+    delete:
+      confirm: "你确定删除此规则吗？"

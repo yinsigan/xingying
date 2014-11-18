@@ -35,9 +35,6 @@ zh-CN:
       add: "添加公众账号"
       list: "公众账号列表"
       no_content: "暂无公众账号"
-      delete_tip: "你真确定删除此公众账号吗?"
-    delete:
-      confirm: "确定删除此公众账号吗？"
     form:
       appid_tip: "请输入微信提供的appid"
       appsecret_tip: "请输入微信提供的appsecret"
@@ -94,9 +91,6 @@ zh-CN:
       add: "添加子菜单"
       set_action: "设置动作"
       rename: "修改菜单名"
-    delete:
-      top_menu: "确定删除此一级菜单吗？若删除此一级菜单会连同子菜单也一并删除哦!"
-      sub_menu: "确定删除此菜单吗？"
   material:
     tab:
       title: "素材管理"
@@ -114,8 +108,6 @@ zh-CN:
       title: "编辑单图文"
       thumb: "缩略图"
       preview_title: "标题"
-    delete:
-      confirm: "确定删除此单图文素材吗？"
     index:
       list: "单图文列表"
       sin_pic_text: "单图文"
@@ -143,10 +135,6 @@ zh-CN:
       no_group: "未分组"
       delete_group: "删除分组"
       rename_group: "重命名分组"
-    delete:
-      confirm: "确定删除此图片吗？"
-    delete_all:
-      confirm: "确定删除选中的图片吗？"
     thumb:
       move: "移动分组"
     move:
@@ -160,8 +148,6 @@ zh-CN:
     form:
       create_group: "创建分组"
       name_maximum: "最多只能填写6个字符"
-    delete:
-      confirm: "仅删除分组，不删除图片，组内图片将自动归入未分组"
   rules:
     index:
       notice: "关键字回复就是用户在聊天界面输入关键词，后台可以设置回复的消息。"
@@ -180,8 +166,6 @@ zh-CN:
     new:
       name_limit: "规则名最多60个字"
       new_kword: "添加关键字"
-    delete:
-      confirm: "你确定删除此规则吗？"
     edit:
       name_limit: "规则名最多60个字"
       new_kword: "添加关键字"
