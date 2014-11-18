@@ -11,9 +11,30 @@ pre {
 footer {
   margin-top: 200px;
 }
+.container, .jumbotron .container {
+  width: auto;
+  max-width: 1170px;
+}
+
+/* menu styes */
+.list-unstyled {
+  min-width: 120px;
+  ul {
+    min-width: 120px;
+  }
+}
+
+@media (min-width: 767px) {
+  .panel-group {
+    width: 400px;
+  }
+  .thumbnail {
+    margin: 0;
+  }
+}
+
 
 /*图片预览*/
-
 .imagePreview {
   img {
     margin-bottom: 10px;
@@ -24,7 +45,6 @@ footer {
 }
 
 /*标题加上分隔线*/
-
 .title-divider {
   margin-bottom: 20px;
   background: transparent url(/assets/title_divider.png) repeat-x 0 0;
@@ -39,271 +59,6 @@ footer {
   content: "*";
   color: #a94442;
 }
-
-/*单图文预览部分*/
-@mixin appmsg {
-  .appmsg_desc {
-    overflow: hidden;
-    padding: 5px 0 10px;
-    word-wrap: break-word;
-    max-height: 45px;
-    height: 45px;
-    word-break: break-all;
-  }
-
-  h4.appmsg_title {
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 28px;
-    max-height: 28px;
-    overflow: hidden;
-    word-wrap: break-word;
-    word-break: break-all;
-
-    a {
-      color: #8d8d8d;
-      display: block;
-    }
-  }
-  h4.appmsg_time {
-    @extend .appmsg_title;
-    font-size: 14px;
-    height: 28px;
-  }
-
-  .thumb {
-    height: 160px;
-    overflow: hidden;
-  }
-
-  .thumb .default {
-    display: block;
-    color: #c0c0c0;
-    text-align: center;
-    line-height: 160px;
-    height: 160px;
-    font-weight: 400;
-    font-style: normal;
-    background-color: whitesmoke;
-    font-size: 16px;
-  }
-  .desc {
-    padding: 5px 0 10px;
-    word-wrap: break-word;
-    word-break: break-all;
-  }
-}
-
-/*图文列表*/
-@mixin pic_text_list {
-  border: 1px solid #e7e7eb;
-  padding-left: 0;
-  padding-right: 0;
-  margin-top: 10px;
-  border-right: none;
-  .appmsg_opr {
-    background-color: #f4f4f4;
-    border-top: 1px solid #e7e7eb;
-    ul {
-      margin-bottom: 0;
-      overflow: hidden;
-      padding-left: 0;
-      list-style-type: none;
-      li {
-        float: left;
-        line-height: 44px;
-        height: 44px;
-        width: 50%;
-        a {
-          display: block;
-          text-align: center;
-          text-decoration: none;
-          color: #b2b2b2;
-        }
-        a.add_right_border {
-          border-right: 1px solid #e7e7eb;
-        }
-      }
-    }
-  }
-  .sin_box_content {
-    overflow: hidden;
-    background-color: #fff;
-    color: #8d8d8d;
-    padding-left: 15px;
-    padding-right: 15px;
-
-    @include appmsg;
-  }
-}
-@mixin selected {
-  &.selected {
-    position: relative;
-    .selected_mask {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0; 
-      .selected_mask_inner {
-        width: 100%;
-        height: 100%;
-        -moz-opacity: .6;
-        -khtml-opacity: .6;
-        opacity: .6;
-        background-color: #000;
-        filter: alpha(opacity=60); 
-      }
-      .selected_mask_icon {
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: transparent url(/assets/select_right.png) no-repeat 0 0;
-        width: 100%;
-        height: 100%;
-        vertical-align: middle;
-        display: inline-block;
-        background-position: 50% 50%; 
-      }
-    }
-  }
-}
-/*显示单图文列表*/
-.col-md-4.sin_box {
-  @include pic_text_list;
-  @include selected;
-}
-.col-sm-6.sin_box {
-  @include pic_text_list;
-  @include selected;
-}
-
-/*图片样式*/
-@mixin thumb {
-  border: 1px solid #e7e7eb;
-  padding-left: 0;
-  padding-right: 0;
-  margin-top: 10px;
-  border-right: none;
-
-  .msg_card_ft {
-    background-color: #f4f5f9;
-    border-top: 1px solid #e7e7eb;
-    height: 30px;
-
-    .msg_card_opr_list {
-      list-style-type: none;
-      height: 30px;
-      line-height: 30px;
-      padding-left: 0;
-      .msg_card_opr_item {
-        text-align: center;
-        width: 33.33%;
-        float: left;
-        a {
-          color: #b2b2b2;
-        }
-      }
-    }
-  }
-
-  .sin_box_content {
-    overflow: hidden;
-    background-color: #fff;
-    color: #8d8d8d;
-    padding-left: 15px;
-    padding-right: 15px;
-
-    .pic_card {
-      margin: 10px 0;
-    }
-
-    .media_img {
-      display: block;
-      height: 148px;
-      overflow: hidden;
-      img {
-        width: 100%;
-        height: 100%;
-        max-width: 100%;
-        display: block;
-      }
-    }
-
-    .pic_name {
-      width: auto;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      word-wrap: normal;
-      font-weight: 400;
-      font-style: normal;
-      color: #222;
-    }
-  }
-}
-
-.col-md-3.sin_box {
-  @include thumb;
-  @include selected;
-}
-.col-sm-4.sin_box {
-  @include thumb;
-  @include selected;
-}
-/*单图文编辑框预览部分*/
-.edit_sin_box {
-  overflow: hidden;
-  border: 1px solid #e7e7eb;
-  background-color: #fff;
-  color: #8d8d8d;
-
-  @include appmsg;
-}
-
-//单图文编辑框部分
-.edit_sin_pic_text {
-  padding-left: 12px;
-  position: relative;
-
-  .inner {
-    padding: 20px;
-    border: 1px solid #e7e7eb;
-  }
-  .arrow_out {
-    display: inline-block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-width: 12px;
-    border-style: dashed;
-    border-color: transparent;
-    border-left-width: 0;
-    border-right-color: #e7e7eb;
-    border-right-style: solid;
-    top: 44px;
-    left: 3px;
-  }
-  .arrow_in {
-    display: inline-block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-width: 12px;
-    border-style: dashed;
-    border-color: transparent;
-    border-left-width: 0;
-    border-right-color: #f4f5f9;
-    border-right-style: solid;
-    top: 44px;
-    left: 4px;
-  }
-}
-
-/*图文列表显示*/
-
-
 
 /*垂直表单的格式*/
 .padding-content:after {
@@ -338,107 +93,6 @@ footer {
 }
 
 
-
-/* Tabs panel */
-
-.tabbable-panel {
-  padding: 10px;
-  padding-left: 0;
-}
-
-/* Default mode */
-
-.tabbable-line > {
-  .nav-tabs {
-    border: none;
-    margin: 0px;
-    > li {
-      margin-right: 2px;
-      > a {
-        border: 0;
-        margin-right: 0;
-        color: #737373;
-        > i {
-          color: #a6a6a6;
-        }
-      }
-      &.active > a {
-        border: none;
-        &:hover {
-          border: none;
-        }
-      }
-      &.open, &:hover {
-        border-bottom: 4px solid #fbcdcf;
-      }
-      &.open > a, &:hover > a {
-        border: 0;
-        background: none !important;
-        color: #333333;
-      }
-      &.open > a > i, &:hover > a > i {
-        color: #a6a6a6;
-      }
-      &.open .dropdown-menu, &:hover .dropdown-menu {
-        margin-top: 0px;
-      }
-      &.active {
-        border-bottom: 4px solid #f3565d;
-        position: relative;
-        > a {
-          border: 0;
-          color: #333333;
-          > i {
-            color: #404040;
-          }
-        }
-      }
-    }
-  }
-  .tab-content {
-    margin-top: -3px;
-    background-color: #fff;
-    border: 0;
-    border-top: 1px solid #eee;
-    padding: 15px 0;
-  }
-}
-
-.portlet .tabbable-line > .tab-content {
-  padding-bottom: 0;
-}
-
-/* Below tabs mode */
-
-.tabbable-line.tabs-below > {
-  .nav-tabs > li {
-    border-top: 4px solid transparent;
-    > a {
-      margin-top: 0;
-    }
-    &:hover {
-      border-bottom: 0;
-      border-top: 4px solid #fbcdcf;
-    }
-    &.active {
-      margin-bottom: -2px;
-      border-bottom: 0;
-      border-top: 4px solid #f3565d;
-    }
-  }
-  .tab-content {
-    margin-top: -10px;
-    border-top: 0;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 15px;
-  }
-}
-
-/*选中单图文之后*/
-.sin_box.offer-success {
-  border: 1px solid #5cb85c;
-}
-
 /*关键词样式*/
 .keywords_name {
   display: inline-block;
@@ -459,27 +113,8 @@ footer {
   line-height: 34px;
 }
 
-/*单图文边框*/
-.pic_text_content {
-  &>div:nth-child(3n) {
-    border-right: 1px solid #e7e7eb;
-  }
-  &>div:last-child {
-    border-right: 1px solid #e7e7eb;
-  }
-}
-/*图片边框*/
-.pic_content {
-  &>div:nth-child(4n) {
-    border-right: 1px solid #e7e7eb;
-  }
-  &>div:last-child {
-    border-right: 1px solid #e7e7eb;
-  }
-}
 
 /*菜单栏*/
-
 .iphone-menu {
   background: url("/assets/iphone.png") no-repeat;
   width: 344px;
