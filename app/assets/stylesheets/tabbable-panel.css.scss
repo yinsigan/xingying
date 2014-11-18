@@ -25,7 +25,7 @@
         }
       }
       &.open, &:hover {
-        border-bottom: 4px solid #fbcdcf;
+        border-bottom: 4px solid #9FEAF8;
       }
       &.open > a, &:hover > a {
         border: 0;
@@ -39,7 +39,7 @@
         margin-top: 0px;
       }
       &.active {
-        border-bottom: 4px solid #f3565d;
+        border-bottom: 4px solid #2fa4e7;
         position: relative;
         > a {
           border: 0;
