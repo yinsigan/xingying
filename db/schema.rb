@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118081713) do
+ActiveRecord::Schema.define(version: 20141118083434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20141118081713) do
   end
 
   add_index "menus", ["public_account_id"], name: "index_menus_on_public_account_id", using: :btree
+  add_index "menus", ["rgt"], name: "index_menus_on_rgt", using: :btree
 
   create_table "public_accounts", force: true do |t|
     t.string   "name"
