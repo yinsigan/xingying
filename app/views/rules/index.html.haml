@@ -1,32 +1,33 @@
 = render 'autoreply/tab'
-.tab-content
-  .bs-callout.bs-callout-default
-    %p.text-muted
-      = t('.notice')
-  -# 创建新规则的按钮
-  .row
-    .col-md-12.clearfix
-      %span.pull-right
-        %button{type: "button", class: "btn btn-primary", id: "new_btn"}
-          %span.glyphicon.glyphicon-plus
-          = t('.new')
-  -# 新规则的内容
-  .row
-    .col-md-12.margintop20#new_rule{style: "display: none;"}
-      .panel.panel-default
-        .panel-heading
-          %h3.panel-title.clearfix
-            %span.glyphicon.glyphicon-edit
-            %strong
-              = t('.new_rule')
 
-        -# 新规则的表单内容
-        = render "new"
+.marginbottom20.bubble.bubble-rules
+  %p.bg-muted.bg-awesome
+    = t('.notice')
 
-  = render "search_form"
+-# 创建新规则的按钮
+.row
+  .col-md-12.clearfix
+    %span.pull-right
+      %button{type: "button", class: "btn btn-primary", id: "new_btn"}
+        %span.glyphicon.glyphicon-plus
+        = t('.new')
+-# 新规则的内容
+.row
+  .col-md-12.margintop20#new_rule{style: "display: none;"}
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title.clearfix
+          %span.glyphicon.glyphicon-edit
+          %strong
+            = t('.new_rule')
 
-  #rule_content
-    = render 'search_index'
+      -# 新规则的表单内容
+      = render "new"
+
+= render "search_form"
+
+#rule_content
+  = render 'search_index'
 
 :javascript
   $(document).ready(function() {

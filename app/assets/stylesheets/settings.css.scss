@@ -121,7 +121,6 @@ footer {
   height: 623px;
 }
 
-
 .panel-group.menu {
   width: 100%;
   .panel-heading.area {
@@ -154,4 +153,13 @@ footer {
       border-bottom: 1px solid #ddd;
     }
   }
+}
+
+/*默认回复的提示框样式*/
+.bubble-default-autoreply:before {
+  left: 21%;
+}
+/*规则提示框样式*/
+.bubble-rules:before {
+  left: 36%;
 }
