@@ -22,3 +22,6 @@ zh-CN:
   rules:
     delete:
       confirm: "你确定删除此规则吗？"
+  sin_materials:
+    delete:
+      confirm: "确定删除此单图文吗？"
