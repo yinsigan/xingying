@@ -35,3 +35,4 @@
 //= require cute-slider/modernizr
 //= require cute-slider/cute.slider
 //= require cute-slider/cute.transitions.all
+//= require jquery.webui-popover
