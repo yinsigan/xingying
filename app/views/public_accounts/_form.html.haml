@@ -1,7 +1,7 @@
 %div
-  %a.pull-right
+  %a.pull-right.need-help
     %i.fa.fa-question
-    使用帮助
+    = t('need-help')
 = form_for @public_account, html: {class: "form-horizontal"} do |f|
   = render partial: "shared/form_error_messages", locals: {object: @public_account}
   .form-group
@@ -30,3 +30,36 @@
   .form-group
     .col-sm-6.col-sm-push-3
       = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-save')
+
+
+:javascript
+  $(function(){
+    var tour = new Tour(
+        {
+          steps: [ {
+            element: "#public_account_name",
+            title: "Title of my step",
+            content: "Content of my step",
+            placement: "left",
+            backdrop: true
+          },
+          {
+            element: ".bootstrap-filestyle",
+            title: "Title of my step",
+            content: "Content of my step",
+            placement: "left",
+            backdrop: true
+          }]
+        }
+      );
+
+      // Initialize the tour
+      tour.init();
+
+      // Start the tour
+      //tour.start();
+
+    $(".need-help").click(function(){
+      tour.restart();
+    });
+  });

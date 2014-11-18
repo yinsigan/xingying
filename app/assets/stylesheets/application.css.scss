@@ -54,7 +54,9 @@ $badge-bg:                         #FFF;
 @import "ckeditor/config";
 @import "my_icon.css";
 @import "rotating-card";
+@import "bootstrap-tour";
 @import "slider-style.css";
+
 
 .field_with_errors {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
