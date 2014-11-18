@@ -32,9 +32,17 @@ $navbar-default-brand-color:                    $navbar-default-link-color;
 $navbar-default-brand-hover-color:       $navbar-default-link-color;
 $navbar-default-brand-hover-bg:            transparent;
 
-$btn-primary-bg:                                            #2FA4E7;
-$btn-success-bg:                                            #73A839;
-$btn-danger-bg:                                             #C71C22;
+/* 全局色 */
+$brand-primary:         #2FA4E7;
+$brand-success:         #73A839;
+$brand-danger:          #C71C22;
+$brand-danger:          #C71C22;
+$btn-default-bg:         #FFF;
+
+$badge-color:                 $brand-primary;
+$badge-bg:                      #FFF;
+
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -90,18 +98,3 @@ $btn-danger-bg:                                             #C71C22;
   line-height: 34px;
   text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
