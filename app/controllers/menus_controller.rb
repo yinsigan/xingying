@@ -15,8 +15,8 @@ class MenusController < SettingsController
 
   def new
     @parent_menu = params[:parent_menu].presence
-    @new_title = params[:parent_menu].present? ? I18n.t("menus.index.new_sub_menu") : I18n.t("menus.index.new_top_menu")
-    @name_maximum = params[:parent_menu].present? ? I18n.t("menus.form.sub_menu_name_maximum") : I18n.t("menus.form.top_menu_name_maximum")
+    @title = @parent_menu.present? ? I18n.t("menus.index.new_sub_menu") : I18n.t("menus.index.new_top_menu")
+    @name_maximum = @parent_menu.present? ? I18n.t("menus.form.sub_menu_name_maximum") : I18n.t("menus.form.top_menu_name_maximum")
     @menu = @public_account.menus.build
     render "new.js.erb", layout: false
   end
@@ -37,8 +37,9 @@ class MenusController < SettingsController
 
   def edit
     @parent_menu = params[:parent_menu].presence
+    @title = I18n.t('menus.menu.rename')
     @name_maximum = params[:top_menu].present? ? I18n.t("menus.form.top_menu_name_maximum") : I18n.t("menus.form.sub_menu_name_maximum")
-    render "edit.js.erb", layout: false, name_maximum: @name_maximum
+    render "edit.js.erb", layout: false
   end
 
   def destroy
@@ -52,19 +53,18 @@ class MenusController < SettingsController
   end
 
   def send_message
-    @menu_id = params[:id].presence
-    @menu = @public_account.menus.find(@menu_id)
+    @menu = @public_account.menus.find(params[:id])
     render "send_message.js.erb", layout: false
   end
 
   def redirect_url
-    @menu_id = params[:id].presence
-    @menu = @public_account.menus.find(@menu_id)
+    @menu = @public_account.menus.find(params[:id])
     render "redirect_url.js.erb", layout: false
   end
 
   def set_action
     @menu_id = params[:id].presence
+    @menu = @public_account.menus.find(@menu_id)
     render "set_action.js.erb", layout: false
   end
 
