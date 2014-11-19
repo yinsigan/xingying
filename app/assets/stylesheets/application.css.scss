@@ -58,7 +58,7 @@ $badge-bg:                         #FFF;
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
 }
 
-/*显示表格*/
+/*公众账号显示表格*/
 .table-user-information > tbody > tr {
   border-top: 1px solid rgb(221, 221, 221);
 }
@@ -69,6 +69,7 @@ $badge-bg:                         #FFF;
   border-top: 0;
 }
 
+/*404页面*/
 .error-template {
   padding: 40px 15px;
   text-align: center;
@@ -80,11 +81,13 @@ $badge-bg:                         #FFF;
 .error-actions .btn {
   margin-right: 10px;
 }
+
 /*不要浮动，修改bootstrap的center-block*/
 .no-float {
   float: none;
 }
 
+/*表单验证*/
 .form-control-feedback {
   position: absolute;
   top: 0;
@@ -97,6 +100,7 @@ $badge-bg:                         #FFF;
   text-align: center;
 }
 
+/*解决下拉菜单和按钮的显示问题*/
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   z-index: 900;
@@ -108,6 +112,12 @@ $badge-bg:                         #FFF;
   border-color: transparent;
 }
 
+/*处理高亮问题*/
 .bootstro-backdrop{
   z-index: 2;
+}
+
+/*让modal框下移一些*/
+.modal {
+  top: 20px;
 }
