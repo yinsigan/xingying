@@ -37,6 +37,12 @@ zh-CN:
         title: "添加微信公众帐号"
         content: "你还未添加任何微信公众帐号, 请先点击左边的按钮添加一个微信公众帐号 "
         placement: "right"
+    public_account:
+      manage:
+        step: 0
+        title: "管理微信公众帐号"
+        content: "点击左边图片管理对应的微信公众帐号"
+        placement: "right"
   sin_materials:
     index:
       sin_pic:

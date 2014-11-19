@@ -7,15 +7,6 @@
   .bs-callout.bs-callout-default
     %h4= t('.no_content')
 
-  :javascript
-    $(document).ready(function(){
-      bootstro.start(".boot-tour", {
-        prevButtonText: "#{t('prevStep')}",
-        nextButtonText: "#{t('nextStep')}",
-        finishButtonText: "#{t('finish')}"
-      });
-    });
-
 - else
   %h3.title-divider
     %span
@@ -33,3 +24,12 @@
         %th{colspan: 3}= t('operation')
 
       = render @public_accounts
+
+:javascript
+  $(document).ready(function(){
+    bootstro.start(".boot-tour", {
+      prevButtonText: "#{t('prevStep')}",
+      nextButtonText: "#{t('nextStep')}",
+      finishButtonText: "#{t('finish')}"
+    });
+  });
