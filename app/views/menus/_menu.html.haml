@@ -42,20 +42,9 @@
                       %i.fa.fa-pencil
                     %ul.dropdown-menu{"aria-labelledby" => "sub_menu_dropdown_#{sub_menu.id}", :role => "menu"}
                       %li
-                        %a{"data-placement" => "left", "id" => "set_action_sub_menu_#{sub_menu.id}"}
+                        = link_to set_action_public_account_menu_path(@public_account, sub_menu), remote: true do
                           %i.fa.fa-bars
                           = t('.set_action')
-                        .row{style: "display: none;", id: "sub_menu_item_#{sub_menu.id}"}
-                          %p.text-muted.text-center.marginbottom20= t('.please_choose')
-
-                          .thumb_item.col-md-6
-                            = link_to send_message_public_account_menu_path(@public_account, sub_menu), remote: true do
-                              %i.fa.fa-envelope-o.fa-2x.fa-item
-                            %p.margintop10= t('.send_message')
-                          .thumb_item.col-md-6
-                            = link_to redirect_url_public_account_menu_path(@public_account, sub_menu), remote: true do
-                              %i.fa.fa-external-link.fa-2x.fa-item
-                            %p.margintop10= t('.redirect_url')
                       %li.divider{:role => "presentation"}
                       %li
                         = link_to edit_public_account_menu_path(@public_account, sub_menu), remote: true do
