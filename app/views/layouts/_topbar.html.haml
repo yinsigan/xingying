@@ -27,14 +27,19 @@
                   %span.glyphicon.glyphicon-cog.pull-right
               %li.divider
               %li
-                %a{:href => destroy_user_session_path, "data-method" => :delete, rel: "nofollow"}
+                = link_to destroy_user_session_path, "data-method" => :delete do
                   = t('logout')
                   %span.glyphicon.glyphicon-log-out.pull-right
         - else
           %li
-            = link_to(t('signup'), new_user_registration_path)
+            = link_to new_user_registration_path do
+              %span.glyphicon.glyphicon-registration-mark
+              = t('signup')
           %li
-            = link_to(t('login'), new_session_path(:user))
+            = link_to new_session_path(:user) do
+              %span.glyphicon.glyphicon-log-in
+              = t('login')
+
       - if user_signed_in?
         %ul.nav.navbar-nav
           %li{:class => (controller_name == 'public_accounts' ? 'active' : nil)}

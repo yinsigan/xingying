@@ -4,7 +4,7 @@
       = t('need-help')
 = form_for @public_account, html: {class: "form-horizontal"} do |f|
   = render partial: "shared/form_error_messages", locals: {object: @public_account}
-  .form-group.boot-tour{"data-bootstro-title" => t('public_account.form.name.title'), "data-bootstro-content" => t('public_account.form.name.content'), "data-bootstro-placement" => "left" , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('public_account.form.name.step')}
+  .form-group.boot-tour{"data-bootstro-title" => t('.name.title'), "data-bootstro-content" => t('.name.content'), "data-bootstro-placement" => t('.name.placement')  , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.name.step')}
     = f.label :name, class: "col-sm-3 control-label required"
     .col-sm-6
       = f.text_field :name, class: "form-control", required: true, autofocus: true
@@ -12,11 +12,11 @@
     = f.label :tp, class: "col-sm-3 control-label required"
     .col-sm-6
       = f.select :tp, options_for_select(PublicAccount::TP.invert, @public_account.tp.presence), {include_blank: t('please_select')}, {:class => "form-control", required: true}
-  .form-group.boot-tour{"data-bootstro-title" => t('public_account.form.appid.title'), "data-bootstro-content" => t('public_account.form.appid.content'), "data-bootstro-placement" => "left" , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('public_account.form.appid.step')}
+  .form-group.boot-tour{"data-bootstro-title" => t('.appid.title'), "data-bootstro-content" => t('.appid.content'), "data-bootstro-placement" => t('.appid.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.appid.step')}
     = f.label :appid, class: "col-sm-3 control-label"
     .col-sm-6
       = f.text_field :appid, class: "form-control", autofocus: true, placeholder: t('.appid_tip')
-  .form-group.boot-tour{"data-bootstro-title" => t('public_account.form.appsecret.title'), "data-bootstro-content" => t('public_account.form.appsecret.content'), "data-bootstro-placement" => "left" , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('public_account.form.appsecret.step')}
+  .form-group.boot-tour{"data-bootstro-title" => t('.appsecret.title'), "data-bootstro-content" => t('.appsecret.content'), "data-bootstro-placement" => t('.appsecret.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.appsecret.step')}
     = f.label :appsecret, class: "col-sm-3 control-label"
     .col-sm-6
       = f.text_field :appsecret, class: "form-control", autofocus: true, placeholder: t('.appsecret_tip')
@@ -27,18 +27,18 @@
         - unless @public_account.new_record?
           = image_tag @public_account.image_url(:thumb).to_s
       = f.file_field :image, class: "form-control", onchange: "previewImage(this, [256], 4);", :class => "filestyle", "data-buttonText" => t('choose_picture'), "data-buttonBefore" => true, "data-input" => false, required: (@public_account.new_record? ? true : false)
-  .form-group.boot-tour{"data-bootstro-title" => t('public_account.form.save.title'), "data-bootstro-content" => t('public_account.form.save.content'), "data-bootstro-placement" => "left" , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('public_account.form.save.step')}
+  .form-group.boot-tour{"data-bootstro-title" => t('.save.title'), "data-bootstro-content" => t('.save.content'), "data-bootstro-placement" => t('.save.placement'), "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.save.step')}
     .col-sm-6.col-sm-push-3
       = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-save')
 
 
 :javascript
-
-  $("#need-help").on('click', function(){
-    bootstro.start(".boot-tour", {
-      placement: "left",
-      prevButtonText: "#{I18n.t("prevStep")}",
-      nextButtonText: "#{I18n.t("nextStep")}",
-      finishButtonText: "#{I18n.t("finish")}"
+  $(document).ready(function(){
+    $("#need-help").on('click', function(){
+      bootstro.start(".boot-tour", {
+        prevButtonText: "#{t('prevStep')}",
+        nextButtonText: "#{t('nextStep')}",
+        finishButtonText: "#{t('finish')}"
+      });
     });
   });

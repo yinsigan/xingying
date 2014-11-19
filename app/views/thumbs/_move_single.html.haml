@@ -19,22 +19,24 @@
     = t('close')
 
 :javascript
-  $("#move_group").on("ajax:before", function(event) {
-    var el = $(this);
-    el.attr('data-params', $(":radio").serialize());
-    $("body").spin();
-  })
-  $("#move_group").on("ajax:complete", function() {
-    var el = $(this);
-    var modal = $("#modal");
-    $("body").spin(false);
-  })
-  $("#move_group").on("ajax:success", function() {
-    Turbolinks.visit();
-  });
-  $("#move_group").on('click', function() {
-    var modal = $("#modal");
-    modal.delay(2000).modal('hide');
-  });
+  $(document).ready(function(){
+    $("#move_group").on("ajax:before", function(event) {
+      var el = $(this);
+      el.attr('data-params', $(":radio").serialize());
+      $("body").spin();
+    })
+    $("#move_group").on("ajax:complete", function() {
+      var el = $(this);
+      var modal = $("#modal");
+      $("body").spin(false);
+    })
+    $("#move_group").on("ajax:success", function() {
+      Turbolinks.visit();
+    });
+    $("#move_group").on('click', function() {
+      var modal = $("#modal");
+      modal.delay(2000).modal('hide');
+    });
 
-  my_icheck('.me');
+    my_icheck('.me');
+  });

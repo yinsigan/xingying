@@ -2,9 +2,9 @@
 .row
   .col-md-12.text-right
     .btn-group
-      = link_to new_public_account_sin_material_path(@public_account), class: "btn btn-default" do
+      = link_to new_public_account_sin_material_path(@public_account), class: "btn btn-default",id: "sin_pic", "data-bootstro-title" => t('.sin_pic.title'), "data-bootstro-content" => t('.sin_pic.content'), "data-bootstro-placement" => "left" , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.sin_pic.step') do
         = t('.add_sin_pic_text')
-      = link_to multi_pic_text_public_account_path(@public_account), class: "btn btn-default" do
+      = link_to multi_pic_text_public_account_path(@public_account), class: "btn btn-default" , id: "multi_pic", "data-bootstro-title" => t('.multi_pic.title'), "data-bootstro-content" => t('.multi_pic.content'), "data-bootstro-placement" => t('.multi_pic.placement')  , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.multi_pic.step') do
         = t('.add_multi_pic_text')
 - if @sin_materials.empty?
   .bs-callout.bs-callout-default
@@ -32,3 +32,21 @@
       .row
         .col-md-12.text-right
           = paginate @sin_materials
+
+
+:javascript
+  $(document).ready(function(){
+
+    bootstro.start("#sin_pic", {
+      prevButtonText: "#{t('prevStep')}",
+      nextButtonText: "#{t('nextStep')}",
+      finishButtonText: "#{t('finish')}"
+    });
+    /*
+    bootstro.start("#multi_pic", {
+      prevButtonText: "#{t('prevStep')}",
+      nextButtonText: "#{t('nextStep')}",
+      finishButtonText: "#{t('finish')}"
+    });
+    */
+  });

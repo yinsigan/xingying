@@ -10,7 +10,7 @@
         = render "shared/progress"
 
 :javascript
-
-  filestyle();
-
-  picture_upload("#picture_upload_form");
+  $(document).ready(function(){
+    filestyle();
+    picture_upload("#picture_upload_form");
+  });
