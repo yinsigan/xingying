@@ -48,6 +48,9 @@
 .margintop30 {
   margin-top: 30px;
 }
+.margintop10 {
+  margin-top: 10px;
+}
 .margintop20 {
   margin-top: 20px;
 }
@@ -97,4 +100,8 @@
   -o-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.fa-2x {
+  font-size: 2em;
 }

@@ -32,6 +32,9 @@ Rails.application.routes.draw do
     # 自定义菜单
     resources :menus, except: [:show] do
       get :delete, on: :member
+      get :send_message, on: :member
+      get :redirect_url, on: :member
+      get :set_action, on: :member
     end
     resources :sin_materials, except: [:show] do
       get :delete, on: :member

@@ -1,0 +1,17 @@
+.col-md-5.center-block.no-float
+  .panel.panel-default
+    .panel-heading
+      .panel-title= t('reset_password')
+    .panel-body{:style => "padding-top:30px"}
+      #login-alert.alert.alert-danger.col-sm-12{:style => "display:none"}
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, id: "loginform", class: "form-horizontal", role: "form" }) do |f|
+        = devise_error_messages!
+        %p.text-muted= t('password_new_tip')
+        .input-group{:style => "margin-bottom: 25px"}
+          %span.input-group-addon
+            %i.glyphicon.glyphicon-user
+          = f.email_field :email, autofocus: true, id: "login-username", class: "form-control", placeholder: "#{t('email')}"
+        .form-group{:style => "margin-top:10px"}
+          .col-sm-12.controls
+            = f.submit "#{t('sumbit')}", id: "btn-login", class: "btn btn-primary", "data-disable-with" => "#{t('disable-with-submit')}"
+

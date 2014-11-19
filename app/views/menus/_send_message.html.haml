@@ -1,0 +1,16 @@
+.modal-header
+  %button.close{"data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} &times;
+    %span.sr-only Close
+  %h4#mymodal.modal-title= t('.title')
+= form_for [@public_account, @menu], html: {class: "form-horizontal"}, remote: true do |f|
+  .modal-body
+    .form-group
+      = f.label :url, class: "col-sm-3 control-label required"
+      .col-sm-9
+        = f.text_field :url, class: "form-control", required: true, autofocus: true
+      = f.hidden_field :tp, value: "view"
+  .modal-footer
+    = f.submit t('save'), class: "btn btn-primary"
+    %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
+      = t('close')

@@ -92,6 +92,14 @@ zh-CN:
       add: "添加子菜单"
       set_action: "设置动作"
       rename: "修改菜单名"
+    set_action:
+      choose_action: "选择动作"
+      please_choose: "请选择订阅者点击菜单后，公众号做出的相应动作"
+      send_message: "发送信息"
+      redirect_url: "跳转到网页"
+    redirect_url:
+      title: "填写订阅者点击菜单之后跳转的链接"
+      url_help_block: "订阅者点击该子菜单会跳到以上链接"
   material:
     tab:
       title: "素材管理"
