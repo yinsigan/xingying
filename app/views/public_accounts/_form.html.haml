@@ -8,7 +8,7 @@
     = f.label :name, class: "col-sm-3 control-label required"
     .col-sm-6
       = f.text_field :name, class: "form-control", required: true, autofocus: true
-  .form-group
+  .form-group.boot-tour{"data-bootstro-title" => t('.type.title'), "data-bootstro-content" => t('.type.content'), "data-bootstro-placement" => t('.type.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.type.step')}
     = f.label :tp, class: "col-sm-3 control-label required"
     .col-sm-6
       = f.select :tp, options_for_select(PublicAccount::TP.invert, @public_account.tp.presence), {include_blank: t('please_select')}, {:class => "form-control", required: true}
@@ -20,7 +20,7 @@
     = f.label :appsecret, class: "col-sm-3 control-label"
     .col-sm-6
       = f.text_field :appsecret, class: "form-control", autofocus: true, placeholder: t('.appsecret_tip')
-  .form-group
+  .form-group.boot-tour{"data-bootstro-title" => t('.image.title'), "data-bootstro-content" => t('.image.content'), "data-bootstro-placement" => t('.image.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.image.step')}
     = f.label :image, class: "col-sm-3 control-label required"
     .col-sm-6
       .imagePreview

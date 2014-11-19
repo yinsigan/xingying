@@ -3,21 +3,31 @@ zh-CN:
     form:
       name:
         step: 0
-        title: "名称"
+        title: "公众帐号名称"
         content: "请填写微信公众帐号的名称"
         placement: "left"
-      appid:
+      type:
         step: 1
+        title: "公众账号类型"
+        content: "请填写你的微信公众帐号名称"
+        placement: "left"
+      appid:
+        step: 2
         title: "AppID"
         content: "如果您的公众帐号是已认证的订阅号或服务号, 请填写您的AppID以确保可以使用更多的功能"
         placement: "left"
       appsecret:
-        step: 2
+        step: 3
         title: "AppSecret"
         content: "如果您的公众帐号是已认证的订阅号或服务号, 请填写您的AppSecret以确保可以使用更多的功能"
         placement: "left"
+      image:
+        step: 4
+        title: "微信公众二维码"
+        content: "请上传您的微信公众帐号对应的二维码"
+        placement: "left"
       save:
-        step: 3
+        step: 5
         title: "保存"
         content: "点击保存提交微信公众帐号信息"
         placement: "left"
