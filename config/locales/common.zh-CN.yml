@@ -35,6 +35,9 @@ zh-CN:
   password_new_tip: '请输入您的账户注册邮箱，我们会发送密码重置邮件到您的邮箱'
   reset_password: "重置密码"
   hit_email: "请输入邮箱名"
+  hit_current_password: "请输入当前密码"
+  hit_new_password: "请输入新密码"
+  hit_new_password_confirmation: "请输入确认新密码"
   hit_password: "请输入密码"
   hit_password_confirmation: "请输入确认密码"
   required_note: "标志为<span class='text-danger'>*</span>的必须填写哦"
@@ -66,4 +69,4 @@ zh-CN:
   prevStep: "上一步"
   nextStep: "下一步"
   finish: "完成"
-
+  weixin_dev_title: "微信开发者中心"
