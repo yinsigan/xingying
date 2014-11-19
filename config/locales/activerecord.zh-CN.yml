@@ -6,6 +6,14 @@ zh-CN:
         password: "密码"
         password_confirmation: "确认密码"
         current_password: "原密码"
+        reset_password_sent_at: "重置密码时间"
+        remember_created_at: "记住我的时间"
+        sign_in_count: "登录次数"
+        current_sign_in_at: "当前登录时间"
+        last_sign_in_at: "最后一次登录时间"
+        current_sign_in_ip: "当前 登录IP"
+        last_sign_in_ip: "最后一次登录IP"
+        public_accounts: "公众帐号"
       public_account:
         name: "微信公众账号名称"
         tp: "公众账号类型"
@@ -21,35 +29,87 @@ zh-CN:
         appid: "AppID:"
         appsecret: "AppSecret:"
         user: "用户名"
-        created_at: "创建时间"
-        updated_at: "更新时间"
+        pic_text_count: "图文数量"
+        thumbs_count: "图片数量"
+        sin_materials: "单图文"
+        thumbs: "图片"
+        sin_pic_texts: "单图文"
+        multi_materials: "多图文"
+        rules: "规则名"
+        thumb_groups: "图片分组"
+        kwords: "关键字"
+        menus: "自定义菜单"
+
       sin_pic_text:
         title: "标题"
         desc: "摘要"
         body: "正文"
         thumb: "封面"
+        sin_material: "单图文"
+        multi_material: "多图文"
+        pic_url: "图片链接"
         click_response: "点击后响应"
         article_address: "链接"
+
+      thumb:
+        file_size: "文件大小"
+        file_name: "文件名字"
+        thumb_group: "图片分组"
+        thumb_material: "图片素材"
+        sin_pic_text: "单图文"
+        image: "图片"
+        public_account: "公众帐号"
+        content_type: "内容类型"
+
       thumb_group:
         name: "名称"
-      rule:
-        name: "规则名"
+        public_account: "公众帐号"
+        thumbs: "图片"
+
       kword:
         name: "关键字"
         subjectable_id: "回复"
         subjectable_type: "回复类型"
         reply: "回复文字的内容"
         sin_material: "单图文"
+        matched: "是否匹配"
+        public_account: "公众帐号"
+        rule: "规则"
+        subjectable: "素材类型"
+
       kwords:
         reply: "回复文字的内容"
         name: "关键字"
         subjectable_id: "回复"
         subjectable_type: "回复类型"
+
+      material:
+        type: "素材类型"
+        public_account: "公众帐号"
+        sin_pic_texts_count: "单图文数量"
+        thumb: "图片"
+        kwords: "关键字"
+        sin_pic_texts: "单图文"
+
       menu:
         name: "名称"
         url: "链接"
+        parent: "上级菜单"
+        tp: "事件类型"
+        lft: "左边菜单"
+        rgt: "右边菜单"
+        depth: "深度"
+        public_account: "公众帐号"
+        children: "子菜单"
+
+      rule:
+        name: "规则名"
+        public_account: "公众帐号"
+        kwords: "公众帐号"
+
       sin_material:
         type: "类型"
+
 
 
     models:

@@ -9,12 +9,12 @@ zh-CN:
       appid:
         step: 1
         title: "AppID"
-        content: "请填写微信公众帐号的appid"
+        content: "如果您的公众帐号是已认证的订阅号或服务号, 请填写您的AppID以确保可以使用更多的功能"
         placement: "left"
       appsecret:
         step: 2
         title: "AppSecret"
-        content: "请填写微信公众帐号的AppSecret"
+        content: "如果您的公众帐号是已认证的订阅号或服务号, 请填写您的AppSecret以确保可以使用更多的功能"
         placement: "left"
       save:
         step: 3
