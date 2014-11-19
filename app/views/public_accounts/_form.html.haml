@@ -27,6 +27,7 @@
         - unless @public_account.new_record?
           = image_tag @public_account.image_url(:thumb).to_s
       = f.file_field :image, class: "form-control", onchange: "previewImage(this, [256], 4);", :class => "filestyle", "data-buttonText" => t('choose_picture'), "data-buttonBefore" => true, "data-input" => false, required: (@public_account.new_record? ? true : false)
+      %p.help-block= t('.image_help_block ')
   .form-group.boot-tour{"data-bootstro-title" => t('.save.title'), "data-bootstro-content" => t('.save.content'), "data-bootstro-placement" => t('.save.placement'), "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.save.step')}
     .col-sm-6.col-sm-push-3
       = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-save')

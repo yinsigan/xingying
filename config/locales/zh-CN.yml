@@ -44,6 +44,7 @@ zh-CN:
     form:
       appid_tip: "请输入微信提供的appid"
       appsecret_tip: "请输入微信提供的appsecret"
+      image_help_block: "请选择一张图片来标识您的公众账号"
   autoreply:
     tab:
       title: "自动回复"
