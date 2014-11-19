@@ -14,5 +14,7 @@
       = f.hidden_field :tp, value: "view"
   .modal-footer
     = f.submit t('save'), class: "btn btn-primary"
+    = link_to set_action_public_account_menu_path(@public_account, @menu), class: "btn btn-default", remote: true do
+      = t('prevStep')
     %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
       = t('close')

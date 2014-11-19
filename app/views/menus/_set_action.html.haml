@@ -4,9 +4,15 @@
     %span.sr-only Close
   %h4#mymodal.modal-title= t('.choose_action')
 .modal-body
-  .row
-    - if @menu.tp == 'view'
-      sss
+  - if @menu.tp == 'view'
+    .row.marginbottom20
+      .col-md-9.center-block.no-float
+        .form-group.padding-content
+          = label_tag "url", t('.url_help_block'), class: "font-normal"
+          = text_field_tag "url", @menu.url, disabled: true, class: "form-control"
+        .form-group.padding-content
+          = link_to redirect_url_public_account_menu_path(@public_account, menu), class: "btn btn-default", remote: true do
+            = t('change')
   .row
     %p.text-muted.text-center.marginbottom20= t('.please_choose')
 
