@@ -3,7 +3,7 @@
 .row
   .col-md-12.clearfix
     #upload_form
-      .pull-right
+      .pull-right.boot-tour{"data-bootstro-title" => t('.upload.title'), "data-bootstro-content" => t('.upload.content'), "data-bootstro-placement" => t('.upload.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.upload.step')}
         = form_tag upload_public_account_thumbs_path(@public_account, {thumb_group_id: @find_thumb_group ? @find_thumb_group.id : nil}), method: "post", class: "picture_upload" do
           = file_field_tag "image", :class => "filestyle", "data-buttonText" => "#{t('upload')}", "data-input" => false, "data-badge" => false, "data-buttonBefore" => false, "data-buttonName" => "btn-primary", id: "upload"
       .pull-right.marginright20
@@ -61,3 +61,14 @@
         .col-md-12.text-right
           = paginate @thumbs
 = render "shared/blueimp_gallery"
+
+
+
+:javascript
+  $(document).ready(function(){
+    bootstro.start(".boot-tour", {
+      prevButtonText: "#{t('prevStep')}",
+      nextButtonText: "#{t('nextStep')}",
+      finishButtonText: "#{t('finish')}"
+    });
+  });

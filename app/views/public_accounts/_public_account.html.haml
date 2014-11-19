@@ -1,7 +1,7 @@
 %tr
   %td
     - if public_account_counter == 0
-      .thumbnail.boot-tour{"data-bootstro-title" => t('.manage.title'), "data-bootstro-content" => t('.manage.content'), "data-bootstro-placement" => t('.manage.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.manage.step')}
+      .thumbnail.public_account_manage{"data-bootstro-title" => t('.manage.title'), "data-bootstro-content" => t('.manage.content'), "data-bootstro-placement" => t('.manage.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.manage.step')}
         %a{href: "#{public_account_path(public_account)}"}
           = image_tag public_account.image_url(:thumb).to_s, size: "150"
     - else

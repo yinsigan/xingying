@@ -86,3 +86,10 @@ zh-CN:
         title: "保存"
         content: "点击保存单图文"
         placement: "top"
+  thumbs:
+    index:
+      upload:
+        step: 1
+        title: "上传图片"
+        content: "点击左边按钮上传图片素材"
+        placement: "right"

@@ -41,6 +41,7 @@ zh-CN:
       add: "添加公众账号"
       list: "公众账号列表"
       no_content: "暂无公众账号"
+      help: "如何管理公众帐号"
     form:
       appid_tip: "请输入微信提供的appid"
       appsecret_tip: "请输入微信提供的appsecret"
