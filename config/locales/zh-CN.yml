@@ -1,4 +1,9 @@
 zh-CN:
+  admin:
+    loading: "正在加载..."
+    misc:
+      navigation_static_label: "导航"
+
   errors:
     messages:
       mini_magick_processing_error: "有可能是提交的图片格式不对，支持的图片格式为jpg，jpeg，gif，png"

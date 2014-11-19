@@ -20,6 +20,9 @@ zh-CN:
         autoreply_type: "回复类型"
         appid: "AppID:"
         appsecret: "AppSecret:"
+        user: "用户名"
+        created_at: "创建时间"
+        updated_at: "更新时间"
       sin_pic_text:
         title: "标题"
         desc: "摘要"
@@ -51,10 +54,10 @@ zh-CN:
 
     models:
       user: "用户"
-      public_account: "公众号"
+      public_account: "公众账号"
       sin_pic_text: "单图文"
       sin_material: "单图文"
-      thumb_group: "分组"
+      thumb_group: "图片分组"
       rule: "规则"
       kword: "关键词"
       menu: "自定义菜单"
