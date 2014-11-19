@@ -2,6 +2,7 @@ class MenusController < SettingsController
   before_action :set_public_account
   before_action :appid_present, :add_show_breadcrumb
   before_action :set_menu, only: [:edit, :destroy, :update]
+  before_action :set_menu, only: [:send_message, :redirect_url, :set_action]
 
   def index
     add_breadcrumb I18n.t("breadcrumbs.menus.index"), :public_account_menus_path
@@ -53,18 +54,15 @@ class MenusController < SettingsController
   end
 
   def send_message
-    @menu = @public_account.menus.find(params[:id])
     render "send_message.js.erb", layout: false
   end
 
   def redirect_url
-    @menu = @public_account.menus.find(params[:id])
     render "redirect_url.js.erb", layout: false
   end
 
   def set_action
     @menu_id = params[:id].presence
-    @menu = @public_account.menus.find(@menu_id)
     render "set_action.js.erb", layout: false
   end
 
@@ -89,6 +87,10 @@ class MenusController < SettingsController
         flash: {danger: I18n.t("menus.index.enter_tip")}
       store_location
     end
+  end
+
+  def set_menu
+    @menu = @public_account.menus.find(params[:id])
   end
 
   def menu_params

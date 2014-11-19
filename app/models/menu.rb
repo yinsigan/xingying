@@ -1,4 +1,7 @@
 class Menu < ActiveRecord::Base
+  ClickType = {1 => "文字", 2 => "单图文"}
+  ClickTypeNode = {1 => "text_material", 2 => "sin_material"}
+
   belongs_to :public_account
 
   validates :name, presence: true, length: { maximum: 4 }, if: "parent_id.nil?"

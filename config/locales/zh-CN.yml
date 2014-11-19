@@ -106,8 +106,10 @@ zh-CN:
       redirect_url: "跳转到网页"
       url_help_block: "订阅者点击该子菜单会跳到以下链接"
     redirect_url:
-      title: "点击菜单跳转链接"
+      title: "跳转到网页"
       url_help_block: "订阅者点击该子菜单会跳到以上链接"
+    send_message:
+      title: "发送信息"
   material:
     tab:
       title: "素材管理"
