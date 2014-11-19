@@ -4,6 +4,7 @@ class MenusController < SettingsController
   before_action :set_menu, only: [:edit, :destroy, :update]
 
   def index
+    add_breadcrumb I18n.t("breadcrumbs.menus.index"), :public_account_menus_path
     @client ||= WeixinAuthorize::Client.new(@public_account.try(:appid), @public_account.try(:appsecret))
     if @client.is_valid?
       @menus = @public_account.menus.where(:parent => nil).includes(:children).order("id ASC")
@@ -46,8 +47,25 @@ class MenusController < SettingsController
   end
 
   def update
-    @menu.update(rename_params)
+    @menu.update(update_params)
     render partial: "shared/ajax_prompt.js.erb", layout: false, locals: {object: @menu, flash_success: I18n.t("success_save")}
+  end
+
+  def send_message
+    @menu_id = params[:id].presence
+    @menu = @public_account.menus.find(@menu_id)
+    render "send_message.js.erb", layout: false
+  end
+
+  def redirect_url
+    @menu_id = params[:id].presence
+    @menu = @public_account.menus.find(@menu_id)
+    render "redirect_url.js.erb", layout: false
+  end
+
+  def set_action
+    @menu_id = params[:id].presence
+    render "set_action.js.erb", layout: false
   end
 
   private
@@ -77,7 +95,7 @@ class MenusController < SettingsController
     params.require(:menu).permit(:name, :parent_id)
   end
 
-  def rename_params
-    params.require(:menu).permit(:name)
+  def update_params
+    params.require(:menu).permit(:name, :url, :tp)
   end
 end

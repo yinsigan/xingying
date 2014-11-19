@@ -5,6 +5,8 @@ class Menu < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 7 }, unless: "parent_id.nil?"
   validate :menu_count_within_limit, if: "parent_id.nil?", on: :create
   validate :sub_menu_count_within_limit, unless: "parent_id.nil?", on: :create
+  VALID_URL_REGEX = /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix
+  validates :url, presence: true, format: { with: VALID_URL_REGEX }, if: "tp == 'view'"
 
   acts_as_nested_set dependent: :destroy
 

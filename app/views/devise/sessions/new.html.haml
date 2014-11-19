@@ -1,0 +1,19 @@
+.modal-dialog
+  .modal-content
+    .modal-header
+      %h1.text-center= t('welcome_login')
+    .modal-body.clearfix
+      = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form col-md-12 center-block"}) do |f|
+        .form-group
+          = f.email_field :email, autofocus: true, required: true, class: "form-control input-lg", placeholder: t('email')
+        .form-group
+          = f.password_field :password, autocomplete: "off", placeholder: t('password'), required: true, class: "form-control input-lg"
+        .form-group
+          %button.btn.btn-lg.btn-primary.btn-block{"data-disable-with" => t('disable-with-login'), :type => "submit"}
+            = t('login')
+    .modal-footer
+      .col-md-12.text-left.clearfix
+        %p
+          - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+            = link_to t('forget_password'), new_password_path(resource_name)
+          = link_to t('signup'), new_user_registration_path, class: "pull-right"

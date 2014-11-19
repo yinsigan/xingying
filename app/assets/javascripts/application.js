@@ -33,4 +33,3 @@
 //= require ckeditor/init
 //= require ckeditor/config
 //= require bootstro
-//= require jquery.webui-popover

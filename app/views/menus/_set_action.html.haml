@@ -1,0 +1,20 @@
+.modal-header
+  %button.close{"data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} &times;
+    %span.sr-only Close
+  %h4#mymodal.modal-title= t('.choose_action')
+.modal-body
+  .row
+    %p.text-muted.text-center.marginbottom20= t('.please_choose')
+
+    .thumb_item.col-md-6
+      = link_to send_message_public_account_menu_path(@public_account, menu), remote: true do
+        %i.fa.fa-envelope-o.fa-2x.fa-item
+      %p.margintop10= t('.send_message')
+    .thumb_item.col-md-6
+      = link_to redirect_url_public_account_menu_path(@public_account, menu), remote: true do
+        %i.fa.fa-external-link.fa-2x.fa-item
+      %p.margintop10= t('.redirect_url')
+.modal-footer
+  %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
+    = t('close')

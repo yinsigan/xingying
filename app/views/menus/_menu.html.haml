@@ -14,12 +14,9 @@
               %i.fa.fa-plus
               = t('.add')
           %li
-            %a{"data-placement" => "left", "class" => "set_action"}
+            = link_to set_action_public_account_menu_path(@public_account, menu), remote: true do
               %i.fa.fa-bars
               = t('.set_action')
-            #sss{:style => "display: none;"}
-              %h5 请选择订阅者点击菜单后，公众号做出的相应动作
-              %i.fa.fa-edit{:style => "font-size: 100px;"}
           %li.divider{:role => "presentation"}
           %li
             = link_to edit_public_account_menu_path(@public_account, menu, top_menu: true), remote: true do
@@ -45,9 +42,20 @@
                       %i.fa.fa-pencil
                     %ul.dropdown-menu{"aria-labelledby" => "sub_menu_dropdown_#{sub_menu.id}", :role => "menu"}
                       %li
-                        %a
+                        %a{"data-placement" => "left", "id" => "set_action_sub_menu_#{sub_menu.id}"}
                           %i.fa.fa-bars
                           = t('.set_action')
+                        .row{style: "display: none;", id: "sub_menu_item_#{sub_menu.id}"}
+                          %p.text-muted.text-center.marginbottom20= t('.please_choose')
+
+                          .thumb_item.col-md-6
+                            = link_to send_message_public_account_menu_path(@public_account, sub_menu), remote: true do
+                              %i.fa.fa-envelope-o.fa-2x.fa-item
+                            %p.margintop10= t('.send_message')
+                          .thumb_item.col-md-6
+                            = link_to redirect_url_public_account_menu_path(@public_account, sub_menu), remote: true do
+                              %i.fa.fa-external-link.fa-2x.fa-item
+                            %p.margintop10= t('.redirect_url')
                       %li.divider{:role => "presentation"}
                       %li
                         = link_to edit_public_account_menu_path(@public_account, sub_menu), remote: true do
@@ -57,8 +65,3 @@
                         = link_to delete_public_account_menu_path(@public_account, sub_menu), remote: true do
                           %i.fa.fa-trash-o
                           = t('delete')
-
-:javascript
-  $(document).ready(function(){
-    $('.set_action').webuiPopover({title: "选择动作", content: $("#sss").html(), width: "400px"});
-  });

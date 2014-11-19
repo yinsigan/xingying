@@ -3,4 +3,4 @@ modal.modal({
   keyboard: true,
   backdrop: false
 });
-$("#modal-content").html("<%= j(render 'move') %>");
+$("#modal-content").html("<%= j(render 'set_action', menu: @menu_id) %>");
