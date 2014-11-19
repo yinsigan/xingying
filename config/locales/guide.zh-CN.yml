@@ -4,15 +4,15 @@ zh-CN:
       name:
         step: 0
         title: "名称"
-        content: "微信公众帐号的名称"
+        content: "请填写微信公众帐号的名称"
       appid:
         step: 1
         title: "AppID"
-        content: "微信公众号的appid"
+        content: "请填写微信公众帐号的appid"
       appsecret:
         step: 2
         title: "AppSecret"
-        content: "微信公众号的AppSecret"
+        content: "请填写微信公众帐号的AppSecret"
       save:
         step: 3
         title: "保存"
