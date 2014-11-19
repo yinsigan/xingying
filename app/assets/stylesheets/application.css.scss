@@ -162,3 +162,13 @@ $badge-bg:                         #FFF;
 .navbar-fixed-bottom {
   z-index: 900;
 }
+
+/* 设置bootstro高亮块的边框颜色 */
+.bootstro-highlight{
+  border-style: none;
+  border-color: transparent;
+}
+
+.bootstro-backdrop{
+  z-index: 2;
+}
