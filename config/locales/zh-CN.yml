@@ -103,6 +103,7 @@ zh-CN:
       please_choose: "请选择订阅者点击菜单后，公众号做出的相应动作"
       send_message: "发送信息"
       redirect_url: "跳转到网页"
+      url_help_block: "订阅者点击该子菜单会跳到以下链接"
     redirect_url:
       title: "点击菜单跳转链接"
       url_help_block: "订阅者点击该子菜单会跳到以上链接"
