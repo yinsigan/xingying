@@ -2,4 +2,4 @@ $("#modal").modal({
   keyboard: true,
   backdrop: false
 });
-$("#modal-content").html("<%= j(render 'form', title: I18n.t('menus.menu.rename'), name_maximum: @name_maximum) %>");
+$("#modal-content").html("<%= j(render 'form') %>");
