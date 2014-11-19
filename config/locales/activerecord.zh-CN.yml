@@ -11,7 +11,7 @@ zh-CN:
         sign_in_count: "登录次数"
         current_sign_in_at: "当前登录时间"
         last_sign_in_at: "最后一次登录时间"
-        current_sign_in_ip: "当前 登录IP"
+        current_sign_in_ip: "当前登录IP"
         last_sign_in_ip: "最后一次登录IP"
         public_accounts: "公众帐号"
       public_account:
@@ -109,8 +109,6 @@ zh-CN:
 
       sin_material:
         type: "类型"
-
-
 
     models:
       user: "用户"
