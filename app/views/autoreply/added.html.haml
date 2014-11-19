@@ -18,4 +18,6 @@
           = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-submit')
 
 :javascript
-  $("#public_account_reply_type").trigger('change');
+  $(document).ready(function() {
+    $("#public_account_reply_type").trigger('change');
+  });

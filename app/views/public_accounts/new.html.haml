@@ -9,3 +9,14 @@
     .alert.alert-warning{role: "alert"}
       = t('required_note').html_safe
     = render 'form'
+
+:javascript
+
+  $(document).ready(function() {
+    bootstro.start(".boot-tour", {
+      placement: "left",
+      prevButtonText: "#{I18n.t("prevStep")}",
+      nextButtonText: "#{I18n.t("nextStep")}",
+      finishButtonText: "#{I18n.t("finish")}"
+    });
+  });
