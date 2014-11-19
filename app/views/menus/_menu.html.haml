@@ -59,5 +59,6 @@
                           = t('delete')
 
 :javascript
-
-  $('.set_action').webuiPopover({title: "选择动作", content: $("#sss").html(), width: "400px"});
+  $(document).ready(function(){
+    $('.set_action').webuiPopover({title: "选择动作", content: $("#sss").html(), width: "400px"});
+  });

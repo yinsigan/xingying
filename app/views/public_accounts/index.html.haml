@@ -11,7 +11,7 @@
     %span
       = t('.list')
   .panel.panel-default
-    .panel-body
+    .panel-body.boot-tour{"data-bootstro-title" => t('.append.title'), "data-bootstro-content" => t('.append.content'), "data-bootstro-placement" => t('.append.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.append.step')}
       %a{href: "#{new_public_account_path}", class: "btn btn-primary pull-right"}
         %span.glyphicon.glyphicon-plus
         = t('.add')
@@ -23,3 +23,13 @@
         %th{colspan: 3}= t('operation')
 
       = render @public_accounts
+
+
+:javascript
+  $(document).ready(function(){
+    bootstro.start(".boot-tour", {
+      prevButtonText: "#{t('prevStep')}",
+      nextButtonText: "#{t('nextStep')}",
+      finishButtonText: "#{t('finish')}"
+    });
+  });

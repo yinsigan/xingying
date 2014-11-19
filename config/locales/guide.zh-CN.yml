@@ -1,19 +1,41 @@
 zh-CN:
-  public_account:
+  public_accounts:
     form:
       name:
         step: 0
         title: "名称"
         content: "请填写微信公众帐号的名称"
+        placement: "left"
       appid:
         step: 1
         title: "AppID"
         content: "请填写微信公众帐号的appid"
+        placement: "left"
       appsecret:
         step: 2
         title: "AppSecret"
         content: "请填写微信公众帐号的AppSecret"
+        placement: "left"
       save:
         step: 3
         title: "保存"
         content: "点击保存提交微信公众帐号信息"
+        placement: "left"
+    index:
+      append:
+        step: 0
+        title: "添加微信公众帐号"
+        content: "你还未添加任何微信公众帐号, 请先点击左边的按钮添加一个微信公众帐号 "
+        placement: "right"
+  sin_materials:
+    index:
+      sin_pic:
+        step: 0
+        title: "添加单图文"
+        content: "你还未添加任何单图文素材, 请先点击右边的按钮添加一个单图文素材"
+        placement: "top"
+      multi_pic:
+        step: 0
+        title: "添加多图文"
+        content: "你还未添加任何多图文素材, 请先点击右边的按钮添加一个多图文素材"
+        placement: "top"
