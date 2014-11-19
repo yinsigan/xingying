@@ -5,8 +5,12 @@
       %span.glyphicon.glyphicon-edit
       = t('.title')
   .panel-body
+    .form-group.padding-content
+      %a.pull-right#need-help.btn.btn-info
+        %i.fa.fa-question
+          = t('need-help')
     .alert.alert-warning{role: "alert"}
-      = t('required_note').html_safe
+      = raw t('required_note')
     #edit_sin_preview.col-md-4.edit_sin_box
       %h4.appmsg_title
         %a{onclick: "return false;", href: "javascript:void(0);", target: "_blank"}
@@ -24,4 +28,12 @@
   });
   $("#sin_material_sin_pic_text_attributes_desc").on("keyup", function() {
     $("#edit_sin_preview .appmsg_desc").text($(this).val());
+  });
+
+  $("#need-help").on('click', function(){
+    bootstro.start(".boot-tour", {
+      prevButtonText: "#{t('prevStep')}",
+      nextButtonText: "#{t('nextStep')}",
+      finishButtonText: "#{t('finish')}"
+    });
   });

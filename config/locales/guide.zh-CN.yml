@@ -37,6 +37,12 @@ zh-CN:
         title: "添加微信公众帐号"
         content: "你还未添加任何微信公众帐号, 请先点击左边的按钮添加一个微信公众帐号 "
         placement: "right"
+    public_account:
+      manage:
+        step: 0
+        title: "管理微信公众帐号"
+        content: "点击左边图片管理对应的微信公众帐号"
+        placement: "right"
   sin_materials:
     index:
       sin_pic:
@@ -48,4 +54,42 @@ zh-CN:
         step: 0
         title: "添加多图文"
         content: "你还未添加任何多图文素材, 请先点击右边的按钮添加一个多图文素材"
+        placement: "right"
+    form:
+      name:
+        step: 0
+        title: "标题"
+        content: "请输入单图文的标题"
+        placement: "right"
+      thumb:
+        step: 1
+        title: "封面"
+        content: "请选择单图文的图片"
+        placement: "right"
+      material:
+        step: 2
+        title: "摘要"
+        content: "请输入单图文的摘要"
+        placement: "right"
+      type:
+        step: 3
+        title: "类型"
+        content: "请选择单图文的类型, 然后输入单图文的正文内容或者对应的链接地址"
+        placement: "right"
+      body:
+        step: 4
+        title: "正文"
+        content: "请填写正文内容"
+        placement: "top"
+      save:
+        step: 5
+        title: "保存"
+        content: "点击保存单图文"
+        placement: "top"
+  thumbs:
+    index:
+      upload:
+        step: 1
+        title: "上传图片"
+        content: "点击左边按钮上传图片素材"
         placement: "right"
