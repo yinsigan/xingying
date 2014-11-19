@@ -1,14 +1,14 @@
 - if @public_accounts.empty?
 
-  %div.clearfix.public_account_create{"data-bootstro-title" => t('.append.title'), "data-bootstro-content" => t('.append.content'), "data-bootstro-placement" => t('.append.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.append.step')}
-    %a{href: "#{new_public_account_path}", class: "btn btn-primary pull-right"}
+  %div.clearfix.boot-tour{"data-bootstro-title" => t('.append.title'), "data-bootstro-content" => t('.append.content'), "data-bootstro-placement" => t('.append.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.append.step')}
+    %a{href: new_public_account_path, class: "btn btn-primary pull-right"}
       %span.glyphicon.glyphicon-plus
       = t('.add')
   .bs-callout.bs-callout-default
     %h4= t('.no_content')
   :javascript
     $(document).ready(function(){
-      bootstro.start(".public_account_create", {
+      bootstro.start(".boot-tour", {
         prevButtonText: "#{t('prevStep')}",
         nextButtonText: "#{t('nextStep')}",
         finishButtonText: "#{t('finish')}"
@@ -24,7 +24,7 @@
         = t('.help')
   .panel.panel-default
     .panel-body
-      %a{href: "#{new_public_account_path}", class: "btn btn-primary pull-right"}
+      %a{href: new_public_account_path, class: "btn btn-primary pull-right"}
         %span.glyphicon.glyphicon-plus
         = t('.add')
     %table.table.table-bordered#public_accounts
@@ -39,7 +39,7 @@
   :javascript
     $(document).ready(function(){
       $("#need-help").on("click", function(){
-        bootstro.start(".public_account_manage", {
+        bootstro.start(".boot-tour", {
           prevButtonText: "#{t('prevStep')}",
           nextButtonText: "#{t('nextStep')}",
           finishButtonText: "#{t('finish')}"
