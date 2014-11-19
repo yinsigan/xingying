@@ -4,7 +4,9 @@
     %span.sr-only Close
   %h4#mymodal.modal-title= t('.choose_action')
 .modal-body
-  = @menu
+  .row
+    - if @menu.tp == 'view'
+      sss
   .row
     %p.text-muted.text-center.marginbottom20= t('.please_choose')
 
