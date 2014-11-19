@@ -43,9 +43,9 @@ zh-CN:
         step: 0
         title: "添加单图文"
         content: "你还未添加任何单图文素材, 请先点击右边的按钮添加一个单图文素材"
-        placement: "top"
+        placement: "left"
       multi_pic:
         step: 0
         title: "添加多图文"
         content: "你还未添加任何多图文素材, 请先点击右边的按钮添加一个多图文素材"
-        placement: "top"
+        placement: "right"

@@ -6,7 +6,7 @@
 {
     float:left;
 }
-/* 修改z-index值 */
+
 .bootstro-backdrop
 {
     opacity: 0.5;
@@ -16,7 +16,7 @@
     position: fixed;
     right: 0;
     top: 0;
-    z-index: 2;
+    z-index: 1;
     filter: alpha(opacity=50);
 }
 .bootstro-highlight
