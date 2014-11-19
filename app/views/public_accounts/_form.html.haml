@@ -1,5 +1,5 @@
 %div
-  %a.pull-right.need-help.btn.btn-info
+  %a.pull-right#need-help.btn.btn-info
     %i.fa.fa-question
       = t('need-help')
 = form_for @public_account, html: {class: "form-horizontal"} do |f|
@@ -33,13 +33,12 @@
 
 
 :javascript
-  $(function(){
-    $(".need-help").click(function(){
-      bootstro.start(".boot-tour", {
-        placement: "left",
-        prevButtonText: "#{I18n.t("prevStep")}",
-        nextButtonText: "#{I18n.t("nextStep")}",
-        finishButtonText: "#{I18n.t("finish")}"
-      });
+
+  $("#need-help").on('click', function(){
+    bootstro.start(".boot-tour", {
+      placement: "left",
+      prevButtonText: "#{I18n.t("prevStep")}",
+      nextButtonText: "#{I18n.t("nextStep")}",
+      finishButtonText: "#{I18n.t("finish")}"
     });
   });
