@@ -27,14 +27,16 @@ class RulesController < SettingsController
       redirect_via_turbolinks_to public_account_rules_path(@public_account),
         flash: {success: I18n.t('success_submit')}
     else
-      render partial: "shared/ajax_prompt.js.erb", layout: false, locals: {object: @rule}
+      @object = @rule
+      render partial: "shared/ajax_prompt.js.erb", layout: false
     end
   end
 
   def update
+    @flash_success = I18n.t('success_save')
     @rule.update(rule_params)
-    render partial: "shared/ajax_prompt.js.erb", layout: false,
-      locals: {object: @rule, flash_success: I18n.t('success_save')}
+    @object = @rule
+    render partial: "shared/ajax_prompt.js.erb"
   end
 
   def edit
@@ -44,9 +46,10 @@ class RulesController < SettingsController
   end
 
   def delete
-    render "shared/delete.js.erb", layout: false,
-      locals: {delete_url: public_account_rule_path,
-      confirm: I18n.t("rules.delete.confirm"), remote: true}
+    @delete_url = public_account_rule_path
+    @confirm = I18n.t("rules.delete.confirm")
+    @remote = true
+    render "shared/delete.js.erb", layout: false
   end
 
   def destroy

@@ -45,8 +45,12 @@ class AutoreplyController < SettingsController
   # 选择单图文
   def select_sin_material
     @hidden_tag = params[:hidden_tag].presence
+    # 预览单图文的wrapper
     @preview_wrapper = params[:preview_wrapper].presence
+    # 当在菜单中设置动作可以返回
     @prev_link = params[:prev_link].presence
+    # 当执行删除时可以返回
+    @select_prev_link = request.original_url
     @sin_materials = @public_account.sin_materials
       .includes(sin_pic_text: [:thumb]).page(params[:page]).per(6)
     render "select_sin_material.js.erb", layout: false
@@ -59,6 +63,7 @@ class AutoreplyController < SettingsController
 
   # 图片显示和分页
   def select_thumb_material
+    @select_prev_link = request.original_url
     render "select_thumb_material.js.erb", layout: false
   end
 
@@ -71,6 +76,7 @@ class AutoreplyController < SettingsController
   def upload
     @thumb = @public_account.thumbs.build(upload_group_params)
     @thumb.save
+    @object = @thumb
     @thumb_group_id =  params[:thumb_group_id].presence
     render "upload.js.erb", layout: false
   end

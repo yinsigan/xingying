@@ -21,7 +21,8 @@ class SinMaterialsController < SettingsController
           flash: {success: I18n.t('success_submit')}
       end
     else
-      render partial: "shared/ajax_prompt.js.erb", layout: false, locals: {object: @sin_material}
+      @object = @sin_material
+      render partial: "shared/ajax_prompt.js.erb", layout: false
     end
   end
 
@@ -40,19 +41,21 @@ class SinMaterialsController < SettingsController
   end
 
   def update
-    if @sin_material.update(sin_material_params)
+    if @object = @sin_material.update(sin_material_params)
       save_article_address(@sin_material)
       redirect_via_turbolinks_to public_account_sin_materials_path(@public_account),
         flash: {success: I18n.t('success_save')}
     else
-      render partial: "shared/ajax_prompt.js.erb", layout: false, locals: {object: @sin_material}
+      render partial: "shared/ajax_prompt.js.erb", layout: false
     end
   end
 
   def delete
-    render "shared/delete.js.erb", layout: false,
-      locals: {delete_url: public_account_sin_material_path,
-      confirm: I18n.t("sin_materials.delete.confirm"), remote: true}
+    @select_prev_link = params[:select_prev_link].presence
+    @delete_url = public_account_sin_material_path
+    @confirm = I18n.t("sin_materials.delete.confirm")
+    @remote = true
+    render "shared/delete.js.erb", layout: false
   end
 
   def click_response
