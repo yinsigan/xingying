@@ -101,6 +101,7 @@ zh-CN:
         depth: "深度"
         public_account: "公众帐号"
         children: "子菜单"
+        sin_material: "单图文"
 
       rule:
         name: "规则名"

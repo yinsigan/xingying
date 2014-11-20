@@ -9,7 +9,17 @@
       = label_tag t('.click_type'), nil, class: "col-sm-3 control-label", for: "public_account_reply_type"
       .col-sm-9
         = f.select :click_type, options_for_select(Menu::ClickType.invert, @menu.click_type.presence), {include_blank: false}, {:class => "form-control ajax_load", data: {remote: true, url: click_content_public_account_menus_path(@public_account, id: @menu)} }
-    #click_content
+    - if @selected_sin_material.present?
+      .form-group
+        = label_tag "menu[material_id]", t('.selected_sin_material'), class: "col-sm-3 control-label"
+        .col-sm-9.pic_text_content#pic_text_content
+          = render partial: "sin_materials/sin_material", locals: {sin_material: @selected_sin_material, sin_col: "col-sm-6"}
+        = hidden_field "menu", "material_id", value: @selected_sin_material.id
+      .form-group
+        .col-sm-9.col-sm-push-3
+          = link_to t('.select_btn'), select_sin_material_public_account_path(@public_account, hidden_tag: "menu_material_id", preview_wrapper: "pic_text_content", prev_link: send_message_public_account_menu_path(@public_account, @menu)), class: "btn btn-default", remote: true
+    - else
+      #click_content
     = f.hidden_field :tp, value: "click"
   .modal-footer
     = f.submit t('save'), class: "btn btn-primary"

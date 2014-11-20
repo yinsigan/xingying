@@ -53,6 +53,7 @@ class MenusController < SettingsController
   end
 
   def send_message
+    @selected_sin_material = @public_account.sin_materials.find(params[:select_sin_id]) if params[:select_sin_id].present?
     render "send_message.js.erb", layout: false
   end
 
@@ -99,6 +100,6 @@ class MenusController < SettingsController
   end
 
   def update_params
-    params.require(:menu).permit(:name, :url, :tp, :click_type, :click_body)
+    params.require(:menu).permit(:name, :url, :tp, :click_type, :click_body, :material_id)
   end
 end

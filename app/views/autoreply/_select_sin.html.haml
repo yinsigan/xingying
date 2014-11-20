@@ -15,9 +15,18 @@
     .col-md-12.text-right#page
       = paginate @sin_materials, :remote => true
 .modal-footer
-  %button{type: "button", class: "btn btn-primary disabled", id: "select_btn"}= t('sure')
-  = link_to @prev_link, class: "btn btn-default", remote: true do
-    = t('prevStep')
+  -# 确定按钮
+  - if @prev_link.present?
+    = link_to t('sure'), @prev_link, class: "btn btn-primary disabled sure_btn", id: "prev_link_sure", remote: true
+  - else
+    %button{type: "button", class: "btn btn-primary disabled sure_btn", id: "select_btn"}= t('sure')
+
+  -# 上一步按钮
+  - if @prev_link.present?
+    = link_to @prev_link, class: "btn btn-default", remote: true do
+      = t('prevStep')
+
+  -# 关闭按钮
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
 
@@ -28,16 +37,21 @@
       $(this).toggleClass("selected");
       $(this).siblings().removeClass("selected");
       if($(this).hasClass("selected")) {
-        $("#select_btn").removeClass("disabled");
+        $(".sure_btn").removeClass("disabled");
       } else {
-        $("#select_btn").addClass("disabled");
+        $(".sure_btn").addClass("disabled");
       }
-    })
+    });
+
     $("#select_btn").on('click', function() {
       $("##{hidden_tag}").val($(".selected").attr("id"));
       $("#modal").modal('hide');
       $("##{preview_wrapper}").html($('.selected').removeClass("selected col-md-4").addClass("col-sm-6").off('click'));
     });
+
+    $("#prev_link_sure").on("ajax:before", function(event) {
+      var el = $(this);
+      var select_sin_id_params = "select_sin_id=" + $(".selected").attr("id");
+      el.attr('data-params', select_sin_id_params);
+    })
   });
-
-

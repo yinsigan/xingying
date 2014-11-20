@@ -3,6 +3,8 @@ zh-CN:
     loading: "正在加载..."
     misc:
       navigation_static_label: "导航"
+    export:
+      select_all_fields: "选择所有域"
 
   errors:
     messages:
@@ -111,6 +113,8 @@ zh-CN:
     send_message:
       title: "发送信息"
       click_type: "发送信息类型"
+      selected_sin_material: "单图文"
+      select_btn: "选择单图文"
     text_material:
       click_body: "文字"
     sin_material:
