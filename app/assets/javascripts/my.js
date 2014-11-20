@@ -85,11 +85,14 @@ var check_all = function() {
   }
 };
 
-var showGuide = function(selector){
+
+var showGuide = function(selector, option){
   selector = selector ||  ".boot-tour";
-  bootstro.start(selector, {
+  var options =  {
     prevButtonText: "上一步",
     nextButtonText: "下一步",
     finishButtonText: "关闭"
-  });
+  };
+  $.extend(options, option || {});
+  bootstro.start(selector, options);
 };

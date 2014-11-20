@@ -46,11 +46,12 @@
 
 :javascript
   $(document).ready(function(){
+    if(!($.cookie("new_sin_materials_guide", Boolean))){
+      showGuide(".boot-tour", {
+        onComplete: function(){
+          $.cookie("new_sin_materials_guide", true, { "expires": 30 });
+        }
+      });
+    }
     $("#sin_material_sin_pic_text_attributes_click_response").trigger('change');
-
-    bootstro.start(".boot-tour", {
-      prevButtonText: "#{t('prevStep')}",
-      nextButtonText: "#{t('nextStep')}",
-      finishButtonText: "#{t('finish')}"
-    });
   });
