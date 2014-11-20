@@ -1,15 +1,20 @@
 = render partial: "material/tab"
 .row
   .col-md-12.text-right
-    %span#sin_pic{"data-bootstro-title" => t('.sin_pic.title'), "data-bootstro-content" => t('.sin_pic.content'), "data-bootstro-placement" => t('.sin_pic.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.sin_pic.step')}
+    %span#sin_pic{data: {"bootstro-title" => t('.sin_pic.title'), "bootstro-content" => t('.sin_pic.content'), "bootstro-placement" => t('.sin_pic.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.sin_pic.step')}}
       = link_to new_public_account_sin_material_path(@public_account), class: "btn btn-default" do
         = t('.add_sin_pic_text')
-    %span#multi_pic{"data-bootstro-title" => t('.multi_pic.title'), "data-bootstro-content" => t('.multi_pic.content'), "data-bootstro-placement" => t('.multi_pic.placement')  , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.multi_pic.step')}
+    %span#multi_pic{data: {"bootstro-title" => t('.multi_pic.title'), "bootstro-content" => t('.multi_pic.content'), "bootstro-placement" => t('.multi_pic.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.multi_pic.step')}}
       = link_to multi_pic_text_public_account_path(@public_account), class: "btn btn-default" do
         = t('.add_multi_pic_text')
 - if @sin_materials.empty?
   .bs-callout.bs-callout-default
     %h4= t('.no_content')
+  :javascript
+    $(document).ready(function(){
+      showGuide("#sin_pic");
+    });
+
 - else
   .panel.panel-default.margintop30
     .panel-heading
@@ -35,12 +40,3 @@
           = paginate @sin_materials
 
 
-:javascript
-  $(document).ready(function(){
-
-    showGuide("#sin_pic");
-
-    /*
-    showGuide("#multi_pic");
-    */
-  });

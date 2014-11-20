@@ -86,7 +86,7 @@ var check_all = function() {
 };
 
 var showGuide = function(selector){
-  selector = selector || ".boot-tour";
+  selector = selector ||  ".boot-tour";
   bootstro.start(selector, {
     prevButtonText: "上一步",
     nextButtonText: "下一步",

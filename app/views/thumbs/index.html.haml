@@ -3,9 +3,9 @@
 .row
   .col-md-12.clearfix
     #upload_form
-      .pull-right.boot-tour{"data-bootstro-title" => t('.upload.title'), "data-bootstro-content" => t('.upload.content'), "data-bootstro-placement" => t('.upload.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.upload.step')}
+      .pull-right.boot-tour{data: {"bootstro-title" => t('.upload.title'), "bootstro-content" => t('.upload.content'), "bootstro-placement" => t('.upload.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.upload.step')}}
         = form_tag upload_public_account_thumbs_path(@public_account, {thumb_group_id: @find_thumb_group ? @find_thumb_group.id : nil}), method: "post", class: "picture_upload" do
-          = file_field_tag "image", :class => "filestyle", "data-buttonText" => "#{t('upload')}", "data-input" => false, "data-badge" => false, "data-buttonBefore" => false, "data-buttonName" => "btn-primary", id: "upload"
+          = file_field_tag "image", :class => "filestyle", data:{"buttonText" => "#{t('upload')}", "input" => false, "badge" => false, "buttonBefore" => false, "buttonName" => "btn-primary"}, id: "upload"
       .pull-right.marginright20
         %p.help-block
           = t('picture_upload_tip')
@@ -40,6 +40,11 @@
 - if @thumbs.empty?
   .bs-callout.bs-callout-default
     %h4= t('.no_content')
+  :javascript
+    $(document).ready(function(){
+      showGuide(".boot-tour");
+    });
+
 - else
   .panel.panel-default.margintop30
     .panel-heading
@@ -49,7 +54,7 @@
       .row.operate
         .col-md-12
           #operate-button.normal-header.page-header
-            %input.icheck-me#check_all{"data-color" => "blue", "data-skin" => "square", :type => "checkbox"}
+            %input.icheck-me#check_all{data: {"color" => "blue", "skin" => "square"}, :type => "checkbox"}
             %label{for: "check_all", style: "font-weight: normal"}
               = t('select_all')
             = link_to t('.move_to_group'), move_public_account_thumbs_path(@public_account), class: "btn btn-default disabled", remote: true
@@ -64,7 +69,3 @@
 
 
 
-:javascript
-  $(document).ready(function(){
-    showGuide(".boot-tour");
-  });

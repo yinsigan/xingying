@@ -12,23 +12,23 @@
     = f.label :tp, class: "col-sm-3 control-label required"
     .col-sm-6
       = f.select :tp, options_for_select(PublicAccount::TP.invert, @public_account.tp.presence), {include_blank: t('please_select')}, {:class => "form-control", required: true}
-  .form-group.boot-tour{"data-bootstro-title" => t('.appid.title'), "data-bootstro-content" => t('.appid.content'), "data-bootstro-placement" => t('.appid.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.appid.step')}
+  .form-group.boot-tour{data: {"bootstro-title" => t('.appid.title'), "bootstro-content" => t('.appid.content'), "bootstro-placement" => t('.appid.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.appid.step')}}
     = f.label :appid, class: "col-sm-3 control-label"
     .col-sm-6
       = f.text_field :appid, class: "form-control", autofocus: true, placeholder: t('.appid_tip')
-  .form-group.boot-tour{"data-bootstro-title" => t('.appsecret.title'), "data-bootstro-content" => t('.appsecret.content'), "data-bootstro-placement" => t('.appsecret.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.appsecret.step')}
+  .form-group.boot-tour{data: {"bootstro-title" => t('.appsecret.title'), "bootstro-content" => t('.appsecret.content'), "bootstro-placement" => t('.appsecret.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.appsecret.step')}}
     = f.label :appsecret, class: "col-sm-3 control-label"
     .col-sm-6
       = f.text_field :appsecret, class: "form-control", autofocus: true, placeholder: t('.appsecret_tip')
-  .form-group.boot-tour{"data-bootstro-title" => t('.image.title'), "data-bootstro-content" => t('.image.content'), "data-bootstro-placement" => t('.image.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.image.step')}
+  .form-group.boot-tour{data: {"bootstro-title" => t('.image.title'), "bootstro-content" => t('.image.content'), "bootstro-placement" => t('.image.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.image.step')}}
     = f.label :image, class: "col-sm-3 control-label required"
     .col-sm-6
       .imagePreview
         - unless @public_account.new_record?
           = image_tag @public_account.image_url(:thumb).to_s
-      = f.file_field :image, class: "form-control", onchange: "previewImage(this, [256], 4);", :class => "filestyle", "data-buttonText" => t('choose_picture'), "data-buttonBefore" => true, "data-input" => false, required: (@public_account.new_record? ? true : false)
+      = f.file_field :image, class: "form-control", onchange: "previewImage(this, [256], 4);", :class => "filestyle", data: {"buttonText" => t('choose_picture'), "buttonBefore" => true, "input" => false}, required: (@public_account.new_record? ? true : false)
       %p.help-block= t('.image_help_block')
-  .form-group.boot-tour{"data-bootstro-title" => t('.save.title'), "data-bootstro-content" => t('.save.content'), "data-bootstro-placement" => t('.save.placement'), "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.save.step')}
+  .form-group.boot-tour{ data: { "bootstro-title" => t('.save.title'), "bootstro-content" => t('.save.content'), "bootstro-placement" => t('.save.placement'), "bootstro-width" => "400px",  "bootstro-step" => t('.save.step')} }
     .col-sm-6.col-sm-push-3
       = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-save')
 

@@ -11,11 +11,11 @@
         .form-group
           = f.label :password, class: "control-label col-sm-3"
           .col-sm-7
-            = f.password_field :password, autocomplete: "off", class: "form-control input-lg", placeholder: t('hit_password'), required: true, "data-bv-stringlength" => "true", "data-bv-stringlength-min" => 8, "data-bv-identical" => true, "data-bv-identical-field" => "user[password_confirmation]"
+            = f.password_field :password, autocomplete: "off", class: "form-control input-lg", placeholder: t('hit_password'), required: true, data: {"bv-stringlength" => "true", "bv-stringlength-min" => 8, "bv-identical" => true, "bv-identical-field" => "user[password_confirmation]"}
         .form-group
           = f.label :password_confirmation, class: "control-label col-sm-3"
           .col-sm-7
-            = f.password_field :password_confirmation, autocomplete: "off", class: "form-control input-lg", placeholder: t('hit_password_confirmation'), required: true, "data-bv-identical" => true, "data-bv-identical-field" => "user[password]"
+            = f.password_field :password_confirmation, autocomplete: "off", class: "form-control input-lg", placeholder: t('hit_password_confirmation'), required: true, data: {"bv-identical" => true, "bv-identical-field" => "user[password]"}
         .form-group
           .col-sm-offset-3.col-sm-7
             = f.submit t('save'), class: "btn btn-primary btn-lg btn-block", "data-disable-with" => t('disable-with-save')
