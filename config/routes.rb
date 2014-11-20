@@ -63,6 +63,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :supports, only: [:index]
   get "articles/:id", to: "articles#show", as: :article
 
   %w(404 422 500).each do |code|
