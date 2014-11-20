@@ -3,7 +3,7 @@ $("#modal").modal({
   keyboard: true,
   backdrop: false
 });
-$("#modal-content").html("<%= j(render "select_sin", hidden_tag: @hidden_tag, preview_wrapper: @preview_wrapper) %>");
+$("#modal-content").html("<%= j(render 'select_sin', hidden_tag: @hidden_tag, preview_wrapper: @preview_wrapper) %>");
 $('#modal').on('hidden.bs.modal', function (e) {
   $(this).find(".modal-dialog").removeClass("modal-lg");
 })

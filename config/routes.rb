@@ -35,6 +35,7 @@ Rails.application.routes.draw do
       get :send_message, on: :member
       get :redirect_url, on: :member
       get :set_action, on: :member
+      get :click_content, on: :collection
     end
     resources :sin_materials, except: [:show] do
       get :delete, on: :member

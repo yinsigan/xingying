@@ -1,8 +1,7 @@
 class MenusController < SettingsController
   before_action :set_public_account
   before_action :appid_present, :add_show_breadcrumb
-  before_action :set_menu, only: [:edit, :destroy, :update]
-  before_action :set_menu, only: [:send_message, :redirect_url, :set_action]
+  before_action :set_menu, only: [:edit, :destroy, :update, :send_message, :redirect_url, :set_action, :click_content]
 
   def index
     add_breadcrumb I18n.t("breadcrumbs.menus.index"), :public_account_menus_path
@@ -66,6 +65,12 @@ class MenusController < SettingsController
     render "set_action.js.erb", layout: false
   end
 
+  def click_content
+    if params[:menu] && params[:menu][:click_type]
+      render Menu::ClickTypeNode[params[:menu][:click_type].to_i] + ".js.erb", layout: false
+    end
+  end
+
   private
 
   def set_public_account
@@ -89,15 +94,11 @@ class MenusController < SettingsController
     end
   end
 
-  def set_menu
-    @menu = @public_account.menus.find(params[:id])
-  end
-
   def menu_params
     params.require(:menu).permit(:name, :parent_id)
   end
 
   def update_params
-    params.require(:menu).permit(:name, :url, :tp)
+    params.require(:menu).permit(:name, :url, :tp, :click_type, :click_body)
   end
 end

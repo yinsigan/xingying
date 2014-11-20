@@ -1,0 +1,15 @@
+.form-group
+  = label_tag "menu[click_body]", t('.click_body'), class: "col-sm-3 control-label"
+  .col-sm-9
+    = text_area_tag "menu[click_body]", @menu.try(:click_body), class: "form-control", rows: 12, id: "text"
+    %p.text-muted.pull-right
+      = t('char_tip')
+      %span#chars
+
+:javascript
+  $(document).ready(function() {
+    var elem = $("#chars");
+    if($("#text").length > 0) {
+      $("#text").limiter(600, elem);
+    }
+  });

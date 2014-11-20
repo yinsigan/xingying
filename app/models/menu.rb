@@ -3,6 +3,7 @@ class Menu < ActiveRecord::Base
   ClickTypeNode = {1 => "text_material", 2 => "sin_material"}
 
   belongs_to :public_account
+  belongs_to :sin_material, foreign_key: "material_id", class: SinMaterial
 
   validates :name, presence: true, length: { maximum: 4 }, if: "parent_id.nil?"
   validates :name, presence: true, length: { maximum: 7 }, unless: "parent_id.nil?"

@@ -1,0 +1,11 @@
+.form-group
+  = label_tag "menu[material_id]", t('.name'), class: "col-sm-3 control-label"
+  .col-sm-9.pic_text_content#pic_text_content
+    - if @menu.sin_material.present?
+      = render partial: "sin_materials/sin_material", locals: {sin_material: @menu.sin_material, sin_col: "col-sm-6"}
+    - else
+      = text_field_tag "", t('no_select'), disabled: true, class: "form-control"
+  = hidden_field "menu", "material_id", value: @menu.material_id.presence
+.form-group
+  .col-sm-9.col-sm-push-3
+    = link_to t('.select_btn'), select_sin_material_public_account_path(@public_account, hidden_tag: "menu_material_id", preview_wrapper: "pic_text_content"), class: "btn btn-default", remote: true
