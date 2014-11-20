@@ -138,6 +138,9 @@
 .col-sm-9.sin_box {
   @include pic_text_list;
 }
+.col-sm-12.sin_box {
+  @include pic_text_list;
+}
 /*图片样式*/
 @mixin thumb {
   border: 1px solid #e7e7eb;

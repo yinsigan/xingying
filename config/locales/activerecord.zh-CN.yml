@@ -102,6 +102,7 @@ zh-CN:
         public_account: "公众帐号"
         children: "子菜单"
         sin_material: "单图文"
+        click_body: "发送的文字"
 
       rule:
         name: "规则名"

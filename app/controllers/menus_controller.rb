@@ -100,6 +100,6 @@ class MenusController < SettingsController
   end
 
   def update_params
-    params.require(:menu).permit(:name, :url, :tp, :click_type, :click_body, :material_id)
+    params.require(:menu).permit(:name, :url, :tp, :click_type, :click_body, :material_id, :key)
   end
 end

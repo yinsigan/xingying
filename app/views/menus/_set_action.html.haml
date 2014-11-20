@@ -13,6 +13,19 @@
         .form-group.padding-content
           = link_to redirect_url_public_account_menu_path(@public_account, menu), class: "btn btn-default", remote: true do
             = t('change')
+  - elsif @menu.tp == 'click'
+    .row.marginbottom20
+      .col-md-9.center-block.no-float
+        .form-group.padding-content
+          = label_tag nil, t('.click_help_block', click_type: Menu::ClickType[@menu.click_type.to_i]), class: "font-normal"
+        .form-group.padding-content
+          - if @menu.click_type == 1
+            = @menu.click_body
+          - elsif @menu.click_type == 2
+            = render partial: "sin_materials/sin_material", locals: {sin_material: @menu.sin_material, sin_col: "col-sm-9"}
+        .form-group.padding-content
+          = link_to send_message_public_account_menu_path(@public_account, menu), class: "btn btn-default", remote: true do
+            = t('change')
   .row
     %p.text-muted.text-center.marginbottom20= t('.please_choose')
 
