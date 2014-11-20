@@ -59,7 +59,6 @@
   padding-left: 0;
   padding-right: 0;
   margin-top: 10px;
-  border-right: none;
   .appmsg_opr {
     background-color: #f4f4f4;
     border-top: 1px solid #e7e7eb;
@@ -136,14 +135,18 @@
   @include pic_text_list;
   @include selected;
 }
-
+.col-sm-9.sin_box {
+  @include pic_text_list;
+}
+.col-sm-12.sin_box {
+  @include pic_text_list;
+}
 /*图片样式*/
 @mixin thumb {
   border: 1px solid #e7e7eb;
   padding-left: 0;
   padding-right: 0;
   margin-top: 10px;
-  border-right: none;
 
   .msg_card_ft {
     background-color: #f4f5f9;
@@ -256,24 +259,5 @@
     border-right-style: solid;
     top: 44px;
     left: 4px;
-  }
-}
-
-/*单图文边框*/
-.pic_text_content {
-  &>div:nth-child(3n) {
-    border-right: 1px solid #e7e7eb;
-  }
-  &>div:last-child {
-    border-right: 1px solid #e7e7eb;
-  }
-}
-/*图片边框*/
-.pic_content {
-  &>div:nth-child(4n) {
-    border-right: 1px solid #e7e7eb;
-  }
-  &>div:last-child {
-    border-right: 1px solid #e7e7eb;
   }
 }

@@ -3,6 +3,8 @@ zh-CN:
     loading: "正在加载..."
     misc:
       navigation_static_label: "导航"
+    export:
+      select_all_fields: "选择所有域"
 
   errors:
     messages:
@@ -104,13 +106,16 @@ zh-CN:
       please_choose: "请选择订阅者点击菜单后，公众号做出的相应动作"
       send_message: "发送信息"
       redirect_url: "跳转到网页"
-      url_help_block: "订阅者点击该子菜单会跳到以下链接"
+      url_help_block: "订阅者点击该菜单会跳到以下链接"
+      click_help_block: "订阅者点击该菜单会发送以下信息%{click_type}"
     redirect_url:
       title: "跳转到网页"
       url_help_block: "订阅者点击该子菜单会跳到以上链接"
     send_message:
       title: "发送信息"
       click_type: "发送信息类型"
+      selected_sin_material: "单图文"
+      select_btn: "选择单图文"
     text_material:
       click_body: "文字"
     sin_material:

@@ -11,10 +11,11 @@ class Menu < ActiveRecord::Base
   validate :sub_menu_count_within_limit, unless: "parent_id.nil?", on: :create
   VALID_URL_REGEX = /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix
   validates :url, presence: true, format: { with: VALID_URL_REGEX }, if: "tp == 'view'"
+  validates :click_body, allow_nil: true, length: { in: 1..600 }
+  validates :sin_material, presence: true, if: "tp == 'click' && click_type == 2"
+  validates :click_type, presence: true, if: "tp == 'click'"
 
   acts_as_nested_set dependent: :destroy
-
-  private
 
   def menu_count_within_limit
     if self.public_account.menus(:reload).where(:parent => nil).count >= 3
