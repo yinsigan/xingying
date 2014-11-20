@@ -3,7 +3,7 @@
   .panel.panel-default
     .panel-heading.area.clearfix{:role => "tab", id: "menuHeading_#{menu.id}"}
       %h4.panel-title
-        %a{"aria-controls" => "menu_#{menu.id}", "aria-expanded" => "true", "data-parent" => "#menu", "data-toggle" => "collapse", :href => "#menu_#{menu.id}"}
+        %a{"aria-controls" => "menu_#{menu.id}", "aria-expanded" => "true", data: {"parent" => "#menu", "toggle" => "collapse"} , :href => "#menu_#{menu.id}"}
           = menu.name
       .dropdown.edit
         %a{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :role => "button", id: "menu_dropdown_#{menu.id}"}

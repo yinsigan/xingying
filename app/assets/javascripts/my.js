@@ -92,4 +92,4 @@ var showGuide = function(selector){
     nextButtonText: "下一步",
     finishButtonText: "关闭"
   });
-}
+};

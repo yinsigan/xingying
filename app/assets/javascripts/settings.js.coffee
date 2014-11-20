@@ -11,9 +11,6 @@ $(document).on "page:change", ->
     select = ".alert-autocloseable-" + flash[key]
     $(select).delay(2000).fadeOut()  if $(select).length > 0
 
-  # 弹出冒泡型警告框
-  $("button[data-popover], a[data-popover]").popover 'hide'
-
   # 弹出黑色提示框
   $('button[data-tooltip], a[data-tooltip]').tooltip()
   # 把圆形loading去掉

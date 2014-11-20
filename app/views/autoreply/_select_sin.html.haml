@@ -4,6 +4,7 @@
     %span.sr-only Close
   %h4#mymodal.modal-title= t('.select_btn')
 .modal-body
+  -# 添加单图文按钮
   .row
     .col-md-12.clearfix
       = link_to t('.add_btn'), new_public_account_sin_material_path(@public_account), class: "btn btn-primary pull-right"
