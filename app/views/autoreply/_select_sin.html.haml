@@ -16,6 +16,8 @@
       = paginate @sin_materials, :remote => true
 .modal-footer
   %button{type: "button", class: "btn btn-primary disabled", id: "select_btn"}= t('sure')
+  = link_to @prev_link, class: "btn btn-default", remote: true do
+    = t('prevStep')
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
 
