@@ -3,7 +3,7 @@
     .modal-header
       %h1.text-center= t('signup')
     .modal-body.clearfix
-      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { id: "loginform", class: "form-horizontal", role: "form", "data-bv-feedbackicons-valid" => "glyphicon glyphicon-ok", "data-bv-feedbackicons-invalid" => "glyphicon glyphicon-remove", "data-bv-feedbackicons-validating" => "glyphicon glyphicon-refresh" }) do |f|
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { id: "loginform", class: "form-horizontal", role: "form", data: {"bv-feedbackicons-valid" => "glyphicon glyphicon-ok", "bv-feedbackicons-invalid" => "glyphicon glyphicon-remove", "bv-feedbackicons-validating" => "glyphicon glyphicon-refresh"} }) do |f|
         .form-group
           = f.label :email, class: "control-label col-sm-3"
           .col-sm-7

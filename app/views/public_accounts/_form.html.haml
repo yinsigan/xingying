@@ -4,11 +4,11 @@
       = t('need-help')
 = form_for @public_account, html: {class: "form-horizontal"} do |f|
   = render partial: "shared/form_error_messages", locals: {object: @public_account}
-  .form-group.boot-tour{"data-bootstro-title" => t('.name.title'), "data-bootstro-content" => t('.name.content'), "data-bootstro-placement" => t('.name.placement')  , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.name.step')}
+  .form-group.boot-tour{data: {"bootstro-title" => t('.name.title'), "bootstro-content" => t('.name.content'), "bootstro-placement" => t('.name.placement'), "bootstro-width" => "400px", "bootstro-step" => t('.name.step')}}
     = f.label :name, class: "col-sm-3 control-label required"
     .col-sm-6
       = f.text_field :name, class: "form-control", required: true, autofocus: true
-  .form-group.boot-tour{"data-bootstro-title" => t('.type.title'), "data-bootstro-content" => t('.type.content'), "data-bootstro-placement" => t('.type.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.type.step')}
+  .form-group.boot-tour{data: { "bootstro-title" => t('.type.title'), "bootstro-content" => t('.type.content'), "bootstro-placement" => t('.type.placement'), "bootstro-width" => "400px", "bootstro-step" => t('.type.step')} }
     = f.label :tp, class: "col-sm-3 control-label required"
     .col-sm-6
       = f.select :tp, options_for_select(PublicAccount::TP.invert, @public_account.tp.presence), {include_blank: t('please_select')}, {:class => "form-control", required: true}
