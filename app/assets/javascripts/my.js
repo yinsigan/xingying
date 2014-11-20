@@ -86,10 +86,10 @@ var check_all = function() {
 };
 
 var showGuide = function(selector){
-  selector ||  ".boot-tour";
+  selector = selector ||  ".boot-tour";
   bootstro.start(".boot-tour", {
-      prevButtonText: "上一步",
-      nextButtonText: "下一步",
-      finishButtonText: "关闭"
-    });
+    prevButtonText: "上一步",
+    nextButtonText: "下一步",
+    finishButtonText: "关闭"
+  });
 }
