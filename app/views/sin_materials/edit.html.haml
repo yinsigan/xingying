@@ -5,6 +5,10 @@
       %span.glyphicon.glyphicon-edit
       = t('.title')
   .panel-body
+    .form-group.padding-content
+      %a.pull-right#need-help.btn.btn-info
+        %i.fa.fa-question
+          = t('need-help')
     .alert.alert-warning{role: "alert"}
       = t('required_note').html_safe
     #edit_sin_preview.col-md-4.edit_sin_box
@@ -30,4 +34,8 @@
     $("#sin_material_sin_pic_text_attributes_desc").on("keyup", function() {
       $("#edit_sin_preview .appmsg_desc").text($(this).val());
     });
+  });
+
+  $("#need-help").on('click', function(){
+    showGuide(".boot-tour");
   });
