@@ -11,7 +11,12 @@
     = render 'form'
 
 :javascript
-
   $(document).ready(function() {
-    showGuide(".boot-tour");
+    if(!($.cookie("new_public_account_guide", Boolean))){
+      showGuide(".boot-tour", {
+        onComplete: function(){
+          $.cookie("new_public_account_guide", true, { "expires": 30 });
+        }
+      });
+    }
   });
