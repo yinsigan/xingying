@@ -7,6 +7,7 @@ class ThumbsController < SettingsController
     @thumb = @public_account.thumbs.build
     @thumb.image = params[:image]
     @thumb.save
+    @object = @thumb
     render "create.js.erb", layout: false
   end
 
@@ -28,10 +29,10 @@ class ThumbsController < SettingsController
   end
 
   def delete
-    render "shared/delete.js.erb", layout: false, locals: {
-      delete_url: public_account_thumb_path,
-      confirm: I18n.t('thumbs.delete.confirm'),
-      remote: true}
+    @delete_url = public_account_thumb_path
+    @confirm = I18n.t('thumbs.delete.confirm')
+    @remote = true
+    render "shared/delete.js.erb", layout: false
   end
 
   def destroy
@@ -41,10 +42,10 @@ class ThumbsController < SettingsController
   end
 
   def delete_all
-    render "shared/delete_all.js.erb", layout: false,
-      locals: {delete_url: destroy_all_public_account_thumbs_path(@public_account),
-               confirm: I18n.t('thumbs.delete_all.confirm'),
-               remote: true}
+    @delete_url = destroy_all_public_account_thumbs_path(@public_account)
+    @confirm = I18n.t('thumbs.delete_all.confirm')
+    @remote = true
+    render "shared/delete_all.js.erb", layout: false
   end
 
   def destroy_all

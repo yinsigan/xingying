@@ -8,11 +8,10 @@ class ThumbGroupsController < SettingsController
   end
 
   def delete
-    render "shared/delete.js.erb", layout: false,
-      locals: {
-        delete_url: public_account_thumb_group_path,
-        confirm: I18n.t("thumb_groups.delete.confirm"),
-        remote: true}
+    @delete_url = public_account_thumb_group_path
+    @confirm = I18n.t("thumb_groups.delete.confirm")
+    @remote = true
+    render "shared/delete.js.erb", layout: false
   end
 
   def destroy
@@ -30,12 +29,14 @@ class ThumbGroupsController < SettingsController
   def update
     @thumb_group = @public_account.thumb_groups.find(params[:id])
     @thumb_group.update(thumb_group_params)
+    @object = @thumb_group
     render "update.js.erb", layout: false
   end
 
   def create
     @thumb_group = @public_account.thumb_groups.build(thumb_group_params)
     @thumb_group.save
+    @object = @thumb_group
     render "create.js.erb", layout: false
   end
 

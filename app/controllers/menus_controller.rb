@@ -23,16 +23,17 @@ class MenusController < SettingsController
 
   def create
     @menu = @public_account.menus.build(menu_params)
+    @flash_success = I18n.t("success_submit")
     @menu.save
-    render partial: "shared/ajax_prompt.js.erb", layout: false, locals: {object: @menu, flash_success: I18n.t("success_submit")}
+    @object = @menu
+    render partial: "shared/ajax_prompt.js.erb", layout: false
   end
 
   def delete
-    delete_info = params[:top_menu].present? ? I18n.t('menus.delete.top_menu') : I18n.t("menus.delete.sub_menu")
-    render "shared/delete.js.erb", layout: false, locals: {
-      delete_url: public_account_menu_path,
-      confirm: delete_info,
-      remote: true}
+    @confirm = params[:top_menu].present? ? I18n.t('menus.delete.top_menu') : I18n.t("menus.delete.sub_menu")
+    @delete_url = public_account_menu_path
+    @remote = true
+    render "shared/delete.js.erb", layout: false
   end
 
   def edit
@@ -48,8 +49,10 @@ class MenusController < SettingsController
   end
 
   def update
+    @flash_success = I18n.t("success_save")
     @menu.update(update_params)
-    render partial: "shared/ajax_prompt.js.erb", layout: false, locals: {object: @menu, flash_success: I18n.t("success_save")}
+    @object = @menu
+    render partial: "shared/ajax_prompt.js.erb", layout: false
   end
 
   def send_message

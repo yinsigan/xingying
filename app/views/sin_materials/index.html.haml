@@ -3,9 +3,11 @@
   .col-md-12.text-right
     %span#sin_pic{data: {"bootstro-title" => t('.sin_pic.title'), "bootstro-content" => t('.sin_pic.content'), "bootstro-placement" => t('.sin_pic.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.sin_pic.step')}}
       = link_to new_public_account_sin_material_path(@public_account), class: "btn btn-default" do
+        %i.fa.fa-file-o
         = t('.add_sin_pic_text')
     %span#multi_pic{data: {"bootstro-title" => t('.multi_pic.title'), "bootstro-content" => t('.multi_pic.content'), "bootstro-placement" => t('.multi_pic.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.multi_pic.step')}}
       = link_to multi_pic_text_public_account_path(@public_account), class: "btn btn-default" do
+        %i.fa.fa-files-o
         = t('.add_multi_pic_text')
 - if @sin_materials.empty?
   .bs-callout.bs-callout-default
@@ -19,24 +21,20 @@
   .panel.panel-default.margintop30
     .panel-heading
       %h3.panel-title
+        %i.fa.fa-file-image-o
         = t('.pic_text_count', count: @public_account.pic_text_count)
     .panel-body
       - if @public_account.pic_text_count > 0
         .row
           .col-md-12.text-right
             .btn-group.btn-group-sm
-              - if controller_name == "sin_materials"
-                %button{class: "btn btn-default active"}
-                  = t('.sin_pic_text')
-              - else
-                %a{class: "btn btn-default", href: "#{public_account_sin_materials_path(@public_account)}"}= t('.sin_pic_text')
-              %a{class: "btn btn-default", type: "button"}
-                = t('.multi_pic_text')
+              %button{class: "btn btn-default active"}
+                %i.fa.fa-file-o
+                = t('.sin_pic_text')
+
       .row
         .pic_text_content.col-md-12.margintop20
           = render partial: "sin_material", collection: @sin_materials, locals: {sin_col: "col-md-4"}
       .row
         .col-md-12.text-right
           = paginate @sin_materials
-
-
