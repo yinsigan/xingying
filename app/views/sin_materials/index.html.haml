@@ -10,6 +10,11 @@
 - if @sin_materials.empty?
   .bs-callout.bs-callout-default
     %h4= t('.no_content')
+  :javascript
+    $(document).ready(function(){
+      showGuide("#sin_pic");
+    });
+
 - else
   .panel.panel-default.margintop30
     .panel-heading
@@ -35,12 +40,3 @@
           = paginate @sin_materials
 
 
-:javascript
-  $(document).ready(function(){
-
-    showGuide("#sin_pic");
-
-    /*
-    showGuide("#multi_pic");
-    */
-  });
