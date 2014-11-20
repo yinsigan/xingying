@@ -13,10 +13,5 @@
 :javascript
 
   $(document).ready(function() {
-    bootstro.start(".boot-tour", {
-      placement: "left",
-      prevButtonText: "#{I18n.t("prevStep")}",
-      nextButtonText: "#{I18n.t("nextStep")}",
-      finishButtonText: "#{I18n.t("finish")}"
-    });
+    showGuide(".boot-tour");
   });

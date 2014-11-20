@@ -8,11 +8,7 @@
     %h4= t('.no_content')
   :javascript
     $(document).ready(function(){
-      bootstro.start(".boot-tour", {
-        prevButtonText: "#{t('prevStep')}",
-        nextButtonText: "#{t('nextStep')}",
-        finishButtonText: "#{t('finish')}"
-      });
+      showGuide(".boot-tour");
     });
 - else
   %h3.title-divider
@@ -39,11 +35,7 @@
   :javascript
     $(document).ready(function(){
       $("#need-help").on("click", function(){
-        bootstro.start(".boot-tour", {
-          prevButtonText: "#{t('prevStep')}",
-          nextButtonText: "#{t('nextStep')}",
-          finishButtonText: "#{t('finish')}"
-        });
+        showGuide(".boot-tour");
       });
     });
 
