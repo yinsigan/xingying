@@ -14,7 +14,7 @@
   $(document).ready(function() {
     if(!($.cookie("new_public_account_guide", Boolean))){
       showGuide(".boot-tour", {
-        onComplete: function(){
+        onExit: function(){
           $.cookie("new_public_account_guide", true, { "expires": 30 });
         }
       });
