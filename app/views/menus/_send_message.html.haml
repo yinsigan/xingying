@@ -6,11 +6,20 @@
 = form_for [@public_account, @menu], html: {class: "form-horizontal"}, remote: true do |f|
   .modal-body
     .form-group
-      = f.label :url, class: "col-sm-3 control-label required"
+      = label_tag t('.click_type'), nil, class: "col-sm-3 control-label", for: "public_account_reply_type"
       .col-sm-9
-        = f.text_field :url, class: "form-control", required: true, autofocus: true
-      = f.hidden_field :tp, value: "view"
+        = f.select :click_type, options_for_select(Menu::ClickType.invert, @menu.click_type.presence), {include_blank: false}, {:class => "form-control ajax_load", data: {remote: true, url: click_content_public_account_menus_path(@public_account, id: @menu)} }
+    #click_content
+    = f.hidden_field :tp, value: "click"
   .modal-footer
     = f.submit t('save'), class: "btn btn-primary"
+    = link_to set_action_public_account_menu_path(@public_account, @menu), class: "btn btn-default", remote: true do
+      = t('prevStep')
     %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
       = t('close')
+
+
+:javascript
+  $(document).ready(function() {
+    $("#menu_click_type").trigger('change');
+  });

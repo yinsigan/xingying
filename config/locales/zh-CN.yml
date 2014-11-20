@@ -110,6 +110,12 @@ zh-CN:
       url_help_block: "订阅者点击该子菜单会跳到以上链接"
     send_message:
       title: "发送信息"
+      click_type: "发送信息类型"
+    text_material:
+      click_body: "文字"
+    sin_material:
+      name: "单图文"
+      select_btn: "选择单图文"
   material:
     tab:
       title: "素材管理"

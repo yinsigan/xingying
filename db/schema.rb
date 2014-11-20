@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141119114514) do
+ActiveRecord::Schema.define(version: 20141120012951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,8 +71,9 @@ ActiveRecord::Schema.define(version: 20141119114514) do
     t.integer  "public_account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "click_tp"
+    t.integer  "click_type",        default: 1
     t.integer  "material_id"
+    t.text     "click_body"
   end
 
   add_index "menus", ["material_id"], name: "index_menus_on_material_id", using: :btree

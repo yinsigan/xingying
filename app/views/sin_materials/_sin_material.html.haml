@@ -20,10 +20,10 @@
   .appmsg_opr
     %ul
       %li
-        %a.add_right_border{href: "#{edit_public_account_sin_material_path(@public_account, sin_material)}", "data-toggle" => "tooltip", "data-placement" => "top", "data-tooltip" => true, "title" => t('edit')}
+        = link_to edit_public_account_sin_material_path(@public_account, sin_material), data: {toggle: "tooltip", placement: "top", tooltip: true}, title: t('edit'), class: "add_right_border" do
           %span.glyphicon.glyphicon-pencil
       %li
-        = link_to delete_public_account_sin_material_path(@public_account, sin_material), remote: true, "data-toggle" => "tooltip", "data-placement" => "top", "data-tooltip" => true, "title" => t("delete") do
+        = link_to delete_public_account_sin_material_path(@public_account, sin_material), remote: true, data: {toggle: "tooltip", placement: "top", tooltip: true}, title: t("delete") do
           %span.glyphicon.glyphicon-trash
   .selected_mask
     .selected_mask_inner
