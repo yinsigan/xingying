@@ -50,7 +50,7 @@ class AutoreplyController < SettingsController
     # 当在菜单中设置动作可以返回
     @prev_link = params[:prev_link].presence
     # 当执行删除时可以返回
-    @select_sin_prev_link = request.original_url
+    @select_prev_link = request.original_url
     @sin_materials = @public_account.sin_materials
       .includes(sin_pic_text: [:thumb]).page(params[:page]).per(6)
     render "select_sin_material.js.erb", layout: false
@@ -63,6 +63,7 @@ class AutoreplyController < SettingsController
 
   # 图片显示和分页
   def select_thumb_material
+    @select_prev_link = request.original_url
     render "select_thumb_material.js.erb", layout: false
   end
 

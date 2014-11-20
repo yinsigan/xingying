@@ -29,6 +29,7 @@ class ThumbsController < SettingsController
   end
 
   def delete
+    @select_prev_link = params[:select_prev_link].presence
     @delete_url = public_account_thumb_path
     @confirm = I18n.t('thumbs.delete.confirm')
     @remote = true
