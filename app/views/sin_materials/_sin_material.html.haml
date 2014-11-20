@@ -20,17 +20,20 @@
   .appmsg_opr
     %ul
       %li
-        = link_to edit_public_account_sin_material_path(@public_account, sin_material), data: {toggle: "tooltip", placement: "top", tooltip: true}, title: t('edit'), class: "add_right_border stop" do
+        = link_to edit_public_account_sin_material_path(@public_account, sin_material), data: {toggle: "tooltip", placement: "top", tooltip: true}, title: t('edit'), class: "add_right_border edit_stop" do
           %span.glyphicon.glyphicon-pencil
       %li
-        = link_to delete_public_account_sin_material_path(@public_account, sin_material), remote: true, data: {toggle: "tooltip", placement: "top", tooltip: true}, title: t("delete"), class: "stop" do
+        = link_to delete_public_account_sin_material_path(@public_account, sin_material), data: {toggle: "tooltip", placement: "top", tooltip: true}, title: t("delete"), class: "delete_stop", remote: true do
           %span.glyphicon.glyphicon-trash
   .selected_mask
     .selected_mask_inner
     .selected_mask_icon
 
 :javascript
-  $('.stop').tooltip()
-  $(".stop").on('click', function(event) {
+  $('button[data-tooltip], a[data-tooltip]').tooltip()
+  $(".delete_stop").on('click', function(event) {
+    event.preventDefault();
+  })
+  $(".edit_stop").on('click', function() {
     event.stopPropagation();
   })
