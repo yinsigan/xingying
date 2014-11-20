@@ -15,7 +15,11 @@
 //= require turbolinks
 //= require my
 //= require settings
-//= require bootstrap-sprockets
+//= require bootstrap/alert
+//= require bootstrap/dropdown
+//= require bootstrap/modal
+//= require bootstrap/tooltip
+//= require bootstrap/popover
 //= require nprogress
 //= require html5.image.preview
 //= require limiter
