@@ -4,16 +4,16 @@
       = render partial: "shared/form_error_messages", locals: {object: @sin_material}
       = f.fields_for :sin_pic_text do |sin_pic_text|
         -# 标题
-        .form-group.padding-content.boot-tour{"data-bootstro-title" => t('.name.title'), "data-bootstro-content" => t('.name.content'), "data-bootstro-placement" => t('.name.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.name.step')}
+        .form-group.padding-content.boot-tour{data: {"bootstro-title" => t('.name.title'), "bootstro-content" => t('.name.content'), "bootstro-placement" => t('.name.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.name.step')}}
           = sin_pic_text.label :title, class: "col-sm-12 control-label required font-normal"
           .col-sm-12
             = sin_pic_text.text_field :title, class: "form-control", required: true
         -# 封面图片
-        .form-group.padding-content.boot-tour{"data-bootstro-title" => t('.thumb.title'), "data-bootstro-content" => t('.thumb.content'), "data-bootstro-placement" => t('.thumb.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.thumb.step')}
+        .form-group.padding-content.boot-tour{data: {"bootstro-title" => t('.thumb.title'), "bootstro-content" => t('.thumb.content'), "bootstro-placement" => t('.thumb.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.thumb.step')}}
           = label_tag "thumb_image", t('activerecord.attributes.sin_pic_text.thumb'), class: "col-sm-12 control-label font-normal required"
           .col-sm-12.clearfix
             .pull-left.marginright10
-              = file_field_tag "image", "data-url" => public_account_thumbs_path(@public_account), "data-progress" => "progress_div", :class => "filestyle", "data-buttonText" => t('choose_picture'), "data-buttonBefore" => true, "data-input" => false
+              = file_field_tag "image", :class => "filestyle", data: {"url" => public_account_thumbs_path(@public_account), "progress" => "progress_div",  "buttonText" => t('choose_picture'), "buttonBefore" => true, "input" => false}
             .pull-left
               = link_to t('.select_btn'), select_thumb_material_public_account_path(@public_account), class: "btn btn-default", remote: true
             .clearfix
@@ -23,22 +23,22 @@
 
             #image_preview.imagePreview
         -# 摘要
-        .form-group.padding-content.boot-tour{"data-bootstro-title" => t('.material.title'), "data-bootstro-content" => t('.material.content'), "data-bootstro-placement" => t('.material.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.material.step')}
+        .form-group.padding-content.boot-tour{data: {"bootstro-title" => t('.material.title'), "bootstro-content" => t('.material.content'), "bootstro-placement" => t('.material.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.material.step')}}
           = sin_pic_text.label :desc, class: "col-sm-12 control-label font-normal required"
           .col-sm-12
             = sin_pic_text.text_area :desc, class: "form-control", rows: 3, required: true
 
         -# 点击后响应
-        .form-group.padding-content.boot-tour{"data-bootstro-title" => t('.type.title'), "data-bootstro-content" => t('.type.content'), "data-bootstro-placement" => t('.type.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.type.step')}
+        .form-group.padding-content.boot-tour{data: {"bootstro-title" => t('.type.title'), "bootstro-content" => t('.type.content'), "bootstro-placement" => t('.type.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.type.step')}}
           = sin_pic_text.label :click_response, class: "col-sm-12 control-label font-normal required }"
           .col-sm-12
             = sin_pic_text.select :click_response, options_for_select(SinPicText::ClickResponse.invert, @sin_pic_text.try(:click_response)), {include_blank: false}, {:class => "form-control ajax_load", data: {remote: true, url: click_response_public_account_sin_materials_path(@public_account, sin_pic_text_id: sin_pic_text.object)} }
 
         -# 正文或链接
-        #sin_pic_text_body_or_link.boot-tour{"data-bootstro-title" => t('.body.title'), "data-bootstro-content" => t('.body.content'), "data-bootstro-placement" => t('.body.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.body.step')}
+        #sin_pic_text_body_or_link.boot-tour{data: {"bootstro-title" => t('.body.title'), "bootstro-content" => t('.body.content'), "bootstro-placement" => t('.body.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.body.step')}}
 
         -# 提交按钮
-        .col-sm-12.boot-tour{"data-bootstro-title" => t('.save.title'), "data-bootstro-content" => t('.save.content'), "data-bootstro-placement" => t('.save.placement') , "data-bootstro-width" => "400px",  "data-bootstro-step" => t('.save.step')}
+        .col-sm-12.boot-tour{data: {"bootstro-title" => t('.save.title'), "bootstro-content" => t('.save.content'), "bootstro-placement" => t('.save.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.save.step')}}
           = f.submit t('save'), class: "btn btn-primary"
 
     %i.arrow_out
