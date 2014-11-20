@@ -48,7 +48,7 @@
   $(document).ready(function(){
     if(!($.cookie("new_sin_materials_guide", Boolean))){
       showGuide(".boot-tour", {
-        onComplete: function(){
+        onExit: function(){
           $.cookie("new_sin_materials_guide", true, { "expires": 30 });
         }
       });
