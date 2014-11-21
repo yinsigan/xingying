@@ -20,8 +20,8 @@
           .col-sm-offset-3.col-sm-7
             = f.submit t('save'), class: "btn btn-primary btn-lg btn-block", "data-disable-with" => t('disable-with-save')
     .modal-footer
-      .col-md-12.text-left.clearfix
-        %p
+      .col-md-12.text-left
+        %p.clearfix
           = link_to t('login'), new_session_path(:user), class: "pull-right"
 :javascript
   $(document).ready(function() {

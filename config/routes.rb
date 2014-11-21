@@ -61,7 +61,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :supports, only: [:index]
+  resources :supports, only: [:index, :show]
+  get "/supports/categories/:support_category_id", to: "supports#index", as: :support_categories
   get "articles/:id", to: "articles#show", as: :article
 
   %w(404 422 500).each do |code|

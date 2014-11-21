@@ -118,6 +118,7 @@ zh-CN:
         support_category: "帮助分类"
       support_category:
         name: "名称"
+        supports: "帮助"
 
     models:
       user: "用户"
