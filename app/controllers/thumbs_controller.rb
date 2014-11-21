@@ -75,7 +75,7 @@ class ThumbsController < SettingsController
     @thumb.save
     @object = @thumb
     @thumb_group_id =  params[:thumb_group_id].presence
-    render "upload.js.erb", layout: false
+    render "select_upload.js.erb", layout: false
   end
 
   # 多选时移动分组

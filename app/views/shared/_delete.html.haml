@@ -15,6 +15,12 @@
 
 :javascript
 
+  $("#delete_btn").on("ajax:before", function() {
+    $.blockUI({"message": "<h1>#{t('destroing')}</h1>"});
+  });
+  $("#delete_btn").on("ajax:complete", function() {
+    $.unblockUI();
+  });
   $("#delete_btn").on('click', function() {
     $("#modal").modal('hide');
   });

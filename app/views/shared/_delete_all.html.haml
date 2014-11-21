@@ -16,14 +16,14 @@
     $("#delete_all").on("ajax:before", function(event) {
       var el = $(this);
       el.attr('data-params', $(":checkbox").serialize());
-      $("body").spin();
+      $.blockUI({"message": "<h1>#{t('destroing')}</h1>"});
     })
     $("#delete_all").on("ajax:complete", function(event, xhr, status) {
       var el = $(this);
       el.removeAttr('data-params');
-      $("body").spin(false);
+      $.unblockUI();
     })
     $("#delete_all").on('click', function() {
-       $('#modal').delay(2000).modal('hide');
+      $('#modal').delay(2000).modal('hide');
     });
   });

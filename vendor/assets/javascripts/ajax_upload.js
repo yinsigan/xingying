@@ -43,7 +43,7 @@
 
       //文件上传，等待应答
       function onloadHandler(evt) {
-        $("body").spin();
+        $.blockUI({"message": "<h1>正在上传...请稍等...</h1>"});
       }
 
       //上传进度
@@ -73,7 +73,7 @@
             progress_content.width('1%');
           }, 2000);
           eval(evt.target.responseText);
-          $("body").spin(false);
+          $.unblockUI();
         }
       }
 
