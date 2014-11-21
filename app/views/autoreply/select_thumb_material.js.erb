@@ -3,7 +3,7 @@ $("#modal").modal({
   keyboard: true,
   backdrop: false
 });
-$("#modal-content").html("<%= j(render "select_thumb") %>");
+$("#modal-content").html("<%= j(render 'select_thumb') %>");
 $('#modal').on('hidden.bs.modal', function (e) {
   $(this).find(".modal-dialog").removeClass("modal-lg");
 })

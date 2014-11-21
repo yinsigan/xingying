@@ -18,16 +18,14 @@ Rails.application.routes.draw do
       # 点击选择单图文
       get :select_sin_material, to: "autoreply#select_sin_material"
       get :select_thumb_material, to: "autoreply#select_thumb_material"
+      # 选择图片分组
+      get "/select_thumb_material/:thumb_group_id", to: "autoreply#select_thumb_material", as: :select_thumb_group_material
       # 素材管理
       get :multi_pic_text, to: "material#multi_pic_text"
       get :delete
       # 查看token
       get :show_token
-      # 选择图片分组
-      get "/thumb_group/:thumb_group_id", to: "autoreply#thumb_group", as: :group
-      get "/thumb_group", to: "autoreply#thumb_group"
       post :upload, to: "autoreply#upload"
-
     end
     # 自定义菜单
     resources :menus, except: [:show] do

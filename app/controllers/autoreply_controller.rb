@@ -1,6 +1,6 @@
 class AutoreplyController < SettingsController
   before_action :set_public_account, :add_show_breadcrumb
-  before_action :select_thumb_group, only: [:select_thumb_material, :thumb_group]
+  before_action :select_thumb_group, only: [:select_thumb_material]
 
   # 被添加自动回复，根据类型选择对应的素材
   def reply_content
@@ -54,11 +54,6 @@ class AutoreplyController < SettingsController
     @sin_materials = @public_account.sin_materials
       .includes(sin_pic_text: [:thumb]).page(params[:page]).per(6)
     render "select_sin_material.js.erb", layout: false
-  end
-
-  # 图片分组
-  def thumb_group
-    render "thumb_group.js.erb", layout: false
   end
 
   # 图片显示和分页
@@ -115,7 +110,7 @@ class AutoreplyController < SettingsController
       else
         @thumbs = @public_account.thumbs.includes(:thumb_material)
           .where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0")
-          .page(params[:page]).per(8)
+          .page(params[:page]).per(3)
       end
       @no_group_count = @public_account.thumbs
         .where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").count

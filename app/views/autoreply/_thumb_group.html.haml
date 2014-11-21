@@ -1,6 +1,6 @@
 - if !thumb_group.name.blank?
-  %li{class: current_page?(group_public_account_path(@public_account, thumb_group)) ? "active" : nil}
-    = link_to group_public_account_path(@public_account, thumb_group), remote: true do
+  %li{class: current_page?(select_thumb_group_material_public_account_path(@public_account, thumb_group)) ? "active" : nil}
+    = link_to request.parameters.merge({:thumb_group_id => thumb_group.id}), remote: true do
       %span.group_name
         = thumb_group.name
       %em.num
