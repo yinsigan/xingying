@@ -1,5 +1,5 @@
 .form-group
-  = label_tag "public_account[default_reply]", t('.name'), class: "col-sm-3 control-label"
+  = label_tag "public_account[default_reply]", t('activerecord.models.thumb'), class: "col-sm-3 control-label"
   .col-sm-9.pic_content
     - if @public_account.default_thumb_material && @public_account.default_thumb_material.try(:thumb)
       = render partial: "thumbs/thumb", locals: {thumb: @public_account.default_thumb_material.thumb, thumb_col: "col-sm-4"}
@@ -8,7 +8,7 @@
   = hidden_field "public_account", "default_material_id", value: @public_account.default_material_id.present? ? @public_account.default_material_id : nil
 .form-group
   .col-sm-9.col-sm-push-3
-    = link_to t('.select_btn'), select_thumb_material_public_account_path(@public_account), class: "btn btn-default", remote: true
+    = link_to t('select_thumb_btn'), select_thumb_material_public_account_path(@public_account), class: "btn btn-default", remote: true
 
 :javascript
   $(document).ready(function(){

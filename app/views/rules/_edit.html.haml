@@ -15,7 +15,7 @@
         .col-sm-2.text-right
           = link_to edit_new_kword_public_account_rules_path(@public_account, rule_id: @rule.id), class: "btn btn-primary btn-sm ajax_load", remote: true do
             %span.glyphicon.glyphicon-plus
-            = t('.new_kword')
+            = t('rules.new.new_kword_btn')
     %div{id: "kword_form_wrapper_#{@rule.id}"}
     - @rule.kwords.each do |kword|
       = rule.fields_for :kwords, kword do |kw|

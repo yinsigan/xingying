@@ -57,7 +57,7 @@
             %input.icheck-me#check_all{data: {"color" => "blue", "skin" => "square"}, :type => "checkbox"}
             %label{for: "check_all", style: "font-weight: normal"}
               = t('select_all')
-            = link_to t('.move_to_group'), move_public_account_thumbs_path(@public_account), class: "btn btn-default disabled", remote: true
+            = link_to t('.move_group'), move_public_account_thumbs_path(@public_account), class: "btn btn-default disabled", remote: true
             = link_to t('delete'), delete_all_public_account_thumbs_path(@public_account), class: "btn btn-danger disabled", remote: true
       .row
         .pic_content.col-md-12.margintop20

@@ -28,6 +28,11 @@ zh-CN:
       contact_us: "联系客服"
 
   public_accounts:
+    index:
+      add: "添加公众账号"
+      list: "公众账号列表"
+      no_content: "暂无公众账号"
+      help: "如何管理公众帐号"
     new:
       notice: "请填写公众账号的基本信息，创建公众账号完成后，系统提供URL和Token为连接微信公众平台使用"
       title: "添加公众账号"
@@ -39,11 +44,6 @@ zh-CN:
       develop_center: "开发者中心"
     show_token:
       weixin_dev_title: "微信接口"
-    index:
-      add: "添加公众账号"
-      list: "公众账号列表"
-      no_content: "暂无公众账号"
-      help: "如何管理公众帐号"
     form:
       appid_tip: "请输入微信提供的appid"
       appsecret_tip: "请输入微信提供的appsecret"
@@ -65,18 +65,8 @@ zh-CN:
     default:
       notice: "消息自动回复就是当在公众号里输入的关键字不匹配时自动回复的消息。"
       reply_type: "回复类型"
-    sin_material:
-      select_btn: "选择单图文"
-      name: "单图文"
-    auto_sin_material:
-      select_btn: "选择单图文"
-      name: "单图文"
-    select_sin:
-      select_btn: "选择单图文"
+    select_sin_material:
       add_btn: "添加单图文"
-    thumb_material:
-      name: "图片"
-      select_btn: "选择图片"
   menus:
     index:
       title: "自定义菜单"
@@ -109,13 +99,6 @@ zh-CN:
     send_message:
       title: "发送信息"
       click_type: "发送信息类型"
-      selected_sin_material: "单图文"
-      select_btn: "选择单图文"
-    text_material:
-      click_body: "文字"
-    sin_material:
-      name: "单图文"
-      select_btn: "选择单图文"
   material:
     tab:
       title: "素材管理"
@@ -148,34 +131,21 @@ zh-CN:
     link:
       link: "链接"
     form:
-      select_btn: "从图片库选择"
+      select_from_thumbs: "从图片库选择"
 
   thumbs:
     index:
+      list: "图片列表"
       thumb_count: "图片列表(共%{count}个)"
       no_content: "暂时没有图片"
-      move_to_group: "移动分组"
-      list: "图片列表"
-      create_group: "创建分组"
       no_group: "未分组"
+      move_group: "移动分组"
+      create_group: "创建分组"
       delete_group: "删除分组"
       rename_group: "重命名分组"
-    select_thumb:
-      select_btn: "选择图片"
-      no_group: "未分组"
-      no_content: "暂时没有图片"
-    thumb:
-      move: "移动分组"
-    move:
-      move: "移动分组"
-      no_group: "未分组"
-    move_single:
-      move: "移动分组"
-      no_group: "未分组"
 
   thumb_groups:
     form:
-      create_group: "创建分组"
       name_maximum: "最多只能填写6个字符"
   rules:
     index:
@@ -194,9 +164,6 @@ zh-CN:
       reply: "回复"
     new:
       name_limit: "规则名最多60个字"
-      new_kword: "添加关键字"
+      new_kword_btn: "添加关键字"
     edit:
       name_limit: "规则名最多60个字"
-      new_kword: "添加关键字"
-    sin_material:
-      select_btn: "选择单图文"

@@ -2,7 +2,7 @@
   %button.close{"data-dismiss" => "modal", :type => "button"}
     %span{"aria-hidden" => "true"} &times;
     %span.sr-only Close
-  %h4#mymodal.modal-title= t('.select_btn')
+  %h4#mymodal.modal-title= t('select_thumb_btn')
 .modal-body
   .row
     .col-md-12.clearfix
@@ -21,13 +21,13 @@
           %ul.nav.nav-tabs#group{role: "tablist"}
             %li{class: current_page?(public_account_thumbs_path(@public_account)) ? "active" : nil}
               = link_to public_account_thumbs_path(@public_account), remote: true do
-                = t('.no_group')
+                = t('thumbs.index.no_group')
                 %em.num
                   (#{@no_group_count})
             = render partial: "thumbs/thumb_group", collection: @thumb_groups unless @thumb_groups.empty?
   - if @thumbs.empty?
     .bs-callout.bs-callout-default
-      %h4= t('.no_content')
+      %h4= t('thumbs.index.no_content')
   - else
     .row
       .pic_content.col-md-12.margintop20

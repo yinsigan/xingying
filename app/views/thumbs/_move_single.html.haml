@@ -2,12 +2,12 @@
   %button.close{"data-dismiss" => "modal", :type => "button"}
     %span{"aria-hidden" => "true"} &times;
     %span.sr-only Close
-  %h4#mymodal.modal-title= t('.move')
+  %h4#mymodal.modal-title= t('thumbs.index.move_group')
 .modal-body
   .radio
     %label
       %input.me{:type => "radio", value: 0, name: "thumb_group_id", data: {"color" => "blue", "skin" => "square"}}
-      = t('.no_group')
+      = t('thumbs.index.no_group')
   - @thumb_groups.each do |thumb_group|
     .radio
       %label

@@ -71,3 +71,6 @@ zh-CN:
   nextStep: "下一步"
   finish: "关闭"
   weixin_dev_title: "微信开发者中心"
+  select_sin_material_btn: "选择单图文"
+  select_thumb_btn: "选择图片"
+  text: "文字"
