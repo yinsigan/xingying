@@ -7,8 +7,14 @@
   %p
     = @confirm
 .modal-footer
-  = link_to t('delete'), @delete_url, "data-method" => :delete, class: "btn btn-danger", remote: @remote
+  = link_to t('delete'), @delete_url, "data-method" => :delete, class: "btn btn-danger", remote: @remote, id: "delete_btn"
   - if @select_prev_link.present?
     = link_to t('prevStep'), @select_prev_link, class: "btn btn-default", remote: true
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
+
+:javascript
+
+  $("#delete_btn").on('click', function() {
+    $("#modal").modal('hide');
+  });
