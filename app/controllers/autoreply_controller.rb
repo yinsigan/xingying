@@ -110,7 +110,7 @@ class AutoreplyController < SettingsController
       else
         @thumbs = @public_account.thumbs.includes(:thumb_material)
           .where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0")
-          .page(params[:page]).per(3)
+          .page(params[:page]).per(8)
       end
       @no_group_count = @public_account.thumbs
         .where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").count

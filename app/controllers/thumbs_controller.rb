@@ -26,6 +26,12 @@ class ThumbsController < SettingsController
       .where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").count
     @thumb_group = @public_account.thumb_groups.build
     @thumb_groups = @public_account.thumb_groups.order("created_at ASC")
+
+    if request.xhr?
+      render "select_thumb", layout: false
+    else
+      render :index
+    end
   end
 
   def delete

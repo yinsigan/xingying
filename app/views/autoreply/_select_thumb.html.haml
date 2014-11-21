@@ -42,17 +42,17 @@
     = t('close')
 
 :javascript
-  $(document).ready(function() {
-    $("#thumb_content").on('click', ".sin_box", function() {
-      $(this).toggleClass("selected");
-      $(this).siblings().removeClass("selected");
-      if($(this).hasClass("selected")) {
-        $("#select_btn").removeClass("disabled");
-      } else {
-        $("#select_btn").addClass("disabled");
-      }
-    })
+
+  $("body").on('click', ".sin_box", function() {
+    $(this).toggleClass("selected");
+    $(this).siblings().removeClass("selected");
+    if($(this).hasClass("selected")) {
+      $("#select_btn").removeClass("disabled");
+    } else {
+      $("#select_btn").addClass("disabled");
+    }
   })
+
 
   // 更新预览图
   $("#select_btn").on('click', function() {
