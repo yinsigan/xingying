@@ -77,10 +77,6 @@ zh-CN:
     thumb_material:
       name: "图片"
       select_btn: "选择图片"
-    select_thumb:
-      select_btn: "选择图片"
-      no_group: "未分组"
-      no_content: "暂时没有图片"
   menus:
     index:
       title: "自定义菜单"
@@ -164,6 +160,10 @@ zh-CN:
       no_group: "未分组"
       delete_group: "删除分组"
       rename_group: "重命名分组"
+    select_thumb:
+      select_btn: "选择图片"
+      no_group: "未分组"
+      no_content: "暂时没有图片"
     thumb:
       move: "移动分组"
     move:

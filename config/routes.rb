@@ -25,7 +25,6 @@ Rails.application.routes.draw do
       get :delete
       # 查看token
       get :show_token
-      post :upload, to: "autoreply#upload"
     end
     # 自定义菜单
     resources :menus, except: [:show] do
@@ -42,6 +41,7 @@ Rails.application.routes.draw do
     resources :thumbs, only: [:create, :index, :destroy] do
       get :delete, on: :member
       post :upload, on: :collection
+      post :select_upload, on: :collection
       get :delete_all, :move, :move_single, on: :collection
       delete :destroy_all, on: :collection
       # 移动分组

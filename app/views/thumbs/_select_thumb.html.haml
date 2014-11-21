@@ -8,7 +8,7 @@
     .col-md-12.clearfix
       #picture_upload_form
         .pull-right
-          = form_tag upload_public_account_path(@public_account, thumb_group_id: params[:thumb_group_id].presence), method: "post", class: "picture_upload" do
+          = form_tag select_upload_public_account_thumbs_path(@public_account, thumb_group_id: params[:thumb_group_id].presence), method: "post", class: "picture_upload" do
             = file_field_tag "image", :class => "filestyle", :data => {:buttonText => t('upload'), :input => false, :badge => false, :buttonBefore => false, :buttonName => "btn btn-primary"}, id: "upload"
         .pull-right.marginright20
           %p.help-block
@@ -19,12 +19,12 @@
       .tabbable-panel
         .tabbable-line
           %ul.nav.nav-tabs#group{role: "tablist"}
-            %li{class: current_page?(select_thumb_material_public_account_path(@public_account)) ? "active" : nil}
-              = link_to select_thumb_material_public_account_path(@public_account), remote: true do
+            %li{class: current_page?(public_account_thumbs_path(@public_account)) ? "active" : nil}
+              = link_to public_account_thumbs_path(@public_account), remote: true do
                 = t('.no_group')
                 %em.num
                   (#{@no_group_count})
-            = render partial: "autoreply/thumb_group", collection: @thumb_groups unless @thumb_groups.empty?
+            = render partial: "thumbs/thumb_group", collection: @thumb_groups unless @thumb_groups.empty?
   - if @thumbs.empty?
     .bs-callout.bs-callout-default
       %h4= t('.no_content')

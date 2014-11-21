@@ -15,7 +15,7 @@
             .pull-left.marginright10
               = file_field_tag "image", :class => "filestyle", data: {"url" => public_account_thumbs_path(@public_account), "progress" => "progress_div",  "buttonText" => t('choose_picture'), "buttonBefore" => true, "input" => false}
             .pull-left
-              = link_to t('.select_btn'), select_thumb_material_public_account_path(@public_account), class: "btn btn-default", remote: true
+              = link_to t('.select_btn'), public_account_thumbs_path(@public_account), class: "btn btn-default", remote: true
             .clearfix
             = sin_pic_text.hidden_field :thumb_id
             #progress_div
