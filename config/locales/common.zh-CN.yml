@@ -10,6 +10,7 @@ zh-CN:
   disable-with-login: "正在登录..."
   disable-with-submit: "正在提交..."
   disable-with-save: "正在保存..."
+  disable-with-destroy: "正在删除..."
   change_password: "修改密码"
   username: "帐号"
   sumbit: "提交"

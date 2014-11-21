@@ -52,7 +52,7 @@ class SinMaterialsController < SettingsController
 
   def delete
     @select_prev_link = params[:select_prev_link].presence
-    @delete_url = public_account_sin_material_path
+    @delete_url = public_account_sin_material_path(select_prev_link: @select_prev_link)
     @confirm = I18n.t("sin_materials.delete.confirm")
     @remote = true
     render "shared/delete.js.erb", layout: false
@@ -68,8 +68,9 @@ class SinMaterialsController < SettingsController
   end
 
   def destroy
+    @select_prev_link = params[:select_prev_link].presence
     @sin_material.destroy
-    render "destroy.js.erb", layout: false
+    render "shared/success_destroy.js.erb", layout: false
   end
 
   private

@@ -14,7 +14,9 @@
         %input.me{:type => "radio", value: thumb_group.id, name: "thumb_group_id", data: {"color" => "blue", "skin" => "square", }}
         = thumb_group.name
 .modal-footer
-  = link_to t('sure'), move_group_public_account_thumbs_path(@public_account, ids: @ids), "data-method" => :post, class: "btn btn-primary", remote: true, id: "move_group"
+  = link_to t('sure'), move_group_public_account_thumbs_path(@public_account, ids: @ids, select_prev_link: @select_prev_link), "data-method" => :post, class: "btn btn-primary", remote: true, id: "move_group"
+  - if @select_prev_link.present?
+    = link_to t('prevStep'), @select_prev_link, class: "btn btn-default", remote: true
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
 
@@ -30,13 +32,6 @@
       var modal = $("#modal");
       $("body").spin(false);
     })
-    $("#move_group").on("ajax:success", function() {
-      Turbolinks.visit();
-    });
-    $("#move_group").on('click', function() {
-      var modal = $("#modal");
-      modal.delay(2000).modal('hide');
-    });
 
     my_icheck('.me');
   });
