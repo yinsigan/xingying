@@ -112,6 +112,13 @@ zh-CN:
       sin_material:
         type: "类型"
 
+      support:
+        title: "标题"
+        body: "正文"
+        support_category: "帮助分类"
+      support_category:
+        name: "名称"
+
     models:
       user: "用户"
       public_account: "公众账号"
@@ -125,6 +132,5 @@ zh-CN:
       thumb_material: "图片"
       material: "素材"
       multi_material: "多图文"
-      asset: "ckeditor素材"
-      attachment_file: "ckeditor附件"
-      picture: "ckeditor图片"
+      support: "帮助"
+      support_category: "帮助分类"
