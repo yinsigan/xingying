@@ -41,34 +41,27 @@
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
 
-:javascript
+:coffee
 
-  $("body").on('click', ".sin_box", function() {
-    $(this).toggleClass("selected");
-    $(this).siblings().removeClass("selected");
-    if($(this).hasClass("selected")) {
-      $("#select_btn").removeClass("disabled");
-    } else {
-      $("#select_btn").addClass("disabled");
-    }
-  })
-
-
-  // 更新预览图
-  $("#select_btn").on('click', function() {
-    var img = $('.selected').find('img');
-    $("#edit_sin_preview .thumb .default").hide();
-    if ($("#edit_sin_preview .thumb").find("img").size() > 0) {
-      $("#edit_sin_preview .thumb").find("img").remove();
-    }
-    $("#edit_sin_preview .thumb").prepend(img.height("240px").width("240px"));
-    $("#sin_material_sin_pic_text_attributes_thumb_id").val($(".selected").attr("id"));
-    $("#modal").modal('hide');
-  });
+  $(document).ready ->
+    $(".sin_box").on "click", ->
+      $(this).toggleClass "selected"
+      $(this).siblings().removeClass "selected"
+      if $(this).hasClass("selected")
+        $("#select_btn").removeClass "disabled"
+      else
+        $("#select_btn").addClass "disabled"
 
 
-  filestyle();
+  # 更新预览图
+  $("#select_btn").on "click", ->
+    img = $(".selected").find("img")
+    $("#edit_sin_preview .thumb .default").hide()
+    $("#edit_sin_preview .thumb").find("img").remove()  if $("#edit_sin_preview .thumb").find("img").size() > 0
+    $("#edit_sin_preview .thumb").prepend img.height("240px").width("240px")
+    $("#sin_material_sin_pic_text_attributes_thumb_id").val $(".selected").attr("id")
+    $("#modal").delay(2000).modal "hide"
 
-  picture_upload("#picture_upload_form");
-
-  my_icheck('.icheck-me');
+  filestyle()
+  picture_upload "#picture_upload_form"
+  my_icheck ".icheck-me"

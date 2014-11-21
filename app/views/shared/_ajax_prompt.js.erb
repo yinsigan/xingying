@@ -2,5 +2,6 @@
   $(".alert-warning.alert-fixed-top").html("<%= j(render partial: 'shared/ajax_error_messages') %>").fadeIn().delay(5000).fadeOut();
 <% else %>
   $(".alert-success.alert-fixed-top").html("<%= j(@flash_success) %>").fadeIn().delay(2000).fadeOut();
+  $('#modal').delay(2000).modal('hide');
   Turbolinks.visit()
 <% end %>

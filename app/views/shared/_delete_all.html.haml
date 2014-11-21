@@ -11,19 +11,15 @@
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
 
-:javascript
-  $(document).ready(function(){
-    $("#delete_all").on("ajax:before", function(event) {
-      var el = $(this);
-      el.attr('data-params', $(":checkbox").serialize());
-      $.blockUI({"message": "<h1>#{t('destroing')}</h1>"});
-    })
-    $("#delete_all").on("ajax:complete", function(event, xhr, status) {
-      var el = $(this);
-      el.removeAttr('data-params');
-      $.unblockUI();
-    })
-    $("#delete_all").on('click', function() {
-      $('#modal').delay(2000).modal('hide');
-    });
-  });
+:coffee
+
+  $("#delete_all").on "ajax:before", (event) ->
+    el = $(this)
+    el.attr "data-params", $(":checkbox").serialize()
+    $.blockUI message: "<h1>#{t('destroing')}</h1>"
+
+
+  $("#delete_all").on "ajax:complete", (event, xhr, status) ->
+    el = $(this)
+    el.removeAttr "data-params"
+    $.unblockUI()

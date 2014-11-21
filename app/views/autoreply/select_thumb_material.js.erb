@@ -1,9 +1,7 @@
-$("#modal").find(".modal-dialog").addClass("modal-lg");
-$("#modal").modal({
-  keyboard: true,
-  backdrop: false
-});
+var modal = $("#modal");
+modal.find(".modal-dialog").addClass("modal-lg");
+start_modal();
 $("#modal-content").html("<%= j(render 'select_thumb') %>");
-$('#modal').on('hidden.bs.modal', function (e) {
+modal.on('hidden.bs.modal', function (e) {
   $(this).find(".modal-dialog").removeClass("modal-lg");
 })

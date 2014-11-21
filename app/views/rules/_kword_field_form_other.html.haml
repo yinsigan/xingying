@@ -23,20 +23,16 @@
 
   = hidden_field_tag "rule[kwords_attributes][#{kword_index}][public_account_id]", @public_account.id
 
-:javascript
-  $(document).ready(function(){
-    var elem = $("#chars_#{kword_index}");
-    if($("#text_#{kword_index}").length > 0) {
-      $("#text_#{kword_index}").limiter(300, elem);
-    }
-    // 自动触发类型选择
-    var select_reply_type = "#" + "select_reply_type_#{kword_index}_#{rule_id}"
-    $(select_reply_type).trigger('change');
+:coffee
+  $(document).ready ->
+    elem = $('#chars_#{kword_index}')
+    $('#text_#{kword_index}').limiter 300, elem  if $('#text_#{kword_index}').length > 0
 
-    $('.delete_kword_form').on('click', function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      var delete_form = "#" + $(this).data("delete");
-      $(delete_form).remove();
-    });
-  });
+    # 自动触发类型选择
+    select_reply_type = "#" + 'select_reply_type_#{kword_index}_#{rule_id}'
+    $(select_reply_type).trigger "change"
+    $(".delete_kword_form").on "click", (event) ->
+      event.preventDefault()
+      event.stopPropagation()
+      delete_form = "#" + $(this).data("delete")
+      $(delete_form).remove()

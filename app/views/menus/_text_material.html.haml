@@ -7,9 +7,6 @@
       %span#chars
 
 :javascript
-  $(document).ready(function() {
-    var elem = $("#chars");
-    if($("#text").length > 0) {
-      $("#text").limiter(600, elem);
-    }
-  });
+  $(document).ready ->
+    elem = $("#chars")
+    $("#text").limiter 600, elem  if $("#text").length > 0

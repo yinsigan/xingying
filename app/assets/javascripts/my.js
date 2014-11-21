@@ -86,7 +86,7 @@ var check_all = function() {
 };
 
 
-var showGuide = function(selector, option){
+var showGuide = function(selector, option) {
   selector = selector ||  ".boot-tour";
   var options =  {
     prevButtonText: "上一步",
@@ -96,3 +96,10 @@ var showGuide = function(selector, option){
   $.extend(options, option || {});
   bootstro.start(selector, options);
 };
+
+var start_modal = function() {
+  $("#modal").modal({
+    keyboard: true,
+    backdrop: false
+  });
+}

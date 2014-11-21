@@ -44,14 +44,12 @@
     %i.arrow_out
     %i.arrow_in
 
-:javascript
-  $(document).ready(function(){
-    if(!($.cookie("new_sin_materials_guide", Boolean))){
-      showGuide(".boot-tour", {
-        onExit: function(){
-          $.cookie("new_sin_materials_guide", true, { "expires": 30 });
-        }
-      });
-    }
-    $("#sin_material_sin_pic_text_attributes_click_response").trigger('change');
-  });
+:coffee
+  $(document).ready ->
+    unless $.cookie("new_sin_materials_guide", Boolean)
+      showGuide ".boot-tour",
+        onExit: ->
+          $.cookie "new_sin_materials_guide", true,
+            expires: 30
+
+    $("#sin_material_sin_pic_text_attributes_click_response").trigger "change"

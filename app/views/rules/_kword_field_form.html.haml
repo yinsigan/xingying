@@ -29,30 +29,28 @@
 
   = kword.hidden_field :public_account_id, value: @public_account.id
 
-:javascript
+:coffee
 
   // 删除表单操作
-  $('.delete_kword_form').on('click', function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    var delete_form = "#" + $(this).data("delete");
-    $(delete_form).remove();
-  });
+  $(".delete_kword_form").on "click", (event) ->
+    event.preventDefault()
+    event.stopPropagation()
+    delete_form = "#" + $(this).data("delete")
+    $(delete_form).remove()
 
   // 自动触发类型选择
-  var select_reply_type = "#" + "select_reply_type_#{kword.index}_#{rule_id}"
-  $(select_reply_type).trigger('change');
+  select_reply_type = "#" + "select_reply_type_#{kword.index}_#{rule_id}"
+  $(select_reply_type).trigger('change')
 
   // 按钮提示
   $('button[data-tooltip], a[data-tooltip]').tooltip()
 
   // 编辑规则时删除关键词表单
   // 设_destroy为1后隐藏表单
-  $(".edit_delete_kword_form").on('click', function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    var set_destroy = "#" + $(this).data("delete");
-    var hide_form = "#" + $(this).data("hide");
-    $(set_destroy).val(1);
-    $(hide_form).hide();
-  });
+  $(".edit_delete_kword_form").on "click", (event) ->
+    event.preventDefault()
+    event.stopPropagation()
+    set_destroy = "#" + $(this).data("delete")
+    hide_form = "#" + $(this).data("hide")
+    $(set_destroy).val 1
+    $(hide_form).hide()

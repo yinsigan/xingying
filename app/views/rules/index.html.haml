@@ -29,9 +29,8 @@
 #rule_content
   = render 'search_index'
 
-:javascript
-  $(document).ready(function() {
-    $("#new_btn").on('click', function() {
-      $("#new_rule").toggle();
-    })
-  })
+:coffee
+  $(document).ready ->
+    $("#new_btn").on "click", ->
+      $("#new_rule").toggle()
+

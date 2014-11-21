@@ -32,10 +32,7 @@
 
       = render @public_accounts
 
-  :javascript
-    $(document).ready(function(){
-      $("#need-help").on("click", function(){
-        showGuide(".boot-tour");
-      });
-    });
-
+  :coffee
+    $(document).ready ->
+      $("#need-help").on "click", ->
+        showGuide(".boot-tour")

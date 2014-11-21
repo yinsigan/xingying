@@ -33,9 +33,7 @@
       = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-save')
 
 
-:javascript
-  $(document).ready(function(){
-    $("#need-help").on('click', function(){
-      showGuide(".boot-tour");
-    });
-  });
+:coffee
+  $(document).ready ->
+    $("#need-help").on 'click', ->
+      showGuide(".boot-tour")

@@ -29,11 +29,10 @@
     .selected_mask_inner
     .selected_mask_icon
 
-:javascript
-  $('button[data-tooltip], a[data-tooltip]').tooltip()
-  $(".delete_stop").on('click', function(event) {
-    event.preventDefault();
-  })
-  $(".edit_stop").on('click', function() {
-    event.stopPropagation();
-  })
+:coffee
+  $("button[data-tooltip], a[data-tooltip]").tooltip()
+  $(".delete_stop").on "click", (event) ->
+    event.preventDefault()
+
+  $(".edit_stop").on "click", ->
+    event.stopPropagation()

@@ -21,15 +21,13 @@
       %p.appmsg_desc
     = render 'form'
 
-:javascript
-  $("#image").ajax_upload();
-  $("#sin_material_sin_pic_text_attributes_title").on("keyup", function() {
-    $("#edit_sin_preview .appmsg_title a").text($(this).val());
-  });
-  $("#sin_material_sin_pic_text_attributes_desc").on("keyup", function() {
-    $("#edit_sin_preview .appmsg_desc").text($(this).val());
-  });
+:coffee
+  $("#image").ajax_upload()
+  $("#sin_material_sin_pic_text_attributes_title").on "keyup", ->
+    $("#edit_sin_preview .appmsg_title a").text $(this).val()
 
-  $("#need-help").on('click', function(){
-    showGuide(".boot-tour");
-  });
+  $("#sin_material_sin_pic_text_attributes_desc").on "keyup", ->
+    $("#edit_sin_preview .appmsg_desc").text $(this).val()
+
+  $("#need-help").on "click", ->
+    showGuide ".boot-tour"

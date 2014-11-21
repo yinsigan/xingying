@@ -21,21 +21,20 @@
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
 
-:javascript
-  $(document).ready(function(){
-    $("#move_group").on("ajax:before", function(event) {
-      var el = $(this);
-      el.attr('data-params', $(":checkbox").serialize() + "&" + $(":radio").serialize());
-      $.blockUI({"message": "<h1>#{t('submiting')}</h1>"});
-    });
-    $("#move_group").on("ajax:complete", function() {
-      var el = $(this);
-      el.removeAttr('data-params');
-      var modal = $("#modal");
-      $.unblockUI();
-    });
-    $("#move_group").on("click", function() {
-      $('#modal').delay(2000).modal('hide');
-    });
-    my_icheck('.me');
-  });
+:coffee
+  $(document).ready ->
+    $("#move_group").on "ajax:before", (event) ->
+      el = $(this)
+      el.attr "data-params", $(":checkbox").serialize() + "&" + $(":radio").serialize()
+      $.blockUI message: '<h1>#{t(\'submiting\')}</h1>'
+
+    $("#move_group").on "ajax:complete", ->
+      el = $(this)
+      el.removeAttr "data-params"
+      modal = $("#modal")
+      $.unblockUI()
+
+    $("#move_group").on "click", ->
+      $("#modal").delay(2000).modal "hide"
+
+    my_icheck ".me"

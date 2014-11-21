@@ -30,28 +30,26 @@
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
 
-:javascript
-  $(document).ready(function(){
-    // 添加选中时效果
-    $(".sin_box").on('click', function() {
-      $(this).toggleClass("selected");
-      $(this).siblings().removeClass("selected");
-      if($(this).hasClass("selected")) {
-        $(".sure_btn").removeClass("disabled");
-      } else {
-        $(".sure_btn").addClass("disabled");
-      }
-    });
+:coffee
+  $(document).ready ->
 
-    $("#select_btn").on('click', function() {
-      $("#modal").modal('hide');
-      $("##{@hidden_tag}").val($(".selected").attr("id"));
-      $("##{@preview_wrapper}").html($('.selected').removeClass("selected col-md-4").addClass("col-sm-6").off('click'));
-    });
+    # 添加选中时效果
+    $(".sin_box").on "click", ->
+      $(this).toggleClass "selected"
+      $(this).siblings().removeClass "selected"
+      if $(this).hasClass("selected")
+        $(".sure_btn").removeClass "disabled"
+      else
+        $(".sure_btn").addClass "disabled"
 
-    $("#prev_link_sure").on("ajax:before", function(event) {
-      var el = $(this);
-      var select_sin_id_params = "select_sin_id=" + $(".selected").attr("id");
-      el.attr('data-params', select_sin_id_params);
-    })
-  });
+
+    $("#select_btn").on "click", ->
+      $("#modal").modal "hide"
+      $('##{@hidden_tag}').val $(".selected").attr("id")
+      $('##{@preview_wrapper}').html $(".selected").removeClass("selected col-md-4").addClass("col-sm-6").off("click")
+
+
+    $("#prev_link_sure").on "ajax:before", (event) ->
+      el = $(this)
+      select_sin_id_params = "select_sin_id=" + $(".selected").attr("id")
+      el.attr "data-params", select_sin_id_params

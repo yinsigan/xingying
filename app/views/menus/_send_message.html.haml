@@ -31,7 +31,6 @@
       = t('close')
 
 
-:javascript
-  $(document).ready(function() {
-    $("#menu_click_type").trigger('change');
-  });
+:coffee
+  $(document).ready ->
+    $("#menu_click_type").trigger 'change'
