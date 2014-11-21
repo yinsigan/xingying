@@ -80,6 +80,7 @@ class ThumbsController < SettingsController
 
   # 多选时移动分组
   def move
+    @thumb_group_id = params[:thumb_group_id].presence
     @thumb_groups = @public_account.thumb_groups
     render "move.js.erb", layout: false
   end

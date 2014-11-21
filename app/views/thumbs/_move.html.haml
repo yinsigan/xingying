@@ -5,11 +5,13 @@
     %span.sr-only Close
   %h4#mymodal.modal-title= t('thumbs.index.move_group')
 .modal-body
-  .radio
-    %label
-      %input.me{:type => "radio", value: 0, name: "thumb_group_id", data: {"color" => "blue", "skin" => "square"}}
-      = t('thumbs.index.no_group')
+  - if @thumb_group_id.present?
+    .radio
+      %label
+        %input.me{:type => "radio", value: 0, name: "thumb_group_id", data: {"color" => "blue", "skin" => "square"}}
+        = t('thumbs.index.no_group')
   - @thumb_groups.each do |thumb_group|
+    - next if thumb_group.id == @thumb_group_id.to_i
     .radio
       %label
         %input.me{:type => "radio", value: thumb_group.id, name: "thumb_group_id", data: {"color" => "blue", "skin" => "square"}}
