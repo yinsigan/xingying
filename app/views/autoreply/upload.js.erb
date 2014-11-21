@@ -3,8 +3,8 @@
 <% else %>
   $(".alert-success.alert-fixed-top").html("<%= j(I18n.t('upload_success')) %>").fadeIn().delay(2000).fadeOut();
   <% if @thumb_group_id %>
-    $.getScript("<%= j group_public_account_path(@public_account, @thumb_group_id) %>");
+    $.getScript("<%= j select_thumb_group_material_public_account_path(@public_account, @thumb_group_id) %>");
   <% else %>
-    $.getScript("<%= j thumb_group_public_account_path(@public_account) %>");
+    $.getScript("<%= j select_thumb_material_public_account_path(@public_account) %>");
   <% end %>
 <% end %>

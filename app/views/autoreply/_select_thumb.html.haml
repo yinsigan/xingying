@@ -8,7 +8,7 @@
     .col-md-12.clearfix
       #picture_upload_form
         .pull-right
-          = form_tag upload_public_account_path(@public_account), method: "post", class: "picture_upload" do
+          = form_tag upload_public_account_path(@public_account, thumb_group_id: params[:thumb_group_id].presence), method: "post", class: "picture_upload" do
             = file_field_tag "image", :class => "filestyle", :data => {:buttonText => t('upload'), :input => false, :badge => false, :buttonBefore => false, :buttonName => "btn btn-primary"}, id: "upload"
         .pull-right.marginright20
           %p.help-block
@@ -69,6 +69,6 @@
 
   filestyle();
 
-  picture_upload();
+  picture_upload("#picture_upload_form");
 
   my_icheck('.icheck-me');
