@@ -15,10 +15,15 @@ class TicketsController < SettingsController
     add_breadcrumb I18n.t("breadcrumbs.ticket.new"), :new_ticket_path
     @ticket = current_user.tickets.build(ticket_params)
     if @ticket.save
-      redirect_to tickets_path, flash: {success: I18n.t('success_submit')}
+      redirect_to @ticket, flash: {success: I18n.t('success_submit')}
     else
       render :new
     end
+  end
+
+  def show
+    @ticket = current_user.tickets.find(params[:id])
+    add_breadcrumb @ticket.title, ticket_path(@ticket)
   end
 
   private

@@ -1,46 +1,9 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
  *= require font-awesome
- *= require_self
  *= require bootstrapValidator.min
  */
 
-/*重写bootstrap样式-变量*/
-
-/*导航条*/
-$navbar-default-bg:                #2fa4e7;
-$navbar-default-link-color:        #FFF;
-$navbar-default-link-hover-color:  #FFF;
-$navbar-default-link-hover-bg:     darken($navbar-default-bg, 10%);
-$navbar-default-link-active-color: #FFF;
-$navbar-default-link-active-bg:    darken($navbar-default-bg, 6.5%);
-$navbar-default-color:             #FFF;
-
-/*logo*/
-$navbar-default-brand-color:       $navbar-default-link-color;
-$navbar-default-brand-hover-color: $navbar-default-link-color;
-$navbar-default-brand-hover-bg:    transparent;
-
-/* 全局色 */
-$brand-primary:                    #2FA4E7;
-$brand-success:                    #73A839;
-$brand-danger:                     #C71C22;
-$btn-default-bg:                   #FFF;
-
-$badge-color:                      $brand-primary;
-$badge-bg:                         #FFF;
-
+@import "bootstrap-variable";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "nprogress";
@@ -52,72 +15,9 @@ $badge-bg:                         #FFF;
 @import "rotating-card";
 @import "bootstro";
 @import "custom-button";
-
-
-.field_with_errors {
-  @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
-}
-
-/*公众账号显示表格*/
-.table-user-information > tbody > tr {
-  border-top: 1px solid rgb(221, 221, 221);
-}
-.table-user-information > tbody > tr:first-child {
-  border-top: 0;
-}
-.table-user-information > tbody > tr > td {
-  border-top: 0;
-}
-
-/*404页面*/
-.error-template {
-  padding: 40px 15px;
-  text-align: center;
-}
-.error-actions {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-.error-actions .btn {
-  margin-right: 10px;
-}
-
-/*不要浮动，修改bootstrap的center-block*/
-.no-float {
-  float: none;
-}
-
-/*表单验证*/
-.form-control-feedback {
-  position: absolute;
-  top: 0;
-  right: 12px;
-  z-index: 2;
-  display: block;
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
-  text-align: center;
-}
-
-/*解决下拉菜单和按钮的显示问题*/
-.navbar-fixed-top,
-.navbar-fixed-bottom {
-  z-index: 900;
-}
-
-/* 设置bootstro高亮块的边框颜色 */
-.bootstro-highlight{
-  border-style: none;
-  border-color: transparent;
-}
-
-/*处理高亮问题*/
-.bootstro-backdrop{
-  z-index: 2;
-}
-
-/*让modal框下移一些*/
-.modal {
-  top: 25px;
-}
+@import "common";
+@import "layouts";
+@import "pic_text";
+@import "tabbable-panel";
+@import "settings";
+@import "override";
