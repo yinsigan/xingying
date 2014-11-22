@@ -154,7 +154,7 @@ zh-CN:
       new_rule: "新规则"
     search_index:
       no_content: "暂时没有规则"
-      search_count: "已查询到 %{rules_count} 条记录"
+      search_count: "已查询到 <strong> %{rules_count} </strong> 条记录"
     search_form:
       keyword: "搜索规则名或关键字"
 
@@ -168,3 +168,8 @@ zh-CN:
       new_kword_btn: "添加关键字"
     edit:
       name_limit: "规则名最多60个字"
+  supports:
+    sidebar_left:
+      no_content: "暂时没有分类"
+    index:
+      no_content: "暂时没有新闻文章"

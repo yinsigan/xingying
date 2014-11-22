@@ -1,12 +1,15 @@
-.container
-  .row
-    .col-md-3.margintop20
-      .list-group
-        = render partial: "supports/support_category", collection: @support_categories
-    .col-md-9
-      %h2
-        %span
-          = @support_category.name
-      %hr/
-      %ul
-        = render partial: "supports/support_list", collection: @supports
+= render "sidebar_left"
+
+- if @support_category.blank?
+  .col-md-9.margintop20
+    .bs-callout.bs-callout-default
+      %h4= t('.no_content')
+- else
+  .col-md-9
+    %h2
+      = @support_category.try(:name)
+
+    %ul.list-group.ul-no-style
+      = render partial: "supports/support_list", collection: @supports
+
+    = paginate @supports

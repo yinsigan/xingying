@@ -42,7 +42,7 @@
 
       - if user_signed_in?
         %ul.nav.navbar-nav
-          %li{:class => (controller_name == 'public_accounts' ? 'active' : nil)}
+          %li{class: controller_name == 'public_accounts' ? 'active' : nil}
             %a{:href => public_accounts_path}
               %i.fa.fa-weixin
                 = t('.public_account_manage')
@@ -50,7 +50,7 @@
             %a{:href => "#"}
               %i.fa.fa-users
                 = t('.contact_us')
-          %li
-            %a{:href => supports_path}
+          %li{class: controller_name == 'supports' ? 'active' : nil}
+            = link_to supports_path do
               %i.fa.fa-question
                 = t('.help')

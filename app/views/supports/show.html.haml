@@ -1,9 +1,11 @@
-/ the actual blog post: title/author/date/content
-%h3
-  = @support.title
-%hr/
-%p.text-muted.pull-right
-  = @support.created_at
-.clearfix
+= render "sidebar_left"
 
-%p= @support.body
+.col-md-9
+  .article-header.page-header
+    %h2
+      = @support.title
+  %p.text-muted.pull-right
+    = @support.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+  .clearfix
+
+  = raw @support.body
