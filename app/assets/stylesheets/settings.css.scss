@@ -220,30 +220,3 @@ footer {
   color: #666666;
 }
 
-form .form-control.round-text-input {
-  padding: 20px 15px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  border-radius: 20px;
-}
-
-.btn.btn-primary.round-primary-btn {
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  border-radius: 20px;
-  margin-top: 15px;
-  padding: 10px 15px;
-  color: #2FA4E7;
-  border: 2px solid #2FA4E7;
-  background: none;
-  &:hover {
-    color:  #FFF;
-    background:  #2FA4E7;
-    border-color:  #2FA4E7;
-  }
-}
-

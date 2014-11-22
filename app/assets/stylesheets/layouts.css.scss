@@ -3,23 +3,6 @@
 #content {
   margin-top: 60px;
 }
-.nav-h {
-  left: 50%;
-  margin-left: -150px;
-  top: 50px;
-  position: absolute;
-  > li > a {
-    &:hover, &:focus {
-      background: #fff;
-    }
-  }
-  .open > a {
-    background: #fff;
-    &:hover, &:focus {
-      background: #fff;
-    }
-  }
-}
 
 /*缩略图*/
 #public_accounts .thumbnail {

@@ -1,0 +1,60 @@
+.field_with_errors {
+  @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
+}
+
+/*公众账号显示表格*/
+.table-user-information > tbody > tr {
+  border-top: 1px solid rgb(221, 221, 221);
+}
+.table-user-information > tbody > tr:first-child {
+  border-top: 0;
+}
+.table-user-information > tbody > tr > td {
+  border-top: 0;
+}
+
+/*404页面*/
+.error-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+/*不要浮动，修改bootstrap的center-block*/
+.no-float {
+  float: none;
+}
+
+/*表单验证*/
+.form-control-feedback {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+}
+
+/*解决下拉菜单和按钮的显示问题*/
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  z-index: 900;
+}
+
+/* 设置bootstro高亮块的边框颜色 */
+.bootstro-highlight{
+  border-style: none;
+  border-color: transparent;
+}
+
+/*处理高亮问题*/
+.bootstro-backdrop{
+  z-index: 2;
+}
+
+/*让modal框下移一些*/
+.modal {
+  top: 25px;
+}
