@@ -29,7 +29,6 @@ gem 'meta_request', group: :development
 
 gem 'bootstrap-sass', '~> 3.2.0'
 
-gem 'autoprefixer-rails', '~> 3.0.1.20140826'
 gem "haml-rails", '~> 0.5.3'
 gem 'devise', '~> 3.3.0'
 gem 'rails-i18n'
