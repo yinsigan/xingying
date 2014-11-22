@@ -7,4 +7,6 @@ class Ticket < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 50 }
   validates :body,  presence: true, length: { in: 1..600 }
   validates :number, presence: true
+  validates :user, presence: true
+
 end
