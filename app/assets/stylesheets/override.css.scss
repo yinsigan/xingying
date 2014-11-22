@@ -2,22 +2,6 @@
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
 }
 
-/*公众账号显示表格*/
-.table-user-information > tbody > tr {
-  border-top: 1px solid rgb(221, 221, 221);
-}
-.table-user-information > tbody > tr:first-child {
-  border-top: 0;
-}
-.table-user-information > tbody > tr > td {
-  border-top: 0;
-}
-
-/*不要浮动，修改bootstrap的center-block*/
-.no-float {
-  float: none;
-}
-
 /*表单验证*/
 .form-control-feedback {
   position: absolute;
