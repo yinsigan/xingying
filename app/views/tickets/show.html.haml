@@ -1,0 +1,41 @@
+.panel.panel-default
+  .panel-heading
+    = @ticket.title
+  .panel-body
+    %a.col-md-1
+      %img{src: "/assets/avatar.png", href: "#", style: "width: 64px; height: 64px;"}
+    .col-md-11
+      %h4.margin0
+        = @ticket.user.email
+        %span.small.pull-right
+          = @ticket.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+      = @ticket.body
+
+.panel.panel-default
+  .panel-heading
+    回复
+  .panel-body
+    .list-group.custom
+      .li
+        %a.col-md-1
+          %img{src: "/assets/avatar.png", href: "#", style: "width: 64px; height: 64px;"}
+        .col-md-11
+          %h4.margin0
+            teset
+            %span.small.pull-right
+              test
+          test
+        .clearfix
+      .li
+        %a.col-md-1
+          %img{src: "/assets/avatar.png", href: "#", style: "width: 64px; height: 64px;"}
+        .col-md-11
+          %h4.margin0
+            teset
+            %span.small.pull-right
+              test
+          test
+        .clearfix
+
+
+.panel.panel-default
