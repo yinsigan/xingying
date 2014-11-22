@@ -7,7 +7,7 @@ class RulesController < SettingsController
     add_breadcrumb I18n.t('breadcrumbs.rule.index'), public_account_rules_path(@public_account)
     @q = @public_account.rules.search(params[:q])
     @rules = @q.result.includes(:kwords).order("created_at DESC").page(params[:page]).uniq
-    # @rules_count = @rules.total_count
+    @rules_count = @rules.total_count
 
     # 创建新规则
     @rule = @public_account.rules.build
