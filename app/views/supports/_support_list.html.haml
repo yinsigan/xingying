@@ -1,2 +1,2 @@
-%li
-  = link_to support_list.title, support_path(support_list)
+%li.list-group-item.li-no-border
+  = link_to support_list.title, support_path(params[:support_category_id], support_list)

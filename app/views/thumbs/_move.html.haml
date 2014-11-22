@@ -26,7 +26,7 @@
     $("#move_group").on "ajax:before", (event) ->
       el = $(this)
       el.attr "data-params", $(":checkbox").serialize() + "&" + $(":radio").serialize()
-      $.blockUI message: '<h1>#{t(\'submiting\')}</h1>'
+      $.blockUI message: "<h1>#{t('submiting')}</h1>"
 
     $("#move_group").on "ajax:complete", ->
       el = $(this)

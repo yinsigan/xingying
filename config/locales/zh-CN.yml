@@ -167,3 +167,8 @@ zh-CN:
       new_kword_btn: "添加关键字"
     edit:
       name_limit: "规则名最多60个字"
+  supports:
+    sidebar_left:
+      no_content: "暂时没有分类"
+    index:
+      no_content: "暂时没有新闻文章"

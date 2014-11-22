@@ -84,6 +84,10 @@ footer {
   margin: 15px 0 0;
 }
 
+.article-header.page-header {
+  margin: 15px 0;
+}
+
 /*数字*/
 .num {
   display: inline-block;
@@ -194,4 +198,8 @@ footer {
     font-size: 14px;
     color: #000;
   }
+}
+
+.list-group-item.li-no-border {
+  border: none;
 }

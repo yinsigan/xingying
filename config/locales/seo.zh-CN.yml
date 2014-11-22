@@ -3,3 +3,5 @@ zh-CN:
     public_account:
       index: "公众账号管理"
       new: "创建公众账号"
+    support:
+      index: "帮助中心"
