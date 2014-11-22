@@ -154,6 +154,7 @@ zh-CN:
       new_rule: "新规则"
     search_index:
       no_content: "暂时没有规则"
+      search_count: "已查询到 %{rules_count} 条记录"
     search_form:
       keyword: "搜索规则名或关键字"
 
