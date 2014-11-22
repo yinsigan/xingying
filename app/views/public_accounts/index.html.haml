@@ -22,7 +22,7 @@
       %a{href: new_public_account_path, class: "btn btn-primary pull-right"}
         %span.glyphicon.glyphicon-plus
         = t('.add')
-    %table.table.table-bordered#public_accounts
+    %table.table.table-bordered.public_account_thumbs
       %tr
         %th.text-center= PublicAccount.human_attribute_name('name')
         %th= t('created_at')
