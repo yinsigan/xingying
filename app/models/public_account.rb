@@ -9,12 +9,12 @@ class PublicAccount < ActiveRecord::Base
 
   has_many :sin_materials, -> { order "id DESC" }
   has_many :multi_materials
-  has_many :rules
+  has_many :rules, dependent: :delete_all
   has_many :thumbs, -> { order "id DESC" }
-  has_many :thumb_groups
-  has_many :kwords
+  has_many :thumb_groups, dependent: :destroy
+  has_many :kwords, dependent: :delete_all
   has_many :sin_pic_texts, through: :sin_materials
-  has_many :menus
+  has_many :menus, dependent: :delete_all
 
   belongs_to :user
   # 关注时回复
