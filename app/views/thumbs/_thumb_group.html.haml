@@ -1,0 +1,7 @@
+- if !thumb_group.name.blank?
+  %li{class: current_page?(group_public_account_thumbs_path(@public_account, thumb_group)) ? "active" : nil}
+    = link_to request.parameters.merge({:thumb_group_id => thumb_group.id}), remote: true do
+      %span.group_name
+        = thumb_group.name
+      %em.num
+        (#{thumb_group.thumbs.count})

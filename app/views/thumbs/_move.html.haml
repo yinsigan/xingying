@@ -1,14 +1,17 @@
+-# 移动多个图片
 .modal-header
   %button.close{"data-dismiss" => "modal", :type => "button"}
     %span{"aria-hidden" => "true"} &times;
     %span.sr-only Close
-  %h4#mymodal.modal-title= t('.move')
+  %h4#mymodal.modal-title= t('thumbs.index.move_group')
 .modal-body
-  .radio
-    %label
-      %input.me{:type => "radio", value: 0, name: "thumb_group_id", data: {"color" => "blue", "skin" => "square"}}
-      = t('.no_group')
+  - if @thumb_group_id.present?
+    .radio
+      %label
+        %input.me{:type => "radio", value: 0, name: "thumb_group_id", data: {"color" => "blue", "skin" => "square"}}
+        = t('thumbs.index.no_group')
   - @thumb_groups.each do |thumb_group|
+    - next if thumb_group.id == @thumb_group_id.to_i
     .radio
       %label
         %input.me{:type => "radio", value: thumb_group.id, name: "thumb_group_id", data: {"color" => "blue", "skin" => "square"}}
@@ -18,42 +21,20 @@
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
 
-:javascript
-  $(document).ready(function(){
-    $("#move_group").on("ajax:before", function(event) {
-      var el = $(this);
-      el.attr('data-params', $(":checkbox").serialize() + "&" + $(":radio").serialize());
-      $("body").spin();
-    });
-    $("#move_group").on("ajax:complete", function() {
-      var el = $(this);
-      el.removeAttr('data-params');
-      var modal = $("#modal");
-      $("body").spin(false);
-    });
-    $("#move_group").on("ajax:success", function() {
-      Turbolinks.visit();
-    });
-    $("#move_group").on('click', function() {
-      var modal = $("#modal");
-      modal.delay(2000).modal('hide');
-    });
-    function icheck(){
-      if($(".me").length > 0){
-        $(".me").each(function(){
-          var $el = $(this);
-          var skin = ($el.attr('data-skin') !== undefined) ? "_" + $el.attr('data-skin') : "",
-          color = ($el.attr('data-color') !== undefined) ? "-" + $el.attr('data-color') : "";
-          var opt = {
-            checkboxClass: 'icheckbox' + skin + color,
-            radioClass: 'iradio' + skin + color,
-          }
-          $el.iCheck(opt);
-        });
-      }
-    }
+:coffee
+  $(document).ready ->
+    $("#move_group").on "ajax:before", (event) ->
+      el = $(this)
+      el.attr "data-params", $(":checkbox").serialize() + "&" + $(":radio").serialize()
+      $.blockUI message: '<h1>#{t(\'submiting\')}</h1>'
 
-    $(function(){
-      icheck();
-    });
-  });
+    $("#move_group").on "ajax:complete", ->
+      el = $(this)
+      el.removeAttr "data-params"
+      modal = $("#modal")
+      $.unblockUI()
+
+    $("#move_group").on "click", ->
+      $("#modal").delay(2000).modal "hide"
+
+    my_icheck ".me"

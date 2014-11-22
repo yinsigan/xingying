@@ -6,10 +6,7 @@
       = t('char_tip')
       %span{id: "chars_#{kword_index}_#{rule_id}"}
 
-:javascript
-  $(document).ready(function() {
-    var elem = $("#chars_#{kword_index}_#{rule_id}");
-    if($("#text_#{kword_index}_#{rule_id}").length > 0) {
-      $("#text_#{kword_index}_#{rule_id}").limiter(300, elem);
-    }
-  });
+:coffee
+  $(document).ready ->
+    elem = $('#chars_#{kword_index}_#{rule_id}')
+    $('#text_#{kword_index}_#{rule_id}').limiter 300, elem  if $('#text_#{kword_index}_#{rule_id}').length > 0

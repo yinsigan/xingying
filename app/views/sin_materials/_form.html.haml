@@ -15,7 +15,7 @@
             .pull-left.marginright10
               = file_field_tag "image", :class => "filestyle", data: {"url" => public_account_thumbs_path(@public_account), "progress" => "progress_div",  "buttonText" => t('choose_picture'), "buttonBefore" => true, "input" => false}
             .pull-left
-              = link_to t('.select_btn'), select_thumb_material_public_account_path(@public_account), class: "btn btn-default", remote: true
+              = link_to t('.select_from_thumbs'), public_account_thumbs_path(@public_account), class: "btn btn-default", remote: true
             .clearfix
             = sin_pic_text.hidden_field :thumb_id
             #progress_div
@@ -44,14 +44,12 @@
     %i.arrow_out
     %i.arrow_in
 
-:javascript
-  $(document).ready(function(){
-    if(!($.cookie("new_sin_materials_guide", Boolean))){
-      showGuide(".boot-tour", {
-        onExit: function(){
-          $.cookie("new_sin_materials_guide", true, { "expires": 30 });
-        }
-      });
-    }
-    $("#sin_material_sin_pic_text_attributes_click_response").trigger('change');
-  });
+:coffee
+  $(document).ready ->
+    unless $.cookie("new_sin_materials_guide", Boolean)
+      showGuide ".boot-tour",
+        onExit: ->
+          $.cookie "new_sin_materials_guide", true,
+            expires: 30
+
+    $("#sin_material_sin_pic_text_attributes_click_response").trigger "change"

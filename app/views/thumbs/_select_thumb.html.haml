@@ -1,0 +1,69 @@
+.modal-header
+  %button.close{"data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} &times;
+    %span.sr-only Close
+  %h4#mymodal.modal-title= t('select_thumb_btn')
+.modal-body
+  .row
+    .col-md-12
+      #picture_upload_form
+        .pull-right
+          = form_tag select_upload_public_account_thumbs_path(@public_account, thumb_group_id: params[:thumb_group_id].presence), method: "post", class: "picture_upload" do
+            = file_field_tag "image", :class => "filestyle", :data => {:buttonText => t('upload'), :input => false, :badge => false, :buttonBefore => false, :buttonName => "btn btn-primary"}, id: "upload"
+        .clearfix
+        .pull-right.marginright20
+          %p.help-block
+            = t('picture_upload_tip')
+          = render "shared/progress"
+        .clearfix
+  .row.margintop20
+    .col-md-12.clearfix
+      .tabbable-panel
+        .tabbable-line
+          %ul.nav.nav-tabs#group{role: "tablist"}
+            %li{class: current_page?(public_account_thumbs_path(@public_account)) ? "active" : nil}
+              = link_to public_account_thumbs_path(@public_account), remote: true do
+                = t('thumbs.index.no_group')
+                %em.num
+                  (#{@no_group_count})
+            = render partial: "thumbs/thumb_group", collection: @thumb_groups unless @thumb_groups.empty?
+  - if @thumbs.empty?
+    .bs-callout.bs-callout-default
+      %h4= t('thumbs.index.no_content')
+  - else
+    .row
+      .pic_content.col-md-12.margintop20
+        = render partial: "thumbs/thumb", collection: @thumbs, locals: {thumb_col: "col-md-3"}
+    .row
+      .col-md-12.text-right#page
+        = paginate @thumbs, remote: true
+
+.modal-footer
+  %button{type: "button", class: "btn btn-primary disabled", id: "select_btn"}= t('sure')
+  %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
+    = t('close')
+
+:coffee
+
+  $(document).ready ->
+    $(".sin_box").on "click", ->
+      $(this).toggleClass "selected"
+      $(this).siblings().removeClass "selected"
+      if $(this).hasClass("selected")
+        $("#select_btn").removeClass "disabled"
+      else
+        $("#select_btn").addClass "disabled"
+
+
+  # 更新预览图
+  $("#select_btn").on "click", ->
+    img = $(".selected").find("img")
+    $("#edit_sin_preview .thumb .default").hide()
+    $("#edit_sin_preview .thumb").find("img").remove()  if $("#edit_sin_preview .thumb").find("img").size() > 0
+    $("#edit_sin_preview .thumb").prepend img.height("240px").width("240px")
+    $("#sin_material_sin_pic_text_attributes_thumb_id").val $(".selected").attr("id")
+    $("#modal").delay(2000).modal "hide"
+
+  filestyle()
+  picture_upload "#picture_upload_form"
+  my_icheck ".icheck-me"

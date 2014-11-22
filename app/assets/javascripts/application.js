@@ -24,8 +24,7 @@
 //= require html5.image.preview
 //= require limiter
 //= require bootstrap-filestyle
-//= require spin
-//= require jquery.spin
+//= require jquery.blockUI
 //= require ajax_upload
 //= require icheck
 //= require jquery.fileupload

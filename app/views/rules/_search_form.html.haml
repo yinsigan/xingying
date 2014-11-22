@@ -10,11 +10,8 @@
         %span.glyphicon.glyphicon-search
         = t('search')
 
-
-:javascript
-  $(document).ready(function(){
-    $("#rule_search_button").on('click', function() {
-      var params = $("#rule_search").attr("action") + "?" + $("#rule_search").serialize();
-      History.pushState(null, "#{@page_title}", params);
-    })
-  });
+:coffee
+  $(document).ready ->
+    $("#rule_search_button").on "click", ->
+      params = $("#rule_search").attr("action") + "?" + $("#rule_search").serialize()
+      History.pushState null, '#{@page_title}', params

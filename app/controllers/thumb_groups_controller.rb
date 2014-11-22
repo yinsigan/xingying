@@ -4,6 +4,7 @@ class ThumbGroupsController < SettingsController
 
   def new
     @thumb_group = @public_account.thumb_groups.build
+    @title = I18n.t('thumbs.index.rename_group')
     render "new.js.erb", layout: false
   end
 
@@ -23,6 +24,7 @@ class ThumbGroupsController < SettingsController
 
   def edit
     @thumb_group = @public_account.thumb_groups.find(params[:id])
+    @title = I18n.t('thumbs.index.rename_group')
     render "edit.js.erb", layout: false
   end
 

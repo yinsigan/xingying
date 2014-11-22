@@ -15,7 +15,7 @@
         .col-sm-2.text-right
           = link_to new_kword_public_account_rules_path(@public_account), class: "btn btn-primary btn-sm ajax_load", remote: true do
             %span.glyphicon.glyphicon-plus
-            = t('.new_kword')
+            = t('.new_kword_btn')
     -# 每个规则的实际内容
     = rule.fields_for :kwords do |kword|
       #kword_form_wrapper_

@@ -1,6 +1,5 @@
 class AutoreplyController < SettingsController
   before_action :set_public_account, :add_show_breadcrumb
-  before_action :select_thumb_group, only: [:select_thumb_material, :thumb_group]
 
   # 被添加自动回复，根据类型选择对应的素材
   def reply_content
@@ -56,29 +55,10 @@ class AutoreplyController < SettingsController
     render "select_sin_material.js.erb", layout: false
   end
 
-  # 图片分组
-  def thumb_group
-    render "thumb_group.js.erb", layout: false
-  end
-
-  # 图片显示和分页
-  def select_thumb_material
-    @select_prev_link = request.original_url
-    render "select_thumb_material.js.erb", layout: false
-  end
-
   def default
     add_breadcrumb I18n.t("breadcrumbs.autoreply.default"),
       added_public_account_path(@public_account)
     store_location
-  end
-
-  def upload
-    @thumb = @public_account.thumbs.build(upload_group_params)
-    @thumb.save
-    @object = @thumb
-    @thumb_group_id =  params[:thumb_group_id].presence
-    render "upload.js.erb", layout: false
   end
 
   private
@@ -106,19 +86,4 @@ class AutoreplyController < SettingsController
       params.permit(:thumb_group_id, :image)
     end
 
-    def select_thumb_group
-      if params[:thumb_group_id]
-        @find_thumb_group = @public_account.thumb_groups.find(params[:thumb_group_id])
-        @thumbs = @public_account.thumbs.includes(:thumb_material)
-          .where(:thumb_group => @find_thumb_group)
-          .page(params[:page]).per(8)
-      else
-        @thumbs = @public_account.thumbs.includes(:thumb_material)
-          .where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0")
-          .page(params[:page]).per(8)
-      end
-      @no_group_count = @public_account.thumbs
-        .where("thumbs.thumb_group_id IS NULL OR thumbs.thumb_group_id = 0").count
-      @thumb_groups = @public_account.thumb_groups.order("created_at ASC")
-    end
 end

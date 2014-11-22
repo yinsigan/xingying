@@ -2,9 +2,7 @@
   .error-template
     %h1
       = t('oops')
-    %h2
+    %h3
       = t('no_found')
-    .error-details
-      = t('desc')
     .error-actions
       = link_to t('back_to_home'), root_path, class: "btn btn-primary"

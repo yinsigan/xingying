@@ -10,13 +10,10 @@
       = t('required_note').html_safe
     = render 'form'
 
-:javascript
-  $(document).ready(function() {
-    if(!($.cookie("new_public_account_guide", Boolean))){
-      showGuide(".boot-tour", {
-        onExit: function(){
-          $.cookie("new_public_account_guide", true, { "expires": 30 });
-        }
-      });
-    }
-  });
+:coffee
+  $(document).ready ->
+    unless $.cookie("new_public_account_guide", Boolean)
+      showGuide ".boot-tour",
+        onExit: ->
+          $.cookie "new_public_account_guide", true,
+            expires: 30

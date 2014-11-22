@@ -5,10 +5,10 @@ var picture_upload = function(picture_upload_form) {
     picture_upload_wrapper.find(".picture_upload").fileupload({
       done: function(e, data) {
         picture_upload_wrapper.find(".progress").hide();
-        $("body").spin(false);
+        $.unblockUI();
       },
       add: function(e, data) {
-        $("body").spin();
+        $.blockUI({"message": "<h1>正在上传...请稍等...</h1>"});
         // var file_size = parseFloat(data.files[0].size / 1024);
         // console.log(file_size.toFixed(2) + "KB");
         // console.log(data.files[0].name);
@@ -86,7 +86,7 @@ var check_all = function() {
 };
 
 
-var showGuide = function(selector, option){
+var showGuide = function(selector, option) {
   selector = selector ||  ".boot-tour";
   var options =  {
     prevButtonText: "上一步",
@@ -96,3 +96,10 @@ var showGuide = function(selector, option){
   $.extend(options, option || {});
   bootstro.start(selector, options);
 };
+
+var start_modal = function() {
+  $("#modal").modal({
+    keyboard: true,
+    backdrop: false
+  });
+}

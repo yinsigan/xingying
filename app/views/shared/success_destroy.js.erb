@@ -1,2 +1,6 @@
 $(".alert-success.alert-fixed-top").html("<%= j(I18n.t("success_delete")) %>").fadeIn().delay(2000).fadeOut();
-Turbolinks.visit();
+<% if @select_prev_link.present? %>
+  $.getScript("<%= j @select_prev_link %>");
+<% else %>
+  Turbolinks.visit();
+<% end %>

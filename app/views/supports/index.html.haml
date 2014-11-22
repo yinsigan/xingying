@@ -1,44 +1,12 @@
-.col-md-3.margintop20
-  .list-group
-    %a.list-group-item.active
-      .pull-right
-        %i.fa.fa-chevron-right
-      帮助
-    %a.list-group-item
-      .pull-right
-        %i.fa.fa-chevron-right
-      帮助
-    %a.list-group-item
-      .pull-right
-        %i.fa.fa-chevron-right
-      帮助
-    %a.list-group-item
-      .pull-right
-        %i.fa.fa-chevron-right
-      帮助
-
-
-.col-md-9
-  %h2
-    %span
-      帮助中心
-  %hr/
-  %ul
-    %li
-      %a test
-    %li
-      %a test
-    %li
-      %a test
-    %li
-      %a test
-
-  / the actual blog post: title/author/date/content
-  %h3
-    Blog Post Template for Bootstrap
-  %hr/
-  %p.text-muted.pull-right
-    August 24, 2014 at 9:00 PM
-  .clearfix
-  %p.lead Welcome to Bootstrap Blog Template! This is a blog template example, built with Bootstrap. Contains "tools" that would be needed in a post.
-  %p Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.
+.container
+  .row
+    .col-md-3.margintop20
+      .list-group
+        = render partial: "supports/support_category", collection: @support_categories
+    .col-md-9
+      %h2
+        %span
+          = @support_category.name
+      %hr/
+      %ul
+        = render partial: "supports/support_list", collection: @supports

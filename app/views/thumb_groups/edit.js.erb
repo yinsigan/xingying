@@ -1,5 +1,2 @@
-$("#modal").modal({
-  keyboard: true,
-  backdrop: false
-});
-$("#modal-content").html("<%= j(render partial: 'form', locals: {title: I18n.t('thumbs.index.rename_group')}) %>");
+start_modal();
+$("#modal-content").html("<%= j(render partial: 'form') %>");
