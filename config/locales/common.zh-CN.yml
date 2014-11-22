@@ -35,6 +35,7 @@ zh-CN:
   success_save: "保存成功"
   base_info: "基本信息"
   created_at: "创建时间"
+  updated_at: "最后更新时间"
   operation: "操作"
   logout: "退出"
   password_new_tip: '请输入您的账户注册邮箱，我们会发送密码重置邮件到您的邮箱'

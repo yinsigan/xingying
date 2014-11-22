@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable, :timeoutable
   has_many :public_accounts
+  has_many :tickets
 
   def admin?
     Settings.admin_emails && Settings.admin_emails.include?(email)

@@ -46,8 +46,8 @@
             %a{:href => public_accounts_path}
               %i.fa.fa-weixin
                 = t('.public_account_manage')
-          %li
-            %a{:href => "#"}
+          %li{class: controller_name == "tickets" ? 'active' : nil}
+            = link_to tickets_path do
               %i.fa.fa-users
                 = t('.contact_us')
           %li{class: controller_name == 'supports' ? 'active' : nil}

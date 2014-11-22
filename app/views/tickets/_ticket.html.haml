@@ -1,0 +1,6 @@
+%tr
+  %td= ticket.number
+  %td= ticket.title
+  %td= Ticket::Status[ticket.status.to_i]
+  %td= ticket.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+  %td= ticket.updated_at.to_time.strftime('%Y-%m-%d %H:%M:%S')

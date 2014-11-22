@@ -1,0 +1,25 @@
+- if @tickets.empty?
+  %div.clearfix
+    %a{href: new_ticket_path, class: "btn btn-primary pull-right"}
+      %span.glyphicon.glyphicon-plus
+      = t('.add')
+  .bs-callout.bs-callout-default
+    %h4= t('.no_content')
+- else
+  %h3.title-divider
+    %span
+      = t('.list')
+  .panel.panel-default
+    .panel-body
+      %a{href: new_ticket_path, class: "btn btn-primary pull-right"}
+        %span.glyphicon.glyphicon-plus
+        = t('.add')
+    %table.table.table-bordered
+      %tr
+        %th= Ticket.human_attribute_name('number')
+        %th= Ticket.human_attribute_name('title')
+        %th= Ticket.human_attribute_name('status')
+        %th= t('created_at')
+        %th= t('updated_at')
+
+      = render @tickets
