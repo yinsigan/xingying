@@ -206,8 +206,21 @@ footer {
   border: none;
 }
 
-/* 设置请联系我的央视*/
-.callme form .form-control {
+/* 设置请联系我的样式*/
+.callme p {
+  font-size: 25px;
+  color: #999999;
+  font-weight: 300;
+}
+.callme h1 {
+  display: inline-block;
+  font-size: 45px;
+  font-weight: 300;
+  margin-bottom: 0;
+  color: #666666;
+}
+
+form .form-control.round-text-input {
   padding: 20px 15px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -216,18 +229,21 @@ footer {
   border-radius: 20px;
 }
 
-.callme form a {
-  padding: 10px 15px;
+.btn.btn-primary.round-primary-btn {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
   border-radius: 20px;
   margin-top: 15px;
+  padding: 10px 15px;
+  color: #2FA4E7;
+  border: 2px solid #2FA4E7;
+  background: none;
+  &:hover {
+    color:  #FFF;
+    background:  #2FA4E7;
+    border-color:  #2FA4E7;
+  }
 }
 
-.callme p {
-  font-size: 25px;
-  color: #999999;
-  font-weight: 300;
-}

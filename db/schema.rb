@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20141122074255) do
     t.integer  "public_account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "click_type",        default: 1
+    t.integer  "click_tp"
     t.integer  "material_id"
     t.text     "click_body"
   end
