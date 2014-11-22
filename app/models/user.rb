@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_many :public_accounts
   has_many :tickets
 
+  mount_uploader :avatar, UserAvatarUploader
+
   def admin?
     Settings.admin_emails && Settings.admin_emails.include?(email)
   end

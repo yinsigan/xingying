@@ -14,6 +14,7 @@ zh-CN:
         current_sign_in_ip: "当前登录IP"
         last_sign_in_ip: "最后一次登录IP"
         public_accounts: "公众帐号"
+        avatar: "头像"
       public_account:
         name: "微信公众账号名称"
         tp: "公众账号类型"
