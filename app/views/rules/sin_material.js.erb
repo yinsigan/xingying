@@ -1,2 +1,2 @@
 var reply_content_id = "#reply_content_"  + "<%= @kword_index %>"  + "_" + "<%= @rule_id %>";
-$(reply_content_id).html("<%= j(render partial: "rules/sin_material", locals: {kword_index: @kword_index, kword_object: @kword_object, rule_id: @rule_id}) %>");
+$(reply_content_id).html("<%= j(render partial: 'rules/sin_material', locals: {kword_index: @kword_index, kword_object: @kword_object, rule_id: @rule_id}) %>");
