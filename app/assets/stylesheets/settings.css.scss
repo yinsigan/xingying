@@ -1,3 +1,5 @@
+$left-border-color:                         #178ACC;
+
 body {
   padding-bottom: 40px;
   color: #666;
@@ -128,7 +130,7 @@ footer {
 .panel-group.menu {
   width: 100%;
   .panel-heading.area {
-    border-left: 4px solid #178acc;
+    border-left: 4px solid $left-border-color;
     background: #fff;
   }
 

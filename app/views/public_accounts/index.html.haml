@@ -6,10 +6,9 @@
       = t('.add')
   .bs-callout.bs-callout-default
     %h4= t('.no_content')
-  :javascript
-    $(document).ready(function(){
-      showGuide(".boot-tour");
-    });
+  :coffee
+    $(document).ready ->
+      showGuide(".boot-tour")
 - else
   %h3.title-divider
     %span
