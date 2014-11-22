@@ -1,7 +1,7 @@
 .form-group
   = label_tag "rule_kwords_attributes_#{kword_index}_subjectable_id", t('activerecord.attributes.kword.sin_material'), class: "col-sm-2 control-label required"
   .col-sm-8.pic_text_content{id: "preview_wrapper_#{kword_index}_#{rule_id}"}
-    - if kword_object.try(:subjectable_type).presence == "SinMaterial"
+    - if kword_object.try(:subjectable_type).presence == "SinMaterial" && kword_object.sin_material.present?
       = render partial: "sin_materials/sin_material", locals: {sin_material: kword_object.sin_material, sin_col: "col-sm-6"}
     - else
       = text_field_tag "", t('no_select'), disabled: true, class: "form-control"

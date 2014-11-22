@@ -173,3 +173,10 @@ zh-CN:
       no_content: "暂时没有分类"
     index:
       no_content: "暂时没有新闻文章"
+  tickets:
+    index:
+      list: "服务单列表"
+      add: "新开服务单"
+      no_content: "暂时没有服务单"
+    new:
+      title: "新开服务单"

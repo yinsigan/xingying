@@ -66,6 +66,7 @@ class ThumbsController < SettingsController
   def upload
     @thumb = @public_account.thumbs.build(upload_group_params)
     @thumb.save
+    @object = @thumb
     render "upload.js.erb", layout: false
   end
 

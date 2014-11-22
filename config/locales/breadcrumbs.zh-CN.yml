@@ -21,3 +21,6 @@ zh-CN:
       index: "关键字回复"
     menus:
       index: "自定义菜单"
+    ticket:
+      index: "全部服务单"
+      new: "新开服务单"

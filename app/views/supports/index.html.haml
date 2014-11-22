@@ -6,8 +6,9 @@
       %h4= t('.no_content')
 - else
   .col-md-9
-    %h2
-      = @support_category.try(:name)
+    .article-header.page-header
+      %h2
+        = @support_category.try(:name)
 
     %ul.list-group.ul-no-style
       = render partial: "supports/support_list", collection: @supports

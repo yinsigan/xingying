@@ -9,7 +9,7 @@ class Thumb < ActiveRecord::Base
   validates :image,
     :presence => true,
     :file_size => {
-      :maximum => 5.megabytes.to_i
+      :maximum => 1.megabytes.to_i
     }
   before_save :update_image_attributes
   after_create :create_thumb_material

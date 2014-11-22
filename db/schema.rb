@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121095120) do
+ActiveRecord::Schema.define(version: 20141122074255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20141121095120) do
     t.integer  "public_account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "click_tp"
+    t.integer  "click_type",        default: 1
     t.integer  "material_id"
     t.text     "click_body"
   end
@@ -173,6 +173,18 @@ ActiveRecord::Schema.define(version: 20141121095120) do
   add_index "thumbs", ["thumb_group_id"], name: "index_thumbs_on_thumb_group_id", using: :btree
   add_index "thumbs", ["thumb_material_id"], name: "index_thumbs_on_thumb_material_id", using: :btree
 
+  create_table "tickets", force: true do |t|
+    t.string   "number"
+    t.string   "title"
+    t.text     "body"
+    t.integer  "status",     default: 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "tickets", ["user_id"], name: "index_tickets_on_user_id", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -186,6 +198,7 @@ ActiveRecord::Schema.define(version: 20141121095120) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

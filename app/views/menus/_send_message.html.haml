@@ -6,7 +6,7 @@
 = form_for [@public_account, @menu], html: {class: "form-horizontal"}, remote: true do |f|
   .modal-body
     -# 生成key
-    = f.hidden_field :key, value: "#{@menu.key.present? ? @menu.key : SecureRandom.hex(10)}"
+    = f.hidden_field :key, value: @menu.key.present? ? @menu.key : generate_random(10)
     .form-group
       = label_tag t('.click_type'), nil, class: "col-sm-3 control-label", for: "public_account_reply_type"
       .col-sm-9

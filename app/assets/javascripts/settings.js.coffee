@@ -9,7 +9,7 @@ $(document).on "page:change", ->
   ]
   for key of flash
     select = ".alert-autocloseable-" + flash[key]
-    $(select).delay(2000).fadeOut()  if $(select).length > 0
+    $(select).delay(5000).fadeOut()  if $(select).length > 0
 
   # 弹出黑色提示框
   $('button[data-tooltip], a[data-tooltip]').tooltip()

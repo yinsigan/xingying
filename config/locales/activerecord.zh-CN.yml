@@ -14,6 +14,7 @@ zh-CN:
         current_sign_in_ip: "当前登录IP"
         last_sign_in_ip: "最后一次登录IP"
         public_accounts: "公众帐号"
+        avatar: "头像"
       public_account:
         name: "微信公众账号名称"
         tp: "公众账号类型"
@@ -119,6 +120,11 @@ zh-CN:
       support_category:
         name: "名称"
         supports: "帮助"
+      ticket:
+        title: "标题"
+        body: "正文"
+        status: "状态"
+        number: "编号"
 
     models:
       user: "用户"
@@ -135,3 +141,4 @@ zh-CN:
       multi_material: "多图文"
       support: "帮助"
       support_category: "帮助分类"
+      ticket: "服务单"
