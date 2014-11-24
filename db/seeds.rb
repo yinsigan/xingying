@@ -8,3 +8,4 @@
 
 admin_user = User.new(:email => "903279182@qq.com", :password => "12345678")
 admin_user.save
+admin_user.super_admin!
