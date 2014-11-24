@@ -184,7 +184,7 @@ $round-primary-hover-color: #FFF;
 }
 
 /* 联系我们大圆角文本框 */
-form .form-control.round-text-input {
+.round-text-input {
   @include round-radius(20px, 20px 15px);
 }
 
@@ -197,7 +197,7 @@ form .form-control.round-text-input {
 }
 
 // 联系我们圆形图标
-i.fa.round-border {
+.round-border {
   width: 1.9em;
   text-align: center;
   @include round-primary(50%, 10px);
