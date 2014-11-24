@@ -12,10 +12,6 @@ class User < ActiveRecord::Base
 
   enum role: [:user, :admin, :super_admin]
 
-  def first_admin?
-    Settings.admin_emails && Settings.admin_emails.include?(email)
-  end
-
   def timeout_in
     30.minutes
   end

@@ -9,7 +9,7 @@ RailsAdmin.config do |config|
   config.current_user_method(&:current_user)
   config.authorize_with do
     if current_user
-      is_admin = current_user.admin? || current_user.super_admin? || Settings.admin_emails.include?(current_user.email)
+      is_admin = current_user.admin? || current_user.super_admin?
       redirect_to main_app.new_user_session_url unless is_admin
     end
   end

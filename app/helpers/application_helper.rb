@@ -5,4 +5,8 @@ module ApplicationHelper
   def generate_random(number)
     SecureRandom.hex(number)
   end
+
+  def is_admin?(user)
+    user.admin? || user.super_admin?
+  end
 end
