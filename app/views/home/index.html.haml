@@ -87,6 +87,7 @@
       %h1
         = t("callme")
       %p For more info and support, contact us!
+.row
   .col-md-12.margintop20
     .col-md-8.col-sm-8
       %form
@@ -95,9 +96,11 @@
         .form-group
           %input.form-control.round-text-input{placeholder: t('callme_email')}
         .form-group
+          %input.form-control.round-text-input{placeholder: t('callme_phone')}
+        .form-group
           %textarea.form-control.round-text-input{:cols => "30", :rows => "10", placeholder: t("callme_message")}
         %input.btn.btn-primary.btn-lg.round-primary-btn{:type => "submit", :value => t("sumbit")}
-    .col-md-4
+    .col-md-4.col-sm-4
       .media
         %a.pull-left{:href => "#"}
           %i.fa.fa-map-marker.fa-2x.round-border
