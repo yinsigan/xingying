@@ -5,12 +5,8 @@ class MenusController < SettingsController
 
   def index
     add_breadcrumb I18n.t("breadcrumbs.menus.index"), :public_account_menus_path
-    @client ||= WeixinAuthorize::Client.new(@public_account.try(:appid), @public_account.try(:appsecret))
-    if @client.is_valid?
-      @menus = @public_account.menus.where(:parent => nil).includes(:children).order("id ASC")
-    else
-      store_location
-    end
+    @menus = @public_account.menus.where(:parent => nil).includes(:children).order("id ASC")
+    store_location
   end
 
   def new

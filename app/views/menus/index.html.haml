@@ -11,18 +11,14 @@
   .col-md-5.iphone-menu
 
   .col-md-7
-    - if @client.is_valid?
-      -# 添加一级菜单按钮
-      = link_to t('.new_top_menu'), new_public_account_menu_path(@public_account), class: "btn btn-primary #{!@menus.empty? && @menus.count >= 3 ? 'disabled' : nil}", remote: true
-      - if @menus.empty?
-        .bs-callout.bs-callout-default
-          %h4= t('.no_content')
-      - else
-        .page-header
-          .btn-group
-            = link_to "启用并发布菜单", nil, class: "btn btn-primary"
-            = link_to "停用菜单", nil, class: "btn btn-default"
-        = render @menus
-    - else
+    -# 添加一级菜单按钮
+    = link_to t('.new_top_menu'), new_public_account_menu_path(@public_account), class: "btn btn-primary #{!@menus.empty? && @menus.count >= 3 ? 'disabled' : nil}", remote: true
+    - if @menus.empty?
       .bs-callout.bs-callout-default
-        %h4= raw t('.no_valid', edit_public_account_path: edit_public_account_path(@public_account))
+        %h4= t('.no_content')
+    - else
+      .page-header
+        .btn-group
+          = link_to "启用并发布菜单", nil, class: "btn btn-primary"
+          = link_to "停用菜单", nil, class: "btn btn-default"
+      = render @menus
