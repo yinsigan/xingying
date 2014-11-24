@@ -90,16 +90,17 @@
 .row
   .col-md-12.margintop20
     .col-md-8.col-sm-8
-      %form
+      = form_for @contact, html: {class: "form-horizontal"}, remote: true do |f|
         .form-group
-          %input.form-control.round-text-input{placeholder: t('callme_name')}
+          = f.text_field :name, class: "form-control round-text-input", required: true, autofocus: true, placeholder: t('callme_name')
         .form-group
-          %input.form-control.round-text-input{placeholder: t('callme_email')}
+          = f.email_field :email, class: "form-control round-text-input", required: true, placeholder: t('callme_email')
         .form-group
-          %input.form-control.round-text-input{placeholder: t('callme_phone')}
+          = f.phone_field :phone, class: "form-control round-text-input", required: true, placeholder: t('callme_phone')
         .form-group
-          %textarea.form-control.round-text-input{:cols => "30", :rows => "10", placeholder: t("callme_message")}
-        %input.btn.btn-primary.btn-lg.round-primary-btn{:type => "submit", :value => t("sumbit")}
+          = f.text_area :phone, class: "form-control round-text-input", required: true, placeholder: t('callme_message'), cols: "30", rows: "10"
+        .form-group
+          = f.submit t('sumbit'), class: "btn btn-primary btn-lg round-primary-btn", "data-disable-with" => t('disable-with-submit')
     .col-md-4.col-sm-4
       .media
         %a.pull-left{:href => "#"}

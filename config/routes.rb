@@ -67,6 +67,8 @@ Rails.application.routes.draw do
 
   get "articles/:id", to: "articles#show", as: :article
 
+  post "contacts", to: "contacts#create"
+
   concern :commentable do
     resources :comments, only: [:create]
   end
