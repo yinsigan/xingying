@@ -39,3 +39,18 @@
 
 
 .panel.panel-default
+  .panel-heading
+    = @ticket.title
+  .panel-body
+    %a.col-md-1
+      %img{src: "/assets/avatar.png", href: "#", style: "width: 64px; height: 64px;"}
+    .col-md-11
+      %form{href: "#"}
+        .form-group
+          %h4.margin0
+            User name
+        .form-group
+          = text_area_tag "test", nil, class: "form-control", rows: 5
+        .form-group
+          %input.btn.btn-primary{:type => "submit"}
+
