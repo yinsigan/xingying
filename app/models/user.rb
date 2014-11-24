@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, UserAvatarUploader
 
   enum role: [:user, :admin, :super_admin]
+  ROLE = { 0 => "user", 1 => "admin", 2 => "super_admin" }
 
   def timeout_in
     30.minutes

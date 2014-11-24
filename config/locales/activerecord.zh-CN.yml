@@ -129,6 +129,11 @@ zh-CN:
 
       comment:
         body: "内容"
+      contact:
+        name: "姓名"
+        phone: "手机号码"
+        email: "电子邮件"
+        body: "内容"
 
     models:
       user: "用户"
@@ -147,3 +152,4 @@ zh-CN:
       support_category: "帮助分类"
       ticket: "服务单"
       comment: "评论"
+      contact: "联系我们"

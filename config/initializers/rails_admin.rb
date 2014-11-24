@@ -37,4 +37,17 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.label_methods << :email
+
+  config.model 'User' do
+    list do
+      field :email
+      field :role do
+        formatted_value do # used in form views
+          User::ROLE[value.to_i]
+        end
+      end
+    end
+  end
 end
