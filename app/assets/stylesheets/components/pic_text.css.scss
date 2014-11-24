@@ -1,4 +1,4 @@
-/*单图文预览部分*/
+//单图文预览部分
 @mixin appmsg {
   .appmsg_desc {
     overflow: hidden;
@@ -53,7 +53,7 @@
   }
 }
 
-/*图文列表*/
+//图文列表
 @mixin pic_text_list {
   border: 1px solid #e7e7eb;
   padding-left: 0;
@@ -126,7 +126,7 @@
     }
   }
 }
-/*显示单图文列表*/
+//显示单图文列表
 .col-md-4.sin_box {
   @include pic_text_list;
   @include selected;
@@ -141,7 +141,7 @@
 .col-sm-12.sin_box {
   @include pic_text_list;
 }
-/*图片样式*/
+//图片样式
 @mixin thumb {
   border: 1px solid #e7e7eb;
   padding-left: 0;
@@ -213,7 +213,7 @@
   @include thumb;
   @include selected;
 }
-/*单图文编辑框预览部分*/
+//单图文编辑框预览部分
 .edit_sin_box {
   overflow: hidden;
   border: 1px solid #e7e7eb;

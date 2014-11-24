@@ -1,4 +1,4 @@
-/*导航条*/
+//导航条
 $navbar-default-bg:                #2fa4e7;
 $navbar-default-link-color:        #FFF;
 $navbar-default-link-hover-color:  #FFF;
@@ -7,12 +7,12 @@ $navbar-default-link-active-color: #FFF;
 $navbar-default-link-active-bg:    darken($navbar-default-bg, 6.5%);
 $navbar-default-color:             #FFF;
 
-/*logo*/
+//logo
 $navbar-default-brand-color:       $navbar-default-link-color;
 $navbar-default-brand-hover-color: $navbar-default-link-color;
 $navbar-default-brand-hover-bg:    transparent;
 
-/* 全局色 */
+// 全局色
 $brand-primary:                    #2FA4E7;
 $brand-success:                    #73A839;
 $brand-danger:                     #C71C22;

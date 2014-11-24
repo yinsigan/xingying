@@ -2,7 +2,7 @@
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
 }
 
-/*表单验证*/
+//表单验证
 .form-control-feedback {
   position: absolute;
   top: 0;
@@ -15,24 +15,24 @@
   text-align: center;
 }
 
-/*解决下拉菜单和按钮的显示问题*/
+//解决下拉菜单和按钮的显示问题
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   z-index: 900;
 }
 
-/* 设置bootstro高亮块的边框颜色 */
+// 设置bootstro高亮块的边框颜色
 .bootstro-highlight{
   border-style: none;
   border-color: transparent;
 }
 
-/*处理高亮问题*/
+//处理高亮问题
 .bootstro-backdrop{
   z-index: 2;
 }
 
-/*让modal框下移一些*/
+//让modal框下移一些
 .modal {
   top: 25px;
 }

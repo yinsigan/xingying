@@ -1,5 +1,5 @@
 $left-border-color: #178ACC;
-/*布局*/
+//布局
 
 #content {
   margin-top: 60px;
@@ -24,14 +24,14 @@ footer {
   max-width: 1170px;
 }
 
-/*公众账号缩略图*/
+//公众账号缩略图
 .public_account_thumbs .thumbnail {
   margin-bottom: 0;
   border: none;
   border-radius: 4px;
 }
 
-/* menu styes */
+// menu styes
 .list-unstyled {
   min-width: 120px;
   ul {
@@ -39,7 +39,7 @@ footer {
   }
 }
 
-/*公众账号显示表格*/
+//公众账号显示表格
 .table-user-information > tbody > tr {
   border-top: 1px solid rgb(221, 221, 221);
 }
@@ -60,23 +60,23 @@ footer {
 }
 
 
-/*图片预览*/
+//图片预览
 .imagePreview {
   img {
     margin-bottom: 10px;
     padding: 5px;
-    /* border: 2px dashed #ccc; */
+    // border: 2px dashed #ccc;
     border-radius: 10px;
   }
 }
 
-/*required note*/
+//required note
 .required:after {
   content: "*";
   color: #a94442;
 }
 
-/*垂直表单的格式*/
+//垂直表单的格式
 .padding-content:after {
   content: "\200B";
   display: block;
@@ -84,7 +84,7 @@ footer {
   clear: both;
 }
 
-/*让进度条更细*/
+//让进度条更细
 .progress.min-progress {
   height: 2px;
   margin-top: 5px;
@@ -99,7 +99,7 @@ footer {
   margin: 15px 0;
 }
 
-/*数字*/
+//数字
 .num {
   display: inline-block;
   padding-left: 3px;
@@ -108,7 +108,7 @@ footer {
 }
 
 
-/*关键词样式*/
+//关键词样式
 .keywords_name {
   display: inline-block;
   vertical-align: top;
@@ -121,11 +121,11 @@ footer {
   font-style: normal;
 }
 
-/*默认回复的提示框样式*/
+//默认回复的提示框样式
 .bubble-default-autoreply:before {
   left: 21%;
 }
-/*规则提示框样式*/
+//规则提示框样式
 .bubble-rules:before {
   left: 36%;
 }
@@ -134,7 +134,7 @@ footer {
   border: none;
 }
 
-/* 设置请联系我的样式*/
+// 设置请联系我的样式
 .callme p {
   font-size: 25px;
   color: #999999;
