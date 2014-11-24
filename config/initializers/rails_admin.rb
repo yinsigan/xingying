@@ -33,6 +33,39 @@ RailsAdmin.config do |config|
     delete
     show_in_app
 
+    config.model 'User' do
+      object_label_method do
+        :email
+      end
+      list do
+        field :id
+        field :email
+        field :created_at
+        field :last_sign_in_ip
+      end
+    end
+
+    config.model 'PublicAccount' do
+      object_label_method do
+        :email
+      end
+      list do
+        field :id
+        field :name
+        field :tp do
+          pretty_value do
+            PublicAccount::TP[value.to_i]
+          end
+        end
+        field :user
+        field :image
+        field :created_at
+        field :weixin_secret_key
+        field :weixin_token
+        field :appid
+        field :appsecret
+      end
+    end
     ## With an audit adapter, you can add:
     # history_index
     # history_show
