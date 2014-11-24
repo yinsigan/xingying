@@ -180,3 +180,5 @@ zh-CN:
       no_content: "暂时没有服务单"
     new:
       title: "新开服务单"
+    show:
+      input_reply: "请输入回复的内容"
