@@ -47,7 +47,7 @@
 
       - if user_signed_in?
         %ul.nav.navbar-nav
-          %li{class: controller_name == 'public_accounts' ? 'active' : nil}
+          %li{class: ["public_accounts", "menus", "autoreply", "rules", "sin_materials", "thumbs"].include?(controller_name) ? 'active' : nil}
             %a{:href => public_accounts_path}
               %i.fa.fa-weixin
                 = t('.public_account_manage')

@@ -87,6 +87,7 @@
       %h1
         = t("callme")
       %p For more info and support, contact us!
+.row
   .col-md-12.margintop20
     .col-md-8.col-sm-8
       %form
@@ -95,9 +96,11 @@
         .form-group
           %input.form-control.round-text-input{placeholder: t('callme_email')}
         .form-group
+          %input.form-control.round-text-input{placeholder: t('callme_phone')}
+        .form-group
           %textarea.form-control.round-text-input{:cols => "30", :rows => "10", placeholder: t("callme_message")}
         %input.btn.btn-primary.btn-lg.round-primary-btn{:type => "submit", :value => t("sumbit")}
-    .col-md-4
+    .col-md-4.col-sm-4
       .media
         %a.pull-left{:href => "#"}
           %i.fa.fa-map-marker.fa-2x.round-border
@@ -117,7 +120,7 @@
           %h4.media-heading +1 234 567890
 
 .panel.panel-default
-  .panel-heading.background-color-none
+  .panel-heading.background-color-none.clearfix
     %a.btn.btn-danger.pull-right
       清空
     %h4
@@ -125,7 +128,7 @@
       %small
         (1 条)
   .panel-body
-    .media
+    .media.clearfix
       .media-heading.pull-left
         %a.media-left{:href => "#"}
         %img{:alt => "...", :src => "/assets/avatar.png"}/
@@ -140,3 +143,19 @@
             XXX
           文章
         内容简介
+    .media.clearfix
+      .media-heading.pull-left
+        %a.media-left{:href => "#"}
+        %img{:alt => "...", :src => "/assets/avatar.png"}/
+      .media-body.clearfix
+        %small.pull-right.text-muted
+          2014-11-22 18:07:05
+        %h4.media-heading
+          %a{:href => "#"}
+            XXX
+          论了你的
+          %a{:href => "#"}
+            XXX
+          文章
+        内容简介
+
