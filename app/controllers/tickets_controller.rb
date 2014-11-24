@@ -23,7 +23,9 @@ class TicketsController < SettingsController
 
   def show
     @ticket = current_user.tickets.find(params[:id])
+    @comments = @ticket.comments.includes(:user).order(id: :asc).page(params[:page])
     add_breadcrumb @ticket.title, ticket_path(@ticket)
+    @comment = @ticket.comments.build
   end
 
   private

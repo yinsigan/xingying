@@ -3,49 +3,28 @@
     = @ticket.title
   .panel-body
     .media.clearfix.padding15
-      %a.media-left{:href => "#", class: "pull-left"}
-        %img{:alt => "...", :src => "/assets/avatar.png"}/
+      %a.media-left.pull-left
+        = image_tag @ticket.user.avatar_url(:normal).to_s
       .media-body.clearfix
-        %small.pull-right
+        %small.pull-right.text-muted
           = @ticket.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
         %h4.media-heading
           = @ticket.user.email
         = @ticket.body
 
-.panel.panel-default
-  .panel-heading.background-color-none
-    = t("reply")
-  .panel-body
-    .media.clearfix.padding15.border-bottom
-      %a.media-left{:href => "#", class: "pull-left"}
-        %img{:alt => "...", :src => "/assets/avatar.png"}/
-      .media-body.clearfix
-        %small.pull-right
-          2014-11-22 18:07:05
-        %h4.media-heading Media heading
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    .media.clearfix.padding15.border-bottom
-      %a.media-left{:href => "#", class: "pull-left"}
-        %img{:alt => "...", :src => "/assets/avatar.png"}/
-      .media-body.clearfix
-        %small.pull-right.text-muted
-          2014-11-22 18:07:05
-        %h4.media-heading Media heading
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+- unless @comments.empty?
+  .panel.panel-default
+    .panel-heading.background-color-none
+      = t("reply")
+    .panel-body.comments-body
+      = render @comments
+      .text-right
+        = paginate @comments
 
-%form{href: "#", class: "'%form-horizontal"}
+= form_for [@ticket, @comment], html: {class: "form-horizontal"}, remote: true do |f|
   .form-group
-    = text_area_tag "test", nil, class: "form-control", rows: 5, placeholder: t('.input_reply')
+    .col-sm-12
+      = f.text_area :body, class: "form-control", rows: 5, placeholder: t('.input_reply')
   .form-group
-    %input.btn.btn-primary{:type => "submit", :value => t('sumbit') }
-
+    .col-sm-12
+      = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-save')

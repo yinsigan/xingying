@@ -67,7 +67,12 @@ Rails.application.routes.draw do
 
   get "articles/:id", to: "articles#show", as: :article
 
-  resources :tickets, only: [:index, :new, :create, :show]
+  concern :commentable do
+    resources :comments, only: [:create]
+  end
+
+  resources :tickets, only: [:index, :new, :create, :show], concerns: [:commentable]
+
 
   %w(404 422 500).each do |code|
     get code, to: "errors#show", code: code

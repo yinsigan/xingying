@@ -3,6 +3,7 @@ class Ticket < ActiveRecord::Base
   Status = {1 => "已提交", 2 => "正在处理", 3 => "已处理"}
 
   belongs_to :user
+  has_many :comments, as: 'commentable'
 
   validates :title, presence: true, length: { maximum: 50 }
   validates :body,  presence: true, length: { in: 1..600 }

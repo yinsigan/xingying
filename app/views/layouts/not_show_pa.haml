@@ -13,7 +13,9 @@
         = render 'layouts/flash_messages'
         .row
           .clearfix.visible-xs-block
-          = render_breadcrumbs
-          = yield
+          .col-md-12
+            = render_breadcrumbs
+            = yield
     = render 'layouts/footer'
+    = render 'shared/alert_fixed_top'
     = render 'shared/modal'

@@ -1,0 +1,8 @@
+.media.clearfix.padding15.border-bottom
+  %a.media-left.pull-left
+    = image_tag comment.user.avatar_url(:normal).to_s
+  .media-body.clearfix
+    %small.pull-right.text-muted
+      = comment.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+    %h4.media-heading= comment.user.email
+    = comment.body
