@@ -98,9 +98,6 @@ $bubble-bg: whitesmoke;
 .marginbottom10 {
   margin-bottom: 10px;
 }
-.margin0{
-  margin: 0px;
-}
 
 .padding-horizontal-15 {
   padding: 0 15px;
@@ -177,4 +174,8 @@ form .form-control.round-text-input {
     background:  #2FA4E7;
     border-color:  #2FA4E7;
   }
+}
+
+.panel-heading.background-color-none{
+  background-color: transparent;
 }

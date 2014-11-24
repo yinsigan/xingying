@@ -14,14 +14,14 @@
     %span
       = t('.list')
   %p.text-right
-    %a#need-help.btn.btn-info
-      %i.fa.fa-question
-        = t('.help')
   .panel.panel-default
     .panel-body
-      %a{href: new_public_account_path, class: "btn btn-primary pull-right"}
-        %span.glyphicon.glyphicon-plus
-        = t('.add')
+      .pull-right
+        %a{href: new_public_account_path, class: "btn btn-primary"}
+          %span.glyphicon.glyphicon-plus
+          = t('.add')
+        %a#need-help.btn.btn-primary
+          %i.fa.fa-question
     %table.table.table-bordered.public_account_thumbs
       %tr
         %th.text-center= PublicAccount.human_attribute_name('name')

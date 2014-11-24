@@ -32,7 +32,6 @@ zh-CN:
       add: "添加公众账号"
       list: "公众账号列表"
       no_content: "暂无公众账号"
-      help: "如何管理公众帐号"
     new:
       notice: "请填写公众账号的基本信息，创建公众账号完成后，系统提供URL和Token为连接微信公众平台使用"
       title: "添加公众账号"
@@ -180,3 +179,5 @@ zh-CN:
       no_content: "暂时没有服务单"
     new:
       title: "新开服务单"
+    show:
+      input_reply: "请输入回复的内容"
