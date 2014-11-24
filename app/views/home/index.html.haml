@@ -103,22 +103,21 @@
           = f.submit t('sumbit'), class: "btn btn-primary btn-lg round-primary-btn", "data-disable-with" => t('disable-with-submit')
     .col-md-4.col-sm-4
       .media
-        .pull-left{:href => "#"}
+        .pull-left
           %i.fa.fa-map-marker.fa-2x.round-border
         .media-body
-          %h4.media-heading.paddingtop15
-            4, Some street, California, USA
+          %h4.media-heading.paddingtop15= Settings.office_address
       .media
-        .pull-left{:href => "#"}
+        .pull-left
           %i.fa.fa-envelope.fa-2x.round-border
         .media-body
           %h4.media-heading.paddingtop15
-            %a{:href => "mailto:support@oleose.com"} support@oleose.com
+            %a{:href => "mailto:#{Settings.office_email}"}= Settings.office_email
       .media
-        .pull-left{:href => "#"}
+        .pull-left
           %i.fa.fa-phone.fa-2x.round-border
         .media-body.paddingtop15
-          %h4.media-heading +1 234 567890
+          %h4.media-heading= Settings.office_phone_number
 
 .panel.panel-default
   .panel-heading.background-color-none.clearfix
