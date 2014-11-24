@@ -1,11 +1,11 @@
 # encoding: utf-8
 # https://github.com/rubysl/rubysl-securerandom/blob/2.0/lib/rubysl/securerandom/securerandom.rb
 class PublicAccount < ActiveRecord::Base
-  TP={1 => "订阅号", 2 => "服务号"}
-  ReplyType = {1 => "文字", 2 => "单图文"}
-  ReplyTypeNode = {1 => "text_material", 2 => "sin_material"}
-  AutoReplyTypeNode = {1 => "text_material", 2 => "sin_material"}
-  AutoReplyType = {1 => "文字", 2 => "单图文"}
+  TP                = { 1 => "订阅号", 2 => "服务号" }
+  ReplyType         = { 1 => "文字", 2 => "单图文" }
+  ReplyTypeNode     = { 1 => "text_material", 2 => "sin_material" }
+  AutoReplyTypeNode = { 1 => "text_material", 2 => "sin_material" }
+  AutoReplyType     = { 1 => "文字", 2 => "单图文" }
 
   has_many :sin_materials, -> { order "id DESC" }
   has_many :multi_materials
