@@ -120,7 +120,7 @@
           %h4.media-heading +1 234 567890
 
 .panel.panel-default
-  .panel-heading.background-color-none
+  .panel-heading.background-color-none.clearfix
     %a.btn.btn-danger.pull-right
       清空
     %h4
@@ -128,7 +128,7 @@
       %small
         (1 条)
   .panel-body
-    .media
+    .media.clearfix
       .media-heading.pull-left
         %a.media-left{:href => "#"}
         %img{:alt => "...", :src => "/assets/avatar.png"}/
@@ -143,3 +143,19 @@
             XXX
           文章
         内容简介
+    .media.clearfix
+      .media-heading.pull-left
+        %a.media-left{:href => "#"}
+        %img{:alt => "...", :src => "/assets/avatar.png"}/
+      .media-body.clearfix
+        %small.pull-right.text-muted
+          2014-11-22 18:07:05
+        %h4.media-heading
+          %a{:href => "#"}
+            XXX
+          论了你的
+          %a{:href => "#"}
+            XXX
+          文章
+        内容简介
+
