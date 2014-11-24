@@ -1,6 +1,6 @@
 - if @public_accounts.empty?
 
-  %div.clearfix.boot-tour{data:{"bootstro-title" => t('.append.title'), "bootstro-content" => t('.append.content'), "bootstro-placement" => t('.append.placement') , "sbootstro-width" => "400px",  "bootstro-step" => t('.append.step')}}
+  %div.clearfix.boot-tour{data:{"bootstro-title" => t('.append.title'), "bootstro-content" => t('.append.content'), "bootstro-placement" => t('.append.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.append.step')}}
     %a{href: new_public_account_path, class: "btn btn-primary pull-right"}
       %span.glyphicon.glyphicon-plus
       = t('.add')

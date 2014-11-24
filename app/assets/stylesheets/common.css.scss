@@ -1,8 +1,8 @@
 /*提示框*/
 $bubble-bg: whitesmoke;
 /*联系我们的圆角按钮*/
-$round-btn-color: #2FA4E7;
-$round-btn-hover-color: #FFF;
+$round-primary-color: #2FA4E7;
+$round-primary-hover-color: #FFF;
 
 /* 不要浮动，修改bootstrap的center-block */
 .no-float {
@@ -151,61 +151,54 @@ $round-btn-hover-color: #FFF;
   background-color: transparent;
 }
 
-/* 联系我们大圆角文本框 */
-form .form-control.round-text-input {
-  padding: 20px 15px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  border-radius: 20px;
+// Mixin块
+@mixin round-radius($round-radius, $round-padding){
+  -webkit-border-radius: $round-radius;
+  -moz-border-radius: $round-radius;
+  -ms-border-radius: $round-radius;
+  -o-border-radius: $round-radius;
+  border-radius: $round-radius;
+  padding: $round-padding;
 }
 
-
-@mixin round-btn-hover {
-  color: $round-btn-hover-color;
-  background: $round-btn-color;
+// 当图标获取焦点时改变颜色
+@mixin round-primary-hover {
+  color: $round-primary-hover-color;
+  background: $round-primary-color;
+  border-color: $round-primary-color;
 }
 
-@mixin round-btn($round-btn-color) {
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  border-radius: 20px;
-  margin-top: 15px;
-  padding: 10px 15px;
-  color: $round-btn-color;
-  border: 2px solid $round-btn-color;
-  background: none;
-  &:hover {
-    @include round-btn-hover;
-  }
-}
-
-/* 联系我们大圆角按钮 */
-.round-primary-btn {
-  @include round-btn($round-btn-color);
-}
-
-// 联系我们圆形图标
-i.fa.round-border {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-  padding: 10px;
+// 图标或者按钮的渐变效果
+@mixin round-primary($round-radius, $round-padding) {
+  @include round-radius($round-radius, $round-padding);
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   -ms-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
+  border: 2px solid $round-primary-color;
+  color: $round-primary-color;
+  &:hover {
+    @include round-primary-hover;
+  }
+}
+
+/* 联系我们大圆角文本框 */
+form .form-control.round-text-input {
+  @include round-radius(20px, 20px 15px);
+}
+
+/* 联系我们大圆角按钮 */
+.round-primary-btn {
+  margin-top: 15px;
+  color: $round-primary-color;
+  background: none;
+  @include round-primary(20px, 10px 15px);
+}
+
+// 联系我们圆形图标
+i.fa.round-border {
   width: 1.9em;
   text-align: center;
-  border: 2px solid $round-btn-color;
-  color: $round-btn-color;
-  &:hover {
-    @include round-btn-hover;
-  }
+  @include round-primary(50%, 10px);
 }
