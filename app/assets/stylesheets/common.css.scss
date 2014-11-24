@@ -1,5 +1,32 @@
 $bubble-bg: whitesmoke;
 
+/*不要浮动，修改bootstrap的center-block*/
+.no-float {
+  float: none;
+}
+
+/*垂直表单中label的字体正常*/
+.font-normal {
+  font-weight: normal;
+}
+
+/*标题加上分隔线*/
+.title-divider {
+  margin-bottom: 20px;
+  background: transparent url(/assets/title_divider.png) repeat-x 0 0;
+  span {
+    padding-right: 20px;
+    background: white;
+  }
+}
+
+/*灰色的链接*/
+.gray_link {
+  color: #b2b2b2;
+  height: 34px;
+  line-height: 34px;
+}
+
 /*callout部分*/
 .bs-callout {
   padding: 15px;

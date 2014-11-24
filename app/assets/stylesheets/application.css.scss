@@ -15,9 +15,10 @@
 @import "rotating-card";
 @import "bootstro";
 @import "custom-button";
+
 @import "common";
-@import "layouts";
-@import "pic_text";
-@import "tabbable-panel";
+@import "components/pic_text";
+@import "components/tabbable-panel";
+@import "components/menu";
 @import "settings";
 @import "override";

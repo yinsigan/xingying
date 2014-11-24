@@ -1,4 +1,9 @@
 $left-border-color: #178ACC;
+/*布局*/
+
+#content {
+  margin-top: 60px;
+}
 
 body {
   padding-bottom: 40px;
@@ -13,9 +18,17 @@ pre {
 footer {
   margin-top: 200px;
 }
+
 .container, .jumbotron .container {
   width: auto;
   max-width: 1170px;
+}
+
+/*公众账号缩略图*/
+.public_account_thumbs .thumbnail {
+  margin-bottom: 0;
+  border: none;
+  border-radius: 4px;
 }
 
 /* menu styes */
@@ -24,6 +37,17 @@ footer {
   ul {
     min-width: 120px;
   }
+}
+
+/*公众账号显示表格*/
+.table-user-information > tbody > tr {
+  border-top: 1px solid rgb(221, 221, 221);
+}
+.table-user-information > tbody > tr:first-child {
+  border-top: 0;
+}
+.table-user-information > tbody > tr > td {
+  border-top: 0;
 }
 
 @media (min-width: 767px) {
@@ -46,16 +70,6 @@ footer {
   }
 }
 
-/*标题加上分隔线*/
-.title-divider {
-  margin-bottom: 20px;
-  background: transparent url(/assets/title_divider.png) repeat-x 0 0;
-  span {
-    padding-right: 20px;
-    background: white;
-  }
-}
-
 /*required note*/
 .required:after {
   content: "*";
@@ -68,11 +82,6 @@ footer {
   display: block;
   height: 0;
   clear: both;
-}
-
-/*垂直表单中label的字体正常*/
-.font-normal {
-  font-weight: normal;
 }
 
 /*让进度条更细*/
@@ -112,55 +121,6 @@ footer {
   font-style: normal;
 }
 
-/*灰色的链接*/
-.gray_link {
-  color: #b2b2b2;
-  height: 34px;
-  line-height: 34px;
-}
-
-
-/*菜单栏*/
-.iphone-menu {
-  background: url("/assets/iphone.png") no-repeat;
-  width: 344px;
-  height: 623px;
-}
-
-.panel-group.menu {
-  width: 100%;
-  .panel-heading.area {
-    border-left: 4px solid $left-border-color;
-    background: #fff;
-  }
-
-  .panel-heading {  position: relative; }
-  .panel-heading .edit {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-  .dropdown.edit {
-    a {
-      color: #333;
-    }
-    a:hover {
-      cursor: pointer;
-    }
-  }
-  .panel-title a:hover {
-    text-decoration: none;
-  }
-  .menu_content {
-    .panel-body {
-      padding-bottom: 0;
-    }
-    .panel-heading {
-      border-bottom: 1px solid #ddd;
-    }
-  }
-}
-
 /*默认回复的提示框样式*/
 .bubble-default-autoreply:before {
   left: 21%;
@@ -168,38 +128,6 @@ footer {
 /*规则提示框样式*/
 .bubble-rules:before {
   left: 36%;
-}
-
-/*设置菜单动作样式*/
-.thumb_item {
-  text-align: center;
-  font-size: 17px;
-  line-height: 25px;
-  color: #999999;
-  .fa-item {
-    border: 2px solid #2fa4e7;
-    color: #2fa4e7;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-    padding: 35px;
-    -webkit-transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-    -ms-transition: all 0.25s ease-in-out;
-    -o-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
-    width: 104px;
-  }
-  .fa-item:hover {
-    background: #2fa4e7;
-    color: #fff;
-  }
-  p {
-    font-size: 14px;
-    color: #000;
-  }
 }
 
 .list-group-item.li-no-border {
