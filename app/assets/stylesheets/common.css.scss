@@ -110,6 +110,11 @@ $bubble-bg: whitesmoke;
   padding: 15px;
 }
 
+
+.border-bottom {
+  border-bottom: 1px solid #eee;
+}
+
 /*bootstrap的有色text*/
 .bg-awesome {
   padding: 15px;
@@ -173,4 +178,3 @@ form .form-control.round-text-input {
     border-color:  #2FA4E7;
   }
 }
-
