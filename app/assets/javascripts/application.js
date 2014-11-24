@@ -13,8 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require my
-//= require settings
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require bootstrap/modal
@@ -37,3 +35,5 @@
 //= require ckeditor/config
 //= require bootstro
 //= require jquery.cookie
+//= require my
+//= require settings

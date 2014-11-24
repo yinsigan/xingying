@@ -8,7 +8,11 @@
     %h4= t('.no_content')
   :coffee
     $(document).ready ->
-      showGuide(".boot-tour")
+      unless $.cookie("no_public_account_guide", Boolean)
+        showGuide ".boot-tour",
+          onExit: ->
+            $.cookie "no_public_account_guide", true,
+              expires: 30
 - else
   %h3.title-divider
     %span
