@@ -1,4 +1,8 @@
 zh-CN:
+  callme: "联系我们"
+  callme_name: "请输入您的姓名"
+  callme_email: "请输入您的邮箱"
+  callme_message: "请输入内容"
   admin:
     loading: "正在加载..."
     misc:

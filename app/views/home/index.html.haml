@@ -89,28 +89,29 @@
       %p For more info and support, contact us!
   .col-md-12.margintop20
     .col-md-8.col-sm-8
-      %form{}
+      %form
         .form-group
-          %input.form-control.round-text-input
+          %input.form-control.round-text-input{placeholder: t('callme_name')}
         .form-group
-          %input.form-control.round-text-input
+          %input.form-control.round-text-input{placeholder: t('callme_email')}
         .form-group
-          %textarea.form-control.round-text-input{:cols => "30", :rows => "10"}
-        %a.btn.btn-primary.btn-lg.round-primary-btn{:type => "submit"} Submit
+          %textarea.form-control.round-text-input{:cols => "30", :rows => "10", placeholder: t("callme_message")}
+        %input.btn.btn-primary.btn-lg.round-primary-btn{:type => "submit", :value => t("sumbit")}
     .col-md-4
       .media
         %a.pull-left{:href => "#"}
-          %i.fa.fa-map-marker.fa-2x
+          %i.fa.fa-map-marker.fa-2x.round-border
         .media-body
-          %h4.media-heading 4, Some street, California, USA
+          %h4.media-heading.paddingtop15
+            4, Some street, California, USA
       .media
         %a.pull-left{:href => "#"}
-          %i.fa.fa-envelope.fa-2x
+          %i.fa.fa-envelope.fa-2x.round-border
         .media-body
-          %h4.media-heading
+          %h4.media-heading.paddingtop15
             %a{:href => "mailto:support@oleose.com"} support@oleose.com
       .media
         %a.pull-left{:href => "#"}
-          %i.fa.fa-phone.fa-2x
-        .media-body
+          %i.fa.fa-phone.fa-2x.round-border
+        .media-body.paddingtop15
           %h4.media-heading +1 234 567890
