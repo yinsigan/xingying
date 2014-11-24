@@ -23,13 +23,10 @@ class RulesController < SettingsController
 
   def create
     @rule = @public_account.rules.build(rule_params)
-    if @rule.save
-      redirect_via_turbolinks_to public_account_rules_path(@public_account),
-        flash: {success: I18n.t('success_submit')}
-    else
-      @object = @rule
-      render partial: "shared/ajax_prompt.js.erb", layout: false
-    end
+    @flash_success = I18n.t('success_submit')
+    @rule.save
+    @object = @rule
+    render partial: "shared/ajax_prompt.js.erb", layout: false
   end
 
   def update

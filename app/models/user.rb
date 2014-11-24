@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :public_accounts
   has_many :tickets
+  has_many :comments
 
   mount_uploader :avatar, UserAvatarUploader
 
