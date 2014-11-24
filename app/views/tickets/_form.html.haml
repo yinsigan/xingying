@@ -1,5 +1,6 @@
 = form_for @ticket, html: {class: "form-horizontal"} do |f|
   = render partial: "shared/form_error_messages", locals: {object: @ticket}
+  -# 生成编号
   = f.hidden_field :number, value: @ticket.try(:number) || generate_number
   .form-group
     = f.label :title, class: "col-sm-3 control-label required"
