@@ -1,17 +1,16 @@
 $bubble-bg: whitesmoke;
-$round-btn-color:         #2FA4E7;
-$round-btn-hover-color:     #FFF;
-/*不要浮动，修改bootstrap的center-block*/
+$round-btn-color: #2FA4E7;
+$round-btn-hover-color: #FFF; /* 不要浮动，修改bootstrap的center-block */
 .no-float {
   float: none;
 }
 
-/*垂直表单中label的字体正常*/
+/* 垂直表单中label的字体正常 */
 .font-normal {
   font-weight: normal;
 }
 
-/*标题加上分隔线*/
+/* 标题加上分隔线 */
 .title-divider {
   margin-bottom: 20px;
   background: transparent url(/assets/title_divider.png) repeat-x 0 0;
@@ -21,14 +20,14 @@ $round-btn-hover-color:     #FFF;
   }
 }
 
-/*灰色的链接*/
+/* 灰色的链接 */
 .gray_link {
   color: #b2b2b2;
   height: 34px;
   line-height: 34px;
 }
 
-/*callout部分*/
+/* callout部分 */
 .bs-callout {
   padding: 15px;
   margin: 20px 0;
@@ -39,34 +38,31 @@ $round-btn-hover-color:     #FFF;
     font-size: 15px;
   }
 }
-
 .bs-callout-danger {
   border-left-color: #d9534f;
   h4 {
     color: #d9534f;
   }
 }
-
 .bs-callout-warning {
   border-left-color: #f0ad4e;
   h4 {
     color: #f0ad4e;
   }
 }
-
 .bs-callout-info {
   border-left-color: #5bc0de;
   h4 {
     color: #5bc0de;
   }
 }
-
 .bs-callout {
   h4 {
     margin-top: 0;
     margin-bottom: 5px;
   }
-  *:last-child, p:last-child {
+  *:last-child,
+  p:last-child {
     margin-bottom: 0;
   }
   > p {
@@ -74,7 +70,6 @@ $round-btn-hover-color:     #FFF;
     line-height: 1.75;
   }
 }
-
 .margintop30 {
   margin-top: 30px;
 }
@@ -99,37 +94,33 @@ $round-btn-hover-color:     #FFF;
 .marginbottom10 {
   margin-bottom: 10px;
 }
-
 .padding-horizontal-15 {
   padding: 0 15px;
 }
-
 .padding15 {
   padding: 15px;
 }
-
-.paddingtop15{
+.paddingtop15 {
   padding-top: 15px;
 }
-
-
 .border-bottom {
   border-bottom: 1px solid #eee;
 }
 
-/*bootstrap的有色text*/
+/* bootstrap的有色text */
 .bg-awesome {
   padding: 15px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-/*提示框样式*/
+
+/* 提示框样式 */
 .bg-muted {
   background-color: $bubble-bg;
   color: #777;
 }
-.bubble:before{
+.bubble:before {
   background-color: $bubble-bg;
   content: "\00a0";
   display: block;
@@ -144,16 +135,14 @@ $round-btn-hover-color:     #FFF;
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
 .fa-2x {
   font-size: 2em;
 }
-
 .ul-no-style {
   list-style: none;
 }
 
-/*大圆角文本框*/
+/* 大圆角文本框 */
 form .form-control.round-text-input {
   padding: 20px 15px;
   -webkit-border-radius: 20px;
@@ -162,7 +151,6 @@ form .form-control.round-text-input {
   -o-border-radius: 20px;
   border-radius: 20px;
 }
-
 .btn.btn-primary.round-primary-btn {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -175,8 +163,7 @@ form .form-control.round-text-input {
   border: 2px solid $round-btn-color;
   background: none;
 }
-
-.panel-heading.background-color-none{
+.panel-heading.background-color-none {
   background-color: transparent;
 }
 
@@ -185,19 +172,18 @@ i.fa.round-border {
   border: 2px solid $round-btn-color;
   color: $round-btn-color;
 }
-
 .btn.btn-primary.round-primary-btn:hover,
-i.fa.round-border:hover{
+i.fa.round-border:hover {
   color: $round-btn-hover-color;
   background: $round-btn-color;
 }
-
-i.fa.round-border{
+i.fa.round-border {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  /* border-radius: 50%; */
+  /* border-radius: 50%;
+  */
   padding: 10px;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;

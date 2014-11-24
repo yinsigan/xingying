@@ -1,10 +1,5 @@
 module SettingsHelper
 
-  # 图文的tab
-  def pic_text_tab?(controller_method)
-    ["sin_materials", "material"].include?(controller_method) ? true : false
-  end
-
   # 重写面包屑
   def render_breadcrumbs(options = {}, &block)
     content_tag "ol", class: "breadcrumb" do
