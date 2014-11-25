@@ -7,6 +7,12 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'Comment' do
+    object_label_method do
+      :body
+    end
+  end
+
   ## == Devise ==
   config.authenticate_with do
     warden.authenticate! scope: :user
@@ -16,6 +22,14 @@ RailsAdmin.config do |config|
     if current_user
       is_admin = current_user.admin? || current_user.super_admin?
       redirect_to main_app.new_user_session_url unless is_admin
+    end
+  end
+
+  config.model "Support" do
+    edit do
+      field :title
+      field :body, :ck_editor
+      field :support_category
     end
   end
 

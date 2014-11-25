@@ -4,4 +4,9 @@ class Contact < ActiveRecord::Base
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
 
   STATUS = { 0 => "未处理", 1 => "正在处理", 2 => "已处理完毕" }
+
+  def status_enum
+    Contact::STATUS.invert.to_a
+  end
+
 end

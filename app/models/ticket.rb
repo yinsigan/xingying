@@ -10,4 +10,7 @@ class Ticket < ActiveRecord::Base
   validates :number, presence: true
   validates :user, presence: true
 
+  def status_enum
+    Ticket::Status.invert.to_a
+  end
 end
