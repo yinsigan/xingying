@@ -7,6 +7,12 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'Comment' do
+    object_label_method do
+      :body
+    end
+  end
+
   ## == Devise ==
   config.authenticate_with do
     warden.authenticate! scope: :user
