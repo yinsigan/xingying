@@ -32,6 +32,18 @@ class PublicAccount < ActiveRecord::Base
 
   mount_uploader :image, AvatarUploader
 
+  def tp_enum
+    PublicAccount::TP.invert.to_a
+  end
+
+  def reply_type_enum
+    PublicAccount::ReplyType.invert.to_a
+  end
+
+  def autoreply_type_enum
+    PublicAccount::AutoReplyType.invert.to_a
+  end
+
   def incre_sin_material_count
     increment! :pic_text_count
   end
