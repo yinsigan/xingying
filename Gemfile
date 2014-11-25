@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.5'
 
-gem 'rails', '4.1.5'
+gem 'rails', '4.1.8'
 gem 'pg', '~> 0.14.0'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -14,9 +14,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'spring', '~> 1.1.3', group: :development
-gem 'meta_request', group: :development
-
-
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -58,8 +55,6 @@ gem 'rails_admin', "~> 0.6.5"
 gem 'rails_admin-i18n', "~> 0.0.9"
 group :development do
   gem 'pry'
-  gem 'pry-debugger'
-  gem 'pry-nav'
   gem 'guard'
   gem 'guard-livereload', require: false
 end
