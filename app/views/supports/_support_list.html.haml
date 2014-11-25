@@ -1,2 +1,5 @@
 %li.list-group-item.li-no-border{style: "padding-left: 0;"}
-  = link_to support_list.title, support_path(params[:support_category_id], support_list)
+  - if params[:support_category_id].present?
+    = link_to support_list.title, support_path(params[:support_category_id], support_list)
+  - else
+    = link_to support_list.title, support_path(@support_category, support_list)
