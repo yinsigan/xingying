@@ -25,6 +25,14 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model "Support" do
+    edit do
+      field :title
+      field :body, :ck_editor
+      field :support_category
+    end
+  end
+
   ## == Cancan ==
   # config.authorize_with :cancan
 

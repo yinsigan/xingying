@@ -118,6 +118,7 @@ zh-CN:
 
       sin_material:
         type: "类型"
+        sin_pic_text: "单图文"
 
       support:
         title: "标题"
@@ -132,6 +133,7 @@ zh-CN:
         status: "状态"
         number: "编号"
         user: "用户名"
+        comments: "评论"
 
       comment:
         body: "内容"
