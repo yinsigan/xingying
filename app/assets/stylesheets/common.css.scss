@@ -50,7 +50,7 @@ $round-primary-hover-color: #FFF;
 // 标题加上分隔线
 .title-divider {
   margin-bottom: 20px;
-  background: transparent url(/assets/title_divider.png) repeat-x 0 0;
+  background: transparent image-url("title_divider.png") repeat-x 0 0;
   span {
     padding-right: 20px;
     background: white;
