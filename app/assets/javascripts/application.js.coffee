@@ -1,0 +1,9 @@
+#= require jquery
+#= require jquery_ujs
+#= require turbolinks
+#= require bootstrap/alert
+#= require bootstrap/dropdown
+#= require nprogress
+#= require bootstrapValidator.min
+#= require language/zh_CN
+#= require global
