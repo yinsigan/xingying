@@ -1,5 +1,5 @@
 class TicketsController < SettingsController
-  layout "not_show_pa"
+  layout "public_account_manage"
   before_action :add_index_breadcrumb
 
   def index
