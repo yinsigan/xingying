@@ -72,3 +72,38 @@ $left-border-color: #178ACC;
     color: #000;
   }
 }
+
+// 模拟手机上自定义菜单的界面的CSS
+@mixin menu-level-two($level){
+  position: absolute;
+  bottom:45px * $level;
+  float:left;
+}
+
+.menu-level-two-1{ @include menu-level-two(1); }
+.menu-level-two-2{ @include menu-level-two(2); }
+.menu-level-two-3{ @include menu-level-two(3); }
+.menu-level-two-4{ @include menu-level-two(4); }
+.menu-level-two-5{ @include menu-level-two(5); }
+
+// 菜单偏移的DIV
+.menu-parent{
+  position: absolute;
+  bottom: 122px;
+}
+
+// 一级菜单的样式
+.menu-level-one{
+  position: relative;
+  left:46px;
+  float:left;
+}
+
+// 子菜单样式
+.sub-menu{
+  line-height: 43px;
+  height: 45px;
+  width: 85px;
+  text-align: center;
+  border: 1px solid #A19494;
+}
