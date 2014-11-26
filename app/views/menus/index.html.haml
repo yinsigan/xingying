@@ -8,7 +8,23 @@
     = raw t('.note2')
 
 .row
-  .col-md-5.iphone-menu
+  .col-md-5
+    %div.iphone-menu{:style => "width: 344px;height: 623px;position: relative;"}
+      .menu-bottom{:style => "position: absolute;bottom: 122px;"}
+        %div{:style => "position: relative;left:46px; float:left;"}
+          %div{:style => "position: absolute;bottom:45px; float:left;border: 1px solid #A19494;"}
+            %div{:style => "height: 45px;width: 83px;line-height: 43px;text-align: center;"} test2
+          %div{:style => "position: absolute;bottom:90px; float:left;border: 1px solid #A19494;"}
+            %div{:style => "height: 45px;width: 83px;line-height: 45px;text-align: center;"} test1
+          #maincd1.maincd{:style => "height: 45px;width: 85px;line-height: 45px;text-align: center;"} 菜单一
+        %div{:style => "position: relative;left: 45px;float:left;"}
+          %div{:style => "position: absolute;bottom:45px; float:left;border: 1px solid #A19494;"}
+            %div{:style => "height: 45px;width: 83px;line-height: 43px;text-align: center;"} test2
+          %div{:style => "position: absolute;bottom:90px; float:left;border: 1px solid #A19494;"}
+            %div{:style => "height: 45px;width: 83px;line-height: 45px;text-align: center;"} test1
+          #maincd1.maincd{:style => "height: 45px;width: 85px;line-height: 45px;text-align: center;"} 菜单二
+        %div{:style => "position: relative;left: 45px;float:left;"}
+          #maincd1.maincd{:style => "height: 45px;width: 85px;line-height: 45px;text-align: center;"} 菜单三
 
   .col-md-7
     -# 添加一级菜单按钮
