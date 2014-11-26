@@ -9,7 +9,7 @@
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     = csrf_meta_tags
   %body
-    = render 'layouts/topbar'
+    = render 'layouts/shared/topbar'
     #content
       .container
         .row
@@ -19,5 +19,5 @@
               = notice
               = alert
           = yield
-    = render 'layouts/footer'
+    = render 'layouts/shared/footer'
     = render 'shared/alert_fixed_top'

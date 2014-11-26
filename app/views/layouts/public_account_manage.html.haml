@@ -2,20 +2,20 @@
 %html
   %head
     = render_page_title_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'public_account_manage', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'public_account_manage', 'data-turbolinks-track' => true
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     = csrf_meta_tags
   %body
-    = render 'layouts/topbar'
+    = render 'layouts/shared/topbar'
     #content
       .container
-        = render 'layouts/flash_messages'
+        = render 'layouts/shared/flash_messages'
         .row
           .clearfix.visible-xs-block
           .col-md-12
             = render_breadcrumbs
             = yield
-    = render 'layouts/footer'
+    = render 'layouts/shared/footer'
     = render 'shared/alert_fixed_top'
     = render 'shared/modal'

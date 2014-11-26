@@ -1,5 +1,6 @@
 class AutoreplyController < SettingsController
   before_action :set_public_account, :add_show_breadcrumb
+  layout "components/autoreply"
 
   # 被添加自动回复，根据类型选择对应的素材
   def reply_content

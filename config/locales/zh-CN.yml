@@ -21,16 +21,17 @@ zh-CN:
       size_too_big: "图片太大(最大为: %{file_size})"
 
   layouts:
-    sidebar_left:
-      dashboard: "控制面板"
-      material: "素材管理"
-      autoreply: "自动回复"
-      custom_menu: "自定义菜单"
-      website_manage: "官网管理"
-    topbar:
-      public_account_manage: "公众账号管理"
-      help: "帮助中心"
-      contact_us: "联系客服"
+    shared:
+      sidebar_left:
+        dashboard: "控制面板"
+        material: "素材管理"
+        autoreply: "自动回复"
+        custom_menu: "自定义菜单"
+        website_manage: "官网管理"
+      topbar:
+        public_account_manage: "公众账号管理"
+        help: "帮助中心"
+        contact_us: "联系客服"
 
   public_accounts:
     index:

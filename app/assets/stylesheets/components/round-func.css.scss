@@ -1,0 +1,35 @@
+//联系我们的圆角按钮
+$round-primary-color: #2FA4E7;
+$round-primary-hover-color: #FFF;
+
+// Mixin块
+@mixin round-radius($round-radius, $round-padding){
+  -webkit-border-radius: $round-radius;
+  -moz-border-radius: $round-radius;
+  -ms-border-radius: $round-radius;
+  -o-border-radius: $round-radius;
+  border-radius: $round-radius;
+  padding: $round-padding;
+}
+
+// 当图标获取焦点时改变颜色
+@mixin round-primary-hover {
+  color: $round-primary-hover-color;
+  background: $round-primary-color;
+  border-color: $round-primary-color;
+}
+
+// 图标或者按钮的渐变效果
+@mixin round-primary($round-radius, $round-padding) {
+  @include round-radius($round-radius, $round-padding);
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  border: 2px solid $round-primary-color;
+  color: $round-primary-color;
+  &:hover {
+    @include round-primary-hover;
+  }
+}

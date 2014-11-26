@@ -1,42 +1,3 @@
-//提示框
-$bubble-bg: whitesmoke;
-//联系我们的圆角按钮
-$round-primary-color: #2FA4E7;
-$round-primary-hover-color: #FFF;
-
-
-// Mixin块
-@mixin round-radius($round-radius, $round-padding){
-  -webkit-border-radius: $round-radius;
-  -moz-border-radius: $round-radius;
-  -ms-border-radius: $round-radius;
-  -o-border-radius: $round-radius;
-  border-radius: $round-radius;
-  padding: $round-padding;
-}
-
-// 当图标获取焦点时改变颜色
-@mixin round-primary-hover {
-  color: $round-primary-hover-color;
-  background: $round-primary-color;
-  border-color: $round-primary-color;
-}
-
-// 图标或者按钮的渐变效果
-@mixin round-primary($round-radius, $round-padding) {
-  @include round-radius($round-radius, $round-padding);
-  -webkit-transition: all 0.25s ease-in-out;
-  -moz-transition: all 0.25s ease-in-out;
-  -ms-transition: all 0.25s ease-in-out;
-  -o-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-  border: 2px solid $round-primary-color;
-  color: $round-primary-color;
-  &:hover {
-    @include round-primary-hover;
-  }
-}
-
 // 不要浮动，修改bootstrap的center-block
 .no-float {
   float: none;
@@ -64,49 +25,6 @@ $round-primary-hover-color: #FFF;
   line-height: 34px;
 }
 
-// callout部分
-.bs-callout {
-  padding: 15px;
-  margin: 20px 0;
-  border: 1px solid #eee;
-  border-left-width: 3px;
-  border-radius: 3px;
-  h4 {
-    font-size: 15px;
-  }
-}
-.bs-callout-danger {
-  border-left-color: #d9534f;
-  h4 {
-    color: #d9534f;
-  }
-}
-.bs-callout-warning {
-  border-left-color: #f0ad4e;
-  h4 {
-    color: #f0ad4e;
-  }
-}
-.bs-callout-info {
-  border-left-color: #5bc0de;
-  h4 {
-    color: #5bc0de;
-  }
-}
-.bs-callout {
-  h4 {
-    margin-top: 0;
-    margin-bottom: 5px;
-  }
-  *:last-child,
-  p:last-child {
-    margin-bottom: 0;
-  }
-  > p {
-    font-size: 16px;
-    line-height: 1.75;
-  }
-}
 .margintop30 {
   margin-top: 30px;
 }
@@ -147,59 +65,17 @@ $round-primary-hover-color: #FFF;
   }
 }
 
-// bootstrap的有色text
-.bg-awesome {
-  @include round-radius(5px, 15px);
-}
-
-// 提示框样式
-.bg-muted {
-  background-color: $bubble-bg;
-  color: #777;
-}
-.bubble:before {
-  background-color: $bubble-bg;
-  content: "\00a0";
-  display: block;
-  height: 20px;
-  width: 20px;
-  top: 10px;
-  left: 8%;
-  position: relative;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
+// 二部大小的图标
 .fa-2x {
   font-size: 2em;
 }
+
+// 列表没有样式
 .ul-no-style {
   list-style: none;
 }
 
-//panel的背景透明
+// panel的背景透明
 .panel-heading.background-color-none {
   background-color: transparent;
-}
-
-
-// 联系我们大圆角文本框
-.round-text-input {
-  @include round-radius(20px, 20px 15px);
-}
-
-// 联系我们大圆角按钮
-.round-primary-btn {
-  margin-top: 15px;
-  background: none;
-  @include round-primary(20px, 10px 15px);
-}
-
-// 联系我们圆形图标
-.round-border {
-  width: 1.9em;
-  text-align: center;
-  @include round-primary(50%, 10px);
 }

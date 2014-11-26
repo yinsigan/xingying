@@ -1,0 +1,20 @@
+@import "components/round-func";
+
+// 联系我们大圆角文本框
+.round-text-input {
+  @include round-radius(20px, 20px 15px);
+}
+
+// 联系我们大圆角按钮
+.round-primary-btn {
+  margin-top: 15px;
+  background: none;
+  @include round-primary(20px, 10px 15px);
+}
+
+// 联系我们圆形图标
+.round-border {
+  width: 1.9em;
+  text-align: center;
+  @include round-primary(50%, 10px);
+}

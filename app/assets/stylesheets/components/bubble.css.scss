@@ -1,0 +1,32 @@
+@import "components/round-func";
+
+//自动回复的提示框
+$bubble-bg: whitesmoke;
+
+.bubble {
+
+  .bg-muted {
+    background-color: $bubble-bg;
+    color: #777;
+  }
+
+  &:before {
+    background-color: $bubble-bg;
+    content: "\00a0";
+    display: block;
+    height: 20px;
+    width: 20px;
+    top: 10px;
+    left: 8%;
+    position: relative;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .bg-awesome {
+    @include round-radius(5px, 15px);
+  }
+
+}

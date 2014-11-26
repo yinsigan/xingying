@@ -1,0 +1,44 @@
+// callout部分
+.bs-callout {
+  padding: 15px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 3px;
+  border-radius: 3px;
+  h4 {
+    font-size: 15px;
+  }
+}
+
+.bs-callout-danger {
+  border-left-color: #d9534f;
+  h4 {
+    color: #d9534f;
+  }
+}
+.bs-callout-warning {
+  border-left-color: #f0ad4e;
+  h4 {
+    color: #f0ad4e;
+  }
+}
+.bs-callout-info {
+  border-left-color: #5bc0de;
+  h4 {
+    color: #5bc0de;
+  }
+}
+.bs-callout {
+  h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  *:last-child,
+  p:last-child {
+    margin-bottom: 0;
+  }
+  > p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+}
