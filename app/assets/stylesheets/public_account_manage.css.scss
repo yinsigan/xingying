@@ -2,13 +2,14 @@
  *= require font-awesome
  */
 
-@import "bootstrap-variable";
+@import "base/bootstrap-variable";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "nprogress";
+@import "alerts-fixed";
 @import "bootstro";
 @import "awesome-button";
 
-@import "common";
-@import "custom";
-@import "override";
+@import "base/common";
+@import "base/custom";
+@import "base/override";

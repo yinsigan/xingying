@@ -1,8 +1,7 @@
 /*
  *= require font-awesome
- *= require bootstrapValidator.min
  */
-@import "bootstrap-variable";
+@import "base/bootstrap-variable";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "nprogress";
@@ -10,14 +9,17 @@
 @import 'icheck/square/blue';
 @import "blueimp-gallery";
 @import "bootstrap-image-gallery";
-@import "ckeditor/config";
-@import "rotating-card";
 @import "bootstro";
 @import "awesome-button";
 
-@import "common";
+@import "ckeditor/config";
+
 @import "components/pic-text";
 @import "components/tabbable-panel";
 @import "components/menu";
-@import "custom";
-@import "override";
+@import "components/bubble";
+@import "components/callout";
+
+@import "base/common";
+@import "base/custom";
+@import "base/override";
