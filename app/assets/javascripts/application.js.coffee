@@ -9,3 +9,5 @@
 #= require language/zh_CN
 #= require plugins/flash
 #= require plugins/showGuide
+
+#= require jquery.fullPage
