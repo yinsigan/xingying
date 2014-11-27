@@ -8,6 +8,7 @@
 #= require bootstrap/modal
 #= require bootstrap/tooltip
 #= require bootstrap/popover
+#= require bootstrap/collapse
 #= require html5.image.preview
 #= require bootstrap-filestyle
 #= require bootstro

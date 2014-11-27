@@ -8,6 +8,7 @@
 #= require bootstrap/modal
 #= require bootstrap/tooltip
 #= require bootstrap/popover
+#= require bootstrap/collapse
 #= require limiter
 #= require bootstrap-filestyle
 #= require jquery.blockUI
