@@ -333,6 +333,18 @@
               12: function() {
                 $(".frame-2-6-2").show().addClass("magictime swashIn")
               }
+            },
+            2: {
+              0: function(){
+                $("#one-left").removeClass("magictime slideLeftRetourn element-show");
+                $("#one-center").removeClass("magictime slideDownRetourn element-show");
+                $("#one-right").removeClass("magictime slideRightRetourn element-show");
+              },
+              1: function(){
+                $("#one-left").addClass("magictime slideLeftRetourn element-show");
+                $("#one-center").addClass("magictime slideDownRetourn element-show");
+                $("#one-right").addClass("magictime slideRightRetourn element-show");
+              }
             }
           },
           fn = animations[frame] && animations[frame][step],

@@ -1,0 +1,268 @@
+.tableCell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%
+}
+
+.left-section, .right-section {
+  display: table-cell;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.circle-wrapper {
+  width: 680px;
+  height: 680px;
+  margin: 10% auto;
+  position: relative;
+}
+
+.left-section .article-wrapper {
+  margin: 0 5% 0 15%
+}
+
+.blue.doted-circle {
+  border-color: #6dabd6
+}
+
+.blue.filled-circle {
+  background: #6dabd6
+}
+
+.doted-circle.circling {
+  -webkit-animation: rotate-infinity 16s linear infinite;
+  -moz-animation: rotate-infinity 16s linear infinite;
+  -ms-animation: rotate-infinity 16s linear infinite;
+  animation: rotate-infinity 16s linear infinite
+}
+.doted-circle, .filled-circle {
+  position: absolute;
+  border-radius: 50%;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box
+}
+
+.doted-circle {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #CCC
+}
+
+.blue.doted-circle {
+  border-color: #6dabd6
+}
+
+.filled-circle {
+  top: 2.5%;
+  left: 2.5%;
+  width: 95%;
+  height: 95%;
+  overflow: hidden
+}
+.blue.filled-circle {
+  background: #6dabd6
+}
+
+.table-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%
+}
+.table-wrapper.hidden {
+  display: none
+}
+
+.frame-2-2[class*=part-] {
+  width: 250px
+}
+
+.word-wrapper {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: #FFF
+}
+.word-wrapper h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-top: 40px
+}
+
+
+.frame-2-6 [class*=part-] {
+  position: absolute;
+  width: 100px;
+  opacity: 1;
+  -webkit-transition: all .8s ease-in;
+  -moz-transition: all .8s ease-in;
+  -ms-transition: all .8s ease-in;
+  -o-transition: all .8s ease-in;
+  transition: all .8s ease-in
+}
+.frame-2-6 .part-0 {
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px
+}
+.frame-2-6 .part-1 {
+  top: 5%;
+  left: 50%;
+  margin-left: -50px
+}
+.frame-2-6 .part-2 {
+  top: 32%;
+  right: 10%
+}
+.frame-2-6 .part-3 {
+  bottom: 12%;
+  right: 22%
+}
+.frame-2-6 .part-4 {
+  bottom: 12%;
+  left: 22%
+}
+.frame-2-6 .part-5 {
+  top: 32%;
+  left: 10%
+}
+.frame-2-6.together [class*=part-] {
+  opacity: 0
+}
+.frame-2-6.together .part-1 {
+  top: 40%;
+  left: 52%
+}
+.frame-2-6.together .part-2 {
+  top: 40%;
+  right: 40%
+}
+.frame-2-6.together .part-3 {
+  bottom: 40%;
+  right: 41%
+}
+.frame-2-6.together .part-4 {
+  bottom: 40%;
+  left: 41%
+}
+.frame-2-6.together .part-5 {
+  top: 40%;
+  left: 41%
+}
+.frame-2-6-2 {
+  display: none
+}
+.table-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%
+}
+.table-wrapper.hidden {
+  display: none
+}
+.word-wrapper {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: #FFF
+}
+.word-wrapper h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-top: 40px
+}
+[class*='.frame-2-']>.part-1 {
+  margin-bottom: 30px
+}
+.frame-2-2[class*=part-] {
+  width: 250px
+}
+.frame-2-6-1 {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  opacity: 0;
+  margin-left: -77px;
+  margin-top: -56px
+}
+.frame-3[class*=part-] {
+  position: absolute
+}
+.frame-3.part-1 {
+  top: 15%;
+  left: 50%;
+  margin-left: -87px
+}
+.frame-3.part-2 {
+  bottom: 25%;
+  right: 13%
+}
+.frame-3.part-3 {
+  bottom: 25%;
+  left: 13%
+}
+.frame-5.part-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -ms-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in
+}
+.frame-5.part-2.click {
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8)
+}
+
+.right-section .article-wrapper {
+  margin: 0 10%;
+}
+
+.article-wrapper h1 {
+  margin-bottom: 20px;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+@media only screen and (max-width:980px) {
+  .circle-wrapper {
+    width: 500px !important;
+    height: 500px !important
+  }
+}
+@media screen and (max-width:800px){
+ .circle-wrapper {
+    width: 400px !important;
+    height: 400px !important
+  }
+}
+
+.article-wrapper {
+  text-align: left
+}
+
+.article-wrapper p {
+  font-size: 28px;
+  line-height: 48px;
+  opacity: 0;
+  -webkit-transition: all 1s ease-in;
+  -moz-transition: all 1s ease-in;
+  -ms-transition: all 1s ease-in;
+  -o-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+}
+
+.article-wrapper p.show {
+  opacity: 1;
+  word-break: break-all
+}
