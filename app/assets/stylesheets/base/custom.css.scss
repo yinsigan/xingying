@@ -152,3 +152,27 @@ footer {
   padding: 10px 0;
   border-bottom: 1px solid #EEE;
 }
+
+.element-hidden{
+  opacity: 0;
+  -webkit-transition: all 1s ease-in;
+  -moz-transition: all 1s ease-in;
+  -ms-transition: all 1s ease-in;
+  -o-transition: all 1s ease-in;
+  transition: all 1s ease-in
+}
+.element-show {
+  opacity: 1;
+  word-break: break-all;
+}
+
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a.active span {
+    padding: 5px;
+    background: #2fa4e7;
+}
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    padding: 5px;
+    border: 1px solid #625A5A;
+}

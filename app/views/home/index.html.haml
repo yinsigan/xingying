@@ -5,7 +5,7 @@
       .alert.alert-info{role: "alert"}
         %i.fa.fa-bullhorn 请注意
     .row
-      .col-md-4
+      .col-md-4#one-left.magictime.slideLeftRetourn
         .card-container
           .card
             .front
@@ -32,7 +32,7 @@
                   我们鼓励将制作好的那部分视频尽早上传
                   以1-5分钟微视频的方式发布，接受用户的反馈让课程更完美
 
-      .col-md-4
+      .col-md-4#one-center.magictime.slideDownRetourn
         .card-container
           .card
             .front
@@ -58,7 +58,7 @@
                   我们鼓励将制作好的那部分视频尽早上传
                   以1-5分钟微视频的方式发布，接受用户的反馈让课程更完美
 
-      .col-md-4
+      .col-md-4#one-right.magictime.slideRightRetourn
         .card-container
           .card
             .front
@@ -84,14 +84,14 @@
                   以1-5分钟微视频的方式发布，接受用户的反馈让课程更完美
   .section
     .row.callme
-      .col-md-12
+      .col-md-12#two-top
         .text-center
           %h1
             = t("callme")
           %p For more info and support, contact us!
     .row
       .col-md-12.margintop20
-        .col-md-7.col-sm-7
+        .col-md-7.col-sm-7#two-left
           = form_for @contact, html: {class: "form-horizontal"}, remote: true do |f|
             .form-group
               = f.text_field :name, class: "form-control round-text-input", required: true, placeholder: t('callme_name')
@@ -103,7 +103,7 @@
               = f.text_area :phone, class: "form-control round-text-input", required: true, placeholder: t('callme_message'), cols: "30", rows: "10"
             .form-group
               = f.submit t('sumbit'), class: "btn btn-primary btn-lg round-primary-btn", "data-disable-with" => t('disable-with-submit')
-        .col-md-5.col-sm-5
+        .col-md-5.col-sm-5#two-right
           .media
             .pull-left
               %i.fa.fa-map-marker.fa-2x.round-border
@@ -122,7 +122,7 @@
               %h4.media-heading= Settings.office_phone_number
   .section
     .panel.panel-default
-      .panel-heading.background-color-none.clearfix
+      .panel-heading.background-color-none.clearfix#three-1
         %a.btn.btn-danger.pull-right
           清空
         %h4
@@ -130,7 +130,7 @@
           %small
             (1 条)
       .panel-body
-        .media.clearfix.padding15.border-top
+        .media.clearfix.padding15.border-top#three-2
           .media-heading.pull-left
             %a.media-left{:href => "#"}
             = image_tag("avatar.png")
@@ -145,7 +145,7 @@
                 XXX
               文章
             内容简介
-        .media.clearfix.padding15.border-top
+        .media.clearfix.padding15.border-top#three-3
           .media-heading.pull-left
             %a.media-left{:href => "#"}
             = image_tag("avatar.png")
@@ -161,10 +161,46 @@
               文章
             内容简介
 
-:coffee
-  $(document).ready ->
+:javascript
+  $(document).ready(function(){
     $('.fullpage').fullpage({
-        anchors: ['firstPage', 'secondPage', '3rdPage'],
-        scrollBar: true
-      });
+      navigation: true,
+      navigationPosition: 'right',
+      navigationTooltips: ['firstSlide', 'secondSlide', 'threeSlide'],
+
+      anchors:['firstSlide', 'secondSlide', 'threeSlide'],
+      scrollingSpeed: 250,
+      afterLoad: function(anchorLink, index){
+        if(index === 1){
+          $("#one-left").addClass("magictime slideLeftRetourn element-show");
+          $("#one-center").addClass("magictime slideDownRetourn element-show");
+          $("#one-right").addClass("magictime slideRightRetourn element-show");
+        } else if (index === 2){
+          $("#two-top").addClass("magictime slideUpRetourn element-show");
+          $("#two-left").addClass("magictime slideLeftRetourn element-show");
+          $("#two-right").addClass("magictime slideRightRetourn element-show");
+        }
+      },
+      onLeave: function(index, nextIndex, direction){
+        $("#one-left").removeClass("magictime slideLeftRetourn element-show");
+        $("#one-center").removeClass("magictime slideDownRetourn element-show");
+        $("#one-right").removeClass("magictime slideRightRetourn element-show");
+
+        $("#two-top").removeClass("magictime slideUpRetourn element-show");
+        $("#two-left").removeClass("magictime slideLeftRetourn element-show");
+        $("#two-right").removeClass("magictime slideRightRetourn element-show");
+
+        $("#one-left").addClass("element-hidden");
+        $("#one-center").addClass("element-hidden");
+        $("#one-right").addClass("element-hidden");
+
+        $("#two-top").addClass("element-hidden");
+        $("#two-left").addClass("element-hidden");
+        $("#two-right").addClass("element-hidden");
+      },
+      afterRender: function(){
+        console.log("test");
+      }
+    });
+  });
 

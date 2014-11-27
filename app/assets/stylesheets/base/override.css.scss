@@ -36,3 +36,8 @@
 .modal {
   top: 25px;
 }
+
+// 覆盖fullpage 每个Selection居中显示
+.fp-tableCell{
+  vertical-align: top;
+}
