@@ -101,7 +101,7 @@ $left-border-color: #178ACC;
 .menu-level-two-5{ @include menu-level-two(5); }
 
 // 菜单偏移的DIV
-.menu-parent{
+#menu-parent{
   position: absolute;
   bottom: 122px;
 }

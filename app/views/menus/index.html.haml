@@ -11,7 +11,7 @@
   .col-md-5
     .iphone-menu
       - unless @menus.empty?
-        .menu-parent
+        #menu-parent
           = render partial: "one_level_menu", collection: @menus
 
   .col-md-7
