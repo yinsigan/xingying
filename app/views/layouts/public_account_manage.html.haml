@@ -19,8 +19,9 @@
                   = t('verifyEmail')
                   = current_user.email
                   = link_to t('reSendEmail'), new_confirmation_path(current_user), class: "btn btn-default"
-
-        = render 'layouts/shared/flash_messages'
+        .row
+          .col-md-12
+            = render 'layouts/shared/flash_messages'
         .row
           .clearfix.visible-xs-block
           .col-md-12

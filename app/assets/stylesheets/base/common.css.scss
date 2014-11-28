@@ -83,6 +83,10 @@
   background-color: transparent;
 }
 
+// 无边框
+.no-border {
+  border: none;
+}
 
 .list-group-item.li-no-border.border-top {
   @extend .border-top;
