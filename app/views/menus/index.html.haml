@@ -12,14 +12,7 @@
     .iphone-menu
       - unless @menus.empty?
         .menu-parent
-          - @menus.each do |one_level_menu|
-            .menu-level-one
-              - unless one_level_menu.children.empty?
-                - one_level_menu.children.each_with_index do |two_level_menu, index|
-                  %div{class: "menu-level-two-#{index + 1}"}
-                    = two_level_menu.name
-              .sub-menu
-                = one_level_menu.name
+          = render partial: "one_level_menu", collection: @menus
 
   .col-md-7
     -# 添加一级菜单按钮
