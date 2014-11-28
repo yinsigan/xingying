@@ -24,7 +24,7 @@
         %a{href: new_public_account_path, class: "btn btn-primary"}
           %span.glyphicon.glyphicon-plus
           = t('.add')
-        %a#need-help.btn.btn-primary
+        %a#need-help.btn.btn-primary{"title" => t('how_to_manage_public_account'), "target" => "_blank", data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true}}
           %i.fa.fa-question
     %table.table.table-bordered.public_account_thumbs
       %tr
