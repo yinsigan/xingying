@@ -70,6 +70,9 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise_invitable (1.4.0)
+      actionmailer (>= 3.2.6, < 5)
+      devise (>= 3.2.0)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -272,6 +275,7 @@ DEPENDENCIES
   ckeditor!
   coffee-rails (~> 4.0.0)
   devise (~> 3.3.0)
+  devise_invitable
   font-awesome-sass (~> 4.1.0)
   guard
   guard-livereload
