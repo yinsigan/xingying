@@ -1,22 +1,21 @@
-.col-md-3
-  .list-group
-    %a.list-group-item{:href => public_account_path(@public_account), :class => (controller_name == "public_accounts" && action_name == "show" ? "active" : nil)}
-      .pull-right
-        %i.fa.fa-chevron-right
-      %i.fa.fa-tachometer
-      = t('.dashboard')
-    %a.list-group-item{:href => public_account_sin_materials_path(@public_account), :class => (["material", "sin_materials", "thumbs"].include?(controller_name) ? "active" : nil)}
-      .pull-right
-        %i.fa.fa-chevron-right
-      %i.fa.fa-file-image-o
-      = t('.material')
-    %a.list-group-item{:href => added_public_account_path(@public_account), :class => (controller_name == "autoreply" || controller_name == "rules" ? "active" : nil)}
-      .pull-right
-        %i.fa.fa-chevron-right
-      %i.fa.fa-reply
-      = t('.autoreply')
-    %a.list-group-item{:href => public_account_menus_path(@public_account), :class => (controller_name == "menus" ? "active" : nil)}
-      .pull-right
-        %i.fa.fa-chevron-right
-      %i.fa.fa-bars
-      = t('.custom_menu')
+.list-group
+  %a.list-group-item{:href => public_account_path(@public_account), :class => (controller_name == "public_accounts" && action_name == "show" ? "active" : nil)}
+    .pull-right
+      %i.fa.fa-chevron-right
+    %i.fa.fa-tachometer
+    = t('.dashboard')
+  %a.list-group-item{:href => public_account_sin_materials_path(@public_account), :class => (["material", "sin_materials", "thumbs"].include?(controller_name) ? "active" : nil)}
+    .pull-right
+      %i.fa.fa-chevron-right
+    %i.fa.fa-file-image-o
+    = t('.material')
+  %a.list-group-item{:href => added_public_account_path(@public_account), :class => (controller_name == "autoreply" || controller_name == "rules" ? "active" : nil)}
+    .pull-right
+      %i.fa.fa-chevron-right
+    %i.fa.fa-reply
+    = t('.autoreply')
+  %a.list-group-item{:href => public_account_menus_path(@public_account), :class => (controller_name == "menus" ? "active" : nil)}
+    .pull-right
+      %i.fa.fa-chevron-right
+    %i.fa.fa-bars
+    = t('.custom_menu')
