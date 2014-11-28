@@ -5,11 +5,15 @@
 - else
   = render "sidebar_left"
   .col-md-9
-    .article-header.page-header
-      %h2
-        = @support_category.try(:name)
+    - if @supports.empty?
+      .bs-callout.bs-callout-default
+        %h4= t('.no_content')
+    - else
+      .article-header.page-header
+        %h2
+          = @support_category.try(:name)
 
-    %ul.list-group.ul-no-style
-      = render partial: "supports/support_list", collection: @supports
-    .text-right
-      = paginate @supports
+        %ul.list-group.ul-no-style
+          = render partial: "supports/support_list", collection: @supports
+        .text-right
+          = paginate @supports
