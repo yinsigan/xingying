@@ -155,15 +155,15 @@ footer {
 
 .element-hidden{
   opacity: 0;
+}
+.element-show {
+  opacity: 1;
+  word-break: break-all;
   -webkit-transition: all 1s ease-in;
   -moz-transition: all 1s ease-in;
   -ms-transition: all 1s ease-in;
   -o-transition: all 1s ease-in;
   transition: all 1s ease-in
-}
-.element-show {
-  opacity: 1;
-  word-break: break-all;
 }
 
 // 重写导航栏的按钮颜色和大小

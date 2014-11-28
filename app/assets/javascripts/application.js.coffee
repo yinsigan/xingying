@@ -12,3 +12,4 @@
 #= require plugins/showGuide
 
 #= require jquery.fullPage
+#= require coding
