@@ -79,7 +79,18 @@ Rails.application.routes.draw do
     get code, to: "errors#show", code: code
   end
 
-  devise_for :users, :controllers => {:confirmations => 'confirmations'}
+  devise_for :users, :controllers => {:confirmations => 'confirmations'}, skip: :registrations
+  # 取消删除用户
+  devise_scope :user do
+    resource :registration,
+      only: [:new, :create, :edit, :update],
+      path: 'users',
+      path_names: { new: 'sign_up' },
+      controller: 'devise/registrations',
+      as: :user_registration do
+        get :cancel
+      end
+  end
   resources :users, only: [:show]
   root 'home#index'
 
