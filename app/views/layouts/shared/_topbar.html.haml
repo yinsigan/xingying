@@ -25,6 +25,11 @@
                 = link_to edit_user_registration_path do
                   = t('change_password')
                   %span.glyphicon.glyphicon-lock.pull-right
+              - unless current_user.confirmed?
+                %li
+                  = link_to new_confirmation_path(current_user) do
+                    = t('confirm_email')
+                    %span.glyphicon.glyphicon-envelope.pull-right
               - if is_admin?(current_user)
                 %li
                   = link_to rails_admin_path do

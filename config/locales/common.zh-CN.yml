@@ -25,6 +25,7 @@ zh-CN:
   forget_password: "忘记密码?"
   password: "密码"
   email: "电子邮箱"
+  confirm_email: "验证邮箱"
   please_select: "请选择"
   edit: "编辑"
   change: "修改"
