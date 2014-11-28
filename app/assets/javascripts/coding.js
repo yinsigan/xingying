@@ -17,6 +17,17 @@ last_step = null,
     var animations = {
         1: {
           0: function() {
+            $(".frame-1 .magictime").removeClass("magictime slideLeftRetourn slideDownRetourn slideUpRetourn slideUpRetourn slideRightRetourn element-show");
+          },
+          1: function() {
+            $(".frame-1 .left").addClass("magictime slideLeftRetourn element-show");
+            $(".frame-1 .up").addClass("magictime slideUpRetourn element-show");
+            $(".frame-1 .down").addClass("magictime slideDownRetourn element-show");
+            $(".frame-1 .right").addClass("magictime slideRightRetourn element-show");
+          }
+        },
+        2: {
+          0: function() {
             for (var i = 2; 6 >= i; i++) $(".frame-2-" + i + ".table-wrapper").addClass("hidden");
             $("img.frame-2").removeClass("magictime puffOut puffIn").hide(),
               revertWordWrapper(2),
@@ -80,18 +91,6 @@ last_step = null,
           },
           12: function() {
             $(".frame-2-6-2").show().addClass("magictime swashIn")
-          }
-        },
-        4: {
-          0: function() {
-            $("#one-left").removeClass("magictime slideLeftRetourn element-show");
-            $("#one-center").removeClass("magictime slideDownRetourn element-show");
-            $("#one-right").removeClass("magictime slideRightRetourn element-show");
-          },
-          1: function() {
-            $("#one-left").addClass("magictime slideLeftRetourn element-show");
-            $("#one-center").addClass("magictime slideDownRetourn element-show");
-            $("#one-right").addClass("magictime slideRightRetourn element-show");
           }
         },
         5: {
