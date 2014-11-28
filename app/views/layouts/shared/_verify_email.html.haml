@@ -1,8 +1,6 @@
 - if user_signed_in? && !current_user.confirmed?
-  .row
-    .col-md-12
-      #verifyEmail
-        .alert.alert-info{role: "alert"}
-          = t('verifyEmail')
-          = current_user.email
-          = link_to t('reSendEmail'), new_confirmation_path(current_user), class: "btn btn-default"
+  #verifyEmail
+    .alert.alert-info{role: "alert"}
+      = t('verifyEmail')
+      = current_user.email
+      = link_to t('reSendEmail'), new_confirmation_path(current_user), class: "btn btn-default"
