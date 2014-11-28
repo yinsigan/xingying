@@ -10,7 +10,9 @@
     = render 'layouts/shared/topbar'
     #content
       .container
-        = render 'layouts/shared/flash_messages'
+        .row
+          .col-md-12
+            = render 'layouts/shared/flash_messages'
         .row
           = render 'layouts/shared/sidebar_left'
           .clearfix.visible-xs-block

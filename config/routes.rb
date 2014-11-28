@@ -79,7 +79,7 @@ Rails.application.routes.draw do
     get code, to: "errors#show", code: code
   end
 
-  devise_for :users
+  devise_for :users, :controllers => {:confirmations => 'confirmations'}
   resources :users, only: [:show]
   root 'home#index'
 

@@ -4,32 +4,32 @@
   .panel-body
     .row
       .col-md-3
-        %a.thumbnail
-          = image_tag @user.avatar_url(:bigger).to_s
+        %a.thumbnail.no-border
+          = image_tag current_user.avatar_url(:bigger).to_s
       .col-md-9
         %table.table.table-user-information
           %tbody
             %tr
               %td= User.human_attribute_name('email')
-              %td= @user.email
+              %td= current_user.email
             %tr
               %td= User.human_attribute_name('created_at')
-              %td= @user.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+              %td= current_user.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
             %tr
               %td= User.human_attribute_name('sign_in_count')
-              %td= @user.sign_in_count.to_i
+              %td= current_user.sign_in_count.to_i
             %tr
               %td= User.human_attribute_name('current_sign_in_at')
-              %td= @user.current_sign_in_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+              %td= current_user.current_sign_in_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
             %tr
               %td= User.human_attribute_name('current_sign_in_ip')
-              %td= @user.current_sign_in_ip
+              %td= current_user.current_sign_in_ip
             %tr
               %td= User.human_attribute_name('last_sign_in_at')
-              %td= @user.last_sign_in_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+              %td= current_user.last_sign_in_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
             %tr
               %td= User.human_attribute_name('last_sign_in_ip')
-              %td= @user.last_sign_in_ip
+              %td= current_user.last_sign_in_ip
   .panel-footer.clearfix
     .pull-right
       = link_to edit_user_registration_path, class: "btn btn-primary marginright5" do
