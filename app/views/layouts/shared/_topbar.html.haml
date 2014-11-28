@@ -25,6 +25,10 @@
                 = link_to edit_user_registration_path do
                   = t('change_password')
                   %span.glyphicon.glyphicon-lock.pull-right
+              %li
+                = link_to user_path(current_user) do
+                  = t('account_info')
+                  %span.glyphicon.glyphicon-user.pull-right
               - unless current_user.confirmed?
                 %li
                   = link_to new_confirmation_path(current_user) do

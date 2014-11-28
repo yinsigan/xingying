@@ -75,12 +75,12 @@ Rails.application.routes.draw do
 
   resources :tickets, only: [:index, :new, :create, :show], concerns: [:commentable]
 
-
   %w(404 422 500).each do |code|
     get code, to: "errors#show", code: code
   end
 
   devise_for :users
+  resources :users, only: [:show]
   root 'home#index'
 
   # 微信公众账号接口

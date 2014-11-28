@@ -1,0 +1,45 @@
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title= t('base_info')
+  .panel-body
+    .row
+      .col-md-3
+        %a.thumbnail
+          = image_tag @user.avatar_url(:bigger).to_s
+      .col-md-9
+        %table.table.table-user-information
+          %tbody
+            %tr
+              %td= User.human_attribute_name('email')
+              %td= @user.email
+            %tr
+              %td= User.human_attribute_name('created_at')
+              %td= @user.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+            %tr
+              %td= User.human_attribute_name('sign_in_count')
+              %td= @user.sign_in_count.to_i
+            %tr
+              %td= User.human_attribute_name('current_sign_in_at')
+              %td= @user.current_sign_in_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+            %tr
+              %td= User.human_attribute_name('current_sign_in_ip')
+              %td= @user.current_sign_in_ip
+            %tr
+              %td= User.human_attribute_name('last_sign_in_at')
+              %td= @user.last_sign_in_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+            %tr
+              %td= User.human_attribute_name('last_sign_in_ip')
+              %td= @user.last_sign_in_ip
+  .panel-footer.clearfix
+    .pull-right
+      = link_to edit_user_registration_path, class: "btn btn-primary marginright5" do
+        %span.glyphicon.glyphicon-lock
+        = t('change_password')
+      - unless current_user.confirmed?
+        = link_to new_confirmation_path(current_user), class: "btn btn-primary marginright5" do
+          %span.glyphicon.glyphicon-envelope
+          = t('confirm_email')
+      - if is_admin?(current_user)
+        = link_to rails_admin_path, class: "btn btn-primary" do
+          %span.glyphicon.glyphicon-cog
+          = t('admin_dashboard')
