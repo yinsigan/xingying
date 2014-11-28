@@ -175,6 +175,7 @@ zh-CN:
   supports:
     index:
       no_content: "暂时没有新闻文章"
+      category_no_content: "此分类暂时没有新闻文章"
   tickets:
     index:
       list: "服务单列表"
