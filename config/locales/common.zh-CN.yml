@@ -73,7 +73,6 @@ zh-CN:
   need-help: "查看帮助"
   prevStep: "上一步"
   nextStep: "下一步"
-  finish: "关闭"
   weixin_dev_title: "微信开发者中心"
   select_sin_material_btn: "选择单图文"
   select_thumb_btn: "选择图片"
@@ -82,3 +81,5 @@ zh-CN:
   admin_dashboard: "管理面板"
   reply: "回复"
   how_to_manage_public_account: "如何管理公众帐号"
+  verifyEmail: "确认你的邮件地址方可访问所有功能。确认邮件已发往"
+  reSendEmail: "重新发送邮件"
