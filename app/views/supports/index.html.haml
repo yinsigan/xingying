@@ -1,10 +1,9 @@
-= render "sidebar_left"
-
 - if @support_category.blank?
-  .col-md-9.margintop20
+  .col-md-12.margintop20
     .bs-callout.bs-callout-default
       %h4= t('.no_content')
 - else
+  = render "sidebar_left"
   .col-md-9
     .article-header.page-header
       %h2
@@ -12,5 +11,4 @@
 
     %ul.list-group.ul-no-style
       = render partial: "supports/support_list", collection: @supports
-
     = paginate @supports
