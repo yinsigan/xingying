@@ -41,3 +41,15 @@
 .fp-tableCell{
   vertical-align: top;
 }
+
+// 覆盖分辨率变小时右边按钮的颜色
+.navbar-default .navbar-toggle {
+  border-color: #178acc;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #178acc;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFF;
+}

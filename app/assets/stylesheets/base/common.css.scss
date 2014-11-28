@@ -82,3 +82,8 @@
 .panel-heading.background-color-none {
   background-color: transparent;
 }
+
+
+.list-group-item.li-no-border.border-top {
+  @extend .border-top;
+}

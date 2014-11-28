@@ -327,23 +327,18 @@
               文章
             内容简介
 
-:coffee
-  $(document).ready ->
-    $("#fullpage").fullpage
-      navigation: true
-      navigationPosition: "right"
-      resize : false
-      navigationTooltips: [
-        "firstSlide"
-        "secondSlide"
-        "threeSlide"
-      ]
-      scrollingSpeed: 250
-      afterLoad: (anchorLink, index) ->
-        itv and (clearTimeout(itv)
-        itv = null
-        )
-        doAnimation(index, 1)
-        return
-    doAnimation 1, 1
-    return
+:javascript
+  $(document).ready(function(){
+    $("#fullpage").fullpage({
+      navigation: true,
+      resize : false,
+      navigationPosition: 'right',
+      navigationTooltips: ['firstSlide', 'secondSlide', 'threeSlide'],
+      scrollingSpeed: 250,
+      afterLoad: function(anchorLink, index) {
+        itv && (clearTimeout(itv), itv = null),
+          doAnimation(index, 1);
+      },
+    });
+    doAnimation(1, 1);
+  });

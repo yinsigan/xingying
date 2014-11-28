@@ -1,9 +1,9 @@
 var showGuide = function(selector, option) {
   selector = selector ||  ".boot-tour";
   var options =  {
-    prevButtonText: "上一步",
-    nextButtonText: "下一步",
-    finishButtonText: "关闭"
+    prevButtonText: "<%= I18n.t('prevStep') %>",
+    nextButtonText: "<%= I18n.t('nextStep') %>",
+    finishButtonText: "<%= I18n.t('close') %>"
   };
   $.extend(options, option || {});
   bootstro.start(selector, options);

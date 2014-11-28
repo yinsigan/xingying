@@ -14,8 +14,11 @@
         - if user_signed_in? && !current_user.confirmed?
           .row
             .col-md-12
-              %p.text-danger
-                = link_to "验证邮箱", new_confirmation_path(current_user)
+              #verifyEmail
+                .alert.alert-info{role: "alert"}
+                  = t('verifyEmail')
+                  = current_user.email
+                  = link_to t('reSendEmail'), new_confirmation_path(current_user), class: "btn btn-default"
 
         = render 'layouts/shared/flash_messages'
         .row
