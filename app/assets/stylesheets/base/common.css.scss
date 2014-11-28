@@ -91,3 +91,8 @@
 .list-group-item.li-no-border.border-top {
   @extend .border-top;
 }
+
+// 让首行文本缩进20px
+.indentation{
+  text-indent: 20px;
+}
