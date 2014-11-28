@@ -11,4 +11,5 @@
 
     %ul.list-group.ul-no-style
       = render partial: "supports/support_list", collection: @supports
-    = paginate @supports
+    .text-right
+      = paginate @supports

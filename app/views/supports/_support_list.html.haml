@@ -1,5 +1,9 @@
-%li.list-group-item.li-no-border{style: "padding-left: 0;"}
-  - if params[:support_category_id].present?
-    = link_to support_list.title, support_path(params[:support_category_id], support_list)
-  - else
-    = link_to support_list.title, support_path(@support_category, support_list)
+%li.list-group-item.li-no-border.border-top{style: "padding-left: 0;"}
+  %h4
+    - if params[:support_category_id].present?
+      = link_to support_list.title, support_path(params[:support_category_id], support_list)
+    - else
+      = link_to support_list.title, support_path(@support_category, support_list)
+  %p.text-muted
+    %i.fa.fa-calendar
+    = support_list.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
