@@ -82,7 +82,7 @@ last_step = null,
             $(".frame-2-6-2").show().addClass("magictime swashIn")
           }
         },
-        3: {
+        4: {
           0: function() {
             $("#one-left").removeClass("magictime slideLeftRetourn element-show");
             $("#one-center").removeClass("magictime slideDownRetourn element-show");
@@ -94,7 +94,7 @@ last_step = null,
             $("#one-right").addClass("magictime slideRightRetourn element-show");
           }
         },
-        4: {
+        5: {
           0: function() {
             $("#two-top").removeClass("magictime slideUpRetourn element-show");
             $("#two-left").removeClass("magictime slideLeftRetourn element-show");

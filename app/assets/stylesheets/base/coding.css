@@ -70,11 +70,26 @@
 }
 
 .blue.doted-circle {
-  border-color: #6dabd6
+  border-color: #6dabd6;
 }
 
 .blue.filled-circle {
-  background: #6dabd6
+  background: #6dabd6;
+}
+
+.red.doted-circle {
+  border-color: #f07373;
+}
+
+.red.filled-circle {
+  background: #f07373;
+}
+
+.green.doted-circle {
+  border-color: #59d596;
+}
+.green.filled-circle {
+  background: #59d596;
 }
 
 .doted-circle.circling {
