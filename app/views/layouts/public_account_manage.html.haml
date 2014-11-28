@@ -8,8 +8,15 @@
     = csrf_meta_tags
   %body
     = render 'layouts/shared/topbar'
+
     #content
       .container
+        - if user_signed_in? && !current_user.confirmed?
+          .row
+            .col-md-12
+              %p.text-danger
+                = link_to "验证邮箱", new_confirmation_path(current_user)
+
         = render 'layouts/shared/flash_messages'
         .row
           .clearfix.visible-xs-block
