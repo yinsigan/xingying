@@ -73,11 +73,25 @@ $left-border-color: #178ACC;
   }
 }
 
+// 子菜单样式
+@mixin sub-menu{
+  line-height: 43px;
+  height: 45px;
+  width: 85px;
+  text-align: center;
+  border: 1px solid #A19494;
+}
+
 // 模拟手机上自定义菜单的界面的CSS
 @mixin menu-level-two($level){
   position: absolute;
   bottom:45px * $level;
   float:left;
+  @include sub-menu;
+}
+
+.sub-menu{
+  @include sub-menu;
 }
 
 .menu-level-two-1{ @include menu-level-two(1); }
@@ -97,13 +111,4 @@ $left-border-color: #178ACC;
   position: relative;
   left:46px;
   float:left;
-}
-
-// 子菜单样式
-.sub-menu{
-  line-height: 43px;
-  height: 45px;
-  width: 85px;
-  text-align: center;
-  border: 1px solid #A19494;
 }

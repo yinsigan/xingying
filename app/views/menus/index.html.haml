@@ -10,34 +10,16 @@
 .row
   .col-md-5
     .iphone-menu
-      .menu-parent
-        .menu-level-one
-          .menu-level-two-1
-            .sub-menu
-              test2
-          .menu-level-two-2
-            .sub-menu
-              test1
-          .sub-menu
-            菜单一
-        .menu-level-one
-          .menu-level-two-1
-            .sub-menu
-              test2
-          .menu-level-two-2
-            .sub-menu
-              test1
-          .sub-menu
-            菜单二
-        .menu-level-one
-          .menu-level-two-1
-            .sub-menu
-              test2
-          .menu-level-two-2
-            .sub-menu
-              test1
-          .sub-menu
-            菜单一
+      - unless @menus.empty?
+        .menu-parent
+          - @menus.each do |one_level_menu|
+            .menu-level-one
+              - unless one_level_menu.children.empty?
+                - one_level_menu.children.each_with_index do |two_level_menu, index|
+                  %div{class: "menu-level-two-#{index + 1}"}
+                    = two_level_menu.name
+              .sub-menu
+                = one_level_menu.name
 
   .col-md-7
     -# 添加一级菜单按钮
