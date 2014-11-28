@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
   devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable, :timeoutable
+    :recoverable, :rememberable, :trackable, :validatable, :timeoutable, :confirmable
 
   has_many :public_accounts
   has_many :tickets
@@ -27,5 +27,10 @@ class User < ActiveRecord::Base
 
   def timeout_in
     30.minutes
+  end
+
+  protected
+  def confirmation_required?
+    false
   end
 end
