@@ -1,5 +1,5 @@
 class ThumbGroup < ActiveRecord::Base
   belongs_to :public_account
   has_many :thumbs, dependent: :nullify
-  validates :name, length: { maximum: 6 }, presence: true
+  validates :name, length: { maximum: 6 }, presence: true, uniqueness: { scope: :public_account }
 end
