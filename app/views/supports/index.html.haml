@@ -13,7 +13,7 @@
         %h2
           = @support_category.try(:name)
 
-        %ul.list-group.ul-no-style
-          = render partial: "supports/support_list", collection: @supports
-        .text-right
-          = paginate @supports
+      %ul.list-group.ul-no-style
+        = render partial: "supports/support_list", collection: @supports
+      .text-right
+        = paginate @supports
