@@ -1,0 +1,37 @@
+.row.callme
+  .col-md-12#two-top.element-hidden
+    .text-center
+      %h1
+        = t("callme")
+      %p For more info and support, contact us!
+.row
+  .col-md-12.margintop20
+    .col-md-7.col-sm-7#two-left.element-hidden
+      = form_for @contact, html: {class: "form-horizontal"}, remote: true do |f|
+        .form-group
+          = f.text_field :name, class: "form-control round-text-input", required: true, placeholder: t('callme_name')
+        .form-group
+          = f.email_field :email, class: "form-control round-text-input", required: true, placeholder: t('callme_email')
+        .form-group
+          = f.phone_field :phone, class: "form-control round-text-input", required: true, placeholder: t('callme_phone')
+        .form-group
+          = f.text_area :phone, class: "form-control round-text-input", required: true, placeholder: t('callme_message'), cols: "30", rows: "10"
+        .form-group
+          = f.submit t('sumbit'), class: "btn btn-primary btn-lg round-primary-btn", "data-disable-with" => t('disable-with-submit')
+    .col-md-5.col-sm-5#two-right.element-hidden
+      .media
+        .pull-left
+          %i.fa.fa-map-marker.fa-2x.round-border
+        .media-body
+          %h4.media-heading.paddingtop15= Settings.office_address
+      .media
+        .pull-left
+          %i.fa.fa-envelope.fa-2x.round-border
+        .media-body
+          %h4.media-heading.paddingtop15
+            %a{:href => "mailto:#{Settings.office_email}"}= Settings.office_email
+      .media
+        .pull-left
+          %i.fa.fa-phone.fa-2x.round-border
+        .media-body.paddingtop15
+          %h4.media-heading= Settings.office_phone_number

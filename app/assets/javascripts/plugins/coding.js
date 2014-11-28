@@ -17,13 +17,13 @@ last_step = null,
     var animations = {
         1: {
           0: function() {
-            $(".frame-1 .magictime").removeClass("magictime slideLeftRetourn slideDownRetourn slideUpRetourn slideUpRetourn slideRightRetourn element-show");
+            $(".frame-first .magictime").removeClass("magictime slideLeftRetourn slideDownRetourn slideUpRetourn slideUpRetourn slideRightRetourn element-show");
           },
           1: function() {
-            $(".frame-1 .left").addClass("magictime slideLeftRetourn element-show");
-            $(".frame-1 .up").addClass("magictime slideUpRetourn element-show");
-            $(".frame-1 .down").addClass("magictime slideDownRetourn element-show");
-            $(".frame-1 .right").addClass("magictime slideRightRetourn element-show");
+            $(".frame-first .left").addClass("magictime slideLeftRetourn element-show");
+            $(".frame-first .up").addClass("magictime slideUpRetourn element-show");
+            $(".frame-first .down").addClass("magictime slideDownRetourn element-show");
+            $(".frame-first .right").addClass("magictime slideRightRetourn element-show");
           }
         },
         2: {
