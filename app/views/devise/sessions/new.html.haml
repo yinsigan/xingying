@@ -4,6 +4,7 @@
       %h1.text-center= t('welcome_login')
     .modal-body.clearfix
       = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form col-md-12 center-block"}) do |f|
+        = devise_error_messages!
         .form-group
           = f.email_field :email, autofocus: true, required: true, class: "form-control input-lg", placeholder: t('email')
         .form-group
