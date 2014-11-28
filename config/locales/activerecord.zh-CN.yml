@@ -8,7 +8,7 @@ zh-CN:
         current_password: "原密码"
         reset_password_sent_at: "重置密码时间"
         remember_created_at: "记住我的时间"
-        sign_in_count: "登录次数"
+        sign_in_count: "登录总次数"
         current_sign_in_at: "当前登录时间"
         last_sign_in_at: "最后一次登录时间"
         current_sign_in_ip: "当前登录IP"
@@ -17,6 +17,7 @@ zh-CN:
         avatar: "头像"
         role: "角色"
         tickets: "服务单"
+        created_at: "注册时间"
         comments: "评论"
 
       public_account:

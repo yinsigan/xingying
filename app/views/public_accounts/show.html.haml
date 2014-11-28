@@ -19,8 +19,8 @@
               %td= PublicAccount.human_attribute_name('tp')
               %td= PublicAccount::TP[@public_account.tp]
   .panel-footer.clearfix
-    %span.pull-right
-      %a.btn.btn-sm.btn-info{"title" => t('edit'), data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true}, :href => edit_public_account_path(@public_account)}
+    .pull-right
+      = link_to edit_public_account_path(@public_account), class: "btn btn-sm btn-info marginright5", data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true}, "title" => t('edit') do
         %i.glyphicon.glyphicon-edit
       = link_to delete_public_account_path(@public_account), "title" => t('delete'), data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true}, class: "btn btn-danger btn-sm", remote: true do
         %i.glyphicon.glyphicon-remove
