@@ -26,6 +26,7 @@ zh-CN:
         hello: '您好, %{email}'
         body: '您可以通过下面的链接来验证您的邮箱'
         submit_button: '点击此处验证邮箱'
+        ignore: '您如果没有这个请求，请忽略此邮件.'
       reset_password_instructions:
         subject: "重置密码信息"
         hello: '您好, %{email}'
