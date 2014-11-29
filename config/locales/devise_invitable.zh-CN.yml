@@ -1,16 +1,16 @@
 zh-CN:
   devise:
     failure:
-      invited: '您收到一封带处理的邀请函, 同意它去完成创建你的帐号.'
+      invited: '您收到一封带处理的邀请邮件, 同意它去完成创建你的帐号.'
     invitations:
-      send_instructions: '一封邀请函已经被发送到%{email}.'
-      invitation_token_invalid: '您提供的这个邀请函Token不是有效的.'
+      send_instructions: '一封邀请邮件已经被发送到%{email}.'
+      invitation_token_invalid: '您提供的这个邀请邮件Token不是有效的.'
       updated: '您的密码已经设置成功, 您已经完成登录了.'
       no_invitations_remaining: '您的邀请次数已使用完了, 不能再发送邀请了哦.'
-      invitation_removed: '您的邀请函已被删除.'
+      invitation_removed: '您的邀请邮件已被删除.'
       new:
         header: '发送邀请'
-        submit_button: '发送一个邀请'
+        body: '输入您要邀请的用户的邮箱地址'
       edit:
         header: '设置你的密码'
         submit_button: '设置密码'
@@ -18,6 +18,6 @@ zh-CN:
       invitation_instructions:
         subject: '您收到一封邀请注册的邮件'
         hello: '您好, %{email}'
-        someone_invited_you: '您收到一封来自 %{url} 的邀请函, 您可以通过一下链接接受邀请'
+        someone_invited_you: '您收到一封来自 %{url} 的邀请邮件, 您可以通过一下链接接受邀请'
         accept: '接受邀请'
         ignore: '如果你不能接受该邀请, 请忽略该邮件. <br/>您的帐号将不会被创建, 直到您访问上面的链接并设置您的密码才会完成创建.'
