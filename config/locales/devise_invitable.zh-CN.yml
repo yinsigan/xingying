@@ -20,4 +20,6 @@ zh-CN:
         hello: '您好, %{email}'
         someone_invited_you: '您收到一封来自 %{url} 的邀请函, 您可以通过一下链接接受邀请'
         accept: '接受邀请'
+        show_link: '如果上面的链接无法正常载入, 您可以直接打开以下链接接受邀请并设置您的账号密码: '
         ignore: '如果你不能接受该邀请, 请忽略该邮件. <br/>您的帐号将不会被创建, 直到您访问上面的链接并设置您的密码才会完成创建.'
+        contect: '请勿回复此邮件, 如果有疑问, 请联系我们: <a href="mailto:%{office_email} - 微媒 开发团队 >%{office_email}</a>"'
