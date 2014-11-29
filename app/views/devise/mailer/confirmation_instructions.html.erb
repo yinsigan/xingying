@@ -1,5 +1,10 @@
-<p>你好 <%= @email %>!</p>
+<p><%= t('.hello', email: @email) %>!</p>
 
-<p>您可以通过下面的链接来验证您的邮箱</p>
+<p><%= t('.body') %></p>
 
-<p><%= link_to '点击此处验证邮箱', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to t('.submit_button'), confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p><%= t('show_link') %></p>
+<p><%= link_to url_for(confirmation_url(@resource, confirmation_token: @token)), confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p><%= raw t("contect", :office_email => Settings.office_email) %></p>

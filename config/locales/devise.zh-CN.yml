@@ -1,7 +1,7 @@
 # Chinese (China) translations for Devise(3.2.2)
 # by Kenrick-Zhou (https://github.com/Kenrick-Zhou)
 # https://gist.github.com/Kenrick-Zhou/7909822
- 
+
 zh-CN:
   devise:
     confirmations:
@@ -23,8 +23,15 @@ zh-CN:
     mailer:
       confirmation_instructions:
         subject: "确认信息"
+        hello: '您好, %{email}'
+        body: '您可以通过下面的链接来验证您的邮箱'
+        submit_button: '点击此处验证邮箱'
       reset_password_instructions:
         subject: "重置密码信息"
+        hello: '您好, %{email}'
+        body: '您能够通过点击下面的链接来改变您的密码'
+        submit_button: '更改密码'
+        ignore: '您如果没有这个请求，请忽略此邮件.'
       unlock_instructions:
         subject: "解锁信息"
     omniauth_callbacks:
