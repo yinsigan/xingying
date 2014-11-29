@@ -8,11 +8,11 @@
         .form-group
           = f.label :email, class: "control-label col-sm-3"
           .col-sm-7
-            = f.email_field :email, autocomplete: "off", class: "form-control input-lg", placeholder: t('hit_email'), required: true, autofocus: true
+            = f.email_field :email, autocomplete: "off", class: "form-control input-lg", placeholder: t('hit_email'), required: true, autofocus: true, data: { "bv-remote" => true, "bv-remote-url" => email_uniqueness_validater_users_path, "bv-remote-message" => t('email_uniqueness_validater') }
         .form-group
           = f.label :password, class: "control-label col-sm-3"
           .col-sm-7
-            = f.password_field :password, autocomplete: "off", class: "form-control input-lg", placeholder: t('hit_password'), required: true, data: {"bv-stringlength" => "true", "bv-stringlength-min" => 8, "bv-identical" => true, "bv-identical-field" => "user[password_confirmation]"}
+            = f.password_field :password, autocomplete: "off", class: "form-control input-lg", placeholder: t('hit_password'), required: true, data: {"bv-stringlength" => true, "bv-stringlength-min" => 8, "bv-identical" => true, "bv-identical-field" => "user[password_confirmation]"}
         .form-group
           = f.label :password_confirmation, class: "control-label col-sm-3"
           .col-sm-7
