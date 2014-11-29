@@ -5,11 +5,10 @@
 #= require bootstrap/alert
 #= require bootstrap/dropdown
 #= require bootstrap/collapse
-#= require ajax
 #= require bootstrapValidator.min
 #= require language/zh_CN
-#= require plugins/flash
-#= require plugins/showGuide
+#= require my
+#= require custom
 
 #= require jquery.fullPage
-#= require plugins/coding
+#= require coding

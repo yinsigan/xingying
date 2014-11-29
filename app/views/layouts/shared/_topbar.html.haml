@@ -29,11 +29,11 @@
                 %li
                   = link_to new_user_invitation_path do
                     发送缴请
-                    %span.glyphicon.glyphicon-user.pull-right
+                    %i.fa.fa-share-alt-square.pull-right
               %li
                 = link_to user_path(current_user) do
                   = t('account_info')
-                  %span.glyphicon.glyphicon-user.pull-right
+                  %span.glyphicon.glyphicon-info-sign.pull-right
               - unless current_user.confirmed?
                 %li
                   = link_to new_confirmation_path(current_user) do

@@ -12,8 +12,8 @@
 
 :coffee
   $(document).ready ->
-    unless $.cookie("new_public_account_guide", Boolean)
+    unless $.cookie("new_public_account_guide_#{current_user.id}", Boolean)
       showGuide ".boot-tour",
         onExit: ->
-          $.cookie "new_public_account_guide", true,
+          $.cookie "new_public_account_guide_#{current_user.id}", true,
             expires: 30

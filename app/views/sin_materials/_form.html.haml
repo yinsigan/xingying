@@ -46,10 +46,10 @@
 
 :coffee
   $(document).ready ->
-    unless $.cookie("new_sin_materials_guide", Boolean)
+    unless $.cookie("new_sin_materials_guide_#{current_user.id}", Boolean)
       showGuide ".boot-tour",
         onExit: ->
-          $.cookie "new_sin_materials_guide", true,
+          $.cookie "new_sin_materials_guide_#{current_user.id}", true,
             expires: 30
 
     $("#sin_material_sin_pic_text_attributes_click_response").trigger "change"
