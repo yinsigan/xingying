@@ -85,3 +85,4 @@ zh-CN:
   how_to_manage_public_account: "如何管理公众帐号"
   verifyEmail: "您的邮件地址还没验证，确认您的邮件地址方可访问所有功能，确认邮件已发往"
   reSendEmail: "重新发送邮件"
+  account_no_confirmed: "账号还未验证"

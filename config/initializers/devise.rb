@@ -298,4 +298,6 @@ Devise.setup do |config|
   config.allow_unconfirmed_access_for = 365.days
 
   config.invite_for = 2.weeks
+
+  config.scoped_views = true
 end
