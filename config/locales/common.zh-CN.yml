@@ -86,3 +86,4 @@ zh-CN:
   verify_email: "您的邮件地址还没验证，确认您的邮件地址方可访问所有功能，确认邮件已发往"
   resend_email: "重新发送邮件"
   reverify_email: "请输入您的账户验证邮箱，我们会发送验证邮件到您的邮箱"
+  account_no_confirmed: "账号还未验证"
