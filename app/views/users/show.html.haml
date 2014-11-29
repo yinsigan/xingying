@@ -30,6 +30,9 @@
             %tr
               %td= User.human_attribute_name('last_sign_in_ip')
               %td= current_user.last_sign_in_ip
+            %tr
+              %td= User.human_attribute_name('confirmed_at')
+              %td= current_user.confirmed_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
   .panel-footer.clearfix
     .pull-right
       = link_to edit_user_registration_path, class: "btn btn-primary marginright5" do
