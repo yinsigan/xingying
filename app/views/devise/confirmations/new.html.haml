@@ -5,6 +5,8 @@
     .modal-body.clearfix
       = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: "form col-md-12 center-block" }) do |f|
         = devise_error_messages!
+        %p.text-muted
+          = t('reverify_email')
         .form-group
           = f.email_field :email, autofocus: true, required: true, class: "form-control input-lg", placeholder: t('email')
         .form-group

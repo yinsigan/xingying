@@ -83,5 +83,6 @@ zh-CN:
   reply: "回复"
   account_info: "账号信息"
   how_to_manage_public_account: "如何管理公众帐号"
-  verifyEmail: "您的邮件地址还没验证，确认您的邮件地址方可访问所有功能，确认邮件已发往"
-  reSendEmail: "重新发送邮件"
+  verify_email: "您的邮件地址还没验证，确认您的邮件地址方可访问所有功能，确认邮件已发往"
+  resend_email: "重新发送邮件"
+  reverify_email: "请输入您的账户验证邮箱，我们会发送验证邮件到您的邮箱"
