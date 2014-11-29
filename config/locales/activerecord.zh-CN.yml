@@ -19,6 +19,7 @@ zh-CN:
         tickets: "服务单"
         created_at: "注册时间"
         comments: "评论"
+        confirmed_at: "验证账号时间"
 
       public_account:
         name: "微信公众账号名称"
