@@ -91,7 +91,9 @@ Rails.application.routes.draw do
         get :cancel
       end
   end
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    get :email_uniqueness_validater, on: :collection
+  end
   root 'home#index'
 
   # 微信公众账号接口
