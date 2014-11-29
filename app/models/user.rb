@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :public_accounts
   has_many :tickets
   has_many :comments
+  has_many :invitations, :class_name => self.to_s, :as => :invited_by
 
   mount_uploader :avatar, UserAvatarUploader
 
