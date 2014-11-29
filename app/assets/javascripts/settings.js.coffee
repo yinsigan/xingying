@@ -2,7 +2,6 @@
 #= require jquery_ujs
 #= require turbolinks
 #= require nprogress
-#= require ajax
 #= require bootstrap/alert
 #= require bootstrap/dropdown
 #= require bootstrap/modal
@@ -22,4 +21,5 @@
 #= require jquery.history
 #= require bootstro
 #= require jquery.cookie
-#= require_directory ./plugins
+#= require my
+#= require custom
