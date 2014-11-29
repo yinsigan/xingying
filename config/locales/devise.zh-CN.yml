@@ -22,7 +22,7 @@ zh-CN:
       unconfirmed: "继续操作前请先确认您的帐号。"
     mailer:
       confirmation_instructions:
-        subject: "确认信息"
+        subject: "邮箱验证"
         hello: '您好, %{email}'
         body: '您可以通过下面的链接来验证您的邮箱'
         submit_button: '点击此处验证邮箱'
