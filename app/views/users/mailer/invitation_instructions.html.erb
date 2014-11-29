@@ -4,7 +4,7 @@
 
 <p><%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token) %></p>
 
-<p><%= t('.show_link') %></p>
+<p><%= t('show_link') %></p>
 <p><%= link_to url_for(accept_invitation_url(@resource, :invitation_token => @token)), accept_invitation_url(@resource, :invitation_token => @token) %></p>
 
 <p><%= t("devise.mailer.invitation_instructions.ignore").html_safe %></p>
