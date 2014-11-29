@@ -36,6 +36,10 @@
                 %td= current_user.confirmed_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
               - else
                 %td= t('account_no_confirmed')
+            - if current_user.invited_by.present?
+              %tr
+                %td= User.human_attribute_name('invited_by')
+                %td= current_user.invited_by.try(:email)
   .panel-footer.clearfix
     .pull-right
       = link_to edit_user_registration_path, class: "btn btn-primary marginright5" do

@@ -28,6 +28,7 @@ zh-CN:
         invitation_accepted_at: "邀请同意时间"
         invitation_limit: "邀请限制人数"
         invitations_count: "邀请人数"
+        invited_by: "缴请人"
 
       public_account:
         name: "微信公众账号名称"
