@@ -7,4 +7,5 @@
 <p><%= t('show_link') %></p>
 <p><%= link_to url_for(confirmation_url(@resource, confirmation_token: @token)), confirmation_url(@resource, confirmation_token: @token) %></p>
 
+<p><%= t('.ignore') %></p>
 <p><%= raw t("contect", :office_email => Settings.office_email) %></p>
