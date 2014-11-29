@@ -25,6 +25,11 @@
                 = link_to edit_user_registration_path do
                   = t('change_password')
                   %span.glyphicon.glyphicon-lock.pull-right
+              - if current_user.invitation_limit.nil? || current_user.invitation_limit.to_i > 0
+                %li
+                  = link_to new_user_invitation_path do
+                    发送缴请
+                    %span.glyphicon.glyphicon-user.pull-right
               %li
                 = link_to user_path(current_user) do
                   = t('account_info')
