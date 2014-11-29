@@ -275,7 +275,7 @@ DEPENDENCIES
   ckeditor!
   coffee-rails (~> 4.0.0)
   devise (~> 3.3.0)
-  devise_invitable
+  devise_invitable (~> 1.4.0)
   font-awesome-sass (~> 4.1.0)
   guard
   guard-livereload
