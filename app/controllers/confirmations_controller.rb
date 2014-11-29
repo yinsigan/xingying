@@ -1,6 +1,4 @@
 class ConfirmationsController < Devise::ConfirmationsController
-  before_action :authenticate_user!
-
   protected
 
   # The path used after resending confirmation instructions.

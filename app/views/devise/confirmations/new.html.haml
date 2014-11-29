@@ -1,17 +1,14 @@
 .modal-dialog
   .modal-content
     .modal-header
-      %h1.text-center
-        = t('confirm_email')
+      %h1.text-center= t('confirm_email')
     .modal-body.clearfix
       = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: "form col-md-12 center-block" }) do |f|
         = devise_error_messages!
         %p.text-muted
           = t('reverify_email')
-          %strong
-            = current_user.try(:email)
         .form-group
-          = f.hidden_field :email, value: current_user.try(:email)
+          = f.email_field :email, autofocus: true, required: true, class: "form-control input-lg", placeholder: t('email')
         .form-group
           %button.btn.btn-lg.btn-primary.btn-block{"data-disable-with" => t('disable-with-submit'), :type => "submit"}
-            = t('send')
+            = t('sure')
