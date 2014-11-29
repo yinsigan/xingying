@@ -8,4 +8,5 @@
 <p><%= link_to accept_invitation_url(@resource, :invitation_token => @token) %></p>
 
 <p><%= t("devise.mailer.invitation_instructions.ignore").html_safe %></p>
-<p><%= raw t("devise.mailer.invitation_instructions.contect") , :office_email => Settings.office_email %></p>
+
+<p><%= raw t("devise.mailer.invitation_instructions.contect", :office_email => Settings.office_email) %></p>
