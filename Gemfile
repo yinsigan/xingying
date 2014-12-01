@@ -38,7 +38,8 @@ gem 'ckeditor', github: "yinsigan/ckeditor"
 
 # 认证
 gem 'devise', '~> 3.3.0'
-gem 'devise_invitable'
+gem 'devise-encryptable'
+gem 'devise_invitable', '~> 1.4.0'
 
 # 国际化
 gem 'rails-i18n'

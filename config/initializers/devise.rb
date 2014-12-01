@@ -300,4 +300,6 @@ Devise.setup do |config|
   config.invite_for = 2.weeks
 
   config.scoped_views = true
+
+  config.encryptor = :sha512
 end
