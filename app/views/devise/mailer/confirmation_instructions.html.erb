@@ -27,13 +27,14 @@
       label { color:#666; }
     </style>
     <div style="line-height:160%;">
-        <h1><%= t(".hello", email: @email) %></h1>
+        <h1><%= t('email_title') %></h1>
+        <p><%= t(".hello", email: @email) %></p>
 
-          <p><%= t('.body') %></p>
-          <p><%= link_to t('.submit_button'), confirmation_url(@resource, confirmation_token: @token) %></p>
-          <p><%= t('show_link') %></p>
-          <p><%= link_to url_for(confirmation_url(@resource, confirmation_token: @token)), confirmation_url(@resource, confirmation_token: @token) %></p>
-          <p><%= t('.ignore') %></p>
+        <p><%= t('.body') %></p>
+        <p><%= link_to t('.submit_button'), confirmation_url(@resource, confirmation_token: @token) %></p>
+        <p><%= t('show_link') %></p>
+        <p><%= link_to url_for(confirmation_url(@resource, confirmation_token: @token)), confirmation_url(@resource, confirmation_token: @token) %></p>
+        <p><%= t('.ignore') %></p>
 
       </div>
       <div style="margin-top:30px;border-top:1px solid #ddd;padding:5px;">
