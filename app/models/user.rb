@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
 
   enum role: [:user, :admin, :super_admin]
 
+  # 注册邮件提醒
+  after_create :send_welcome_mail
+
   def role_enum
     self.class.roles.to_a
   end
@@ -34,4 +37,9 @@ class User < ActiveRecord::Base
   def confirmation_required?
     false
   end
+
+  def send_welcome_mail
+    UserMailer.delay.welcome(self.id)
+  end
+
 end

@@ -26,7 +26,7 @@
       label { color:#666; }
     </style>
     <div style="line-height:160%;">
-        <h1><%= t("devise.mailer.invitation_instructions.hello", email: @resource.email) %></h1>
+        <h1><%= t("devise.mailer.invitation_instructions.hello", email: @user.email) %></h1>
         <%= yield %>
       </div>
       <div style="margin-top:30px;border-top:1px solid #ddd;padding:5px;">
