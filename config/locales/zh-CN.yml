@@ -189,3 +189,4 @@ zh-CN:
     you_have_successfully: "您已经在"
     registered_an_account: "成功的注册了帐号"
     login_from: "登录页面地址"
+    welcome_subject: "欢迎加入 %{app_name} 社区"
