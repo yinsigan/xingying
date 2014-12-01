@@ -299,7 +299,9 @@ Devise.setup do |config|
 
   config.invite_for = 2.weeks
 
+  # 缴请
   config.scoped_views = true
 
+  # 加密
   config.encryptor = :sha512
 end

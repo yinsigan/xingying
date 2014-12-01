@@ -88,3 +88,6 @@ group :development do
 end
 
 gem 'cancancan', "~> 1.9.2"
+gem 'sidekiq', "~> 3.2.6"
+gem 'sinatra', '>= 1.3.0', :require => nil
+gem 'devise-async', '~> 0.9.0'
