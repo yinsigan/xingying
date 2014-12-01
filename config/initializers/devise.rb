@@ -76,7 +76,7 @@ Devise.setup do |config|
   # particular strategies by setting this option.
   # Notice that if you are skipping storage for all authentication paths, you
   # may want to disable generating routes to Devise's sessions controller by
-  # passing skip: :sessions to `devise_for` in your config/routes.rb
+  # pas加密sing skip: :sessions to `devise_for` in your config/routes.rb
   config.skip_session_storage = [:http_auth]
 
   # By default, Devise cleans up the CSRF token on authentication to
@@ -305,6 +305,4 @@ Devise.setup do |config|
   # 加密
   config.encryptor = :sha512
 
-  # 配置邮件模板
-  config.mailer = "DeviseMailer"
 end

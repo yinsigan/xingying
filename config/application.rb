@@ -33,5 +33,11 @@ module Yingxing
         g.helper false
         g.test_framework false
     end
+
+    config.to_prepare do
+      Devise::Mailer.layout 'email'
+    end
+
   end
+
 end
