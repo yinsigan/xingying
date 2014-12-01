@@ -86,3 +86,5 @@ group :development do
   gem 'guard'
   gem 'guard-livereload', require: false
 end
+
+gem 'cancancan', "~> 1.9.2"

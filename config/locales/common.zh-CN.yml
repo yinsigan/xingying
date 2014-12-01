@@ -90,3 +90,4 @@ zh-CN:
   show_link: '如果上面的链接无法正常载入, 您可以直接复制并打开以下链接:'
   contect: '请勿回复此邮件, 如果有疑问, 请联系我们: %{office_email} <br/> - 微媒 开发团队'
   send: "发送"
+  no_permission: '您没有权限访问该页面'

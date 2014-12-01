@@ -30,6 +30,9 @@ zh-CN:
         invitations_count: "邀请人数"
         invited_by: "邀请人"
         invitations: "所有邀请人"
+        password_salt: "密码salt值"
+        reset_password_token: "重置密码Token"
+
 
       public_account:
         name: "微信公众账号名称"
@@ -155,6 +158,7 @@ zh-CN:
         phone: "手机号码"
         email: "电子邮件"
         body: "内容"
+        status: "状态"
 
     models:
       user: "用户"

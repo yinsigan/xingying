@@ -7,8 +7,7 @@
 #= require bootstrap/collapse
 #= require bootstrapValidator.min
 #= require language/zh_CN
-#= require my
-#= require custom
-
 #= require jquery.fullPage
 #= require coding
+#= require my
+#= require custom

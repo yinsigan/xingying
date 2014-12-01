@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
     public_accounts_path
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to main_app.root_path, :alert => t('no_permission')
+  end
+
 end

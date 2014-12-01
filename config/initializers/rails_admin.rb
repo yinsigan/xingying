@@ -14,16 +14,19 @@ RailsAdmin.config do |config|
   end
 
   ## == Devise ==
-  config.authenticate_with do
-    warden.authenticate! scope: :user
-  end
-  config.current_user_method(&:current_user)
-  config.authorize_with do
-    if current_user
-      is_admin = current_user.admin? || current_user.super_admin?
-      redirect_to main_app.new_user_session_url unless is_admin
-    end
-  end
+  # config.authenticate_with do
+  #   warden.authenticate! scope: :user
+  # end
+  # config.current_user_method(&:current_user)
+  # config.authorize_with do
+  #   if current_user
+  #     is_admin = current_user.admin? || current_user.super_admin?
+  #     redirect_to main_app.new_user_session_url unless is_admin
+  #   end
+  # end
+
+  config.authorize_with :cancan, AdminAbility
+  config.current_user_method &:current_user
 
   config.model "Support" do
     edit do
