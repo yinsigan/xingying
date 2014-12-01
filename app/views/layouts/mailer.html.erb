@@ -11,6 +11,7 @@
       table { width:100%; border:0; }
       table tr td { font-size:12px; }
       h1 { font-size:18px; background:#2fa4e7; color:#FFF; padding:8px;}
+      h1 a{color:#FFF;}
       p { margin:10px; padding:10px; margin-bottom:10px;}
       blockquote {
         margin-left:20px;
@@ -32,8 +33,7 @@
       <div style="margin-top:30px;border-top:1px solid #ddd;padding:5px;">
         <div style="float:right;"><img src="http://<%= Settings.home_url %><%= asset_path("logo_48.png") %>" /></div>
         <div style="padding-top:4px; line-height:160%; color:#999;">
-          <%= raw t("contect", :office_email => Settings.office_email) %> <br />
-          <a href="<%= root_url %>"><%= Settings.title %></a> <%= Settings.home_url %>
+          <%= raw t("contect", :office_email => Settings.office_email) %> <%= Settings.home_url %><br />
         </div>
       </div>
     </body>
