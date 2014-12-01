@@ -11,7 +11,7 @@ defaults: &defaults
   page_desc: "一家微媒体平台，提供微信营销等服务"
   page_keywords: "微信, 微媒, 营销"
   assets_url: "xingying.qiniudn.com"
-  home_url: "dev-start.net"
+  home_url: "127.0.0.1:3000"
 
 development:
   <<: *defaults
