@@ -304,4 +304,7 @@ Devise.setup do |config|
 
   # 加密
   config.encryptor = :sha512
+
+  # 配置邮件模板
+  config.mailer = "DeviseMailer"
 end
