@@ -86,7 +86,7 @@ zh-CN:
   verify_email: "您的邮件地址还没验证，确认您的邮件地址方可访问所有功能，确认邮件已发往"
   resend_email: "重新发送邮件"
   reverify_email: "请输入您的账户验证邮箱，我们会发送验证邮件到您的邮箱"
-  account_no_confirmed: "账号还未验证"
+  account_no_confirmed: "邮箱还未验证"
   show_link: '如果上面的链接无法正常载入, 您可以直接复制并打开以下链接:'
   contect: '请勿回复此邮件, 如果有疑问, 请联系我们: %{office_email} <br/> - 微媒 开发团队'
   send: "发送"

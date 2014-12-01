@@ -19,7 +19,7 @@ zh-CN:
         tickets: "服务单"
         created_at: "注册时间"
         comments: "评论"
-        confirmed_at: "验证账号时间"
+        confirmed_at: "邮箱账号时间"
         confirmation_token: "验证邮件确认Token"
         confirmation_sent_at: "验证邮件发送时间"
         invitation_token: "邀请人Token"
