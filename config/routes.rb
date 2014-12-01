@@ -1,5 +1,5 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Ckeditor::Engine => '/ckeditor'
   # 微信公众账号
@@ -100,4 +100,7 @@ Rails.application.routes.draw do
   get  'weixin/:weixin_secret_key', to: 'weixin#index', as: :weixin_server
   post 'weixin/:weixin_secret_key', to: 'weixin#reply', as: :weixin_reply
 
+  authenticate :user, lambda { |u| u.super_admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end
