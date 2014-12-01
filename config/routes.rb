@@ -38,7 +38,7 @@ Rails.application.routes.draw do
       get :delete, on: :member
       get :click_response, on: :collection
     end
-    resources :thumbs, only: [:create, :index, :destroy] do
+    resources :thumbs, only: [:index, :destroy] do
       get :delete, on: :member
       post :upload, on: :collection
       post :select_upload, on: :collection

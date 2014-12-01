@@ -8,7 +8,7 @@ var picture_upload = function(picture_upload_form) {
         $.unblockUI();
       },
       add: function(e, data) {
-        $.blockUI({"message": "<h1>正在上传...请稍等...</h1>"});
+        $.blockUI({"message": "<h1><%= I18n.t('uploading') %></h1>"});
         // var file_size = parseFloat(data.files[0].size / 1024);
         // console.log(file_size.toFixed(2) + "KB");
         // console.log(data.files[0].name);

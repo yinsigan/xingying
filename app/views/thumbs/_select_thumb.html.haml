@@ -10,7 +10,6 @@
         .pull-right
           = form_tag select_upload_public_account_thumbs_path(@public_account, thumb_group_id: params[:thumb_group_id].presence), method: "post", class: "picture_upload" do
             = file_field_tag "image", :class => "filestyle", :data => {:buttonText => t('upload'), :input => false, :badge => false, :buttonBefore => false, :buttonName => "btn btn-primary"}, id: "upload"
-        .clearfix
         .pull-right.marginright20
           %p.help-block
             = t('picture_upload_tip')

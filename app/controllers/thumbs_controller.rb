@@ -3,13 +3,6 @@ class ThumbsController < SettingsController
   before_action :set_public_account
   before_action :add_index_breadcrumb, only: [:index]
 
-  def create
-    @thumb = @public_account.thumbs.build
-    @thumb.image = params[:image]
-    @thumb.save
-    @object = @thumb
-    render "create.js.erb", layout: false
-  end
 
   def index
     if params[:thumb_group_id]

@@ -11,7 +11,6 @@
 #= require limiter
 #= require bootstrap-filestyle
 #= require jquery.blockUI
-#= require ajax_upload
 #= require icheck
 #= require jquery.fileupload
 #= require ckeditor/init

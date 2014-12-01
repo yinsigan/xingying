@@ -13,13 +13,8 @@ class SinMaterialsController < SettingsController
     @sin_material = @public_account.sin_materials.build(sin_material_params)
     if @sin_material.save
       save_article_address(@sin_material)
-      if request.xhr?
-        redirect_via_turbolinks_to public_account_sin_materials_path(@public_account),
-          flash: {success: I18n.t('success_submit')}
-      else
-        redirect_to public_account_sin_materials_path(@public_account),
-          flash: {success: I18n.t('success_submit')}
-      end
+      redirect_via_turbolinks_to public_account_sin_materials_path(@public_account),
+        flash: {success: I18n.t('success_submit')}
     else
       @object = @sin_material
       render partial: "shared/ajax_prompt.js.erb", layout: false
