@@ -185,3 +185,7 @@ zh-CN:
       title: "新开服务单"
     show:
       input_reply: "请输入回复的内容"
+  mail:
+    you_have_successfully: "您已经在"
+    registered_an_account: "成功的注册了帐号"
+    login_from: "登录頁面地址"
