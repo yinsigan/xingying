@@ -1,12 +1,46 @@
-<p><%= t("devise.mailer.invitation_instructions.hello", email: @resource.email) %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <style type="text/css">
+      * { margin:0; padding:0px; }
+      body { padding:10px; font-size:13px; font-family: "Lucida Grande";}
+      a { color:#0069D6; }
+      table { width:100%; border:0; }
+      table tr td { font-size:12px; }
+      h1 { font-size:18px; background:#2fa4e7; color:#FFF; padding:8px;}
+      h1 a{color:#FFF;}
+      p { margin:10px; padding:10px; margin-bottom:10px;}
+      blockquote {
+        margin-left:20px;
+        margin-bottom: 18px;
+        border-left: 5px solid #ddd;
+      }
+      blockquote p {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 18px;
+        margin-bottom: 0;
+      }
+      label { color:#666; }
+    </style>
+    <div style="line-height:160%;">
+        <h1><%= t("devise.mailer.invitation_instructions.hello", email: @resource.email) %></h1>
 
-<p><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %></p>
+        <p><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %></p>
+        <p><%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token) %></p>
+        <p><%= t('show_link') %></p>
+        <p><%= link_to url_for(accept_invitation_url(@resource, :invitation_token => @token)), accept_invitation_url(@resource, :invitation_token => @token) %></p>
+        <p><%= t("devise.mailer.invitation_instructions.ignore").html_safe %></p>
 
-<p><%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token) %></p>
-
-<p><%= t('show_link') %></p>
-<p><%= link_to url_for(accept_invitation_url(@resource, :invitation_token => @token)), accept_invitation_url(@resource, :invitation_token => @token) %></p>
-
-<p><%= t("devise.mailer.invitation_instructions.ignore").html_safe %></p>
-
-<p><%= raw t("contect", :office_email => Settings.office_email) %></p>
+      </div>
+      <div style="margin-top:30px;border-top:1px solid #ddd;padding:5px;">
+        <div style="float:right;"></div>
+        <div style="padding-top:4px; line-height:160%; color:#999;">
+          <%= raw t("contect", :office_email => Settings.office_email) %> <%= Settings.home_url %><br />
+        </div>
+      </div>
+    </body>
+</html>
