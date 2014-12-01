@@ -92,3 +92,4 @@ zh-CN:
   send: "发送"
   no_permission: '您没有权限访问该页面'
   uploading: "正在上传...请稍等..."
+  email_title: "您好, 来自微媒的一封邮件"
