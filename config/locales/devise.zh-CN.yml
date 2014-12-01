@@ -22,13 +22,13 @@ zh-CN:
       unconfirmed: "继续操作前请先确认您的帐号。"
     mailer:
       confirmation_instructions:
-        subject: "邮箱验证"
+        subject: "来自微媒的一封邮箱验证的邮件"
         hello: '您好, %{email}'
         body: '您可以通过下面的链接来验证您的邮箱'
         submit_button: '点击此处验证邮箱'
         ignore: '您如果没有这个请求，请忽略此邮件.'
       reset_password_instructions:
-        subject: "重置密码信息"
+        subject: "来自微媒的一封重置密码信息的邮件"
         hello: '您好, %{email}'
         body: '您能够通过点击下面的链接来改变您的密码'
         submit_button: '更改密码'
