@@ -1,7 +1,7 @@
 class MenusController < SettingsController
   before_action :set_public_account
   before_action :appid_present, :add_show_breadcrumb
-  before_action :set_menu, only: [:edit, :destroy, :update, :send_message, :redirect_url, :set_action, :click_content]
+  before_action :set_menu, only: [:edit, :destroy, :update, :send_message, :redirect_url, :set_action, :click_content, :move_left]
 
   def index
     add_breadcrumb I18n.t("breadcrumbs.menus.index"), :public_account_menus_path
@@ -12,8 +12,8 @@ class MenusController < SettingsController
 
   def new
     @parent_menu = params[:parent_menu].presence
-    @title = @parent_menu.present? ? I18n.t("menus.index.new_sub_menu") : I18n.t("menus.index.new_top_menu")
-    @name_maximum = @parent_menu.present? ? I18n.t("menus.form.sub_menu_name_maximum") : I18n.t("menus.form.top_menu_name_maximum")
+    @title = params[:depth].present? && params[:depth].to_i == 1 ? I18n.t("menus.index.new_sub_menu") : I18n.t("menus.index.new_top_menu")
+    @name_maximum = params[:depth].present? && params[:depth].to_i == 1 ? I18n.t("menus.form.sub_menu_name_maximum") : I18n.t("menus.form.top_menu_name_maximum")
     @menu = @public_account.menus.build
     render "new.js.erb", layout: false
   end
@@ -70,6 +70,14 @@ class MenusController < SettingsController
     if params[:menu] && params[:menu][:click_type]
       render Menu::ClickTypeNode[params[:menu][:click_type].to_i] + ".js.erb", layout: false
     end
+  end
+
+  def move_left
+    @menu.move_left
+    render "move.js.erb", layout: false
+  end
+
+  def move_right
   end
 
   private

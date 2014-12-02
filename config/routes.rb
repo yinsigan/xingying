@@ -33,6 +33,8 @@ Rails.application.routes.draw do
       get :redirect_url, on: :member
       get :set_action, on: :member
       get :click_content, on: :collection
+      post :move_left, on: :member
+      post :move_right, on: :member
     end
     resources :sin_materials, except: [:show] do
       get :delete, on: :member

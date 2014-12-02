@@ -16,7 +16,7 @@
 
   .col-md-7
     -# 添加一级菜单按钮
-    = link_to t('.new_top_menu'), new_public_account_menu_path(@public_account), class: "btn btn-primary #{!@menus.empty? && @menus.count >= 3 ? 'disabled' : nil}", remote: true
+    = link_to t('.new_top_menu'), new_public_account_menu_path(@public_account, parent_menu: @root_menu, depth: @root_menu.depth), class: "btn btn-primary #{!@menus.empty? && @menus.count >= 3 ? 'disabled' : nil}", remote: true
     - if @menus.empty?
       .bs-callout.bs-callout-default
         %h4= t('.no_content')

@@ -10,13 +10,22 @@
           %i.fa.fa-pencil
         %ul.dropdown-menu{"aria-labelledby" => "menu_dropdown_#{menu.id}", :role => "menu"}
           %li
-            = link_to new_public_account_menu_path(@public_account, parent_menu: menu), remote: true do
+            = link_to new_public_account_menu_path(@public_account, parent_menu: menu, depth: menu.depth), remote: true do
               %i.fa.fa-plus
               = t('.add')
           %li
             = link_to set_action_public_account_menu_path(@public_account, menu), remote: true do
               %i.fa.fa-bars
               = t('.set_action')
+          - unless menu_counter.to_i == 0
+            %li
+              = link_to move_left_public_account_menu_path(@public_account, menu), method: "post", remote: true do
+                %i.fa.fa-arrow-up
+                = t('.move_left')
+          %li
+            = link_to move_left_public_account_menu_path(@public_account, menu), method: "post", remote: true do
+              %i.fa.fa-arrow-up
+              = t('.move_left')
           %li.divider{:role => "presentation"}
           %li
             = link_to edit_public_account_menu_path(@public_account, menu, top_menu: true), remote: true do
@@ -45,6 +54,10 @@
                         = link_to set_action_public_account_menu_path(@public_account, sub_menu), remote: true do
                           %i.fa.fa-bars
                           = t('.set_action')
+                      %li
+                        = link_to move_left_public_account_menu_path(@public_account, sub_menu), method: "post", remote: true do
+                          %i.fa.fa-arrow-up
+                          = t('.move_left')
                       %li.divider{:role => "presentation"}
                       %li
                         = link_to edit_public_account_menu_path(@public_account, sub_menu), remote: true do
