@@ -91,6 +91,7 @@ zh-CN:
       set_action: "设置动作"
       rename: "修改菜单名"
       move_left: "向左/上移动"
+      move_right: "向右/下移动"
     set_action:
       choose_action: "选择动作"
       please_choose: "请选择订阅者点击菜单后，公众号做出的相应动作"

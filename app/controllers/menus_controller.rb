@@ -1,7 +1,7 @@
 class MenusController < SettingsController
   before_action :set_public_account
   before_action :appid_present, :add_show_breadcrumb
-  before_action :set_menu, only: [:edit, :destroy, :update, :send_message, :redirect_url, :set_action, :click_content, :move_left]
+  before_action :set_menu, only: [:edit, :destroy, :update, :send_message, :redirect_url, :set_action, :click_content, :move_left, :move_right]
 
   def index
     add_breadcrumb I18n.t("breadcrumbs.menus.index"), :public_account_menus_path
@@ -78,6 +78,8 @@ class MenusController < SettingsController
   end
 
   def move_right
+    @menu.move_right
+    render "move.js.erb", layout: false
   end
 
   private
