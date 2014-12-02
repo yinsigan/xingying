@@ -53,10 +53,16 @@ class PublicAccount < ActiveRecord::Base
   end
 
   before_create :generate_key
+  after_create :generate_root_menu
 
   private
   def generate_key
     self.weixin_secret_key = SecureRandom.urlsafe_base64(32).downcase
     self.weixin_token = SecureRandom.hex(12)
+  end
+
+  def generate_root_menu
+    root_menu = self.menus.build
+    root_menu.save(validate: false)
   end
 end

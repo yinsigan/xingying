@@ -5,7 +5,8 @@ class MenusController < SettingsController
 
   def index
     add_breadcrumb I18n.t("breadcrumbs.menus.index"), :public_account_menus_path
-    @menus = @public_account.menus.where(:parent => nil).includes(:children).order("id ASC")
+    @root_menu = @public_account.menus.where(:parent => nil).first
+    @menus = @root_menu.children.includes(:children).order("id ASC")
     store_location
   end
 
