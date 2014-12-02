@@ -1,13 +1,13 @@
 !!!
 %html
   %head
-    = render 'layouts/shared/baiduStatistics'
     = title_tag(@article.title)
     = render_page_description_meta_tag
     = render_page_keywords_meta_tag
     = stylesheet_link_tag    'article', media: 'all', 'data-turbolinks-track' => true
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     = csrf_meta_tags
+    = render 'layouts/shared/statistics'
   %body
     .container
       #article
