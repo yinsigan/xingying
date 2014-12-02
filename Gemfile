@@ -19,15 +19,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'spring', '~> 1.1.3', group: :development
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 # view
 gem 'bootstrap-sass', '~> 3.2.0'
 gem "haml-rails", '~> 0.5.3'
@@ -40,6 +31,7 @@ gem 'ckeditor', github: "yinsigan/ckeditor"
 gem 'devise', '~> 3.3.0'
 gem 'devise-encryptable'
 gem 'devise_invitable', '~> 1.4.0'
+gem 'cancancan', "~> 1.9.2"
 
 # 国际化
 gem 'rails-i18n'
@@ -67,7 +59,8 @@ gem 'kaminari', '~> 0.15.1'
 gem 'ransack', '~> 1.5.1'
 
 gem 'seo_helper', '~> 1.0'
-# gem "angularjs-rails", '~> 1.3.0'
+
+# 微信
 gem 'weixin_authorize', "~> 1.6.0"
 
 # 配置
@@ -87,7 +80,7 @@ group :development do
   gem 'guard-livereload', require: false
 end
 
-gem 'cancancan', "~> 1.9.2"
+# 消息队列
 gem 'sidekiq', "~> 3.2.6"
 gem 'sinatra', '>= 1.3.0', :require => nil
 gem 'devise-async', '~> 0.9.0'
