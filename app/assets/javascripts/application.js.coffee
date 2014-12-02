@@ -8,6 +8,7 @@
 #= require bootstrapValidator.min
 #= require language/zh_CN
 #= require jquery.fullPage
+#= require bootstrap/tooltip
 #= require coding
 #= require my
 #= require custom
