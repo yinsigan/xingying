@@ -5,14 +5,6 @@ RailsAdmin.config do |config|
     object_label_method do
       :email
     end
-
-    edit do
-      exclude_fields_if do
-        :role == :admin
-      end
-
-      exclude_fields :role
-    end
   end
 
   config.model 'Comment' do
