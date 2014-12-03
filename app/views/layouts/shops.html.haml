@@ -10,26 +10,7 @@
     = csrf_meta_tags
     = render 'layouts/shared/statistics'
   %body
-    .navbar.navbar-default.navbar-fixed-top
-      .container
-        .navbar-header
-          %button.navbar-toggle.collapsed{:type => "button", data: {"target" => "#navbar", "toggle" => "collapse"}}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          = link_to root_path, class: "navbar-brand" do
-            %span.glyphicon.glyphicon-home
-            = Settings.title
-        #navbar.navbar-collapse.collapse
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              = link_to new_user_registration_path do
-                %span.glyphicon.glyphicon-registration-mark
-                = t('signup')
-            %li
-              = link_to new_session_path(:user) do
-                %span.glyphicon.glyphicon-log-in
-                = t('login')
+    = render 'layouts/shops/default/top'
     #content
       .container
         .row
