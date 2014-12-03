@@ -1,5 +1,6 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Ckeditor::Engine => '/ckeditor'
   # 微信公众账号
@@ -65,20 +66,26 @@ Rails.application.routes.draw do
       get :delete, on: :member
       get :cancel, on: :member
     end
+    resources :weixin_groups, only: [:index, :new, :create, :edit, :update]
   end
 
+  # 帮助
   get "/supports", to: "supports#index", as: :supports
   get "/supports/categories/:support_category_id", to: "supports#index", as: :support_categories
   get "/supports/categories/:support_category_id/articles/:id", to: "supports#show", as: :support
 
+  # 微信上单图文的显示
   get "articles/:id", to: "articles#show", as: :article
 
+  # 联系我们
   post "contacts", to: "contacts#create"
 
+  # 评论
   concern :commentable do
     resources :comments, only: [:create]
   end
   resources :shops, only: [:index]
+  # 服务单
   resources :tickets, only: [:index, :new, :create, :show], concerns: [:commentable]
 
   %w(404 422 500).each do |code|
@@ -97,10 +104,10 @@ Rails.application.routes.draw do
         get :cancel
       end
   end
-  resources :users, only: [:show] do
-    get :email_uniqueness_validater, on: :collection
-  end
+
   root 'home#index'
+
+  resources :user, only: [:show]
 
   # 微信公众账号接口
   get  'weixin/:weixin_secret_key', to: 'weixin#index', as: :weixin_server
@@ -109,4 +116,5 @@ Rails.application.routes.draw do
   authenticate :user, lambda { |u| u.super_admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
+
 end

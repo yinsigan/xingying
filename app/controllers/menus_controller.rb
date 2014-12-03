@@ -7,9 +7,8 @@ class MenusController < SettingsController
   before_action :find_root_menu, only: [:index, :publish_menu, :check_publish_menu]
 
   def index
-    add_breadcrumb I18n.t("breadcrumbs.menus.index"), :public_account_menus_path
+    add_breadcrumb I18n.t("breadcrumbs.menu.index"), :public_account_menus_path
     @menus = @root_menu.children.includes(:children).order("id ASC")
-    store_location
   end
 
   def new

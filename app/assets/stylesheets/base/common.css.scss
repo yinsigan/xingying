@@ -96,3 +96,10 @@
 .indentation{
   text-indent: 20px;
 }
+
+.normal_link {
+  color: #333;
+  &:hover {
+    color: #333;
+  }
+}

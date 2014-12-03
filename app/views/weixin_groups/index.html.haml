@@ -1,0 +1,9 @@
+= render "weixin_groups/tab"
+
+%table.table.table-bordered.public_account_thumbs
+  %tr
+    %th= t('.name')
+    %th= t('.count')
+    %th= t('.operation')
+
+  = render partial: "weixin_group", collection: @weixin_groups

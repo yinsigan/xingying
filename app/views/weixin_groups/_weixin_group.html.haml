@@ -1,0 +1,8 @@
+%tr
+  %td
+    = weixin_group[:name]
+  %td
+    = weixin_group[:count]
+  %td
+    = link_to new_public_account_weixin_group_path(@public_account, group_name: weixin_group[:name]), class: "normal_link", data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true}, "title" => t('.rename'), remote: true do
+      %i.fa.fa-pencil

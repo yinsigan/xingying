@@ -28,6 +28,7 @@ zh-CN:
         autoreply: "自动回复"
         custom_menu: "自定义菜单"
         website_manage: "官网管理"
+        user_manage: "用户管理"
       topbar:
         public_account_manage: "公众账号管理"
         help: "帮助中心"
@@ -198,6 +199,19 @@ zh-CN:
       title: "新开服务单"
     show:
       input_reply: "请输入回复的内容"
+  weixin_groups:
+    index:
+      name: "分组名"
+      count: "人数"
+      operation: "操作"
+    tab:
+      title: "用户管理"
+      user_manage: "用户管理"
+      group_manage: "分组管理"
+    weixin_group:
+      rename: "修改分组名"
+    new:
+      group_name: "分组名"
   mail:
     you_have_successfully: "您已经在"
     registered_an_account: "成功的注册了帐号"
