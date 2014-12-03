@@ -10,7 +10,7 @@
     .form-group
       = label_tag t('.click_type'), nil, class: "col-sm-3 control-label", for: "public_account_reply_type"
       .col-sm-9
-        = f.select :click_type, options_for_select(Menu::ClickType.invert, @menu.click_type.presence), {include_blank: false}, {:class => "form-control ajax_load", data: {remote: true, url: click_content_public_account_menus_path(@public_account, id: @menu)} }
+        = f.select :click_type, options_for_select(Menu::ClickType.invert, params[:select_click_type] || @menu.click_type.presence), {include_blank: false}, {:class => "form-control ajax_load", data: {remote: true, url: click_content_public_account_menus_path(@public_account, id: @menu)} }
     - if @selected_sin_material.present?
       .form-group
         = label_tag "menu[material_id]", t('activerecord.models.sin_material'), class: "col-sm-3 control-label"

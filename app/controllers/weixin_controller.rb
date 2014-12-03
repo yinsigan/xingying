@@ -101,4 +101,23 @@ class WeixinController < ApplicationController
       articles << article
     end
 
+    # 点击菜单拉取消息时的事件推送
+    def handle_click_event
+      # 取出key值与数据库比库
+      if @weixin_message.EventKey.present?
+        if @click_event_menu = @weixin_public_account.menus.where(:tp => "click", :key => @weixin_message.EventKey.to_s).first
+          case @click_event_menu.click_type
+          when 1
+            reply_text_message(@click_event_menu.click_body.presence)
+          when 2
+            if sin_pic_text = @click_event_menu.sin_material.try(:sin_pic_text)
+              reply_news_message(custom_generate_article(sin_pic_text))
+            end
+          end
+        else
+          reply_text_message("数据错误，或者未设置好appid和appsecret")
+        end
+      end
+    end
+
 end
