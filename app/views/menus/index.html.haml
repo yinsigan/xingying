@@ -14,15 +14,14 @@
         #menu-parent
           = render partial: "one_level_menu", collection: @menus
 
-  .col-md-7
+  .col-md-7.clearfix
     -# 添加一级菜单按钮
-    = link_to t('.new_top_menu'), new_public_account_menu_path(@public_account, parent_menu: @root_menu, depth: @root_menu.depth), class: "btn btn-primary #{!@menus.empty? && @menus.count >= 3 ? 'disabled' : nil}", remote: true
+    = link_to t('.new_top_menu'), new_public_account_menu_path(@public_account, parent_menu: @root_menu, depth: @root_menu.depth), class: "pull-right btn btn-primary #{!@menus.empty? && @menus.count >= 3 ? 'disabled' : nil}", remote: true
     - if @menus.empty?
       .bs-callout.bs-callout-default
         %h4= t('.no_content')
     - else
       .page-header
         .btn-group
-          = link_to "启用并发布菜单", nil, class: "btn btn-primary"
-          = link_to "停用菜单", nil, class: "btn btn-default"
+          = link_to t('.publish_menu'), check_publish_menu_public_account_menus_path(@public_account), remote: true, class: "btn btn-primary"
       = render @menus

@@ -28,4 +28,46 @@ class Menu < ActiveRecord::Base
       errors.add(:base, "最多只能创建5个二级菜单")
     end
   end
+
+  # 检查菜单是否设置好动作
+  def check_set_action
+    if self.root?
+      self.root.descendants.select { |f| f.tp.nil? if f.children.empty? }.map(&:name)
+    end
+  end
+
+  # 菜单启用的json参数
+  def create_post_params
+    if self.root?
+      menu = {}
+      menu[:button] = []
+      self.root.children.includes(:children).each_with_index do |second_menu, second_menu_index|
+        menu[:button][second_menu_index] = {}
+        menu[:button][second_menu_index][:name] = second_menu.name
+        if second_menu.children.empty?
+          if second_menu.tp.present?
+            menu[:button][second_menu_index][:type] = second_menu.tp
+            if second_menu.tp == "view"
+              menu[:button][second_menu_index][:url] = second_menu.url
+            elsif second_menu.tp == "click"
+              menu[:button][second_menu_index][:key] = second_menu.key
+            end
+          end
+        else
+          menu[:button][second_menu_index][:sub_button] = []
+          second_menu.children.each_with_index do |third_menu, third_menu_index|
+            menu[:button][second_menu_index][:sub_button][third_menu_index] = {}
+            menu[:button][second_menu_index][:sub_button][third_menu_index][:type] = third_menu.tp
+            menu[:button][second_menu_index][:sub_button][third_menu_index][:name] = third_menu.name
+            if third_menu.tp == "view"
+              menu[:button][second_menu_index][:sub_button][third_menu_index][:url] = third_menu.url
+            elsif third_menu.tp == "click"
+              menu[:button][second_menu_index][:sub_button][third_menu_index][:key] = third_menu.key
+            end
+          end
+        end
+      end
+      menu
+    end
+  end
 end
