@@ -93,20 +93,17 @@ class MenusController < SettingsController
   # 启用并发布
   def publish_menu
     @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
+    request_menu(@client.create_menu(@root_menu.create_post_params))
+  end
 
-    if @client.is_valid?
-      @result = @client.create_menu(@root_menu.create_post_params)
-      if @result.is_ok?
-        @flash = t('menus.check_publish_menu.success_request')
-      else
-        @error = true
-        @flash = @result.full_error_message
-      end
-    else
-      @error = true
-      @flash = t("menus.check_publish_menu.access_token_error", public_account_id: @public_account.id)
-    end
-    render "publish_menu.js.erb", layout: false
+  def check_clear_menu
+    render "check_clear_menu.js.erb", layout: false
+  end
+
+  # 停用并清除菜单
+  def clear_menu
+    @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
+    request_menu @client.delete_menu
   end
 
   private
@@ -142,5 +139,21 @@ class MenusController < SettingsController
 
   def find_root_menu
     @root_menu = @public_account.menus.where(:parent => nil).first
+  end
+
+  def request_menu(result)
+    if @client.is_valid?
+      @result = result
+      if @result.is_ok?
+        @flash = t('menus.check_publish_menu.success_request')
+      else
+        @error = true
+        @flash = @result.full_error_message
+      end
+    else
+      @error = true
+      @flash = t("menus.check_publish_menu.access_token_error", public_account_id: @public_account.id)
+    end
+    render "publish_menu.js.erb", layout: false
   end
 end

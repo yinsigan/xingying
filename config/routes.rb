@@ -37,6 +37,8 @@ Rails.application.routes.draw do
       post :move_right, on: :member
       post :publish_menu, on: :collection
       get :check_publish_menu, on: :collection
+      get :check_clear_menu, on: :collection
+      get :clear_menu, on: :collection
     end
     resources :sin_materials, except: [:show] do
       get :delete, on: :member
