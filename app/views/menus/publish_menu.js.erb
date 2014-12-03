@@ -1,0 +1,6 @@
+<% if @error.present? %>
+  $(".alert-warning.alert-fixed-top").html("<%= j(raw @flash) %>").fadeIn().delay(10000).fadeOut();
+<% else %>
+  $(".alert-success.alert-fixed-top").html("<%= j(@flash) %>").fadeIn().delay(10000).fadeOut();
+  $('#modal').delay(2000).modal('hide');
+<% end %>

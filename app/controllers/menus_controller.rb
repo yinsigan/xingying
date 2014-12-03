@@ -1,11 +1,13 @@
 class MenusController < SettingsController
   before_action :set_public_account
   before_action :appid_present, :add_show_breadcrumb
-  before_action :set_menu, only: [:edit, :destroy, :update, :send_message, :redirect_url, :set_action, :click_content, :move_left, :move_right]
+  before_action :set_menu, only: [:edit, :destroy, :update,
+                                  :send_message, :redirect_url, :set_action,
+                                  :click_content, :move_left, :move_right]
+  before_action :find_root_menu, only: [:index, :publish_menu, :check_publish_menu]
 
   def index
     add_breadcrumb I18n.t("breadcrumbs.menus.index"), :public_account_menus_path
-    @root_menu = @public_account.menus.where(:parent => nil).first
     @menus = @root_menu.children.includes(:children).order("id ASC")
     store_location
   end
@@ -82,6 +84,31 @@ class MenusController < SettingsController
     render "move.js.erb", layout: false
   end
 
+  # 检查菜单是否设置动作
+  def check_publish_menu
+    @check_result = @root_menu.check_set_action
+    render "check_publish_menu.js.erb", layout: false
+  end
+
+  # 启用并发布
+  def publish_menu
+    @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
+
+    if @client.is_valid?
+      @result = @client.create_menu(@root_menu.create_post_params)
+      if @result.is_ok?
+        @flash = t('menus.check_publish_menu.success_request')
+      else
+        @error = true
+        @flash = @result.full_error_message
+      end
+    else
+      @error = true
+      @flash = t("menus.check_publish_menu.access_token_error", public_account_id: @public_account.id)
+    end
+    render "publish_menu.js.erb", layout: false
+  end
+
   private
 
   def set_public_account
@@ -111,5 +138,9 @@ class MenusController < SettingsController
 
   def update_params
     params.require(:menu).permit(:name, :url, :tp, :click_type, :click_body, :material_id, :key)
+  end
+
+  def find_root_menu
+    @root_menu = @public_account.menus.where(:parent => nil).first
   end
 end

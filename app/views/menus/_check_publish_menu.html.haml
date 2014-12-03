@@ -1,0 +1,20 @@
+.modal-header
+  %button.close{"data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} &times;
+    %span.sr-only Close
+  %h4#mymodal.modal-title= t('.title')
+
+.modal-body.clearfix
+  .col-md-12
+    - if @check_result.empty?
+      %p= t('.check_no_problem')
+      %p.text-warning= t('.publish_delete_notice')
+    - else
+      %p.marginbottom20= t('.check_problem')
+      - @check_result.each do |menu|
+        %span.text-danger
+          = menu
+.modal-footer
+  = link_to t('sure'), publish_menu_public_account_menus_path(@public_account), method: "post", class: "btn btn-primary #{@check_result.empty? ? nil : 'disabled'}", remote: true
+  %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
+    = t('close')

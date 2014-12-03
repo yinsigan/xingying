@@ -84,3 +84,5 @@ end
 gem 'sidekiq', "~> 3.2.6"
 gem 'sinatra', '>= 1.3.0', :require => nil
 gem 'devise-async', '~> 0.9.0'
+
+gem "redis-namespace", "~> 1.4.1"

@@ -35,6 +35,8 @@ Rails.application.routes.draw do
       get :click_content, on: :collection
       post :move_left, on: :member
       post :move_right, on: :member
+      post :publish_menu, on: :collection
+      get :check_publish_menu, on: :collection
     end
     resources :sin_materials, except: [:show] do
       get :delete, on: :member

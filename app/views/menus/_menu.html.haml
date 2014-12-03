@@ -13,16 +13,17 @@
             = link_to new_public_account_menu_path(@public_account, parent_menu: menu, depth: menu.depth), remote: true do
               %i.fa.fa-plus
               = t('.add')
-          %li
-            = link_to set_action_public_account_menu_path(@public_account, menu), remote: true do
-              %i.fa.fa-bars
-              = t('.set_action')
+          - if menu.children.empty?
+            %li
+              = link_to set_action_public_account_menu_path(@public_account, menu), remote: true do
+                %i.fa.fa-bars
+                = t('.set_action')
           - unless menu_counter.to_i == 0
             %li
               = link_to move_left_public_account_menu_path(@public_account, menu), method: "post", remote: true do
                 %i.fa.fa-arrow-up
                 = t('.move_left')
-          - unless menu_counter.to_i == 2
+          - if menu.move_possible?(@root_menu.children.last)
             %li
               = link_to move_right_public_account_menu_path(@public_account, menu), method: "post", remote: true do
                 %i.fa.fa-arrow-down
@@ -60,7 +61,7 @@
                           = link_to move_left_public_account_menu_path(@public_account, sub_menu), method: "post", remote: true do
                             %i.fa.fa-arrow-up
                             = t('.move_left')
-                      - unless sub_menu_index.to_i == 4
+                      - if sub_menu.move_possible?(menu.children.last)
                         %li
                           = link_to move_right_public_account_menu_path(@public_account, sub_menu), method: "post", remote: true do
                             %i.fa.fa-arrow-down
