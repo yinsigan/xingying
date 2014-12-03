@@ -51,7 +51,7 @@ class WeixinController < ApplicationController
 
     # 关键字回复
     def response_text_message(options={})
-      if @find_kword = @weixin_public_account.kwords.where(:content => @keyword).last
+      if @find_kword = @weixin_public_account.kwords.where(:name => @keyword).last
         case @find_kword.subjectable_type
         when "TextMaterial"
           reply_text_message(@find_kword.reply.presence)
