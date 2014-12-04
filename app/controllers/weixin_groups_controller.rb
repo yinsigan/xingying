@@ -8,17 +8,33 @@ class WeixinGroupsController < SettingsController
   end
 
   def new
+    @group_id   = params[:group_id]
     @group_name = params[:group_name]
     render "new.js.erb", layout: false
   end
 
   def create
+    @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
+    @client.create_group(params[:group_name])
+    redirect_via_turbolinks_to public_account_weixin_groups_path(@public_account),
+      flash: {success: I18n.t('success_save')}
   end
 
   def edit
+    @group_id   = params[:id]
+    @group_name = params[:group_name]
+    render "edit.js.erb", layout: false
   end
 
-  def update
+  def rename
+    @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
+    if @client.is_valid?
+      flash = request_menu_result(@client.update_group_name(params[:id], params[:group_name]))
+    else
+      flash = {warning: t("menus.check_publish_menu.access_token_error", public_account_id: @public_account.id)}
+    end
+    redirect_via_turbolinks_to public_account_weixin_groups_path(@public_account),
+      flash: flash
   end
 
   private
@@ -33,6 +49,14 @@ class WeixinGroupsController < SettingsController
       redirect_to edit_public_account_path(@public_account),
         flash: {danger: I18n.t("menus.index.enter_tip")}
       store_location
+    end
+  end
+
+  def request_menu_result(result)
+    if result.is_ok?
+      flash = {success: t('success_request')}
+    else
+      flash = {warning: result.full_error_message}
     end
   end
 end

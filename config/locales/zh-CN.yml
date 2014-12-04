@@ -210,7 +210,7 @@ zh-CN:
       group_manage: "分组管理"
     weixin_group:
       rename: "修改分组名"
-    new:
+    edit:
       group_name: "分组名"
   mail:
     you_have_successfully: "您已经在"

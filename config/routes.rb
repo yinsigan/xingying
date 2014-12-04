@@ -66,7 +66,9 @@ Rails.application.routes.draw do
       get :delete, on: :member
       get :cancel, on: :member
     end
-    resources :weixin_groups, only: [:index, :new, :create, :edit, :update]
+    resources :weixin_groups, only: [:index, :new, :create, :edit] do
+      post :rename, on: :collection
+    end
   end
 
   # 帮助
