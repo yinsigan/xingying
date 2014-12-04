@@ -20,66 +20,117 @@
 
 .container#goods_nav
   .row
-    #good_tabs
-      .col-md-12
-        %ul#good_nav.nav.nav-tabs{:role => "tablist"}
-          %li.active
-            %a{"aria-controls" => "intoduction", "data-toggle" => "tab", :href => "#intoduction", :role => "tab"} 商品介绍
-          %li
-            %a{"aria-controls" => "parameters", "data-toggle" => "tab", :href => "#parameters", :role => "tab"} 商品参数
-          %li
-            %a{"aria-controls" => "appraise", "data-toggle" => "tab", :href => "#appraise", :role => "tab"} 商品评价
-        .tab-content
-          #intoduction.tab-pane.fade.in.active
-            商品描述
-          #parameters.tab-pane.fade
-            商品参数
-          #appraise.tab-pane.fade
-            商品评价
+    .col-md-12
+      %ul#good_nav.nav.nav-tabs{:role => "tablist"}
+        %li.active
+          %a{"aria-controls" => "intoduction", "data-toggle" => "tab", :href => "#intoduction", :role => "tab"} 商品介绍
+        %li
+          %a{"aria-controls" => "parameters", "data-toggle" => "tab", :href => "#parameters", :role => "tab"} 商品参数
+        %li
+          %a{"aria-controls" => "appraise", "data-toggle" => "tab", :href => "#appraise", :role => "tab"} 商品评价
+      .tab-content
+        #intoduction.tab-pane.fade.in.active
+          商品描述
+          %br
+          \==========================罪恶的分割线==========================
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
 
+        #parameters.tab-pane.fade
+          %table.table.rm-table-top-border
+            %tr
+              %td
+                数量:
+              %td
+                1
+            %tr
+              %td
+                大小:
+              %td
+                14 * 14
+        #appraise.tab-pane.fade
+          %ul.list-group
+            %li.list-group-item.li-no-border.border-top 评论1
+            %li.list-group-item.li-no-border.border-top 评论2
 
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
-%br
 
 :javascript
   jQuery(function($) {
