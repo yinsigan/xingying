@@ -1,6 +1,6 @@
 = render "weixin_groups/tab"
 
-- if @users.blank?
+- if @weixin_users.blank?
   .bs-callout.bs-callout-default
     %h4= raw t("access_token_error", public_account_id: @public_account.id)
 - else
@@ -15,4 +15,4 @@
         %th t('.operation')
 
 
-    = debug @users
+    = render partial: "weixin_user", collection: @weixin_users

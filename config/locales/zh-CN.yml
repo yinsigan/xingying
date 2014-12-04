@@ -199,7 +199,7 @@ zh-CN:
     show:
       input_reply: "请输入回复的内容"
   weixin_groups:
-    index:
+    request_groups:
       name: "分组名"
       count: "人数"
       operation: "操作"

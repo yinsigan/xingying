@@ -1,12 +1,16 @@
 class WeixinGroupsController < SettingsController
   before_action :set_public_account, :appid_present
-  before_action :get_client, only: [:index, :create, :rename]
+  before_action :get_client, only: [:request_groups, :create, :rename]
 
   def index
     add_breadcrumb I18n.t("breadcrumbs.weixin_group.index"), :public_account_weixin_groups_path
+  end
+
+  def request_groups
     if @client.is_valid?
       @weixin_groups = @client.groups.result[:groups]
     end
+    render "request_groups", layout: false
   end
 
   def new
