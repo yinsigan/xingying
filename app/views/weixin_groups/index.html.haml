@@ -2,7 +2,7 @@
 
 - if @weixin_groups.blank?
   .bs-callout.bs-callout-default
-    %h4= raw t("menus.check_publish_menu.access_token_error", public_account_id: @public_account.id)
+    %h4= raw t("access_token_error", public_account_id: @public_account.id)
 - else
   .text-right.marginbottom20
     = link_to new_public_account_weixin_group_path, class: "btn btn-primary", remote: true do

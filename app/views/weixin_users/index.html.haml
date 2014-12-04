@@ -1,0 +1,18 @@
+= render "weixin_groups/tab"
+
+- if @users.blank?
+  .bs-callout.bs-callout-default
+    %h4= raw t("access_token_error", public_account_id: @public_account.id)
+- else
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title
+        ss
+    %table.table.table-bordered.public_account_thumbs
+      %tr
+        %th t('.name')
+        %th t('.count')
+        %th t('.operation')
+
+
+    = debug @users

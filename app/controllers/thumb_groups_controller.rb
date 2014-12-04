@@ -43,10 +43,6 @@ class ThumbGroupsController < SettingsController
   end
 
   private
-    def set_public_account
-      @public_account = current_user.public_accounts.find(params[:public_account_id])
-      set_page_title @public_account.name
-    end
 
     def thumb_group_params
       params.require(:thumb_group).permit(:name)

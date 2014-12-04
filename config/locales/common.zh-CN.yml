@@ -95,3 +95,4 @@ zh-CN:
   no_permission: '您没有权限访问该页面'
   uploading: "正在上传...请稍等..."
   email_title: "您好, 来自微媒的一封邮件"
+  access_token_error: "获取access_token时AppSecret错误，或者access_token无效，您可能需要点击<a href='/public_accounts/%{public_account_id}/edit'>此处</a>设置好公众账号的appid和appsecret"

@@ -8,4 +8,4 @@
       %li{class: controller_name == "weixin_groups" ? "active" : nil}
         = link_to t('.group_manage'), public_account_weixin_groups_path(@public_account)
       %li{class: controller_name == "weixin_users" ? "active" : nil}
-        = link_to t('.user_manage'), default_public_account_path(@public_account)
+        = link_to t('.user_manage'), public_account_weixin_users_path(@public_account)

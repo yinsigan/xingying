@@ -92,7 +92,6 @@ zh-CN:
       title: "检查参数"
       check_no_problem: "您的菜单参数没有问题"
       check_problem: "以下列出的菜单没有设置动作，将不能成功上传到微信服务器，请您设置好动作再发布"
-      access_token_error: "获取access_token时AppSecret错误，或者access_token无效，您可能需要点击<a href='/public_accounts/%{public_account_id}/edit'>此处</a>设置好公众账号的appid和appsecret"
       publish_delete_notice: "请注意，发布新菜单会清除您以前的旧菜单，如果您确定没有问题，可以点击下面的确定按钮发布菜单"
       success_request: "请求成功，如果要查看效果请重新关注公众账号或者稍隔一段时间查看公众账号"
     check_clear_menu:
@@ -213,8 +212,10 @@ zh-CN:
       rename: "修改分组名"
     edit:
       group_name: "分组名"
+      title: "修改分组名"
     new:
       group_name: "分组名"
+      title: "新增分组"
   mail:
     you_have_successfully: "您已经在"
     registered_an_account: "成功的注册了帐号"
