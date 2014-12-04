@@ -9,9 +9,8 @@
       = label_tag "group_name", t('.group_name'), class: "col-sm-3 control-label required"
       .col-sm-9
         = text_field_tag "group_name", @group_name, class: "form-control", required: true, autofocus: true
-    = hidden_field_tag "id", @group_id
 .modal-footer
-  = link_to t('sure'), rename_public_account_weixin_groups_path(@public_account), method: "post", remote: true, id: "sure", class: "btn btn-primary"
+  = link_to t('sure'), public_account_weixin_groups_path(@public_account), method: "post", remote: true, id: "sure", class: "btn btn-primary"
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
 

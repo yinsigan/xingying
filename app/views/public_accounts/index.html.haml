@@ -1,7 +1,7 @@
 - if @public_accounts.empty?
 
-  %div.clearfix.boot-tour{data:{"bootstro-title" => t('.append.title'), "bootstro-content" => t('.append.content'), "bootstro-placement" => t('.append.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.append.step')}}
-    %a{href: new_public_account_path, class: "btn btn-primary pull-right"}
+  .text-right.boot-tour{data:{"bootstro-title" => t('.append.title'), "bootstro-content" => t('.append.content'), "bootstro-placement" => t('.append.placement') , "bootstro-width" => "400px",  "bootstro-step" => t('.append.step')}}
+    = link_to new_public_account_path, class: "btn btn-primary" do
       %span.glyphicon.glyphicon-plus
       = t('.add')
   .bs-callout.bs-callout-default
@@ -20,8 +20,8 @@
   %p.text-right
   .panel.panel-default
     .panel-body
-      .pull-right
-        %a{href: new_public_account_path, class: "btn btn-primary"}
+      .text-right
+        = link_to new_public_account_path, class: "btn btn-primary marginright5" do
           %span.glyphicon.glyphicon-plus
           = t('.add')
         %a#need-help.btn.btn-primary{"title" => t('how_to_manage_public_account'), "target" => "_blank", data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true}}

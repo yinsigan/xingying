@@ -204,6 +204,7 @@ zh-CN:
       name: "分组名"
       count: "人数"
       operation: "操作"
+      add: "添加分组"
     tab:
       title: "用户管理"
       user_manage: "用户管理"
@@ -211,6 +212,8 @@ zh-CN:
     weixin_group:
       rename: "修改分组名"
     edit:
+      group_name: "分组名"
+    new:
       group_name: "分组名"
   mail:
     you_have_successfully: "您已经在"

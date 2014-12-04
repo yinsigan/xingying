@@ -1,35 +1,38 @@
 class WeixinGroupsController < SettingsController
   before_action :set_public_account, :appid_present
+  before_action :get_client, only: [:index, :create, :rename]
 
   def index
     add_breadcrumb I18n.t("breadcrumbs.weixin_group.index"), :public_account_weixin_groups_path
-    @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
-    @weixin_groups = @client.groups.result[:groups]
+    if @client.is_valid?
+      @weixin_groups = @client.groups.result[:groups]
+    end
   end
 
   def new
     @group_id   = params[:group_id]
     @group_name = params[:group_name]
-    render "new.js.erb", layout: false
+    render "edit.js.erb", layout: false
   end
 
   def create
-    @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
-    @client.create_group(params[:group_name])
+    if @client.is_valid?
+      flash = request_menu_result @client.create_group(params[:group_name])
+    else
+      flash = {warning: t("menus.check_publish_menu.access_token_error", public_account_id: @public_account.id)}
+    end
     redirect_via_turbolinks_to public_account_weixin_groups_path(@public_account),
-      flash: {success: I18n.t('success_save')}
+      flash: flash
   end
 
   def edit
-    @group_id   = params[:id]
     @group_name = params[:group_name]
     render "edit.js.erb", layout: false
   end
 
   def rename
-    @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
     if @client.is_valid?
-      flash = request_menu_result(@client.update_group_name(params[:id], params[:group_name]))
+      flash = request_menu_result @client.update_group_name(params[:id], params[:group_name])
     else
       flash = {warning: t("menus.check_publish_menu.access_token_error", public_account_id: @public_account.id)}
     end
@@ -58,5 +61,9 @@ class WeixinGroupsController < SettingsController
     else
       flash = {warning: result.full_error_message}
     end
+  end
+
+  def get_client
+    @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
   end
 end
