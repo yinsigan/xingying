@@ -68,7 +68,9 @@ Rails.application.routes.draw do
     end
     resources :weixin_groups, only: [:index, :new, :create, :edit] do
       post :rename, on: :collection
+      get :request_groups, on: :collection
     end
+    resources :weixin_users, only: [:index]
   end
 
   # 帮助
