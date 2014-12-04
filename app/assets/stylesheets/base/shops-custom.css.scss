@@ -1,3 +1,10 @@
+
+//导航条
+$navbar-default-bg:                #E72F2F;
+$navbar-default-link-hover-bg:     darken($navbar-default-bg, 10%);
+$navbar-default-link-active-bg:    darken($navbar-default-bg, 6.5%);
+$navbar-default-color:             #FFF;
+
 // 设置标签的内边距
 .nav.nav-home >li{
   margin: 0 3.5px;
@@ -7,8 +14,8 @@
   }
 }
 
+// 设置商品图片展示
 .thumbnail{
-
   > .img-box{
     text-align: center;
     overflow: hidden;
@@ -19,6 +26,7 @@
   }
 }
 
+// 设置底部按钮位置剧中
 .good-footer{
   padding: 7.5px;
 }
@@ -26,22 +34,19 @@
 
 #good_tabs{
 
-
   ul {
-    background-color: #2fa4e7;
-    border-color: #2fa4e7;
+    width: 100%;
+    left: 0;
+    background-color: $navbar-default-bg;
+    border-color: $navbar-default-bg;
     li{
       width: 33.3333%;
       text-align: center;
-
       a{
         color: #FFF;
         margin-right: 0;
       }
     }
-
-    li.active > a{
-      color: #000;
-    }
+    li.active > a{color: #000;}
   }
 }
