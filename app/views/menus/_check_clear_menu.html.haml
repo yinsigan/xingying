@@ -1,0 +1,12 @@
+.modal-header
+  %button.close{"data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} &times;
+    %span.sr-only Close
+  %h4#mymodal.modal-title= t('.title')
+.modal-body
+  %p
+    = t('.desc')
+.modal-footer
+  = link_to t('sure'), clear_menu_public_account_menus_path(@public_account), class: "btn btn-danger", remote: true
+  %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
+    = t('close')

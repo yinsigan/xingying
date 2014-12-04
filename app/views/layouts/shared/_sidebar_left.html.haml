@@ -19,3 +19,8 @@
       %i.fa.fa-chevron-right
     %i.fa.fa-bars
     = t('.custom_menu')
+  %a.list-group-item{:href => public_account_weixin_groups_path(@public_account), :class => (controller_name == "weixin_groups" ? "active" : nil)}
+    .pull-right
+      %i.fa.fa-chevron-right
+    %i.fa.fa-user
+    = t('.user_manage')

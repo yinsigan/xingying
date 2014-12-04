@@ -1,0 +1,11 @@
+%h3.title-divider
+  %span
+    = t('.title')
+
+.tabbable-panel.marginbottom20
+  .tabbable-line
+    %ul.nav.nav-tabs{role: "tablist"}
+      %li{class: controller_name == "weixin_groups" ? "active" : nil}
+        = link_to t('.group_manage'), public_account_weixin_groups_path(@public_account)
+      %li{class: controller_name == "weixin_users" ? "active" : nil}
+        = link_to t('.user_manage'), default_public_account_path(@public_account)

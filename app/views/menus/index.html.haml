@@ -14,9 +14,10 @@
         #menu-parent
           = render partial: "one_level_menu", collection: @menus
 
-  .col-md-7.clearfix
+  .col-md-7
     -# 添加一级菜单按钮
     = link_to t('.new_top_menu'), new_public_account_menu_path(@public_account, parent_menu: @root_menu, depth: @root_menu.depth), class: "pull-right btn btn-primary #{!@menus.empty? && @menus.count >= 3 ? 'disabled' : nil}", remote: true
+    .clearfix
     - if @menus.empty?
       .bs-callout.bs-callout-default
         %h4= t('.no_content')
@@ -24,4 +25,5 @@
       .page-header
         .btn-group
           = link_to t('.publish_menu'), check_publish_menu_public_account_menus_path(@public_account), remote: true, class: "btn btn-primary"
+          = link_to t(".clear_menu"), check_clear_menu_public_account_menus_path(@public_account), class: "btn btn-danger", remote: true
       = render @menus

@@ -8,4 +8,4 @@
   = hidden_field "menu", "material_id", value: @menu.material_id.presence
 .form-group
   .col-sm-9.col-sm-push-3
-    = link_to t('select_sin_material_btn'), select_sin_material_public_account_path(@public_account, hidden_tag: "menu_material_id", preview_wrapper: "pic_text_content", prev_link: send_message_public_account_menu_path(@public_account, @menu)), class: "btn btn-default", remote: true
+    = link_to t('select_sin_material_btn'), select_sin_material_public_account_path(@public_account, hidden_tag: "menu_material_id", preview_wrapper: "pic_text_content", prev_link: send_message_public_account_menu_path(@public_account, @menu, select_click_type: 2)), class: "btn btn-default", remote: true

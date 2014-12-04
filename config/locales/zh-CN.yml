@@ -28,6 +28,7 @@ zh-CN:
         autoreply: "自动回复"
         custom_menu: "自定义菜单"
         website_manage: "官网管理"
+        user_manage: "用户管理"
       topbar:
         public_account_manage: "公众账号管理"
         help: "帮助中心"
@@ -82,6 +83,7 @@ zh-CN:
       new_top_menu: "添加一级菜单"
       new_sub_menu: "添加二级菜单"
       publish_menu: "启用并发布菜单"
+      clear_menu: "停用并清除菜单"
     form:
       title: "添加一级菜单"
       top_menu_name_maximum: "一级菜单名称最多4个汉字"
@@ -93,6 +95,9 @@ zh-CN:
       access_token_error: "获取access_token时AppSecret错误，或者access_token无效，您可能需要点击<a href='/public_accounts/%{public_account_id}/edit'>此处</a>设置好公众账号的appid和appsecret"
       publish_delete_notice: "请注意，发布新菜单会清除您以前的旧菜单，如果您确定没有问题，可以点击下面的确定按钮发布菜单"
       success_request: "请求成功，如果要查看效果请重新关注公众账号或者稍隔一段时间查看公众账号"
+    check_clear_menu:
+      title: "确认停用并清除?"
+      desc: "点击确定会清除掉您公众账号的菜单"
     menu:
       add: "添加子菜单"
       set_action: "设置动作"
@@ -194,6 +199,22 @@ zh-CN:
       title: "新开服务单"
     show:
       input_reply: "请输入回复的内容"
+  weixin_groups:
+    index:
+      name: "分组名"
+      count: "人数"
+      operation: "操作"
+      add: "添加分组"
+    tab:
+      title: "用户管理"
+      user_manage: "用户管理"
+      group_manage: "分组管理"
+    weixin_group:
+      rename: "修改分组名"
+    edit:
+      group_name: "分组名"
+    new:
+      group_name: "分组名"
   mail:
     you_have_successfully: "您已经在"
     registered_an_account: "成功的注册了帐号"

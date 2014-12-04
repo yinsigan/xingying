@@ -19,8 +19,10 @@ zh-CN:
       index: "图片管理"
     rule:
       index: "关键字回复"
-    menus:
+    menu:
       index: "自定义菜单"
     ticket:
       index: "全部服务单"
       new: "新开服务单"
+    weixin_group:
+      index: "用户管理"
