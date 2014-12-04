@@ -17,6 +17,45 @@
               销量:
             %td
               15,000.00件
-        .panel-footer
+
+.container
+  .row
+    .col-md-12
+      #good_tabs
+        %ul#good_nav.nav.nav-tabs.navbar-static-top{:role => "tablist"}
+          %li.active
+            %a{"aria-controls" => "intoduction", "data-toggle" => "tab", :href => "#intoduction", :role => "tab"} 商品介绍
+          %li
+            %a{"aria-controls" => "parameters", "data-toggle" => "tab", :href => "#parameters", :role => "tab"} 商品参数
+          %li
+            %a{"aria-controls" => "appraise", "data-toggle" => "tab", :href => "#appraise", :role => "tab"} 商品评价
+        .tab-content
+          #intoduction.tab-pane.fade.in.active
+            商品描述
+          #parameters.tab-pane.fade
+            商品参数
+          #appraise.tab-pane.fade
+            商品评价
 
 
+:javascript
+  $(document).ready(function(){
+    $('#good_tabs').tab('show');
+    var $window = $(window);
+    var $header = $('#header');
+    var good_nav = $('#good_nav');
+    var $tab_content = $('.tab-content');
+    $window.scroll(function() {
+      if ($window.scrollTop() >= 600) {
+        if ( ! good_nav.hasClass('navbar-fixed-top')) {
+            good_nav.addClass('navbar-fixed-top');
+            $tab_content.css('margin-top', '42px');
+        }
+    } else {
+        if (good_nav.hasClass('navbar-fixed-top')) {
+            good_nav.removeClass('navbar-fixed-top');
+            $tab_content.css('margin-top', '0');
+        }
+      }
+    });
+  });
