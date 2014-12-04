@@ -5,6 +5,8 @@ $navbar-default-link-hover-bg:     darken($navbar-default-bg, 10%);
 $navbar-default-link-active-bg:    darken($navbar-default-bg, 6.5%);
 $navbar-default-color:             #FFF;
 
+// 小分辨率按钮的点击后的颜色
+$collapsed-hover:                     #FF3200;
 // 设置标签的内边距
 .nav.nav-home >li{
   margin: 0 3.5px;

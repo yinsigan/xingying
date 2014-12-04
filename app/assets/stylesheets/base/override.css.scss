@@ -44,11 +44,11 @@
 
 // 覆盖分辨率变小时右边按钮的颜色
 .navbar-default .navbar-toggle {
-  border-color: #178acc;
+  border-color: $collapsed-hover;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #178acc;
+  background-color: $collapsed-hover;
 }
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #FFF;
