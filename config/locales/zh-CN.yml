@@ -209,6 +209,7 @@ zh-CN:
       title: "用户管理"
       user_manage: "用户管理"
       group_manage: "分组管理"
+      notice: "由于网络或微信api接口等原因，可能会导致加载速度慢，如果要使用更为强大的管理功能，可以移步至微信公众账号后台"
     weixin_group:
       rename: "修改分组名"
     edit:
