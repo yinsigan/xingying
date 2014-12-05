@@ -7,6 +7,12 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'Kword'  do
+    edit do
+      exclude_fields :subjectable
+    end
+  end
+
   config.model 'Comment' do
     object_label_method do
       :body
