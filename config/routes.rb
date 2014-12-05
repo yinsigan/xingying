@@ -92,8 +92,10 @@ Rails.application.routes.draw do
   concern :commentable do
     resources :comments, only: [:create]
   end
-  resources :shops, only: [:index]
+
   # 服务单
+  resources :shops, only: [:index, :show]
+
   resources :tickets, only: [:index, :new, :create, :show], concerns: [:commentable]
 
   %w(404 422 500).each do |code|

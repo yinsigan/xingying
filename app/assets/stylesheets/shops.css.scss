@@ -1,6 +1,11 @@
+/*
+ *= require font-awesome
+ */
 @import "base/bootstrap-variable";
+@import "base/shops-custom";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "awesome-button";
 @import "base/custom";
 @import "base/common";
 @import "base/override";

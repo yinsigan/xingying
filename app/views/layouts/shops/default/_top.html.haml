@@ -1,0 +1,31 @@
+.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed{:type => "button", data: {"target" => "#navbar", "toggle" => "collapse"}}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to "#", class: "navbar-brand" do
+        %span.glyphicon.glyphicon-home
+        商店名称
+    #navbar.navbar-collapse.collapse
+
+      %ul.nav.navbar-nav
+        %li
+          = link_to "精选", "#"
+        %li
+          = link_to "热门", "#"
+        %li
+          = link_to "品类", "#"
+        %li
+          = link_to "专题", "#"
+
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to "#" do
+            %span.glyphicon.glyphicon-registration-mark
+            注册
+        %li
+          = link_to  do
+            %span.glyphicon.glyphicon-log-in
+            登录

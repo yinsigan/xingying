@@ -1,0 +1,140 @@
+.container
+  .row
+    .col-md-12
+      %a.thumbnail{:href => "#"}
+        = image_tag("shops.jpg", :width=> "100%")
+      .panel.panel-default
+        .panel-heading
+          【国行限量版】Xbox One 体感游戏主机 （带 Kinect 版本,Day One 限量版,含四款免费游戏）
+        %table.table
+          %tr
+            %td
+              价格:
+            %td
+              75RMB
+          %tr
+            %td
+              销量:
+            %td
+              15,000.00件
+
+.container#goods_nav
+  .row
+    .col-md-12
+      %ul#good_nav.nav.nav-tabs{:role => "tablist"}
+        %li.active
+          %a{"aria-controls" => "intoduction", "data-toggle" => "tab", :href => "#intoduction", :role => "tab"} 商品介绍
+        %li
+          %a{"aria-controls" => "parameters", "data-toggle" => "tab", :href => "#parameters", :role => "tab"} 商品参数
+        %li
+          %a{"aria-controls" => "appraise", "data-toggle" => "tab", :href => "#appraise", :role => "tab"} 商品评价
+      .tab-content
+        #intoduction.tab-pane.fade.in.active
+          商品描述
+          %br
+          \==========================罪恶的分割线==========================
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+          我是一条商品描述...
+          %br
+
+        #parameters.tab-pane.fade
+          %table.table.rm-table-top-border
+            %tr
+              %td
+                数量:
+              %td
+                1
+            %tr
+              %td
+                大小:
+              %td
+                14 * 14
+        #appraise.tab-pane.fade
+          %ul.list-group
+            %li.list-group-item.li-no-border.border-top 评论1
+            %li.list-group-item.li-no-border.border-top 评论2
+
+
+:javascript
+  jQuery(function($) {
+    $(document).ready( function() {
+      $('#good_nav').stickUp();
+    });
+  });

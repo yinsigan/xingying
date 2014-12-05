@@ -1,0 +1,82 @@
+// 按钮颜色
+@mixin btn-hover($color, $background-color, $border-color){
+    color: $color;
+    background-color: $background-color;
+    border-color: $border-color;
+}
+
+// 按钮的伪属性提取成
+@mixin btn-hover-active($color, $background-color, $border-color){
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active{
+    @include btn-hover($color, $background-color, $border-color);
+  }
+}
+
+// 按钮背景渐变效果
+@mixin btn-background-image($point, $angle, $stop, $ms-start, $ms-end, $border-bottom-color){
+  background-image: -webkit-linear-gradient($point, $angle 60%, $stop);
+  background-image: -o-linear-gradient($point, $angle 60%, $stop);
+  background-image: -webkit-gradient(linear, left top, left bottom, from($point), color-stop(60%, $angle), to($stop));
+  background-image: linear-gradient($point, $angle 60%, $stop);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= $ms-start, endColorstr=$ms-end, GradientType=0);
+  -webkit-filter: none;
+          filter: none;
+  border-bottom: 1px solid $border-bottom-color;
+}
+
+.btn-default {
+  @include btn-background-image(#ffffff, #ffffff, #f5f5f5, '#ffffffff', '#fff5f5f5' , #e6e6e6);
+}
+.btn-primary {
+  @include btn-hover-active(#FFF, #178ACC, #1684C2);
+  @include btn-background-image(#54b4eb, #2fa4e7, #1d9ce5, '#ff54b4eb', '#ff1d9ce5' , #178acc);
+}
+.btn-success {
+  @include btn-hover-active(#FFF, #59822C, #547A29);
+  @include btn-background-image(#88c149, #73a839, #699934, '#ff88c149', '#ff699934' , #59822c);
+}
+.btn-info {
+  @include btn-hover-active(#FFF, #022241, #011D37);
+  @include btn-background-image(#04519b, #033c73, #02325f, '#ff04519b', '#ff02325f' , #022241);
+}
+.btn-warning {
+  @include btn-hover-active(#FFF, #AA4200, #A03E00);
+  @include btn-background-image(#FF9A22, #FF9103, #FF981C, '#ffff6707', '#ffc94e00' , #FF9958);
+}
+.btn-danger {
+  @include btn-hover-active(#FFF, #9A161A, #911419);
+  @include btn-background-image(#e12b31, #c71c22, #b5191f, '#ffe12b31', '#ffb5191f' , #9a161a);
+}
+
+.open > .dropdown-toggle{
+
+  .btn-danger {
+    @include btn-hover(#FFF, #9A161A, #911419);
+  }
+
+  .btn-warning {
+    @include btn-hover(#FFF, #AA4200, #A03E00);
+  }
+
+  .btn-info {
+    @include btn-hover(#FFF, #022241, #011D37);
+  }
+
+  .btn-success {
+    @include btn-hover(#FFF, #59822C, #547A29);
+  }
+
+  .btn-primary{
+    @include btn-hover(#FFF, #178ACC, #1684C2);
+  }
+}
+
+
+.btn-default:hover {
+  color: #555555;
+}
