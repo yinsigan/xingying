@@ -4,6 +4,7 @@ class SupportsController < ApplicationController
   def index
     @support_category = params[:support_category_id].present? ? SupportCategory.find_by(id: params[:support_category_id]) : SupportCategory.first
     @supports = @support_category.supports.page(params[:page]) unless @support_category.blank?
+    session[:return_to] = request.url
   end
 
   def show
