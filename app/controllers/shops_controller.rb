@@ -8,6 +8,14 @@ class ShopsController < ApplicationController
 
   end
 
+  def list
+
+  end
+
+  def search
+
+  end
+
   private
     def select_layout
       case action_name

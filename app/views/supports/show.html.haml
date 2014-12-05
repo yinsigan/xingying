@@ -8,3 +8,8 @@
     = @support.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
   .clearfix
   = raw @support.body
+
+  .text-right
+    %button.btn.btn-primary
+      %i.fa.fa-arrow-left
+      = t('back')

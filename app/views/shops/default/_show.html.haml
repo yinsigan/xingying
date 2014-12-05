@@ -21,7 +21,7 @@
 .container#goods_nav
   .row
     .col-md-12
-      %ul#good_nav.nav.nav-tabs{:role => "tablist"}
+      %ul#goods_nav.nav.nav-tabs{:role => "tablist"}
         %li.active
           %a{"aria-controls" => "intoduction", "data-toggle" => "tab", :href => "#intoduction", :role => "tab"} 商品介绍
         %li
@@ -136,6 +136,6 @@
 :javascript
   jQuery(function($) {
     $(document).ready( function() {
-      $('#good_nav').stickUp();
+      $('#goods_nav').stickUp();
     });
   });
