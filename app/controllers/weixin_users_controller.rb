@@ -7,18 +7,14 @@ class WeixinUsersController < SettingsController
     @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
     if @client.is_valid?
       @users = Kaminari.paginate_array(@client.followers.result[:data][:openid]).page(params[:page]).per(20)
-      @weixin_users, mutex = [], Mutex.new
-      @users.map do |user_info|
-        # 开启线程向微信请求用户个人信息
-        Thread.new do
-          mutex.synchronize do
-            @weixin_users << @client.user(user_info)
-          end
-        end
-      end.each(&:join)
+      @weixin_users = @users.map{|f| @client.user f}
       @weixin_users_count = @client.followers.result[:total]
     end
-    render "request_users", layout: false
+    if params[:page].present?
+      render "request_users_page.js.erb", layout: false
+    else
+      render "request_users", layout: false
+    end
   end
 
   def edit

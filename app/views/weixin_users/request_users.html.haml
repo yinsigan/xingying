@@ -22,3 +22,11 @@
         %th
           关注时间
       = render partial: "weixin_user", collection: @weixin_users
+    .row#page
+      .col-md-12.text-right
+        = paginate @users, remote: true
+
+:coffee
+
+  $("#page a").on "ajax:before", ->
+    $("#request_users").html "#{t('loading')}"
