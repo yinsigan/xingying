@@ -24,6 +24,7 @@ zh-CN:
   submiting: "正在提交...请稍等..."
   saving: "正在保存...请稍等..."
   loading: "正在加载数据...请稍等..."
+  error_loading: "数据加载失败...可能网络不给力，请稍后刷新..."
   change_password: "修改密码"
   username: "帐号"
   sumbit: "提交"

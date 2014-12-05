@@ -1,18 +1,15 @@
 = render "weixin_groups/tab"
 
-- if @weixin_users.blank?
-  .bs-callout.bs-callout-default
-    %h4= raw t("access_token_error", public_account_id: @public_account.id)
-- else
-  .panel.panel-default
-    .panel-heading
-      %h3.panel-title
-        ss
-    %table.table.table-bordered.public_account_thumbs
-      %tr
-        %th t('.name')
-        %th t('.count')
-        %th t('.operation')
+#request_users
 
+:coffee
 
-    = render partial: "weixin_user", collection: @weixin_users
+  $.ajax
+    url: '#{request_users_public_account_weixin_users_path(@public_account)}'
+    method: "get"
+    error: ->
+      $("#request_users").html "#{t('error_loading')}"
+    success: (data) ->
+      $("#request_users").html data
+    beforeSend: ->
+      $("#request_users").html "#{t('loading')}"
