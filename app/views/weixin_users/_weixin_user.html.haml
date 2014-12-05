@@ -1,1 +1,20 @@
-= debug @client.user(weixin_user)
+%tr
+  %td
+    = weixin_user.result[:nickname]
+  %td
+    = image_tag weixin_user.result[:headimgurl], size: "48"
+  %td
+    - if weixin_user.result[:sex].to_i == 1
+      = t('.man')
+    - elsif weixin_user.result[:sex].to_i == 2
+      = t('.female')
+    - else
+      = t('.unknown')
+  %td
+    = weixin_user.result[:city]
+  %td
+    = weixin_user.result[:province]
+  %td
+    = Time.at(weixin_user.result[:subscribe_time]).to_time.strftime('%Y-%m-%d %H:%M:%S')
+  / %td
+  /   = link_to t('.remark'), edit_public_account_weixin_user_path(@public_account, weixin_user.result[:openid], nickname: weixin_user.result[:nickname]), class: "btn btn-default", remote: true

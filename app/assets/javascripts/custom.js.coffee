@@ -13,7 +13,7 @@ $(document).on "ajax:complete", '.ajax_load', ->
 
   # 数据超时
   # $.rails.ajax = (options) ->
-  #   options.timeout = 1000000 unless options.timeout
+  #   options.timeout = 3000 unless options.timeout
   #   $.ajax options
 $(document).on 'page:fetch', ->
   NProgress.start()

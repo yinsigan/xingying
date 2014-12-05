@@ -216,6 +216,17 @@ zh-CN:
     new:
       group_name: "分组名"
       title: "新增分组"
+  weixin_users:
+    weixin_user:
+      remark: "修改备注"
+      man: "男"
+      female: "女"
+      unknown: "未知"
+    edit:
+      title: "添加备注"
+      remark: "备注名"
+    request_users:
+      list: "用户列表"
   mail:
     you_have_successfully: "您已经在"
     registered_an_account: "成功的注册了帐号"

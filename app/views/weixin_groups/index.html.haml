@@ -7,6 +7,8 @@
   $.ajax
     url: '#{request_groups_public_account_weixin_groups_path(@public_account)}'
     method: "get"
+    error: ->
+      $("#request_users").html "#{t('error_loading')}"
     success: (data) ->
       $("#request_groups").html data
     beforeSend: ->

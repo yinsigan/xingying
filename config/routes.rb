@@ -70,7 +70,11 @@ Rails.application.routes.draw do
       post :rename, on: :collection
       get :request_groups, on: :collection
     end
-    resources :weixin_users, only: [:index]
+    resources :weixin_users, only: [:index, :edit] do
+      get :request_users, on: :collection
+      # 修改备注，已弃用
+      # post :remark, on: :collection
+    end
   end
 
   # 帮助
