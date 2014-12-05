@@ -25,4 +25,6 @@ zh-CN:
       index: "全部服务单"
       new: "新开服务单"
     weixin_group:
+      index: "分组管理"
+    weixin_user:
       index: "用户管理"
