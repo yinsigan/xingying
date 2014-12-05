@@ -55,7 +55,7 @@ class Menu < ActiveRecord::Base
           end
         else
           menu[:button][second_menu_index][:sub_button] = []
-          second_menu.children.each_with_index do |third_menu, third_menu_index|
+          second_menu.children.reverse_order.each_with_index do |third_menu, third_menu_index|
             menu[:button][second_menu_index][:sub_button][third_menu_index] = {}
             menu[:button][second_menu_index][:sub_button][third_menu_index][:type] = third_menu.tp
             menu[:button][second_menu_index][:sub_button][third_menu_index][:name] = third_menu.name
