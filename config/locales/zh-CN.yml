@@ -78,6 +78,7 @@ zh-CN:
       title: "自定义菜单"
       note1: "1. 使用本模块，必须在微信公众平台申请自定义菜单使用的<strong class='text-danger'>AppId</strong>和<strong class='text-danger'>AppSecret</strong>"
       note2: "2. 最多创建<strong class='text-danger'>3</strong>个一级菜单，每个一级菜单下最多可以创建 <strong class='text-danger'>5</strong>个二级菜单，菜单最多支持<strong class='text-danger'>两层</strong>"
+      note3: "3. 您可以自由移动每个菜单的顺序和为每个菜单设置动作(链接到网页或发送消息)"
       enter_tip: "需要填写完整微信开发者中心提供的appid和appsecret才能进入此模块，如果您的微信公众账号是订阅号需要认证"
       no_content: "暂时没有菜单"
       new_top_menu: "添加一级菜单"
