@@ -66,6 +66,10 @@ ul#goods_nav {
   }
 }
 
+#goods-top{
+  margin-bottom: 5px;
+}
+
 #goods-list{
   > .row{
     > .col-xs-6{
@@ -85,4 +89,32 @@ ul#goods_nav {
       margin:0;
     }
   }
+}
+
+.good-list > .col-xs-12{
+  margin: 5px auto;
+  > .col-xs-3{
+    padding: 0;
+
+    > a.thumbnail{
+      margin: 0;
+    }
+  }
+  > .col-xs-9{
+    > p {
+      padding: 0;
+      margin-bottom: 3px;
+    }
+    > p.title {
+      height: 40px;
+      overflow: hidden;
+      word-wrap: break-word;
+    }
+    > p.price{
+      color: red;
+    }
+  }
+}
+.input-group-btn:last-child > .btn{
+  outline-color: transparent;
 }
