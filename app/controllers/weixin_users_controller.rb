@@ -10,7 +10,11 @@ class WeixinUsersController < SettingsController
       @weixin_users = @users.map{|f| @client.user f}
       @weixin_users_count = @client.followers.result[:total]
     end
-    render "request_users", layout: false
+    if params[:page].present?
+      render "request_users_page.js.erb", layout: false
+    else
+      render "request_users", layout: false
+    end
   end
 
   def edit
