@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       get :delete
       # 查看token
       get :show_token
+      patch :toggle_open_customed
     end
     # 自定义菜单
     resources :menus, except: [:show] do

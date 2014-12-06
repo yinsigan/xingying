@@ -1,5 +1,5 @@
 class PublicAccountsController < SettingsController
-  before_action :set_public_account, only: [:show, :edit, :update, :destroy, :show_token]
+  before_action :set_public_account, only: [:show, :edit, :update, :destroy, :show_token, :toggle_open_customed]
   before_action :add_index_breadcrumb
   layout "public_account_manage", except: :show
 
@@ -57,6 +57,21 @@ class PublicAccountsController < SettingsController
 
   def show_token
     render "show_token.js.erb", layout: false
+  end
+
+  def toggle_open_customed
+    @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
+    if @client.is_valid?
+      @public_account.update(params.permit(:open_customed))
+      @flash_success = I18n.t("success_submit")
+      @object= @public_account
+      render partial: "shared/ajax_prompt.js.erb", layout: false
+      return
+    else
+      @error = true
+      @flash = t("access_token_error", public_account_id: @public_account.id)
+    end
+    render partial: "shared/operate_ajax_prompt.js", layout: false
   end
 
   private

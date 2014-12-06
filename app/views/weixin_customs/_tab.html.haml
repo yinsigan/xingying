@@ -10,7 +10,10 @@
     = raw t('.notice3')
 
 .text-right
-  = link_to t('open'), nil, class: "btn btn-success"
+  - if @public_account.open_customed
+    = link_to t('stop'), toggle_open_customed_public_account_path(@public_account, open_customed: false), method: "patch", class: "btn btn-danger", remote: true
+  - else
+    = link_to t('open'), toggle_open_customed_public_account_path(@public_account, open_customed: true), method: "patch", class: "btn btn-success", remote: true
 
 .tabbable-panel.marginbottom20
   .tabbable-line
