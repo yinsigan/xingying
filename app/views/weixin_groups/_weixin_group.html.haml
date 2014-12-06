@@ -7,3 +7,5 @@
     - unless [0, 1, 2].include?(weixin_group[:id].to_i)
       = link_to edit_public_account_weixin_group_path(@public_account, weixin_group[:id], group_name: weixin_group[:name]), class: "normal_link", data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true}, "title" => t('.rename'), remote: true do
         %i.fa.fa-pencil
+:coffee
+  $('button[data-tooltip], a[data-tooltip]').tooltip()

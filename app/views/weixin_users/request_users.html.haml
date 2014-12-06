@@ -10,17 +10,17 @@
     %table.table.public_account_thumbs
       %tr
         %th
-          昵称
+          = t('.nickname')
         %th
-          头像
+          = t('.headimgurl')
         %th
-          性别
+          = t('.sex')
         %th
-          城市
+          = t('.city')
         %th
-          省份
+          = t('.province')
         %th
-          关注时间
+          = t('.subscribe_time')
       = render partial: "weixin_user", collection: @weixin_users
     .row#page
       .col-md-12.text-right

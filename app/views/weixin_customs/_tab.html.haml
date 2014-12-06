@@ -1,0 +1,26 @@
+%h3.title-divider
+  %span
+    = t('.title')
+.alert.alert-info{role: "alert"}
+  %p
+    = raw t('.notice1')
+  %p
+    = raw t('.notice2')
+  %p
+    = raw t('.notice3')
+
+.text-right
+  - if @public_account.open_customed
+    = link_to t('stop'), toggle_open_customed_public_account_path(@public_account, open_customed: false), method: "patch", class: "btn btn-danger", remote: true
+  - else
+    = link_to t('open'), toggle_open_customed_public_account_path(@public_account, open_customed: true), method: "patch", class: "btn btn-success", remote: true
+
+.tabbable-panel.marginbottom20
+  .tabbable-line
+    %ul.nav.nav-tabs{role: "tablist"}
+      %li{class: action_name == "index" ? "active" : nil}
+        = link_to t('.custom_manage'), public_account_weixin_customs_path(@public_account)
+      %li{class: action_name == "quality_monitoring" ? "active" : nil}
+        = link_to t('.quality_monitoring'), quality_monitoring_public_account_weixin_customs_path(@public_account)
+      %li{class: controller_name == "weixin_users" ? "active" : nil}
+        = link_to t('.trigger_keyword'), public_account_weixin_users_path(@public_account)

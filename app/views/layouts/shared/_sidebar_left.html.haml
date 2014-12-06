@@ -24,3 +24,8 @@
       %i.fa.fa-chevron-right
     %i.fa.fa-user
     = t('.user_manage')
+  %a.list-group-item{:href => public_account_weixin_customs_path(@public_account), :class => (controller_name == "weixin_customs" ? "active" : nil)}
+    .pull-right
+      %i.fa.fa-chevron-right
+    %i.fa.fa-users
+    = t('.weixin_custom')

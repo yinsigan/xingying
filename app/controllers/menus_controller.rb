@@ -98,7 +98,7 @@ class MenusController < SettingsController
       @error = true
       @flash = t("access_token_error", public_account_id: @public_account.id)
     end
-    render "publish_menu.js.erb", layout: false
+    render partial: "shared/operate_ajax_prompt.js", layout: false
   end
 
   def check_clear_menu
@@ -114,7 +114,7 @@ class MenusController < SettingsController
       @error = true
       @flash = t("access_token_error", public_account_id: @public_account.id)
     end
-    render "publish_menu.js.erb", layout: false
+    render partial: "shared/operate_ajax_prompt.js", layout: false
   end
 
   private

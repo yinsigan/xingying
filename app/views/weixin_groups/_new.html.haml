@@ -8,7 +8,7 @@
     .form-group
       = label_tag "group_name", t('.group_name'), class: "col-sm-3 control-label required"
       .col-sm-9
-        = text_field_tag "group_name", @group_name, class: "form-control", required: true, autofocus: true
+        = text_field_tag "group_name", nil, class: "form-control", required: true, autofocus: true
 .modal-footer
   = link_to t('sure'), public_account_weixin_groups_path(@public_account), method: "post", remote: true, id: "sure", class: "btn btn-primary"
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}

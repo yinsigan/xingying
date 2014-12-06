@@ -14,9 +14,6 @@ class WeixinGroupsController < SettingsController
   end
 
   def new
-    @group_id   = params[:group_id]
-    @group_name = params[:group_name]
-    render "new.js.erb", layout: false
   end
 
   def create
@@ -31,12 +28,13 @@ class WeixinGroupsController < SettingsController
 
   def edit
     @group_name = params[:group_name]
+    @group_id   = params[:id]
     render "edit.js.erb", layout: false
   end
 
   def rename
     if @client.is_valid?
-      flash = request_menu_result @client.update_group_name(params[:id], params[:group_name])
+      flash = request_menu_result @client.update_group_name(params[:group_id], params[:group_name])
     else
       flash = {warning: t("access_token_error", public_account_id: @public_account.id)}
     end

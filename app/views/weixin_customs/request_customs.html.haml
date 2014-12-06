@@ -1,15 +1,15 @@
-- if @weixin_groups.blank?
+- if @weixin_customs.blank?
   .bs-callout.bs-callout-default
     %h4= raw t("access_token_error", public_account_id: @public_account.id)
 - else
   .text-right.marginbottom20
-    = link_to new_public_account_weixin_group_path(@public_account), class: "btn btn-primary", remote: true do
+    = link_to new_public_account_weixin_custom_path(@public_account), class: "btn btn-primary", remote: true do
       %span.glyphicon.glyphicon-plus
       = t('.add')
   %table.table.table-bordered.public_account_thumbs
     %tr
-      %th= t('.name')
-      %th= t('.count')
+      %th= t('.kf_account')
+      %th= t('.kf_nick')
+      %th= t('.kf_id')
       %th= t('.operation')
-
-    = render partial: "weixin_group", collection: @weixin_groups
+    = render partial: "weixin_custom", collection: @weixin_customs

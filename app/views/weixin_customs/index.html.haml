@@ -1,0 +1,15 @@
+= render "tab"
+
+#request_customs
+
+:coffee
+
+  $.ajax
+    url: '#{request_customs_public_account_weixin_customs_path(@public_account)}'
+    method: "get"
+    error: ->
+      $("#request_customs").html "#{t('error_loading')}"
+    success: (data) ->
+      $("#request_customs").html data
+    beforeSend: ->
+      $("#request_customs").html "#{t("loading")}"

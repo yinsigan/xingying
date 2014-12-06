@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129095605) do
+ActiveRecord::Schema.define(version: 20141206021353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,6 +121,9 @@ ActiveRecord::Schema.define(version: 20141129095605) do
     t.integer  "autoreply_material_id"
     t.string   "appid"
     t.string   "appsecret"
+    t.boolean  "open_customed",         default: false
+    t.boolean  "default_customed",      default: true
+    t.string   "trigger_custom"
   end
 
   add_index "public_accounts", ["autoreply_material_id"], name: "index_public_accounts_on_autoreply_material_id", using: :btree

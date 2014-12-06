@@ -1,0 +1,14 @@
+%tr
+  %td
+    = weixin_quality_monitoring[:kf_account]
+  %td
+    - if weixin_quality_monitoring[:status] == 1
+      = t('.status_1')
+    - elsif weixin_quality_monitoring[:status] == 2
+      = t('.status_2')
+    - elsif weixin_quality_monitoring[:status] == 3
+      = t('.status_3')
+  %td
+    = weixin_quality_monitoring[:auto_accept]
+  %td
+    = weixin_quality_monitoring[:accepted_case]

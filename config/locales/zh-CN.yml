@@ -29,6 +29,7 @@ zh-CN:
         custom_menu: "自定义菜单"
         website_manage: "官网管理"
         user_manage: "用户管理"
+        weixin_custom: "多客服系统"
       topbar:
         public_account_manage: "公众账号管理"
         help: "帮助中心"
@@ -209,6 +210,7 @@ zh-CN:
       title: "用户管理"
       user_manage: "用户管理"
       group_manage: "分组管理"
+      notice: "由于网络或微信api接口等原因，可能会导致加载速度慢，如果要使用更为强大的管理功能，可以移步至微信公众账号后台"
     weixin_group:
       rename: "修改分组名"
     edit:
@@ -228,6 +230,49 @@ zh-CN:
       remark: "备注名"
     request_users:
       list: "用户列表"
+      nickname: "昵称"
+      headimgurl: "头像"
+      sex: "性别"
+      city: "城市"
+      province: "省份"
+      subscribe_time: "关注时间"
+  weixin_customs:
+    tab:
+      title: "多客服系统"
+      notice1: "1. 如果您的公众账号已经开启了开发者模式并且还未开启开发模式的多客服系统，您必须点击右下方的<span class='text-danger'>开启</span>按钮"
+      notice2: "2. 您必须通过<span class='text-danger'>设置触发关键字</span>用于微信公众账号触发进入多客服模式"
+      notice3: "3. 由于微信api接口乱编码处理，输入中文昵称可能会出现乱码，可往微信公众账号后台更改"
+      custom_manage: "客服管理"
+      trigger_keyword: "设置触发关键字"
+      quality_monitoring: "在线客服质量监控"
+    request_customs:
+      add: "添加客服"
+      kf_account: "完整客服账号"
+      kf_nick: "客服昵称"
+      kf_id: "客服工号"
+      operation: "操作"
+    form:
+      title_new: "添加客服账号"
+      title_edit: "设置客服信息"
+      kf_account: "完整客服账号"
+      nickname: "客服昵称"
+      password: "密码"
+      kf_account_help: "完整客服账号，格式为：账号前缀@公众号微信号，账号前缀最多10个字符，必须是英文或者数字字符。如果没有公众号微信号，请前往微信公众平台设置。"
+      nickname_help: "客服昵称，最长6个汉字或12个英文字符"
+      password_help: "请输入6～16位的密码"
+    weixin_custom:
+      rename: "设置客服信息"
+    delete:
+      confirm: "您确定删除此客服账号吗？"
+    request_quality_monitorings:
+      kf_account: "完整客服账号"
+      status: "在线状态"
+      auto_accept: "最大自动接入数"
+      accepted_case: "当前正在接待的会话数"
+    weixin_quality_monitoring:
+      status_1: "pc在线"
+      status_2: "手机在线"
+      status_3: "pc和手机同时在线"
   mail:
     you_have_successfully: "您已经在"
     registered_an_account: "成功的注册了帐号"

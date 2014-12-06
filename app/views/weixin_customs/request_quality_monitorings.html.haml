@@ -1,0 +1,15 @@
+- if @weixin_quality_monitorings.blank?
+  .bs-callout.bs-callout-default
+    %h4= raw t("access_token_error", public_account_id: @public_account.id)
+- else
+  .text-right.marginbottom20
+    = link_to quality_monitoring_public_account_weixin_customs_path(@public_account), class: "btn btn-primary" do
+      %span.glyphicon.glyphicon-refresh
+      = t('refresh')
+  %table.table.table-bordered.public_account_thumbs
+    %tr
+      %th= t('.kf_account')
+      %th= t('.status')
+      %th= t('.auto_accept')
+      %th= t('.accepted_case')
+    = render partial: "weixin_quality_monitoring", collection: @weixin_quality_monitorings

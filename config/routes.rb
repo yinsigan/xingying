@@ -26,20 +26,14 @@ Rails.application.routes.draw do
       get :delete
       # 查看token
       get :show_token
+      patch :toggle_open_customed
     end
     # 自定义菜单
     resources :menus, except: [:show] do
-      get :delete, on: :member
-      get :send_message, on: :member
-      get :redirect_url, on: :member
-      get :set_action, on: :member
-      get :click_content, on: :collection
-      post :move_left, on: :member
-      post :move_right, on: :member
+      get :delete, :send_message, :redirect_url, :set_action, on: :member
+      post :move_left, :move_right, on: :member
       post :publish_menu, on: :collection
-      get :check_publish_menu, on: :collection
-      get :check_clear_menu, on: :collection
-      get :clear_menu, on: :collection
+      get :click_content, :check_publish_menu, :check_clear_menu, :clear_menu, on: :collection
     end
     resources :sin_materials, except: [:show] do
       get :delete, on: :member
@@ -47,12 +41,9 @@ Rails.application.routes.draw do
     end
     resources :thumbs, only: [:index, :destroy] do
       get :delete, on: :member
-      post :upload, on: :collection
-      post :select_upload, on: :collection
+      post :upload, :select_upload, :move_group, on: :collection
       get :delete_all, :move, :move_single, on: :collection
       delete :destroy_all, on: :collection
-      # 移动分组
-      post :move_group, on: :collection
       get "/:thumb_group_id", to: "thumbs#index", on: :collection, as: :group
     end
     resources :thumb_groups, except: [:show, :index] do
@@ -60,11 +51,8 @@ Rails.application.routes.draw do
     end
     resources :rules, except: [:show, :new] do
       # 选择类型
-      get :reply_content, on: :collection
-      get :new_kword, on: :collection
-      get :edit_new_kword, on: :collection
-      get :delete, on: :member
-      get :cancel, on: :member
+      get :reply_content, :new_kword, :edit_new_kword, on: :collection
+      get :delete, :cancel, on: :member
     end
     resources :weixin_groups, only: [:index, :new, :create, :edit] do
       post :rename, on: :collection
@@ -74,6 +62,12 @@ Rails.application.routes.draw do
       get :request_users, on: :collection
       # 修改备注，已弃用
       # post :remark, on: :collection
+    end
+
+    resources :weixin_customs, only: [:index, :new, :create, :edit] do
+      get :request_customs, :quality_monitoring, :request_quality_monitoring, on: :collection
+      post :rename, on: :collection
+      get :delete, :trash, on: :member
     end
   end
 

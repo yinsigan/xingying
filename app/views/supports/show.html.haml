@@ -10,6 +10,11 @@
   = raw @support.body
 
   .text-right
-    %button.btn.btn-primary
-      %i.fa.fa-arrow-left
-      = t('back')
+    - if session[:return_to]
+      = link_to session[:return_to], class: "btn btn-primary" do
+        %i.fa.fa-arrow-left
+        = t('back')
+    - else
+      = link_to supports_path, class: "btn btn-primary" do
+        %i.fa.fa-arrow-left
+        = t('back')

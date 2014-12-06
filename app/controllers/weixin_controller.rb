@@ -51,6 +51,7 @@ class WeixinController < ApplicationController
 
     # 关键字回复
     def response_text_message(options={})
+      # reply_transfer_customer_service_message
       if @find_kword = @weixin_public_account.kwords.where(:name => @keyword).last
         case @find_kword.subjectable_type
         when "TextMaterial"
