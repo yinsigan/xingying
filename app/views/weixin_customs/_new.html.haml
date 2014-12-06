@@ -1,0 +1,41 @@
+.modal-header
+  %button.close{"data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} &times;
+    %span.sr-only Close
+  %h4#mymodal.modal-title= t('.title')
+.modal-body.clearfix
+  .form-horizontal
+    .form-group
+      = label_tag "kf_account", t('.kf_account'), class: "col-sm-3 control-label required"
+      .col-sm-9
+        = text_field_tag "kf_account", nil, class: "form-control", required: true, autofocus: true
+        %p.help-block
+          = t('.kf_account_help')
+  .form-horizontal
+    .form-group
+      = label_tag "nickname", t('.nickname'), class: "col-sm-3 control-label required"
+      .col-sm-9
+        = text_field_tag "nickname", nil, class: "form-control", required: true
+        %p.help-block
+          = t('.nickname_help')
+  .form-horizontal
+    .form-group
+      = label_tag "password", t('.password'), class: "col-sm-3 control-label required"
+      .col-sm-9
+        = text_field_tag "password", nil, class: "form-control", required: true
+.modal-footer
+  = link_to t('sure'), public_account_weixin_customs_path(@public_account), method: "post", remote: true, id: "sure", class: "btn btn-primary"
+  %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
+    = t('close')
+
+:coffee
+
+  $("#sure").on "ajax:before", (event) ->
+    el = $(this)
+    el.attr "data-params", $(":input").serialize()
+    $.blockUI message: "<h1>#{t('saving')}</h1>"
+
+  $("#sure").on "ajax:complete", (event, xhr, status) ->
+    el = $(this)
+    el.removeAttr "data-params"
+    $.unblockUI()

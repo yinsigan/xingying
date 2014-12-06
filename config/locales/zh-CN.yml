@@ -230,6 +230,12 @@ zh-CN:
       remark: "备注名"
     request_users:
       list: "用户列表"
+      nickname: "昵称"
+      headimgurl: "头像"
+      sex: "性别"
+      city: "城市"
+      province: "省份"
+      subscribe_time: "关注时间"
   weixin_customs:
     tab:
       title: "多客服系统"
@@ -237,6 +243,18 @@ zh-CN:
       notice2: "2. 您必须通过<span class='text-danger'>设置触发关键字</span>用于微信公众账号触发进入多客服模式"
       custom_manage: "客服管理"
       trigger_keyword: "设置触发关键字"
+    request_customs:
+      add: "添加客服"
+      kf_account: "完整客服账号"
+      kf_nick: "客服昵称"
+      kf_id: "客服工号"
+    new:
+      title: "添加客服"
+      kf_account: "完整客服账号"
+      nickname: "客服昵称"
+      password: "密码"
+      kf_account_help: "完整客服账号，格式为：账号前缀@公众号微信号，账号前缀最多10个字符，必须是英文或者数字字符。如果没有公众号微信号，请前往微信公众平台设置。"
+      nickname_help: "客服昵称，最长6个汉字或12个英文字符"
   mail:
     you_have_successfully: "您已经在"
     registered_an_account: "成功的注册了帐号"

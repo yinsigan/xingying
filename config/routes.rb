@@ -76,7 +76,9 @@ Rails.application.routes.draw do
       # post :remark, on: :collection
     end
 
-    resources :weixin_customs, only: [:index]
+    resources :weixin_customs, only: [:index, :new, :create] do
+      get :request_customs, on: :collection
+    end
   end
 
   # 帮助

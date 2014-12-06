@@ -3,4 +3,48 @@ class WeixinCustomsController < SettingsController
   def index
     add_breadcrumb I18n.t("breadcrumbs.weixin_custom.index"), :public_account_weixin_customs_path
   end
+
+  def request_customs
+    @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
+    if @client.is_valid?
+      @weixin_customs = @client.send(:http_post, "/customservice/getkflist", {}).result[:kf_list]
+    end
+    render "request_customs", layout: false
+  end
+
+  def new
+  end
+
+  def create
+    @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
+    if @client.is_valid?
+      flash = request_menu_result @client.send(:http_post, "/customservice/kfaccount/add",
+        JSON.dump({kf_account: params[:kf_account], nickname: params[:nickname], password: Digest::MD5.hexdigest(params[:password])}),
+        {},
+        "customservice")
+    else
+      flash = {warning: t("access_token_error", public_account_id: @public_account.id)}
+    end
+    redirect_via_turbolinks_to public_account_weixin_customs_path(@public_account),
+      flash: flash
+  end
+
+  private
+
+  def request_menu_result(result)
+    if result.is_ok?
+      flash = {success: t('success_request')}
+    else
+      flash = {warning: result.full_error_message}
+    end
+  end
+
+end
+
+module WeixinAuthorize
+  class << self
+    def customservice_endpoint()
+      "https://api.weixin.qq.com"
+    end
+  end
 end

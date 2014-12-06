@@ -51,31 +51,31 @@ class WeixinController < ApplicationController
 
     # 关键字回复
     def response_text_message(options={})
-      reply_transfer_customer_service_message
-      # if @find_kword = @weixin_public_account.kwords.where(:name => @keyword).last
-      #   case @find_kword.subjectable_type
-      #   when "TextMaterial"
-      #     reply_text_message(@find_kword.reply.presence)
-      #   when "SinMaterial"
-      #     if sin_pic_text = @find_kword.sin_material.try(:sin_pic_text)
-      #       reply_news_message(custom_generate_article(sin_pic_text))
-      #     end
-      #   end
-      # # 回复文字无匹配时
-      # else
-      #   case @weixin_public_account.autoreply_type
-      #   when 1
-      #     if @weixin_public_account.autoreply.present?
-      #       reply_text_message(@weixin_public_account.autoreply.presence)
-      #     else
-      #       reply_text_message("")
-      #     end
-      #   when 2
-      #     if sin_pic_text = @weixin_public_account.autoreply_sin_material.try(:sin_pic_text)
-      #       reply_news_message(custom_generate_article(sin_pic_text))
-      #     end
-      #   end
-      # end
+      # reply_transfer_customer_service_message
+      if @find_kword = @weixin_public_account.kwords.where(:name => @keyword).last
+        case @find_kword.subjectable_type
+        when "TextMaterial"
+          reply_text_message(@find_kword.reply.presence)
+        when "SinMaterial"
+          if sin_pic_text = @find_kword.sin_material.try(:sin_pic_text)
+            reply_news_message(custom_generate_article(sin_pic_text))
+          end
+        end
+      # 回复文字无匹配时
+      else
+        case @weixin_public_account.autoreply_type
+        when 1
+          if @weixin_public_account.autoreply.present?
+            reply_text_message(@weixin_public_account.autoreply.presence)
+          else
+            reply_text_message("")
+          end
+        when 2
+          if sin_pic_text = @weixin_public_account.autoreply_sin_material.try(:sin_pic_text)
+            reply_news_message(custom_generate_article(sin_pic_text))
+          end
+        end
+      end
     end
 
     # 首次关注

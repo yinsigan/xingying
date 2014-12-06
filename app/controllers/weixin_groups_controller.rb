@@ -14,9 +14,6 @@ class WeixinGroupsController < SettingsController
   end
 
   def new
-    @group_id   = params[:group_id]
-    @group_name = params[:group_name]
-    render "new.js.erb", layout: false
   end
 
   def create
