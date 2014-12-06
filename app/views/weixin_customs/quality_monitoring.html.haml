@@ -1,0 +1,15 @@
+= render "tab"
+
+#request_quality_monitoring
+
+:coffee
+
+  $.ajax
+    url: '#{request_quality_monitoring_public_account_weixin_customs_path(@public_account)}'
+    method: "get"
+    error: ->
+      $("#request_quality_monitoring").html "#{t('error_loading')}"
+    success: (data) ->
+      $("#request_quality_monitoring").html data
+    beforeSend: ->
+      $("#request_quality_monitoring").html "#{t("loading")}"

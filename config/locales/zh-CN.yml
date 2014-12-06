@@ -243,6 +243,7 @@ zh-CN:
       notice2: "2. 您必须通过<span class='text-danger'>设置触发关键字</span>用于微信公众账号触发进入多客服模式"
       custom_manage: "客服管理"
       trigger_keyword: "设置触发关键字"
+      quality_monitoring: "在线客服质量监控"
     request_customs:
       add: "添加客服"
       kf_account: "完整客服账号"
@@ -262,6 +263,15 @@ zh-CN:
       rename: "设置客服信息"
     delete:
       confirm: "您确定删除此客服账号吗？"
+    request_quality_monitorings:
+      kf_account: "完整客服账号"
+      status: "在线状态"
+      auto_accept: "最大自动接入数"
+      accepted_case: "当前正在接待的会话数"
+    weixin_quality_monitoring:
+      status_1: "pc在线"
+      status_2: "手机在线"
+      status_3: "pc和手机同时在线"
   mail:
     you_have_successfully: "您已经在"
     registered_an_account: "成功的注册了帐号"
