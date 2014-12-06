@@ -28,3 +28,5 @@ zh-CN:
       index: "分组管理"
     weixin_user:
       index: "用户管理"
+    weixin_custom:
+      index: "多客服系统"

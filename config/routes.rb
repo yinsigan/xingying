@@ -75,6 +75,8 @@ Rails.application.routes.draw do
       # 修改备注，已弃用
       # post :remark, on: :collection
     end
+
+    resources :weixin_customs, only: [:index]
   end
 
   # 帮助

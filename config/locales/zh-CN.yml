@@ -29,6 +29,7 @@ zh-CN:
         custom_menu: "自定义菜单"
         website_manage: "官网管理"
         user_manage: "用户管理"
+        weixin_custom: "多客服系统"
       topbar:
         public_account_manage: "公众账号管理"
         help: "帮助中心"
@@ -229,6 +230,13 @@ zh-CN:
       remark: "备注名"
     request_users:
       list: "用户列表"
+  weixin_customs:
+    tab:
+      title: "多客服系统"
+      notice1: "1. 如果您的公众账号已经开启了开发者模式并且还未开启开发模式的多客服系统，您必须点击右下方的<span class='text-danger'>开启</span>按钮"
+      notice2: "2. 您必须通过<span class='text-danger'>设置触发关键字</span>用于微信公众账号触发进入多客服模式"
+      custom_manage: "客服管理"
+      trigger_keyword: "设置触发关键字"
   mail:
     you_have_successfully: "您已经在"
     registered_an_account: "成功的注册了帐号"
