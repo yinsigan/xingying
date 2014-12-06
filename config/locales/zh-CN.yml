@@ -241,6 +241,7 @@ zh-CN:
       title: "多客服系统"
       notice1: "1. 如果您的公众账号已经开启了开发者模式并且还未开启开发模式的多客服系统，您必须点击右下方的<span class='text-danger'>开启</span>按钮"
       notice2: "2. 您必须通过<span class='text-danger'>设置触发关键字</span>用于微信公众账号触发进入多客服模式"
+      notice3: "3. 由于微信api接口乱编码处理，输入中文昵称可能会出现乱码，可往微信公众账号后台更改"
       custom_manage: "客服管理"
       trigger_keyword: "设置触发关键字"
       quality_monitoring: "在线客服质量监控"
