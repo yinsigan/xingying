@@ -118,3 +118,42 @@ ul#goods_nav {
 .input-group-btn:last-child > .btn{
   outline-color: transparent;
 }
+
+
+
+#shopping-cart > li.list-group-item {
+  margin: 5px auto;
+  > .col-xs-1{
+    padding: 0;
+  }
+  > .col-xs-3 {
+    padding: 0;
+    > a.thumbnail {
+      margin: 0;
+    }
+  }
+  > .col-xs-8 {
+    padding: 5px;
+    > p {
+      padding: 0;
+      margin-bottom: 3px;
+      font-size: 12px;
+    }
+    > p.title {
+      height: 30px;
+      overflow: hidden;
+      word-wrap: break-word;
+    }
+    > p.price {
+      color: red;
+    }
+
+    > .input-group.quantity {
+      width: 100px;
+      > input.form-control.input-number.input-xs {
+        height: 22px;
+      }
+    }
+
+  }
+}
