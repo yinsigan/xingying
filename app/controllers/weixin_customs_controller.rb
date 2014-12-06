@@ -1,11 +1,11 @@
 class WeixinCustomsController < SettingsController
   before_action :set_public_account, :appid_present
+  before_action :get_client, only: [:request_customs, :create, :rename]
   def index
     add_breadcrumb I18n.t("breadcrumbs.weixin_custom.index"), :public_account_weixin_customs_path
   end
 
   def request_customs
-    @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
     if @client.is_valid?
       @weixin_customs = @client.send(:http_post, "/customservice/getkflist", {}).result[:kf_list]
     end
@@ -13,12 +13,32 @@ class WeixinCustomsController < SettingsController
   end
 
   def new
+    @title = I18n.t("weixin_customs.form.title_new")
+    @new = true
   end
 
   def create
-    @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
     if @client.is_valid?
       flash = request_menu_result @client.send(:http_post, "/customservice/kfaccount/add",
+        JSON.dump({kf_account: params[:kf_account], nickname: params[:nickname], password: Digest::MD5.hexdigest(params[:password])}),
+        {},
+        "customservice")
+    else
+      flash = {warning: t("access_token_error", public_account_id: @public_account.id)}
+    end
+    redirect_via_turbolinks_to public_account_weixin_customs_path(@public_account),
+      flash: flash
+  end
+
+  def edit
+    @nickname   = params[:nickname]
+    @kf_account = params[:id]
+    @title = I18n.t("weixin_customs.form.title_edit")
+  end
+
+  def rename
+    if @client.is_valid?
+      flash = request_menu_result @client.send(:http_post, "/customservice/kfaccount/update",
         JSON.dump({kf_account: params[:kf_account], nickname: params[:nickname], password: Digest::MD5.hexdigest(params[:password])}),
         {},
         "customservice")
@@ -38,7 +58,9 @@ class WeixinCustomsController < SettingsController
       flash = {warning: result.full_error_message}
     end
   end
-
+  def get_client
+    @client ||= WeixinAuthorize::Client.new(@public_account.appid, @public_account.appsecret, @public_account.id)
+  end
 end
 
 module WeixinAuthorize

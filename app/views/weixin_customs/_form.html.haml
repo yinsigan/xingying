@@ -2,20 +2,20 @@
   %button.close{"data-dismiss" => "modal", :type => "button"}
     %span{"aria-hidden" => "true"} &times;
     %span.sr-only Close
-  %h4#mymodal.modal-title= t('.title')
+  %h4#mymodal.modal-title= @title
 .modal-body.clearfix
   .form-horizontal
     .form-group
       = label_tag "kf_account", t('.kf_account'), class: "col-sm-3 control-label required"
       .col-sm-9
-        = text_field_tag "kf_account", nil, class: "form-control", required: true, autofocus: true
+        = text_field_tag "kf_account", @kf_account, class: "form-control", required: true, autofocus: true
         %p.help-block
           = t('.kf_account_help')
   .form-horizontal
     .form-group
       = label_tag "nickname", t('.nickname'), class: "col-sm-3 control-label required"
       .col-sm-9
-        = text_field_tag "nickname", nil, class: "form-control", required: true
+        = text_field_tag "nickname", @nickname, class: "form-control", required: true
         %p.help-block
           = t('.nickname_help')
   .form-horizontal
@@ -24,7 +24,10 @@
       .col-sm-9
         = text_field_tag "password", nil, class: "form-control", required: true
 .modal-footer
-  = link_to t('sure'), public_account_weixin_customs_path(@public_account), method: "post", remote: true, id: "sure", class: "btn btn-primary"
+  - if @new.present?
+    = link_to t('sure'), public_account_weixin_customs_path(@public_account), method: "post", remote: true, id: "sure", class: "btn btn-primary"
+  - else
+    = link_to t('sure'), rename_public_account_weixin_customs_path(@public_account), method: "post", remote: true, id: "sure", class: "btn btn-primary"
   %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
     = t('close')
 
