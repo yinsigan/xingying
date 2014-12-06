@@ -1,0 +1,20 @@
+.modal-header
+  %button.close{"data-dismiss" => "modal", :type => "button"}
+    %span{"aria-hidden" => "true"} &times;
+    %span.sr-only Close
+  %h4#mymodal.modal-title= t('delete_confirm')
+.modal-body
+  %p
+    = t('.confirm')
+.modal-footer
+  = link_to t('delete'), trash_public_account_weixin_custom_path(@public_account, @kf_account), class: "btn btn-danger", remote: true, id: "delete_btn"
+  %button{type: "button", class: "btn btn-default", "data-dismiss" => "modal"}
+    = t('close')
+
+:coffee
+
+  $("#delete_btn").on "ajax:before", ->
+    $.blockUI message: "<h1>#{t('destroing')}</h1>"
+
+  $("#delete_btn").on "ajax:complete", ->
+    $.unblockUI()

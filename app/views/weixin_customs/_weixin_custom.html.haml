@@ -8,3 +8,8 @@
   %td
     = link_to edit_public_account_weixin_custom_path(@public_account, weixin_custom[:kf_account], nickname: weixin_custom[:kf_nick]), class: "normal_link", data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true}, "title" => t('.rename'), remote: true do
       %i.fa.fa-pencil
+    = link_to delete_public_account_weixin_custom_path(@public_account, weixin_custom[:kf_account]), class: "normal_link", data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true}, "title" => t('delete'), remote: true do
+      %i.fa.fa-trash-o
+
+:coffee
+  $('button[data-tooltip], a[data-tooltip]').tooltip()
