@@ -1,0 +1,74 @@
+.container
+  .row
+    .col-xs-12
+      %ul.list-group#order-address-list
+        %li.list-group-item
+          .col-xs-1
+            %input.icheck-me{:type => 'radio', data: {"color" => "blue", "skin" => "square"}}
+          .col-xs-10
+            %p
+              北京市朝阳区朝阳路朝阳小区朝阳小学 李朝阳 15882132019
+          .col-xs-1
+            %a.delete_link.pull-right
+              %i.fa.fa-edit
+          .clearfix
+
+        %li.list-group-item
+          .col-xs-1
+            %input.icheck-me{:type => 'radio', data: {"color" => "blue", "skin" => "square"}}
+          .col-xs-10
+            %p
+              北京市朝阳区朝阳路朝阳小区朝阳小学 李朝阳 15882132019
+          .col-xs-1
+            %a.delete_link.pull-right
+              %i.fa.fa-edit
+          .clearfix
+
+        %li.list-group-item
+          .col-xs-1
+            %input.icheck-me{:type => 'radio', data: {"color" => "blue", "skin" => "square"}}
+          .col-xs-10
+            %p
+              北京市朝阳区朝阳路朝阳小区朝阳小学 李朝阳 15882132019
+          .col-xs-1
+            %a.delete_link.pull-right
+              %i.fa.fa-edit
+          .clearfix
+        %a
+          %li.list-group-item
+            新增收货地址
+
+      %form#orders-append-address
+        .col-xs-12
+          .col-xs-3
+            %label.control-label
+              收货人:
+          .col-xs-9
+            %input.form-control.input-sm{placeholder: "收货人姓名"}
+        .col-xs-12
+          .col-xs-3
+            %label.control-label
+              联系方式:
+          .col-xs-9
+            %input.form-control.input-sm{type: "tel", placeholder: "联系方式"}
+        .col-xs-12
+          .col-xs-3
+            %label.control-label
+              收货地址:
+          .col-xs-9
+            %input.form-control.input-sm{placeholder: "收货地址"}
+        .col-xs-12
+          .col-xs-3
+            %label.control-label
+              详细地址:
+          .col-xs-9
+            %input.form-control.input-sm{placeholder: "详细地址"}
+        .col-xs-12
+          %button.btn.btn-primary.col-xs-12
+            确定
+
+
+
+
+:javascript
+  my_icheck('.icheck-me');

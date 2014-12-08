@@ -76,6 +76,10 @@
   font-size: 2em;
 }
 
+.fa-12x {
+  font-size: 12em;
+}
+
 // 列表没有样式
 .ul-no-style {
   list-style: none;
@@ -105,4 +109,9 @@
   &:hover {
     color: #333;
   }
+}
+
+// 文本居中
+.text-align{
+  text-align: center;
 }

@@ -8,21 +8,21 @@ $navbar-default-color:             #FFF;
 // 小分辨率按钮的点击后的颜色
 $collapsed-hover:                     #FF3200;
 // 设置标签的内边距
-.nav.nav-home >li{
+.nav.nav-home li{
   margin: 0 3.5px;
 
-  > a{
+  a{
     padding: 5px 10px
   }
 }
 
 // 设置商品图片展示
 .thumbnail{
-  > .img-box{
+  .img-box{
     text-align: center;
     overflow: hidden;
   }
-  > .caption{
+  .caption{
     margin-top:5px;
     border: 1px solid #EEE;
   }
@@ -46,13 +46,13 @@ ul#goods_nav {
       margin-right: 0;
     }
   }
-  li.active > a{
+  li.active a{
     background-color: $navbar-default-bg;
     color: #FFF;
   }
 }
 
-.rm-table-top-border > tbody > tr:first-child > td{
+.rm-table-top-border tbody tr:first-child td{
   border-top: 0px;
 }
 
@@ -70,6 +70,7 @@ ul#goods_nav {
   margin-bottom: 5px;
 }
 
+// 首页商品的样式
 #goods-list{
   .row{
     .col-xs-6{
@@ -78,7 +79,7 @@ ul#goods_nav {
   }
 }
 .goods-item{
-  .thumbnail > .caption{
+  .thumbnail .caption{
     h5 {
       height: 28px;
       overflow: hidden;
@@ -90,16 +91,17 @@ ul#goods_nav {
   }
 }
 
-#goods-category-nav > li > a{
+// 商品列表样式
+#goods-category-nav li a{
   color: #FF8C00;
 }
 
-#goods-category-nav.nav > li.disabled > a {
+#goods-category-nav.nav li.disabled a {
   color: #777777;
 }
 
-
-.good-list > .col-xs-12{
+// 商品列表样式
+.good-list .col-xs-12{
   margin: 5px auto;
   .col-xs-3{
     padding: 0;
@@ -124,10 +126,16 @@ ul#goods_nav {
   }
 }
 
-.input-group-btn:last-child > .btn{
+.input-group-btn:last-child .btn{
   outline-color: transparent;
 }
 
+// 灰色的删除按钮
+.delete_link {
+  color: #b2b2b2;
+}
+
+// 购物车样式
 #shopping-cart {
   li.list-group-item {
     padding: 5px;
@@ -156,9 +164,6 @@ ul#goods_nav {
       p.price {
         color: red;
       }
-      .delete_link {
-        color: #b2b2b2;
-      }
       .input-group.quantity {
         width: 100px;
         input.form-control.input-number.input-xs {
@@ -166,5 +171,31 @@ ul#goods_nav {
         }
       }
     }
+  }
+}
+
+
+#order-address-list{
+  li.list-group-item{
+    line-height: 35px;
+    .col-xs-1{
+      padding: 0;
+    }
+    .col-xs-10 > p{
+      line-height: normal;
+      margin: 0;
+    }
+    .col-xs-1.delete{
+      line-height: 50px;
+    }
+  }
+}
+
+
+#orders-append-address{
+  .col-xs-12 .col-xs-3{
+    text-align: right;
+    line-height: 30px;
+    padding: 0;
   }
 }

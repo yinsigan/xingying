@@ -91,6 +91,7 @@ Rails.application.routes.draw do
   get 'shops/list', to: 'shops#list'
   get 'shops/search', to: 'shops#search'
   get 'shops/shopping_cart', to: 'shops#shopping_cart'
+  get 'shops/orders', to: 'shops#orders'
   resources :shops, only: [:index, :show]
 
   resources :tickets, only: [:index, :new, :create, :show], concerns: [:commentable]
