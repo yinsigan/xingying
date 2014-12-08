@@ -111,3 +111,5 @@ zh-CN:
   open: "开启"
   refresh: "刷新"
   stop: "停用"
+  clear: "清空"
+  send_invite: "发送缴请"

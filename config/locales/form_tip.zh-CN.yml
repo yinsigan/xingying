@@ -1,7 +1,7 @@
 zh-CN:
   public_accounts:
     index:
-      delete_tip: "你真确定删除此公众账号吗?"
+      delete_tip: "您真确定删除此公众账号吗?"
     delete:
       confirm: "确定删除此公众账号吗？如果删除此公众账号会连同此公众账号的所有信息一并删除，包括关键字回复、自定义菜单、素材管理，而且数据将不可恢复"
   menus:
@@ -21,7 +21,10 @@ zh-CN:
       confirm: "仅删除分组，不删除图片，组内图片将自动归入未分组"
   rules:
     delete:
-      confirm: "你确定删除此规则吗？"
+      confirm: "您确定删除此规则吗？"
   sin_materials:
     delete:
       confirm: "确定删除此单图文吗？"
+  notifications:
+    delete:
+      confirm: "您确定清空所有通知吗？"

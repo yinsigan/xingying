@@ -88,8 +88,9 @@ Rails.application.routes.draw do
   end
 
   # 消息
-  concern :messageable do
-    resources :notifications, only: [:create, :index]
+  resources :notifications, only: [:create, :index, :show] do
+    delete :clear, on: :collection
+    get :delete, on: :collection
   end
 
   # 服务单
@@ -119,7 +120,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :user, only: [:show], concerns: [:messageable]
+  resources :user, only: [:show]
 
   # 微信公众账号接口
   get  'weixin/:weixin_secret_key', to: 'weixin#index', as: :weixin_server
