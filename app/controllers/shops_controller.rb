@@ -16,6 +16,10 @@ class ShopsController < ApplicationController
 
   end
 
+  def shopping_cart
+
+  end
+
   private
     def select_layout
       case action_name
