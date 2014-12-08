@@ -4,4 +4,6 @@ class Notification < ActiveRecord::Base
   belongs_to :messageable, polymorphic: true
 
   scope :unread, -> { where(readed: false) }
+
+  validates :user, :sender, :subject, :body, :messageable, presence: true
 end

@@ -8,7 +8,7 @@ class NotificationsController < ApplicationController
 
   def clear
     current_user.notifications.delete_all
-    redirect_to user_notifications_path(current_user), flash: {success: I18n.t('success_delete')}
+    redirect_to notifications_path, flash: {success: I18n.t('success_delete')}
   end
 
   def delete
