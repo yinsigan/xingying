@@ -61,20 +61,19 @@ class WeixinController < ApplicationController
             reply_news_message(custom_generate_article(sin_pic_text))
           end
         end
+      # 多客服系统的关键字回复
+      elsif @weixin_public_account.open_customed?
+        if !@weixin_public_account.default_customed? && @weixin_public_account.trigger_custom.present? && @weixin_public_account.trigger_custom.split(",").map(&:strip).include?(@keyword)
+          reply_transfer_customer_service_message
+        elsif @weixin_public_account.default_customed?
+          reply_transfer_customer_service_message
+        else
+          # 回复文字无匹配时
+          keyword_no_match
+        end
       # 回复文字无匹配时
       else
-        case @weixin_public_account.autoreply_type
-        when 1
-          if @weixin_public_account.autoreply.present?
-            reply_text_message(@weixin_public_account.autoreply.presence)
-          else
-            reply_text_message("")
-          end
-        when 2
-          if sin_pic_text = @weixin_public_account.autoreply_sin_material.try(:sin_pic_text)
-            reply_news_message(custom_generate_article(sin_pic_text))
-          end
-        end
+        keyword_no_match
       end
     end
 
@@ -121,4 +120,19 @@ class WeixinController < ApplicationController
       end
     end
 
+    # 回复文字无匹配时
+    def keyword_no_match
+      case @weixin_public_account.autoreply_type
+        when 1
+          if @weixin_public_account.autoreply.present?
+            reply_text_message(@weixin_public_account.autoreply.presence)
+          else
+            reply_text_message("")
+          end
+        when 2
+          if sin_pic_text = @weixin_public_account.autoreply_sin_material.try(:sin_pic_text)
+            reply_news_message(custom_generate_article(sin_pic_text))
+          end
+        end
+    end
 end
