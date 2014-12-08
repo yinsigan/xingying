@@ -4,7 +4,7 @@
       %ul.list-group#shopping-cart
         %li.list-group-item
           .col-xs-1.pull-left
-            %input{:type => 'checkbox'}
+            %input.icheck-me{:type => 'checkbox', data: {"color" => "blue", "skin" => "square"}}
           .col-xs-3.pull-left
             %a.thumbnail
               = image_tag("tag_cloud.jpg")
@@ -13,7 +13,7 @@
               我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,
             %p.price
               价格: RMB 255
-            %a.gray_link.pull-right
+            %a.delete_link.pull-right
               %i.fa.fa-trash
             .input-group.quantity
               %span.input-group-btn
@@ -28,7 +28,7 @@
 
         %li.list-group-item
           .col-xs-1.pull-left
-            %input{:type => 'checkbox'}
+            %input.icheck-me{:type => 'checkbox', data: {"color" => "blue", "skin" => "square"}}
           .col-xs-3.pull-left
             %a.thumbnail
               = image_tag("tag_cloud.jpg")
@@ -37,7 +37,7 @@
               我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,
             %p.price
               价格: RMB 255
-            %a.gray_link.pull-right
+            %a.delete_link.pull-right
               %i.fa.fa-trash
             .input-group.quantity
               %span.input-group-btn
@@ -51,7 +51,7 @@
 
         %li.list-group-item
           .col-xs-1.pull-left
-            %input{:type => 'checkbox'}
+            %input.icheck-me{:type => 'checkbox', data: {"color" => "blue", "skin" => "square"}}
           .col-xs-3.pull-left
             %a.thumbnail
               = image_tag("tag_cloud.jpg")
@@ -60,7 +60,7 @@
               我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,
             %p.price
               价格: RMB 255
-            %a.gray_link.pull-right
+            %a.delete_link.pull-right
               %i.fa.fa-trash
             .input-group.quantity
               %span.input-group-btn
@@ -74,7 +74,7 @@
 
         %li.list-group-item
           .col-xs-1.pull-left
-            %input{:type => 'checkbox'}
+            %input.icheck-me{:type => 'checkbox', data: {"color" => "blue", "skin" => "square"}}
           .col-xs-3.pull-left
             %a.thumbnail
               = image_tag("tag_cloud.jpg")
@@ -83,7 +83,7 @@
               我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,我是罪恶的中文字符,
             %p.price
               价格: RMB 255
-            %a.gray_link.pull-right
+            %a.delete_link.pull-right
               %i.fa.fa-trash
             .input-group.quantity
               %span.input-group-btn
@@ -96,6 +96,7 @@
           .clearfix
 
 :javascript
+  my_icheck('.icheck-me');
   $('.btn-number').click(function(e){
       e.preventDefault();
 
