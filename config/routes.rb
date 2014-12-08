@@ -65,7 +65,7 @@ Rails.application.routes.draw do
     end
 
     resources :weixin_customs, only: [:index, :new, :create, :edit] do
-      get :request_customs, :quality_monitoring, :request_quality_monitoring, on: :collection
+      get :request_customs, :quality_monitoring, :request_quality_monitoring, :trigger_keyword, on: :collection
       post :rename, on: :collection
       get :delete, :trash, on: :member
     end

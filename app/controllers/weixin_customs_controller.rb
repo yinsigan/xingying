@@ -61,6 +61,7 @@ class WeixinCustomsController < SettingsController
 
   # 在线客服质量监控
   def quality_monitoring
+    add_breadcrumb I18n.t("breadcrumbs.weixin_custom.quality_monitoring"), :quality_monitoring_public_account_weixin_customs_path
   end
 
   def request_quality_monitoring
@@ -68,6 +69,11 @@ class WeixinCustomsController < SettingsController
       @weixin_quality_monitorings = @client.send(:http_post, "/customservice/getonlinekflist", {}).result[:kf_online_list]
     end
     render "request_quality_monitorings", layout: false
+  end
+
+  # 触发关键字
+  def trigger_keyword
+    add_breadcrumb I18n.t("breadcrumbs.weixin_custom.trigger_keyword"), :trigger_keyword_public_account_weixin_customs_path
   end
 
   private
@@ -92,6 +98,7 @@ class WeixinCustomsController < SettingsController
     redirect_via_turbolinks_to public_account_weixin_customs_path(@public_account),
       flash: flash
   end
+
 end
 
 module WeixinAuthorize
