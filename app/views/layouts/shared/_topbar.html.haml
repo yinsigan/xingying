@@ -12,7 +12,7 @@
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           %li
-            %a
+            = link_to user_notifications_path(current_user) do
               %i.fa.fa-bell-o
               .badge 99
           %li.dropdown

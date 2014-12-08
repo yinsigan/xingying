@@ -1,0 +1,10 @@
+.panel.panel-default
+  .panel-heading.background-color-none.clearfix#three-1
+    %a.btn.btn-danger.pull-right
+      清空
+    %h4
+      通知提醒
+      %small
+        (1 条)
+  .panel-body
+    = render partial: "notification", collection: @notifications

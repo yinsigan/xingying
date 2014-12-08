@@ -87,6 +87,11 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
+  # 消息
+  concern :messageable do
+    resources :notifications, only: [:create, :index]
+  end
+
   # 服务单
   get 'shops/list', to: 'shops#list'
   get 'shops/search', to: 'shops#search'
@@ -114,7 +119,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :user, only: [:show]
+  resources :user, only: [:show], concerns: [:messageable]
 
   # 微信公众账号接口
   get  'weixin/:weixin_secret_key', to: 'weixin#index', as: :weixin_server
