@@ -199,3 +199,20 @@ ul#goods_nav {
     padding: 0;
   }
 }
+
+#order-status-nav{
+  li{
+    @extend .col-xs-3;
+    margin: 0;
+    text-align: center;
+    a{
+      color: #555;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+ul.nav.nav-pills#order-status-nav li{
+  padding: 0px;
+}
