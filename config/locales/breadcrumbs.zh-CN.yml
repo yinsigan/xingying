@@ -29,4 +29,6 @@ zh-CN:
     weixin_user:
       index: "用户管理"
     weixin_custom:
-      index: "多客服系统"
+      index: "客服管理"
+      quality_monitoring: "在线客服质量监控"
+      trigger_keyword: "设置触发关键字"

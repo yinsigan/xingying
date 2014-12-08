@@ -1,0 +1,16 @@
+= render "tab"
+
+.panel.panel-default
+  .panel-body
+    = form_for [@public_account], html: {class: "form-horizontal"}, remote: true do |f|
+      .form-group
+        = f.label :default_customed, class: "col-sm-3 control-label"
+        .col-sm-9
+          = f.radio_button :default_customed, true, class: "icheck-me form-control", data: {"color" => "blue", "skin" => "square"}
+      .form-group
+        = f.label :default_customed, class: "col-sm-3 control-label"
+        .col-sm-9
+          = f.radio_button :default_customed, false, class: "icheck-me", data: {"color" => "blue", "skin" => "square"}
+      .form-group
+        .col-sm-6.col-sm-push-3
+          = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-save')
