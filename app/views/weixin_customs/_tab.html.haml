@@ -18,9 +18,9 @@
 .tabbable-panel.marginbottom20
   .tabbable-line
     %ul.nav.nav-tabs{role: "tablist"}
+      %li{class: action_name == "trigger_keyword" ? "active" : nil}
+        = link_to t('.trigger_keyword'), trigger_keyword_public_account_weixin_customs_path(@public_account)
       %li{class: action_name == "index" ? "active" : nil}
         = link_to t('.custom_manage'), public_account_weixin_customs_path(@public_account)
       %li{class: action_name == "quality_monitoring" ? "active" : nil}
         = link_to t('.quality_monitoring'), quality_monitoring_public_account_weixin_customs_path(@public_account)
-      %li{class: action_name == "trigger_keyword" ? "active" : nil}
-        = link_to t('.trigger_keyword'), trigger_keyword_public_account_weixin_customs_path(@public_account)

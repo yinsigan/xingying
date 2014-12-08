@@ -57,7 +57,7 @@ class AutoreplyController < SettingsController
 
   def default
     add_breadcrumb I18n.t("breadcrumbs.autoreply.default"),
-      added_public_account_path(@public_account)
+      default_public_account_path(@public_account)
     store_location
   end
 

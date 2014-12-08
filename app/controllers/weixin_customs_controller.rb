@@ -73,6 +73,7 @@ class WeixinCustomsController < SettingsController
 
   # 触发关键字
   def trigger_keyword
+    store_location
     add_breadcrumb I18n.t("breadcrumbs.weixin_custom.trigger_keyword"), :trigger_keyword_public_account_weixin_customs_path
   end
 

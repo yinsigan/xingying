@@ -273,6 +273,14 @@ zh-CN:
       status_1: "pc在线"
       status_2: "手机在线"
       status_3: "pc和手机同时在线"
+    trigger_keyword:
+      default_reply: "默认回复"
+      keyword_reply: "关键字回复"
+      default_reply_help: "选择此项无论回复什么(除了自动回复中的关键字回复)都会触发多客服系统"
+      keyword_reply_help: "选择此项必须指定关键字， 用户回复关键字才会触发多客服系统"
+      trigger_custom_placeholder: "请填写触发关键字"
+      trigger_custom_help: "如果有多个触发关键字请以半角','号隔开，例如: 客服, 客服小微"
+      no_content: "您必须点击右上角的'开启'按钮开启多客服系统后，才能设置关键字"
   mail:
     you_have_successfully: "您已经在"
     registered_an_account: "成功的注册了帐号"
