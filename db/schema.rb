@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206021353) do
+ActiveRecord::Schema.define(version: 20141208090440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,22 @@ ActiveRecord::Schema.define(version: 20141206021353) do
   add_index "menus", ["material_id"], name: "index_menus_on_material_id", using: :btree
   add_index "menus", ["public_account_id"], name: "index_menus_on_public_account_id", using: :btree
   add_index "menus", ["rgt"], name: "index_menus_on_rgt", using: :btree
+
+  create_table "notifications", force: true do |t|
+    t.string   "subject"
+    t.text     "body"
+    t.integer  "user_id"
+    t.integer  "sender_id"
+    t.integer  "messageable_id"
+    t.string   "messageable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "readed",           default: false
+  end
+
+  add_index "notifications", ["messageable_id", "messageable_type"], name: "index_notifications_on_messageable_id_and_messageable_type", using: :btree
+  add_index "notifications", ["sender_id"], name: "index_notifications_on_sender_id", using: :btree
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
 
   create_table "public_accounts", force: true do |t|
     t.string   "name"

@@ -286,3 +286,8 @@ zh-CN:
     registered_an_account: "成功的注册了帐号"
     login_from: "登录页面地址"
     welcome_subject: "欢迎加入 %{app_name} 社区"
+  notifications:
+    index:
+      no_content: "暂时没有通知"
+      notification_tip: "通知提醒"
+      notifications_count: "(%{count}条)"

@@ -5,6 +5,7 @@
 #= require bootstrap/alert
 #= require bootstrap/dropdown
 #= require bootstrap/collapse
+#= require bootstrap/modal
 #= require bootstrapValidator.min
 #= require language/zh_CN
 #= require jquery.fullPage

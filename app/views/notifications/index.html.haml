@@ -1,0 +1,16 @@
+- if @notifications.empty?
+  .bs-callout.bs-callout-default
+    %h4= t('.no_content')
+- else
+  .panel.panel-default
+    .panel-heading.background-color-none.clearfix
+      = link_to delete_notifications_path, class: "btn btn-danger pull-right", remote: true do
+        = t('clear')
+      %h4
+        = t('.notification_tip')
+        %small
+          = t('.notifications_count', count: @notifications_count)
+    .panel-body
+      = render partial: "notification", collection: @notifications
+      .text-right
+        = paginate @notifications

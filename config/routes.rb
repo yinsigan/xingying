@@ -92,6 +92,12 @@ Rails.application.routes.draw do
     get :list, :search, :shopping_cart, :orders, :user_center, on: :collection
   end
 
+  # 消息
+  resources :notifications, only: [:create, :index, :show] do
+    delete :clear, on: :collection
+    get :delete, on: :collection
+  end
+
   resources :tickets, only: [:index, :new, :create, :show], concerns: [:commentable]
 
   %w(404 422 500).each do |code|

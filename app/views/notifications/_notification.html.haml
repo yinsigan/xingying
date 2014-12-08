@@ -1,0 +1,10 @@
+.media.clearfix.padding15.border-top
+  .media-heading.pull-left
+    %a.media-left
+    = image_tag notification.sender.avatar_url(:normal).to_s
+  .media-body.clearfix
+    %small.pull-right.text-muted
+      = notification.created_at.strftime('%Y-%m-%d %H:%M:%S')
+    %h4.media-heading
+      = link_to notification.subject, notification_path(notification)
+    = truncate notification.body, :length => 140
