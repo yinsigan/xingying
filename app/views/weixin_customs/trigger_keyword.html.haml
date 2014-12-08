@@ -1,16 +1,29 @@
 = render "tab"
-
-.panel.panel-default
-  .panel-body
-    = form_for [@public_account], html: {class: "form-horizontal"}, remote: true do |f|
-      .form-group
-        = f.label :default_customed, class: "col-sm-3 control-label"
-        .col-sm-9
-          = f.radio_button :default_customed, true, class: "icheck-me form-control", data: {"color" => "blue", "skin" => "square"}
-      .form-group
-        = f.label :default_customed, class: "col-sm-3 control-label"
-        .col-sm-9
-          = f.radio_button :default_customed, false, class: "icheck-me", data: {"color" => "blue", "skin" => "square"}
-      .form-group
-        .col-sm-6.col-sm-push-3
-          = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-save')
+- if @public_account.open_customed?
+  .panel.panel-default
+    .panel-body
+      = form_for [@public_account], html: {class: "form-horizontal"} do |f|
+        = render partial: "shared/form_error_messages", locals: {object: @public_account}
+        .form-group
+          = label_tag "public_account[default_customed]", t('.default_reply'), class: "col-sm-3 control-label", style: "padding-top: 0;"
+          .col-sm-9
+            = f.radio_button :default_customed, true, class: "icheck-me form-control", data: {"color" => "blue", "skin" => "square"}
+            %p.help-block
+              = t('.default_reply_help')
+        .form-group
+          = label_tag "public_account[default_customed]", t('.keyword_reply'), class: "col-sm-3 control-label", style: "padding-top: 0;"
+          .col-sm-9
+            = f.radio_button :default_customed, false, class: "icheck-me", data: {"color" => "blue", "skin" => "square"}
+            %p.help-block
+              = t('.keyword_reply_help')
+        .form-group
+          .col-sm-6.col-sm-push-3
+            = f.text_field :trigger_custom, class: "form-control", placeholder: t('.trigger_custom_placeholder')
+            %p.help-block
+              = t('.trigger_custom_help')
+        .form-group
+          .col-sm-6.col-sm-push-3
+            = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-save')
+- else
+  .bs-callout.bs-callout-default
+    %h4= t('.no_content')
