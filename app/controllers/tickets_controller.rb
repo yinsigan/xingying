@@ -7,7 +7,7 @@ class TicketsController < SettingsController
   end
 
   def all
-    @tickets = Ticket.includes(:user).page(params[:all_tickets]).per(20) if current_user.admin? || current_user.super_admin?
+    @tickets = Ticket.includes(:user).page(params[:all_tickets]).per(20) if current_user.can_admin?
     add_breadcrumb I18n.t("breadcrumbs.ticket.all"), :all_tickets_path
     render action: :index
   end
@@ -28,7 +28,7 @@ class TicketsController < SettingsController
   end
 
   def show
-    if current_user.admin? || current_user.super_admin?
+    if current_user.can_admin?
       @ticket = Ticket.find(params[:id])
     else
       @ticket = current_user.tickets.find(params[:id])

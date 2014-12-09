@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
 
   after_commit :send_sign_up_notice, on: :create
 
+  def can_admin?
+    self.admin? || self.super_admin?
+  end
+
   def role_enum
     self.class.roles.to_a
   end
