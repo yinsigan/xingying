@@ -159,6 +159,12 @@ zh-CN:
         email: "电子邮件"
         body: "内容"
         status: "状态"
+      notification:
+        subject: "标题"
+        body: "正文"
+        user: "用户"
+        readed: "阅读"
+        tp: "类型"
 
     models:
       user: "用户"
@@ -178,3 +184,4 @@ zh-CN:
       ticket: "服务单"
       comment: "评论"
       contact: "联系我们"
+      notification: "消息通知"
