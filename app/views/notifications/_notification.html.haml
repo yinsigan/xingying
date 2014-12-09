@@ -11,5 +11,5 @@
         = t('.system_notice')
         = notification.subject
       - when "ticket_comment"
-        = t('.ticket_comment_notice')
-    = truncate notification.body, :length => 140
+        = raw notification.subject
+    = notification.body

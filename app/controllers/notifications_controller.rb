@@ -2,7 +2,7 @@ class NotificationsController < ApplicationController
   before_action :authenticate_user!
   after_action :mark_all_as_read, only: [:index]
   def index
-    @notifications = current_user.notifications.page(params[:page])
+    @notifications = current_user.notifications.includes(:user).page(params[:page])
     @notifications_count = @notifications.total_count
   end
 
