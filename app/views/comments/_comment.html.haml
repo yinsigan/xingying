@@ -3,6 +3,6 @@
     = image_tag comment.user.avatar_url(:normal).to_s
   .media-body.clearfix
     %small.pull-right.text-muted
-      = comment.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+      = I18n.localize(comment.created_at, :format => :long)
     %h4.media-heading= comment.user.email
     = comment.body

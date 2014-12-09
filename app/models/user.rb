@@ -16,7 +16,9 @@ class User < ActiveRecord::Base
   enum role: [:user, :admin, :super_admin]
 
   # 注册邮件提醒
-  after_create :send_welcome_mail, :send_sign_up_notice
+  after_create :send_welcome_mail
+
+  after_commit :send_sign_up_notice, on: :create
 
   def role_enum
     self.class.roles.to_a

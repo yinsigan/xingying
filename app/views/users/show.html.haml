@@ -14,26 +14,26 @@
               %td= current_user.email
             %tr
               %td= User.human_attribute_name('created_at')
-              %td= current_user.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+              %td= I18n.localize(current_user.created_at, :format => :long)
             %tr
               %td= User.human_attribute_name('sign_in_count')
               %td= current_user.sign_in_count.to_i
             %tr
               %td= User.human_attribute_name('current_sign_in_at')
-              %td= current_user.current_sign_in_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+              %td= I18n.localize(current_user.current_sign_in_at, :format => :long)
             %tr
               %td= User.human_attribute_name('current_sign_in_ip')
               %td= current_user.current_sign_in_ip
             %tr
               %td= User.human_attribute_name('last_sign_in_at')
-              %td= current_user.last_sign_in_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+              %td= I18n.localize(current_user.last_sign_in_at, :format => :long)
             %tr
               %td= User.human_attribute_name('last_sign_in_ip')
               %td= current_user.last_sign_in_ip
             %tr
               %td= User.human_attribute_name('confirmed_at')
               - if current_user.confirmed?
-                %td= current_user.confirmed_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+                %td= I18n.localize(current_user.confirmed_at, :format => :long)
               - else
                 %td= t('account_no_confirmed')
             - if current_user.invited_by.present?
