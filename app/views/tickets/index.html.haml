@@ -1,8 +1,11 @@
 - if @tickets.empty?
   %div.clearfix
-    %a{href: new_ticket_path, class: "btn btn-primary pull-right"}
+    = link_to new_ticket_path, class: "btn btn-primary pull-right" do
       %span.glyphicon.glyphicon-plus
       = t('.add')
+    - if current_user.admin? || current_user.super_admin?
+      = link_to all_tickets_path, class: "btn btn-default pull-right marginright5" do
+        = t('.all')
   .bs-callout.bs-callout-default
     %h4= t('.no_content')
 - else
@@ -11,9 +14,12 @@
       = t('.list')
   .panel.panel-default
     .panel-body
-      %a{href: new_ticket_path, class: "btn btn-primary pull-right"}
+      = link_to new_ticket_path, class: "btn btn-primary pull-right" do
         %span.glyphicon.glyphicon-plus
         = t('.add')
+      - if current_user.admin? || current_user.super_admin?
+        = link_to all_tickets_path, class: "btn btn-default pull-right marginright5" do
+          = t('.all')
     %table.table.table-bordered
       %tr
         %th= Ticket.human_attribute_name('number')
@@ -21,5 +27,9 @@
         %th= Ticket.human_attribute_name('status')
         %th= t('created_at')
         %th= t('updated_at')
+        - if current_user.admin? || current_user.super_admin?
+          %th= Ticket.human_attribute_name('user')
 
       = render @tickets
+  .text-right
+    = paginate @tickets

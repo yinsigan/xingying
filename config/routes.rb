@@ -100,7 +100,9 @@ Rails.application.routes.draw do
   get 'shops/orders', to: 'shops#orders'
   resources :shops, only: [:index, :show]
 
-  resources :tickets, only: [:index, :new, :create, :show], concerns: [:commentable]
+  resources :tickets, only: [:index, :new, :create, :show], concerns: [:commentable] do
+    get :all, on: :collection
+  end
 
   %w(404 422 500).each do |code|
     get code, to: "errors#show", code: code

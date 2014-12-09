@@ -10,6 +10,8 @@ class Ticket < ActiveRecord::Base
   validates :number, presence: true
   validates :user, presence: true
 
+  default_scope { order "id DESC" }
+
   def status_enum
     Ticket::Status.invert.to_a
   end

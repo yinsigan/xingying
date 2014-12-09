@@ -3,7 +3,13 @@ class TicketsController < SettingsController
   before_action :add_index_breadcrumb
 
   def index
-    @tickets = current_user.tickets.all
+    @tickets = current_user.tickets.page(params[:page]).per(20)
+  end
+
+  def all
+    @tickets = Ticket.includes(:user).page(params[:all_tickets]).per(20) if current_user.admin? || current_user.super_admin?
+    add_breadcrumb I18n.t("breadcrumbs.ticket.all"), :all_tickets_path
+    render action: :index
   end
 
   def new
@@ -22,7 +28,11 @@ class TicketsController < SettingsController
   end
 
   def show
-    @ticket = current_user.tickets.find(params[:id])
+    if current_user.admin? || current_user.super_admin?
+      @ticket = Ticket.find(params[:id])
+    else
+      @ticket = current_user.tickets.find(params[:id])
+    end
     @comments = @ticket.comments.includes(:user).order(id: :asc).page(params[:page])
     add_breadcrumb @ticket.title, ticket_path(@ticket)
     @comment = @ticket.comments.build
