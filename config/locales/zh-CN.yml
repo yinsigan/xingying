@@ -291,3 +291,8 @@ zh-CN:
       no_content: "暂时没有通知"
       notification_tip: "通知提醒"
       notifications_count: "(%{count}条)"
+    notification:
+      system_notice: "您收到一条系统消息"
+      ticket_comment_notice: "您收到一条服务单的回复消息"
+    show:
+      system_notice: "系统消息"

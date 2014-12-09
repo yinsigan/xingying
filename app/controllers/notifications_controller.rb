@@ -2,13 +2,13 @@ class NotificationsController < ApplicationController
   before_action :authenticate_user!
   after_action :mark_all_as_read, only: [:index]
   def index
-    @notifications = current_user.notifications.includes(:sender).page(params[:page])
+    @notifications = current_user.notifications.page(params[:page])
     @notifications_count = @notifications.total_count
   end
 
   def clear
     current_user.notifications.delete_all
-    redirect_to notifications_path, flash: {success: I18n.t('success_delete')}
+    redirect_to notifications_path, flash: {alert: I18n.t('success_delete')}
   end
 
   def delete
@@ -16,10 +16,6 @@ class NotificationsController < ApplicationController
     @confirm = I18n.t("notifications.delete.confirm")
     @remote = false
     render "shared/delete.js.erb", layout: false
-  end
-
-  def show
-    @notification = current_user.notifications.find(params[:id])
   end
 
   private

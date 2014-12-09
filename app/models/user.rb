@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :public_accounts
   has_many :tickets
   has_many :comments
-  has_many :notifications
+  has_many :notifications, -> { order "id DESC" }
   has_many :invitations, :class_name => self.to_s, :as => :invited_by
 
   mount_uploader :avatar, UserAvatarUploader
@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   enum role: [:user, :admin, :super_admin]
 
   # 注册邮件提醒
-  after_create :send_welcome_mail
+  after_create :send_welcome_mail, :send_sign_up_notice
 
   def role_enum
     self.class.roles.to_a
@@ -34,6 +34,16 @@ class User < ActiveRecord::Base
     30.minutes
   end
 
+  def self.create_sign_up_notification(user_id)
+    Notification.create(
+      :messageable => User.find_by(:email => Settings.admin_email),
+      :tp => 0,
+      :subject => "欢迎注册",
+      :body => "欢迎您注册成为微媒的新会员，如果在使用上有任何问题，可以随时下服务单联系我们的客服或者查看帮助中心的文档",
+      :user_id => user_id
+    )
+  end
+
   protected
   def confirmation_required?
     false
@@ -42,5 +52,10 @@ class User < ActiveRecord::Base
   def send_welcome_mail
     UserMailer.delay.welcome(self.id)
   end
+
+  def send_sign_up_notice
+    User.delay.create_sign_up_notification(self.id)
+  end
+
 
 end

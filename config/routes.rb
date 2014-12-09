@@ -88,7 +88,7 @@ Rails.application.routes.draw do
   end
 
   # 消息
-  resources :notifications, only: [:create, :index, :show] do
+  resources :notifications, only: [:create, :index] do
     delete :clear, on: :collection
     get :delete, on: :collection
   end
