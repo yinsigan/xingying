@@ -89,7 +89,7 @@ Rails.application.routes.draw do
 
   # 微商城
   resources :shops, only: [:index, :show] do
-    get :list, :search, :shopping_cart, :orders, :user_center,:orders_list, on: :collection
+    get :list, :search, :shopping_cart, :orders, :user_center,:orders_list, :orders_show, on: :collection
   end
 
   # 消息

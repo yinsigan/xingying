@@ -95,10 +95,13 @@
                   %span.glyphicon.glyphicon-plus
           .clearfix
 
+
+
+
   .row
     .col-md-12#empty-shopping_cart.text-align-center
       %p
-        %i.fa.fa-info-circle.fa-12x
+        %i.fa.fa-shopping-cart.fa-12x
       %p
         您的购物车内还没有商品!
       %p
@@ -106,6 +109,25 @@
           继续逛逛
         %a.btn.btn-default
           个人中心
+
+
+.navbar.navbar-default.navbar-fixed-bottom
+  .container.good-footer
+    .checkAll.paddingtop5.pull-left
+      %input.icheck-me#checkAll{:type => 'checkbox', :style => "top", data: {"color" => "blue", "skin" => "square"}}
+      %label{for: "checkAll"} 全选
+    .shopping-info.pull-left
+      %p
+        总计:
+        RMB 269.00
+      %p
+        (共 1 件, 不含运费)
+    %button.btn.btn-warning.pull-right
+      立即购买
+
+
+
+
 
 :javascript
   my_icheck('.icheck-me');

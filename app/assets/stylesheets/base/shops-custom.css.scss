@@ -150,6 +150,7 @@ ul#goods_nav {
       padding: 0;
       a.thumbnail {
         margin: 0;
+        border: none;
       }
     }
     .col-xs-8 {
@@ -237,3 +238,16 @@ ul#goods_nav {
 ul.nav.nav-pills#order-status-nav li{
   padding: 0px;
 }
+
+.good-footer{
+  color: #FFF;
+}
+.shopping-info{
+  padding-left: 25px;
+  line-height: 15px;
+  p{
+    margin: 0;
+    color: #FFF;
+  }
+}
+

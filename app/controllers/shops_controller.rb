@@ -30,7 +30,11 @@ class ShopsController < ApplicationController
   end
 
   # 订单列表
-  def order_list
+  def orders_list
+  end
+
+  # 订单详情页面
+  def orders_show
   end
 
   private
