@@ -25,7 +25,12 @@ class ShopsController < ApplicationController
   def orders
   end
 
+  #用户中心
   def user_center
+  end
+
+  # 订单列表
+  def order_list
   end
 
   private

@@ -1,10 +1,7 @@
-= render 'shops/default/address'
-
-
 .container
   .row
-    .col-xs-12
-      %ul.list-group#orders-goods-list.margintop20
+    .col-xs-12#orders-list
+      %ul.list-group
         %li.list-group-item
           .col-xs-3.pull-left
             %a.thumbnail
@@ -36,8 +33,19 @@
             %p.count
               数量: 25件
           .clearfix
-      .col-xs-12
-        %button.btn.btn-success.col-xs-12
-          确认支付
+
+        %li.list-group-item.orders-info
+          %table.table
+            %tr
+              %td
+                test
+              %td
+                test
+            %tr
+              %td
+                test
+              %td
+                test
+
 
 
