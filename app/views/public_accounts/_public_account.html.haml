@@ -10,15 +10,15 @@
           = image_tag public_account.image_url(:thumb).to_s, size: "150"
     .text-center.text-info
       = public_account.name
-  %td= public_account.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+  %td= I18n.localize(public_account.created_at, :format => :long)
 
   %td= PublicAccount::TP[public_account.tp]
   %td
     .btn-group.btn-group-sm
-      %a{href: public_account_path(public_account), class: "btn btn-default"}
+      = link_to public_account_path(public_account), class: "btn btn-default" do
         %span.fa.fa-cog.fa-spin
         = t('manage')
-      %a{href: edit_public_account_path(public_account), class: "btn btn-info"}
+      = link_to edit_public_account_path(public_account), class: "btn btn-info" do
         %span.glyphicon.glyphicon-edit
         = t('edit')
       = link_to delete_public_account_path(public_account), class: "btn btn-danger", remote: true do

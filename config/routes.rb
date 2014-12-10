@@ -93,12 +93,14 @@ Rails.application.routes.draw do
   end
 
   # 消息
-  resources :notifications, only: [:create, :index, :show] do
+  resources :notifications, only: [:create, :index] do
     delete :clear, on: :collection
     get :delete, on: :collection
   end
 
-  resources :tickets, only: [:index, :new, :create, :show], concerns: [:commentable]
+  resources :tickets, only: [:index, :new, :create, :show], concerns: [:commentable] do
+    get :all, on: :collection
+  end
 
   %w(404 422 500).each do |code|
     get code, to: "errors#show", code: code
@@ -119,7 +121,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :user, only: [:show]
+  resources :users, only: [:show]
 
   # 微信公众账号接口
   get  'weixin/:weixin_secret_key', to: 'weixin#index', as: :weixin_server

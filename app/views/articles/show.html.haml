@@ -2,7 +2,7 @@
   .page-header
     %h1
       = @article.title
-  = @article.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+  = I18n.localize(@article.created_at, :format => :long)
   %div
     %blockquote.margintop20
       %p

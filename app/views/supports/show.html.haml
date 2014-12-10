@@ -5,7 +5,7 @@
     %h2
       = @support.title
   %p.text-muted.pull-right
-    = @support.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+    = I18n.localize(@support.created_at, :format => :long)
   .clearfix
   = raw @support.body
 

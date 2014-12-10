@@ -22,8 +22,9 @@ zh-CN:
     menu:
       index: "自定义菜单"
     ticket:
-      index: "全部服务单"
+      index: "我的服务单"
       new: "新开服务单"
+      all: "所有用户服务单"
     weixin_group:
       index: "分组管理"
     weixin_user:

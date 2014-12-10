@@ -20,11 +20,6 @@
                 %a.close{"data-dismiss" => "alert"} x
                 = notice
                 = alert
-        .row
-          .col-md-12
-            = render 'layouts/shared/flash_messages'
-        .row
-          .col-md-12
             = yield
     = render 'layouts/shared/footer'
     = render 'shared/alert_fixed_top'

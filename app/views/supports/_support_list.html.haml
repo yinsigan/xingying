@@ -6,4 +6,4 @@
       = link_to support_list.title, support_path(@support_category, support_list)
   %p.text-muted
     %i.fa.fa-calendar
-    = support_list.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+    = I18n.localize(support_list.created_at, :format => :long)

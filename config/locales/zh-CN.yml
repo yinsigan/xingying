@@ -196,6 +196,7 @@ zh-CN:
       list: "服务单列表"
       add: "新开服务单"
       no_content: "暂时没有服务单"
+      all: "查看所有用户的服务单"
     new:
       title: "新开服务单"
     show:
@@ -291,3 +292,7 @@ zh-CN:
       no_content: "暂时没有通知"
       notification_tip: "通知提醒"
       notifications_count: "(%{count}条)"
+    notification:
+      system_notice: "您收到一条系统消息"
+    show:
+      system_notice: "系统消息"

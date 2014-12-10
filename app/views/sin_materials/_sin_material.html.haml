@@ -6,7 +6,7 @@
         = sin_material.sin_pic_text.title
     -# 时间
     %h4.appmsg_time
-      = sin_material.sin_pic_text.created_at.to_time.strftime('%Y-%m-%d %H:%M:%S')
+      = I18n.localize(sin_material.sin_pic_text.created_at, :format => :long)
     -# 缩略图
     .thumb
       %i.default
