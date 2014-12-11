@@ -1,33 +1,34 @@
-.sin_box{id: sin_material.id, class: sin_col}
-  .sin_box_content
-    -# 标题
-    %h4.appmsg_title
-      %a{href: sin_material.sin_pic_text.article_address, target: "_blank"}
-        = sin_material.sin_pic_text.title
-    -# 时间
-    %h4.appmsg_time
-      = I18n.localize(sin_material.sin_pic_text.created_at, :format => :long)
-    -# 缩略图
-    .thumb
-      %i.default
-        - if sin_material.sin_pic_text.thumb.present?
-          = image_tag sin_material.sin_pic_text.thumb.image_url(:preview).to_s
-        - else
-          = t('.thumb')
-    -# 摘要
-    %p.appmsg_desc
-      = sin_material.sin_pic_text.desc
-  .appmsg_opr
-    %ul
-      %li
-        = link_to edit_public_account_sin_material_path(@public_account, sin_material), data: {toggle: "tooltip", placement: "top", tooltip: true}, title: t('edit'), class: "add_right_border edit_stop" do
-          %span.glyphicon.glyphicon-pencil
-      %li
-        = link_to delete_public_account_sin_material_path(@public_account, sin_material, select_prev_link: @select_prev_link), data: {toggle: "tooltip", placement: "top", tooltip: true}, title: t("delete"), class: "delete_stop", remote: true do
-          %span.glyphicon.glyphicon-trash
-  .selected_mask
-    .selected_mask_inner
-    .selected_mask_icon
+- cache [sin_material, sin_col] do
+  .sin_box{id: sin_material.id, class: sin_col}
+    .sin_box_content
+      -# 标题
+      %h4.appmsg_title
+        %a{href: sin_material.sin_pic_text.article_address, target: "_blank"}
+          = sin_material.sin_pic_text.title
+      -# 时间
+      %h4.appmsg_time
+        = I18n.localize(sin_material.sin_pic_text.created_at, :format => :long)
+      -# 缩略图
+      .thumb
+        %i.default
+          - if sin_material.sin_pic_text.thumb.present?
+            = image_tag sin_material.sin_pic_text.thumb.image_url(:preview).to_s
+          - else
+            = t('.thumb')
+      -# 摘要
+      %p.appmsg_desc
+        = sin_material.sin_pic_text.desc
+    .appmsg_opr
+      %ul
+        %li
+          = link_to edit_public_account_sin_material_path(@public_account, sin_material), data: {toggle: "tooltip", placement: "top", tooltip: true}, title: t('edit'), class: "add_right_border edit_stop" do
+            %span.glyphicon.glyphicon-pencil
+        %li
+          = link_to delete_public_account_sin_material_path(@public_account, sin_material, select_prev_link: @select_prev_link), data: {toggle: "tooltip", placement: "top", tooltip: true}, title: t("delete"), class: "delete_stop", remote: true do
+            %span.glyphicon.glyphicon-trash
+    .selected_mask
+      .selected_mask_inner
+      .selected_mask_icon
 
 :coffee
   $("button[data-tooltip], a[data-tooltip]").tooltip()
