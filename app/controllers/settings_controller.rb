@@ -1,6 +1,6 @@
 class SettingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :home_breadcrumb
+  before_action :home_breadcrumb, :site
   layout "settings"
   include SettingsHelper
 

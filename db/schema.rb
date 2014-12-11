@@ -106,15 +106,16 @@ ActiveRecord::Schema.define(version: 20141209014441) do
     t.string   "subject"
     t.text     "body"
     t.integer  "user_id"
+    t.integer  "tp"
     t.integer  "messageable_id"
     t.string   "messageable_type"
+    t.boolean  "readed",           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "readed",           default: false
-    t.integer  "tp"
   end
 
   add_index "notifications", ["messageable_id", "messageable_type"], name: "index_notifications_on_messageable_id_and_messageable_type", using: :btree
+  add_index "notifications", ["tp"], name: "index_notifications_on_tp", using: :btree
   add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
 
   create_table "public_accounts", force: true do |t|

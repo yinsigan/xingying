@@ -11,12 +11,13 @@
     #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
-          %li
-            = link_to notifications_path do
-              %i.fa.fa-bell-o
-              - if current_user.notifications.unread.count > 0
-                .badge
-                  = current_user.notifications.unread.count
+          - cache current_user.notifications do
+            %li
+              = link_to notifications_path do
+                %i.fa.fa-bell-o
+                - if current_user.notifications.unread.count > 0
+                  .badge
+                    = current_user.notifications.unread.count
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
               %i.fa.fa-user

@@ -11,4 +11,7 @@ class ApplicationController < ActionController::Base
     redirect_to main_app.root_path, :alert => t('no_permission')
   end
 
+  def site
+    @site = Site.first
+  end
 end
