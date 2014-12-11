@@ -1,3 +1,4 @@
 .col-md-3.margintop20
   .list-group
-    = render partial: "supports/support_category", collection: @support_categories
+    - cache @support_categories do
+      = render partial: "supports/support_category", collection: @support_categories

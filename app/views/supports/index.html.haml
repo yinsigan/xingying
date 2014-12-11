@@ -14,6 +14,7 @@
           = @support_category.try(:name)
 
       %ul.list-group.ul-no-style
-        = render partial: "supports/support_list", collection: @supports
+        - cache @supports do
+          = render partial: "supports/support_list", collection: @supports
       .text-right
         = paginate @supports

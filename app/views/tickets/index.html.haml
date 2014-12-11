@@ -29,7 +29,7 @@
         %th= t('updated_at')
         - if current_user.can_admin?
           %th= Ticket.human_attribute_name('user')
-
-      = render @tickets
+      - cache @tickets do
+        = render @tickets
   .text-right
     = paginate @tickets

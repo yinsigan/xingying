@@ -11,6 +11,7 @@
         %small
           = t('.notifications_count', count: @notifications_count)
     .panel-body
-      = render partial: "notification", collection: @notifications
+      - cache @notifications do
+        = render partial: "notification", collection: @notifications
       .text-right
         = paginate @notifications
