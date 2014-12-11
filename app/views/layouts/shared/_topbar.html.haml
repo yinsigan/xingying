@@ -11,7 +11,7 @@
     #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
-          - cache current_user.notifications do
+          - cache current_user.notifications.unread.count do
             %li
               = link_to notifications_path do
                 %i.fa.fa-bell-o
@@ -63,16 +63,17 @@
               = t('login')
 
       - if user_signed_in?
-        %ul.nav.navbar-nav
-          %li{class: ["public_accounts", "menus", "autoreply", "rules", "sin_materials", "thumbs"].include?(controller_name) ? 'active' : nil}
-            = link_to public_accounts_path do
-              %i.fa.fa-weixin
-                = t('.public_account_manage')
-          %li{class: controller_name == "tickets" ? 'active' : nil}
-            = link_to tickets_path do
-              %i.fa.fa-users
-                = t('.contact_us')
-          %li{class: controller_name == 'supports' ? 'active' : nil}
-            = link_to supports_path do
-              %i.fa.fa-question
-                = t('.help')
+        - cache do
+          %ul.nav.navbar-nav
+            %li{class: ["public_accounts", "menus", "autoreply", "rules", "sin_materials", "thumbs"].include?(controller_name) ? 'active' : nil}
+              = link_to public_accounts_path do
+                %i.fa.fa-weixin
+                  = t('.public_account_manage')
+            %li{class: controller_name == "tickets" ? 'active' : nil}
+              = link_to tickets_path do
+                %i.fa.fa-users
+                  = t('.contact_us')
+            %li{class: controller_name == 'supports' ? 'active' : nil}
+              = link_to supports_path do
+                %i.fa.fa-question
+                  = t('.help')

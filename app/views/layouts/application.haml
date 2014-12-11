@@ -21,6 +21,7 @@
                 = notice
                 = alert
             = yield
-    = render 'layouts/shared/footer'
-    = render 'shared/alert_fixed_top'
-    = render 'shared/modal'
+    - cache do
+      = render 'layouts/shared/footer'
+      = render 'shared/alert_fixed_top'
+      = render 'shared/modal'
