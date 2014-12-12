@@ -84,15 +84,15 @@ gem 'redis-rails', "~> 4.0.0"
 
 # 开发debug工具
 group :development do
-  gem 'pry'
-  gem 'guard'
-  gem 'guard-livereload', require: false
+  gem 'pry', "~> 0.10.0"
+  gem 'guard', "~> 2.6.1"
+  gem 'guard-livereload', "~> 2.3.0", require: false
   gem 'web-console', '~> 2.0'
 end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
-  gem "database_cleaner"
+  gem "database_cleaner", "~> 1.3.0"
   gem 'factory_girl_rails', "~> 4.0"
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers', "~> 2.7.0", require: false
 end
