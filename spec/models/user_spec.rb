@@ -45,9 +45,6 @@ RSpec.describe User, :type => :model do
   it { should_not be_admin }
   it { should_not be_super_admin }
 
-  it { should validate_presence_of(:email) }
-  it { should validate_presence_of(:password) }
-
   describe "with role attribute set to admin" do
     before do
       user.save!
@@ -62,6 +59,16 @@ RSpec.describe User, :type => :model do
       user.super_admin!
     end
     it { should be_super_admin }
+  end
+
+  describe "when email is not present" do
+    before { user.email = "" }
+    it { should_not be_valid }
+  end
+
+  describe "when password is not present" do
+    before { user.password = "" }
+    it { should_not be_valid }
   end
 
   describe "when email format is invalid" do

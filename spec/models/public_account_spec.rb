@@ -36,9 +36,15 @@ RSpec.describe PublicAccount do
   it { should respond_to(:incre_sin_material_count) }
   it { should respond_to(:decre_sin_material_count) }
 
-  it { should validate_presence_of(:name) }
-  it { should validate_presence_of(:tp) }
-  it { should validate_presence_of(:user) }
+  describe "when name is no present" do
+    before { public_account.name = "" }
+    it { should_not be_valid }
+  end
+
+  describe "when tp is no present" do
+    before { public_account.tp = nil }
+    it { should_not be_valid }
+  end
 
   describe "when name is too long" do
     before { public_account.name = "a" * 31 }
