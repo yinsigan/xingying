@@ -3,6 +3,7 @@ class Rule < ActiveRecord::Base
   has_many :kwords, -> { order "created_at ASC" }, dependent: :destroy
 
   validates :name, length: { maximum: 60 }, presence: true
+  validates :public_account, presence: true
 
   accepts_nested_attributes_for :kwords, allow_destroy: true
 
