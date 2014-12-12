@@ -1,13 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, :type => :model do
-  before do
-    @user = User.new(email: "903279182@qq.com",
-                     password: "12345678",
-                     password_confirmation: "12345678")
-  end
+  let(:user) { FactoryGirl.create(:user) }
 
-  subject { @user }
+  subject { user }
 
   it { should respond_to(:email) }
   it { should respond_to(:password) }
@@ -46,4 +42,76 @@ RSpec.describe User, :type => :model do
   it { should respond_to(:role=) }
 
   it { should be_valid }
+  it { should_not be_admin }
+  it { should_not be_super_admin }
+
+  describe "with role attribute set to admin" do
+    before do
+      user.save!
+      user.admin!
+    end
+    it { should be_admin }
+  end
+
+  describe "with role attribute set to superadmin" do
+    before do
+      user.save!
+      user.super_admin!
+    end
+    it { should be_super_admin }
+  end
+
+  describe "when email is not present" do
+    before { user.email = "" }
+    it { should_not be_valid }
+  end
+
+  describe "when password is not present" do
+    before { user.password = "" }
+    it { should_not be_valid }
+  end
+
+  describe "when email format is invalid" do
+    it "should be invalid" do
+      addresses =  %w{invalid_email_format 123 $$$ () ☃ bla@bla.}
+      addresses.each do |invalid_address|
+        user.email = invalid_address
+        expect(user).not_to be_valid
+      end
+    end
+  end
+
+  describe "when email is valid" do
+    it "should be valid" do
+      addresses = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
+      addresses.each do |valid_address|
+        user.email = valid_address
+        expect(user).to be_valid
+      end
+    end
+  end
+
+  describe "when password doesn't match confirmaion" do
+    before { user.password_confirmation = "mismatch" }
+    it { should_not be_valid }
+  end
+
+  describe "with a password that's too short" do
+    before {user.password = user.password_confirmation = "a" * 5 }
+    it { should_not be_valid }
+  end
+
+  describe "public_accounts associations" do
+    before { user.save }
+    let!(:public_account) do
+      FactoryGirl.create(:public_account, user: user)
+    end
+
+    it "should destroy associated public_accounts" do
+      public_accounts = user.public_accounts.to_a
+      user.destroy
+      expect(public_accounts).not_to be_empty
+    end
+  end
+
 end
