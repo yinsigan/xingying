@@ -80,6 +80,10 @@ group :development do
   gem 'guard-livereload', require: false
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+
 # 消息队列
 gem 'sidekiq', "~> 3.2.6"
 gem 'sinatra', '>= 1.3.0', :require => nil
