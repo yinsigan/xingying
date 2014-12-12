@@ -87,7 +87,7 @@ gem 'devise-async', '~> 0.9.0'
 
 gem "redis-namespace", "~> 1.4.1"
 # gem 'redis-objects'
-gem 'redis-rails'
+gem 'redis-rails', "~> 4.0.0"
 
 group :development do
   gem 'web-console', '~> 2.0'
