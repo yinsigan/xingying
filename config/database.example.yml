@@ -12,3 +12,10 @@ production:
   username: postgres
   password: '123456'
   encoding: UTF8
+test:
+  adapter: postgresql
+  host: localhost
+  database: yingxing_test
+  username: postgres
+  password: '123456'
+  encoding: UTF8
