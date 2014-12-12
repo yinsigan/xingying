@@ -13,23 +13,9 @@ RSpec.describe Ticket do
 
   it { should respond_to(:comments) }
 
-  describe "when title is no present" do
-    before { ticket.title = "" }
-    it { should_not be_valid }
-  end
+  it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:body) }
+  it { should validate_presence_of(:number) }
+  it { should validate_presence_of(:user) }
 
-  describe "when body is no present" do
-    before { ticket.body = "" }
-    it { should_not be_valid }
-  end
-
-  describe "when number is no present" do
-    before { ticket.number = "" }
-    it { should_not be_valid }
-  end
-
-  describe "when user is not present" do
-    before { ticket.user = nil }
-    it { should_not be_valid }
-  end
 end

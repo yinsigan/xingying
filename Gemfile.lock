@@ -281,6 +281,8 @@ GEM
       rdoc (~> 4.0)
     seo_helper (1.0.2)
     settingslogic (2.0.9)
+    shoulda-matchers (2.7.0)
+      activesupport (>= 3.0.0)
     sidekiq (3.2.6)
       celluloid (= 0.15.2)
       connection_pool (>= 2.0.0)
@@ -376,6 +378,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   seo_helper (~> 1.0)
   settingslogic (~> 2.0.9)
+  shoulda-matchers
   sidekiq (~> 3.2.6)
   sinatra (>= 1.3.0)
   spring (~> 1.1.3)

@@ -9,15 +9,8 @@ RSpec.describe Rule do
   it { should respond_to(:public_account) }
   it { should respond_to(:kwords) }
 
-  describe "when name is no present" do
-    before { rule.name = "" }
-    it { should_not be_valid }
-  end
-
-  describe "when public_account is no present" do
-    before { rule.public_account = nil }
-    it { should_not be_valid }
-  end
+  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:public_account) }
 
   describe "when name is too long" do
     before { rule.name = "a" * 61 }
