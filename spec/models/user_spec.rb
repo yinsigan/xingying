@@ -121,4 +121,5 @@ RSpec.describe User, :type => :model do
       expect(user.reload.notifications).to([newest_notification, old_notification])
     end
   end
+
 end
