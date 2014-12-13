@@ -45,7 +45,7 @@ RSpec.describe User, :type => :model do
   it { should_not be_admin }
   it { should_not be_super_admin }
 
-  describe "with role attribute set to admin" do
+  describe "#admin?" do
     before do
       user.save!
       user.admin!
@@ -53,7 +53,7 @@ RSpec.describe User, :type => :model do
     it { should be_admin }
   end
 
-  describe "with role attribute set to superadmin" do
+  describe "#super_admin?" do
     before do
       user.save!
       user.super_admin!
@@ -107,11 +107,18 @@ RSpec.describe User, :type => :model do
       FactoryGirl.create(:public_account, user: user)
     end
 
-    it "should destroy associated public_accounts" do
+    it "destroy associated public_accounts" do
       public_accounts = user.public_accounts.to_a
       user.destroy
       expect(public_accounts).not_to be_empty
     end
   end
 
+  describe "with 2 notifications orders by id desc" do
+    before do
+      old_notification    = FactoryGirl.create(:system_notification, user: user, messageable: user)
+      newest_notification = FactoryGirl.create(:system_notification, user: user, messageable: user)
+      expect(user.reload.notifications).to([newest_notification, old_notification])
+    end
+  end
 end
