@@ -15,7 +15,7 @@
         .form-group
           = f.phone_field :phone, class: "form-control round-text-input", required: true, placeholder: t('callme_phone')
         .form-group
-          = f.text_area :phone, class: "form-control round-text-input", required: true, placeholder: t('callme_message'), cols: "30", rows: "10"
+          = f.text_area :body, class: "form-control round-text-input", required: true, placeholder: t('callme_message'), cols: "30", rows: "10"
         .form-group
           = f.submit t('sumbit'), class: "btn btn-primary btn-lg round-primary-btn", "data-disable-with" => t('disable-with-submit')
     .col-md-5.col-sm-5#two-right.element-hidden
