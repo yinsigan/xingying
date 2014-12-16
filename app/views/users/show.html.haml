@@ -1,55 +1,56 @@
-.panel.panel-default
-  .panel-heading
-    %h3.panel-title= t('base_info')
-  .panel-body
-    .row
-      .col-md-1
-        %a.thumbnail.no-border
-          = image_tag current_user.avatar_url(:bigger).to_s
-      .col-md-10
-        %table.table.table-user-information
-          %tbody
-            %tr
-              %td= User.human_attribute_name('email')
-              %td= current_user.email
-            %tr
-              %td= User.human_attribute_name('created_at')
-              %td= I18n.localize(current_user.created_at, :format => :long)
-            %tr
-              %td= User.human_attribute_name('sign_in_count')
-              %td= current_user.sign_in_count.to_i
-            %tr
-              %td= User.human_attribute_name('current_sign_in_at')
-              %td= I18n.localize(current_user.current_sign_in_at, :format => :long)
-            %tr
-              %td= User.human_attribute_name('current_sign_in_ip')
-              %td= current_user.current_sign_in_ip
-            %tr
-              %td= User.human_attribute_name('last_sign_in_at')
-              %td= I18n.localize(current_user.last_sign_in_at, :format => :long)
-            %tr
-              %td= User.human_attribute_name('last_sign_in_ip')
-              %td= current_user.last_sign_in_ip
-            %tr
-              %td= User.human_attribute_name('confirmed_at')
-              - if current_user.confirmed?
-                %td= I18n.localize(current_user.confirmed_at, :format => :long)
-              - else
-                %td= t('account_no_confirmed')
-            - if current_user.invited_by.present?
+- cache current_user do
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title= t('base_info')
+    .panel-body
+      .row
+        .col-md-1
+          %a.thumbnail.no-border
+            = image_tag current_user.avatar_url(:bigger).to_s
+        .col-md-10
+          %table.table.table-user-information
+            %tbody
               %tr
-                %td= User.human_attribute_name('invited_by')
-                %td= current_user.invited_by.try(:email)
-  .panel-footer.clearfix
-    .pull-right
-      = link_to edit_user_registration_path, class: "btn btn-primary marginright5" do
-        %span.glyphicon.glyphicon-lock
-        = t('change_password')
-      - unless current_user.confirmed?
-        = link_to new_confirmation_path(current_user), class: "btn btn-primary marginright5" do
-          %span.glyphicon.glyphicon-envelope
-          = t('confirm_email')
-      - if is_admin?(current_user)
-        = link_to rails_admin_path, class: "btn btn-primary" do
-          %span.glyphicon.glyphicon-cog
-          = t('admin_dashboard')
+                %td= User.human_attribute_name('email')
+                %td= current_user.email
+              %tr
+                %td= User.human_attribute_name('created_at')
+                %td= I18n.localize(current_user.created_at, :format => :long)
+              %tr
+                %td= User.human_attribute_name('sign_in_count')
+                %td= current_user.sign_in_count.to_i
+              %tr
+                %td= User.human_attribute_name('current_sign_in_at')
+                %td= I18n.localize(current_user.current_sign_in_at, :format => :long)
+              %tr
+                %td= User.human_attribute_name('current_sign_in_ip')
+                %td= current_user.current_sign_in_ip
+              %tr
+                %td= User.human_attribute_name('last_sign_in_at')
+                %td= I18n.localize(current_user.last_sign_in_at, :format => :long)
+              %tr
+                %td= User.human_attribute_name('last_sign_in_ip')
+                %td= current_user.last_sign_in_ip
+              %tr
+                %td= User.human_attribute_name('confirmed_at')
+                - if current_user.confirmed?
+                  %td= I18n.localize(current_user.confirmed_at, :format => :long)
+                - else
+                  %td= t('account_no_confirmed')
+              - if current_user.invited_by.present?
+                %tr
+                  %td= User.human_attribute_name('invited_by')
+                  %td= current_user.invited_by.try(:email)
+    .panel-footer.clearfix
+      .pull-right
+        = link_to edit_user_registration_path, class: "btn btn-primary marginright5" do
+          %span.glyphicon.glyphicon-lock
+          = t('change_password')
+        - unless current_user.confirmed?
+          = link_to new_confirmation_path(current_user), class: "btn btn-primary marginright5" do
+            %span.glyphicon.glyphicon-envelope
+            = t('confirm_email')
+        - if is_admin?(current_user)
+          = link_to rails_admin_path, class: "btn btn-primary" do
+            %span.glyphicon.glyphicon-cog
+            = t('admin_dashboard')

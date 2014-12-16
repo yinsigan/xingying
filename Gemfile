@@ -73,16 +73,26 @@ gem 'awesome_nested_set', "~> 3.0.1"
 gem 'rails_admin', "~> 0.6.5"
 gem 'rails_admin-i18n', "~> 0.0.9"
 
-# 开发debug工具
-group :development do
-  gem 'pry'
-  gem 'guard'
-  gem 'guard-livereload', require: false
-end
-
 # 消息队列
 gem 'sidekiq', "~> 3.2.6"
 gem 'sinatra', '>= 1.3.0', :require => nil
 gem 'devise-async', '~> 0.9.0'
 
 gem "redis-namespace", "~> 1.4.1"
+# gem 'redis-objects'
+gem 'redis-rails', "~> 4.0.0"
+
+# 开发debug工具
+group :development do
+  gem 'pry', "~> 0.10.0"
+  gem 'guard', "~> 2.6.1"
+  gem 'guard-livereload', "~> 2.3.0", require: false
+  gem 'web-console', '~> 2.0'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem "database_cleaner", "~> 1.3.0"
+  gem 'factory_girl_rails', "~> 4.0"
+  gem 'capybara', "~> 2.4.4"
+end

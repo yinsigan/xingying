@@ -1,24 +1,25 @@
-.sin_box{class: thumb_col, id: thumb.id}
-  .sin_box_content
-    .pic_card
-      %a{class: "media_img", "data-gallery" => true, href: thumb.image_url.to_s}
-        = image_tag thumb.image_url.to_s
-    %h4.pic_name
-      %input.icheck-me{:type => "checkbox", value: thumb.id, name: "ids[]", data: {"color" => "blue", "skin" => "square"}}
-      = thumb.file_name
-    %p
-      = thumb.file_size.to_i.to_s(:human_size) if thumb.file_size
-  .msg_card_ft
-    %ul.msg_card_opr_list
-      %li.msg_card_opr_item
-        = link_to thumb.image_url.to_s, "title" => t('download'), "target" => "_blank", data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true} do
-          %span.glyphicon.glyphicon-download-alt
-      %li.msg_card_opr_item
-        = link_to move_single_public_account_thumbs_path(@public_account, ids: thumb.id, select_prev_link: @select_prev_link), data: {toggle: "tooltip", placement: "top", tooltip: true}, title: t('thumbs.index.move_group'), remote: true do
-          %i.fa.fa-exchange
-      %li.msg_card_opr_item
-        = link_to delete_public_account_thumb_path(@public_account, thumb, select_prev_link: @select_prev_link), remote: true, "title" => t('delete') , data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true} do
-          %span.glyphicon.glyphicon-trash
-  .selected_mask
-    .selected_mask_inner
-    .selected_mask_icon
+- cache [thumb, thumb_col] do
+  .sin_box{class: thumb_col, id: thumb.id}
+    .sin_box_content
+      .pic_card
+        %a{class: "media_img", "data-gallery" => true, href: thumb.image_url.to_s}
+          = image_tag thumb.image_url.to_s
+      %h4.pic_name
+        %input.icheck-me{:type => "checkbox", value: thumb.id, name: "ids[]", data: {"color" => "blue", "skin" => "square"}}
+        = thumb.file_name
+      %p
+        = thumb.file_size.to_i.to_s(:human_size) if thumb.file_size
+    .msg_card_ft
+      %ul.msg_card_opr_list
+        %li.msg_card_opr_item
+          = link_to thumb.image_url.to_s, "title" => t('download'), "target" => "_blank", data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true} do
+            %span.glyphicon.glyphicon-download-alt
+        %li.msg_card_opr_item
+          = link_to move_single_public_account_thumbs_path(@public_account, ids: thumb.id, select_prev_link: @select_prev_link), data: {toggle: "tooltip", placement: "top", tooltip: true}, title: t('thumbs.index.move_group'), remote: true do
+            %i.fa.fa-exchange
+        %li.msg_card_opr_item
+          = link_to delete_public_account_thumb_path(@public_account, thumb, select_prev_link: @select_prev_link), remote: true, "title" => t('delete') , data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true} do
+            %span.glyphicon.glyphicon-trash
+    .selected_mask
+      .selected_mask_inner
+      .selected_mask_icon

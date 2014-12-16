@@ -4,6 +4,6 @@
       = link_to support_list.title, support_path(params[:support_category_id], support_list)
     - else
       = link_to support_list.title, support_path(@support_category, support_list)
-  %p.text-muted
+  %p.text-muted.text-right
     %i.fa.fa-calendar
     = I18n.localize(support_list.created_at, :format => :long)

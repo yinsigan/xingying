@@ -1,77 +1,78 @@
-#menu.panel-group.menu{"aria-multiselectable" => "true", :role => "tablist"}
-  -# 一级菜单内容
-  .panel.panel-default
-    .panel-heading.area.clearfix{:role => "tab", id: "menuHeading_#{menu.id}"}
-      %h4.panel-title
-        %a{"aria-controls" => "menu_#{menu.id}", "aria-expanded" => "true", data: {"parent" => "#menu", "toggle" => "collapse"} , :href => "#menu_#{menu.id}"}
-          = menu.name
-      .dropdown.edit
-        %a{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :role => "button", id: "menu_dropdown_#{menu.id}"}
-          %i.fa.fa-pencil
-        %ul.dropdown-menu{"aria-labelledby" => "menu_dropdown_#{menu.id}", :role => "menu"}
-          %li
-            = link_to new_public_account_menu_path(@public_account, parent_menu: menu, depth: menu.depth), remote: true do
-              %i.fa.fa-plus
-              = t('.add')
-          - if menu.children.empty?
+- cache menu do
+  #menu.panel-group.menu{"aria-multiselectable" => "true", :role => "tablist"}
+    -# 一级菜单内容
+    .panel.panel-default
+      .panel-heading.area.clearfix{:role => "tab", id: "menuHeading_#{menu.id}"}
+        %h4.panel-title
+          %a{"aria-controls" => "menu_#{menu.id}", "aria-expanded" => "true", data: {"parent" => "#menu", "toggle" => "collapse"} , :href => "#menu_#{menu.id}"}
+            = menu.name
+        .dropdown.edit
+          %a{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :role => "button", id: "menu_dropdown_#{menu.id}"}
+            %i.fa.fa-pencil
+          %ul.dropdown-menu{"aria-labelledby" => "menu_dropdown_#{menu.id}", :role => "menu"}
             %li
-              = link_to set_action_public_account_menu_path(@public_account, menu), remote: true do
-                %i.fa.fa-bars
-                = t('.set_action')
-          - unless menu_counter.to_i == 0
+              = link_to new_public_account_menu_path(@public_account, parent_menu: menu, depth: menu.depth), remote: true do
+                %i.fa.fa-plus
+                = t('.add')
+            - if menu.children.empty?
+              %li
+                = link_to set_action_public_account_menu_path(@public_account, menu), remote: true do
+                  %i.fa.fa-bars
+                  = t('.set_action')
+            - unless menu_counter.to_i == 0
+              %li
+                = link_to move_left_public_account_menu_path(@public_account, menu), method: "post", remote: true do
+                  %i.fa.fa-arrow-up
+                  = t('.move_left')
+            - if menu.move_possible?(@root_menu.children.last)
+              %li
+                = link_to move_right_public_account_menu_path(@public_account, menu), method: "post", remote: true do
+                  %i.fa.fa-arrow-down
+                  = t('.move_right')
+            %li.divider{:role => "presentation"}
             %li
-              = link_to move_left_public_account_menu_path(@public_account, menu), method: "post", remote: true do
-                %i.fa.fa-arrow-up
-                = t('.move_left')
-          - if menu.move_possible?(@root_menu.children.last)
+              = link_to edit_public_account_menu_path(@public_account, menu, top_menu: true), remote: true do
+                %i.fa.fa-edit
+                = t('.rename')
             %li
-              = link_to move_right_public_account_menu_path(@public_account, menu), method: "post", remote: true do
-                %i.fa.fa-arrow-down
-                = t('.move_right')
-          %li.divider{:role => "presentation"}
-          %li
-            = link_to edit_public_account_menu_path(@public_account, menu, top_menu: true), remote: true do
-              %i.fa.fa-edit
-              = t('.rename')
-          %li
-            = link_to delete_public_account_menu_path(@public_account, menu, top_menu: true), remote: true do
-              %i.fa.fa-trash-o
-              = t('delete')
-    -# 二级菜单内容
-    - unless menu.children.empty?
-      .menu_content.panel-collapse.collapse.in{"aria-labelledby" => "menuHeading_#{menu.id}", :role => "tabpanel", id: "menu_#{menu.id}"}
-        .panel-body
-          #menu.panel-group.menu
-            .panel.panel-default
-              - menu.children.each_with_index do |sub_menu, sub_menu_index|
-                .panel-heading.area
-                  %h4.panel-title
-                    %a
-                      = sub_menu.name
-                  .dropdown.edit
-                    %a{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :role => "button", id: "sub_menu_dropdown_#{sub_menu.id}"}
-                      %i.fa.fa-pencil
-                    %ul.dropdown-menu{"aria-labelledby" => "sub_menu_dropdown_#{sub_menu.id}", :role => "menu"}
-                      %li
-                        = link_to set_action_public_account_menu_path(@public_account, sub_menu), remote: true do
-                          %i.fa.fa-bars
-                          = t('.set_action')
-                      - unless sub_menu_index.to_i == 0
+              = link_to delete_public_account_menu_path(@public_account, menu, top_menu: true), remote: true do
+                %i.fa.fa-trash-o
+                = t('delete')
+      -# 二级菜单内容
+      - unless menu.children.empty?
+        .menu_content.panel-collapse.collapse.in{"aria-labelledby" => "menuHeading_#{menu.id}", :role => "tabpanel", id: "menu_#{menu.id}"}
+          .panel-body
+            #menu.panel-group.menu
+              .panel.panel-default
+                - menu.children.each_with_index do |sub_menu, sub_menu_index|
+                  .panel-heading.area
+                    %h4.panel-title
+                      %a
+                        = sub_menu.name
+                    .dropdown.edit
+                      %a{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :role => "button", id: "sub_menu_dropdown_#{sub_menu.id}"}
+                        %i.fa.fa-pencil
+                      %ul.dropdown-menu{"aria-labelledby" => "sub_menu_dropdown_#{sub_menu.id}", :role => "menu"}
                         %li
-                          = link_to move_left_public_account_menu_path(@public_account, sub_menu), method: "post", remote: true do
-                            %i.fa.fa-arrow-up
-                            = t('.move_left')
-                      - if sub_menu.move_possible?(menu.children.last)
+                          = link_to set_action_public_account_menu_path(@public_account, sub_menu), remote: true do
+                            %i.fa.fa-bars
+                            = t('.set_action')
+                        - unless sub_menu_index.to_i == 0
+                          %li
+                            = link_to move_left_public_account_menu_path(@public_account, sub_menu), method: "post", remote: true do
+                              %i.fa.fa-arrow-up
+                              = t('.move_left')
+                        - if sub_menu.move_possible?(menu.children.last)
+                          %li
+                            = link_to move_right_public_account_menu_path(@public_account, sub_menu), method: "post", remote: true do
+                              %i.fa.fa-arrow-down
+                              = t('.move_right')
+                        %li.divider{:role => "presentation"}
                         %li
-                          = link_to move_right_public_account_menu_path(@public_account, sub_menu), method: "post", remote: true do
-                            %i.fa.fa-arrow-down
-                            = t('.move_right')
-                      %li.divider{:role => "presentation"}
-                      %li
-                        = link_to edit_public_account_menu_path(@public_account, sub_menu), remote: true do
-                          %i.fa.fa-edit
-                          = t('.rename')
-                      %li
-                        = link_to delete_public_account_menu_path(@public_account, sub_menu), remote: true do
-                          %i.fa.fa-trash-o
-                          = t('delete')
+                          = link_to edit_public_account_menu_path(@public_account, sub_menu), remote: true do
+                            %i.fa.fa-edit
+                            = t('.rename')
+                        %li
+                          = link_to delete_public_account_menu_path(@public_account, sub_menu), remote: true do
+                            %i.fa.fa-trash-o
+                            = t('delete')

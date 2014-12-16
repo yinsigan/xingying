@@ -1,35 +1,36 @@
-.panel.panel-default
-  .panel-heading
-    %h3.panel-title= t('base_info')
-  .panel-body
-    .row
-      .col-md-3
-        %a.thumbnail
-          = image_tag @public_account.image_url(:thumb).to_s
-      .col-md-9
-        %table.table.table-user-information
-          %tbody
-            %tr
-              %td= PublicAccount.human_attribute_name('name')
-              %td= @public_account.name
-            %tr
-              %td= t('created_at')
-              %td= I18n.localize(@public_account.created_at, :format => :long)
-            %tr
-              %td= PublicAccount.human_attribute_name('tp')
-              %td= PublicAccount::TP[@public_account.tp]
-  .panel-footer.clearfix
-    .pull-right
-      = link_to edit_public_account_path(@public_account), class: "btn btn-sm btn-info marginright5", data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true}, "title" => t('edit') do
-        %i.glyphicon.glyphicon-edit
-      = link_to delete_public_account_path(@public_account), "title" => t('delete'), data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true}, class: "btn btn-danger btn-sm", remote: true do
-        %i.glyphicon.glyphicon-remove
+- cache @public_account do
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title= t('base_info')
+    .panel-body
+      .row
+        .col-md-3
+          %a.thumbnail
+            = image_tag @public_account.image_url(:thumb).to_s
+        .col-md-9
+          %table.table.table-user-information
+            %tbody
+              %tr
+                %td= PublicAccount.human_attribute_name('name')
+                %td= @public_account.name
+              %tr
+                %td= t('created_at')
+                %td= I18n.localize(@public_account.created_at, :format => :long)
+              %tr
+                %td= PublicAccount.human_attribute_name('tp')
+                %td= PublicAccount::TP[@public_account.tp]
+    .panel-footer.clearfix
+      .pull-right
+        = link_to edit_public_account_path(@public_account), class: "btn btn-sm btn-info marginright5", data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true}, "title" => t('edit') do
+          %i.glyphicon.glyphicon-edit
+        = link_to delete_public_account_path(@public_account), "title" => t('delete'), data: {"toggle" => "tooltip", "placement" => "top", "tooltip" => true}, class: "btn btn-danger btn-sm", remote: true do
+          %i.glyphicon.glyphicon-remove
 
-.panel.panel-default
-  .panel-heading
-    %h3.panel-title= t('.develop_center')
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title= t('.develop_center')
 
-  .panel-body
-    %p.text-muted= t('.weixin_dev_des')
-    %p
-      = link_to t('.weixin_dev_btn'), show_token_public_account_path(@public_account), class: "btn btn-primary", remote: true
+    .panel-body
+      %p.text-muted= t('.weixin_dev_des')
+      %p
+        = link_to t('.weixin_dev_btn'), show_token_public_account_path(@public_account), class: "btn btn-primary", remote: true

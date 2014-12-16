@@ -33,7 +33,8 @@
         %th= PublicAccount.human_attribute_name('tp')
         %th{colspan: 3}= t('operation')
 
-      = render @public_accounts
+      - cache @public_accounts do
+        = render @public_accounts
 
   :coffee
     $(document).ready ->

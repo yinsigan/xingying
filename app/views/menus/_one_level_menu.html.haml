@@ -1,7 +1,8 @@
-.menu-level-one
-  - unless one_level_menu.children.empty?
-    - one_level_menu.children.each_with_index do |two_level_menu, index|
-      %div{class: "menu-level-two-#{index + 1}"}
-        = two_level_menu.name
-  .sub-menu
-    = one_level_menu.name
+- cache one_level_menu do
+  .menu-level-one
+    - unless one_level_menu.children.empty?
+      - one_level_menu.children.each_with_index do |two_level_menu, index|
+        %div{class: "menu-level-two-#{index + 1}"}
+          = two_level_menu.name
+    .sub-menu
+      = one_level_menu.name

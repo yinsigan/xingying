@@ -1,8 +1,9 @@
-.panel.panel-default
-  -# 头部规则次序
-  .panel-heading
-    %h3.panel-title
-      = rule.name
-  -# 显示规则的实际内容
-  %div{id: "edit_form_#{rule.id}"}
-    = render "rule_content", rule: rule
+- cache rule do
+  .panel.panel-default
+    -# 头部规则次序
+    .panel-heading
+      %h3.panel-title
+        = rule.name
+    -# 显示规则的实际内容
+    %div{id: "edit_form_#{rule.id}"}
+      = render "rule_content", rule: rule
