@@ -4,9 +4,13 @@
     = render_page_title_tag
     = stylesheet_link_tag    'public_account_manage', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'public_account_manage', 'data-turbolinks-track' => true
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     = csrf_meta_tags
     = render 'layouts/shared/statistics'
+    /[if lt IE 9]
+      %script{:src => "/assets/html5shiv.js"}
+      %script{:src => "http://192.168.116.129:3000/assets/respond.js"}
   %body
     = render 'layouts/shared/topbar'
 
