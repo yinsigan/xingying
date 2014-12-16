@@ -37,6 +37,9 @@ class ShopsController < ApplicationController
   def orders_show
   end
 
+  def collect
+  end
+
   private
     # 选择布局方法
     def select_layout
