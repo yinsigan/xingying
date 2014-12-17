@@ -373,7 +373,7 @@ DEPENDENCIES
   multi_xml (~> 0.5.5)
   nokogiri (~> 1.6.3.1)
   pg (~> 0.14.0)
-  pie-rails
+  pie-rails (~> 1.1.0)
   pry (~> 0.10.0)
   quiet_assets (~> 1.0.3)
   rails (= 4.1.8)
