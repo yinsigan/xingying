@@ -97,4 +97,4 @@ group :development, :test do
   gem 'capybara', "~> 2.4.4"
 end
 
-gem 'passenger_monit', :group => :production
+gem 'sitemap_generator'
