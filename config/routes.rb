@@ -87,18 +87,16 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
+  # 微商城
+  resources :shops, only: [:index, :show] do
+    get :list, :search, :shopping_cart, :orders, :user_center,:orders_list, :orders_show, :collect,on: :collection
+  end
+
   # 消息
   resources :notifications, only: [:create, :index] do
     delete :clear, on: :collection
     get :delete, on: :collection
   end
-
-  # 服务单
-  get 'shops/list', to: 'shops#list'
-  get 'shops/search', to: 'shops#search'
-  get 'shops/shopping_cart', to: 'shops#shopping_cart'
-  get 'shops/orders', to: 'shops#orders'
-  resources :shops, only: [:index, :show]
 
   resources :tickets, only: [:index, :new, :create, :show], concerns: [:commentable] do
     get :all, on: :collection

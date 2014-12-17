@@ -25,13 +25,28 @@ class ShopsController < ApplicationController
   def orders
   end
 
+  #用户中心
+  def user_center
+  end
+
+  # 订单列表
+  def orders_list
+  end
+
+  # 订单详情页面
+  def orders_show
+  end
+
+  def collect
+  end
+
   private
     # 选择布局方法
     def select_layout
       case action_name
       when "index"
         "shops"
-      else ""
+      else
         "goods"
       end
     end

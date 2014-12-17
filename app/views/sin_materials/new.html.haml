@@ -21,12 +21,63 @@
       %p.appmsg_desc
     = render 'form'
 
-:coffee
-  $("#sin_material_sin_pic_text_attributes_title").on "keyup", ->
-    $("#edit_sin_preview .appmsg_title a").text $(this).val()
+:javascript
+  var save;
 
-  $("#sin_material_sin_pic_text_attributes_desc").on "keyup", ->
-    $("#edit_sin_preview .appmsg_desc").text $(this).val()
+  $("#sin_material_sin_pic_text_attributes_title").on("keyup", function() {
+    return $("#edit_sin_preview .appmsg_title a").text($(this).val());
+  });
 
-  $("#need-help").on "click", ->
-    showGuide ".boot-tour"
+  $("#sin_material_sin_pic_text_attributes_desc").on("keyup", function() {
+    return $("#edit_sin_preview .appmsg_desc").text($(this).val());
+  });
+
+  $("#need-help").on("click", function() {
+    return showGuide(".boot-tour");
+  });
+
+
+  save = function() {
+    if(!!localStorage){
+      localStorage["title_#{current_user.id}_#{@public_account.id}"] = $("#sin_material_sin_pic_text_attributes_title").val();
+      localStorage["thumb_id_#{current_user.id}_#{@public_account.id}"] = $("#sin_material_sin_pic_text_attributes_thumb_id").val();
+      localStorage["desc_#{current_user.id}_#{@public_account.id}"] = $("#sin_material_sin_pic_text_attributes_desc").val();
+      localStorage["click_response_#{current_user.id}_#{@public_account.id}"] = $("#sin_material_sin_pic_text_attributes_click_response").val();
+
+      if($('.thumb > img').attr("src")){
+        localStorage["image_#{current_user.id}_#{@public_account.id}"] =  $('.thumb > img').attr("src");
+      }
+
+      localStorage["body_#{current_user.id}_#{@public_account.id}"] = CKEDITOR.instances["sin_material_sin_pic_text_attributes_body"].getData();
+      // TODO 保存成功的提示
+    }
+  };
+  load = function(){
+    if(!!localStorage){
+      $("#sin_material_sin_pic_text_attributes_title").val(localStorage["title_#{current_user.id}_#{@public_account.id}"] || "");
+      $("#sin_material_sin_pic_text_attributes_thumb_id").val(localStorage["thumb_id_#{current_user.id}_#{@public_account.id}"] || "");
+      $("#sin_material_sin_pic_text_attributes_desc").val(localStorage["desc_#{current_user.id}_#{@public_account.id}"] || "");
+
+      if(!!localStorage["image_#{current_user.id}_#{@public_account.id}"]){
+        var img = $("<img />");
+        img.attr("src", localStorage["image_#{current_user.id}_#{@public_account.id}"]);
+        img.css("height", "240px");
+        img.css("width", "240px");
+        $(".thumb > i").before(img);
+      }
+
+      $("#sin_material_sin_pic_text_attributes_click_response").val(localStorage["click_response_#{current_user.id}_#{@public_account.id}"] || 1);
+
+      if("1" == localStorage["click_response_#{current_user.id}_#{@public_account.id}"]){
+        CKEDITOR.on('instanceReady', function(){
+          CKEDITOR.instances.sin_material_sin_pic_text_attributes_body.setData(localStorage["body_#{current_user.id}_#{@public_account.id}"] || "");
+        });
+      }
+
+    }
+  }
+  $(document).ready(function(){
+    load();
+  });
+  //setInterval("save()", 60 * 1000 * 5);
+  setInterval("save()", 10000);

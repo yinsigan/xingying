@@ -103,7 +103,8 @@
   border-radius: 50%;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
-  background-clip: padding-box
+  background-clip: padding-box;
+  behavior: url(/assets/PIE.htc);
 }
 
 .doted-circle {

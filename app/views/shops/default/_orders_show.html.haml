@@ -1,10 +1,7 @@
-= render 'shops/default/address'
-
-
 .container
   .row
-    .col-xs-12
-      %ul.list-group#orders-goods-list.margintop20
+    .col-xs-12#orders-list
+      %ul.list-group
         %li.list-group-item
           .col-xs-3.pull-left
             %a.thumbnail
@@ -36,8 +33,44 @@
             %p.count
               数量: 25件
           .clearfix
-      .col-xs-12
-        %button.btn.btn-success.col-xs-12
-          确认支付
 
-
+        %li.list-group-item.orders-info
+          %table.table
+            %tr
+              %td{width: "25%"}
+                订单号
+              %td
+                A158932
+            %tr
+              %td
+                状态
+              %td
+                已签收
+            %tr
+              %td
+                收货人
+              %td
+                某某某
+            %tr
+              %td
+                收货地址
+              %td
+                北京市XX区,长地址测试长地址测试长地址测试长地址测试长地址测试长地址测试长地址测试
+            %tr
+              %td
+                总价
+              %td
+                %span.text-red
+                  RBM 250
+            %tr
+              %td
+                优惠
+              %td
+                %span.text-red
+                  RBM 30
+            %tr
+              %td
+                实付
+              %td
+                %span.text-red
+                  RBM 220

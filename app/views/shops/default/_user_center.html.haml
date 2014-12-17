@@ -1,0 +1,52 @@
+.col-xs-12
+  .thumbnail.col-xs-3
+    .img-box
+      %a{:href => "#"}
+        = image_tag("tag_cloud.jpg")
+  .col-xs-9
+    %h4
+      尊敬的 xx 用户
+
+%ul.nav.nav-pills#order-status-nav
+  %li
+    %a{:href => orders_list_shops_path}
+      %i.fa.fa-list-alt.fa-2x
+      %br
+      全部订单
+  %li
+    %a{:href => "#"}
+      %i.fa.fa-cny.fa-2x
+      %br
+      待付款
+  %li
+    %a{:href => "#"}
+      %i.fa.fa-truck.fa-2x
+      %br
+      配送中
+  %li
+    %a{:href => "#"}
+      %i.fa.fa-exchange.fa-2x
+      %br
+      退换货
+
+
+.list-group.margintop20
+  %a.list-group-item{:href => shopping_cart_shops_path}
+    %i.fa.fa-angle-right.pull-right
+    我的购物车
+  %a.list-group-item{:href => collect_shops_path}
+    %i.fa.fa-angle-right.pull-right
+    我的收藏
+  %a.list-group-item{:href => "#"}
+    %i.fa.fa-angle-right.pull-right
+    我的浏览记录
+  %a.list-group-item{:href => "#"}
+    %i.fa.fa-angle-right.pull-right
+    我的预约商品
+  %a.list-group-item{:href => "#"}
+    %i.fa.fa-angle-right.pull-right
+    收货地址管理
+  %a.list-group-item{:href => "#"}
+    %i.fa.fa-angle-right.pull-right
+    帮助中心
+

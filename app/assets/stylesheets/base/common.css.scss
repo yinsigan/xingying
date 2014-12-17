@@ -61,6 +61,9 @@
 .padding15 {
   padding: 15px;
 }
+.paddingtop5 {
+  padding-top: 5px;
+}
 .paddingtop15 {
   padding-top: 15px;
 }
@@ -112,6 +115,11 @@
 }
 
 // 文本居中
-.text-align{
+.text-align-center{
   text-align: center;
+}
+
+//红色字体
+.text-red{
+  color: red;
 }
