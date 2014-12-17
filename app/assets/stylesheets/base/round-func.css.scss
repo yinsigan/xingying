@@ -10,6 +10,7 @@ $round-primary-hover-color: #FFF;
   -o-border-radius: $round-radius;
   border-radius: $round-radius;
   padding: $round-padding;
+  behavior: url(/assets/PIE.htc);
 }
 
 // 当图标获取焦点时改变颜色
