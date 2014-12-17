@@ -97,4 +97,5 @@ group :development, :test do
   gem 'capybara', "~> 2.4.4"
 end
 
-gem 'sitemap_generator'
+# TODO baidu
+gem 'sitemap_generator', "~> 5.0.5"
