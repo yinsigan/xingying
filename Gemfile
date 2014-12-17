@@ -99,3 +99,4 @@ end
 
 # TODO baidu
 gem 'sitemap_generator', "~> 5.0.5"
+gem 'pie-rails', "~> 1.1.0"
