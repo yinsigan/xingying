@@ -12,7 +12,8 @@ class Ticket < ActiveRecord::Base
 
   default_scope { order "id DESC" }
 
-  after_commit :send_ticket_admin_notice, on: :create
+  # after_commit :send_ticket_admin_notice, on: :create
+  after_create :send_ticket_admin_notice
 
   def self.create_ticket_admin_notice(ticket_id)
     ticket = Ticket.find(ticket_id)
