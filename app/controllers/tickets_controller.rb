@@ -21,7 +21,6 @@ class TicketsController < SettingsController
     add_breadcrumb I18n.t("breadcrumbs.ticket.new"), :new_ticket_path
     @ticket = current_user.tickets.build(ticket_params)
     if @ticket.save
-      CreateTicketAdminNoticeWorker.perform_async(@ticket.id)
       redirect_to @ticket, flash: {success: I18n.t('success_submit')}
     else
       render :new

@@ -12,8 +12,14 @@ class Ticket < ActiveRecord::Base
 
   default_scope { order "id DESC" }
 
+  after_commit :send_ticket_admin_notice, on: :create
+
   def status_enum
     Ticket::Status.invert.to_a
   end
 
+  protected
+    def send_ticket_admin_notice
+      CreateTicketAdminNoticeWorker.perform_async(self.id)
+    end
 end
