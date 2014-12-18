@@ -20,6 +20,6 @@ class Ticket < ActiveRecord::Base
 
   protected
     def send_ticket_admin_notice
-      CreateTicketAdminNoticeWorker.perform_async(self.id)
+      CreateTicketAdminNoticeWorker.perform_in(5.minutes, self.id)
     end
 end
