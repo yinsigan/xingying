@@ -99,3 +99,4 @@ end
 
 # TODO baidu
 gem 'sitemap_generator', "~> 5.0.5"
+gem 'exception_notification', github: 'smartinez87/exception_notification'

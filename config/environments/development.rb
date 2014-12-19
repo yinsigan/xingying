@@ -46,5 +46,13 @@ Rails.application.configure do
     password: ENV["GMAIL_PASSWORD"],
     enable_starttls_auto: true
   }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
   config.cache_store = :redis_store, {:host => '127.0.0.1', :port => 6379, :compress => true, :expires_in => 8.hours, :compress_threshold => 32.kilobytes}
+  Yingxing::Application.config.middleware.use ExceptionNotification::Rack,
+  :email => {
+    :email_prefix => "[Yingxing] ",
+    :sender_address => %{"notifier" <hfpp2012@gmail.com>},
+    :exception_recipients => %w{903279182@qq.com}
+  }
 end

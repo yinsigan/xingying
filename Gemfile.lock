@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/smartinez87/exception_notification.git
+  revision: f9dee5b5f6a1e1823bb274f719f1ae9c551e2f84
+  specs:
+    exception_notification (4.1.0.rc1)
+      actionmailer (>= 3.0.4)
+      activesupport (>= 3.0.4)
+
+GIT
   remote: git://github.com/yinsigan/ckeditor.git
   revision: 31d0405464969c0d6eca9a3d8a3a9cf817b77401
   specs:
@@ -358,6 +366,7 @@ DEPENDENCIES
   devise-async (~> 0.9.0)
   devise-encryptable
   devise_invitable (~> 1.4.0)
+  exception_notification!
   factory_girl_rails (~> 4.0)
   font-awesome-sass (~> 4.1.0)
   guard (~> 2.6.1)
