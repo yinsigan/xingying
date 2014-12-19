@@ -11,7 +11,7 @@ class WeixinController < ApplicationController
     if @weixin_public_account.present?
       render xml: send("response_#{@weixin_message.MsgType}_message", {})
     else
-      reply_text_message("")
+      render :nothing => true, :status => 200, :content_type => 'text/html'
     end
   end
 
