@@ -105,7 +105,7 @@ class WeixinController < ApplicationController
 
     # 点击菜单拉取消息时的事件推送
     def handle_click_event
-      # 取出key值与数据库比库
+      # 取出key值与数据库比对
       if @weixin_message.EventKey.present?
         if @click_event_menu = @weixin_public_account.menus.where(:tp => "click", :key => @weixin_message.EventKey.to_s).first
           case @click_event_menu.click_type
