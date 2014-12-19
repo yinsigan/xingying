@@ -82,12 +82,14 @@ class WeixinController < ApplicationController
       if @keyword.present?
         return reply_text_message("扫描带参数二维码事件: 1. 用户未关注时，进行关注后的事件推送, keyword: #{@keyword}")
       end
-      case @weixin_public_account.reply_type
-      when 1
-        reply_text_message(@weixin_public_account.default_reply.presence)
-      when 2
-        if sin_pic_text = @weixin_public_account.default_sin_material.try(:sin_pic_text)
-          reply_news_message(custom_generate_article(sin_pic_text))
+      if @weixin_public_account.present?
+        case @weixin_public_account.reply_type
+        when 1
+          reply_text_message(@weixin_public_account.default_reply.presence)
+        when 2
+          if sin_pic_text = @weixin_public_account.default_sin_material.try(:sin_pic_text)
+            reply_news_message(custom_generate_article(sin_pic_text))
+          end
         end
       end
     end
