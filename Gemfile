@@ -44,6 +44,8 @@ gem "breadcrumbs_on_rails", '~> 2.3.0'
 # 图片上传
 gem 'carrierwave', '~> 0.10.0'
 gem 'carrierwave-qiniu', '~> 0.1.3'
+# gem 'rest-client', '~> 1.7.2'
+# gem 'carrierwave-aliyun', '~> 0.3.2'
 gem 'mini_magick', '~> 3.7.0'
 gem 'jquery.fileupload-rails', '~> 1.10.1'
 
