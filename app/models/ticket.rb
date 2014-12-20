@@ -12,28 +12,7 @@ class Ticket < ActiveRecord::Base
 
   default_scope { order "id DESC" }
 
-  after_commit :send_ticket_admin_notice, on: :create
-
-  def self.create_ticket_admin_notice(ticket_id)
-    ticket = Ticket.find(ticket_id)
-    need_be_noticed_users = User.where.not(:role => 0)
-    need_be_noticed_users.each do |user|
-      Notification.create(
-        :messageable => ticket,
-        :tp => 1,
-        :subject => "您收到一条服务单<a href='/tickets/#{ticket.id}'>#{ticket.title}</a>",
-        :body => ticket.body,
-        :user => user
-      )
-    end
-  end
-
   def status_enum
     Ticket::Status.invert.to_a
   end
-
-  protected
-    def send_ticket_admin_notice
-      Ticket.delay.create_ticket_admin_notice(self.id)
-    end
 end
