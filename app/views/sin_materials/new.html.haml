@@ -22,7 +22,7 @@
     = render 'form'
 
 :javascript
-  var save;
+  var save, load;
 
   $("#sin_material_sin_pic_text_attributes_title").on("keyup", function() {
     return $("#edit_sin_preview .appmsg_title a").text($(this).val());
@@ -49,7 +49,6 @@
       }
 
       localStorage["body_#{current_user.id}_#{@public_account.id}"] = CKEDITOR.instances["sin_material_sin_pic_text_attributes_body"].getData();
-      // TODO 保存成功的提示
     }
   };
   load = function(){
@@ -80,4 +79,4 @@
     load();
   });
   //setInterval("save()", 60 * 1000 * 5);
-  setInterval("save()", 10000);
+  var timer = setInterval("save()", 10000);

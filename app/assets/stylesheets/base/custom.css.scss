@@ -177,3 +177,19 @@ footer {
     padding: 5px;
     border: 1px solid #625A5A;
 }
+
+
+#banner {
+  position: relative;
+  overflow: auto;
+}
+
+#banner ul{
+  padding: 0;
+}
+
+#banner ul li {
+  float: left;
+  list-style: none;
+  width: 100%;
+}

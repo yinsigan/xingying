@@ -1,8 +1,19 @@
 .container
   .row
     .col-md-12
-      %a.thumbnail{:href => "#"}
-        = image_tag("shops.jpg", :width=> "100%")
+      #banner
+        %ul
+          %li
+            %a.thumbnail{:href => "#"}
+              = image_tag("shops.jpg", :width=> "100%")
+          %li
+            %a.thumbnail{:href => "#"}
+              = image_tag("shops.jpg", :width=> "100%")
+          %li
+            %a.thumbnail{:href => "#"}
+              = image_tag("shops.jpg", :width=> "100%")
+
+
       .panel.panel-default
         .panel-heading
           【国行限量版】Xbox One 体感游戏主机 （带 Kinect 版本,Day One 限量版,含四款免费游戏）
@@ -146,6 +157,82 @@
 :javascript
   jQuery(function($) {
     $(document).ready( function() {
+      var slidey = $('#banner').unslider();
+      /*
+      var startPos = null;
+      $("#banner").on("touchstart",function(event){
+        event.preventDefault();
+        //console.log(event);
+        startPos = {
+          X: event.originalEvent.changedTouches[0].clientX,
+          Y:event.originalEvent.changedTouches[0].clientY
+        }
+      });
+
+      $("#banner").on("touchend",function(event){
+        //console.log(event);
+        endPos = {
+          X: event.originalEvent.changedTouches[0].clientX,
+          Y: event.originalEvent.changedTouches[0].clientY
+        }
+        var index = startPos.X - endPos.X;
+        if(index > 0 && index > 100){
+          slidey.data("unslider").next();
+        } else if(index < 0 && index < -100){
+          slidey.data("unslider").prev();
+        }
+      }); */
+
+      var MyTouch = {
+        touch: ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch,
+        events: {
+          handleEvent: function(event){
+            this[event.type](event);
+          },
+          touchstart: function(event){
+            event.preventDefault();
+            this.startPos = {
+              X: event.changedTouches[0].clientX,
+              Y:event.changedTouches[0].clientY
+            };
+          },
+          touchend: function(event){
+            var endPos = {
+              X: event.changedTouches[0].clientX,
+              Y: event.changedTouches[0].clientY
+            };
+            var index = this.startPos.X - endPos.X;
+            if(index > 100){
+              if(typeof this.next == "function"){
+                this.next();
+              }
+            } else if(index < -100){
+              if(typeof this.prev == "function"){
+                this.prev();
+              }
+            }
+          }
+        },
+        init: function(option){
+          var self = this;
+          this.target = option.target;
+          this.events.next = option.next;
+          this.events.prev = option.prev;
+          this.target.addEventListener("touchstart", this.events, false);
+          this.target.addEventListener("touchend", this.events, false);
+        }
+      }
+      var banner = document.getElementById("banner");
+      MyTouch.init({
+        target: banner,
+        prev: function(){
+          slidey.data("unslider").prev();
+        },
+        next: function(){
+          slidey.data("unslider").next();
+        }
+      });
+
       $('#goods_nav').stickUp();
     });
   });
