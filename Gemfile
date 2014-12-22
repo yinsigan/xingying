@@ -106,5 +106,5 @@ gem 'exception_notification', github: 'smartinez87/exception_notification'
 gem 'whenever', :require => false
 gem 'sidekiq-failures', "~> 0.4.3"
 
-gem 'elasticsearch-rails'
-gem 'elasticsearch-model'
+gem 'elasticsearch-rails', '~> 0.1.6'
+gem 'elasticsearch-model', '~> 0.1.6'

@@ -380,8 +380,8 @@ DEPENDENCIES
   devise-async (~> 0.9.0)
   devise-encryptable
   devise_invitable (~> 1.4.0)
-  elasticsearch-model
-  elasticsearch-rails
+  elasticsearch-model (~> 0.1.6)
+  elasticsearch-rails (~> 0.1.6)
   exception_notification!
   factory_girl_rails (~> 4.0)
   font-awesome-sass (~> 4.1.0)
