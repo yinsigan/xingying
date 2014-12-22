@@ -1,6 +1,7 @@
 # encoding: utf-8
 # https://github.com/rubysl/rubysl-securerandom/blob/2.0/lib/rubysl/securerandom/securerandom.rb
 class PublicAccount < ActiveRecord::Base
+  include Elasticsearch::Model
   TP                = { 1 => "订阅号", 2 => "服务号" }
   ReplyType         = { 1 => "文字", 2 => "单图文" }
   ReplyTypeNode     = { 1 => "text_material", 2 => "sin_material" }

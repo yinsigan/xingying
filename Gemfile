@@ -58,7 +58,7 @@ gem 'nokogiri', '~> 1.6.3.1'
 gem 'kaminari', '~> 0.15.1'
 
 # 搜索
-gem 'ransack', '~> 1.5.1'
+# gem 'ransack', '~> 1.5.1'
 
 gem 'seo_helper', '~> 1.0'
 
@@ -105,3 +105,6 @@ gem 'exception_notification', github: 'smartinez87/exception_notification'
 
 gem 'whenever', :require => false
 gem 'sidekiq-failures', "~> 0.4.3"
+
+gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
