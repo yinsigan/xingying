@@ -1,5 +1,6 @@
 # encoding: utf-8
 # https://github.com/rubysl/rubysl-securerandom/blob/2.0/lib/rubysl/securerandom/securerandom.rb
+require 'elasticsearch/model'
 class PublicAccount < ActiveRecord::Base
   include Elasticsearch::Model
   TP                = { 1 => "订阅号", 2 => "服务号" }
@@ -32,6 +33,9 @@ class PublicAccount < ActiveRecord::Base
   validates :name, length: { maximum: 30 }
 
   mount_uploader :image, AvatarUploader
+
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
 
   def tp_enum
     PublicAccount::TP.invert.to_a
