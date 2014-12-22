@@ -13,10 +13,6 @@ class RulesController < SettingsController
     @rule.kwords.build if @rule.new_record?
 
     store_location
-
-    if request.xhr?
-      render "index.js.erb", layout: false
-    end
   end
 
   def create
