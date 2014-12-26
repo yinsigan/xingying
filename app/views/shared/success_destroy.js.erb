@@ -2,5 +2,5 @@ $(".alert-success.alert-fixed-top").html("<%= j(I18n.t("success_delete")) %>").f
 <% if @select_prev_link.present? %>
   $.getScript("<%= j @select_prev_link %>");
 <% else %>
-  Turbolinks.visit();
+
 <% end %>
