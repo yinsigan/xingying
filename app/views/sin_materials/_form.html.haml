@@ -51,13 +51,3 @@
             expires: 30
 
     $("#sin_material_sin_pic_text_attributes_click_response").trigger "change"
-    $("#new_sin_material").on "submit", ->
-      localStorage.removeItem 'title_#{current_user.id}_#{@public_account.id}'
-      localStorage.removeItem 'title_#{current_user.id}_#{@public_account.id}'
-      localStorage.removeItem 'thumb_id_#{current_user.id}_#{@public_account.id}'
-      localStorage.removeItem 'desc_#{current_user.id}_#{@public_account.id}'
-      localStorage.removeItem 'click_response_#{current_user.id}_#{@public_account.id}'
-      localStorage.removeItem 'body_#{current_user.id}_#{@public_account.id}'
-      localStorage.removeItem 'image_#{current_user.id}_#{@public_account.id}'
-      window.clearInterval timer
-
