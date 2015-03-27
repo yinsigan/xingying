@@ -12,6 +12,7 @@ defaults: &defaults
   page_keywords: "微信, 微媒, 营销"
   assets_url: "xingying.qiniudn.com"
   home_url: "127.0.0.1:3000"
+  admin_email: "903279182@qq.com"
 
 development:
   <<: *defaults
