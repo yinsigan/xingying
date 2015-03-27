@@ -23,7 +23,7 @@ set :term_mode, nil
 # required
 set :slack_token, "NTgtvGZSrn31cwClEJO5GIZc" # comes from inbound webhook integration
 set :slack_room, "#ruby" # the room to send the message to
-set :slack_subdomain, "qiangu " # if your subdomain is example.slack.com
+set :slack_subdomain, "qiangu" # if your subdomain is example.slack.com
 
 # For system-wide RVM install.
 #   set :rvm_path, '/usr/local/rvm/bin/rvm'
