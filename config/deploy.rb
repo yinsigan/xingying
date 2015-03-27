@@ -81,6 +81,12 @@ task :deploy => :environment do
   end
 end
 
+desc "Display the current log"
+task :logs do
+  queue 'echo "Contents of the log file are as follows:"'
+  queue "tail -f #{deploy_to}/current/log/production.log"
+end
+
 # For help in making your deploy script, see the Mina documentation:
 #
 #  - http://nadarei.co/mina
