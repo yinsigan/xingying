@@ -21,7 +21,7 @@ set :branch, 'master'
 set :term_mode, nil
 
 # required
-set :slack_token, "https://hooks.slack.com/services/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" # comes from inbound webhook integration
+set :slack_token, "NTgtvGZSrn31cwClEJO5GIZc" # comes from inbound webhook integration
 set :slack_room, "#ruby" # the room to send the message to
 set :slack_subdomain, "qiangu " # if your subdomain is example.slack.com
 
