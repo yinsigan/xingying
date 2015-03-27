@@ -3,7 +3,6 @@ require 'mina/rails'
 require 'mina/git'
 require 'mina/rbenv'
 require 'mina_sidekiq/tasks'
-require 'mina/slack'
 # require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
 # require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
@@ -19,11 +18,6 @@ set :deploy_to, '/home/yinsigan/xy'
 set :repository, 'git@bitbucket.org:yinsigan/xingying.git'
 set :branch, 'master'
 set :term_mode, nil
-
-# required
-set :slack_token, "NTgtvGZSrn31cwClEJO5GIZc" # comes from inbound webhook integration
-set :slack_room, "#ruby" # the room to send the message to
-set :slack_subdomain, "qiangu" # if your subdomain is example.slack.com
 
 # For system-wide RVM install.
 #   set :rvm_path, '/usr/local/rvm/bin/rvm'

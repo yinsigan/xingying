@@ -109,5 +109,4 @@ gem 'sidekiq-failures', "~> 0.4.3"
 gem 'elasticsearch-rails', '~> 0.1.6'
 gem 'elasticsearch-model', '~> 0.1.6'
 gem 'mina', '~> 0.3.3'
-gem 'mina-sidekiq', '~> 0.2.0'
-gem 'mina-slack', '~> 0.1.0'
+gem 'mina-sidekiq', '~> 0.3.1'

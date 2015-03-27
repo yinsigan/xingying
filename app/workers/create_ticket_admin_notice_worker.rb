@@ -12,7 +12,6 @@ class CreateTicketAdminNoticeWorker
         :body => ticket.body,
         :user => user
       )
-      logger.debug "create ticket admin notice #{ticket.id}"
     end
   end
 end
