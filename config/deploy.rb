@@ -14,7 +14,7 @@ set :user, 'yinsigan'
 set :domain, 'dev-start.net'
 set :deploy_to, '/home/yinsigan/xy'
 set :repository, 'git@bitbucket.org:yinsigan/xingying.git'
-set :branch, 'develop'
+set :branch, 'master'
 
 # For system-wide RVM install.
 #   set :rvm_path, '/usr/local/rvm/bin/rvm'
