@@ -21,7 +21,7 @@ set :repository, 'git@bitbucket.org:yinsigan/xingying.git'
 set :branch, 'master'
 set :term_mode, nil
 
-set :slack_token, "NTgtvGZSrn31cwClEJO5GIZc" # comes from inbound webhook integration
+set :slack_token, "AkgJsyRkemP5CFmbGISNKVPE" # comes from inbound webhook integration
 set :slack_room, "#ruby" # the room to send the message to
 set :slack_subdomain, "qiangu" # if your subdomain is example.slack.com
 

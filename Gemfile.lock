@@ -14,6 +14,14 @@ GIT
       mime-types
       orm_adapter (~> 0.5.0)
 
+GIT
+  remote: git://github.com/yinsigan/mina-slack.git
+  revision: 89cf7c7af901d3389e50ae64f86da584fce1e3d7
+  specs:
+    mina-slack (0.1.0)
+      mina
+      mina-hooks
+
 GEM
   remote: https://ruby.taobao.org/
   specs:
@@ -189,9 +197,6 @@ GEM
       mina (>= 0.2.1)
     mina-sidekiq (0.3.1)
       mina
-    mina-slack (0.1.0)
-      mina
-      mina-hooks
     mini_magick (3.7.0)
       subexec (~> 0.2.1)
     mini_portile (0.6.0)
@@ -409,7 +414,7 @@ DEPENDENCIES
   mina (~> 0.3.3)
   mina-multistage
   mina-sidekiq (~> 0.3.1)
-  mina-slack
+  mina-slack!
   mini_magick (~> 3.7.0)
   multi_xml (~> 0.5.5)
   nokogiri (~> 1.6.3.1)
