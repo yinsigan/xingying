@@ -111,4 +111,4 @@ gem 'elasticsearch-model', '~> 0.1.6'
 gem 'mina', '~> 0.3.3'
 gem 'mina-sidekiq', '~> 0.3.1'
 gem 'mina-multistage', require: false
-gem 'mina-slack', github: 'yinsigan/mina-slack', require: false
+gem 'mina-slack', require: false
