@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: git://github.com/yinsigan/mina-slack.git
-  revision: 89cf7c7af901d3389e50ae64f86da584fce1e3d7
+  revision: 549868bc6166f1969bdcc15a72b50aaab1fcd094
   specs:
     mina-slack (0.1.0)
       mina
