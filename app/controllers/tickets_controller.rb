@@ -3,7 +3,7 @@ class TicketsController < SettingsController
   before_action :add_index_breadcrumb
 
   def index
-    @tickets = current_user.tickets.page(params[:page]).per(20)
+    @tickets = current_user.tickets.page(params[:page]).per(2)
   end
 
   def all
