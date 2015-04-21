@@ -188,6 +188,7 @@ GEM
       mina (>= 0.2.1)
     mina-sidekiq (0.3.1)
       mina
+    mina-unicorn (0.1.0)
     mini_magick (3.7.0)
       subexec (~> 0.2.1)
     mini_portile (0.6.0)
@@ -410,6 +411,7 @@ DEPENDENCIES
   mina (~> 0.3.3)
   mina-multistage
   mina-sidekiq (~> 0.3.1)
+  mina-unicorn
   mini_magick (~> 3.7.0)
   multi_xml (~> 0.5.5)
   nokogiri (~> 1.6.3.1)
