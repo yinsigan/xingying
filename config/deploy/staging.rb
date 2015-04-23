@@ -7,4 +7,3 @@ set :term_mode, nil
 set :rails_env, 'production'
 set :unicorn_config, -> { "#{deploy_to}/#{current_path}/config/unicorn/staging.rb" }
 set :bundle_gemfile, -> { "#{deploy_to}/#{current_path}/Gemfile" }
-set :unicorn_pid,  -> { "#{deploy_to}/#{current_path}/tmp/pids/unicorn.pid"  }
