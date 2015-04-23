@@ -112,4 +112,4 @@ gem 'mina', '~> 0.3.3'
 gem 'mina-sidekiq', '~> 0.3.1'
 gem 'mina-multistage', require: false
 gem 'mina-unicorn', require: false
-gem 'unicorn'
+gem 'unicorn', '~> 4.8.3'
