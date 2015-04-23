@@ -106,7 +106,7 @@ Rails.application.routes.draw do
     get code, to: "errors#show", code: code
   end
 
-  devise_for :users, :controllers => { :confirmations => 'confirmations',  :invitations => 'users/invitations' }, skip: :registrations
+  devise_for :users, :controllers => { :confirmations => 'confirmations',  :invitations => 'users/invitations', :omniauth_callbacks => "users/omniauth_callbacks" }, skip: :registrations
   # 取消删除用户
   devise_scope :user do
     resource :registration,

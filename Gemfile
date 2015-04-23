@@ -113,3 +113,5 @@ gem 'mina-sidekiq', '~> 0.3.1'
 gem 'mina-multistage', require: false
 gem 'mina-unicorn', require: false
 gem 'unicorn', '~> 4.8.3'
+gem 'omniauth', '~> 1.2.2'
+gem 'omniauth-github', '~> 1.1.2'

@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable, :timeoutable, :confirmable , :invitable, :encryptable, :async
 
+  devise :omniauthable, :omniauth_providers => [:github]
+
   has_many :public_accounts
   has_many :tickets
   has_many :comments
@@ -19,6 +21,21 @@ class User < ActiveRecord::Base
   after_create :send_welcome_mail
 
   after_commit :send_sign_up_notice, on: :create
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+    end
+  end
+
+  # def self.new_with_session(params, session)
+  #   super.tap do |user|
+  #     if data = session["devise.github_data"] && session["devise.github_data"]["extra"]["raw_info"]
+  #       user.email = data["email"] if user.email.blank?
+  #     end
+  #   end
+  # end
 
   def can_admin?
     self.admin? || self.super_admin?

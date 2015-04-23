@@ -305,4 +305,6 @@ Devise.setup do |config|
   # 加密
   config.encryptor = :sha512
 
+  config.omniauth :github, Settings.github_appkey, Settings.github_secret
+
 end
