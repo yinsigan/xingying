@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
 
   after_commit :send_sign_up_notice, on: :create
 
+  # TODO 当用户存在时，会出问题，需要重构
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
