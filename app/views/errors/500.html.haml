@@ -1,8 +1,15 @@
-.col-md-12
-  .text-center.padding15
-    %h1
-      = t('error_title')
-    %h4
-      = t('error_details')
-    %div
-      = link_to t('back_to_home'), root_path, class: "btn btn-primary"
+.error-wrap
+  .container
+    .error-box.error-500
+      .col-sm-4
+        %i.fa.fa-frown-o.fa-5x
+      .col-sm-8
+        %strong 500，
+        %p 很抱歉，服务器内部错误，页面无法显示！
+        %ol
+          %li
+            1.您可以
+            %a{:href => "javascript:history.go(-1);"} 返回上一个页面
+          %li
+            2.您可以
+            %a{:href => "/"} 回到首页

@@ -1,8 +1,21 @@
-.col-md-12
-  .text-center.padding15
-    %h1
-      = t('oops')
-    %h3
-      = t('no_found')
-    %div
-      = link_to t('back_to_home'), root_path, class: "btn btn-primary"
+.error-wrap
+  .container
+    .error-box.error-404
+      .col-sm-4
+        %i.fa.fa-frown-o.fa-5x
+      .col-sm-8
+        %strong
+          Error,
+          %em 404
+        %p 您所查看的也没无法浏览或已经不存在
+        %span 输入的地址不正确
+        %span 页面重定义或程序出错
+        .return
+          %a{:href => "/"} 返回首页 &raquo;
+          %em.red 5
+          秒之后页面自动跳转...
+
+:javascript
+  window.setTimeout(function(){
+      window.location.href="#{root_url}"
+  }, 5000);
