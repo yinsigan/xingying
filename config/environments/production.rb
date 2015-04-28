@@ -95,5 +95,5 @@ Rails.application.configure do
     password: ENV["GMAIL_PASSWORD"],
     enable_starttls_auto: true
   }
-  config.cache_store = :redis_store, {:host => '127.0.0.1', :port => 6379, :compress => true, :compress_threshold => 32.kilobytes}
+  config.cache_store = :redis_store, {:host => '127.0.0.1', :port => 6379, :compress => true, :compress_threshold => 32.kilobytes, :namespace => Settings.redis_store_namespace}
 end

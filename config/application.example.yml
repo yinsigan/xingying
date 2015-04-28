@@ -16,6 +16,7 @@ defaults: &defaults
   github_appkey: '36a5e30aefd2e87714d0'
   github_secret: "f098bcc5302f18d0cf243cc50c8a49133949bc60"
   sidekiq_namespace: "xy_sidekiq"
+  redis_store_namespace: "xy_cache"
 
 development:
   <<: *defaults

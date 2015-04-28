@@ -54,5 +54,5 @@ Rails.application.configure do
   #   :sender_address => %{"notifier" <hfpp2012@gmail.com>},
   #   :exception_recipients => %w{903279182@qq.com}
   # }
-  config.cache_store = :redis_store, {:host => '127.0.0.1', :port => 6379, :compress => true, :expires_in => 8.hours, :compress_threshold => 32.kilobytes}
+  config.cache_store = :redis_store, {:host => '127.0.0.1', :port => 6379, :compress => true, :expires_in => 8.hours, :compress_threshold => 32.kilobytes, :namespace => Settings.redis_store_namespace}
 end
