@@ -94,10 +94,18 @@ task :logs do
   queue "tail -f #{deploy_to}/current/log/production.log"
 end
 
-# For help in making your deploy script, see the Mina documentation:
-#
-#  - http://nadarei.co/mina
-#  - http://nadarei.co/mina/tasks
-#  - http://nadarei.co/mina/settings
-#  - http://nadarei.co/mina/helpers
+desc "Display the unicorn logs."
+task :unicorn_logs do
+  queue 'echo "Contents of the unicorn log file are as follows:"'
+  queue "tail -f #{deploy_to}/current/log/unicorn.log"
+end
 
+desc "Display the redis memory information"
+task :redis_memory do
+  queue 'redis-cli info memory'
+end
+
+desc "Display the redis statues information"
+task :redis_stats do
+  queue 'redis-cli info stats'
+end
