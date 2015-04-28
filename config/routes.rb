@@ -131,4 +131,6 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
+  mount RedisBrowser::Web => '/redis-browser'
+
 end

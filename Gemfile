@@ -115,3 +115,4 @@ gem 'mina-unicorn', require: false
 gem 'unicorn', '~> 4.8.3'
 gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-github', '~> 1.1.2'
+gem 'redis-browser', '~> 0.3.2'
