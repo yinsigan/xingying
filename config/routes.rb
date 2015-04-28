@@ -129,8 +129,7 @@ Rails.application.routes.draw do
 
   authenticate :user, lambda { |u| u.super_admin? } do
     mount Sidekiq::Web => '/sidekiq'
+    mount RedisBrowser::Web => '/redis-browser'
   end
-
-  mount RedisBrowser::Web => '/redis-browser'
 
 end
