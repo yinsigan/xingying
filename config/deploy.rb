@@ -109,8 +109,3 @@ desc "Display the redis statues information"
 task :redis_stats do
   queue 'redis-cli info stats'
 end
-
-desc "Using request-log-analyzer display production log"
-task :request_log_analyzer do
-  queue "cd #{deploy_to}/#{current_path} && BUNDLE_GEMFILE=#{bundle_gemfile} #{bundle_prefix} request-log-analyzer #{deploy_to}/current/log/production.log"
-end
