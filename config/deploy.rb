@@ -120,5 +120,5 @@ end
 
 desc "Display the cron log"
 task :cron_log do
-  queue "tail -f /var/log/syslog | grep CRON"
+  queue "sudo tail -f /var/log/syslog | grep CRON"
 end
