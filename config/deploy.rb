@@ -117,3 +117,8 @@ task :request_log_analyzer do
   invoke :'rbenv:load'
   queue! "cd #{deploy_to}/#{current_path} && BUNDLE_GEMFILE=#{bundle_gemfile} #{bundle_prefix} request-log-analyzer #{deploy_to}/current/log/production.log"
 end
+
+desc "Display the cron log"
+task :cron_log do
+  queue "tail -f /var/log/syslog | grep CRON"
+end
