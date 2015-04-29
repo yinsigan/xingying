@@ -112,5 +112,6 @@ end
 
 desc "Using request-log-analyzer display production log"
 task :request_log_analyzer do
+  invoke :'rbenv:load'
   queue! "#{bundle_prefix} request-log-analyzer #{deploy_to}/current/log/production.log"
 end
