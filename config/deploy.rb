@@ -3,6 +3,7 @@ require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
 require 'mina/rbenv'
+require 'mina/whenever'
 require 'mina_sidekiq/tasks'
 require 'mina/unicorn'
 # require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
@@ -84,6 +85,7 @@ task :deploy => :environment do
     to :launch do
       invoke :'unicorn:restart'
       invoke :'sidekiq:restart'
+      invoke :'whenever:update'
     end
   end
 end
