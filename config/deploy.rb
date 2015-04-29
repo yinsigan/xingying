@@ -112,5 +112,5 @@ end
 
 desc "Using request-log-analyzer display production log"
 task :request_log_analyzer do
-  queue "request-log-analyzer #{deploy_to}/current/log/production.log"
+  queue "#{deploy_to}/#{current_path} && BUNDLE_GEMFILE=#{bundle_gemfile} request-log-analyzer #{deploy_to}/current/log/production.log"
 end
