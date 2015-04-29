@@ -22,7 +22,3 @@
 # every 1.day, :at => '1:00 am' do
 #   command "backup perform --trigger my_backup"
 # end
-
-every 1.minutes do
-  command "echo 'test minicron...'"
-end
