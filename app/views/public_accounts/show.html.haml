@@ -36,7 +36,7 @@
         = link_to t('.weixin_dev_btn'), show_token_public_account_path(@public_account), class: "btn btn-primary", remote: true
   .panel.panel-default
     .panel-heading
-      %h3.panel-title 为此页面生成二维码(玩的)
+      %h3.panel-title 生成好玩的二维码(rqrcode gem生成)
     .panel-body
       %table.qr
         - @qr.modules.each_index do |x|
@@ -46,3 +46,12 @@
                 %td.black
               - else
                 %td.white
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title 生成好玩的二维码(qrcodejs生成)
+    .panel-body
+      #qrcode
+
+:coffee
+  $(document).ready ->
+    new QRCode(document.getElementById("qrcode"), "#{public_account_url(@public_account)}");

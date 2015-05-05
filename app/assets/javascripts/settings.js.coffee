@@ -20,5 +20,6 @@
 #= require jquery.history
 #= require bootstro
 #= require jquery.cookie
+#= require qrcode
 #= require my
 #= require custom
