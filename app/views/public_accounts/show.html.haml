@@ -34,3 +34,15 @@
       %p.text-muted= t('.weixin_dev_des')
       %p
         = link_to t('.weixin_dev_btn'), show_token_public_account_path(@public_account), class: "btn btn-primary", remote: true
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title 为此页面生成二维码(玩的)
+    .panel-body
+      %table.qr
+        - @qr.modules.each_index do |x|
+          %tr
+            - @qr.modules.each_index do |y|
+              - if @qr.dark?(x,y)
+                %td.black
+              - else
+                %td.white
