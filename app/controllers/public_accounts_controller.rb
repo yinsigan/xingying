@@ -82,7 +82,17 @@ class PublicAccountsController < SettingsController
     end
 
     def public_account_params
-      params.require(:public_account).permit(:name, :tp, :image, :appid, :appsecret, :default_customed, :trigger_custom)
+      params.require(:public_account).permit(
+        :name,
+        :tp,
+        :image,
+        :appid,
+        :appsecret,
+        :default_customed,
+        :trigger_custom,
+        :humanizer_answer,
+        :humanizer_question_id
+      )
     end
 
     def add_index_breadcrumb
