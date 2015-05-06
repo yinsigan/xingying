@@ -121,7 +121,11 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    collection do
+      get :check_email
+    end
+  end
 
   # 微信公众账号接口
   get  'weixin/:weixin_secret_key', to: 'weixin#index', as: :weixin_server
