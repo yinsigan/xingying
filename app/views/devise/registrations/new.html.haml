@@ -8,7 +8,7 @@
         .form-group
           = f.label :email, class: "control-label col-sm-3"
           .col-sm-7
-            = f.email_field :email, autocomplete: "off", class: "form-control input-lg", placeholder: t('hit_email'), required: true, autofocus: true, data: {"bv-remote" => true, "bv-remote-url" => check_email_users_path, "bv-remote-message" => "用户名已经被使用"}
+            = f.email_field :email, autocomplete: "off", class: "form-control input-lg", placeholder: t('hit_email'), required: true, autofocus: true, data: {"bv-remote" => true, "bv-remote-url" => check_email_users_path, "bv-remote-message" => "用户名已经被使用", "bv-remote-delay" => 1000}
         .form-group
           = f.label :password, class: "control-label col-sm-3"
           .col-sm-7
