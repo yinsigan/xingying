@@ -1,6 +1,6 @@
 source 'https://ruby.taobao.org/'
 
-ruby '2.1.5'
+ruby '2.2.0'
 
 gem 'rails', '4.1.8'
 
@@ -119,3 +119,4 @@ gem 'redis-browser', '~> 0.3.2'
 gem 'request-log-analyzer', '~> 1.13.4'
 gem 'rqrcode', '~> 0.4.2'
 gem 'humanizer'
+gem 'eventmachine', github: "eventmachine/eventmachine"
