@@ -3,8 +3,8 @@
 require 'elasticsearch/model'
 class PublicAccount < ActiveRecord::Base
 
-  include Humanizer
-  require_human_on :create
+  # include Humanizer
+  # require_human_on :create
 
   TP                = { 1 => "订阅号", 2 => "服务号" }
   ReplyType         = { 1 => "文字", 2 => "单图文" }

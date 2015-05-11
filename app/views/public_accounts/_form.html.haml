@@ -28,12 +28,12 @@
           = image_tag @public_account.image_url(:thumb).to_s
       = f.file_field :image, class: "form-control", onchange: "previewImage(this, [256], 4);", :class => "filestyle", data: {"buttonText" => t('choose_picture'), "buttonBefore" => true, "input" => false}, required: (@public_account.new_record? ? true : false)
       %p.help-block= t('.image_help_block')
-  - if @public_account.new_record?
-    .form-group
-      = f.label :humanizer_answer, @public_account.humanizer_question, class: "col-sm-3 control-label"
-      .col-sm-6
-        = f.text_field :humanizer_answer, class: "form-control"
-        = f.hidden_field :humanizer_question_id
+  / - if @public_account.new_record?
+  /   .form-group
+  /     = f.label :humanizer_answer, @public_account.humanizer_question, class: "col-sm-3 control-label"
+  /     .col-sm-6
+  /       = f.text_field :humanizer_answer, class: "form-control"
+  /       = f.hidden_field :humanizer_question_id
   .form-group.boot-tour{ data: { "bootstro-title" => t('.save.title'), "bootstro-content" => t('.save.content'), "bootstro-placement" => t('.save.placement'), "bootstro-width" => "400px",  "bootstro-step" => t('.save.step')} }
     .col-sm-6.col-sm-push-3
       = f.submit t('save'), class: "btn btn-primary", "data-disable-with" => t('disable-with-save')
