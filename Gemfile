@@ -1,6 +1,6 @@
 source 'https://ruby.taobao.org/'
 
-ruby '2.2.0'
+ruby '2.1.5'
 
 gem 'rails', '4.1.8'
 
