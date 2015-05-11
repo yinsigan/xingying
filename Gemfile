@@ -119,4 +119,3 @@ gem 'redis-browser', '~> 0.3.2'
 gem 'request-log-analyzer', '~> 1.13.4'
 gem 'rqrcode', '~> 0.4.2'
 gem 'humanizer'
-
