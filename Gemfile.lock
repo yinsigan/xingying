@@ -1,10 +1,4 @@
 GIT
-  remote: git://github.com/eventmachine/eventmachine.git
-  revision: 98b0d480091fd12a4a1f9294f75a5903d9215e06
-  specs:
-    eventmachine (1.0.7)
-
-GIT
   remote: git://github.com/smartinez87/exception_notification.git
   revision: 7414336f358c03201165081fb9a2a9b34ad25107
   specs:
@@ -123,6 +117,7 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     execjs (2.5.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -443,7 +438,6 @@ DEPENDENCIES
   devise_invitable (~> 1.4.0)
   elasticsearch-model (~> 0.1.6)
   elasticsearch-rails (~> 0.1.6)
-  eventmachine!
   exception_notification!
   factory_girl_rails (~> 4.0)
   font-awesome-sass (~> 4.1.0)
