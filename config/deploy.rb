@@ -85,7 +85,7 @@ task :deploy => :environment do
 
     to :launch do
       # invoke :'unicorn:restart'
-      invoke :'puma:start'
+      invoke :'puma:restart'
       invoke :'sidekiq:restart'
       invoke :'whenever:update'
     end
