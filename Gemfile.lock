@@ -188,6 +188,8 @@ GEM
       rake
     mina-multistage (1.0.1)
       mina (>= 0.2.1)
+    mina-puma (0.2.0)
+      mina
     mina-sidekiq (0.3.1)
       mina
     mina-unicorn (0.3.0)
@@ -448,6 +450,7 @@ DEPENDENCIES
   kaminari (~> 0.15.1)
   mina (~> 0.3.3)
   mina-multistage
+  mina-puma
   mina-sidekiq (~> 0.3.1)
   mina-unicorn
   mini_magick (~> 3.7.0)
