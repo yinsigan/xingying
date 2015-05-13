@@ -17,7 +17,7 @@ stdout_redirect "#{app_path}/log/puma.stdout.log", "#{app_path}/log/puma.stderr.
 
 # Set master PID and state locations
 pidfile "#{app_path}/pids/puma.pid"
-state_path "#{app_path}/pids/puma.state"
+state_path "#{app_path}/tmp/sockets/puma.state"
 activate_control_app
 
 on_worker_boot do
