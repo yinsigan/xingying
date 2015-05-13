@@ -5,7 +5,7 @@ require 'mina/git'
 require 'mina/rbenv'
 require 'mina/whenever'
 require 'mina_sidekiq/tasks'
-require 'mina/unicorn'
+# require 'mina/unicorn'
 # require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
 # require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
@@ -83,7 +83,8 @@ task :deploy => :environment do
     invoke :'deploy:cleanup'
 
     to :launch do
-      invoke :'unicorn:restart'
+      # invoke :'unicorn:restart'
+      invoke :'puma:restart'
       invoke :'sidekiq:restart'
       invoke :'whenever:update'
     end
