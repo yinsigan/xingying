@@ -7,5 +7,4 @@ set :term_mode, nil
 set :rails_env, 'production'
 # set :unicorn_config, -> { "#{deploy_to}/#{current_path}/config/unicorn/staging.rb" }
 set :puma_config,    -> { "#{deploy_to}/#{current_path}/config/puma/staging.rb" }
-set :puma_socket, -> { "#{deploy_to}/#{shared_path}/sockets/puma.sock" }
 set :bundle_gemfile, -> { "#{deploy_to}/#{current_path}/Gemfile" }
