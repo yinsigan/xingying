@@ -112,10 +112,12 @@ gem 'mina', '~> 0.3.3'
 gem 'mina-sidekiq', '~> 0.3.1'
 gem 'mina-multistage', require: false
 gem 'mina-unicorn', require: false
-gem 'unicorn', '~> 4.8.3'
+# gem 'unicorn', '~> 4.8.3'
 gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-github', '~> 1.1.2'
 gem 'redis-browser', '~> 0.3.2'
 gem 'request-log-analyzer', '~> 1.13.4'
 gem 'rqrcode', '~> 0.4.2'
 gem 'humanizer'
+gem 'puma'
+gem 'mina-puma', require: false
