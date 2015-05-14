@@ -442,7 +442,7 @@ DEPENDENCIES
   guard (~> 2.6.1)
   guard-livereload (~> 2.3.0)
   haml-rails (~> 0.5.3)
-  humanizer
+  humanizer (~> 2.6.2)
   icheck-rails (~> 1.0.2.1)
   jbuilder (~> 2.0)
   jquery-rails (~> 3.1.2)
@@ -460,7 +460,7 @@ DEPENDENCIES
   omniauth-github (~> 1.1.2)
   pg (~> 0.14.0)
   pry (~> 0.10.0)
-  puma
+  puma (~> 2.11.2)
   quiet_assets (~> 1.0.3)
   rails (= 4.1.8)
   rails-i18n
