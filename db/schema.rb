@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423073149) do
+ActiveRecord::Schema.define(version: 20150528093102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,12 @@ ActiveRecord::Schema.define(version: 20150423073149) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "status",     default: 0
+  end
+
+  create_table "entries", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "kwords", force: true do |t|
@@ -117,6 +123,16 @@ ActiveRecord::Schema.define(version: 20150423073149) do
   add_index "notifications", ["messageable_id", "messageable_type"], name: "index_notifications_on_messageable_id_and_messageable_type", using: :btree
   add_index "notifications", ["tp"], name: "index_notifications_on_tp", using: :btree
   add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
+
+  create_table "page_requests", force: true do |t|
+    t.string   "path"
+    t.float    "page_duration"
+    t.float    "view_duration"
+    t.float    "db_duration"
+    t.string   "index"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "public_accounts", force: true do |t|
     t.string   "name"
