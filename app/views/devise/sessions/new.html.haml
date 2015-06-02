@@ -12,6 +12,9 @@
         .form-group
           %button.btn.btn-lg.btn-primary.btn-block{"data-disable-with" => t('disable-with-login'), :type => "submit"}
             = t('login')
+        .form-group
+          = captcha_tag
+          = text_field_tag :captcha
     .modal-footer
       .col-md-12.text-left.clearfix
         %p

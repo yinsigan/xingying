@@ -122,3 +122,4 @@ gem 'humanizer', '~> 2.6.2'
 gem 'puma', '~> 2.11.2'
 gem 'mina-puma', require: false
 gem 'devise_security_extension'
+gem 'easy_captcha'

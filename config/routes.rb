@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
 
+  captcha_route
   resources :page_requests
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
