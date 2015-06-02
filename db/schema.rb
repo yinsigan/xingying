@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528093102) do
+ActiveRecord::Schema.define(version: 20150602031956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -243,12 +243,12 @@ ActiveRecord::Schema.define(version: 20150528093102) do
   add_index "tickets", ["user_id"], name: "index_tickets_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: ""
+    t.string   "email",                             default: "", null: false
+    t.string   "encrypted_password",                default: ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                     default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -256,7 +256,7 @@ ActiveRecord::Schema.define(version: 20150528093102) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar"
-    t.integer  "role",                   default: 0
+    t.integer  "role",                              default: 0
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
@@ -267,10 +267,11 @@ ActiveRecord::Schema.define(version: 20150528093102) do
     t.integer  "invitation_limit"
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
-    t.integer  "invitations_count",      default: 0
+    t.integer  "invitations_count",                 default: 0
     t.string   "password_salt"
     t.string   "provider"
     t.string   "uid"
+    t.string   "unique_session_id",      limit: 20
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
