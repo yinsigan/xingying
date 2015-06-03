@@ -345,4 +345,20 @@ Devise.setup do |config|
   # Time period for account expiry from last_activity_at
   # config.expire_after = 90.days
 
+  # Defines which strategy will be used to lock an account.
+  config.lock_strategy = :failed_attempts
+
+  # Defines which key will be used when locking and unlocking an account
+  config.unlock_keys = [ :time ]
+
+  # Defines which strategy will be used to unlock an account.
+  # :time  = Re-enables login after a certain amount of time (see :unlock_in below)
+  config.unlock_strategy = :time
+
+  # Number of authentication tries before locking an account if lock_strategy
+  # is failed attempts.
+  config.maximum_attempts = 3
+
+  # Time interval to unlock the account if :time is enabled as unlock_strategy.
+  config.unlock_in = 2.hours
 end
