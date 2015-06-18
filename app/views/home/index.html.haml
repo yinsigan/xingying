@@ -1,34 +1,34 @@
-- cache do
-  .col-md-12
-    #fullpage
-      .section
-        .row.frame-first
-          = render "first_section_card"
+/ - cache do
+/   .col-md-12
+/     #fullpage
+/       .section
+/         .row.frame-first
+/           = render "first_section_card"
 
-      .section
-        = render "second_section"
+/       .section
+/         = render "second_section"
 
-      .section
-        = render "third_section"
+/       .section
+/         = render "third_section"
 
-      .section
-        = render "fourth_section"
+/       .section
+/         = render "fourth_section"
 
-      .section
-        = render "fifth_section_callme"
+/       .section
+/         = render "fifth_section_callme"
 
-:javascript
-  $(document).ready(function(){
-    $("#fullpage").fullpage({
-      navigation: true,
-      resize : false,
-      navigationPosition: 'right',
-      navigationTooltips: ['firstSlide', 'secondSlide', 'threeSlide'],
-      scrollingSpeed: 250,
-      afterLoad: function(anchorLink, index) {
-        itv && (clearTimeout(itv), itv = null),
-          doAnimation(index, 1);
-      },
-    });
-    doAnimation(1, 1);
-  });
+/ :javascript
+/   $(document).ready(function(){
+/     $("#fullpage").fullpage({
+/       navigation: true,
+/       resize : false,
+/       navigationPosition: 'right',
+/       navigationTooltips: ['firstSlide', 'secondSlide', 'threeSlide'],
+/       scrollingSpeed: 250,
+/       afterLoad: function(anchorLink, index) {
+/         itv && (clearTimeout(itv), itv = null),
+/           doAnimation(index, 1);
+/       },
+/     });
+/     doAnimation(1, 1);
+/   });
