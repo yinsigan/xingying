@@ -14,4 +14,9 @@ class ApplicationController < ActionController::Base
     redirect_to main_app.root_path, :alert => t('no_permission')
   end
 
+  def authorize
+    if current_user.super_admin?
+      Rack::MiniProfiler.authorize_request
+    end
+  end
 end
