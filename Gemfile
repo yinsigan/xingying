@@ -124,3 +124,4 @@ gem 'mina-puma', require: false
 gem 'devise_security_extension'
 gem 'easy_captcha'
 gem 'rack-mini-profiler', require: false
+gem 'simplecov', :require => false, :group => :test
