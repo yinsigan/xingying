@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: 059409b0b98f534d4d6219502205c6ec6f653b07
+  specs:
+    active_model_serializers (0.10.0.rc1)
+      activemodel (>= 4.0)
+
+GIT
   remote: git://github.com/smartinez87/exception_notification.git
   revision: 7414336f358c03201165081fb9a2a9b34ad25107
   specs:
@@ -439,6 +446,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers!
   awesome_nested_set (~> 3.0.1)
   bootstrap-sass (~> 3.2.0)
   bootstrap-validator-rails (~> 0.5.2)

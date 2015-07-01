@@ -126,3 +126,4 @@ gem 'easy_captcha'
 # alt+p hotkey
 gem 'rack-mini-profiler', require: false
 gem 'simplecov', :require => false, :group => :test
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
