@@ -5,4 +5,5 @@ ActiveSupport::Notifications.subscribe "process_action.action_controller" do |na
     page_request.view_duration = payload[:view_runtime]
     page_request.db_duration = payload[:db_runtime]
   end
+  Rails.logger.info payload
 end

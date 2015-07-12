@@ -11,6 +11,10 @@ class PublicAccountsController < SettingsController
   def show
     add_breadcrumb @public_account.name, public_account_path(@public_account)
     @qr = RQRCode::QRCode.new( request.url, :size => 8, :level => :h )
+    respond_to do |format|
+      format.html
+      format.json { render json: @public_account }
+    end
   end
 
   def new

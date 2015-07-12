@@ -123,3 +123,7 @@ gem 'puma', '~> 2.11.2'
 gem 'mina-puma', require: false
 gem 'devise_security_extension'
 gem 'easy_captcha'
+# alt+p hotkey
+gem 'rack-mini-profiler', require: false
+gem 'simplecov', :require => false, :group => :test
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers'

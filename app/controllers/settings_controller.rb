@@ -1,5 +1,6 @@
 class SettingsController < ApplicationController
   before_action :authenticate_user!
+  before_action :authorize
   before_action :home_breadcrumb
   layout "settings"
   include SettingsHelper
@@ -24,5 +25,11 @@ class SettingsController < ApplicationController
 
   def home_breadcrumb
     add_breadcrumb I18n.t('home'), :root_path
+  end
+
+  def authorize
+    if current_user.super_admin?
+      Rack::MiniProfiler.authorize_request
+    end
   end
 end
