@@ -408,3 +408,6 @@ DEPENDENCIES
   web-console (~> 2.0)
   weixin_authorize (~> 1.6.0)
   whenever
+
+BUNDLED WITH
+   1.10.4
