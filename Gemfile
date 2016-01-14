@@ -102,3 +102,6 @@ gem 'sitemap_generator', "~> 5.0.5"
 gem 'exception_notification', github: 'smartinez87/exception_notification'
 
 gem 'whenever', :require => false
+gem 'mina', require: false
+gem 'mina-unicorn', :require => false
+gem 'unicorn'
